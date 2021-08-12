@@ -1,4 +1,4 @@
-# Apideck.GetAccountResponse
+# Apideck.DeleteLedgerAccountResponse
 
 ### Description
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Account**](Account.md) |  | 
+`data` | [**UnifiedId**](UnifiedId.md) |  | 
 
 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Account`](Account.md)
+* [`UnifiedId`](UnifiedId.md)
 
 ---
 

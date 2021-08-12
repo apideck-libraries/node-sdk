@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `name` | **string** |  | 
 `id` | **string** |  | [optional] 
 `ownerId` | **string** |  | [optional] 
+`type` | **string** |  | [optional] 
 `companyId` | **string** |  | [optional] 
 `companyName` | **string** |  | [optional] 
 `leadId` | **string** |  | [optional] 
@@ -25,7 +26,9 @@ Name | Type | Description | Notes
 `leadSource` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
+`currentBalance` | **number** |  | [optional] 
 `status` | **string** |  | [optional] 
+`active` | **boolean** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `socialLinks` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
@@ -39,6 +42,21 @@ Name | Type | Description | Notes
 `updatedAt` | **Date** |  | [optional] 
 `createdAt` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="ContactType"></a>
+## Enum: Contact.type
+
+
+* `customer` (value: `'customer'`)
+
+* `supplier` (value: `'supplier'`)
+
+* `employee` (value: `'employee'`)
+
+* `personal` (value: `'personal'`)
 
 
 
@@ -57,6 +75,9 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
+
+
 
 
 

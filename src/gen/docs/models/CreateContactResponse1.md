@@ -1,4 +1,4 @@
-# Apideck.GetAccountsResponse
+# Apideck.CreateContactResponse1
 
 ### Description
 
@@ -10,9 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Array&lt;Account&gt;**](Account.md) |  | 
-`meta` | [**Meta**](Meta.md) |  | [optional] 
-`links` | [**Links**](Links.md) |  | [optional] 
+`data` | [**UnifiedId**](UnifiedId.md) |  | 
 
 
 
@@ -24,9 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Account`](Account.md)
-* [`Meta`](Meta.md)
-* [`Links`](Links.md)
+* [`UnifiedId`](UnifiedId.md)
 
 ---
 

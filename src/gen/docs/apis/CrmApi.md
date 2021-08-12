@@ -1045,6 +1045,7 @@ const params = {
   contact: {
     name: 'Elon Musk',
     ownerId: '54321',
+    type: 'personal',
     companyId: '23456',
     companyName: '23456',
     leadId: '34567',
@@ -1062,7 +1063,9 @@ const params = {
     leadSource: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
+    currentBalance: 10.5,
     status: 'open',
+    active: true,
     websites: [
       {
         id: '12345',
@@ -1398,6 +1401,7 @@ const params = {
   contact: {
     name: 'Elon Musk',
     ownerId: '54321',
+    type: 'personal',
     companyId: '23456',
     companyName: '23456',
     leadId: '34567',
@@ -1415,7 +1419,9 @@ const params = {
     leadSource: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
+    currentBalance: 10.5,
     status: 'open',
+    active: true,
     websites: [
       {
         id: '12345',

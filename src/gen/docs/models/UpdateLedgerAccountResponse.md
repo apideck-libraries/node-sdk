@@ -1,4 +1,4 @@
-# Apideck.DeleteAccountResponse
+# Apideck.UpdateLedgerAccountResponse
 
 ### Description
 

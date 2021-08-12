@@ -1,4 +1,4 @@
-# Apideck.Account
+# Apideck.LedgerAccount
 
 ### Description
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 `level` | **string** |  | [optional] 
 `active` | **boolean** |  | [optional] 
 `bankAccount` | [**BankAccount**](BankAccount.md) |  | [optional] 
-`parentAccount` | [**AccountParentAccount**](AccountParentAccount.md) |  | [optional] 
+`parentAccount` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
 `subAccount` | **boolean** |  | [optional] 
 `subAccounts` | **Array&lt;object&gt;** |  | [optional] 
 `lastReconciliationDate` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
@@ -35,8 +35,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="AccountClassification"></a>
-## Enum: Account.classification
+<a name="LedgerAccountClassification"></a>
+## Enum: LedgerAccount.classification
 
 
 * `asset` (value: `'asset'`)
@@ -60,8 +60,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="AccountType"></a>
-## Enum: Account.type
+<a name="LedgerAccountType"></a>
+## Enum: LedgerAccount.type
 
 
 * `accountsReceivable` (value: `'accounts_receivable'`)
@@ -113,7 +113,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
-* [`AccountParentAccount`](AccountParentAccount.md)
+* [`LedgerAccountParentAccount`](LedgerAccountParentAccount.md)
 
 
 

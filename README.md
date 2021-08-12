@@ -1,4 +1,4 @@
-# Apideck Node.js library
+# Apideck Node.js SDK
 
 ## Table of Contents
 
@@ -14,13 +14,13 @@
 Install the latest SDK using npm:
 
 ```console
-$ npm install @apideck/node
+$ npm install @apideck/node@beta
 ```
 
 or Yarn
 
 ```console
-$ yarn add @apideck/node
+$ yarn add @apideck/node@beta
 ```
 
 ## Getting started
