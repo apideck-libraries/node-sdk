@@ -34,7 +34,7 @@ to the [docs][2].
 A new Apideck instance is initialized by passing in required settings to the configuration.
 
 ```typescript
-import Apideck from @apideck/node;
+import Apideck from '@apideck/node';
 
 const apideck = new Apideck({
   apiKey: '<insert-api-key-here>',
@@ -66,10 +66,10 @@ Retrieving a list of all contacts and updating the first record with a new addre
 
 ```typescript
 
-import Apideck, { PhoneNumberType } from @apideck/node;
+import Apideck, { PhoneNumberType } from '@apideck/node';
 
 const apideck = new Apideck({
-  apiKey: '<insert-api-key-here'>,
+  apiKey: '<insert-api-key-here>',
   appId: '<insert-application-id-here>',
   consumerId: '<insert-consumer-id-here>',
   serviceId: '<insert-service-id-here>'
