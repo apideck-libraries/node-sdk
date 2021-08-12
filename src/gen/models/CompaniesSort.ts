@@ -43,8 +43,8 @@ export interface CompaniesSort {
  * @enum {string}
  */
 export enum CompaniesSortBy {
-  createdAt = 'created_at',
-  updatedAt = 'updated_at',
+  created_at = 'created_at',
+  updated_at = 'updated_at',
   name = 'name'
 }
 

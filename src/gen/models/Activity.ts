@@ -41,91 +41,91 @@ export interface Activity {
    * @type {string}
    * @memberof Activity
    */
-  activityDatetime?: string | null
+  activity_datetime?: string | null
   /**
    *
    * @type {number}
    * @memberof Activity
    */
-  durationSeconds?: number | null
+  duration_seconds?: number | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  accountId?: string | null
+  account_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  contactId?: string | null
+  contact_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  companyId?: string | null
+  company_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  opportunityId?: string | null
+  opportunity_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  leadId?: string | null
+  lead_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  ownerId?: string | null
+  owner_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  campaignId?: string | null
+  campaign_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  caseId?: string | null
+  case_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  assetId?: string | null
+  asset_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  contractId?: string | null
+  contract_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  productId?: string | null
+  product_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  solutionId?: string | null
+  solution_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  customObjectId?: string | null
+  custom_object_id?: string | null
   /**
    *
    * @type {string}
@@ -149,7 +149,7 @@ export interface Activity {
    * @type {boolean}
    * @memberof Activity
    */
-  allDayEvent?: boolean
+  all_day_event?: boolean
   /**
    *
    * @type {boolean}
@@ -161,19 +161,19 @@ export interface Activity {
    * @type {boolean}
    * @memberof Activity
    */
-  groupEvent?: boolean
+  group_event?: boolean
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  eventSubType?: string | null
+  event_sub_type?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  groupEventType?: string | null
+  group_event_type?: string | null
   /**
    *
    * @type {boolean}
@@ -197,37 +197,37 @@ export interface Activity {
    * @type {string}
    * @memberof Activity
    */
-  showAs?: ActivityShowAs
+  show_as?: ActivityShowAs
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  activityDate?: string | null
+  activity_date?: string | null
   /**
    *
    * @type {number}
    * @memberof Activity
    */
-  durationMinutes?: number | null
+  duration_minutes?: number | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  startDatetime?: string | null
+  start_datetime?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  endDatetime?: string | null
+  end_datetime?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  endDate?: string | null
+  end_date?: string | null
   /**
    *
    * @type {boolean}
@@ -239,43 +239,43 @@ export interface Activity {
    * @type {string}
    * @memberof Activity
    */
-  reminderDatetime?: string | null
+  reminder_datetime?: string | null
   /**
    *
    * @type {boolean}
    * @memberof Activity
    */
-  reminderSet?: boolean | null
+  reminder_set?: boolean | null
   /**
    *
    * @type {Array<CustomField>}
    * @memberof Activity
    */
-  customFields?: Array<CustomField>
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  readonly updatedBy?: string | null
+  readonly updated_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  readonly createdBy?: string | null
+  readonly created_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  readonly updatedAt?: string
+  readonly updated_at?: string
   /**
    *
    * @type {string}
    * @memberof Activity
    */
-  readonly createdAt?: string
+  readonly created_at?: string
 }
 
 /**
@@ -288,8 +288,8 @@ export enum ActivityType {
   email = 'email',
   note = 'note',
   task = 'task',
-  sendLetter = 'send-letter',
-  sendQuote = 'send-quote',
+  send_letter = 'send-letter',
+  send_quote = 'send-quote',
   other = 'other'
 }
 /**
@@ -312,48 +312,48 @@ export function ActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
   return {
     type: json['type'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    activityDatetime: !exists(json, 'activity_datetime') ? undefined : json['activity_datetime'],
-    durationSeconds: !exists(json, 'duration_seconds') ? undefined : json['duration_seconds'],
-    accountId: !exists(json, 'account_id') ? undefined : json['account_id'],
-    contactId: !exists(json, 'contact_id') ? undefined : json['contact_id'],
-    companyId: !exists(json, 'company_id') ? undefined : json['company_id'],
-    opportunityId: !exists(json, 'opportunity_id') ? undefined : json['opportunity_id'],
-    leadId: !exists(json, 'lead_id') ? undefined : json['lead_id'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    campaignId: !exists(json, 'campaign_id') ? undefined : json['campaign_id'],
-    caseId: !exists(json, 'case_id') ? undefined : json['case_id'],
-    assetId: !exists(json, 'asset_id') ? undefined : json['asset_id'],
-    contractId: !exists(json, 'contract_id') ? undefined : json['contract_id'],
-    productId: !exists(json, 'product_id') ? undefined : json['product_id'],
-    solutionId: !exists(json, 'solution_id') ? undefined : json['solution_id'],
-    customObjectId: !exists(json, 'custom_object_id') ? undefined : json['custom_object_id'],
+    activity_datetime: !exists(json, 'activity_datetime') ? undefined : json['activity_datetime'],
+    duration_seconds: !exists(json, 'duration_seconds') ? undefined : json['duration_seconds'],
+    account_id: !exists(json, 'account_id') ? undefined : json['account_id'],
+    contact_id: !exists(json, 'contact_id') ? undefined : json['contact_id'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    opportunity_id: !exists(json, 'opportunity_id') ? undefined : json['opportunity_id'],
+    lead_id: !exists(json, 'lead_id') ? undefined : json['lead_id'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    campaign_id: !exists(json, 'campaign_id') ? undefined : json['campaign_id'],
+    case_id: !exists(json, 'case_id') ? undefined : json['case_id'],
+    asset_id: !exists(json, 'asset_id') ? undefined : json['asset_id'],
+    contract_id: !exists(json, 'contract_id') ? undefined : json['contract_id'],
+    product_id: !exists(json, 'product_id') ? undefined : json['product_id'],
+    solution_id: !exists(json, 'solution_id') ? undefined : json['solution_id'],
+    custom_object_id: !exists(json, 'custom_object_id') ? undefined : json['custom_object_id'],
     title: !exists(json, 'title') ? undefined : json['title'],
     description: !exists(json, 'description') ? undefined : json['description'],
     location: !exists(json, 'location') ? undefined : json['location'],
-    allDayEvent: !exists(json, 'all_day_event') ? undefined : json['all_day_event'],
+    all_day_event: !exists(json, 'all_day_event') ? undefined : json['all_day_event'],
     _private: !exists(json, 'private') ? undefined : json['private'],
-    groupEvent: !exists(json, 'group_event') ? undefined : json['group_event'],
-    eventSubType: !exists(json, 'event_sub_type') ? undefined : json['event_sub_type'],
-    groupEventType: !exists(json, 'group_event_type') ? undefined : json['group_event_type'],
+    group_event: !exists(json, 'group_event') ? undefined : json['group_event'],
+    event_sub_type: !exists(json, 'event_sub_type') ? undefined : json['event_sub_type'],
+    group_event_type: !exists(json, 'group_event_type') ? undefined : json['group_event_type'],
     child: !exists(json, 'child') ? undefined : json['child'],
     archived: !exists(json, 'archived') ? undefined : json['archived'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
-    showAs: !exists(json, 'show_as') ? undefined : json['show_as'],
-    activityDate: !exists(json, 'activity_date') ? undefined : json['activity_date'],
-    durationMinutes: !exists(json, 'duration_minutes') ? undefined : json['duration_minutes'],
-    startDatetime: !exists(json, 'start_datetime') ? undefined : json['start_datetime'],
-    endDatetime: !exists(json, 'end_datetime') ? undefined : json['end_datetime'],
-    endDate: !exists(json, 'end_date') ? undefined : json['end_date'],
+    show_as: !exists(json, 'show_as') ? undefined : json['show_as'],
+    activity_date: !exists(json, 'activity_date') ? undefined : json['activity_date'],
+    duration_minutes: !exists(json, 'duration_minutes') ? undefined : json['duration_minutes'],
+    start_datetime: !exists(json, 'start_datetime') ? undefined : json['start_datetime'],
+    end_datetime: !exists(json, 'end_datetime') ? undefined : json['end_datetime'],
+    end_date: !exists(json, 'end_date') ? undefined : json['end_date'],
     recurrent: !exists(json, 'recurrent') ? undefined : json['recurrent'],
-    reminderDatetime: !exists(json, 'reminder_datetime') ? undefined : json['reminder_datetime'],
-    reminderSet: !exists(json, 'reminder_set') ? undefined : json['reminder_set'],
-    customFields: !exists(json, 'custom_fields')
+    reminder_datetime: !exists(json, 'reminder_datetime') ? undefined : json['reminder_datetime'],
+    reminder_set: !exists(json, 'reminder_set') ? undefined : json['reminder_set'],
+    custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
-    updatedBy: !exists(json, 'updated_by') ? undefined : json['updated_by'],
-    createdBy: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at']
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
 }
 
@@ -366,44 +366,44 @@ export function ActivityToJSON(value?: Activity | null): any {
   }
   return {
     type: value.type,
-    activity_datetime: value.activityDatetime,
-    duration_seconds: value.durationSeconds,
-    account_id: value.accountId,
-    contact_id: value.contactId,
-    company_id: value.companyId,
-    opportunity_id: value.opportunityId,
-    lead_id: value.leadId,
-    owner_id: value.ownerId,
-    campaign_id: value.campaignId,
-    case_id: value.caseId,
-    asset_id: value.assetId,
-    contract_id: value.contractId,
-    product_id: value.productId,
-    solution_id: value.solutionId,
-    custom_object_id: value.customObjectId,
+    activity_datetime: value.activity_datetime,
+    duration_seconds: value.duration_seconds,
+    account_id: value.account_id,
+    contact_id: value.contact_id,
+    company_id: value.company_id,
+    opportunity_id: value.opportunity_id,
+    lead_id: value.lead_id,
+    owner_id: value.owner_id,
+    campaign_id: value.campaign_id,
+    case_id: value.case_id,
+    asset_id: value.asset_id,
+    contract_id: value.contract_id,
+    product_id: value.product_id,
+    solution_id: value.solution_id,
+    custom_object_id: value.custom_object_id,
     title: value.title,
     description: value.description,
     location: value.location,
-    all_day_event: value.allDayEvent,
+    all_day_event: value.all_day_event,
     private: value._private,
-    group_event: value.groupEvent,
-    event_sub_type: value.eventSubType,
-    group_event_type: value.groupEventType,
+    group_event: value.group_event,
+    event_sub_type: value.event_sub_type,
+    group_event_type: value.group_event_type,
     child: value.child,
     archived: value.archived,
     deleted: value.deleted,
-    show_as: value.showAs,
-    activity_date: value.activityDate,
-    duration_minutes: value.durationMinutes,
-    start_datetime: value.startDatetime,
-    end_datetime: value.endDatetime,
-    end_date: value.endDate,
+    show_as: value.show_as,
+    activity_date: value.activity_date,
+    duration_minutes: value.duration_minutes,
+    start_datetime: value.start_datetime,
+    end_datetime: value.end_datetime,
+    end_date: value.end_date,
     recurrent: value.recurrent,
-    reminder_datetime: value.reminderDatetime,
-    reminder_set: value.reminderSet,
+    reminder_datetime: value.reminder_datetime,
+    reminder_set: value.reminder_set,
     custom_fields:
-      value.customFields === undefined
+      value.custom_fields === undefined
         ? undefined
-        : (value.customFields as Array<any>).map(CustomFieldToJSON)
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON)
   }
 }

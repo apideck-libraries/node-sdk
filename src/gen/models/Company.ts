@@ -48,13 +48,13 @@ export interface Company {
    * @type {number}
    * @memberof Company
    */
-  readonly interactionCount?: number | null
+  readonly interaction_count?: number | null
   /**
    *
    * @type {string}
    * @memberof Company
    */
-  ownerId?: string
+  owner_id?: string
   /**
    *
    * @type {string}
@@ -72,7 +72,7 @@ export interface Company {
    * @type {string}
    * @memberof Company
    */
-  vatNumber?: string | null
+  vat_number?: string | null
   /**
    *
    * @type {string}
@@ -92,17 +92,17 @@ export interface Company {
    */
   fax?: string | null
   /**
-   * Annual Revenue
+   * Annual revenue
    * @type {string}
    * @memberof Company
    */
-  annualRevenue?: string | null
+  annual_revenue?: string | null
   /**
    * Number of employees
    * @type {string}
    * @memberof Company
    */
-  numberOfEmployees?: string | null
+  number_of_employees?: string | null
   /**
    * Industry
    * @type {string}
@@ -116,17 +116,47 @@ export interface Company {
    */
   ownership?: string | null
   /**
+   *
+   * @type {string}
+   * @memberof Company
+   */
+  sales_tax_number?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Company
+   */
+  payee_number?: string | null
+  /**
+   * An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia.
+   * @type {string}
+   * @memberof Company
+   */
+  abn_or_tfn?: string | null
+  /**
+   * An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity.
+   * @type {string}
+   * @memberof Company
+   */
+  abn_branch?: string | null
+  /**
+   * The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank.
+   * @type {string}
+   * @memberof Company
+   */
+  acn?: string | null
+  /**
    * Parent ID
    * @type {string}
    * @memberof Company
    */
-  readonly parentId?: string
+  readonly parent_id?: string
   /**
    *
    * @type {Array<BankAccount>}
    * @memberof Company
    */
-  bankAccounts?: Array<BankAccount>
+  bank_accounts?: Array<BankAccount>
   /**
    *
    * @type {Array<Website>}
@@ -144,13 +174,13 @@ export interface Company {
    * @type {Array<SocialLink>}
    * @memberof Company
    */
-  socialLinks?: Array<SocialLink>
+  social_links?: Array<SocialLink>
   /**
    *
    * @type {Array<PhoneNumber>}
    * @memberof Company
    */
-  phoneNumbers?: Array<PhoneNumber>
+  phone_numbers?: Array<PhoneNumber>
   /**
    *
    * @type {Array<Email>}
@@ -162,7 +192,7 @@ export interface Company {
    * @type {Array<CustomField>}
    * @memberof Company
    */
-  customFields?: Array<CustomField>
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {Tags}
@@ -171,10 +201,16 @@ export interface Company {
   tags?: Tags
   /**
    *
+   * @type {boolean}
+   * @memberof Company
+   */
+  read_only?: boolean | null
+  /**
+   *
    * @type {Date}
    * @memberof Company
    */
-  readonly lastActivityAt?: Date | null
+  readonly last_activity_at?: Date | null
   /**
    *
    * @type {boolean}
@@ -186,25 +222,25 @@ export interface Company {
    * @type {string}
    * @memberof Company
    */
-  readonly updatedBy?: string | null
+  readonly updated_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Company
    */
-  readonly createdBy?: string | null
+  readonly created_by?: string | null
   /**
    *
    * @type {Date}
    * @memberof Company
    */
-  readonly updatedAt?: Date
+  readonly updated_at?: Date
   /**
    *
    * @type {Date}
    * @memberof Company
    */
-  readonly createdAt?: Date
+  readonly created_at?: Date
 }
 
 export function CompanyFromJSON(json: any): Company {
@@ -218,22 +254,27 @@ export function CompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
   return {
     name: json['name'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    interactionCount: !exists(json, 'interaction_count') ? undefined : json['interaction_count'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    interaction_count: !exists(json, 'interaction_count') ? undefined : json['interaction_count'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
     image: !exists(json, 'image') ? undefined : json['image'],
     description: !exists(json, 'description') ? undefined : json['description'],
-    vatNumber: !exists(json, 'vat_number') ? undefined : json['vat_number'],
+    vat_number: !exists(json, 'vat_number') ? undefined : json['vat_number'],
     currency: !exists(json, 'currency') ? undefined : json['currency'],
     status: !exists(json, 'status') ? undefined : json['status'],
     fax: !exists(json, 'fax') ? undefined : json['fax'],
-    annualRevenue: !exists(json, 'annual_revenue') ? undefined : json['annual_revenue'],
-    numberOfEmployees: !exists(json, 'number_of_employees')
+    annual_revenue: !exists(json, 'annual_revenue') ? undefined : json['annual_revenue'],
+    number_of_employees: !exists(json, 'number_of_employees')
       ? undefined
       : json['number_of_employees'],
     industry: !exists(json, 'industry') ? undefined : json['industry'],
     ownership: !exists(json, 'ownership') ? undefined : json['ownership'],
-    parentId: !exists(json, 'parent_id') ? undefined : json['parent_id'],
-    bankAccounts: !exists(json, 'bank_accounts')
+    sales_tax_number: !exists(json, 'sales_tax_number') ? undefined : json['sales_tax_number'],
+    payee_number: !exists(json, 'payee_number') ? undefined : json['payee_number'],
+    abn_or_tfn: !exists(json, 'abn_or_tfn') ? undefined : json['abn_or_tfn'],
+    abn_branch: !exists(json, 'abn_branch') ? undefined : json['abn_branch'],
+    acn: !exists(json, 'acn') ? undefined : json['acn'],
+    parent_id: !exists(json, 'parent_id') ? undefined : json['parent_id'],
+    bank_accounts: !exists(json, 'bank_accounts')
       ? undefined
       : (json['bank_accounts'] as Array<any>).map(BankAccountFromJSON),
     websites: !exists(json, 'websites')
@@ -242,27 +283,28 @@ export function CompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
     addresses: !exists(json, 'addresses')
       ? undefined
       : (json['addresses'] as Array<any>).map(AddressFromJSON),
-    socialLinks: !exists(json, 'social_links')
+    social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
-    phoneNumbers: !exists(json, 'phone_numbers')
+    phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
     emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
-    customFields: !exists(json, 'custom_fields')
+    custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
-    lastActivityAt: !exists(json, 'last_activity_at')
+    read_only: !exists(json, 'read_only') ? undefined : json['read_only'],
+    last_activity_at: !exists(json, 'last_activity_at')
       ? undefined
       : json['last_activity_at'] === null
       ? null
       : new Date(json['last_activity_at']),
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
-    updatedBy: !exists(json, 'updated_by') ? undefined : json['updated_by'],
-    createdBy: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    createdAt: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -275,21 +317,26 @@ export function CompanyToJSON(value?: Company | null): any {
   }
   return {
     name: value.name,
-    owner_id: value.ownerId,
+    owner_id: value.owner_id,
     image: value.image,
     description: value.description,
-    vat_number: value.vatNumber,
+    vat_number: value.vat_number,
     currency: value.currency,
     status: value.status,
     fax: value.fax,
-    annual_revenue: value.annualRevenue,
-    number_of_employees: value.numberOfEmployees,
+    annual_revenue: value.annual_revenue,
+    number_of_employees: value.number_of_employees,
     industry: value.industry,
     ownership: value.ownership,
+    sales_tax_number: value.sales_tax_number,
+    payee_number: value.payee_number,
+    abn_or_tfn: value.abn_or_tfn,
+    abn_branch: value.abn_branch,
+    acn: value.acn,
     bank_accounts:
-      value.bankAccounts === undefined
+      value.bank_accounts === undefined
         ? undefined
-        : (value.bankAccounts as Array<any>).map(BankAccountToJSON),
+        : (value.bank_accounts as Array<any>).map(BankAccountToJSON),
     websites:
       value.websites === undefined ? undefined : (value.websites as Array<any>).map(WebsiteToJSON),
     addresses:
@@ -297,18 +344,19 @@ export function CompanyToJSON(value?: Company | null): any {
         ? undefined
         : (value.addresses as Array<any>).map(AddressToJSON),
     social_links:
-      value.socialLinks === undefined
+      value.social_links === undefined
         ? undefined
-        : (value.socialLinks as Array<any>).map(SocialLinkToJSON),
+        : (value.social_links as Array<any>).map(SocialLinkToJSON),
     phone_numbers:
-      value.phoneNumbers === undefined
+      value.phone_numbers === undefined
         ? undefined
-        : (value.phoneNumbers as Array<any>).map(PhoneNumberToJSON),
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
     custom_fields:
-      value.customFields === undefined
+      value.custom_fields === undefined
         ? undefined
-        : (value.customFields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags)
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
+    tags: TagsToJSON(value.tags),
+    read_only: value.read_only
   }
 }

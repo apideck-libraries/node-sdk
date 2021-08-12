@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 
 <a name="LogUnifiedApi"></a>
-## Enum: Log.unifiedApi
+## Enum: Log.unified_api
 
 
 * `crm` (value: `'crm'`)

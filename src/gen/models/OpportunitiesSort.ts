@@ -43,11 +43,11 @@ export interface OpportunitiesSort {
  * @enum {string}
  */
 export enum OpportunitiesSortBy {
-  createdAt = 'created_at',
-  updatedAt = 'updated_at',
+  created_at = 'created_at',
+  updated_at = 'updated_at',
   title = 'title',
-  winProbability = 'win_probability',
-  monetaryAmount = 'monetary_amount',
+  win_probability = 'win_probability',
+  monetary_amount = 'monetary_amount',
   status = 'status'
 }
 

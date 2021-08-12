@@ -27,7 +27,7 @@ export interface Unauthorized {
    * @type {number}
    * @memberof Unauthorized
    */
-  statusCode?: number
+  status_code?: number
   /**
    * Contains an explanation of the status_code as defined in HTTP/1.1 standard (RFC 7231)
    * @type {string}
@@ -69,7 +69,7 @@ export function UnauthorizedFromJSONTyped(json: any, ignoreDiscriminator: boolea
     return json
   }
   return {
-    statusCode: !exists(json, 'status_code') ? undefined : json['status_code'],
+    status_code: !exists(json, 'status_code') ? undefined : json['status_code'],
     error: !exists(json, 'error') ? undefined : json['error'],
     typeName: !exists(json, 'typeName') ? undefined : json['typeName'],
     message: !exists(json, 'message') ? undefined : json['message'],
@@ -86,7 +86,7 @@ export function UnauthorizedToJSON(value?: Unauthorized | null): any {
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     error: value.error,
     typeName: value.typeName,
     message: value.message,

@@ -43,11 +43,11 @@ export interface LeadsSort {
  * @enum {string}
  */
 export enum LeadsSortBy {
-  createdAt = 'created_at',
-  updatedAt = 'updated_at',
+  created_at = 'created_at',
+  updated_at = 'updated_at',
   name = 'name',
-  firstName = 'first_name',
-  lastName = 'last_name',
+  first_name = 'first_name',
+  last_name = 'last_name',
   email = 'email'
 }
 

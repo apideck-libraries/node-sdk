@@ -94,8 +94,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -145,13 +144,14 @@ const params = {
   }
 }
 
-apideck.crm.activitiesAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.activitiesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -207,19 +207,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.activitiesAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.activitiesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -274,21 +274,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.activitiesDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.activitiesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -343,21 +343,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.activitiesOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.activitiesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -413,8 +413,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -465,13 +464,14 @@ const params = {
   }
 }
 
-apideck.crm.activitiesUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.activitiesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -526,8 +526,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -544,6 +543,11 @@ const params = {
     numberOfEmployees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
+    salesTaxNumber: '12456EN',
+    payeeNumber: '78932EN',
+    abnOrTfn: '46 115 614 695',
+    abnBranch: '123',
+    acn: 'XXX XXX XXX',
     bankAccounts: [
       {
         iban: 'CH2989144532982975332',
@@ -565,6 +569,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -605,17 +610,19 @@ const params = {
     ],
     tags: [
       'New'
-    ]
+    ],
+    readOnly: false
   }
 }
 
-apideck.crm.companiesAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.companiesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -673,19 +680,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.companiesAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.companiesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -740,21 +747,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.companiesDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.companiesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -809,21 +816,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.companiesOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.companiesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -879,8 +886,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -898,6 +904,11 @@ const params = {
     numberOfEmployees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
+    salesTaxNumber: '12456EN',
+    payeeNumber: '78932EN',
+    abnOrTfn: '46 115 614 695',
+    abnBranch: '123',
+    acn: 'XXX XXX XXX',
     bankAccounts: [
       {
         iban: 'CH2989144532982975332',
@@ -919,6 +930,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -959,17 +971,19 @@ const params = {
     ],
     tags: [
       'New'
-    ]
+    ],
+    readOnly: false
   }
 }
 
-apideck.crm.companiesUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.companiesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1024,8 +1038,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -1061,6 +1074,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -1105,13 +1119,14 @@ const params = {
   }
 }
 
-apideck.crm.contactsAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.contactsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1169,19 +1184,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.contactsAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.contactsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1236,21 +1251,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.contactsDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.contactsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1305,21 +1320,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.contactsOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.contactsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1375,8 +1390,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -1413,6 +1427,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -1457,13 +1472,14 @@ const params = {
   }
 }
 
-apideck.crm.contactsUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.contactsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1518,8 +1534,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -1551,6 +1566,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -1595,13 +1611,14 @@ const params = {
   }
 }
 
-apideck.crm.leadsAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.leadsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1659,19 +1676,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.leadsAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.leadsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1726,21 +1743,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.leadsDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.leadsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1795,21 +1812,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.leadsOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.leadsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -1865,8 +1882,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -1899,6 +1915,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -1943,13 +1960,14 @@ const params = {
   }
 }
 
-apideck.crm.leadsUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.leadsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2004,8 +2022,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -2016,13 +2033,14 @@ const params = {
   }
 }
 
-apideck.crm.notesAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.notesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2078,19 +2096,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.notesAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.notesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2145,21 +2163,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.notesDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.notesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2214,21 +2232,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.notesOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.notesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2284,8 +2302,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -2297,13 +2314,14 @@ const params = {
   }
 }
 
-apideck.crm.notesUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.notesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2358,8 +2376,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -2401,13 +2418,14 @@ const params = {
   }
 }
 
-apideck.crm.opportunitiesAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.opportunitiesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2465,19 +2483,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.opportunitiesAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.opportunitiesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2532,21 +2550,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.opportunitiesDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.opportunitiesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2601,21 +2619,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.opportunitiesOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.opportunitiesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2671,8 +2689,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -2715,13 +2732,14 @@ const params = {
   }
 }
 
-apideck.crm.opportunitiesUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.opportunitiesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2776,8 +2794,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -2797,13 +2814,14 @@ const params = {
   }
 }
 
-apideck.crm.pipelinesAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.pipelinesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2857,19 +2875,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.pipelinesAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.pipelinesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2924,21 +2942,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.pipelinesDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.pipelinesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -2993,21 +3011,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.pipelinesOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.pipelinesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3063,8 +3081,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -3085,13 +3102,14 @@ const params = {
   }
 }
 
-apideck.crm.pipelinesUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.pipelinesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3146,8 +3164,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -3164,13 +3181,14 @@ const params = {
   }
 }
 
-apideck.crm.usersAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.usersAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3226,19 +3244,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.crm.usersAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.usersAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3293,21 +3311,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.usersDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.usersDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3362,21 +3380,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.crm.usersOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.usersOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -3432,8 +3450,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -3451,13 +3468,14 @@ const params = {
   }
 }
 
-apideck.crm.usersUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.crm.usersUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 

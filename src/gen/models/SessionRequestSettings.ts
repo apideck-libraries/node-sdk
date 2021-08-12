@@ -27,25 +27,25 @@ export interface SessionRequestSettings {
    * @type {string}
    * @memberof SessionRequestSettings
    */
-  sessionLength?: string
+  session_length?: string
   /**
    *
    * @type {boolean}
    * @memberof SessionRequestSettings
    */
-  hideResourceSettings?: boolean
+  hide_resource_settings?: boolean
   /**
    *
    * @type {boolean}
    * @memberof SessionRequestSettings
    */
-  showLogs?: boolean
+  show_logs?: boolean
   /**
    *
    * @type {boolean}
    * @memberof SessionRequestSettings
    */
-  sandboxMode?: boolean
+  sandbox_mode?: boolean
 }
 
 export function SessionRequestSettingsFromJSON(json: any): SessionRequestSettings {
@@ -60,12 +60,12 @@ export function SessionRequestSettingsFromJSONTyped(
     return json
   }
   return {
-    sessionLength: !exists(json, 'session_length') ? undefined : json['session_length'],
-    hideResourceSettings: !exists(json, 'hide_resource_settings')
+    session_length: !exists(json, 'session_length') ? undefined : json['session_length'],
+    hide_resource_settings: !exists(json, 'hide_resource_settings')
       ? undefined
       : json['hide_resource_settings'],
-    showLogs: !exists(json, 'show_logs') ? undefined : json['show_logs'],
-    sandboxMode: !exists(json, 'sandbox_mode') ? undefined : json['sandbox_mode']
+    show_logs: !exists(json, 'show_logs') ? undefined : json['show_logs'],
+    sandbox_mode: !exists(json, 'sandbox_mode') ? undefined : json['sandbox_mode']
   }
 }
 
@@ -77,9 +77,9 @@ export function SessionRequestSettingsToJSON(value?: SessionRequestSettings | nu
     return null
   }
   return {
-    session_length: value.sessionLength,
-    hide_resource_settings: value.hideResourceSettings,
-    show_logs: value.showLogs,
-    sandbox_mode: value.sandboxMode
+    session_length: value.session_length,
+    hide_resource_settings: value.hide_resource_settings,
+    show_logs: value.show_logs,
+    sandbox_mode: value.sandbox_mode
   }
 }

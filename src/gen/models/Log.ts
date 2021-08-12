@@ -30,25 +30,25 @@ export interface Log {
    * @type {string}
    * @memberof Log
    */
-  apiStyle: string
+  api_style: string
   /**
    * The Apideck base URL the request was made to.
    * @type {string}
    * @memberof Log
    */
-  baseUrl: string
+  base_url: string
   /**
    * Indicates whether or not this is a child or parent request.
    * @type {boolean}
    * @memberof Log
    */
-  childRequest: boolean
+  child_request: boolean
   /**
    * The consumer Id associated with the request.
    * @type {string}
    * @memberof Log
    */
-  consumerId: string
+  consumer_id: string
   /**
    * The entire execution time in milliseconds it took to call the Apideck service provider.
    * @type {number}
@@ -66,13 +66,13 @@ export interface Log {
    * @type {boolean}
    * @memberof Log
    */
-  hasChildren: boolean
+  has_children: boolean
   /**
    * HTTP Method of request.
    * @type {string}
    * @memberof Log
    */
-  httpMethod: string
+  http_method: string
   /**
    * UUID acting as Request Identifier.
    * @type {string}
@@ -96,7 +96,7 @@ export interface Log {
    * @type {string}
    * @memberof Log
    */
-  parentId: string | null
+  parent_id: string | null
   /**
    * The path component of the URI the request was made to.
    * @type {string}
@@ -120,7 +120,7 @@ export interface Log {
    * @type {number}
    * @memberof Log
    */
-  statusCode: number
+  status_code: number
   /**
    * Whether or not the request was successful.
    * @type {boolean}
@@ -138,19 +138,19 @@ export interface Log {
    * @type {string}
    * @memberof Log
    */
-  unifiedApi: LogUnifiedApi
+  unified_api: LogUnifiedApi
   /**
    * If error occured, this is brief explanation
    * @type {string}
    * @memberof Log
    */
-  errorMessage?: string | null
+  error_message?: string | null
   /**
    * The IP address of the source of the request.
    * @type {string}
    * @memberof Log
    */
-  sourceIp?: string | null
+  source_ip?: string | null
 }
 
 /**
@@ -173,27 +173,27 @@ export function LogFromJSONTyped(json: any, ignoreDiscriminator: boolean): Log {
     return json
   }
   return {
-    apiStyle: json['api_style'],
-    baseUrl: json['base_url'],
-    childRequest: json['child_request'],
-    consumerId: json['consumer_id'],
+    api_style: json['api_style'],
+    base_url: json['base_url'],
+    child_request: json['child_request'],
+    consumer_id: json['consumer_id'],
     duration: json['duration'],
     execution: json['execution'],
-    hasChildren: json['has_children'],
-    httpMethod: json['http_method'],
+    has_children: json['has_children'],
+    http_method: json['http_method'],
     id: json['id'],
     latency: json['latency'],
     operation: LogOperationFromJSON(json['operation']),
-    parentId: json['parent_id'],
+    parent_id: json['parent_id'],
     path: json['path'],
     sandbox: json['sandbox'],
     service: LogServiceFromJSON(json['service']),
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     success: json['success'],
     timestamp: json['timestamp'],
-    unifiedApi: json['unified_api'],
-    errorMessage: !exists(json, 'error_message') ? undefined : json['error_message'],
-    sourceIp: !exists(json, 'source_ip') ? undefined : json['source_ip']
+    unified_api: json['unified_api'],
+    error_message: !exists(json, 'error_message') ? undefined : json['error_message'],
+    source_ip: !exists(json, 'source_ip') ? undefined : json['source_ip']
   }
 }
 
@@ -205,26 +205,26 @@ export function LogToJSON(value?: Log | null): any {
     return null
   }
   return {
-    api_style: value.apiStyle,
-    base_url: value.baseUrl,
-    child_request: value.childRequest,
-    consumer_id: value.consumerId,
+    api_style: value.api_style,
+    base_url: value.base_url,
+    child_request: value.child_request,
+    consumer_id: value.consumer_id,
     duration: value.duration,
     execution: value.execution,
-    has_children: value.hasChildren,
-    http_method: value.httpMethod,
+    has_children: value.has_children,
+    http_method: value.http_method,
     id: value.id,
     latency: value.latency,
     operation: LogOperationToJSON(value.operation),
-    parent_id: value.parentId,
+    parent_id: value.parent_id,
     path: value.path,
     sandbox: value.sandbox,
     service: LogServiceToJSON(value.service),
-    status_code: value.statusCode,
+    status_code: value.status_code,
     success: value.success,
     timestamp: value.timestamp,
-    unified_api: value.unifiedApi,
-    error_message: value.errorMessage,
-    source_ip: value.sourceIp
+    unified_api: value.unified_api,
+    error_message: value.error_message,
+    source_ip: value.source_ip
   }
 }

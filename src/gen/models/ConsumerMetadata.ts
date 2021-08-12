@@ -27,13 +27,13 @@ export interface ConsumerMetadata {
    * @type {string}
    * @memberof ConsumerMetadata
    */
-  accountName?: string
+  account_name?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerMetadata
    */
-  userName?: string
+  user_name?: string
   /**
    *
    * @type {string}
@@ -60,8 +60,8 @@ export function ConsumerMetadataFromJSONTyped(
     return json
   }
   return {
-    accountName: !exists(json, 'account_name') ? undefined : json['account_name'],
-    userName: !exists(json, 'user_name') ? undefined : json['user_name'],
+    account_name: !exists(json, 'account_name') ? undefined : json['account_name'],
+    user_name: !exists(json, 'user_name') ? undefined : json['user_name'],
     email: !exists(json, 'email') ? undefined : json['email'],
     image: !exists(json, 'image') ? undefined : json['image']
   }
@@ -75,8 +75,8 @@ export function ConsumerMetadataToJSON(value?: ConsumerMetadata | null): any {
     return null
   }
   return {
-    account_name: value.accountName,
-    user_name: value.userName,
+    account_name: value.account_name,
+    user_name: value.user_name,
     email: value.email,
     image: value.image
   }

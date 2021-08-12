@@ -29,7 +29,7 @@ export interface Meta {
    * @type {number}
    * @memberof Meta
    */
-  itemsOnPage?: number
+  items_on_page?: number
   /**
    *
    * @type {MetaCursors}
@@ -47,7 +47,7 @@ export function MetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): Meta
     return json
   }
   return {
-    itemsOnPage: !exists(json, 'items_on_page') ? undefined : json['items_on_page'],
+    items_on_page: !exists(json, 'items_on_page') ? undefined : json['items_on_page'],
     cursors: !exists(json, 'cursors') ? undefined : MetaCursorsFromJSON(json['cursors'])
   }
 }
@@ -60,7 +60,7 @@ export function MetaToJSON(value?: Meta | null): any {
     return null
   }
   return {
-    items_on_page: value.itemsOnPage,
+    items_on_page: value.items_on_page,
     cursors: MetaCursorsToJSON(value.cursors)
   }
 }

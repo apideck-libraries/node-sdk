@@ -39,7 +39,7 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  parentId?: string | null
+  parent_id?: string | null
   /**
    *
    * @type {string}
@@ -51,13 +51,13 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  firstName?: string | null
+  first_name?: string | null
   /**
    *
    * @type {string}
    * @memberof User
    */
-  lastName?: string | null
+  last_name?: string | null
   /**
    *
    * @type {string}
@@ -87,13 +87,13 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  readonly updatedAt?: string
+  readonly updated_at?: string
   /**
    *
    * @type {string}
    * @memberof User
    */
-  readonly createdAt?: string
+  readonly created_at?: string
 }
 
 export function UserFromJSON(json: any): User {
@@ -107,16 +107,16 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
   return {
     email: json['email'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    parentId: !exists(json, 'parent_id') ? undefined : json['parent_id'],
+    parent_id: !exists(json, 'parent_id') ? undefined : json['parent_id'],
     username: !exists(json, 'username') ? undefined : json['username'],
-    firstName: !exists(json, 'first_name') ? undefined : json['first_name'],
-    lastName: !exists(json, 'last_name') ? undefined : json['last_name'],
+    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     image: !exists(json, 'image') ? undefined : json['image'],
     language: !exists(json, 'language') ? undefined : json['language'],
     status: !exists(json, 'status') ? undefined : json['status'],
     password: !exists(json, 'password') ? undefined : json['password'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at']
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
 }
 
@@ -129,10 +129,10 @@ export function UserToJSON(value?: User | null): any {
   }
   return {
     email: value.email,
-    parent_id: value.parentId,
+    parent_id: value.parent_id,
     username: value.username,
-    first_name: value.firstName,
-    last_name: value.lastName,
+    first_name: value.first_name,
+    last_name: value.last_name,
     image: value.image,
     language: value.language,
     status: value.status,

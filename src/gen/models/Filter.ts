@@ -27,19 +27,19 @@ export interface Filter {
    * @type {string}
    * @memberof Filter
    */
-  connectorId?: string | null
+  connector_id?: string | null
   /**
    *
    * @type {number}
    * @memberof Filter
    */
-  statusCode?: number | null
+  status_code?: number | null
   /**
    *
    * @type {string}
    * @memberof Filter
    */
-  excludeUnifiedApis?: string | null
+  exclude_unified_apis?: string | null
 }
 
 export function FilterFromJSON(json: any): Filter {
@@ -51,9 +51,9 @@ export function FilterFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fi
     return json
   }
   return {
-    connectorId: !exists(json, 'connector_id') ? undefined : json['connector_id'],
-    statusCode: !exists(json, 'status_code') ? undefined : json['status_code'],
-    excludeUnifiedApis: !exists(json, 'exclude_unified_apis')
+    connector_id: !exists(json, 'connector_id') ? undefined : json['connector_id'],
+    status_code: !exists(json, 'status_code') ? undefined : json['status_code'],
+    exclude_unified_apis: !exists(json, 'exclude_unified_apis')
       ? undefined
       : json['exclude_unified_apis']
   }
@@ -67,8 +67,8 @@ export function FilterToJSON(value?: Filter | null): any {
     return null
   }
   return {
-    connector_id: value.connectorId,
-    status_code: value.statusCode,
-    exclude_unified_apis: value.excludeUnifiedApis
+    connector_id: value.connector_id,
+    status_code: value.status_code,
+    exclude_unified_apis: value.exclude_unified_apis
   }
 }

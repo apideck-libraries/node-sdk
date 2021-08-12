@@ -28,7 +28,7 @@ export interface InlineResponse2001 {
    * @type {number}
    * @memberof InlineResponse2001
    */
-  statusCode: number
+  status_code: number
   /**
    * HTTP Response Status
    * @type {string}
@@ -73,7 +73,7 @@ export function InlineResponse2001FromJSONTyped(
     return json
   }
   return {
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     status: json['status'],
     service: json['service'],
     resource: json['resource'],
@@ -90,7 +90,7 @@ export function InlineResponse2001ToJSON(value?: InlineResponse2001 | null): any
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     status: value.status,
     service: value.service,
     resource: value.resource,

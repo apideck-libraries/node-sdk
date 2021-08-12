@@ -39,8 +39,7 @@ import Apideck from '@apideck/node';
 const apideck = new Apideck({
   apiKey: '<insert-api-key-here>',
   appId: '<insert-application-id-here>',
-  consumerId: '<insert-consumer-id-here>',
-  serviceId: '<insert-service-id-here>'
+  consumerId: '<insert-consumer-id-here>'
 })
 
 const { crm } = apideck
@@ -55,7 +54,7 @@ const { crm } = apideck
 
 // Override consumerId serviceId as declared in initial configuration for this operation.
 const response = await crm.contactsAll({
-  serviceId: '<insert-other-service-id-here>',
+  // serviceId: 'salesforce', // optional
   limit: '10'
 })
 ```
@@ -71,8 +70,7 @@ import Apideck, { PhoneNumberType } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: '<insert-api-key-here>',
   appId: '<insert-application-id-here>',
-  consumerId: '<insert-consumer-id-here>',
-  serviceId: '<insert-service-id-here>'
+  consumerId: '<insert-consumer-id-here>'
 })
 
 const { crm } = apideck
@@ -85,14 +83,14 @@ const result = await crm.contactsUpdate({
   id: data[0].id!,
   contact: {
     name: "John Doe",
-    firstName: "John",
-    lastName: "Doe",
+    first_name: "John",
+    last_name: "Doe",
     addresses: [{
       city: "Hoboken",
       line1: "Streetname 19",
       state: "NY"
     }],
-    phoneNumbers: [{
+    phone_numbers: [{
       number: '0486565656',
       phoneType: PhoneNumberType.Home
     }]
@@ -106,6 +104,10 @@ console.info(result)
 ## Apideck Unified Apis
 
 The following Apis are currently available:
+
+### AccountingApi
+
+Read the full documentation of the AccountingApi [here](./src/gen/docs/apis/AccountingApi.md).
 
 ### CrmApi
 

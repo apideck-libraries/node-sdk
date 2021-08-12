@@ -39,25 +39,25 @@ export interface BankAccount {
    * @type {string}
    * @memberof BankAccount
    */
-  bsbNumber?: string | null
+  bsb_number?: string | null
   /**
    * A bank code is a code assigned by a central bank, a bank supervisory body or a Bankers Association in a country to all its licensed member banks or financial institutions.
    * @type {string}
    * @memberof BankAccount
    */
-  bankCode?: string | null
+  bank_code?: string | null
   /**
    * A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number.
    * @type {string}
    * @memberof BankAccount
    */
-  accountNumber?: string | null
+  account_number?: string | null
   /**
    * The name which you used in opening your bank account.
    * @type {string}
    * @memberof BankAccount
    */
-  accountName?: string | null
+  account_name?: string | null
 }
 
 export function BankAccountFromJSON(json: any): BankAccount {
@@ -71,10 +71,10 @@ export function BankAccountFromJSONTyped(json: any, ignoreDiscriminator: boolean
   return {
     iban: !exists(json, 'iban') ? undefined : json['iban'],
     bic: !exists(json, 'bic') ? undefined : json['bic'],
-    bsbNumber: !exists(json, 'bsb_number') ? undefined : json['bsb_number'],
-    bankCode: !exists(json, 'bank_code') ? undefined : json['bank_code'],
-    accountNumber: !exists(json, 'account_number') ? undefined : json['account_number'],
-    accountName: !exists(json, 'account_name') ? undefined : json['account_name']
+    bsb_number: !exists(json, 'bsb_number') ? undefined : json['bsb_number'],
+    bank_code: !exists(json, 'bank_code') ? undefined : json['bank_code'],
+    account_number: !exists(json, 'account_number') ? undefined : json['account_number'],
+    account_name: !exists(json, 'account_name') ? undefined : json['account_name']
   }
 }
 
@@ -88,9 +88,9 @@ export function BankAccountToJSON(value?: BankAccount | null): any {
   return {
     iban: value.iban,
     bic: value.bic,
-    bsb_number: value.bsbNumber,
-    bank_code: value.bankCode,
-    account_number: value.accountNumber,
-    account_name: value.accountName
+    bsb_number: value.bsb_number,
+    bank_code: value.bank_code,
+    account_number: value.account_number,
+    account_name: value.account_name
   }
 }

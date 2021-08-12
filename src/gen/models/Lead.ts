@@ -41,7 +41,7 @@ export interface Lead {
    * @type {string}
    * @memberof Lead
    */
-  companyName: string | null
+  company_name: string | null
   /**
    *
    * @type {string}
@@ -53,37 +53,37 @@ export interface Lead {
    * @type {string}
    * @memberof Lead
    */
-  ownerId?: string
+  owner_id?: string
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  companyId?: string | null
+  company_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  contactId?: string | null
+  contact_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  leadSource?: string | null
+  lead_source?: string | null
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  firstName?: string | null
+  first_name?: string | null
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  lastName?: string | null
+  last_name?: string | null
   /**
    *
    * @type {string}
@@ -119,7 +119,7 @@ export interface Lead {
    * @type {number}
    * @memberof Lead
    */
-  monetaryAmount?: number | null
+  monetary_amount?: number | null
   /**
    *
    * @type {string}
@@ -149,13 +149,13 @@ export interface Lead {
    * @type {Array<SocialLink>}
    * @memberof Lead
    */
-  socialLinks?: Array<SocialLink>
+  social_links?: Array<SocialLink>
   /**
    *
    * @type {Array<PhoneNumber>}
    * @memberof Lead
    */
-  phoneNumbers?: Array<PhoneNumber>
+  phone_numbers?: Array<PhoneNumber>
   /**
    *
    * @type {Array<Email>}
@@ -167,7 +167,7 @@ export interface Lead {
    * @type {Array<CustomField>}
    * @memberof Lead
    */
-  customFields?: Array<CustomField>
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {Tags}
@@ -179,13 +179,13 @@ export interface Lead {
    * @type {string}
    * @memberof Lead
    */
-  readonly updatedAt?: string
+  readonly updated_at?: string
   /**
    *
    * @type {string}
    * @memberof Lead
    */
-  readonly createdAt?: string
+  readonly created_at?: string
 }
 
 export function LeadFromJSON(json: any): Lead {
@@ -198,20 +198,20 @@ export function LeadFromJSONTyped(json: any, ignoreDiscriminator: boolean): Lead
   }
   return {
     name: json['name'],
-    companyName: json['company_name'],
+    company_name: json['company_name'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    companyId: !exists(json, 'company_id') ? undefined : json['company_id'],
-    contactId: !exists(json, 'contact_id') ? undefined : json['contact_id'],
-    leadSource: !exists(json, 'lead_source') ? undefined : json['lead_source'],
-    firstName: !exists(json, 'first_name') ? undefined : json['first_name'],
-    lastName: !exists(json, 'last_name') ? undefined : json['last_name'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    contact_id: !exists(json, 'contact_id') ? undefined : json['contact_id'],
+    lead_source: !exists(json, 'lead_source') ? undefined : json['lead_source'],
+    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     description: !exists(json, 'description') ? undefined : json['description'],
     prefix: !exists(json, 'prefix') ? undefined : json['prefix'],
     title: !exists(json, 'title') ? undefined : json['title'],
     language: !exists(json, 'language') ? undefined : json['language'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    monetaryAmount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
+    monetary_amount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
     currency: !exists(json, 'currency') ? undefined : json['currency'],
     fax: !exists(json, 'fax') ? undefined : json['fax'],
     websites: !exists(json, 'websites')
@@ -220,19 +220,19 @@ export function LeadFromJSONTyped(json: any, ignoreDiscriminator: boolean): Lead
     addresses: !exists(json, 'addresses')
       ? undefined
       : (json['addresses'] as Array<any>).map(AddressFromJSON),
-    socialLinks: !exists(json, 'social_links')
+    social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
-    phoneNumbers: !exists(json, 'phone_numbers')
+    phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
     emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
-    customFields: !exists(json, 'custom_fields')
+    custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at']
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
 }
 
@@ -245,19 +245,19 @@ export function LeadToJSON(value?: Lead | null): any {
   }
   return {
     name: value.name,
-    company_name: value.companyName,
-    owner_id: value.ownerId,
-    company_id: value.companyId,
-    contact_id: value.contactId,
-    lead_source: value.leadSource,
-    first_name: value.firstName,
-    last_name: value.lastName,
+    company_name: value.company_name,
+    owner_id: value.owner_id,
+    company_id: value.company_id,
+    contact_id: value.contact_id,
+    lead_source: value.lead_source,
+    first_name: value.first_name,
+    last_name: value.last_name,
     description: value.description,
     prefix: value.prefix,
     title: value.title,
     language: value.language,
     status: value.status,
-    monetary_amount: value.monetaryAmount,
+    monetary_amount: value.monetary_amount,
     currency: value.currency,
     fax: value.fax,
     websites:
@@ -267,18 +267,18 @@ export function LeadToJSON(value?: Lead | null): any {
         ? undefined
         : (value.addresses as Array<any>).map(AddressToJSON),
     social_links:
-      value.socialLinks === undefined
+      value.social_links === undefined
         ? undefined
-        : (value.socialLinks as Array<any>).map(SocialLinkToJSON),
+        : (value.social_links as Array<any>).map(SocialLinkToJSON),
     phone_numbers:
-      value.phoneNumbers === undefined
+      value.phone_numbers === undefined
         ? undefined
-        : (value.phoneNumbers as Array<any>).map(PhoneNumberToJSON),
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
     custom_fields:
-      value.customFields === undefined
+      value.custom_fields === undefined
         ? undefined
-        : (value.customFields as Array<any>).map(CustomFieldToJSON),
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     tags: TagsToJSON(value.tags)
   }
 }

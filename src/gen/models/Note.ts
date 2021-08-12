@@ -45,31 +45,31 @@ export interface Note {
    * @type {string}
    * @memberof Note
    */
-  ownerId?: string
+  owner_id?: string
   /**
    *
    * @type {string}
    * @memberof Note
    */
-  readonly updatedBy?: string | null
+  readonly updated_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Note
    */
-  readonly createdBy?: string | null
+  readonly created_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Note
    */
-  readonly updatedAt?: string
+  readonly updated_at?: string
   /**
    *
    * @type {string}
    * @memberof Note
    */
-  readonly createdAt?: string
+  readonly created_at?: string
 }
 
 export function NoteFromJSON(json: any): Note {
@@ -84,11 +84,11 @@ export function NoteFromJSONTyped(json: any, ignoreDiscriminator: boolean): Note
     id: !exists(json, 'id') ? undefined : json['id'],
     title: !exists(json, 'title') ? undefined : json['title'],
     content: !exists(json, 'content') ? undefined : json['content'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    updatedBy: !exists(json, 'updated_by') ? undefined : json['updated_by'],
-    createdBy: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at']
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
 }
 
@@ -102,6 +102,6 @@ export function NoteToJSON(value?: Note | null): any {
   return {
     title: value.title,
     content: value.content,
-    owner_id: value.ownerId
+    owner_id: value.owner_id
   }
 }

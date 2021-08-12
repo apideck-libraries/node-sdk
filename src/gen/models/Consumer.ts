@@ -43,13 +43,13 @@ export interface Consumer {
    * @type {string}
    * @memberof Consumer
    */
-  consumerId?: string
+  consumer_id?: string
   /**
    *
    * @type {string}
    * @memberof Consumer
    */
-  applicationId?: string
+  application_id?: string
   /**
    *
    * @type {ConsumerMetadata}
@@ -73,13 +73,13 @@ export interface Consumer {
    * @type {number}
    * @memberof Consumer
    */
-  aggregatedRequestCount?: number
+  aggregated_request_count?: number
   /**
    *
    * @type {RequestCountAllocation}
    * @memberof Consumer
    */
-  requestCounts?: RequestCountAllocation
+  request_counts?: RequestCountAllocation
   /**
    *
    * @type {string}
@@ -97,7 +97,7 @@ export interface Consumer {
    * @type {string}
    * @memberof Consumer
    */
-  requestCountUpdated?: string
+  request_count_updated?: string
 }
 
 export function ConsumerFromJSON(json: any): Consumer {
@@ -109,22 +109,22 @@ export function ConsumerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     return json
   }
   return {
-    consumerId: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
-    applicationId: !exists(json, 'application_id') ? undefined : json['application_id'],
+    consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
+    application_id: !exists(json, 'application_id') ? undefined : json['application_id'],
     metadata: !exists(json, 'metadata') ? undefined : ConsumerMetadataFromJSON(json['metadata']),
     connections: !exists(json, 'connections')
       ? undefined
       : (json['connections'] as Array<any>).map(ConsumerConnectionsFromJSON),
     services: !exists(json, 'services') ? undefined : json['services'],
-    aggregatedRequestCount: !exists(json, 'aggregated_request_count')
+    aggregated_request_count: !exists(json, 'aggregated_request_count')
       ? undefined
       : json['aggregated_request_count'],
-    requestCounts: !exists(json, 'request_counts')
+    request_counts: !exists(json, 'request_counts')
       ? undefined
       : RequestCountAllocationFromJSON(json['request_counts']),
     created: !exists(json, 'created') ? undefined : json['created'],
     modified: !exists(json, 'modified') ? undefined : json['modified'],
-    requestCountUpdated: !exists(json, 'request_count_updated')
+    request_count_updated: !exists(json, 'request_count_updated')
       ? undefined
       : json['request_count_updated']
   }
@@ -138,18 +138,18 @@ export function ConsumerToJSON(value?: Consumer | null): any {
     return null
   }
   return {
-    consumer_id: value.consumerId,
-    application_id: value.applicationId,
+    consumer_id: value.consumer_id,
+    application_id: value.application_id,
     metadata: ConsumerMetadataToJSON(value.metadata),
     connections:
       value.connections === undefined
         ? undefined
         : (value.connections as Array<any>).map(ConsumerConnectionsToJSON),
     services: value.services,
-    aggregated_request_count: value.aggregatedRequestCount,
-    request_counts: RequestCountAllocationToJSON(value.requestCounts),
+    aggregated_request_count: value.aggregated_request_count,
+    request_counts: RequestCountAllocationToJSON(value.request_counts),
     created: value.created,
     modified: value.modified,
-    request_count_updated: value.requestCountUpdated
+    request_count_updated: value.request_count_updated
   }
 }
