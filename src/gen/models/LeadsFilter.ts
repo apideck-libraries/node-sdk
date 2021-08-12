@@ -33,13 +33,13 @@ export interface LeadsFilter {
    * @type {string}
    * @memberof LeadsFilter
    */
-  firstName?: string
+  first_name?: string
   /**
    * Last name of the lead to filter on
    * @type {string}
    * @memberof LeadsFilter
    */
-  lastName?: string
+  last_name?: string
   /**
    * E-mail of the lead to filter on
    * @type {string}
@@ -58,8 +58,8 @@ export function LeadsFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean
   }
   return {
     name: !exists(json, 'name') ? undefined : json['name'],
-    firstName: !exists(json, 'first_name') ? undefined : json['first_name'],
-    lastName: !exists(json, 'last_name') ? undefined : json['last_name'],
+    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     email: !exists(json, 'email') ? undefined : json['email']
   }
 }
@@ -73,8 +73,8 @@ export function LeadsFilterToJSON(value?: LeadsFilter | null): any {
   }
   return {
     name: value.name,
-    first_name: value.firstName,
-    last_name: value.lastName,
+    first_name: value.first_name,
+    last_name: value.last_name,
     email: value.email
   }
 }

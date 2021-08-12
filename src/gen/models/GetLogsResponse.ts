@@ -31,7 +31,7 @@ export interface GetLogsResponse {
    * @type {number}
    * @memberof GetLogsResponse
    */
-  statusCode: number
+  status_code: number
   /**
    * HTTP Response Status
    * @type {string}
@@ -70,7 +70,7 @@ export function GetLogsResponseFromJSONTyped(
     return json
   }
   return {
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     status: json['status'],
     data: (json['data'] as Array<any>).map(LogFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
@@ -86,7 +86,7 @@ export function GetLogsResponseToJSON(value?: GetLogsResponse | null): any {
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     status: value.status,
     data: (value.data as Array<any>).map(LogToJSON),
     meta: MetaToJSON(value.meta),

@@ -27,25 +27,25 @@ export interface SessionRequestTheme {
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  vaultName?: string
+  vault_name?: string
   /**
    *
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  primaryColor?: string
+  primary_color?: string
   /**
    *
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  sidepanelBackgroundColor?: string
+  sidepanel_background_color?: string
   /**
    *
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  sidepanelTextColor?: string
+  sidepanel_text_color?: string
   /**
    *
    * @type {string}
@@ -57,13 +57,13 @@ export interface SessionRequestTheme {
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  termsUrl?: string
+  terms_url?: string
   /**
    *
    * @type {string}
    * @memberof SessionRequestTheme
    */
-  privacyUrl?: string
+  privacy_url?: string
 }
 
 export function SessionRequestThemeFromJSON(json: any): SessionRequestTheme {
@@ -78,17 +78,17 @@ export function SessionRequestThemeFromJSONTyped(
     return json
   }
   return {
-    vaultName: !exists(json, 'vault_name') ? undefined : json['vault_name'],
-    primaryColor: !exists(json, 'primary_color') ? undefined : json['primary_color'],
-    sidepanelBackgroundColor: !exists(json, 'sidepanel_background_color')
+    vault_name: !exists(json, 'vault_name') ? undefined : json['vault_name'],
+    primary_color: !exists(json, 'primary_color') ? undefined : json['primary_color'],
+    sidepanel_background_color: !exists(json, 'sidepanel_background_color')
       ? undefined
       : json['sidepanel_background_color'],
-    sidepanelTextColor: !exists(json, 'sidepanel_text_color')
+    sidepanel_text_color: !exists(json, 'sidepanel_text_color')
       ? undefined
       : json['sidepanel_text_color'],
     favicon: !exists(json, 'favicon') ? undefined : json['favicon'],
-    termsUrl: !exists(json, 'terms_url') ? undefined : json['terms_url'],
-    privacyUrl: !exists(json, 'privacy_url') ? undefined : json['privacy_url']
+    terms_url: !exists(json, 'terms_url') ? undefined : json['terms_url'],
+    privacy_url: !exists(json, 'privacy_url') ? undefined : json['privacy_url']
   }
 }
 
@@ -100,12 +100,12 @@ export function SessionRequestThemeToJSON(value?: SessionRequestTheme | null): a
     return null
   }
   return {
-    vault_name: value.vaultName,
-    primary_color: value.primaryColor,
-    sidepanel_background_color: value.sidepanelBackgroundColor,
-    sidepanel_text_color: value.sidepanelTextColor,
+    vault_name: value.vault_name,
+    primary_color: value.primary_color,
+    sidepanel_background_color: value.sidepanel_background_color,
+    sidepanel_text_color: value.sidepanel_text_color,
     favicon: value.favicon,
-    terms_url: value.termsUrl,
-    privacy_url: value.privacyUrl
+    terms_url: value.terms_url,
+    privacy_url: value.privacy_url
   }
 }

@@ -55,7 +55,7 @@ export interface ConnectionDefaults {
  * @enum {string}
  */
 export enum ConnectionDefaultsTarget {
-  customFields = 'custom_fields',
+  custom_fields = 'custom_fields',
   resource = 'resource'
 }
 

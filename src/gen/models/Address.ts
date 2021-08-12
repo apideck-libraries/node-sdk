@@ -39,6 +39,12 @@ export interface Address {
    * @type {string}
    * @memberof Address
    */
+  string?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
   name?: string | null
   /**
    * Line 1 of the address e.g. number, street, suite, apt #, etc.
@@ -69,7 +75,7 @@ export interface Address {
    * @type {string}
    * @memberof Address
    */
-  postalCode?: string | null
+  postal_code?: string | null
   /**
    * country code according to ISO 3166-1 alpha-2.
    * @type {string}
@@ -115,12 +121,13 @@ export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     type: !exists(json, 'type') ? undefined : json['type'],
+    string: !exists(json, 'string') ? undefined : json['string'],
     name: !exists(json, 'name') ? undefined : json['name'],
     line1: !exists(json, 'line1') ? undefined : json['line1'],
     line2: !exists(json, 'line2') ? undefined : json['line2'],
     city: !exists(json, 'city') ? undefined : json['city'],
     state: !exists(json, 'state') ? undefined : json['state'],
-    postalCode: !exists(json, 'postal_code') ? undefined : json['postal_code'],
+    postal_code: !exists(json, 'postal_code') ? undefined : json['postal_code'],
     country: !exists(json, 'country') ? undefined : json['country'],
     latitude: !exists(json, 'latitude') ? undefined : json['latitude'],
     longitude: !exists(json, 'longitude') ? undefined : json['longitude']
@@ -137,12 +144,13 @@ export function AddressToJSON(value?: Address | null): any {
   return {
     id: value.id,
     type: value.type,
+    string: value.string,
     name: value.name,
     line1: value.line1,
     line2: value.line2,
     city: value.city,
     state: value.state,
-    postal_code: value.postalCode,
+    postal_code: value.postal_code,
     country: value.country,
     latitude: value.latitude,
     longitude: value.longitude

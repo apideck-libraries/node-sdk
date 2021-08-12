@@ -28,7 +28,7 @@ export interface GetConnectionsResponse {
    * @type {number}
    * @memberof GetConnectionsResponse
    */
-  statusCode: number
+  status_code: number
   /**
    * HTTP Response Status
    * @type {string}
@@ -55,7 +55,7 @@ export function GetConnectionsResponseFromJSONTyped(
     return json
   }
   return {
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     status: json['status'],
     data: (json['data'] as Array<any>).map(ConnectionFromJSON)
   }
@@ -69,7 +69,7 @@ export function GetConnectionsResponseToJSON(value?: GetConnectionsResponse | nu
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     status: value.status,
     data: (value.data as Array<any>).map(ConnectionToJSON)
   }

@@ -27,7 +27,7 @@ export interface Session {
    * @type {string}
    * @memberof Session
    */
-  sessionUri?: string
+  session_uri?: string
 }
 
 export function SessionFromJSON(json: any): Session {
@@ -39,7 +39,7 @@ export function SessionFromJSONTyped(json: any, ignoreDiscriminator: boolean): S
     return json
   }
   return {
-    sessionUri: !exists(json, 'session_uri') ? undefined : json['session_uri']
+    session_uri: !exists(json, 'session_uri') ? undefined : json['session_uri']
   }
 }
 
@@ -51,6 +51,6 @@ export function SessionToJSON(value?: Session | null): any {
     return null
   }
   return {
-    session_uri: value.sessionUri
+    session_uri: value.session_uri
   }
 }

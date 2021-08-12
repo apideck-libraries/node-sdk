@@ -15,10 +15,15 @@ Name | Type | Description | Notes
 `currency` | **string** |  | [optional] 
 `status` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
-`annualRevenue` | **string** | Annual Revenue | [optional] 
+`annualRevenue` | **string** | Annual revenue | [optional] 
 `numberOfEmployees` | **string** | Number of employees | [optional] 
 `industry` | **string** | Industry | [optional] 
 `ownership` | **string** | Ownership | [optional] 
+`salesTaxNumber` | **string** |  | [optional] 
+`payeeNumber` | **string** |  | [optional] 
+`abnOrTfn` | **string** | An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia. | [optional] 
+`abnBranch` | **string** | An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity. | [optional] 
+`acn` | **string** | The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank. | [optional] 
 `parentId` | **string** | Parent ID | [optional] 
 `bankAccounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
@@ -28,6 +33,7 @@ Name | Type | Description | Notes
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `customFields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
+`readOnly` | **boolean** |  | [optional] 
 `lastActivityAt` | **Date** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updatedBy` | **string** |  | [optional] 
@@ -55,6 +61,11 @@ Name | Type | Description | Notes
 
 
 
+
+
+
+
+
 * [`BankAccount`](BankAccount.md)
 * [`Website`](Website.md)
 * [`Address`](Address.md)
@@ -63,6 +74,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
 
 
 

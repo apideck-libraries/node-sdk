@@ -53,7 +53,7 @@ export interface Pipeline {
    * @type {number}
    * @memberof Pipeline
    */
-  displayOrder?: number
+  display_order?: number
   /**
    *
    * @type {Array<PipelineStages>}
@@ -65,13 +65,13 @@ export interface Pipeline {
    * @type {string}
    * @memberof Pipeline
    */
-  readonly updatedAt?: string
+  readonly updated_at?: string
   /**
    *
    * @type {string}
    * @memberof Pipeline
    */
-  readonly createdAt?: string
+  readonly created_at?: string
 }
 
 export function PipelineFromJSON(json: any): Pipeline {
@@ -87,12 +87,12 @@ export function PipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     id: !exists(json, 'id') ? undefined : json['id'],
     currency: !exists(json, 'currency') ? undefined : json['currency'],
     archived: !exists(json, 'archived') ? undefined : json['archived'],
-    displayOrder: !exists(json, 'display_order') ? undefined : json['display_order'],
+    display_order: !exists(json, 'display_order') ? undefined : json['display_order'],
     stages: !exists(json, 'stages')
       ? undefined
       : (json['stages'] as Array<any>).map(PipelineStagesFromJSON),
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at']
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
 }
 
@@ -108,7 +108,7 @@ export function PipelineToJSON(value?: Pipeline | null): any {
     id: value.id,
     currency: value.currency,
     archived: value.archived,
-    display_order: value.displayOrder,
+    display_order: value.display_order,
     stages:
       value.stages === undefined
         ? undefined

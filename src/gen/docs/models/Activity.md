@@ -76,7 +76,7 @@ Name | Type | Description | Notes
 
 
 <a name="ActivityShowAs"></a>
-## Enum: Activity.showAs
+## Enum: Activity.show_as
 
 
 * `free` (value: `'free'`)

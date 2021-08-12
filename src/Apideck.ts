@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { CrmApi, LeadApi, VaultApi } from './gen/'
+import { AccountingApi, CrmApi, LeadApi, VaultApi } from './gen/'
 import { Configuration } from './gen/runtime'
 
 const isNode =
@@ -14,6 +14,7 @@ export type ApideckConfiguration = {
 }
 
 export class Apideck {
+  readonly accounting: AccountingApi
   readonly crm: CrmApi
   readonly lead: LeadApi
   readonly vault: VaultApi
@@ -35,6 +36,7 @@ export class Apideck {
       }
     })
 
+    this.accounting = new AccountingApi(configuration)
     this.crm = new CrmApi(configuration)
     this.lead = new LeadApi(configuration)
     this.vault = new VaultApi(configuration)

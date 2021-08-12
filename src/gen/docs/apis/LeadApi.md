@@ -59,8 +59,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -92,6 +91,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -136,13 +136,14 @@ const params = {
   }
 }
 
-apideck.lead.leadsAdd(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.lead.leadsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -198,19 +199,19 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {}
 
-apideck.lead.leadsAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.lead.leadsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -265,21 +266,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.lead.leadsDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.lead.leadsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -334,21 +335,21 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
   id: 'id_example'
 }
 
-apideck.lead.leadsOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.lead.leadsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -404,8 +405,7 @@ import { Apideck } from '@apideck/node';
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
   appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  serviceId: 'REPLACE_WITH_SERVICE_ID'
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
 });
 
 const params = {
@@ -438,6 +438,7 @@ const params = {
       {
         id: '123',
         type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
@@ -482,13 +483,14 @@ const params = {
   }
 }
 
-apideck.lead.leadsUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.lead.leadsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 

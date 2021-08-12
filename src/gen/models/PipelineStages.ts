@@ -45,7 +45,7 @@ export interface PipelineStages {
    * @type {number}
    * @memberof PipelineStages
    */
-  displayOrder?: number
+  display_order?: number
 }
 
 export function PipelineStagesFromJSON(json: any): PipelineStages {
@@ -63,7 +63,7 @@ export function PipelineStagesFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     value: !exists(json, 'value') ? undefined : json['value'],
-    displayOrder: !exists(json, 'display_order') ? undefined : json['display_order']
+    display_order: !exists(json, 'display_order') ? undefined : json['display_order']
   }
 }
 
@@ -77,6 +77,6 @@ export function PipelineStagesToJSON(value?: PipelineStages | null): any {
   return {
     name: value.name,
     value: value.value,
-    display_order: value.displayOrder
+    display_order: value.display_order
   }
 }

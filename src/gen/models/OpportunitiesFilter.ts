@@ -39,13 +39,13 @@ export interface OpportunitiesFilter {
    * @type {number}
    * @memberof OpportunitiesFilter
    */
-  monetaryAmount?: number
+  monetary_amount?: number
   /**
    * Win probability to filter on
    * @type {number}
    * @memberof OpportunitiesFilter
    */
-  winProbability?: number
+  win_probability?: number
 }
 
 export function OpportunitiesFilterFromJSON(json: any): OpportunitiesFilter {
@@ -62,8 +62,8 @@ export function OpportunitiesFilterFromJSONTyped(
   return {
     title: !exists(json, 'title') ? undefined : json['title'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    monetaryAmount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
-    winProbability: !exists(json, 'win_probability') ? undefined : json['win_probability']
+    monetary_amount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
+    win_probability: !exists(json, 'win_probability') ? undefined : json['win_probability']
   }
 }
 
@@ -77,7 +77,7 @@ export function OpportunitiesFilterToJSON(value?: OpportunitiesFilter | null): a
   return {
     title: value.title,
     status: value.status,
-    monetary_amount: value.monetaryAmount,
-    win_probability: value.winProbability
+    monetary_amount: value.monetary_amount,
+    win_probability: value.win_probability
   }
 }

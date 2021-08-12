@@ -47,43 +47,43 @@ export interface Contact {
    * @type {string}
    * @memberof Contact
    */
-  ownerId?: string | null
+  owner_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  companyId?: string | null
+  company_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  companyName?: string | null
+  company_name?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  leadId?: string | null
+  lead_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  firstName?: string | null
+  first_name?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  middleName?: string | null
+  middle_name?: string | null
   /**
    *
    * @type {string}
    * @memberof Contact
    */
-  lastName?: string | null
+  last_name?: string | null
   /**
    *
    * @type {string}
@@ -137,7 +137,7 @@ export interface Contact {
    * @type {string}
    * @memberof Contact
    */
-  leadSource?: string | null
+  lead_source?: string | null
   /**
    *
    * @type {string}
@@ -173,13 +173,13 @@ export interface Contact {
    * @type {Array<SocialLink>}
    * @memberof Contact
    */
-  socialLinks?: Array<SocialLink>
+  social_links?: Array<SocialLink>
   /**
    *
    * @type {Array<PhoneNumber>}
    * @memberof Contact
    */
-  phoneNumbers?: Array<PhoneNumber>
+  phone_numbers?: Array<PhoneNumber>
   /**
    *
    * @type {Array<Email>}
@@ -191,7 +191,7 @@ export interface Contact {
    * @type {Array<CustomField>}
    * @memberof Contact
    */
-  customFields?: Array<CustomField>
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {Tags}
@@ -203,31 +203,31 @@ export interface Contact {
    * @type {Date}
    * @memberof Contact
    */
-  readonly firstCallAt?: Date | null
+  readonly first_call_at?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Contact
    */
-  readonly firstEmailAt?: Date | null
+  readonly first_email_at?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Contact
    */
-  readonly lastActivityAt?: Date | null
+  readonly last_activity_at?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Contact
    */
-  readonly updatedAt?: Date
+  readonly updated_at?: Date
   /**
    *
    * @type {Date}
    * @memberof Contact
    */
-  readonly createdAt?: Date
+  readonly created_at?: Date
 }
 
 /**
@@ -251,13 +251,13 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
   return {
     name: json['name'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    companyId: !exists(json, 'company_id') ? undefined : json['company_id'],
-    companyName: !exists(json, 'company_name') ? undefined : json['company_name'],
-    leadId: !exists(json, 'lead_id') ? undefined : json['lead_id'],
-    firstName: !exists(json, 'first_name') ? undefined : json['first_name'],
-    middleName: !exists(json, 'middle_name') ? undefined : json['middle_name'],
-    lastName: !exists(json, 'last_name') ? undefined : json['last_name'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
+    lead_id: !exists(json, 'lead_id') ? undefined : json['lead_id'],
+    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    middle_name: !exists(json, 'middle_name') ? undefined : json['middle_name'],
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     prefix: !exists(json, 'prefix') ? undefined : json['prefix'],
     suffix: !exists(json, 'suffix') ? undefined : json['suffix'],
     title: !exists(json, 'title') ? undefined : json['title'],
@@ -266,7 +266,7 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
     gender: !exists(json, 'gender') ? undefined : json['gender'],
     birthday: !exists(json, 'birthday') ? undefined : json['birthday'],
     image: !exists(json, 'image') ? undefined : json['image'],
-    leadSource: !exists(json, 'lead_source') ? undefined : json['lead_source'],
+    lead_source: !exists(json, 'lead_source') ? undefined : json['lead_source'],
     fax: !exists(json, 'fax') ? undefined : json['fax'],
     description: !exists(json, 'description') ? undefined : json['description'],
     status: !exists(json, 'status') ? undefined : json['status'],
@@ -276,34 +276,34 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
     addresses: !exists(json, 'addresses')
       ? undefined
       : (json['addresses'] as Array<any>).map(AddressFromJSON),
-    socialLinks: !exists(json, 'social_links')
+    social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
-    phoneNumbers: !exists(json, 'phone_numbers')
+    phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
     emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
-    customFields: !exists(json, 'custom_fields')
+    custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
-    firstCallAt: !exists(json, 'first_call_at')
+    first_call_at: !exists(json, 'first_call_at')
       ? undefined
       : json['first_call_at'] === null
       ? null
       : new Date(json['first_call_at']),
-    firstEmailAt: !exists(json, 'first_email_at')
+    first_email_at: !exists(json, 'first_email_at')
       ? undefined
       : json['first_email_at'] === null
       ? null
       : new Date(json['first_email_at']),
-    lastActivityAt: !exists(json, 'last_activity_at')
+    last_activity_at: !exists(json, 'last_activity_at')
       ? undefined
       : json['last_activity_at'] === null
       ? null
       : new Date(json['last_activity_at']),
-    updatedAt: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    createdAt: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -316,13 +316,13 @@ export function ContactToJSON(value?: Contact | null): any {
   }
   return {
     name: value.name,
-    owner_id: value.ownerId,
-    company_id: value.companyId,
-    company_name: value.companyName,
-    lead_id: value.leadId,
-    first_name: value.firstName,
-    middle_name: value.middleName,
-    last_name: value.lastName,
+    owner_id: value.owner_id,
+    company_id: value.company_id,
+    company_name: value.company_name,
+    lead_id: value.lead_id,
+    first_name: value.first_name,
+    middle_name: value.middle_name,
+    last_name: value.last_name,
     prefix: value.prefix,
     suffix: value.suffix,
     title: value.title,
@@ -331,7 +331,7 @@ export function ContactToJSON(value?: Contact | null): any {
     gender: value.gender,
     birthday: value.birthday,
     image: value.image,
-    lead_source: value.leadSource,
+    lead_source: value.lead_source,
     fax: value.fax,
     description: value.description,
     status: value.status,
@@ -342,18 +342,18 @@ export function ContactToJSON(value?: Contact | null): any {
         ? undefined
         : (value.addresses as Array<any>).map(AddressToJSON),
     social_links:
-      value.socialLinks === undefined
+      value.social_links === undefined
         ? undefined
-        : (value.socialLinks as Array<any>).map(SocialLinkToJSON),
+        : (value.social_links as Array<any>).map(SocialLinkToJSON),
     phone_numbers:
-      value.phoneNumbers === undefined
+      value.phone_numbers === undefined
         ? undefined
-        : (value.phoneNumbers as Array<any>).map(PhoneNumberToJSON),
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
     custom_fields:
-      value.customFields === undefined
+      value.custom_fields === undefined
         ? undefined
-        : (value.customFields as Array<any>).map(CustomFieldToJSON),
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     tags: TagsToJSON(value.tags)
   }
 }

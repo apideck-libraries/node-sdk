@@ -38,13 +38,13 @@ export interface GetConsumersResponseData {
    * @type {string}
    * @memberof GetConsumersResponseData
    */
-  consumerId?: string
+  consumer_id?: string
   /**
    *
    * @type {string}
    * @memberof GetConsumersResponseData
    */
-  applicationId?: string
+  application_id?: string
   /**
    *
    * @type {ConsumerMetadata}
@@ -56,13 +56,13 @@ export interface GetConsumersResponseData {
    * @type {number}
    * @memberof GetConsumersResponseData
    */
-  aggregatedRequestCount?: number
+  aggregated_request_count?: number
   /**
    *
    * @type {RequestCountAllocation}
    * @memberof GetConsumersResponseData
    */
-  requestCounts?: RequestCountAllocation
+  request_counts?: RequestCountAllocation
   /**
    *
    * @type {string}
@@ -80,7 +80,7 @@ export interface GetConsumersResponseData {
    * @type {string}
    * @memberof GetConsumersResponseData
    */
-  requestCountUpdated?: string
+  request_count_updated?: string
   /**
    *
    * @type {Array<string>}
@@ -101,18 +101,18 @@ export function GetConsumersResponseDataFromJSONTyped(
     return json
   }
   return {
-    consumerId: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
-    applicationId: !exists(json, 'application_id') ? undefined : json['application_id'],
+    consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
+    application_id: !exists(json, 'application_id') ? undefined : json['application_id'],
     metadata: !exists(json, 'metadata') ? undefined : ConsumerMetadataFromJSON(json['metadata']),
-    aggregatedRequestCount: !exists(json, 'aggregated_request_count')
+    aggregated_request_count: !exists(json, 'aggregated_request_count')
       ? undefined
       : json['aggregated_request_count'],
-    requestCounts: !exists(json, 'request_counts')
+    request_counts: !exists(json, 'request_counts')
       ? undefined
       : RequestCountAllocationFromJSON(json['request_counts']),
     created: !exists(json, 'created') ? undefined : json['created'],
     modified: !exists(json, 'modified') ? undefined : json['modified'],
-    requestCountUpdated: !exists(json, 'request_count_updated')
+    request_count_updated: !exists(json, 'request_count_updated')
       ? undefined
       : json['request_count_updated'],
     services: !exists(json, 'services') ? undefined : json['services']
@@ -127,14 +127,14 @@ export function GetConsumersResponseDataToJSON(value?: GetConsumersResponseData 
     return null
   }
   return {
-    consumer_id: value.consumerId,
-    application_id: value.applicationId,
+    consumer_id: value.consumer_id,
+    application_id: value.application_id,
     metadata: ConsumerMetadataToJSON(value.metadata),
-    aggregated_request_count: value.aggregatedRequestCount,
-    request_counts: RequestCountAllocationToJSON(value.requestCounts),
+    aggregated_request_count: value.aggregated_request_count,
+    request_counts: RequestCountAllocationToJSON(value.request_counts),
     created: value.created,
     modified: value.modified,
-    request_count_updated: value.requestCountUpdated,
+    request_count_updated: value.request_count_updated,
     services: value.services
   }
 }

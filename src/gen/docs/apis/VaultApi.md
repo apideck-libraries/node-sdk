@@ -68,13 +68,14 @@ const apideck = new Apideck({
 
 const params = {}
 
-apideck.vault.connectionsAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.connectionsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -136,13 +137,14 @@ const params = {
   unifiedApi: 'crm'
 }
 
-apideck.vault.connectionsDelete(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.connectionsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -206,13 +208,14 @@ const params = {
   resource: 'leads'
 }
 
-apideck.vault.connectionsGetSettings(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.connectionsGetSettings(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -275,13 +278,14 @@ const params = {
   unifiedApi: 'crm'
 }
 
-apideck.vault.connectionsUpdate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.connectionsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -416,13 +420,14 @@ const params = {
   }
 }
 
-apideck.vault.connectionsUpdateSettings(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.connectionsUpdateSettings(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -479,13 +484,14 @@ const apideck = new Apideck({
 
 const params = {}
 
-apideck.vault.consumersAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.consumersAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -543,13 +549,14 @@ const params = {
   consumerId: 'test_user_id'
 }
 
-apideck.vault.consumersOne(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.consumersOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -609,13 +616,14 @@ const params = {
   consumerId: 'test_user_id'
 }
 
-apideck.vault.consumersRequestCounts(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.consumersRequestCounts(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -675,13 +683,14 @@ const apideck = new Apideck({
 
 const params = {}
 
-apideck.vault.logsAll(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.logsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 
@@ -764,13 +773,14 @@ const params = {
   }
 }
 
-apideck.vault.sessionsCreate(params).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-  return data;
-}).catch((error) => {
-  console.error(error);
-  return error.json();
-})
+try {
+  const { data } = await apideck.vault.sessionsCreate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
 
 ```
 

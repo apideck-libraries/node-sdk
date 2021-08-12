@@ -28,7 +28,7 @@ export interface GetConsumerResponse {
    * @type {number}
    * @memberof GetConsumerResponse
    */
-  statusCode: number
+  status_code: number
   /**
    * HTTP Response Status
    * @type {string}
@@ -55,7 +55,7 @@ export function GetConsumerResponseFromJSONTyped(
     return json
   }
   return {
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     status: json['status'],
     data: ConsumerFromJSON(json['data'])
   }
@@ -69,7 +69,7 @@ export function GetConsumerResponseToJSON(value?: GetConsumerResponse | null): a
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     status: value.status,
     data: ConsumerToJSON(value.data)
   }

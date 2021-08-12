@@ -53,19 +53,19 @@ export interface ConsumerConnections {
    * @type {string}
    * @memberof ConsumerConnections
    */
-  serviceId?: string
+  service_id?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerConnections
    */
-  unifiedApi?: string
+  unified_api?: string
   /**
    *
    * @type {AuthType}
    * @memberof ConsumerConnections
    */
-  authType?: AuthType
+  auth_type?: AuthType
   /**
    *
    * @type {boolean}
@@ -77,13 +77,13 @@ export interface ConsumerConnections {
    * @type {string}
    * @memberof ConsumerConnections
    */
-  createdAt?: string
+  created_at?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerConnections
    */
-  updatedAt?: string | null
+  updated_at?: string | null
   /**
    *
    * @type {string}
@@ -120,12 +120,12 @@ export function ConsumerConnectionsFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     icon: !exists(json, 'icon') ? undefined : json['icon'],
     logo: !exists(json, 'logo') ? undefined : json['logo'],
-    serviceId: !exists(json, 'service_id') ? undefined : json['service_id'],
-    unifiedApi: !exists(json, 'unified_api') ? undefined : json['unified_api'],
-    authType: !exists(json, 'auth_type') ? undefined : AuthTypeFromJSON(json['auth_type']),
+    service_id: !exists(json, 'service_id') ? undefined : json['service_id'],
+    unified_api: !exists(json, 'unified_api') ? undefined : json['unified_api'],
+    auth_type: !exists(json, 'auth_type') ? undefined : AuthTypeFromJSON(json['auth_type']),
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at'],
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
     state: !exists(json, 'state') ? undefined : json['state']
   }
 }
@@ -141,12 +141,12 @@ export function ConsumerConnectionsToJSON(value?: ConsumerConnections | null): a
     name: value.name,
     icon: value.icon,
     logo: value.logo,
-    service_id: value.serviceId,
-    unified_api: value.unifiedApi,
-    auth_type: AuthTypeToJSON(value.authType),
+    service_id: value.service_id,
+    unified_api: value.unified_api,
+    auth_type: AuthTypeToJSON(value.auth_type),
     enabled: value.enabled,
-    created_at: value.createdAt,
-    updated_at: value.updatedAt,
+    created_at: value.created_at,
+    updated_at: value.updated_at,
     state: value.state
   }
 }

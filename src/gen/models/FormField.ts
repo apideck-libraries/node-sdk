@@ -65,7 +65,7 @@ export interface FormField {
    * @type {boolean}
    * @memberof FormField
    */
-  customField?: boolean
+  custom_field?: boolean
   /**
    *
    * @type {boolean}
@@ -92,8 +92,8 @@ export enum FormFieldType {
   url = 'url',
   textarea = 'textarea',
   select = 'select',
-  filteredSelect = 'filtered-select',
-  multiSelect = 'multi-select',
+  filtered_select = 'filtered-select',
+  multi_select = 'multi-select',
   datetime = 'datetime',
   date = 'date',
   time = 'time',
@@ -115,7 +115,7 @@ export function FormFieldFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     description: !exists(json, 'description') ? undefined : json['description'],
     type: !exists(json, 'type') ? undefined : json['type'],
     required: !exists(json, 'required') ? undefined : json['required'],
-    customField: !exists(json, 'custom_field') ? undefined : json['custom_field'],
+    custom_field: !exists(json, 'custom_field') ? undefined : json['custom_field'],
     disabled: !exists(json, 'disabled') ? undefined : json['disabled'],
     options: !exists(json, 'options')
       ? undefined
@@ -137,7 +137,7 @@ export function FormFieldToJSON(value?: FormField | null): any {
     description: value.description,
     type: value.type,
     required: value.required,
-    custom_field: value.customField,
+    custom_field: value.custom_field,
     disabled: value.disabled,
     options:
       value.options === undefined

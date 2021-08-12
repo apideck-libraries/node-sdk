@@ -43,13 +43,13 @@ export interface SessionRequest {
    * @type {string}
    * @memberof SessionRequest
    */
-  redirectUri?: string
+  redirect_uri?: string
   /**
    *
    * @type {ConsumerMetadata}
    * @memberof SessionRequest
    */
-  consumerMetadata?: ConsumerMetadata
+  consumer_metadata?: ConsumerMetadata
   /**
    *
    * @type {SessionRequestTheme}
@@ -76,8 +76,8 @@ export function SessionRequestFromJSONTyped(
     return json
   }
   return {
-    redirectUri: !exists(json, 'redirect_uri') ? undefined : json['redirect_uri'],
-    consumerMetadata: !exists(json, 'consumer_metadata')
+    redirect_uri: !exists(json, 'redirect_uri') ? undefined : json['redirect_uri'],
+    consumer_metadata: !exists(json, 'consumer_metadata')
       ? undefined
       : ConsumerMetadataFromJSON(json['consumer_metadata']),
     theme: !exists(json, 'theme') ? undefined : SessionRequestThemeFromJSON(json['theme']),
@@ -95,8 +95,8 @@ export function SessionRequestToJSON(value?: SessionRequest | null): any {
     return null
   }
   return {
-    redirect_uri: value.redirectUri,
-    consumer_metadata: ConsumerMetadataToJSON(value.consumerMetadata),
+    redirect_uri: value.redirect_uri,
+    consumer_metadata: ConsumerMetadataToJSON(value.consumer_metadata),
     theme: SessionRequestThemeToJSON(value.theme),
     settings: SessionRequestSettingsToJSON(value.settings)
   }

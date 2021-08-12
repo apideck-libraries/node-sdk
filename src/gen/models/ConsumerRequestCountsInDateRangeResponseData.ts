@@ -33,37 +33,37 @@ export interface ConsumerRequestCountsInDateRangeResponseData {
    * @type {string}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  applicationId?: string
+  application_id?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  consumerId?: string
+  consumer_id?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  startDatetime?: string
+  start_datetime?: string
   /**
    *
    * @type {string}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  endDatetime?: string
+  end_datetime?: string
   /**
    *
    * @type {number}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  aggregatedRequestCount?: number
+  aggregated_request_count?: number
   /**
    *
    * @type {RequestCountAllocation}
    * @memberof ConsumerRequestCountsInDateRangeResponseData
    */
-  requestCounts?: RequestCountAllocation
+  request_counts?: RequestCountAllocation
 }
 
 export function ConsumerRequestCountsInDateRangeResponseDataFromJSON(
@@ -80,14 +80,14 @@ export function ConsumerRequestCountsInDateRangeResponseDataFromJSONTyped(
     return json
   }
   return {
-    applicationId: !exists(json, 'application_id') ? undefined : json['application_id'],
-    consumerId: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
-    startDatetime: !exists(json, 'start_datetime') ? undefined : json['start_datetime'],
-    endDatetime: !exists(json, 'end_datetime') ? undefined : json['end_datetime'],
-    aggregatedRequestCount: !exists(json, 'aggregated_request_count')
+    application_id: !exists(json, 'application_id') ? undefined : json['application_id'],
+    consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
+    start_datetime: !exists(json, 'start_datetime') ? undefined : json['start_datetime'],
+    end_datetime: !exists(json, 'end_datetime') ? undefined : json['end_datetime'],
+    aggregated_request_count: !exists(json, 'aggregated_request_count')
       ? undefined
       : json['aggregated_request_count'],
-    requestCounts: !exists(json, 'request_counts')
+    request_counts: !exists(json, 'request_counts')
       ? undefined
       : RequestCountAllocationFromJSON(json['request_counts'])
   }
@@ -103,11 +103,11 @@ export function ConsumerRequestCountsInDateRangeResponseDataToJSON(
     return null
   }
   return {
-    application_id: value.applicationId,
-    consumer_id: value.consumerId,
-    start_datetime: value.startDatetime,
-    end_datetime: value.endDatetime,
-    aggregated_request_count: value.aggregatedRequestCount,
-    request_counts: RequestCountAllocationToJSON(value.requestCounts)
+    application_id: value.application_id,
+    consumer_id: value.consumer_id,
+    start_datetime: value.start_datetime,
+    end_datetime: value.end_datetime,
+    aggregated_request_count: value.aggregated_request_count,
+    request_counts: RequestCountAllocationToJSON(value.request_counts)
   }
 }

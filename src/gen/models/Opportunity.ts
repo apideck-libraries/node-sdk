@@ -36,7 +36,7 @@ export interface Opportunity {
    * @type {string}
    * @memberof Opportunity
    */
-  primaryContactId: string | null
+  primary_contact_id: string | null
   /**
    *
    * @type {string}
@@ -60,7 +60,7 @@ export interface Opportunity {
    * @type {number}
    * @memberof Opportunity
    */
-  monetaryAmount?: number | null
+  monetary_amount?: number | null
   /**
    *
    * @type {string}
@@ -72,97 +72,97 @@ export interface Opportunity {
    * @type {number}
    * @memberof Opportunity
    */
-  winProbability?: number | null
+  win_probability?: number | null
   /**
    * Expected Revenue
    * @type {number}
    * @memberof Opportunity
    */
-  readonly expectedRevenue?: number | null
+  readonly expected_revenue?: number | null
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  closeDate?: Date | null
+  close_date?: Date | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  lossReasonId?: string | null
+  loss_reason_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  lossReason?: string | null
+  loss_reason?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  wonReasonId?: string | null
+  won_reason_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  wonReason?: string | null
+  won_reason?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  pipelineId?: string | null
+  pipeline_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  pipelineStageId?: string | null
+  pipeline_stage_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  sourceId?: string | null
+  source_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  leadId?: string | null
+  lead_id?: string | null
   /**
    * Lead source
    * @type {string}
    * @memberof Opportunity
    */
-  leadSource?: string | null
+  lead_source?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  contactId?: string | null
+  contact_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  companyId?: string | null
+  company_id?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  companyName?: string | null
+  company_name?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  ownerId?: string | null
+  owner_id?: string | null
   /**
    *
    * @type {string}
@@ -180,7 +180,7 @@ export interface Opportunity {
    * @type {string}
    * @memberof Opportunity
    */
-  statusId?: string | null
+  status_id?: string | null
   /**
    *
    * @type {Tags}
@@ -192,25 +192,25 @@ export interface Opportunity {
    * @type {number}
    * @memberof Opportunity
    */
-  readonly interactionCount?: number | null
+  readonly interaction_count?: number | null
   /**
    *
    * @type {Array<CustomField>}
    * @memberof Opportunity
    */
-  customFields?: Array<CustomField>
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  stageLastChangedAt?: Date | null
+  stage_last_changed_at?: Date | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  readonly lastActivityAt?: string | null
+  readonly last_activity_at?: string | null
   /**
    *
    * @type {boolean}
@@ -222,43 +222,43 @@ export interface Opportunity {
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly dateStageChanged?: Date | null
+  readonly date_stage_changed?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly dateLastContacted?: Date | null
+  readonly date_last_contacted?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly dateLeadCreated?: Date | null
+  readonly date_lead_created?: Date | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  readonly updatedBy?: string | null
+  readonly updated_by?: string | null
   /**
    *
    * @type {string}
    * @memberof Opportunity
    */
-  readonly createdBy?: string | null
+  readonly created_by?: string | null
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly updatedAt?: Date
+  readonly updated_at?: Date
   /**
    *
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly createdAt?: Date
+  readonly created_at?: Date
 }
 
 export function OpportunityFromJSON(json: any): Opportunity {
@@ -271,66 +271,66 @@ export function OpportunityFromJSONTyped(json: any, ignoreDiscriminator: boolean
   }
   return {
     title: json['title'],
-    primaryContactId: json['primary_contact_id'],
+    primary_contact_id: json['primary_contact_id'],
     id: !exists(json, 'id') ? undefined : json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
     type: !exists(json, 'type') ? undefined : json['type'],
-    monetaryAmount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
+    monetary_amount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
     currency: !exists(json, 'currency') ? undefined : json['currency'],
-    winProbability: !exists(json, 'win_probability') ? undefined : json['win_probability'],
-    expectedRevenue: !exists(json, 'expected_revenue') ? undefined : json['expected_revenue'],
-    closeDate: !exists(json, 'close_date')
+    win_probability: !exists(json, 'win_probability') ? undefined : json['win_probability'],
+    expected_revenue: !exists(json, 'expected_revenue') ? undefined : json['expected_revenue'],
+    close_date: !exists(json, 'close_date')
       ? undefined
       : json['close_date'] === null
       ? null
       : new Date(json['close_date']),
-    lossReasonId: !exists(json, 'loss_reason_id') ? undefined : json['loss_reason_id'],
-    lossReason: !exists(json, 'loss_reason') ? undefined : json['loss_reason'],
-    wonReasonId: !exists(json, 'won_reason_id') ? undefined : json['won_reason_id'],
-    wonReason: !exists(json, 'won_reason') ? undefined : json['won_reason'],
-    pipelineId: !exists(json, 'pipeline_id') ? undefined : json['pipeline_id'],
-    pipelineStageId: !exists(json, 'pipeline_stage_id') ? undefined : json['pipeline_stage_id'],
-    sourceId: !exists(json, 'source_id') ? undefined : json['source_id'],
-    leadId: !exists(json, 'lead_id') ? undefined : json['lead_id'],
-    leadSource: !exists(json, 'lead_source') ? undefined : json['lead_source'],
-    contactId: !exists(json, 'contact_id') ? undefined : json['contact_id'],
-    companyId: !exists(json, 'company_id') ? undefined : json['company_id'],
-    companyName: !exists(json, 'company_name') ? undefined : json['company_name'],
-    ownerId: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    loss_reason_id: !exists(json, 'loss_reason_id') ? undefined : json['loss_reason_id'],
+    loss_reason: !exists(json, 'loss_reason') ? undefined : json['loss_reason'],
+    won_reason_id: !exists(json, 'won_reason_id') ? undefined : json['won_reason_id'],
+    won_reason: !exists(json, 'won_reason') ? undefined : json['won_reason'],
+    pipeline_id: !exists(json, 'pipeline_id') ? undefined : json['pipeline_id'],
+    pipeline_stage_id: !exists(json, 'pipeline_stage_id') ? undefined : json['pipeline_stage_id'],
+    source_id: !exists(json, 'source_id') ? undefined : json['source_id'],
+    lead_id: !exists(json, 'lead_id') ? undefined : json['lead_id'],
+    lead_source: !exists(json, 'lead_source') ? undefined : json['lead_source'],
+    contact_id: !exists(json, 'contact_id') ? undefined : json['contact_id'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
     priority: !exists(json, 'priority') ? undefined : json['priority'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    statusId: !exists(json, 'status_id') ? undefined : json['status_id'],
+    status_id: !exists(json, 'status_id') ? undefined : json['status_id'],
     tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
-    interactionCount: !exists(json, 'interaction_count') ? undefined : json['interaction_count'],
-    customFields: !exists(json, 'custom_fields')
+    interaction_count: !exists(json, 'interaction_count') ? undefined : json['interaction_count'],
+    custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
-    stageLastChangedAt: !exists(json, 'stage_last_changed_at')
+    stage_last_changed_at: !exists(json, 'stage_last_changed_at')
       ? undefined
       : json['stage_last_changed_at'] === null
       ? null
       : new Date(json['stage_last_changed_at']),
-    lastActivityAt: !exists(json, 'last_activity_at') ? undefined : json['last_activity_at'],
+    last_activity_at: !exists(json, 'last_activity_at') ? undefined : json['last_activity_at'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
-    dateStageChanged: !exists(json, 'date_stage_changed')
+    date_stage_changed: !exists(json, 'date_stage_changed')
       ? undefined
       : json['date_stage_changed'] === null
       ? null
       : new Date(json['date_stage_changed']),
-    dateLastContacted: !exists(json, 'date_last_contacted')
+    date_last_contacted: !exists(json, 'date_last_contacted')
       ? undefined
       : json['date_last_contacted'] === null
       ? null
       : new Date(json['date_last_contacted']),
-    dateLeadCreated: !exists(json, 'date_lead_created')
+    date_lead_created: !exists(json, 'date_lead_created')
       ? undefined
       : json['date_lead_created'] === null
       ? null
       : new Date(json['date_lead_created']),
-    updatedBy: !exists(json, 'updated_by') ? undefined : json['updated_by'],
-    createdBy: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    createdAt: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -343,44 +343,44 @@ export function OpportunityToJSON(value?: Opportunity | null): any {
   }
   return {
     title: value.title,
-    primary_contact_id: value.primaryContactId,
+    primary_contact_id: value.primary_contact_id,
     description: value.description,
     type: value.type,
-    monetary_amount: value.monetaryAmount,
+    monetary_amount: value.monetary_amount,
     currency: value.currency,
-    win_probability: value.winProbability,
+    win_probability: value.win_probability,
     close_date:
-      value.closeDate === undefined
+      value.close_date === undefined
         ? undefined
-        : value.closeDate === null
+        : value.close_date === null
         ? null
-        : value.closeDate.toISOString().substr(0, 10),
-    loss_reason_id: value.lossReasonId,
-    loss_reason: value.lossReason,
-    won_reason_id: value.wonReasonId,
-    won_reason: value.wonReason,
-    pipeline_id: value.pipelineId,
-    pipeline_stage_id: value.pipelineStageId,
-    source_id: value.sourceId,
-    lead_id: value.leadId,
-    lead_source: value.leadSource,
-    contact_id: value.contactId,
-    company_id: value.companyId,
-    company_name: value.companyName,
-    owner_id: value.ownerId,
+        : value.close_date.toISOString().substr(0, 10),
+    loss_reason_id: value.loss_reason_id,
+    loss_reason: value.loss_reason,
+    won_reason_id: value.won_reason_id,
+    won_reason: value.won_reason,
+    pipeline_id: value.pipeline_id,
+    pipeline_stage_id: value.pipeline_stage_id,
+    source_id: value.source_id,
+    lead_id: value.lead_id,
+    lead_source: value.lead_source,
+    contact_id: value.contact_id,
+    company_id: value.company_id,
+    company_name: value.company_name,
+    owner_id: value.owner_id,
     priority: value.priority,
     status: value.status,
-    status_id: value.statusId,
+    status_id: value.status_id,
     tags: TagsToJSON(value.tags),
     custom_fields:
-      value.customFields === undefined
+      value.custom_fields === undefined
         ? undefined
-        : (value.customFields as Array<any>).map(CustomFieldToJSON),
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     stage_last_changed_at:
-      value.stageLastChangedAt === undefined
+      value.stage_last_changed_at === undefined
         ? undefined
-        : value.stageLastChangedAt === null
+        : value.stage_last_changed_at === null
         ? null
-        : value.stageLastChangedAt.toISOString()
+        : value.stage_last_changed_at.toISOString()
   }
 }

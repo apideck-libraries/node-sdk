@@ -47,7 +47,7 @@ export interface Connection {
    * @type {string}
    * @memberof Connection
    */
-  serviceId?: string
+  service_id?: string
   /**
    *
    * @type {string}
@@ -59,13 +59,13 @@ export interface Connection {
    * @type {string}
    * @memberof Connection
    */
-  tagLine?: string
+  tag_line?: string
   /**
    *
    * @type {string}
    * @memberof Connection
    */
-  unifiedApi?: string
+  unified_api?: string
   /**
    *
    * @type {string}
@@ -101,7 +101,7 @@ export interface Connection {
    * @type {AuthType}
    * @memberof Connection
    */
-  authType?: AuthType
+  auth_type?: AuthType
   /**
    *
    * @type {string}
@@ -113,7 +113,7 @@ export interface Connection {
    * @type {Array<FormField>}
    * @memberof Connection
    */
-  formFields?: Array<FormField>
+  form_fields?: Array<FormField>
   /**
    *
    * @type {Array<ConnectionConfiguration>}
@@ -125,37 +125,37 @@ export interface Connection {
    * @type {Array<string>}
    * @memberof Connection
    */
-  configurableResources?: Array<string>
+  configurable_resources?: Array<string>
   /**
    *
    * @type {Array<string>}
    * @memberof Connection
    */
-  resourceSchemaSupport?: Array<string>
+  resource_schema_support?: Array<string>
   /**
    *
    * @type {Array<string>}
    * @memberof Connection
    */
-  resourceSettingsSupport?: Array<string>
+  resource_settings_support?: Array<string>
   /**
    *
    * @type {Array<string>}
    * @memberof Connection
    */
-  settingsRequiredForAuthorization?: Array<string>
+  settings_required_for_authorization?: Array<string>
   /**
    *
    * @type {string}
    * @memberof Connection
    */
-  authorizeUrl?: string | null
+  authorize_url?: string | null
   /**
    *
    * @type {string}
    * @memberof Connection
    */
-  revokeUrl?: string | null
+  revoke_url?: string | null
   /**
    *
    * @type {boolean}
@@ -167,13 +167,13 @@ export interface Connection {
    * @type {number}
    * @memberof Connection
    */
-  createdAt?: number
+  created_at?: number
   /**
    *
    * @type {number}
    * @memberof Connection
    */
-  updatedAt?: number | null
+  updated_at?: number | null
   /**
    *
    * @type {ConnectionState}
@@ -202,40 +202,40 @@ export function ConnectionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    serviceId: !exists(json, 'service_id') ? undefined : json['service_id'],
+    service_id: !exists(json, 'service_id') ? undefined : json['service_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    tagLine: !exists(json, 'tag_line') ? undefined : json['tag_line'],
-    unifiedApi: !exists(json, 'unified_api') ? undefined : json['unified_api'],
+    tag_line: !exists(json, 'tag_line') ? undefined : json['tag_line'],
+    unified_api: !exists(json, 'unified_api') ? undefined : json['unified_api'],
     website: !exists(json, 'website') ? undefined : json['website'],
     icon: !exists(json, 'icon') ? undefined : json['icon'],
     logo: !exists(json, 'logo') ? undefined : json['logo'],
     settings: !exists(json, 'settings') ? undefined : json['settings'],
     metadata: !exists(json, 'metadata') ? undefined : ConnectionMetadataFromJSON(json['metadata']),
-    authType: !exists(json, 'auth_type') ? undefined : AuthTypeFromJSON(json['auth_type']),
+    auth_type: !exists(json, 'auth_type') ? undefined : AuthTypeFromJSON(json['auth_type']),
     status: !exists(json, 'status') ? undefined : json['status'],
-    formFields: !exists(json, 'form_fields')
+    form_fields: !exists(json, 'form_fields')
       ? undefined
       : (json['form_fields'] as Array<any>).map(FormFieldFromJSON),
     _configuration: !exists(json, 'configuration')
       ? undefined
       : (json['configuration'] as Array<any>).map(ConnectionConfigurationFromJSON),
-    configurableResources: !exists(json, 'configurable_resources')
+    configurable_resources: !exists(json, 'configurable_resources')
       ? undefined
       : json['configurable_resources'],
-    resourceSchemaSupport: !exists(json, 'resource_schema_support')
+    resource_schema_support: !exists(json, 'resource_schema_support')
       ? undefined
       : json['resource_schema_support'],
-    resourceSettingsSupport: !exists(json, 'resource_settings_support')
+    resource_settings_support: !exists(json, 'resource_settings_support')
       ? undefined
       : json['resource_settings_support'],
-    settingsRequiredForAuthorization: !exists(json, 'settings_required_for_authorization')
+    settings_required_for_authorization: !exists(json, 'settings_required_for_authorization')
       ? undefined
       : json['settings_required_for_authorization'],
-    authorizeUrl: !exists(json, 'authorize_url') ? undefined : json['authorize_url'],
-    revokeUrl: !exists(json, 'revoke_url') ? undefined : json['revoke_url'],
+    authorize_url: !exists(json, 'authorize_url') ? undefined : json['authorize_url'],
+    revoke_url: !exists(json, 'revoke_url') ? undefined : json['revoke_url'],
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    createdAt: !exists(json, 'created_at') ? undefined : json['created_at'],
-    updatedAt: !exists(json, 'updated_at') ? undefined : json['updated_at'],
+    created_at: !exists(json, 'created_at') ? undefined : json['created_at'],
+    updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
     state: !exists(json, 'state') ? undefined : ConnectionStateFromJSON(json['state'])
   }
 }
@@ -248,34 +248,34 @@ export function ConnectionToJSON(value?: Connection | null): any {
     return null
   }
   return {
-    service_id: value.serviceId,
+    service_id: value.service_id,
     name: value.name,
-    tag_line: value.tagLine,
-    unified_api: value.unifiedApi,
+    tag_line: value.tag_line,
+    unified_api: value.unified_api,
     website: value.website,
     icon: value.icon,
     logo: value.logo,
     settings: value.settings,
     metadata: ConnectionMetadataToJSON(value.metadata),
-    auth_type: AuthTypeToJSON(value.authType),
+    auth_type: AuthTypeToJSON(value.auth_type),
     status: value.status,
     form_fields:
-      value.formFields === undefined
+      value.form_fields === undefined
         ? undefined
-        : (value.formFields as Array<any>).map(FormFieldToJSON),
+        : (value.form_fields as Array<any>).map(FormFieldToJSON),
     configuration:
       value._configuration === undefined
         ? undefined
         : (value._configuration as Array<any>).map(ConnectionConfigurationToJSON),
-    configurable_resources: value.configurableResources,
-    resource_schema_support: value.resourceSchemaSupport,
-    resource_settings_support: value.resourceSettingsSupport,
-    settings_required_for_authorization: value.settingsRequiredForAuthorization,
-    authorize_url: value.authorizeUrl,
-    revoke_url: value.revokeUrl,
+    configurable_resources: value.configurable_resources,
+    resource_schema_support: value.resource_schema_support,
+    resource_settings_support: value.resource_settings_support,
+    settings_required_for_authorization: value.settings_required_for_authorization,
+    authorize_url: value.authorize_url,
+    revoke_url: value.revoke_url,
     enabled: value.enabled,
-    created_at: value.createdAt,
-    updated_at: value.updatedAt,
+    created_at: value.created_at,
+    updated_at: value.updated_at,
     state: ConnectionStateToJSON(value.state)
   }
 }

@@ -28,7 +28,7 @@ export interface CreateSessionResponse {
    * @type {number}
    * @memberof CreateSessionResponse
    */
-  statusCode: number
+  status_code: number
   /**
    * HTTP Response Status
    * @type {string}
@@ -55,7 +55,7 @@ export function CreateSessionResponseFromJSONTyped(
     return json
   }
   return {
-    statusCode: json['status_code'],
+    status_code: json['status_code'],
     status: json['status'],
     data: SessionFromJSON(json['data'])
   }
@@ -69,7 +69,7 @@ export function CreateSessionResponseToJSON(value?: CreateSessionResponse | null
     return null
   }
   return {
-    status_code: value.statusCode,
+    status_code: value.status_code,
     status: value.status,
     data: SessionToJSON(value.data)
   }
