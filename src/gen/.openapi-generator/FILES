@@ -1,3 +1,5 @@
+../../.github/workflows/publish.yml
+../../.github/workflows/test.yml
 ../../.gitignore
 ../../.prettierrc.json
 ../../LICENSE
