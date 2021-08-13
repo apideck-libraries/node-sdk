@@ -1,0 +1,33 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 'Setup Node.js'
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Unit Test
+        run: yarn test
+
+      - name: Prepare for Publish
+        run: yarn prepare
+
+      - name: Publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          tag: beta
+          token: ${{ secrets.NPM_TOKEN }}
