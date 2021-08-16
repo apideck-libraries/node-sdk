@@ -2035,7 +2035,12 @@ const params = {
   note: {
     title: 'Meeting Notes',
     content: 'Office hours are 9AM-6PM',
-    ownerId: '12345'
+    ownerId: '12345',
+    contactId: '12345',
+    companyId: '12345',
+    opportunityId: '12345',
+    leadId: '12345',
+    active: true
   }
 }
 
@@ -2316,7 +2321,12 @@ const params = {
   note: {
     title: 'Meeting Notes',
     content: 'Office hours are 9AM-6PM',
-    ownerId: '12345'
+    ownerId: '12345',
+    contactId: '12345',
+    companyId: '12345',
+    opportunityId: '12345',
+    leadId: '12345',
+    active: true
   }
 }
 

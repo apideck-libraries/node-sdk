@@ -1592,11 +1592,7 @@ const params = {
       accountNumber: '123456789',
       accountName: 'SPACEX LLC'
     },
-    parentAccount: {},
-    subAccount: true,
-    subAccounts: [
-      {}
-    ]
+    subAccount: true
   }
 }
 
@@ -1897,11 +1893,7 @@ const params = {
       accountNumber: '123456789',
       accountName: 'SPACEX LLC'
     },
-    parentAccount: {},
-    subAccount: true,
-    subAccounts: [
-      {}
-    ]
+    subAccount: true
   }
 }
 
