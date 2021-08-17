@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `currency` | **string** |  | [optional] 
 `archived` | **boolean** |  | [optional] 
-`displayOrder` | **number** |  | [optional] 
+`display_order` | **number** |  | [optional] 
 `stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
-`updatedAt` | **string** |  | [optional] 
-`createdAt` | **string** |  | [optional] 
+`updated_at` | **string** |  | [optional] 
+`created_at` | **string** |  | [optional] 
 
 
 

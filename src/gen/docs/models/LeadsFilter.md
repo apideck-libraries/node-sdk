@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** | Name of the lead to filter on | [optional] 
-`firstName` | **string** | First name of the lead to filter on | [optional] 
-`lastName` | **string** | Last name of the lead to filter on | [optional] 
+`first_name` | **string** | First name of the lead to filter on | [optional] 
+`last_name` | **string** | Last name of the lead to filter on | [optional] 
 `email` | **string** | E-mail of the lead to filter on | [optional] 
 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 `description` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 `required` | **boolean** |  | [optional] 
-`customField` | **boolean** |  | [optional] 
+`custom_field` | **boolean** |  | [optional] 
 `disabled` | **boolean** |  | [optional] 
 `options` | [**Array&lt;FormFieldOption&gt;**](FormFieldOption.md) |  | [optional] 
 
@@ -37,9 +37,9 @@ Name | Type | Description | Notes
 
 * `select` (value: `'select'`)
 
-* `filteredSelect` (value: `'filtered-select'`)
+* `filtered_select` (value: `'filtered-select'`)
 
-* `multiSelect` (value: `'multi-select'`)
+* `multi_select` (value: `'multi-select'`)
 
 * `datetime` (value: `'datetime'`)
 

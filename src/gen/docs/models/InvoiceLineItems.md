@@ -6,17 +6,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
-`lineNumber` | **number** |  | [optional] 
+`line_number` | **number** |  | [optional] 
 `description` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
-`taxAmount` | **number** |  | [optional] 
-`totalAmount` | **number** |  | [optional] 
+`tax_amount` | **number** |  | [optional] 
+`total_amount` | **number** |  | [optional] 
 `quantity` | **number** |  | [optional] 
-`unitPrice` | **number** |  | [optional] 
-`discountPercentage` | **number** |  | [optional] 
-`itemId` | **number** | ID of the linked item | [optional] 
-`taxRate` | **object** |  | [optional] 
-`generalLedgerAccount` | **object** |  | [optional] 
+`unit_price` | **number** |  | [optional] 
+`discount_percentage` | **number** |  | [optional] 
+`item_id` | **number** | ID of the linked item | [optional] 
+`tax_rate` | **object** |  | [optional] 
+`general_ledger_account` | **object** |  | [optional] 
 
 
 

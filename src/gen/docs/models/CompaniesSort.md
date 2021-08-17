@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 ## Enum: CompaniesSort.by
 
 
-* `createdAt` (value: `'created_at'`)
+* `created_at` (value: `'created_at'`)
 
-* `updatedAt` (value: `'updated_at'`)
+* `updated_at` (value: `'updated_at'`)
 
 * `name` (value: `'name'`)
 

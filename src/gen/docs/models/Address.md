@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `line2` | **string** | Line 2 of the address | [optional] 
 `city` | **string** | Name of city. | [optional] 
 `state` | **string** | Name of state | [optional] 
-`postalCode` | **string** | Zip code or equivalent. | [optional] 
+`postal_code` | **string** | Zip code or equivalent. | [optional] 
 `country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `latitude` | **string** |  | [optional] 
 `longitude` | **string** |  | [optional] 

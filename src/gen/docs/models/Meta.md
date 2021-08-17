@@ -7,7 +7,7 @@ Reponse metadata
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`itemsOnPage` | **number** | Number of items returned in the data property of the response | [optional] 
+`items_on_page` | **number** | Number of items returned in the data property of the response | [optional] 
 `cursors` | [**MetaCursors**](MetaCursors.md) |  | [optional] 
 
 

@@ -16,15 +16,15 @@ Name | Type | Description | Notes
 ## Enum: ContactsSort.by
 
 
-* `createdAt` (value: `'created_at'`)
+* `created_at` (value: `'created_at'`)
 
-* `updatedAt` (value: `'updated_at'`)
+* `updated_at` (value: `'updated_at'`)
 
 * `name` (value: `'name'`)
 
-* `firstName` (value: `'first_name'`)
+* `first_name` (value: `'first_name'`)
 
-* `lastName` (value: `'last_name'`)
+* `last_name` (value: `'last_name'`)
 
 * `email` (value: `'email'`)
 

@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 `name` | **string** |  | [optional] 
 `icon` | **string** |  | [optional] 
 `logo` | **string** |  | [optional] 
-`serviceId` | **string** |  | [optional] 
-`unifiedApi` | **string** |  | [optional] 
-`authType` | [**AuthType**](AuthType.md) |  | [optional] 
+`service_id` | **string** |  | [optional] 
+`unified_api` | **string** |  | [optional] 
+`auth_type` | [**AuthType**](AuthType.md) |  | [optional] 
 `enabled` | **boolean** |  | [optional] 
-`createdAt` | **string** |  | [optional] 
-`updatedAt` | **string** |  | [optional] 
+`created_at` | **string** |  | [optional] 
+`updated_at` | **string** |  | [optional] 
 `state` | **string** |  | [optional] 
 
 

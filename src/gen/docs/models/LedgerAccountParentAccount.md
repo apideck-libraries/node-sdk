@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `name` | **string** |  | [optional] 
-`displayId` | **string** |  | [optional] 
+`display_id` | **string** |  | [optional] 
 
 
 

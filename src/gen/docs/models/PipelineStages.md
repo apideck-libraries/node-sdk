@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `name` | **string** |  | [optional] 
 `value` | **string** |  | [optional] 
-`displayOrder` | **number** |  | [optional] 
+`display_order` | **number** |  | [optional] 
 
 
 

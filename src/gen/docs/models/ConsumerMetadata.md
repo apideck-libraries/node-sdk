@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`accountName` | **string** |  | [optional] 
-`userName` | **string** |  | [optional] 
+`account_name` | **string** |  | [optional] 
+`user_name` | **string** |  | [optional] 
 `email` | **string** |  | [optional] 
 `image` | **string** |  | [optional] 
 

@@ -6,30 +6,30 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
-`displayId` | **string** |  | [optional] 
-`nominalCode` | **string** |  | [optional] 
+`display_id` | **string** |  | [optional] 
+`nominal_code` | **string** |  | [optional] 
 `classification` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
-`subType` | **string** |  | [optional] 
+`sub_type` | **string** |  | [optional] 
 `name` | **string** |  | [optional] 
-`fullyQualifiedName` | **string** |  | [optional] 
+`fully_qualified_name` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
-`openingBalance` | **number** | The opening balance. A positive integer representing the smallest currency unit (e.g., 100 cents equals $1.00 or 100 equals ¥100, a zero-decimal currency) | [optional] 
-`currentBalance` | **number** | The current balance. A positive integer representing the smallest currency unit (e.g., 20000 cents equals $200.00 or 20000 equals ¥20000, a zero-decimal currency) | [optional] 
+`opening_balance` | **number** | The opening balance. A positive integer representing the smallest currency unit (e.g., 100 cents equals $1.00 or 100 equals ¥100, a zero-decimal currency) | [optional] 
+`current_balance` | **number** | The current balance. A positive integer representing the smallest currency unit (e.g., 20000 cents equals $200.00 or 20000 equals ¥20000, a zero-decimal currency) | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`taxType` | **string** |  | [optional] 
-`taxCode` | **string** |  | [optional] 
+`tax_type` | **string** |  | [optional] 
+`tax_code` | **string** |  | [optional] 
 `level` | **string** |  | [optional] 
 `active` | **boolean** |  | [optional] 
-`bankAccount` | [**BankAccount**](BankAccount.md) |  | [optional] 
-`parentAccount` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
-`subAccount` | **boolean** |  | [optional] 
-`subAccounts` | **Array&lt;object&gt;** |  | [optional] 
-`lastReconciliationDate` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
-`updatedBy` | **string** |  | [optional] 
-`createdBy` | **string** |  | [optional] 
-`updatedAt` | **Date** |  | [optional] 
-`createdAt` | **Date** |  | [optional] 
+`bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`parent_account` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
+`sub_account` | **boolean** |  | [optional] 
+`sub_accounts` | **Array&lt;object&gt;** |  | [optional] 
+`last_reconciliation_date` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 
@@ -51,11 +51,11 @@ Name | Type | Description | Notes
 
 * `income` (value: `'income'`)
 
-* `otherIncome` (value: `'other_income'`)
+* `other_income` (value: `'other_income'`)
 
-* `otherExpense` (value: `'other_expense'`)
+* `other_expense` (value: `'other_expense'`)
 
-* `costsOfSales` (value: `'costs_of_sales'`)
+* `costs_of_sales` (value: `'costs_of_sales'`)
 
 
 
@@ -64,33 +64,33 @@ Name | Type | Description | Notes
 ## Enum: LedgerAccount.type
 
 
-* `accountsReceivable` (value: `'accounts_receivable'`)
+* `accounts_receivable` (value: `'accounts_receivable'`)
 
 * `bank` (value: `'bank'`)
 
-* `currentAsset` (value: `'current_asset'`)
+* `current_asset` (value: `'current_asset'`)
 
-* `nonCurrentAsset` (value: `'non_current_asset'`)
+* `non_current_asset` (value: `'non_current_asset'`)
 
-* `otherAsset` (value: `'other_asset'`)
+* `other_asset` (value: `'other_asset'`)
 
 * `equity` (value: `'equity'`)
 
 * `expense` (value: `'expense'`)
 
-* `otherExpense` (value: `'other_expense'`)
+* `other_expense` (value: `'other_expense'`)
 
-* `costsOfSales` (value: `'costs_of_sales'`)
+* `costs_of_sales` (value: `'costs_of_sales'`)
 
-* `accountsPayable` (value: `'accounts_payable'`)
+* `accounts_payable` (value: `'accounts_payable'`)
 
-* `creditCard` (value: `'credit_card'`)
+* `credit_card` (value: `'credit_card'`)
 
-* `currentLiability` (value: `'current_liability'`)
+* `current_liability` (value: `'current_liability'`)
 
-* `nonCurrentLiability` (value: `'non_current_liability'`)
+* `non_current_liability` (value: `'non_current_liability'`)
 
-* `otherLiability` (value: `'other_liability'`)
+* `other_liability` (value: `'other_liability'`)
 
 
 

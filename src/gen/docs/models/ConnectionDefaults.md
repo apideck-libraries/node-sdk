@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Enum: ConnectionDefaults.target
 
 
-* `customFields` (value: `'custom_fields'`)
+* `custom_fields` (value: `'custom_fields'`)
 
 * `resource` (value: `'resource'`)
 
