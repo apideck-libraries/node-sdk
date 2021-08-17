@@ -85,30 +85,30 @@ const apideck = new Apideck({
 const params = {
   companies1: {
     name: 'SpaceX',
-    ownerId: '12345',
+    owner_id: '12345',
     image: 'https://www.spacex.com/static/images/share.jpg',
     description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vatNumber: 'BE0689615164',
+    vat_number: 'BE0689615164',
     currency: 'USD',
     status: 'Open',
     fax: '+12129876543',
-    annualRevenue: '+$35m',
-    numberOfEmployees: '500-1000',
+    annual_revenue: '+$35m',
+    number_of_employees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
-    salesTaxNumber: '12456EN',
-    payeeNumber: '78932EN',
-    abnOrTfn: '46 115 614 695',
-    abnBranch: '123',
+    sales_tax_number: '12456EN',
+    payee_number: '78932EN',
+    abn_or_tfn: '46 115 614 695',
+    abn_branch: '123',
     acn: 'XXX XXX XXX',
-    bankAccounts: [
+    bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
-        bsbNumber: '062-001',
-        bankCode: 'BNH',
-        accountNumber: '123456789',
-        accountName: 'SPACEX LLC'
+        bsb_number: '062-001',
+        bank_code: 'BNH',
+        account_number: '123456789',
+        account_name: 'SPACEX LLC'
       }
     ],
     websites: [
@@ -128,20 +128,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -155,7 +155,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -164,7 +164,7 @@ const params = {
     tags: [
       'New'
     ],
-    readOnly: false
+    read_only: false
   }
 }
 
@@ -444,30 +444,30 @@ const params = {
   id: 'id_example',
   companies1: {
     name: 'SpaceX',
-    ownerId: '12345',
+    owner_id: '12345',
     image: 'https://www.spacex.com/static/images/share.jpg',
     description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vatNumber: 'BE0689615164',
+    vat_number: 'BE0689615164',
     currency: 'USD',
     status: 'Open',
     fax: '+12129876543',
-    annualRevenue: '+$35m',
-    numberOfEmployees: '500-1000',
+    annual_revenue: '+$35m',
+    number_of_employees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
-    salesTaxNumber: '12456EN',
-    payeeNumber: '78932EN',
-    abnOrTfn: '46 115 614 695',
-    abnBranch: '123',
+    sales_tax_number: '12456EN',
+    payee_number: '78932EN',
+    abn_or_tfn: '46 115 614 695',
+    abn_branch: '123',
     acn: 'XXX XXX XXX',
-    bankAccounts: [
+    bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
-        bsbNumber: '062-001',
-        bankCode: 'BNH',
-        accountNumber: '123456789',
-        accountName: 'SPACEX LLC'
+        bsb_number: '062-001',
+        bank_code: 'BNH',
+        account_number: '123456789',
+        account_name: 'SPACEX LLC'
       }
     ],
     websites: [
@@ -487,20 +487,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -514,7 +514,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -523,7 +523,7 @@ const params = {
     tags: [
       'New'
     ],
-    readOnly: false
+    read_only: false
   }
 }
 
@@ -595,14 +595,14 @@ const apideck = new Apideck({
 const params = {
   contacts1: {
     name: 'Elon Musk',
-    ownerId: '54321',
+    owner_id: '54321',
     type: 'personal',
-    companyId: '23456',
-    companyName: '23456',
-    leadId: '34567',
-    firstName: 'Elon',
-    middleName: 'D.',
-    lastName: 'Musk',
+    company_id: '23456',
+    company_name: '23456',
+    lead_id: '34567',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
     prefix: 'Mr.',
     suffix: 'PhD',
     title: 'CEO',
@@ -611,10 +611,10 @@ const params = {
     gender: 'female',
     birthday: '2000-08-12',
     image: 'https://unavatar.io/elon-musk',
-    leadSource: 'Cold Call',
+    lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    currentBalance: 10.5,
+    current_balance: 10.5,
     status: 'open',
     active: true,
     websites: [
@@ -634,20 +634,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -661,7 +661,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -949,14 +949,14 @@ const params = {
   id: 'id_example',
   contacts1: {
     name: 'Elon Musk',
-    ownerId: '54321',
+    owner_id: '54321',
     type: 'personal',
-    companyId: '23456',
-    companyName: '23456',
-    leadId: '34567',
-    firstName: 'Elon',
-    middleName: 'D.',
-    lastName: 'Musk',
+    company_id: '23456',
+    company_name: '23456',
+    lead_id: '34567',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
     prefix: 'Mr.',
     suffix: 'PhD',
     title: 'CEO',
@@ -965,10 +965,10 @@ const params = {
     gender: 'female',
     birthday: '2000-08-12',
     image: 'https://unavatar.io/elon-musk',
-    leadSource: 'Cold Call',
+    lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    currentBalance: 10.5,
+    current_balance: 10.5,
     status: 'open',
     active: true,
     websites: [
@@ -988,20 +988,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -1015,7 +1015,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -1097,40 +1097,40 @@ const params = {
     type: 'Service',
     number: 'OIT00546',
     customer: {
-      companyName: 'The boring company'
+      company_name: 'The boring company'
     },
     date: '2020-09-30',
-    dueDate: '2020-10-30',
-    poNumber: '90000117',
+    due_date: '2020-10-30',
+    po_number: '90000117',
     status: 'paid',
     currency: 'USD',
-    subTotal: 27500,
-    totalTax: 1000,
+    sub_total: 27500,
+    total_tax: 1000,
     total: 28500,
     balance: 26500,
     deposit: 2000,
-    customerMemo: 'Thank you for your business and have a great day!',
-    lineItems: [
+    customer_memo: 'Thank you for your business and have a great day!',
+    line_items: [
       {
-        lineNumber: 1,
+        line_number: 1,
         description: 'Rock Fountain',
         type: 'Transaction',
-        taxAmount: 27500,
-        totalAmount: 27500,
+        tax_amount: 27500,
+        total_amount: 27500,
         quantity: 2,
-        unitPrice: 27500,
-        discountPercentage: 15,
-        itemId: 12344,
-        taxRate: {
+        unit_price: 27500,
+        discount_percentage: 15,
+        item_id: 12344,
+        tax_rate: {
           name: '15% GST on Expenses',
           code: 'ABN'
         },
-        generalLedgerAccount: {
+        general_ledger_account: {
           name: 'Bank account'
         }
       }
     ],
-    billingAddress: {
+    billing_address: {
       id: '123',
       type: 'primary',
       string: '25 Spring Street, Blackburn, VIC 3130',
@@ -1139,12 +1139,12 @@ const params = {
       line2: 'apt #',
       city: 'San Francisco',
       state: 'CA',
-      postalCode: '94104',
+      postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638'
     },
-    shippingAddress: {
+    shipping_address: {
       id: '123',
       type: 'primary',
       string: '25 Spring Street, Blackburn, VIC 3130',
@@ -1153,7 +1153,7 @@ const params = {
       line2: 'apt #',
       city: 'San Francisco',
       state: 'CA',
-      postalCode: '94104',
+      postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638'
@@ -1439,40 +1439,40 @@ const params = {
     type: 'Service',
     number: 'OIT00546',
     customer: {
-      companyName: 'The boring company'
+      company_name: 'The boring company'
     },
     date: '2020-09-30',
-    dueDate: '2020-10-30',
-    poNumber: '90000117',
+    due_date: '2020-10-30',
+    po_number: '90000117',
     status: 'paid',
     currency: 'USD',
-    subTotal: 27500,
-    totalTax: 1000,
+    sub_total: 27500,
+    total_tax: 1000,
     total: 28500,
     balance: 26500,
     deposit: 2000,
-    customerMemo: 'Thank you for your business and have a great day!',
-    lineItems: [
+    customer_memo: 'Thank you for your business and have a great day!',
+    line_items: [
       {
-        lineNumber: 1,
+        line_number: 1,
         description: 'Rock Fountain',
         type: 'Transaction',
-        taxAmount: 27500,
-        totalAmount: 27500,
+        tax_amount: 27500,
+        total_amount: 27500,
         quantity: 2,
-        unitPrice: 27500,
-        discountPercentage: 15,
-        itemId: 12344,
-        taxRate: {
+        unit_price: 27500,
+        discount_percentage: 15,
+        item_id: 12344,
+        tax_rate: {
           name: '15% GST on Expenses',
           code: 'ABN'
         },
-        generalLedgerAccount: {
+        general_ledger_account: {
           name: 'Bank account'
         }
       }
     ],
-    billingAddress: {
+    billing_address: {
       id: '123',
       type: 'primary',
       string: '25 Spring Street, Blackburn, VIC 3130',
@@ -1481,12 +1481,12 @@ const params = {
       line2: 'apt #',
       city: 'San Francisco',
       state: 'CA',
-      postalCode: '94104',
+      postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638'
     },
-    shippingAddress: {
+    shipping_address: {
       id: '123',
       type: 'primary',
       string: '25 Spring Street, Blackburn, VIC 3130',
@@ -1495,7 +1495,7 @@ const params = {
       line2: 'apt #',
       city: 'San Francisco',
       state: 'CA',
-      postalCode: '94104',
+      postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638'
@@ -1570,29 +1570,29 @@ const apideck = new Apideck({
 
 const params = {
   ledgerAccount: {
-    nominalCode: '091',
+    nominal_code: '091',
     classification: 'asset',
     type: 'bank',
-    subType: 'CHECKING_ACCOUNT',
+    sub_type: 'CHECKING_ACCOUNT',
     name: 'Bank account',
-    fullyQualifiedName: 'Asset.Bank.Checking_Account',
+    fully_qualified_name: 'Asset.Bank.Checking_Account',
     description: 'The main checking account',
-    openingBalance: 75000,
-    currentBalance: 20000,
+    opening_balance: 75000,
+    current_balance: 20000,
     currency: 'USD',
-    taxType: 'USD',
-    taxCode: 'N-T',
+    tax_type: 'USD',
+    tax_code: 'N-T',
     level: '2',
     active: true,
-    bankAccount: {
+    bank_account: {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
-      bsbNumber: '062-001',
-      bankCode: 'BNH',
-      accountNumber: '123456789',
-      accountName: 'SPACEX LLC'
+      bsb_number: '062-001',
+      bank_code: 'BNH',
+      account_number: '123456789',
+      account_name: 'SPACEX LLC'
     },
-    subAccount: true
+    sub_account: true
   }
 }
 
@@ -1871,29 +1871,29 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   ledgerAccount: {
-    nominalCode: '091',
+    nominal_code: '091',
     classification: 'asset',
     type: 'bank',
-    subType: 'CHECKING_ACCOUNT',
+    sub_type: 'CHECKING_ACCOUNT',
     name: 'Bank account',
-    fullyQualifiedName: 'Asset.Bank.Checking_Account',
+    fully_qualified_name: 'Asset.Bank.Checking_Account',
     description: 'The main checking account',
-    openingBalance: 75000,
-    currentBalance: 20000,
+    opening_balance: 75000,
+    current_balance: 20000,
     currency: 'USD',
-    taxType: 'USD',
-    taxCode: 'N-T',
+    tax_type: 'USD',
+    tax_code: 'N-T',
     level: '2',
     active: true,
-    bankAccount: {
+    bank_account: {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
-      bsbNumber: '062-001',
-      bankCode: 'BNH',
-      accountNumber: '123456789',
-      accountName: 'SPACEX LLC'
+      bsb_number: '062-001',
+      bank_code: 'BNH',
+      account_number: '123456789',
+      account_name: 'SPACEX LLC'
     },
-    subAccount: true
+    sub_account: true
   }
 }
 
@@ -1967,8 +1967,8 @@ const params = {
     name: '15% GST on Expenses',
     code: 'ABN',
     description: 'No ABN Withholding',
-    effectiveTaxRate: 10,
-    totalTaxRate: 10,
+    effective_tax_rate: 10,
+    total_tax_rate: 10,
     components: [
       {
         name: 'City tax',
@@ -1976,8 +1976,8 @@ const params = {
         compound: true
       }
     ],
-    specialTaxType: 'NONE',
-    originalTaxRateId: '12345',
+    special_tax_type: 'NONE',
+    original_tax_rate_id: '12345',
     active: true
   }
 }
@@ -2260,8 +2260,8 @@ const params = {
     name: '15% GST on Expenses',
     code: 'ABN',
     description: 'No ABN Withholding',
-    effectiveTaxRate: 10,
-    totalTaxRate: 10,
+    effective_tax_rate: 10,
+    total_tax_rate: 10,
     components: [
       {
         name: 'City tax',
@@ -2269,8 +2269,8 @@ const params = {
         compound: true
       }
     ],
-    specialTaxType: 'NONE',
-    originalTaxRateId: '12345',
+    special_tax_type: 'NONE',
+    original_tax_rate_id: '12345',
     active: true
   }
 }

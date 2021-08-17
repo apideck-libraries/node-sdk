@@ -349,15 +349,15 @@ const params = {
   unifiedApi: 'crm',
   resource: 'leads',
   connectionsSetting: {
-    serviceId: 'salesforce',
+    service_id: 'salesforce',
     name: 'Salesforce',
-    tagLine: 'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
-    unifiedApi: 'crm',
+    tag_line: 'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+    unified_api: 'crm',
     website: 'https://www.salesforce.com',
     icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
     logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
     settings: {
-      instanceUrl: 'https://eu28.salesforce.com'
+      instance_url: 'https://eu28.salesforce.com'
     },
     metadata: {
       ecosystem: {
@@ -369,9 +369,9 @@ const params = {
         id: 'c01458a5-7276-41ce-bc19-639906b0450a'
       }
     },
-    authType: 'oauth2',
+    auth_type: 'oauth2',
     status: 'live',
-    formFields: [
+    form_fields: [
       {
         id: 'instance_url',
         label: 'Instance url',
@@ -381,7 +381,7 @@ const params = {
         type: 'text',
         required: true,
         disabled: false,
-        customField: false
+        custom_field: false
       }
     ],
     configuration: [
@@ -396,26 +396,26 @@ const params = {
         ]
       }
     ],
-    configurableResources: [
+    configurable_resources: [
       'opportunities',
       'companies',
       'contacts',
       'leads'
     ],
-    resourceSchemaSupport: [
+    resource_schema_support: [
       'leads'
     ],
-    resourceSettingsSupport: [
+    resource_settings_support: [
       'leads'
     ],
-    settingsRequiredForAuthorization: [
+    settings_required_for_authorization: [
       'instance_url'
     ],
-    authorizeUrl: 'https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>',
-    revokeUrl: 'https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>',
+    authorize_url: 'https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>',
+    revoke_url: 'https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>',
     enabled: true,
-    createdAt: 1615563533390,
-    updatedAt: 1616662325753,
+    created_at: 1615563533390,
+    updated_at: 1616662325753,
     state: 'authorized'
   }
 }
@@ -748,27 +748,27 @@ const apideck = new Apideck({
 
 const params = {
   session: {
-    redirectUri: 'https://mysaas.com/dashboard',
-    consumerMetadata: {
-      accountName: 'SpaceX',
-      userName: 'Elon Musk',
+    redirect_uri: 'https://mysaas.com/dashboard',
+    consumer_metadata: {
+      account_name: 'SpaceX',
+      user_name: 'Elon Musk',
       email: 'elon@musk.com',
       image: 'https://www.spacex.com/static/images/share.jpg'
     },
     theme: {
-      vaultName: 'Intercom',
-      primaryColor: '#286efa',
-      sidepanelBackgroundColor: '#286efa',
-      sidepanelTextColor: '#FFFFFF',
+      vault_name: 'Intercom',
+      primary_color: '#286efa',
+      sidepanel_background_color: '#286efa',
+      sidepanel_text_color: '#FFFFFF',
       favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
-      termsUrl: 'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e',
-      privacyUrl: 'https://compliance.apideck.com/privacy-policy'
+      terms_url: 'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e',
+      privacy_url: 'https://compliance.apideck.com/privacy-policy'
     },
     settings: {
-      sessionLength: '30m',
-      hideResourceSettings: false,
-      showLogs: true,
-      sandboxMode: false
+      session_length: '30m',
+      hide_resource_settings: false,
+      show_logs: true,
+      sandbox_mode: false
     }
   }
 }

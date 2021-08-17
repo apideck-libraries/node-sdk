@@ -65,19 +65,19 @@ const apideck = new Apideck({
 const params = {
   lead: {
     name: 'Elon Musk',
-    companyName: 'Spacex',
-    ownerId: '54321',
-    companyId: '2',
-    contactId: '2',
-    leadSource: 'Cold Call',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    company_name: 'Spacex',
+    owner_id: '54321',
+    company_id: '2',
+    contact_id: '2',
+    lead_source: 'Cold Call',
+    first_name: 'Elon',
+    last_name: 'Musk',
     description: 'A thinker',
     prefix: 'Sir',
     title: 'CEO',
     language: 'EN',
     status: 'New',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
     fax: '+12129876543',
     websites: [
@@ -97,20 +97,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -124,7 +124,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -412,19 +412,19 @@ const params = {
   id: 'id_example',
   lead: {
     name: 'Elon Musk',
-    companyName: 'Spacex',
-    ownerId: '54321',
-    companyId: '2',
-    contactId: '2',
-    leadSource: 'Cold Call',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    company_name: 'Spacex',
+    owner_id: '54321',
+    company_id: '2',
+    contact_id: '2',
+    lead_source: 'Cold Call',
+    first_name: 'Elon',
+    last_name: 'Musk',
     description: 'A thinker',
     prefix: 'Sir',
     title: 'CEO',
     language: 'EN',
     status: 'New',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
     fax: '+12129876543',
     websites: [
@@ -444,20 +444,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -471,7 +471,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'

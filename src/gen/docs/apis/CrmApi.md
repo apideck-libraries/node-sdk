@@ -99,43 +99,43 @@ const apideck = new Apideck({
 
 const params = {
   activity: {
-    activityDatetime: '2021-05-01T12:00:00.000Z',
-    durationSeconds: 1800,
-    accountId: '12345',
-    contactId: '12345',
-    companyId: '12345',
-    opportunityId: '12345',
-    leadId: '12345',
-    ownerId: '12345',
-    campaignId: '12345',
-    caseId: '12345',
-    assetId: '12345',
-    contractId: '12345',
-    productId: '12345',
-    solutionId: '12345',
-    customObjectId: '12345',
+    activity_datetime: '2021-05-01T12:00:00.000Z',
+    duration_seconds: 1800,
+    account_id: '12345',
+    contact_id: '12345',
+    company_id: '12345',
+    opportunity_id: '12345',
+    lead_id: '12345',
+    owner_id: '12345',
+    campaign_id: '12345',
+    case_id: '12345',
+    asset_id: '12345',
+    contract_id: '12345',
+    product_id: '12345',
+    solution_id: '12345',
+    custom_object_id: '12345',
     type: 'meeting',
     title: 'Meeting',
     description: 'More info about the meeting',
     location: 'Space',
-    allDayEvent: false,
+    all_day_event: false,
     private: true,
-    groupEvent: true,
-    eventSubType: 'debrief',
-    groupEventType: 'Proposed',
+    group_event: true,
+    event_sub_type: 'debrief',
+    group_event_type: 'Proposed',
     child: false,
     archived: false,
     deleted: false,
-    showAs: 'busy',
-    activityDate: '2021-05-01',
-    durationMinutes: 30,
-    startDatetime: '2021-05-01T12:00:00.000Z',
-    endDatetime: '2021-05-01T12:30:00.000Z',
-    endDate: '2021-05-01',
+    show_as: 'busy',
+    activity_date: '2021-05-01',
+    duration_minutes: 30,
+    start_datetime: '2021-05-01T12:00:00.000Z',
+    end_datetime: '2021-05-01T12:30:00.000Z',
+    end_date: '2021-05-01',
     recurrent: false,
-    reminderDatetime: '2021-05-01T17:00:00.000Z',
-    reminderSet: false,
-    customFields: [
+    reminder_datetime: '2021-05-01T17:00:00.000Z',
+    reminder_set: false,
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -419,43 +419,43 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   activity: {
-    activityDatetime: '2021-05-01T12:00:00.000Z',
-    durationSeconds: 1800,
-    accountId: '12345',
-    contactId: '12345',
-    companyId: '12345',
-    opportunityId: '12345',
-    leadId: '12345',
-    ownerId: '12345',
-    campaignId: '12345',
-    caseId: '12345',
-    assetId: '12345',
-    contractId: '12345',
-    productId: '12345',
-    solutionId: '12345',
-    customObjectId: '12345',
+    activity_datetime: '2021-05-01T12:00:00.000Z',
+    duration_seconds: 1800,
+    account_id: '12345',
+    contact_id: '12345',
+    company_id: '12345',
+    opportunity_id: '12345',
+    lead_id: '12345',
+    owner_id: '12345',
+    campaign_id: '12345',
+    case_id: '12345',
+    asset_id: '12345',
+    contract_id: '12345',
+    product_id: '12345',
+    solution_id: '12345',
+    custom_object_id: '12345',
     type: 'meeting',
     title: 'Meeting',
     description: 'More info about the meeting',
     location: 'Space',
-    allDayEvent: false,
+    all_day_event: false,
     private: true,
-    groupEvent: true,
-    eventSubType: 'debrief',
-    groupEventType: 'Proposed',
+    group_event: true,
+    event_sub_type: 'debrief',
+    group_event_type: 'Proposed',
     child: false,
     archived: false,
     deleted: false,
-    showAs: 'busy',
-    activityDate: '2021-05-01',
-    durationMinutes: 30,
-    startDatetime: '2021-05-01T12:00:00.000Z',
-    endDatetime: '2021-05-01T12:30:00.000Z',
-    endDate: '2021-05-01',
+    show_as: 'busy',
+    activity_date: '2021-05-01',
+    duration_minutes: 30,
+    start_datetime: '2021-05-01T12:00:00.000Z',
+    end_datetime: '2021-05-01T12:30:00.000Z',
+    end_date: '2021-05-01',
     recurrent: false,
-    reminderDatetime: '2021-05-01T17:00:00.000Z',
-    reminderSet: false,
-    customFields: [
+    reminder_datetime: '2021-05-01T17:00:00.000Z',
+    reminder_set: false,
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -532,30 +532,30 @@ const apideck = new Apideck({
 const params = {
   company: {
     name: 'SpaceX',
-    ownerId: '12345',
+    owner_id: '12345',
     image: 'https://www.spacex.com/static/images/share.jpg',
     description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vatNumber: 'BE0689615164',
+    vat_number: 'BE0689615164',
     currency: 'USD',
     status: 'Open',
     fax: '+12129876543',
-    annualRevenue: '+$35m',
-    numberOfEmployees: '500-1000',
+    annual_revenue: '+$35m',
+    number_of_employees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
-    salesTaxNumber: '12456EN',
-    payeeNumber: '78932EN',
-    abnOrTfn: '46 115 614 695',
-    abnBranch: '123',
+    sales_tax_number: '12456EN',
+    payee_number: '78932EN',
+    abn_or_tfn: '46 115 614 695',
+    abn_branch: '123',
     acn: 'XXX XXX XXX',
-    bankAccounts: [
+    bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
-        bsbNumber: '062-001',
-        bankCode: 'BNH',
-        accountNumber: '123456789',
-        accountName: 'SPACEX LLC'
+        bsb_number: '062-001',
+        bank_code: 'BNH',
+        account_number: '123456789',
+        account_name: 'SPACEX LLC'
       }
     ],
     websites: [
@@ -575,20 +575,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -602,7 +602,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -611,7 +611,7 @@ const params = {
     tags: [
       'New'
     ],
-    readOnly: false
+    read_only: false
   }
 }
 
@@ -893,30 +893,30 @@ const params = {
   id: 'id_example',
   company: {
     name: 'SpaceX',
-    ownerId: '12345',
+    owner_id: '12345',
     image: 'https://www.spacex.com/static/images/share.jpg',
     description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vatNumber: 'BE0689615164',
+    vat_number: 'BE0689615164',
     currency: 'USD',
     status: 'Open',
     fax: '+12129876543',
-    annualRevenue: '+$35m',
-    numberOfEmployees: '500-1000',
+    annual_revenue: '+$35m',
+    number_of_employees: '500-1000',
     industry: 'Apparel',
     ownership: 'Public',
-    salesTaxNumber: '12456EN',
-    payeeNumber: '78932EN',
-    abnOrTfn: '46 115 614 695',
-    abnBranch: '123',
+    sales_tax_number: '12456EN',
+    payee_number: '78932EN',
+    abn_or_tfn: '46 115 614 695',
+    abn_branch: '123',
     acn: 'XXX XXX XXX',
-    bankAccounts: [
+    bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
-        bsbNumber: '062-001',
-        bankCode: 'BNH',
-        accountNumber: '123456789',
-        accountName: 'SPACEX LLC'
+        bsb_number: '062-001',
+        bank_code: 'BNH',
+        account_number: '123456789',
+        account_name: 'SPACEX LLC'
       }
     ],
     websites: [
@@ -936,20 +936,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -963,7 +963,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -972,7 +972,7 @@ const params = {
     tags: [
       'New'
     ],
-    readOnly: false
+    read_only: false
   }
 }
 
@@ -1044,14 +1044,14 @@ const apideck = new Apideck({
 const params = {
   contact: {
     name: 'Elon Musk',
-    ownerId: '54321',
+    owner_id: '54321',
     type: 'personal',
-    companyId: '23456',
-    companyName: '23456',
-    leadId: '34567',
-    firstName: 'Elon',
-    middleName: 'D.',
-    lastName: 'Musk',
+    company_id: '23456',
+    company_name: '23456',
+    lead_id: '34567',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
     prefix: 'Mr.',
     suffix: 'PhD',
     title: 'CEO',
@@ -1060,10 +1060,10 @@ const params = {
     gender: 'female',
     birthday: '2000-08-12',
     image: 'https://unavatar.io/elon-musk',
-    leadSource: 'Cold Call',
+    lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    currentBalance: 10.5,
+    current_balance: 10.5,
     status: 'open',
     active: true,
     websites: [
@@ -1083,20 +1083,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -1110,7 +1110,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -1400,14 +1400,14 @@ const params = {
   id: 'id_example',
   contact: {
     name: 'Elon Musk',
-    ownerId: '54321',
+    owner_id: '54321',
     type: 'personal',
-    companyId: '23456',
-    companyName: '23456',
-    leadId: '34567',
-    firstName: 'Elon',
-    middleName: 'D.',
-    lastName: 'Musk',
+    company_id: '23456',
+    company_name: '23456',
+    lead_id: '34567',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
     prefix: 'Mr.',
     suffix: 'PhD',
     title: 'CEO',
@@ -1416,10 +1416,10 @@ const params = {
     gender: 'female',
     birthday: '2000-08-12',
     image: 'https://unavatar.io/elon-musk',
-    leadSource: 'Cold Call',
+    lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    currentBalance: 10.5,
+    current_balance: 10.5,
     status: 'open',
     active: true,
     websites: [
@@ -1439,20 +1439,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -1466,7 +1466,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -1546,19 +1546,19 @@ const apideck = new Apideck({
 const params = {
   leads1: {
     name: 'Elon Musk',
-    companyName: 'Spacex',
-    ownerId: '54321',
-    companyId: '2',
-    contactId: '2',
-    leadSource: 'Cold Call',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    company_name: 'Spacex',
+    owner_id: '54321',
+    company_id: '2',
+    contact_id: '2',
+    lead_source: 'Cold Call',
+    first_name: 'Elon',
+    last_name: 'Musk',
     description: 'A thinker',
     prefix: 'Sir',
     title: 'CEO',
     language: 'EN',
     status: 'New',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
     fax: '+12129876543',
     websites: [
@@ -1578,20 +1578,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -1605,7 +1605,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -1895,19 +1895,19 @@ const params = {
   id: 'id_example',
   leads1: {
     name: 'Elon Musk',
-    companyName: 'Spacex',
-    ownerId: '54321',
-    companyId: '2',
-    contactId: '2',
-    leadSource: 'Cold Call',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    company_name: 'Spacex',
+    owner_id: '54321',
+    company_id: '2',
+    contact_id: '2',
+    lead_source: 'Cold Call',
+    first_name: 'Elon',
+    last_name: 'Musk',
     description: 'A thinker',
     prefix: 'Sir',
     title: 'CEO',
     language: 'EN',
     status: 'New',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
     fax: '+12129876543',
     websites: [
@@ -1927,20 +1927,20 @@ const params = {
         line2: 'apt #',
         city: 'San Francisco',
         state: 'CA',
-        postalCode: '94104',
+        postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638'
       }
     ],
-    socialLinks: [
+    social_links: [
       {
         id: '12345',
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
     ],
-    phoneNumbers: [
+    phone_numbers: [
       {
         id: '12345',
         number: '111-111-1111',
@@ -1954,7 +1954,7 @@ const params = {
         type: 'primary'
       }
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
@@ -2035,11 +2035,11 @@ const params = {
   note: {
     title: 'Meeting Notes',
     content: 'Office hours are 9AM-6PM',
-    ownerId: '12345',
-    contactId: '12345',
-    companyId: '12345',
-    opportunityId: '12345',
-    leadId: '12345',
+    owner_id: '12345',
+    contact_id: '12345',
+    company_id: '12345',
+    opportunity_id: '12345',
+    lead_id: '12345',
     active: true
   }
 }
@@ -2321,11 +2321,11 @@ const params = {
   note: {
     title: 'Meeting Notes',
     content: 'Office hours are 9AM-6PM',
-    ownerId: '12345',
-    contactId: '12345',
-    companyId: '12345',
-    opportunityId: '12345',
-    leadId: '12345',
+    owner_id: '12345',
+    contact_id: '12345',
+    company_id: '12345',
+    opportunity_id: '12345',
+    lead_id: '12345',
     active: true
   }
 }
@@ -2398,39 +2398,39 @@ const apideck = new Apideck({
 const params = {
   opportunity: {
     title: 'New Rocket',
-    primaryContactId: '12345',
+    primary_contact_id: '12345',
     description: 'Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines.',
     type: 'Existing Customer - Upgrade',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
-    winProbability: 40,
-    closeDate: '2020-10-30',
-    lossReasonId: '12345',
-    lossReason: 'No budget',
-    wonReasonId: '12345',
-    wonReason: 'Best pitch',
-    pipelineId: '12345',
-    pipelineStageId: '12345',
-    sourceId: '12345',
-    leadId: '12345',
-    leadSource: 'Website',
-    contactId: '12345',
-    companyId: '12345',
-    companyName: 'Copper',
-    ownerId: '12345',
+    win_probability: 40,
+    close_date: '2020-10-30',
+    loss_reason_id: '12345',
+    loss_reason: 'No budget',
+    won_reason_id: '12345',
+    won_reason: 'Best pitch',
+    pipeline_id: '12345',
+    pipeline_stage_id: '12345',
+    source_id: '12345',
+    lead_id: '12345',
+    lead_source: 'Website',
+    contact_id: '12345',
+    company_id: '12345',
+    company_name: 'Copper',
+    owner_id: '12345',
     priority: 'None',
     status: 'Open',
-    statusId: '12345',
+    status_id: '12345',
     tags: [
       'New'
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stageLastChangedAt: '2020-09-30T07:43:32.000Z'
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
   }
 }
 
@@ -2712,39 +2712,39 @@ const params = {
   id: 'id_example',
   opportunity: {
     title: 'New Rocket',
-    primaryContactId: '12345',
+    primary_contact_id: '12345',
     description: 'Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines.',
     type: 'Existing Customer - Upgrade',
-    monetaryAmount: 75000,
+    monetary_amount: 75000,
     currency: 'USD',
-    winProbability: 40,
-    closeDate: '2020-10-30',
-    lossReasonId: '12345',
-    lossReason: 'No budget',
-    wonReasonId: '12345',
-    wonReason: 'Best pitch',
-    pipelineId: '12345',
-    pipelineStageId: '12345',
-    sourceId: '12345',
-    leadId: '12345',
-    leadSource: 'Website',
-    contactId: '12345',
-    companyId: '12345',
-    companyName: 'Copper',
-    ownerId: '12345',
+    win_probability: 40,
+    close_date: '2020-10-30',
+    loss_reason_id: '12345',
+    loss_reason: 'No budget',
+    won_reason_id: '12345',
+    won_reason: 'Best pitch',
+    pipeline_id: '12345',
+    pipeline_stage_id: '12345',
+    source_id: '12345',
+    lead_id: '12345',
+    lead_source: 'Website',
+    contact_id: '12345',
+    company_id: '12345',
+    company_name: 'Copper',
+    owner_id: '12345',
     priority: 'None',
     status: 'Open',
-    statusId: '12345',
+    status_id: '12345',
     tags: [
       'New'
     ],
-    customFields: [
+    custom_fields: [
       {
         id: 'custom_technologies',
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stageLastChangedAt: '2020-09-30T07:43:32.000Z'
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
   }
 }
 
@@ -2819,12 +2819,12 @@ const params = {
     name: 'Sales Pipeline',
     currency: 'USD',
     archived: false,
-    displayOrder: 1,
+    display_order: 1,
     stages: [
       {
         name: 'Contract Sent',
         value: 'CONTRACT_SENT',
-        displayOrder: 1
+        display_order: 1
       }
     ]
   }
@@ -3107,12 +3107,12 @@ const params = {
     name: 'Sales Pipeline',
     currency: 'USD',
     archived: false,
-    displayOrder: 1,
+    display_order: 1,
     stages: [
       {
         name: 'Contract Sent',
         value: 'CONTRACT_SENT',
-        displayOrder: 1
+        display_order: 1
       }
     ]
   }
@@ -3186,10 +3186,10 @@ const apideck = new Apideck({
 const params = {
   user: {
     email: 'elon@musk.com',
-    parentId: '54321',
+    parent_id: '54321',
     username: 'masterofcoin',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    first_name: 'Elon',
+    last_name: 'Musk',
     image: 'https://logo.clearbit.com/spacex.com?s=128',
     language: 'EN',
     status: 'active',
@@ -3473,10 +3473,10 @@ const params = {
   id: 'id_example',
   user: {
     email: 'elon@musk.com',
-    parentId: '54321',
+    parent_id: '54321',
     username: 'masterofcoin',
-    firstName: 'Elon',
-    lastName: 'Musk',
+    first_name: 'Elon',
+    last_name: 'Musk',
     image: 'https://logo.clearbit.com/spacex.com?s=128',
     language: 'EN',
     status: 'active',
