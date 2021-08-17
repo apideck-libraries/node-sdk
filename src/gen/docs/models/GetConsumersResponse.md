@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`statusCode` | **number** | HTTP Response Status Code | 
+`status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**Array&lt;GetConsumersResponseData&gt;**](GetConsumersResponseData.md) |  | 
 

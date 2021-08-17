@@ -5,12 +5,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`applicationId` | **string** |  | [optional] 
-`consumerId` | **string** |  | [optional] 
-`startDatetime` | **string** |  | [optional] 
-`endDatetime` | **string** |  | [optional] 
-`aggregatedRequestCount` | **number** |  | [optional] 
-`requestCounts` | [**RequestCountAllocation**](RequestCountAllocation.md) |  | [optional] 
+`application_id` | **string** |  | [optional] 
+`consumer_id` | **string** |  | [optional] 
+`start_datetime` | **string** |  | [optional] 
+`end_datetime` | **string** |  | [optional] 
+`aggregated_request_count` | **number** |  | [optional] 
+`request_counts` | [**RequestCountAllocation**](RequestCountAllocation.md) |  | [optional] 
 
 
 

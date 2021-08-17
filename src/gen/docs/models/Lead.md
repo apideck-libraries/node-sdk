@@ -6,31 +6,31 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** |  | 
-`companyName` | **string** |  | 
+`company_name` | **string** |  | 
 `id` | **string** |  | [optional] 
-`ownerId` | **string** |  | [optional] 
-`companyId` | **string** |  | [optional] 
-`contactId` | **string** |  | [optional] 
-`leadSource` | **string** |  | [optional] 
-`firstName` | **string** |  | [optional] 
-`lastName` | **string** |  | [optional] 
+`owner_id` | **string** |  | [optional] 
+`company_id` | **string** |  | [optional] 
+`contact_id` | **string** |  | [optional] 
+`lead_source` | **string** |  | [optional] 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
 `prefix` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `status` | **string** |  | [optional] 
-`monetaryAmount` | **number** |  | [optional] 
+`monetary_amount` | **number** |  | [optional] 
 `currency` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
-`socialLinks` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
-`phoneNumbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
+`social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
+`phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
-`customFields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
-`updatedAt` | **string** |  | [optional] 
-`createdAt` | **string** |  | [optional] 
+`updated_at` | **string** |  | [optional] 
+`created_at` | **string** |  | [optional] 
 
 
 

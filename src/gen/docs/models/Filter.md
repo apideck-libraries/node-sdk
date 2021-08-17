@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`connectorId` | **string** |  | [optional] 
-`statusCode` | **number** |  | [optional] 
-`excludeUnifiedApis` | **string** |  | [optional] 
+`connector_id` | **string** |  | [optional] 
+`status_code` | **number** |  | [optional] 
+`exclude_unified_apis` | **string** |  | [optional] 
 
 
 

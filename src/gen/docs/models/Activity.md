@@ -7,46 +7,46 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `type` | **string** |  | 
 `id` | **string** |  | [optional] 
-`activityDatetime` | **string** |  | [optional] 
-`durationSeconds` | **number** |  | [optional] 
-`accountId` | **string** |  | [optional] 
-`contactId` | **string** |  | [optional] 
-`companyId` | **string** |  | [optional] 
-`opportunityId` | **string** |  | [optional] 
-`leadId` | **string** |  | [optional] 
-`ownerId` | **string** |  | [optional] 
-`campaignId` | **string** |  | [optional] 
-`caseId` | **string** |  | [optional] 
-`assetId` | **string** |  | [optional] 
-`contractId` | **string** |  | [optional] 
-`productId` | **string** |  | [optional] 
-`solutionId` | **string** |  | [optional] 
-`customObjectId` | **string** |  | [optional] 
+`activity_datetime` | **string** |  | [optional] 
+`duration_seconds` | **number** |  | [optional] 
+`account_id` | **string** |  | [optional] 
+`contact_id` | **string** |  | [optional] 
+`company_id` | **string** |  | [optional] 
+`opportunity_id` | **string** |  | [optional] 
+`lead_id` | **string** |  | [optional] 
+`owner_id` | **string** |  | [optional] 
+`campaign_id` | **string** |  | [optional] 
+`case_id` | **string** |  | [optional] 
+`asset_id` | **string** |  | [optional] 
+`contract_id` | **string** |  | [optional] 
+`product_id` | **string** |  | [optional] 
+`solution_id` | **string** |  | [optional] 
+`custom_object_id` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
 `location` | **string** |  | [optional] 
-`allDayEvent` | **boolean** |  | [optional] 
-`_private` | **boolean** |  | [optional] 
-`groupEvent` | **boolean** |  | [optional] 
-`eventSubType` | **string** |  | [optional] 
-`groupEventType` | **string** |  | [optional] 
+`all_day_event` | **boolean** |  | [optional] 
+`private` | **boolean** |  | [optional] 
+`group_event` | **boolean** |  | [optional] 
+`event_sub_type` | **string** |  | [optional] 
+`group_event_type` | **string** |  | [optional] 
 `child` | **boolean** |  | [optional] 
 `archived` | **boolean** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
-`showAs` | **string** |  | [optional] 
-`activityDate` | **string** |  | [optional] 
-`durationMinutes` | **number** |  | [optional] 
-`startDatetime` | **string** |  | [optional] 
-`endDatetime` | **string** |  | [optional] 
-`endDate` | **string** |  | [optional] 
+`show_as` | **string** |  | [optional] 
+`activity_date` | **string** |  | [optional] 
+`duration_minutes` | **number** |  | [optional] 
+`start_datetime` | **string** |  | [optional] 
+`end_datetime` | **string** |  | [optional] 
+`end_date` | **string** |  | [optional] 
 `recurrent` | **boolean** |  | [optional] 
-`reminderDatetime` | **string** |  | [optional] 
-`reminderSet` | **boolean** |  | [optional] 
-`customFields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`updatedBy` | **string** |  | [optional] 
-`createdBy` | **string** |  | [optional] 
-`updatedAt` | **string** |  | [optional] 
-`createdAt` | **string** |  | [optional] 
+`reminder_datetime` | **string** |  | [optional] 
+`reminder_set` | **boolean** |  | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **string** |  | [optional] 
+`created_at` | **string** |  | [optional] 
 
 
 
@@ -66,9 +66,9 @@ Name | Type | Description | Notes
 
 * `task` (value: `'task'`)
 
-* `sendLetter` (value: `'send-letter'`)
+* `send_letter` (value: `'send-letter'`)
 
-* `sendQuote` (value: `'send-quote'`)
+* `send_quote` (value: `'send-quote'`)
 
 * `other` (value: `'other'`)
 

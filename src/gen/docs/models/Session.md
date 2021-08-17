@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`sessionUri` | **string** |  | [optional] 
+`session_uri` | **string** |  | [optional] 
 
 
 

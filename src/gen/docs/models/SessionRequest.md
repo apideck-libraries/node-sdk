@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`redirectUri` | **string** |  | [optional] 
-`consumerMetadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
+`redirect_uri` | **string** |  | [optional] 
+`consumer_metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
 `theme` | [**SessionRequestTheme**](SessionRequestTheme.md) |  | [optional] 
 `settings` | [**SessionRequestSettings**](SessionRequestSettings.md) |  | [optional] 
 

@@ -5,10 +5,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`sessionLength` | **string** | The duration of time the session is valid for (maximum 1 week). | [optional] 
-`hideResourceSettings` | **boolean** |  | [optional] 
-`showLogs` | **boolean** |  | [optional] 
-`sandboxMode` | **boolean** |  | [optional] 
+`session_length` | **string** | The duration of time the session is valid for (maximum 1 week). | [optional] 
+`hide_resource_settings` | **boolean** |  | [optional] 
+`show_logs` | **boolean** |  | [optional] 
+`sandbox_mode` | **boolean** |  | [optional] 
 
 
 

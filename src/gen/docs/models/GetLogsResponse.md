@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`statusCode` | **number** | HTTP Response Status Code | 
+`status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**Array&lt;Log&gt;**](Log.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 

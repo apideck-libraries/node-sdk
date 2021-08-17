@@ -5,16 +5,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`consumerId` | **string** |  | [optional] 
-`applicationId` | **string** |  | [optional] 
+`consumer_id` | **string** |  | [optional] 
+`application_id` | **string** |  | [optional] 
 `metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
 `connections` | [**Array&lt;ConsumerConnections&gt;**](ConsumerConnections.md) |  | [optional] 
 `services` | **Array&lt;string&gt;** |  | [optional] 
-`aggregatedRequestCount` | **number** |  | [optional] 
-`requestCounts` | [**RequestCountAllocation**](RequestCountAllocation.md) |  | [optional] 
+`aggregated_request_count` | **number** |  | [optional] 
+`request_counts` | [**RequestCountAllocation**](RequestCountAllocation.md) |  | [optional] 
 `created` | **string** |  | [optional] 
 `modified` | **string** |  | [optional] 
-`requestCountUpdated` | **string** |  | [optional] 
+`request_count_updated` | **string** |  | [optional] 
 
 
 

@@ -16,15 +16,15 @@ Name | Type | Description | Notes
 ## Enum: OpportunitiesSort.by
 
 
-* `createdAt` (value: `'created_at'`)
+* `created_at` (value: `'created_at'`)
 
-* `updatedAt` (value: `'updated_at'`)
+* `updated_at` (value: `'updated_at'`)
 
 * `title` (value: `'title'`)
 
-* `winProbability` (value: `'win_probability'`)
+* `win_probability` (value: `'win_probability'`)
 
-* `monetaryAmount` (value: `'monetary_amount'`)
+* `monetary_amount` (value: `'monetary_amount'`)
 
 * `status` (value: `'status'`)
 

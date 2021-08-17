@@ -5,13 +5,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`vaultName` | **string** |  | [optional] 
-`primaryColor` | **string** |  | [optional] 
-`sidepanelBackgroundColor` | **string** |  | [optional] 
-`sidepanelTextColor` | **string** |  | [optional] 
+`vault_name` | **string** |  | [optional] 
+`primary_color` | **string** |  | [optional] 
+`sidepanel_background_color` | **string** |  | [optional] 
+`sidepanel_text_color` | **string** |  | [optional] 
 `favicon` | **string** |  | [optional] 
-`termsUrl` | **string** |  | [optional] 
-`privacyUrl` | **string** |  | [optional] 
+`terms_url` | **string** |  | [optional] 
+`privacy_url` | **string** |  | [optional] 
 
 
 

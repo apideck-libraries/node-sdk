@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `email` | **string** |  | 
 `id` | **string** |  | [optional] 
-`parentId` | **string** |  | [optional] 
+`parent_id` | **string** |  | [optional] 
 `username` | **string** |  | [optional] 
-`firstName` | **string** |  | [optional] 
-`lastName` | **string** |  | [optional] 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
 `image` | **string** |  | [optional] 
 `language` | **string** |  | [optional] 
 `status` | **string** |  | [optional] 
 `password` | **string** |  | [optional] 
-`updatedAt` | **string** |  | [optional] 
-`createdAt` | **string** |  | [optional] 
+`updated_at` | **string** |  | [optional] 
+`created_at` | **string** |  | [optional] 
 
 
 
