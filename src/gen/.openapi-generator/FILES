@@ -35,6 +35,7 @@ CreateActivityResponse.md
 CreateCompanyResponse.md
 CreateCompanyResponse1.md
 CreateConnectionRequestBody.md
+CreateConnectionRequestBodyMetadata.md
 CreateConnectionResponse.md
 CreateContactResponse.md
 CreateContactResponse1.md
@@ -190,6 +191,7 @@ models/CreateActivityResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateCompanyResponse1.ts
 models/CreateConnectionRequestBody.ts
+models/CreateConnectionRequestBodyMetadata.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateContactResponse1.ts

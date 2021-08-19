@@ -360,14 +360,11 @@ const params = {
       instance_url: 'https://eu28.salesforce.com'
     },
     metadata: {
-      ecosystem: {
-        name: 'My Ecosystem',
-        id: 'a6469332-7948-46a6-abc2-87ba3f005025'
-      },
       account: {
         name: 'My Company',
         id: 'c01458a5-7276-41ce-bc19-639906b0450a'
-      }
+      },
+      plan: 'enterprise'
     },
     auth_type: 'oauth2',
     status: 'live',
@@ -754,6 +751,19 @@ const params = {
       user_name: 'Elon Musk',
       email: 'elon@musk.com',
       image: 'https://www.spacex.com/static/images/share.jpg'
+    },
+    custom_consumer_settings: {
+      feature_flag_1: true,
+      tax_rates: [
+        {
+          id: '6',
+          label: '6%'
+        },
+        {
+          id: '21',
+          label: '21%'
+        }
+      ]
     },
     theme: {
       vault_name: 'Intercom',

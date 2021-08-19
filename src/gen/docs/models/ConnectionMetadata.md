@@ -5,16 +5,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`ecosystem` | [**ConnectionMetadata**](ConnectionMetadata.md) |  | [optional] 
-`account` | [**ConnectionMetadata**](ConnectionMetadata.md) |  | [optional] 
+`id` | **string** |  | [optional] 
+`name` | **string** |  | [optional] 
 
 
 
 
-
-## Referenced Types:
-* [`ConnectionMetadata`](ConnectionMetadata.md)
-* [`ConnectionMetadata`](ConnectionMetadata.md)
 
 ---
 
