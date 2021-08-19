@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `redirect_uri` | **string** |  | [optional] 
 `consumer_metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
+`custom_consumer_settings` | **{ [key: string]: object; }** | Custom consumer settings that are passed part of the session. | [optional] 
 `theme` | [**SessionRequestTheme**](SessionRequestTheme.md) |  | [optional] 
 `settings` | [**SessionRequestSettings**](SessionRequestSettings.md) |  | [optional] 
 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 ## Referenced Types:
 
 * [`ConsumerMetadata`](ConsumerMetadata.md)
+
 * [`SessionRequestTheme`](SessionRequestTheme.md)
 * [`SessionRequestSettings`](SessionRequestSettings.md)
 

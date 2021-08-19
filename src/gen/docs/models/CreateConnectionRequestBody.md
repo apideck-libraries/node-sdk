@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `enabled` | **boolean** |  | [optional] 
 `settings` | **object** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
-`metadata` | [**ConnectionMetadata**](ConnectionMetadata.md) |  | [optional] 
+`metadata` | [**CreateConnectionRequestBodyMetadata**](CreateConnectionRequestBodyMetadata.md) |  | [optional] 
 
 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Referenced Types:
 
 
-* [`ConnectionMetadata`](ConnectionMetadata.md)
+* [`CreateConnectionRequestBodyMetadata`](CreateConnectionRequestBodyMetadata.md)
 
 ---
 
