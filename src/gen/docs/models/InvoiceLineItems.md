@@ -15,11 +15,25 @@ Name | Type | Description | Notes
 `unit_price` | **number** |  | [optional] 
 `discount_percentage` | **number** |  | [optional] 
 `item_id` | **number** | ID of the linked item | [optional] 
-`tax_rate` | **object** |  | [optional] 
+`tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `general_ledger_account` | **object** |  | [optional] 
 
 
 
+
+
+## Referenced Types:
+
+
+
+
+
+
+
+
+
+
+* [`LinkedTaxRate`](LinkedTaxRate.md)
 
 
 ---

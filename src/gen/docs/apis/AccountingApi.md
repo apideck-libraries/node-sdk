@@ -1122,8 +1122,7 @@ const params = {
         discount_percentage: 15,
         item_id: 12344,
         tax_rate: {
-          name: '15% GST on Expenses',
-          code: 'ABN'
+          code: 'N-T'
         },
         general_ledger_account: {
           name: 'Bank account'
@@ -1464,8 +1463,7 @@ const params = {
         discount_percentage: 15,
         item_id: 12344,
         tax_rate: {
-          name: '15% GST on Expenses',
-          code: 'ABN'
+          code: 'N-T'
         },
         general_ledger_account: {
           name: 'Bank account'
@@ -1576,14 +1574,17 @@ const params = {
     sub_type: 'CHECKING_ACCOUNT',
     name: 'Bank account',
     fully_qualified_name: 'Asset.Bank.Checking_Account',
-    description: 'The main checking account',
+    description: 'Main checking account',
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
     tax_type: 'USD',
-    tax_code: 'N-T',
-    level: '2',
+    tax_rate: {
+      code: 'N-T'
+    },
+    level: 2,
     active: true,
+    header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
@@ -1877,14 +1878,17 @@ const params = {
     sub_type: 'CHECKING_ACCOUNT',
     name: 'Bank account',
     fully_qualified_name: 'Asset.Bank.Checking_Account',
-    description: 'The main checking account',
+    description: 'Main checking account',
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
     tax_type: 'USD',
-    tax_code: 'N-T',
-    level: '2',
+    tax_rate: {
+      code: 'N-T'
+    },
+    level: 2,
     active: true,
+    header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
