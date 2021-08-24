@@ -16,6 +16,8 @@
 // https://github.com/OpenAPITools/openapi-generator/issues/6140
 
 import { exists } from '../runtime'
+import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
+
 /**
  *
  * @export
@@ -84,10 +86,10 @@ export interface InvoiceLineItems {
   item_id?: number | null
   /**
    *
-   * @type {object}
+   * @type {LinkedTaxRate}
    * @memberof InvoiceLineItems
    */
-  tax_rate?: object
+  tax_rate?: LinkedTaxRate
   /**
    *
    * @type {object}
@@ -120,7 +122,7 @@ export function InvoiceLineItemsFromJSONTyped(
       ? undefined
       : json['discount_percentage'],
     item_id: !exists(json, 'item_id') ? undefined : json['item_id'],
-    tax_rate: !exists(json, 'tax_rate') ? undefined : json['tax_rate'],
+    tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     general_ledger_account: !exists(json, 'general_ledger_account')
       ? undefined
       : json['general_ledger_account']
@@ -144,7 +146,7 @@ export function InvoiceLineItemsToJSON(value?: InvoiceLineItems | null): any {
     unit_price: value.unit_price,
     discount_percentage: value.discount_percentage,
     item_id: value.item_id,
-    tax_rate: value.tax_rate,
+    tax_rate: LinkedTaxRateToJSON(value.tax_rate),
     general_ledger_account: value.general_ledger_account
   }
 }

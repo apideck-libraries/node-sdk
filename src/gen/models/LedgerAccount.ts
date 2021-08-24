@@ -23,6 +23,7 @@ import {
   LedgerAccountParentAccountFromJSON,
   LedgerAccountParentAccountToJSON
 } from './LedgerAccountParentAccount'
+import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
 
 /**
  *
@@ -30,6 +31,7 @@ import {
  * @interface LedgerAccount
  */
 export interface LedgerAccount {
+  [key: string]: object | any
   /**
    *
    * @type {string}
@@ -85,13 +87,13 @@ export interface LedgerAccount {
    */
   description?: string | null
   /**
-   * The opening balance. A positive integer representing the smallest currency unit (e.g., 100 cents equals $1.00 or 100 equals ¥100, a zero-decimal currency)
+   *
    * @type {number}
    * @memberof LedgerAccount
    */
   opening_balance?: number | null
   /**
-   * The current balance. A positive integer representing the smallest currency unit (e.g., 20000 cents equals $200.00 or 20000 equals ¥20000, a zero-decimal currency)
+   *
    * @type {number}
    * @memberof LedgerAccount
    */
@@ -110,22 +112,28 @@ export interface LedgerAccount {
   tax_type?: string | null
   /**
    *
-   * @type {string}
+   * @type {LinkedTaxRate}
    * @memberof LedgerAccount
    */
-  tax_code?: string | null
+  tax_rate?: LinkedTaxRate
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof LedgerAccount
    */
-  level?: string | null
+  level?: number | null
   /**
    *
    * @type {boolean}
    * @memberof LedgerAccount
    */
   active?: boolean | null
+  /**
+   *
+   * @type {boolean}
+   * @memberof LedgerAccount
+   */
+  header?: boolean | null
   /**
    *
    * @type {BankAccount}
@@ -156,6 +164,12 @@ export interface LedgerAccount {
    * @memberof LedgerAccount
    */
   readonly last_reconciliation_date?: Date
+  /**
+   *
+   * @type {string}
+   * @memberof LedgerAccount
+   */
+  readonly row_version?: string
   /**
    *
    * @type {string}
@@ -227,6 +241,7 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
     return json
   }
   return {
+    ...json,
     id: !exists(json, 'id') ? undefined : json['id'],
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     nominal_code: !exists(json, 'nominal_code') ? undefined : json['nominal_code'],
@@ -242,9 +257,10 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
     current_balance: !exists(json, 'current_balance') ? undefined : json['current_balance'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     tax_type: !exists(json, 'tax_type') ? undefined : json['tax_type'],
-    tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
+    tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     level: !exists(json, 'level') ? undefined : json['level'],
     active: !exists(json, 'active') ? undefined : json['active'],
+    header: !exists(json, 'header') ? undefined : json['header'],
     bank_account: !exists(json, 'bank_account')
       ? undefined
       : BankAccountFromJSON(json['bank_account']),
@@ -256,6 +272,7 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
     last_reconciliation_date: !exists(json, 'last_reconciliation_date')
       ? undefined
       : new Date(json['last_reconciliation_date']),
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -271,6 +288,7 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
     return null
   }
   return {
+    ...value,
     nominal_code: value.nominal_code,
     classification: value.classification,
     type: value.type,
@@ -282,9 +300,10 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
     current_balance: value.current_balance,
     currency: CurrencyToJSON(value.currency),
     tax_type: value.tax_type,
-    tax_code: value.tax_code,
+    tax_rate: LinkedTaxRateToJSON(value.tax_rate),
     level: value.level,
     active: value.active,
+    header: value.header,
     bank_account: BankAccountToJSON(value.bank_account),
     parent_account: LedgerAccountParentAccountToJSON(value.parent_account),
     sub_account: value.sub_account

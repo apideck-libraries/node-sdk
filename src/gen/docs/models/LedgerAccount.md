@@ -14,18 +14,20 @@ Name | Type | Description | Notes
 `name` | **string** |  | [optional] 
 `fully_qualified_name` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
-`opening_balance` | **number** | The opening balance. A positive integer representing the smallest currency unit (e.g., 100 cents equals $1.00 or 100 equals ¥100, a zero-decimal currency) | [optional] 
-`current_balance` | **number** | The current balance. A positive integer representing the smallest currency unit (e.g., 20000 cents equals $200.00 or 20000 equals ¥20000, a zero-decimal currency) | [optional] 
+`opening_balance` | **number** |  | [optional] 
+`current_balance` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `tax_type` | **string** |  | [optional] 
-`tax_code` | **string** |  | [optional] 
-`level` | **string** |  | [optional] 
+`tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+`level` | **number** |  | [optional] 
 `active` | **boolean** |  | [optional] 
+`header` | **boolean** |  | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `parent_account` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
 `sub_account` | **boolean** |  | [optional] 
 `sub_accounts` | **Array&lt;object&gt;** |  | [optional] 
 `last_reconciliation_date` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
+`row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -109,11 +111,13 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 
+* [`LinkedTaxRate`](LinkedTaxRate.md)
 
 
 
 * [`BankAccount`](BankAccount.md)
 * [`LedgerAccountParentAccount`](LedgerAccountParentAccount.md)
+
 
 
 
