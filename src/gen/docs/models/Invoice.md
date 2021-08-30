@@ -9,11 +9,12 @@ Name | Type | Description | Notes
 `type` | **string** |  | [optional] 
 `number` | **string** |  | [optional] 
 `customer` | [**Customer**](Customer.md) |  | [optional] 
-`date` | **Date** | Date invoice was issued - YYYY-MM-DD | [optional] 
+`invoice_date` | **Date** | Date invoice was issued - YYYY-MM-DD | [optional] 
 `due_date` | **Date** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
 `status` | **string** | Invoice status | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
+`tax_inclusive` | **boolean** | Amounts include tax | [optional] 
 `sub_total` | **number** |  | [optional] 
 `total_tax` | **number** |  | [optional] 
 `total` | **number** |  | [optional] 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 `line_items` | [**Array&lt;InvoiceLineItems&gt;**](InvoiceLineItems.md) |  | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
+`row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -46,6 +48,8 @@ Name | Type | Description | Notes
 
 * `void` (value: `'void'`)
 
+* `credit` (value: `'credit'`)
+
 
 
 
@@ -65,9 +69,11 @@ Name | Type | Description | Notes
 
 
 
+
 * [`InvoiceLineItems`](InvoiceLineItems.md)
 * [`Address`](Address.md)
 * [`Address`](Address.md)
+
 
 
 

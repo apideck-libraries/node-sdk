@@ -1,6 +1,6 @@
 {
   "name": "@apideck/node",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0-beta.9",
   "description": "Apideck Node.js SDK",
   "keywords": [
     "apideck",
@@ -30,7 +30,7 @@
     "dev": "tsdx watch",
     "build": "tsdx build --target node",
     "lint": "tsdx lint",
-    "test": "DEBUG=nock.* tsdx test --passWithNoTests",
+    "test": "tsdx test --passWithNoTests",
     "prepare": "tsdx build --target node"
   },
   "husky": {

@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`row_id` | **string** |  | [optional] 
+`code` | **string** | User defined item code | [optional] 
 `line_number` | **number** |  | [optional] 
 `description` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
@@ -14,10 +16,22 @@ Name | Type | Description | Notes
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
 `discount_percentage` | **number** |  | [optional] 
-`item_id` | **number** | ID of the linked item | [optional] 
+`item` | [**InvoiceItem**](InvoiceItem.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
-`general_ledger_account` | **object** |  | [optional] 
+`ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+`row_version` | **string** |  | [optional] 
 
+
+
+
+
+<a name="InvoiceLineItemsType"></a>
+## Enum: InvoiceLineItems.type
+
+
+* `inventory` (value: `'inventory'`)
+
+* `service` (value: `'service'`)
 
 
 
@@ -33,7 +47,10 @@ Name | Type | Description | Notes
 
 
 
+
+* [`InvoiceItem`](InvoiceItem.md)
 * [`LinkedTaxRate`](LinkedTaxRate.md)
+* [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 
 
 ---

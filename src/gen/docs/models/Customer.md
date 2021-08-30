@@ -7,7 +7,7 @@ The customer this invoice is linked to.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** |  | 
 `company_name` | **string** |  | [optional] 
 
 

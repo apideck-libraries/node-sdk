@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
-`data` | [**Session**](Session.md) |  | 
+`data` | [**CreateSessionResponseData**](CreateSessionResponseData.md) |  | 
 
 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Referenced Types:
 
 
-* [`Session`](Session.md)
+* [`CreateSessionResponseData`](CreateSessionResponseData.md)
 
 ---
 
