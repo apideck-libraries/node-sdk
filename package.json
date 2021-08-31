@@ -30,7 +30,7 @@
     "dev": "tsdx watch",
     "build": "tsdx build --target node",
     "lint": "tsdx lint",
-    "test": "DEBUG=nock.* tsdx test --passWithNoTests",
+    "test": "tsdx test --passWithNoTests",
     "prepare": "tsdx build --target node"
   },
   "husky": {
