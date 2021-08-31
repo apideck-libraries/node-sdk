@@ -1088,6 +1088,324 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#invoiceItemsAdd', () => {
+    const endpoint = '/accounting/invoice-items'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'InvoiceItems',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        invoiceItem: {
+          id: '12345',
+          code: '120-C',
+          sold: true,
+          name: 'Model Y',
+          description:
+            'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          type: 'inventory',
+          sales_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'hour',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '12345',
+              code: 'N-T'
+            }
+          },
+          quantity: 2,
+          unit_price: 27500.5,
+          ledger_account: {
+            id: '12345',
+            name: 'Bank account'
+          },
+          active: true,
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.invoiceItemsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#invoiceItemsAll', () => {
+    const endpoint = '/accounting/invoice-items'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'InvoiceItems',
+        operation: 'one',
+        data: [
+          {
+            id: '12345',
+            code: '120-C',
+            sold: true,
+            name: 'Model Y',
+            description:
+              'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+            type: 'inventory',
+            sales_details: {
+              unit_price: 27500.5,
+              unit_of_measure: 'hour',
+              tax_inclusive: true,
+              tax_rate: {
+                id: '12345',
+                code: 'N-T'
+              }
+            },
+            quantity: 2,
+            unit_price: 27500.5,
+            ledger_account: {
+              id: '12345',
+              name: 'Bank account'
+            },
+            active: true,
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.invoiceItemsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#invoiceItemsDelete', () => {
+    const endpoint = '/accounting/invoice-items/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'TaxRates',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.invoiceItemsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#invoiceItemsOne', () => {
+    const endpoint = '/accounting/invoice-items/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'InvoiceItems',
+        operation: 'one',
+        data: {
+          id: '12345',
+          code: '120-C',
+          sold: true,
+          name: 'Model Y',
+          description:
+            'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          type: 'inventory',
+          sales_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'hour',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '12345',
+              code: 'N-T'
+            }
+          },
+          quantity: 2,
+          unit_price: 27500.5,
+          ledger_account: {
+            id: '12345',
+            name: 'Bank account'
+          },
+          active: true,
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.invoiceItemsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#invoiceItemsUpdate', () => {
+    const endpoint = '/accounting/invoice-items/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Invoices',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        invoiceItem: {
+          id: '12345',
+          code: '120-C',
+          sold: true,
+          name: 'Model Y',
+          description:
+            'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          type: 'inventory',
+          sales_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'hour',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '12345',
+              code: 'N-T'
+            }
+          },
+          quantity: 2,
+          unit_price: 27500.5,
+          ledger_account: {
+            id: '12345',
+            name: 'Bank account'
+          },
+          active: true,
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.invoiceItemsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#invoicesAdd', () => {
     const endpoint = '/accounting/invoices'
 
@@ -1121,16 +1439,19 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoice: {
+          id: '12345',
           type: 'Service',
           number: 'OIT00546',
           customer: {
+            id: '12345',
             company_name: 'The boring company'
           },
-          date: '2020-09-30',
+          invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
           status: 'paid',
           currency: 'USD',
+          tax_inclusive: true,
           sub_total: 27500,
           total_tax: 1000,
           total: 28500,
@@ -1139,21 +1460,32 @@ describe('AccountingApi', () => {
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
+              id: '12345',
+              row_id: '12345',
+              code: '120-C',
               line_number: 1,
-              description: 'Rock Fountain',
-              type: 'Transaction',
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 2,
-              unit_price: 27500,
+              unit_price: 27500.5,
               discount_percentage: 15,
-              item_id: 12344,
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
               tax_rate: {
+                id: '12345',
                 code: 'N-T'
               },
-              general_ledger_account: {
+              ledger_account: {
+                id: '12345',
                 name: 'Bank account'
-              }
+              },
+              row_version: '1-12345'
             }
           ],
           billing_address: {
@@ -1183,7 +1515,8 @@ describe('AccountingApi', () => {
             country: 'US',
             latitude: '40.759211',
             longitude: '-73.984638'
-          }
+          },
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.invoicesAdd(params)
@@ -1222,11 +1555,12 @@ describe('AccountingApi', () => {
               id: '12345',
               company_name: 'The boring company'
             },
-            date: '2020-09-30',
+            invoice_date: '2020-09-30',
             due_date: '2020-10-30',
             po_number: '90000117',
             status: 'paid',
             currency: 'USD',
+            tax_inclusive: true,
             sub_total: 27500,
             total_tax: 1000,
             total: 28500,
@@ -1236,23 +1570,31 @@ describe('AccountingApi', () => {
             line_items: [
               {
                 id: '12345',
+                row_id: '12345',
+                code: '120-C',
                 line_number: 1,
-                description: 'Rock Fountain',
-                type: 'Transaction',
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: 'Inventory',
                 tax_amount: 27500,
                 total_amount: 27500,
                 quantity: 2,
-                unit_price: 27500,
+                unit_price: 27500.5,
                 discount_percentage: 15,
-                item_id: 12344,
+                item: {
+                  id: '12344',
+                  code: '120-C',
+                  name: 'Model Y'
+                },
                 tax_rate: {
                   id: '12345',
                   code: 'N-T'
                 },
-                general_ledger_account: {
+                ledger_account: {
                   id: '12345',
                   name: 'Bank account'
-                }
+                },
+                row_version: '1-12345'
               }
             ],
             billing_address: {
@@ -1283,6 +1625,7 @@ describe('AccountingApi', () => {
               latitude: '40.759211',
               longitude: '-73.984638'
             },
+            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1385,11 +1728,12 @@ describe('AccountingApi', () => {
             id: '12345',
             company_name: 'The boring company'
           },
-          date: '2020-09-30',
+          invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
           status: 'paid',
           currency: 'USD',
+          tax_inclusive: true,
           sub_total: 27500,
           total_tax: 1000,
           total: 28500,
@@ -1399,23 +1743,31 @@ describe('AccountingApi', () => {
           line_items: [
             {
               id: '12345',
+              row_id: '12345',
+              code: '120-C',
               line_number: 1,
-              description: 'Rock Fountain',
-              type: 'Transaction',
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 2,
-              unit_price: 27500,
+              unit_price: 27500.5,
               discount_percentage: 15,
-              item_id: 12344,
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
               tax_rate: {
                 id: '12345',
                 code: 'N-T'
               },
-              general_ledger_account: {
+              ledger_account: {
                 id: '12345',
                 name: 'Bank account'
-              }
+              },
+              row_version: '1-12345'
             }
           ],
           billing_address: {
@@ -1446,6 +1798,7 @@ describe('AccountingApi', () => {
             latitude: '40.759211',
             longitude: '-73.984638'
           },
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1501,16 +1854,19 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoice: {
+          id: '12345',
           type: 'Service',
           number: 'OIT00546',
           customer: {
+            id: '12345',
             company_name: 'The boring company'
           },
-          date: '2020-09-30',
+          invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
           status: 'paid',
           currency: 'USD',
+          tax_inclusive: true,
           sub_total: 27500,
           total_tax: 1000,
           total: 28500,
@@ -1519,21 +1875,32 @@ describe('AccountingApi', () => {
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
+              id: '12345',
+              row_id: '12345',
+              code: '120-C',
               line_number: 1,
-              description: 'Rock Fountain',
-              type: 'Transaction',
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 2,
-              unit_price: 27500,
+              unit_price: 27500.5,
               discount_percentage: 15,
-              item_id: 12344,
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
               tax_rate: {
+                id: '12345',
                 code: 'N-T'
               },
-              general_ledger_account: {
+              ledger_account: {
+                id: '12345',
                 name: 'Bank account'
-              }
+              },
+              row_version: '1-12345'
             }
           ],
           billing_address: {
@@ -1563,7 +1930,8 @@ describe('AccountingApi', () => {
             country: 'US',
             latitude: '40.759211',
             longitude: '-73.984638'
-          }
+          },
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.invoicesUpdate(params)
@@ -1605,6 +1973,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         ledgerAccount: {
+          id: '12345',
           nominal_code: '091',
           classification: 'asset',
           type: 'bank',
@@ -1617,6 +1986,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
+            id: '12345',
             code: 'N-T'
           },
           level: 2,
@@ -1896,6 +2266,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         ledgerAccount: {
+          id: '12345',
           nominal_code: '091',
           classification: 'asset',
           type: 'bank',
@@ -1908,6 +2279,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
+            id: '12345',
             code: 'N-T'
           },
           level: 2,
@@ -1963,6 +2335,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         taxRate: {
+          id: '12345',
           name: '15% GST on Expenses',
           code: 'ABN',
           description: 'No ABN Withholding',
@@ -2191,6 +2564,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         taxRate: {
+          id: '12345',
           name: '15% GST on Expenses',
           code: 'ABN',
           description: 'No ABN Withholding',

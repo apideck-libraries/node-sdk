@@ -36,6 +36,7 @@ CreateActivityResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
+CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
 CreateLedgerAccountResponse.md
@@ -77,6 +78,8 @@ GetConsumersResponse.md
 GetConsumersResponseData.md
 GetContactResponse.md
 GetContactsResponse.md
+GetInvoiceItemResponse.md
+GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
 GetInvoicesResponse.md
 GetLeadResponse.md
@@ -95,6 +98,8 @@ GetTaxRatesResponse.md
 GetUserResponse.md
 GetUsersResponse.md
 Invoice.md
+InvoiceItem.md
+InvoiceItemSalesDetails.md
 InvoiceLineItems.md
 Lead.md
 LeadApi.md
@@ -103,6 +108,7 @@ LeadsFilter.md
 LeadsSort.md
 LedgerAccount.md
 LedgerAccountParentAccount.md
+LinkedLedgerAccount.md
 LinkedTaxRate.md
 Links.md
 Log.md
@@ -138,6 +144,7 @@ UpdateActivityResponse.md
 UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
+UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
 UpdateLedgerAccountResponse.md
@@ -181,6 +188,7 @@ models/CreateActivityResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
+models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
 models/CreateLedgerAccountResponse.ts
@@ -220,6 +228,8 @@ models/GetConsumersResponse.ts
 models/GetConsumersResponseData.ts
 models/GetContactResponse.ts
 models/GetContactsResponse.ts
+models/GetInvoiceItemResponse.ts
+models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
 models/GetInvoicesResponse.ts
 models/GetLeadResponse.ts
@@ -238,12 +248,15 @@ models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
 models/Invoice.ts
+models/InvoiceItem.ts
+models/InvoiceItemSalesDetails.ts
 models/InvoiceLineItems.ts
 models/Lead.ts
 models/LeadsFilter.ts
 models/LeadsSort.ts
 models/LedgerAccount.ts
 models/LedgerAccountParentAccount.ts
+models/LinkedLedgerAccount.ts
 models/LinkedTaxRate.ts
 models/Links.ts
 models/Log.ts
@@ -279,6 +292,7 @@ models/UpdateActivityResponse.ts
 models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
+models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts
 models/UpdateLedgerAccountResponse.ts
