@@ -113,6 +113,10 @@ Read the full documentation of the AccountingApi [here](./src/gen/docs/apis/Acco
 
 Read the full documentation of the CrmApi [here](./src/gen/docs/apis/CrmApi.md).
 
+### DefaultApi
+
+Read the full documentation of the DefaultApi [here](./src/gen/docs/apis/DefaultApi.md).
+
 ### LeadApi
 
 Read the full documentation of the LeadApi [here](./src/gen/docs/apis/LeadApi.md).
