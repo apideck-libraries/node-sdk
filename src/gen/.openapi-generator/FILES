@@ -47,6 +47,7 @@ CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateTaxRateResponse.md
 CreateUserResponse.md
+CreateWebhookResponse.md
 CrmApi.md
 CrmApiTest.api.test.ts
 Currency.md
@@ -63,6 +64,7 @@ DeleteOpportunityResponse.md
 DeletePipelineResponse.md
 DeleteTaxRateResponse.md
 DeleteUserResponse.md
+DeleteWebhookResponse.md
 Email.md
 FormField.md
 FormFieldOption.md
@@ -97,6 +99,8 @@ GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetUserResponse.md
 GetUsersResponse.md
+GetWebhookResponse.md
+GetWebhooksResponse.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -153,14 +157,19 @@ UpdateOpportunityResponse.md
 UpdatePipelineResponse.md
 UpdateTaxRateResponse.md
 UpdateUserResponse.md
+UpdateWebhookResponse.md
 User.md
 VaultApi.md
 VaultApiTest.api.test.ts
+Webhook.md
+WebhookApi.md
+WebhookApiTest.api.test.ts
 Website.md
 apis/AccountingApi.ts
 apis/CrmApi.ts
 apis/LeadApi.ts
 apis/VaultApi.ts
+apis/WebhookApi.ts
 apis/index.ts
 index.ts
 models/Activity.ts
@@ -199,6 +208,7 @@ models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateTaxRateResponse.ts
 models/CreateUserResponse.ts
+models/CreateWebhookResponse.ts
 models/Currency.ts
 models/CustomField.ts
 models/Customer.ts
@@ -213,6 +223,7 @@ models/DeleteOpportunityResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
+models/DeleteWebhookResponse.ts
 models/Email.ts
 models/FormField.ts
 models/FormFieldOption.ts
@@ -247,6 +258,8 @@ models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
+models/GetWebhookResponse.ts
+models/GetWebhooksResponse.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
@@ -301,7 +314,9 @@ models/UpdateOpportunityResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateUserResponse.ts
+models/UpdateWebhookResponse.ts
 models/User.ts
+models/Webhook.ts
 models/Website.ts
 models/index.ts
 runtime.ts
