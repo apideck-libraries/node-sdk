@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { AccountingApi, CrmApi, LeadApi, VaultApi } from './gen/'
+import { AccountingApi, CrmApi, LeadApi, VaultApi, WebhookApi } from './gen/'
 import { Configuration } from './gen/runtime'
 
 const isNode =
@@ -18,6 +18,7 @@ export class Apideck {
   readonly crm: CrmApi
   readonly lead: LeadApi
   readonly vault: VaultApi
+  readonly webhook: WebhookApi
   constructor(readonly config: ApideckConfiguration) {
     if (!isNode) {
       console.warn(
@@ -40,5 +41,6 @@ export class Apideck {
     this.crm = new CrmApi(configuration)
     this.lead = new LeadApi(configuration)
     this.vault = new VaultApi(configuration)
+    this.webhook = new WebhookApi(configuration)
   }
 }
