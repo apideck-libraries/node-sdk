@@ -121,6 +121,10 @@ Read the full documentation of the LeadApi [here](./src/gen/docs/apis/LeadApi.md
 
 Read the full documentation of the VaultApi [here](./src/gen/docs/apis/VaultApi.md).
 
+### WebhookApi
+
+Read the full documentation of the WebhookApi [here](./src/gen/docs/apis/WebhookApi.md).
+
 
 
 ## Support

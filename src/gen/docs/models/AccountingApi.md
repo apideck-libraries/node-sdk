@@ -5,16 +5,12 @@
 
 ## Methods
 
-* [Create Company](#companiesAdd)
-* [List Companies](#companiesAll)
-* [Delete Company](#companiesDelete)
-* [Get Company](#companiesOne)
-* [Update Company](#companiesUpdate)
-* [Create Contact](#contactsAdd)
-* [List Contacts](#contactsAll)
-* [Delete Contact](#contactsDelete)
-* [Get Contact](#contactsOne)
-* [Update Contact](#contactsUpdate)
+* [Get Company Info](#companyInfoOne)
+* [Create Customer](#customersAdd)
+* [List Customers](#customersAll)
+* [Delete Customer](#customersDelete)
+* [Get Customer](#customersOne)
+* [Update Customer](#customersUpdate)
 * [Create Invoice Item](#invoiceItemsAdd)
 * [List Invoice Items](#invoiceItemsAll)
 * [Delete Invoice Item](#invoiceItemsDelete)
@@ -36,165 +32,14 @@
 * [Get Tax Rate](#taxRatesOne)
 * [Update Tax Rate](#taxRatesUpdate)
 
-<a name="companiesAdd"></a>
-# Create Company
+<a name="companyInfoOne"></a>
+# Get Company Info
 
 
-Method: **companiesAdd**
-
-```typescript
-accountingApi.companiesAdd(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company** | [Company](../models/Company.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`CreateCompanyResponse`](../models/CreateCompanyResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**201** | Company created | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
+Method: **companyInfoOne**
 
 ```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  company: {
-    name: 'SpaceX',
-    owner_id: '12345',
-    image: 'https://www.spacex.com/static/images/share.jpg',
-    description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vat_number: 'BE0689615164',
-    currency: 'USD',
-    status: 'Open',
-    fax: '+12129876543',
-    annual_revenue: '+$35m',
-    number_of_employees: '500-1000',
-    industry: 'Apparel',
-    ownership: 'Public',
-    sales_tax_number: '12456EN',
-    payee_number: '78932EN',
-    abn_or_tfn: '46 115 614 695',
-    abn_branch: '123',
-    acn: 'XXX XXX XXX',
-    bank_accounts: [
-      {
-        iban: 'CH2989144532982975332',
-        bic: 'AUDSCHGGXXX',
-        bsb_number: '062-001',
-        bank_code: 'BNH',
-        account_number: '123456789',
-        account_name: 'SPACEX LLC'
-      }
-    ],
-    websites: [
-      {
-        id: '12345',
-        url: 'http://example.com',
-        type: 'primary'
-      }
-    ],
-    addresses: [
-      {
-        id: '123',
-        type: 'primary',
-        string: '25 Spring Street, Blackburn, VIC 3130',
-        name: 'HQ US',
-        line1: 'Main street',
-        line2: 'apt #',
-        city: 'San Francisco',
-        state: 'CA',
-        postal_code: '94104',
-        country: 'US',
-        latitude: '40.759211',
-        longitude: '-73.984638'
-      }
-    ],
-    social_links: [
-      {
-        id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
-        type: 'twitter'
-      }
-    ],
-    phone_numbers: [
-      {
-        id: '12345',
-        number: '111-111-1111',
-        type: 'primary'
-      }
-    ],
-    emails: [
-      {
-        id: '123',
-        email: 'elon@musk.com',
-        type: 'primary'
-      }
-    ],
-    custom_fields: [
-      {
-        id: 'custom_technologies',
-        value: 'Uses Salesforce and Marketo'
-      }
-    ],
-    tags: [
-      'New'
-    ],
-    read_only: false
-  }
-}
-
-try {
-  const { data } = await apideck.accounting.companiesAdd(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="companiesAll"></a>
-# List Companies
-
-
-Method: **companiesAll**
-
-```typescript
-accountingApi.companiesAll(body)
+accountingApi.companyInfoOne(body)
 ```
 
 ### Parameters
@@ -212,14 +57,14 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`GetCompaniesResponse`](../models/GetCompaniesResponse.md)
+[`GetCompanyInfoResponse`](../models/GetCompanyInfoResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Companies | 
+**200** | CompanyInfo | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -242,7 +87,7 @@ const apideck = new Apideck({
 const params = {}
 
 try {
-  const { data } = await apideck.accounting.companiesAll(params)
+  const { data } = await apideck.accounting.companyInfoOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -255,38 +100,38 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="companiesDelete"></a>
-# Delete Company
+<a name="customersAdd"></a>
+# Create Customer
 
 
-Method: **companiesDelete**
+Method: **customersAdd**
 
 ```typescript
-accountingApi.companiesDelete(body)
+accountingApi.customersAdd(body)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
+ **customer** | [Customer](../models/Customer.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
 
 
 
 ### Response Type
 
-[`DeleteCompanyResponse`](../models/DeleteCompanyResponse.md)
+[`CreateCustomerResponse`](../models/CreateCustomerResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Company deleted | 
+**201** | Customers | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -307,328 +152,12 @@ const apideck = new Apideck({
 });
 
 const params = {
-  id: 'id_example'
-}
-
-try {
-  const { data } = await apideck.accounting.companiesDelete(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="companiesOne"></a>
-# Get Company
-
-
-Method: **companiesOne**
-
-```typescript
-accountingApi.companiesOne(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
-
-
-
-### Response Type
-
-[`GetCompanyResponse`](../models/GetCompanyResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Company | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  id: 'id_example'
-}
-
-try {
-  const { data } = await apideck.accounting.companiesOne(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="companiesUpdate"></a>
-# Update Company
-
-
-Method: **companiesUpdate**
-
-```typescript
-accountingApi.companiesUpdate(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company** | [Company](../models/Company.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
-
-
-
-### Response Type
-
-[`UpdateCompanyResponse`](../models/UpdateCompanyResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Company updated | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  id: 'id_example',
-  company: {
-    name: 'SpaceX',
-    owner_id: '12345',
-    image: 'https://www.spacex.com/static/images/share.jpg',
-    description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-    vat_number: 'BE0689615164',
-    currency: 'USD',
-    status: 'Open',
-    fax: '+12129876543',
-    annual_revenue: '+$35m',
-    number_of_employees: '500-1000',
-    industry: 'Apparel',
-    ownership: 'Public',
-    sales_tax_number: '12456EN',
-    payee_number: '78932EN',
-    abn_or_tfn: '46 115 614 695',
-    abn_branch: '123',
-    acn: 'XXX XXX XXX',
-    bank_accounts: [
-      {
-        iban: 'CH2989144532982975332',
-        bic: 'AUDSCHGGXXX',
-        bsb_number: '062-001',
-        bank_code: 'BNH',
-        account_number: '123456789',
-        account_name: 'SPACEX LLC'
-      }
-    ],
-    websites: [
-      {
-        id: '12345',
-        url: 'http://example.com',
-        type: 'primary'
-      }
-    ],
-    addresses: [
-      {
-        id: '123',
-        type: 'primary',
-        string: '25 Spring Street, Blackburn, VIC 3130',
-        name: 'HQ US',
-        line1: 'Main street',
-        line2: 'apt #',
-        city: 'San Francisco',
-        state: 'CA',
-        postal_code: '94104',
-        country: 'US',
-        latitude: '40.759211',
-        longitude: '-73.984638'
-      }
-    ],
-    social_links: [
-      {
-        id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
-        type: 'twitter'
-      }
-    ],
-    phone_numbers: [
-      {
-        id: '12345',
-        number: '111-111-1111',
-        type: 'primary'
-      }
-    ],
-    emails: [
-      {
-        id: '123',
-        email: 'elon@musk.com',
-        type: 'primary'
-      }
-    ],
-    custom_fields: [
-      {
-        id: 'custom_technologies',
-        value: 'Uses Salesforce and Marketo'
-      }
-    ],
-    tags: [
-      'New'
-    ],
-    read_only: false
-  }
-}
-
-try {
-  const { data } = await apideck.accounting.companiesUpdate(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="contactsAdd"></a>
-# Create Contact
-
-
-Method: **contactsAdd**
-
-```typescript
-accountingApi.contactsAdd(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contact** | [Contact](../models/Contact.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`CreateContactResponse`](../models/CreateContactResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**201** | Contact created | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  contact: {
-    name: 'Elon Musk',
-    owner_id: '54321',
-    type: 'personal',
-    company_id: '23456',
-    company_name: '23456',
-    lead_id: '34567',
+  customer: {
+    id: '12345',
+    company_name: 'SpaceX',
     first_name: 'Elon',
-    middle_name: 'D.',
     last_name: 'Musk',
-    prefix: 'Mr.',
-    suffix: 'PhD',
-    title: 'CEO',
-    department: 'Engineering',
-    language: 'EN',
-    gender: 'female',
-    birthday: '2000-08-12',
-    image: 'https://unavatar.io/elon-musk',
-    lead_source: 'Cold Call',
-    fax: '+12129876543',
-    description: 'Internal champion',
-    current_balance: 10.5,
-    status: 'open',
-    active: true,
-    websites: [
-      {
-        id: '12345',
-        url: 'http://example.com',
-        type: 'primary'
-      }
-    ],
+    individual: true,
     addresses: [
       {
         id: '123',
@@ -645,41 +174,13 @@ const params = {
         longitude: '-73.984638'
       }
     ],
-    social_links: [
-      {
-        id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
-        type: 'twitter'
-      }
-    ],
-    phone_numbers: [
-      {
-        id: '12345',
-        number: '111-111-1111',
-        type: 'primary'
-      }
-    ],
-    emails: [
-      {
-        id: '123',
-        email: 'elon@musk.com',
-        type: 'primary'
-      }
-    ],
-    custom_fields: [
-      {
-        id: 'custom_technologies',
-        value: 'Uses Salesforce and Marketo'
-      }
-    ],
-    tags: [
-      'New'
-    ]
+    notes: 'Some notes about this customer',
+    currency: 'USD'
   }
 }
 
 try {
-  const { data } = await apideck.accounting.contactsAdd(params)
+  const { data } = await apideck.accounting.customersAdd(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -692,14 +193,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="contactsAll"></a>
-# List Contacts
+<a name="customersAll"></a>
+# List Customers
 
 
-Method: **contactsAll**
+Method: **customersAll**
 
 ```typescript
-accountingApi.contactsAll(body)
+accountingApi.customersAll(body)
 ```
 
 ### Parameters
@@ -717,14 +218,14 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`GetContactsResponse`](../models/GetContactsResponse.md)
+[`GetCustomersResponse`](../models/GetCustomersResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Contacts | 
+**200** | Customers | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -747,7 +248,7 @@ const apideck = new Apideck({
 const params = {}
 
 try {
-  const { data } = await apideck.accounting.contactsAll(params)
+  const { data } = await apideck.accounting.customersAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -760,14 +261,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="contactsDelete"></a>
-# Delete Contact
+<a name="customersDelete"></a>
+# Delete Customer
 
 
-Method: **contactsDelete**
+Method: **customersDelete**
 
 ```typescript
-accountingApi.contactsDelete(body)
+accountingApi.customersDelete(body)
 ```
 
 ### Parameters
@@ -784,14 +285,14 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`DeleteContactResponse`](../models/DeleteContactResponse.md)
+[`DeleteCustomerResponse`](../models/DeleteCustomerResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Contact deleted | 
+**200** | Customers | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -816,7 +317,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.accounting.contactsDelete(params)
+  const { data } = await apideck.accounting.customersDelete(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -829,14 +330,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="contactsOne"></a>
-# Get Contact
+<a name="customersOne"></a>
+# Get Customer
 
 
-Method: **contactsOne**
+Method: **customersOne**
 
 ```typescript
-accountingApi.contactsOne(body)
+accountingApi.customersOne(body)
 ```
 
 ### Parameters
@@ -853,14 +354,14 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`GetContactResponse`](../models/GetContactResponse.md)
+[`GetCustomerResponse`](../models/GetCustomerResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Contact | 
+**200** | Customers | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -885,7 +386,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.accounting.contactsOne(params)
+  const { data } = await apideck.accounting.customersOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -898,21 +399,21 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="contactsUpdate"></a>
-# Update Contact
+<a name="customersUpdate"></a>
+# Update Customer
 
 
-Method: **contactsUpdate**
+Method: **customersUpdate**
 
 ```typescript
-accountingApi.contactsUpdate(body)
+accountingApi.customersUpdate(body)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contact** | [Contact](../models/Contact.md)|  |
+ **customer** | [Customer](../models/Customer.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -923,14 +424,14 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`UpdateContactResponse`](../models/UpdateContactResponse.md)
+[`UpdateCustomerResponse`](../models/UpdateCustomerResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Contact updated | 
+**200** | Customers | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -952,37 +453,12 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
-  contact: {
-    name: 'Elon Musk',
-    owner_id: '54321',
-    type: 'personal',
-    company_id: '23456',
-    company_name: '23456',
-    lead_id: '34567',
+  customer: {
+    id: '12345',
+    company_name: 'SpaceX',
     first_name: 'Elon',
-    middle_name: 'D.',
     last_name: 'Musk',
-    prefix: 'Mr.',
-    suffix: 'PhD',
-    title: 'CEO',
-    department: 'Engineering',
-    language: 'EN',
-    gender: 'female',
-    birthday: '2000-08-12',
-    image: 'https://unavatar.io/elon-musk',
-    lead_source: 'Cold Call',
-    fax: '+12129876543',
-    description: 'Internal champion',
-    current_balance: 10.5,
-    status: 'open',
-    active: true,
-    websites: [
-      {
-        id: '12345',
-        url: 'http://example.com',
-        type: 'primary'
-      }
-    ],
+    individual: true,
     addresses: [
       {
         id: '123',
@@ -999,41 +475,13 @@ const params = {
         longitude: '-73.984638'
       }
     ],
-    social_links: [
-      {
-        id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
-        type: 'twitter'
-      }
-    ],
-    phone_numbers: [
-      {
-        id: '12345',
-        number: '111-111-1111',
-        type: 'primary'
-      }
-    ],
-    emails: [
-      {
-        id: '123',
-        email: 'elon@musk.com',
-        type: 'primary'
-      }
-    ],
-    custom_fields: [
-      {
-        id: 'custom_technologies',
-        value: 'Uses Salesforce and Marketo'
-      }
-    ],
-    tags: [
-      'New'
-    ]
+    notes: 'Some notes about this customer',
+    currency: 'USD'
   }
 }
 
 try {
-  const { data } = await apideck.accounting.contactsUpdate(params)
+  const { data } = await apideck.accounting.customersUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
