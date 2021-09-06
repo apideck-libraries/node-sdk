@@ -36,6 +36,7 @@ CreateActivityResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
+CreateCustomerResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
@@ -47,14 +48,17 @@ CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateTaxRateResponse.md
 CreateUserResponse.md
+CreateWebhookResponse.md
 CrmApi.md
 CrmApiTest.api.test.ts
 Currency.md
 CustomField.md
 Customer.md
+Customer1.md
 DeleteActivityResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
+DeleteCustomerResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
@@ -63,6 +67,7 @@ DeleteOpportunityResponse.md
 DeletePipelineResponse.md
 DeleteTaxRateResponse.md
 DeleteUserResponse.md
+DeleteWebhookResponse.md
 Email.md
 FormField.md
 FormFieldOption.md
@@ -78,6 +83,8 @@ GetConsumersResponse.md
 GetConsumersResponseData.md
 GetContactResponse.md
 GetContactsResponse.md
+GetCustomerResponse.md
+GetCustomersResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -97,6 +104,8 @@ GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetUserResponse.md
 GetUsersResponse.md
+GetWebhookResponse.md
+GetWebhooksResponse.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -144,6 +153,7 @@ UpdateActivityResponse.md
 UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
+UpdateCustomerResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
@@ -153,14 +163,19 @@ UpdateOpportunityResponse.md
 UpdatePipelineResponse.md
 UpdateTaxRateResponse.md
 UpdateUserResponse.md
+UpdateWebhookResponse.md
 User.md
 VaultApi.md
 VaultApiTest.api.test.ts
+Webhook.md
+WebhookApi.md
+WebhookApiTest.api.test.ts
 Website.md
 apis/AccountingApi.ts
 apis/CrmApi.ts
 apis/LeadApi.ts
 apis/VaultApi.ts
+apis/WebhookApi.ts
 apis/index.ts
 index.ts
 models/Activity.ts
@@ -188,6 +203,7 @@ models/CreateActivityResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
+models/CreateCustomerResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
@@ -199,12 +215,15 @@ models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateTaxRateResponse.ts
 models/CreateUserResponse.ts
+models/CreateWebhookResponse.ts
 models/Currency.ts
 models/CustomField.ts
 models/Customer.ts
+models/Customer1.ts
 models/DeleteActivityResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
+models/DeleteCustomerResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
@@ -213,6 +232,7 @@ models/DeleteOpportunityResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
+models/DeleteWebhookResponse.ts
 models/Email.ts
 models/FormField.ts
 models/FormFieldOption.ts
@@ -228,6 +248,8 @@ models/GetConsumersResponse.ts
 models/GetConsumersResponseData.ts
 models/GetContactResponse.ts
 models/GetContactsResponse.ts
+models/GetCustomerResponse.ts
+models/GetCustomersResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -247,6 +269,8 @@ models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
+models/GetWebhookResponse.ts
+models/GetWebhooksResponse.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
@@ -292,6 +316,7 @@ models/UpdateActivityResponse.ts
 models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
+models/UpdateCustomerResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts
@@ -301,7 +326,9 @@ models/UpdateOpportunityResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateUserResponse.ts
+models/UpdateWebhookResponse.ts
 models/User.ts
+models/Webhook.ts
 models/Website.ts
 models/index.ts
 runtime.ts

@@ -1088,6 +1088,320 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#customersAdd', () => {
+    const endpoint = '/accounting/customers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        customer: {
+          id: '12345',
+          company_name: 'SpaceX',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          individual: true,
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638'
+            }
+          ],
+          notes: 'Some notes about this customer',
+          currency: 'USD'
+        }
+      } as any
+      const current = await accounting.customersAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customersAll', () => {
+    const endpoint = '/accounting/customers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
+        operation: 'one',
+        data: [
+          {
+            id: '12345',
+            company_name: 'SpaceX',
+            first_name: 'Elon',
+            last_name: 'Musk',
+            individual: true,
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638'
+              }
+            ],
+            notes: 'Some notes about this customer',
+            currency: 'USD',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.customersAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customersDelete', () => {
+    const endpoint = '/accounting/customers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.customersDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customersOne', () => {
+    const endpoint = '/accounting/customers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
+        operation: 'one',
+        data: {
+          id: '12345',
+          company_name: 'SpaceX',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          individual: true,
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638'
+            }
+          ],
+          notes: 'Some notes about this customer',
+          currency: 'USD',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.customersOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customersUpdate', () => {
+    const endpoint = '/accounting/customers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        customer: {
+          id: '12345',
+          company_name: 'SpaceX',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          individual: true,
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638'
+            }
+          ],
+          notes: 'Some notes about this customer',
+          currency: 'USD'
+        }
+      } as any
+      const current = await accounting.customersUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#invoiceItemsAdd', () => {
     const endpoint = '/accounting/invoice-items'
 
