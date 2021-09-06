@@ -2,13 +2,35 @@
 
 ### Description
 
-The customer this invoice is linked to.
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
+`id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
+`individual` | **boolean** |  | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`notes` | **string** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
+
+
+
+
+
+## Referenced Types:
+
+
+
+
+
+* [`Address`](Address.md)
+
+* [`Currency`](Currency.md)
 
 
 

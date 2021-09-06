@@ -587,10 +587,23 @@ describe('VaultApi', () => {
               name: 'Salesforce',
               icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
               logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+              website: 'https://www.salesforce.com',
+              tag_line:
+                'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
               service_id: 'teamleader',
               unified_api: 'crm',
               auth_type: 'oauth2',
               enabled: true,
+              settings: {
+                instance_url: 'https://eu28.salesforce.com'
+              },
+              metadata: {
+                account: {
+                  name: 'My Company',
+                  id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+                },
+                plan: 'enterprise'
+              },
               created_at: '2020-09-19T12:18:37.071Z',
               updated_at: '2020-09-19T12:18:37.071Z',
               state: 'authorized'
