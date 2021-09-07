@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 `number` | **string** |  | [optional] 
-`customer` | [**Customer**](Customer.md) |  | [optional] 
+`customer` | [**Customer1**](Customer1.md) |  | [optional] 
 `invoice_date` | **Date** | Date invoice was issued - YYYY-MM-DD | [optional] 
 `due_date` | **Date** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Customer`](Customer.md)
+* [`Customer1`](Customer1.md)
 
 
 

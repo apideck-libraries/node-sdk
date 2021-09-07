@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `consumer_id` | **string** |  | [optional] 
 `application_id` | **string** |  | [optional] 
 `metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
-`connections` | [**Array&lt;ConsumerConnections&gt;**](ConsumerConnections.md) |  | [optional] 
+`connections` | [**Array&lt;ConsumerConnection&gt;**](ConsumerConnection.md) |  | [optional] 
 `services` | **Array&lt;string&gt;** |  | [optional] 
 `aggregated_request_count` | **number** |  | [optional] 
 `request_counts` | [**RequestCountAllocation**](RequestCountAllocation.md) |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 
 * [`ConsumerMetadata`](ConsumerMetadata.md)
-* [`ConsumerConnections`](ConsumerConnections.md)
+* [`ConsumerConnection`](ConsumerConnection.md)
 
 
 * [`RequestCountAllocation`](RequestCountAllocation.md)
