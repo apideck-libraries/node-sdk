@@ -14,8 +14,8 @@ const methodResponse = {
 }
 
 describe('AccountingApi', () => {
-  describe('#companiesAdd', () => {
-    const endpoint = '/accounting/companies'
+  describe('#companyInfoOne', () => {
+    const endpoint = '/accounting/company-info'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -33,7 +33,51 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'Company Info',
+        operation: 'one',
+        data: {
+          id: '12345',
+          company_name: 'SpaceX',
+          salex_tax_number: '111.222.333',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.companyInfoOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customersAdd', () => {
+    const endpoint = '/accounting/customers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'Customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -46,42 +90,12 @@ describe('AccountingApi', () => {
 
       const { accounting } = apideck
       const params = {
-        company: {
-          name: 'SpaceX',
-          owner_id: '12345',
-          image: 'https://www.spacex.com/static/images/share.jpg',
-          description:
-            'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-          vat_number: 'BE0689615164',
-          currency: 'USD',
-          status: 'Open',
-          fax: '+12129876543',
-          annual_revenue: '+$35m',
-          number_of_employees: '500-1000',
-          industry: 'Apparel',
-          ownership: 'Public',
-          sales_tax_number: '12456EN',
-          payee_number: '78932EN',
-          abn_or_tfn: '46 115 614 695',
-          abn_branch: '123',
-          acn: 'XXX XXX XXX',
-          bank_accounts: [
-            {
-              iban: 'CH2989144532982975332',
-              bic: 'AUDSCHGGXXX',
-              bsb_number: '062-001',
-              bank_code: 'BNH',
-              account_number: '123456789',
-              account_name: 'SPACEX LLC'
-            }
-          ],
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
+        customer: {
+          id: '12345',
+          company_name: 'SpaceX',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -98,45 +112,18 @@ describe('AccountingApi', () => {
               longitude: '-73.984638'
             }
           ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New'],
-          read_only: false
+          notes: 'Some notes about this customer',
+          currency: 'USD'
         }
       } as any
-      const current = await accounting.companiesAdd(params)
+      const current = await accounting.customersAdd(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#companiesAll', () => {
-    const endpoint = '/accounting/companies'
+  describe('#customersAll', () => {
+    const endpoint = '/accounting/customers'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -154,48 +141,15 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'Customers',
         operation: 'one',
         data: [
           {
             id: '12345',
-            name: 'SpaceX',
-            interaction_count: 1,
-            owner_id: '12345',
-            image: 'https://www.spacex.com/static/images/share.jpg',
-            description:
-              'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-            vat_number: 'BE0689615164',
-            currency: 'USD',
-            status: 'Open',
-            fax: '+12129876543',
-            annual_revenue: '+$35m',
-            number_of_employees: '500-1000',
-            industry: 'Apparel',
-            ownership: 'Public',
-            sales_tax_number: '12456EN',
-            payee_number: '78932EN',
-            abn_or_tfn: '46 115 614 695',
-            abn_branch: '123',
-            acn: 'XXX XXX XXX',
-            parent_id: '22345',
-            bank_accounts: [
-              {
-                iban: 'CH2989144532982975332',
-                bic: 'AUDSCHGGXXX',
-                bsb_number: '062-001',
-                bank_code: 'BNH',
-                account_number: '123456789',
-                account_name: 'SPACEX LLC'
-              }
-            ],
-            websites: [
-              {
-                id: '12345',
-                url: 'http://example.com',
-                type: 'primary'
-              }
-            ],
+            company_name: 'SpaceX',
+            first_name: 'Elon',
+            last_name: 'Musk',
+            individual: true,
             addresses: [
               {
                 id: '123',
@@ -212,37 +166,8 @@ describe('AccountingApi', () => {
                 longitude: '-73.984638'
               }
             ],
-            social_links: [
-              {
-                id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
-                type: 'twitter'
-              }
-            ],
-            phone_numbers: [
-              {
-                id: '12345',
-                number: '111-111-1111',
-                type: 'primary'
-              }
-            ],
-            emails: [
-              {
-                id: '123',
-                email: 'elon@musk.com',
-                type: 'primary'
-              }
-            ],
-            custom_fields: [
-              {
-                id: 'custom_technologies',
-                value: 'Uses Salesforce and Marketo'
-              }
-            ],
-            tags: ['New'],
-            read_only: false,
-            last_activity_at: '2020-09-30T07:43:32.000Z',
-            deleted: false,
+            notes: 'Some notes about this customer',
+            currency: 'USD',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -270,14 +195,14 @@ describe('AccountingApi', () => {
 
       const { accounting } = apideck
       const params = {} as any
-      const current = await accounting.companiesAll(params)
+      const current = await accounting.customersAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#companiesDelete', () => {
-    const endpoint = '/accounting/companies/{id}'
+  describe('#customersDelete', () => {
+    const endpoint = '/accounting/customers/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -295,7 +220,7 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'Customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -310,14 +235,14 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example'
       } as any
-      const current = await accounting.companiesDelete(params)
+      const current = await accounting.customersDelete(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#companiesOne', () => {
-    const endpoint = '/accounting/companies/{id}'
+  describe('#customersOne', () => {
+    const endpoint = '/accounting/customers/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -335,47 +260,14 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'Customers',
         operation: 'one',
         data: {
           id: '12345',
-          name: 'SpaceX',
-          interaction_count: 1,
-          owner_id: '12345',
-          image: 'https://www.spacex.com/static/images/share.jpg',
-          description:
-            'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-          vat_number: 'BE0689615164',
-          currency: 'USD',
-          status: 'Open',
-          fax: '+12129876543',
-          annual_revenue: '+$35m',
-          number_of_employees: '500-1000',
-          industry: 'Apparel',
-          ownership: 'Public',
-          sales_tax_number: '12456EN',
-          payee_number: '78932EN',
-          abn_or_tfn: '46 115 614 695',
-          abn_branch: '123',
-          acn: 'XXX XXX XXX',
-          parent_id: '22345',
-          bank_accounts: [
-            {
-              iban: 'CH2989144532982975332',
-              bic: 'AUDSCHGGXXX',
-              bsb_number: '062-001',
-              bank_code: 'BNH',
-              account_number: '123456789',
-              account_name: 'SPACEX LLC'
-            }
-          ],
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
+          company_name: 'SpaceX',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -392,37 +284,8 @@ describe('AccountingApi', () => {
               longitude: '-73.984638'
             }
           ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New'],
-          read_only: false,
-          last_activity_at: '2020-09-30T07:43:32.000Z',
-          deleted: false,
+          notes: 'Some notes about this customer',
+          currency: 'USD',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -438,14 +301,14 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example'
       } as any
-      const current = await accounting.companiesOne(params)
+      const current = await accounting.customersOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#companiesUpdate', () => {
-    const endpoint = '/accounting/companies/{id}'
+  describe('#customersUpdate', () => {
+    const endpoint = '/accounting/customers/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -463,7 +326,7 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'Customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -477,435 +340,12 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         id: 'id_example',
-        company: {
-          name: 'SpaceX',
-          owner_id: '12345',
-          image: 'https://www.spacex.com/static/images/share.jpg',
-          description:
-            'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-          vat_number: 'BE0689615164',
-          currency: 'USD',
-          status: 'Open',
-          fax: '+12129876543',
-          annual_revenue: '+$35m',
-          number_of_employees: '500-1000',
-          industry: 'Apparel',
-          ownership: 'Public',
-          sales_tax_number: '12456EN',
-          payee_number: '78932EN',
-          abn_or_tfn: '46 115 614 695',
-          abn_branch: '123',
-          acn: 'XXX XXX XXX',
-          bank_accounts: [
-            {
-              iban: 'CH2989144532982975332',
-              bic: 'AUDSCHGGXXX',
-              bsb_number: '062-001',
-              bank_code: 'BNH',
-              account_number: '123456789',
-              account_name: 'SPACEX LLC'
-            }
-          ],
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
-          addresses: [
-            {
-              id: '123',
-              type: 'primary',
-              string: '25 Spring Street, Blackburn, VIC 3130',
-              name: 'HQ US',
-              line1: 'Main street',
-              line2: 'apt #',
-              city: 'San Francisco',
-              state: 'CA',
-              postal_code: '94104',
-              country: 'US',
-              latitude: '40.759211',
-              longitude: '-73.984638'
-            }
-          ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New'],
-          read_only: false
-        }
-      } as any
-      const current = await accounting.companiesUpdate(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#contactsAdd', () => {
-    const endpoint = '/accounting/contacts'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'zoho-crm',
-        resource: 'companies',
-        operation: 'one',
-        data: {
-          id: '12345'
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {
-        contact: {
-          name: 'Elon Musk',
-          owner_id: '54321',
-          type: 'personal',
-          company_id: '23456',
-          company_name: '23456',
-          lead_id: '34567',
-          first_name: 'Elon',
-          middle_name: 'D.',
-          last_name: 'Musk',
-          prefix: 'Mr.',
-          suffix: 'PhD',
-          title: 'CEO',
-          department: 'Engineering',
-          language: 'EN',
-          gender: 'female',
-          birthday: '2000-08-12',
-          image: 'https://unavatar.io/elon-musk',
-          lead_source: 'Cold Call',
-          fax: '+12129876543',
-          description: 'Internal champion',
-          current_balance: 10.5,
-          status: 'open',
-          active: true,
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
-          addresses: [
-            {
-              id: '123',
-              type: 'primary',
-              string: '25 Spring Street, Blackburn, VIC 3130',
-              name: 'HQ US',
-              line1: 'Main street',
-              line2: 'apt #',
-              city: 'San Francisco',
-              state: 'CA',
-              postal_code: '94104',
-              country: 'US',
-              latitude: '40.759211',
-              longitude: '-73.984638'
-            }
-          ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New']
-        }
-      } as any
-      const current = await accounting.contactsAdd(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#contactsAll', () => {
-    const endpoint = '/accounting/contacts'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'zoho-crm',
-        resource: 'companies',
-        operation: 'one',
-        data: [
-          {
-            id: '12345',
-            name: 'Elon Musk',
-            owner_id: '54321',
-            type: 'personal',
-            company_id: '23456',
-            company_name: '23456',
-            lead_id: '34567',
-            first_name: 'Elon',
-            middle_name: 'D.',
-            last_name: 'Musk',
-            prefix: 'Mr.',
-            suffix: 'PhD',
-            title: 'CEO',
-            department: 'Engineering',
-            language: 'EN',
-            gender: 'female',
-            birthday: '2000-08-12',
-            image: 'https://unavatar.io/elon-musk',
-            lead_source: 'Cold Call',
-            fax: '+12129876543',
-            description: 'Internal champion',
-            current_balance: 10.5,
-            status: 'open',
-            active: true,
-            websites: [
-              {
-                id: '12345',
-                url: 'http://example.com',
-                type: 'primary'
-              }
-            ],
-            addresses: [
-              {
-                id: '123',
-                type: 'primary',
-                string: '25 Spring Street, Blackburn, VIC 3130',
-                name: 'HQ US',
-                line1: 'Main street',
-                line2: 'apt #',
-                city: 'San Francisco',
-                state: 'CA',
-                postal_code: '94104',
-                country: 'US',
-                latitude: '40.759211',
-                longitude: '-73.984638'
-              }
-            ],
-            social_links: [
-              {
-                id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
-                type: 'twitter'
-              }
-            ],
-            phone_numbers: [
-              {
-                id: '12345',
-                number: '111-111-1111',
-                type: 'primary'
-              }
-            ],
-            emails: [
-              {
-                id: '123',
-                email: 'elon@musk.com',
-                type: 'primary'
-              }
-            ],
-            custom_fields: [
-              {
-                id: 'custom_technologies',
-                value: 'Uses Salesforce and Marketo'
-              }
-            ],
-            tags: ['New'],
-            first_call_at: '2020-09-30T07:43:32.000Z',
-            first_email_at: '2020-09-30T07:43:32.000Z',
-            last_activity_at: '2020-09-30T07:43:32.000Z',
-            updated_at: '2017-08-12T20:43:21.291Z',
-            created_at: '2017-08-12T20:43:21.291Z'
-          }
-        ],
-        meta: {
-          items_on_page: 50,
-          cursors: {
-            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
-            current: 'em9oby1jcm06OnBhZ2U6OjI=',
-            next: 'em9oby1jcm06OnBhZ2U6OjM='
-          }
-        },
-        links: {
-          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
-          current: 'https://unify.apideck.com/crm/companies',
-          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {} as any
-      const current = await accounting.contactsAll(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#contactsDelete', () => {
-    const endpoint = '/accounting/contacts/{id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'zoho-crm',
-        resource: 'companies',
-        operation: 'one',
-        data: {
-          id: '12345'
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {
-        id: 'id_example'
-      } as any
-      const current = await accounting.contactsDelete(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#contactsOne', () => {
-    const endpoint = '/accounting/contacts/{id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'zoho-crm',
-        resource: 'companies',
-        operation: 'one',
-        data: {
+        customer: {
           id: '12345',
-          name: 'Elon Musk',
-          owner_id: '54321',
-          type: 'personal',
-          company_id: '23456',
-          company_name: '23456',
-          lead_id: '34567',
+          company_name: 'SpaceX',
           first_name: 'Elon',
-          middle_name: 'D.',
           last_name: 'Musk',
-          prefix: 'Mr.',
-          suffix: 'PhD',
-          title: 'CEO',
-          department: 'Engineering',
-          language: 'EN',
-          gender: 'female',
-          birthday: '2000-08-12',
-          image: 'https://unavatar.io/elon-musk',
-          lead_source: 'Cold Call',
-          fax: '+12129876543',
-          description: 'Internal champion',
-          current_balance: 10.5,
-          status: 'open',
-          active: true,
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -922,167 +362,11 @@ describe('AccountingApi', () => {
               longitude: '-73.984638'
             }
           ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New'],
-          first_call_at: '2020-09-30T07:43:32.000Z',
-          first_email_at: '2020-09-30T07:43:32.000Z',
-          last_activity_at: '2020-09-30T07:43:32.000Z',
-          updated_at: '2017-08-12T20:43:21.291Z',
-          created_at: '2017-08-12T20:43:21.291Z'
+          notes: 'Some notes about this customer',
+          currency: 'USD'
         }
       } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {
-        id: 'id_example'
-      } as any
-      const current = await accounting.contactsOne(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#contactsUpdate', () => {
-    const endpoint = '/accounting/contacts/{id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'zoho-crm',
-        resource: 'companies',
-        operation: 'one',
-        data: {
-          id: '12345'
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {
-        id: 'id_example',
-        contact: {
-          name: 'Elon Musk',
-          owner_id: '54321',
-          type: 'personal',
-          company_id: '23456',
-          company_name: '23456',
-          lead_id: '34567',
-          first_name: 'Elon',
-          middle_name: 'D.',
-          last_name: 'Musk',
-          prefix: 'Mr.',
-          suffix: 'PhD',
-          title: 'CEO',
-          department: 'Engineering',
-          language: 'EN',
-          gender: 'female',
-          birthday: '2000-08-12',
-          image: 'https://unavatar.io/elon-musk',
-          lead_source: 'Cold Call',
-          fax: '+12129876543',
-          description: 'Internal champion',
-          current_balance: 10.5,
-          status: 'open',
-          active: true,
-          websites: [
-            {
-              id: '12345',
-              url: 'http://example.com',
-              type: 'primary'
-            }
-          ],
-          addresses: [
-            {
-              id: '123',
-              type: 'primary',
-              string: '25 Spring Street, Blackburn, VIC 3130',
-              name: 'HQ US',
-              line1: 'Main street',
-              line2: 'apt #',
-              city: 'San Francisco',
-              state: 'CA',
-              postal_code: '94104',
-              country: 'US',
-              latitude: '40.759211',
-              longitude: '-73.984638'
-            }
-          ],
-          social_links: [
-            {
-              id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
-              type: 'twitter'
-            }
-          ],
-          phone_numbers: [
-            {
-              id: '12345',
-              number: '111-111-1111',
-              type: 'primary'
-            }
-          ],
-          emails: [
-            {
-              id: '123',
-              email: 'elon@musk.com',
-              type: 'primary'
-            }
-          ],
-          custom_fields: [
-            {
-              id: 'custom_technologies',
-              value: 'Uses Salesforce and Marketo'
-            }
-          ],
-          tags: ['New']
-        }
-      } as any
-      const current = await accounting.contactsUpdate(params)
+      const current = await accounting.customersUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
