@@ -13,6 +13,11 @@
  */
 
 import { exists } from '../runtime'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { Email, EmailFromJSON, EmailToJSON } from './Email'
+import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
+
 /**
  *
  * @export
@@ -37,6 +42,30 @@ export interface CompanyInfo {
    * @memberof CompanyInfo
    */
   salex_tax_number?: string | null
+  /**
+   *
+   * @type {Currency}
+   * @memberof CompanyInfo
+   */
+  currency?: Currency | null
+  /**
+   *
+   * @type {Array<Address>}
+   * @memberof CompanyInfo
+   */
+  addressses?: Array<Address>
+  /**
+   *
+   * @type {Array<PhoneNumber>}
+   * @memberof CompanyInfo
+   */
+  phone_numbers?: Array<PhoneNumber>
+  /**
+   *
+   * @type {Array<Email>}
+   * @memberof CompanyInfo
+   */
+  emails?: Array<Email>
   /**
    *
    * @type {string}
@@ -75,6 +104,14 @@ export function CompanyInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean
     id: !exists(json, 'id') ? undefined : json['id'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     salex_tax_number: !exists(json, 'salex_tax_number') ? undefined : json['salex_tax_number'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    addressses: !exists(json, 'addressses')
+      ? undefined
+      : (json['addressses'] as Array<any>).map(AddressFromJSON),
+    phone_numbers: !exists(json, 'phone_numbers')
+      ? undefined
+      : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
+    emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -92,6 +129,16 @@ export function CompanyInfoToJSON(value?: CompanyInfo | null): any {
   return {
     id: value.id,
     company_name: value.company_name,
-    salex_tax_number: value.salex_tax_number
+    salex_tax_number: value.salex_tax_number,
+    currency: CurrencyToJSON(value.currency),
+    addressses:
+      value.addressses === undefined
+        ? undefined
+        : (value.addressses as Array<any>).map(AddressToJSON),
+    phone_numbers:
+      value.phone_numbers === undefined
+        ? undefined
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
+    emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON)
   }
 }
