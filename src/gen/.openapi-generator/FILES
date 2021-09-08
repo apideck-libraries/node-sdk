@@ -38,6 +38,7 @@ CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
 CreateCustomerResponse.md
+CreateFileResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
@@ -61,6 +62,7 @@ DeleteActivityResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
+DeleteFileResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
@@ -72,6 +74,11 @@ DeleteUserResponse.md
 DeleteWebhookResponse.md
 Email.md
 Event.md
+File.md
+FileOwner.md
+FileStorageApi.md
+FileStorageApiTest.api.test.ts
+FilesFilter.md
 FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
@@ -89,6 +96,8 @@ GetContactResponse.md
 GetContactsResponse.md
 GetCustomerResponse.md
 GetCustomersResponse.md
+GetFileResponse.md
+GetFilesResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -159,6 +168,7 @@ UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
 UpdateCustomerResponse.md
+UpdateFileResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
@@ -179,6 +189,7 @@ WebhookApiTest.api.test.ts
 Website.md
 apis/AccountingApi.ts
 apis/CrmApi.ts
+apis/FileStorageApi.ts
 apis/LeadApi.ts
 apis/VaultApi.ts
 apis/WebhookApi.ts
@@ -211,6 +222,7 @@ models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
+models/CreateFileResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
@@ -232,6 +244,7 @@ models/DeleteActivityResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
+models/DeleteFileResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
@@ -243,6 +256,8 @@ models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Email.ts
 models/Event.ts
+models/FileOwner.ts
+models/FilesFilter.ts
 models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
@@ -260,6 +275,8 @@ models/GetContactResponse.ts
 models/GetContactsResponse.ts
 models/GetCustomerResponse.ts
 models/GetCustomersResponse.ts
+models/GetFileResponse.ts
+models/GetFilesResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -299,6 +316,7 @@ models/LogService.ts
 models/LogsFilter.ts
 models/Meta.ts
 models/MetaCursors.ts
+models/ModelFile.ts
 models/NotFoundResponse.ts
 models/NotImplementedResponse.ts
 models/Note.ts
@@ -328,6 +346,7 @@ models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
+models/UpdateFileResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts

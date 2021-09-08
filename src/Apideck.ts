@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { AccountingApi, CrmApi, LeadApi, VaultApi, WebhookApi } from './gen/'
+import { AccountingApi, CrmApi, FileStorageApi, LeadApi, VaultApi, WebhookApi } from './gen/'
 import { Configuration } from './gen/runtime'
 
 const isNode =
@@ -16,6 +16,7 @@ export type ApideckConfiguration = {
 export class Apideck {
   readonly accounting: AccountingApi
   readonly crm: CrmApi
+  readonly filestorage: FileStorageApi
   readonly lead: LeadApi
   readonly vault: VaultApi
   readonly webhook: WebhookApi
@@ -39,6 +40,7 @@ export class Apideck {
 
     this.accounting = new AccountingApi(configuration)
     this.crm = new CrmApi(configuration)
+    this.filestorage = new FileStorageApi(configuration)
     this.lead = new LeadApi(configuration)
     this.vault = new VaultApi(configuration)
     this.webhook = new WebhookApi(configuration)
