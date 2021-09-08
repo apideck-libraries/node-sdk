@@ -1,5 +1,6 @@
 export * from './AccountingApi'
 export * from './CrmApi'
+export * from './DefaultApi'
 export * from './LeadApi'
 export * from './VaultApi'
 export * from './WebhookApi'
