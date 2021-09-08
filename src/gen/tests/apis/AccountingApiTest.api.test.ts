@@ -39,6 +39,37 @@ describe('AccountingApi', () => {
           id: '12345',
           company_name: 'SpaceX',
           salex_tax_number: '111.222.333',
+          currency: 'USD',
+          addressses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638'
+            }
+          ],
+          phone_numbers: [
+            {
+              id: '12345',
+              number: '111-111-1111',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
