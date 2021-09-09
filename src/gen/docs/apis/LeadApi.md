@@ -100,7 +100,13 @@ const params = {
         postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
-        longitude: '-73.984638'
+        longitude: '-73.984638',
+        contact_name: '111-111-1111',
+        salutation: '111-111-1111',
+        phone_number: '111-111-1111',
+        fax: '111-111-1111',
+        email: '111-111-1111',
+        website: '111-111-1111'
       }
     ],
     social_links: [
@@ -449,7 +455,13 @@ const params = {
         postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
-        longitude: '-73.984638'
+        longitude: '-73.984638',
+        contact_name: '111-111-1111',
+        salutation: '111-111-1111',
+        phone_number: '111-111-1111',
+        fax: '111-111-1111',
+        email: '111-111-1111',
+        website: '111-111-1111'
       }
     ],
     social_links: [

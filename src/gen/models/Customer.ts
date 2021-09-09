@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
 
 /**
  *
@@ -66,6 +67,12 @@ export interface Customer {
   notes?: string | null
   /**
    *
+   * @type {LinkedTaxRate}
+   * @memberof Customer
+   */
+  tax_rate?: LinkedTaxRate
+  /**
+   *
    * @type {Currency}
    * @memberof Customer
    */
@@ -114,6 +121,7 @@ export function CustomerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       ? undefined
       : (json['addresses'] as Array<any>).map(AddressFromJSON),
     notes: !exists(json, 'notes') ? undefined : json['notes'],
+    tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -140,6 +148,7 @@ export function CustomerToJSON(value?: Customer | null): any {
         ? undefined
         : (value.addresses as Array<any>).map(AddressToJSON),
     notes: value.notes,
+    tax_rate: LinkedTaxRateToJSON(value.tax_rate),
     currency: CurrencyToJSON(value.currency)
   }
 }
