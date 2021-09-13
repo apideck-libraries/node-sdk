@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `individual` | **boolean** |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `notes` | **string** |  | [optional] 
+`tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
@@ -30,6 +31,7 @@ Name | Type | Description | Notes
 
 * [`Address`](Address.md)
 
+* [`LinkedTaxRate`](LinkedTaxRate.md)
 * [`Currency`](Currency.md)
 
 

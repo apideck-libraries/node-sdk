@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `tag_line` | **string** |  | [optional] 
 `service_id` | **string** |  | [optional] 
 `unified_api` | **string** |  | [optional] 
+`consumer_id` | **string** |  | [optional] 
 `auth_type` | [**AuthType**](AuthType.md) |  | [optional] 
 `enabled` | **boolean** |  | [optional] 
 `settings` | **object** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
@@ -43,6 +44,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

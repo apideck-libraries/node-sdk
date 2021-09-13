@@ -71,6 +71,12 @@ export interface ConsumerConnection {
   unified_api?: string
   /**
    *
+   * @type {string}
+   * @memberof ConsumerConnection
+   */
+  consumer_id?: string
+  /**
+   *
    * @type {AuthType}
    * @memberof ConsumerConnection
    */
@@ -145,6 +151,7 @@ export function ConsumerConnectionFromJSONTyped(
     tag_line: !exists(json, 'tag_line') ? undefined : json['tag_line'],
     service_id: !exists(json, 'service_id') ? undefined : json['service_id'],
     unified_api: !exists(json, 'unified_api') ? undefined : json['unified_api'],
+    consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
     auth_type: !exists(json, 'auth_type') ? undefined : AuthTypeFromJSON(json['auth_type']),
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
     settings: !exists(json, 'settings') ? undefined : json['settings'],
@@ -168,6 +175,7 @@ export function ConsumerConnectionToJSON(value?: ConsumerConnection | null): any
     logo: value.logo,
     service_id: value.service_id,
     unified_api: value.unified_api,
+    consumer_id: value.consumer_id,
     auth_type: AuthTypeToJSON(value.auth_type),
     enabled: value.enabled,
     settings: value.settings,

@@ -53,7 +53,13 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             }
           ],
           phone_numbers: [
@@ -140,10 +146,20 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             }
           ],
           notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '12345',
+            code: 'N-T'
+          },
           currency: 'USD'
         }
       } as any
@@ -194,10 +210,20 @@ describe('AccountingApi', () => {
                 postal_code: '94104',
                 country: 'US',
                 latitude: '40.759211',
-                longitude: '-73.984638'
+                longitude: '-73.984638',
+                contact_name: '111-111-1111',
+                salutation: '111-111-1111',
+                phone_number: '111-111-1111',
+                fax: '111-111-1111',
+                email: '111-111-1111',
+                website: '111-111-1111'
               }
             ],
             notes: 'Some notes about this customer',
+            tax_rate: {
+              id: '12345',
+              code: 'N-T'
+            },
             currency: 'USD',
             updated_by: '12345',
             created_by: '12345',
@@ -312,10 +338,20 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             }
           ],
           notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '12345',
+            code: 'N-T'
+          },
           currency: 'USD',
           updated_by: '12345',
           created_by: '12345',
@@ -390,10 +426,20 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             }
           ],
           notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '12345',
+            code: 'N-T'
+          },
           currency: 'USD'
         }
       } as any
@@ -815,7 +861,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           shipping_address: {
             id: '123',
@@ -829,7 +881,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           row_version: '1-12345'
         }
@@ -924,7 +982,13 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             },
             shipping_address: {
               id: '123',
@@ -938,7 +1002,13 @@ describe('AccountingApi', () => {
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
-              longitude: '-73.984638'
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
             },
             row_version: '1-12345',
             updated_by: '12345',
@@ -1097,7 +1167,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           shipping_address: {
             id: '123',
@@ -1111,7 +1187,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           row_version: '1-12345',
           updated_by: '12345',
@@ -1230,7 +1312,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           shipping_address: {
             id: '123',
@@ -1244,7 +1332,13 @@ describe('AccountingApi', () => {
             postal_code: '94104',
             country: 'US',
             latitude: '40.759211',
-            longitude: '-73.984638'
+            longitude: '-73.984638',
+            contact_name: '111-111-1111',
+            salutation: '111-111-1111',
+            phone_number: '111-111-1111',
+            fax: '111-111-1111',
+            email: '111-111-1111',
+            website: '111-111-1111'
           },
           row_version: '1-12345'
         }

@@ -158,7 +158,8 @@ export enum LogUnifiedApi {
   crm = 'crm',
   lead = 'lead',
   proxy = 'proxy',
-  vault = 'vault'
+  vault = 'vault',
+  accounting = 'accounting'
 }
 
 export function LogFromJSON(json: any): Log {

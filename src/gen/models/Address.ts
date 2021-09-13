@@ -91,6 +91,42 @@ export interface Address {
    * @memberof Address
    */
   longitude?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  contact_name?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  salutation?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  phone_number?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  fax?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  email?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  website?: string | null
 }
 
 /**
@@ -127,7 +163,13 @@ export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
     postal_code: !exists(json, 'postal_code') ? undefined : json['postal_code'],
     country: !exists(json, 'country') ? undefined : json['country'],
     latitude: !exists(json, 'latitude') ? undefined : json['latitude'],
-    longitude: !exists(json, 'longitude') ? undefined : json['longitude']
+    longitude: !exists(json, 'longitude') ? undefined : json['longitude'],
+    contact_name: !exists(json, 'contact_name') ? undefined : json['contact_name'],
+    salutation: !exists(json, 'salutation') ? undefined : json['salutation'],
+    phone_number: !exists(json, 'phone_number') ? undefined : json['phone_number'],
+    fax: !exists(json, 'fax') ? undefined : json['fax'],
+    email: !exists(json, 'email') ? undefined : json['email'],
+    website: !exists(json, 'website') ? undefined : json['website']
   }
 }
 
@@ -150,6 +192,12 @@ export function AddressToJSON(value?: Address | null): any {
     postal_code: value.postal_code,
     country: value.country,
     latitude: value.latitude,
-    longitude: value.longitude
+    longitude: value.longitude,
+    contact_name: value.contact_name,
+    salutation: value.salutation,
+    phone_number: value.phone_number,
+    fax: value.fax,
+    email: value.email,
+    website: value.website
   }
 }
