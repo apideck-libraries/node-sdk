@@ -5,7 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`folderId` | **string** | ID of the folder to filter on. The root folder has an alias \&quot;root\&quot; | [optional] 
+`folder_id` | **string** | ID of the folder to filter on. The root folder has an alias \&quot;root\&quot; | [optional] 
+`shared` | **boolean** | Only return files and folders that are shared | [optional] 
 
 
 
