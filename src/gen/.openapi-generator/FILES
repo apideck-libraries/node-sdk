@@ -79,6 +79,7 @@ FileOwner.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FilesFilter.md
+FilesSearch.md
 FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
@@ -117,6 +118,7 @@ GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetUserResponse.md
 GetUsersResponse.md
+GetWebhookEventLogsResponse.md
 GetWebhookResponse.md
 GetWebhooksResponse.md
 Invoice.md
@@ -161,6 +163,7 @@ Tags.md
 TaxRate.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
+UnifiedApi.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
@@ -186,6 +189,10 @@ VaultApiTest.api.test.ts
 Webhook.md
 WebhookApi.md
 WebhookApiTest.api.test.ts
+WebhookEventLog.md
+WebhookEventLogService.md
+WebhookEventLogsFilter.md
+WebhookEventLogsFilterService.md
 Website.md
 apis/AccountingApi.ts
 apis/CrmApi.ts
@@ -258,6 +265,7 @@ models/Email.ts
 models/Event.ts
 models/FileOwner.ts
 models/FilesFilter.ts
+models/FilesSearch.ts
 models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
@@ -296,6 +304,7 @@ models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
+models/GetWebhookEventLogsResponse.ts
 models/GetWebhookResponse.ts
 models/GetWebhooksResponse.ts
 models/Invoice.ts
@@ -339,6 +348,7 @@ models/Tags.ts
 models/TaxRate.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
+models/UnifiedApi.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
@@ -360,6 +370,10 @@ models/UpdateWebhookRequest.ts
 models/UpdateWebhookResponse.ts
 models/User.ts
 models/Webhook.ts
+models/WebhookEventLog.ts
+models/WebhookEventLogService.ts
+models/WebhookEventLogsFilter.ts
+models/WebhookEventLogsFilterService.ts
 models/Website.ts
 models/index.ts
 runtime.ts

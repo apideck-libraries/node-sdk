@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 
 * `vault` (value: `'vault'`)
 
+* `accounting` (value: `'accounting'`)
+
 
 
 
