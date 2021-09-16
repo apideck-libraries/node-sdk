@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `number` | **string** |  | 
 `id` | **string** |  | [optional] 
+`country_code` | **string** |  | [optional] 
+`area_code` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 
 
@@ -30,6 +32,8 @@ Name | Type | Description | Notes
 * `assistant` (value: `'assistant'`)
 
 * `fax` (value: `'fax'`)
+
+* `direct_dial_in` (value: `'direct-dial-in'`)
 
 * `other` (value: `'other'`)
 

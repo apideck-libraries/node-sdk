@@ -12,12 +12,33 @@ Name | Type | Description | Notes
 `individual` | **boolean** |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `notes` | **string** |  | [optional] 
+`phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
+`emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+`tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
+`bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`status` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="CustomerStatus"></a>
+## Enum: Customer.status
+
+
+* `active` (value: `'active'`)
+
+* `archived` (value: `'archived'`)
+
+* `gdpr_erasure_request` (value: `'gdpr-erasure-request'`)
+
+* `unknown` (value: `'unknown'`)
 
 
 
@@ -30,7 +51,13 @@ Name | Type | Description | Notes
 
 * [`Address`](Address.md)
 
+* [`PhoneNumber`](PhoneNumber.md)
+* [`Email`](Email.md)
+* [`LinkedTaxRate`](LinkedTaxRate.md)
+
 * [`Currency`](Currency.md)
+* [`BankAccount`](BankAccount.md)
+
 
 
 

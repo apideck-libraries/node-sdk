@@ -17,6 +17,12 @@ Name | Type | Description | Notes
 `country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `latitude` | **string** |  | [optional] 
 `longitude` | **string** |  | [optional] 
+`contact_name` | **string** |  | [optional] 
+`salutation` | **string** |  | [optional] 
+`phone_number` | **string** |  | [optional] 
+`fax` | **string** |  | [optional] 
+`email` | **string** |  | [optional] 
+`website` | **string** |  | [optional] 
 
 
 
