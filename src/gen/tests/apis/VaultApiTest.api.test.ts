@@ -592,6 +592,7 @@ describe('VaultApi', () => {
                 'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
               service_id: 'teamleader',
               unified_api: 'crm',
+              consumer_id: 'test_user_id',
               auth_type: 'oauth2',
               enabled: true,
               settings: {
