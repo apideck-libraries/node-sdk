@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`status_code` | **number** |  | [optional] 
 `exclude_unified_apis` | **string** |  | [optional] 
 `service` | [**WebhookEventLogsFilterService**](WebhookEventLogsFilterService.md) |  | [optional] 
+`consumer_id` | **string** |  | [optional] 
 `entity_type` | **string** |  | [optional] 
 `event_type` | **string** |  | [optional] 
 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 
-
 * [`WebhookEventLogsFilterService`](WebhookEventLogsFilterService.md)
+
 
 
 

@@ -36,7 +36,6 @@ describe('WebhookApi', () => {
             id: '1d174c4d-fe9e-4377-a76c-6da22fe9cd87',
             status_code: 200,
             success: true,
-            error_message: 'Forbidden',
             application_id: '1111',
             consumer_id: 'test_consumer_id',
             unified_api: 'crm',
@@ -52,7 +51,16 @@ describe('WebhookApi', () => {
             entity_type: 'Connection',
             request_body:
               '{&quot;entity&quot;:{&quot;id&quot;:&quot;2222+test_user_id&quot;,&quot;application_id&quot;:&quot;2222&quot;,&quot;consumer_id&quot;:&quot;test_user_id&quot;,&quot;name&quot;:&quot;ActiveCampaign&quot;,&quot;icon&quot;:&quot;https://res.cloudinary.com/apideck/image/upload/v1529455970/catalog/activecampaign/icon128x128.png&quot;,&quot;logo&quot;:&quot;https://www.activecampaign.com/site/assets/social-2x.png&quot;,&quot;unified_api&quot;:&quot;crm&quot;,&quot;service_id&quot;:&quot;activecampaign&quot;,&quot;auth_type&quot;:&quot;apiKey&quot;,&quot;enabled&quot;:true,&quot;tag_line&quot;:&quot;Integrated email marketing, marketing automation, and small business CRM. Save time while growing your business with sales automation.&quot;,&quot;website&quot;:&quot;https://www.activecampaign.com/&quot;,&quot;settings&quot;:{&quot;instance_url&quot;:&quot;https://eu28.salesforce.com&quot;,&quot;base_url&quot;:&quot;https://updated.api-us1.com&quot;},&quot;metadata&quot;:{&quot;plan&quot;:&quot;enterprise&quot;,&quot;account&quot;:{&quot;name&quot;:&quot;My Company&quot;}},&quot;state&quot;:&quot;callable&quot;,&quot;created_at&quot;:&quot;2021-09-10T10:39:49.628Z&quot;,&quot;updated_at&quot;:&quot;2021-09-10T10:39:52.715Z&quot;},&quot;entityType&quot;:&quot;Connection&quot;}',
-            response_body: '{&quot;status&quot;:&quot;OK&quot;}'
+            response_body: '{&quot;status&quot;:&quot;OK&quot;}',
+            attempts: [
+              {
+                timestamp: '2021-07-12T14:26:17.420Z',
+                execution_attempt: 3,
+                status_code: 200,
+                success: true,
+                retry_scheduled: true
+              }
+            ]
           }
         ],
         meta: {
