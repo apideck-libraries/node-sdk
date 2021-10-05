@@ -814,6 +814,7 @@ describe('VaultApi', () => {
           settings: {
             hide_resource_settings: false,
             sandbox_mode: false,
+            isolation_mode: false,
             session_length: '30m',
             show_logs: true
           },

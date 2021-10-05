@@ -26,11 +26,17 @@ export interface SessionSettings {
    */
   hide_resource_settings?: boolean
   /**
-   *
+   * Forces Vault to shows a banner informing the current consumer is in a test environment.
    * @type {boolean}
    * @memberof SessionSettings
    */
   sandbox_mode?: boolean
+  /**
+   * Forces Vault to run in isolation mode, meaning it only shows the connection settings and hides the navigation items.
+   * @type {boolean}
+   * @memberof SessionSettings
+   */
+  isolation_mode?: boolean
   /**
    * The duration of time the session is valid for (maximum 1 week).
    * @type {string}
@@ -61,6 +67,7 @@ export function SessionSettingsFromJSONTyped(
       ? undefined
       : json['hide_resource_settings'],
     sandbox_mode: !exists(json, 'sandbox_mode') ? undefined : json['sandbox_mode'],
+    isolation_mode: !exists(json, 'isolation_mode') ? undefined : json['isolation_mode'],
     session_length: !exists(json, 'session_length') ? undefined : json['session_length'],
     show_logs: !exists(json, 'show_logs') ? undefined : json['show_logs']
   }
@@ -76,6 +83,7 @@ export function SessionSettingsToJSON(value?: SessionSettings | null): any {
   return {
     hide_resource_settings: value.hide_resource_settings,
     sandbox_mode: value.sandbox_mode,
+    isolation_mode: value.isolation_mode,
     session_length: value.session_length,
     show_logs: value.show_logs
   }
