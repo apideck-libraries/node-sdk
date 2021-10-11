@@ -190,6 +190,7 @@ Webhook.md
 WebhookApi.md
 WebhookApiTest.api.test.ts
 WebhookEventLog.md
+WebhookEventLogAttempts.md
 WebhookEventLogService.md
 WebhookEventLogsFilter.md
 WebhookEventLogsFilterService.md
@@ -371,6 +372,7 @@ models/UpdateWebhookResponse.ts
 models/User.ts
 models/Webhook.ts
 models/WebhookEventLog.ts
+models/WebhookEventLogAttempts.ts
 models/WebhookEventLogService.ts
 models/WebhookEventLogsFilter.ts
 models/WebhookEventLogsFilterService.ts

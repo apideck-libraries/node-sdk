@@ -27,12 +27,6 @@ import {
 export interface WebhookEventLogsFilter {
   /**
    *
-   * @type {number}
-   * @memberof WebhookEventLogsFilter
-   */
-  status_code?: number | null
-  /**
-   *
    * @type {string}
    * @memberof WebhookEventLogsFilter
    */
@@ -43,6 +37,12 @@ export interface WebhookEventLogsFilter {
    * @memberof WebhookEventLogsFilter
    */
   service?: WebhookEventLogsFilterService | null
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookEventLogsFilter
+   */
+  consumer_id?: string | null
   /**
    *
    * @type {string}
@@ -69,13 +69,13 @@ export function WebhookEventLogsFilterFromJSONTyped(
     return json
   }
   return {
-    status_code: !exists(json, 'status_code') ? undefined : json['status_code'],
     exclude_unified_apis: !exists(json, 'exclude_unified_apis')
       ? undefined
       : json['exclude_unified_apis'],
     service: !exists(json, 'service')
       ? undefined
       : WebhookEventLogsFilterServiceFromJSON(json['service']),
+    consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
     entity_type: !exists(json, 'entity_type') ? undefined : json['entity_type'],
     event_type: !exists(json, 'event_type') ? undefined : json['event_type']
   }
@@ -89,9 +89,9 @@ export function WebhookEventLogsFilterToJSON(value?: WebhookEventLogsFilter | nu
     return null
   }
   return {
-    status_code: value.status_code,
     exclude_unified_apis: value.exclude_unified_apis,
     service: WebhookEventLogsFilterServiceToJSON(value.service),
+    consumer_id: value.consumer_id,
     entity_type: value.entity_type,
     event_type: value.event_type
   }

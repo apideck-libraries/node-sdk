@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `status_code` | **number** | HTTP Status code that was returned. | [optional] 
 `success` | **boolean** | Whether or not the request was successful. | [optional] 
-`error_message` | **string** | If error occured, response captured here | [optional] 
 `application_id` | **string** | ID of your Apideck Application | [optional] 
 `consumer_id` | **string** | Consumer identifier | [optional] 
 `unified_api` | [**UnifiedApi**](UnifiedApi.md) |  | [optional] 
@@ -21,13 +20,13 @@ Name | Type | Description | Notes
 `entity_type` | **string** | Name of the Entity described by the attributes delivered within payload | [optional] 
 `request_body` | **string** | The JSON stringified payload that was delivered to the webhook endpoint. | [optional] 
 `response_body` | **string** | The JSON stringified response that was returned from the webhook endpoint. | [optional] 
+`attempts` | [**Array&lt;WebhookEventLogAttempts&gt;**](WebhookEventLogAttempts.md) | record of each attempt to call webhook endpoint | [optional] 
 
 
 
 
 
 ## Referenced Types:
-
 
 
 
@@ -43,6 +42,7 @@ Name | Type | Description | Notes
 
 
 
+* [`WebhookEventLogAttempts`](WebhookEventLogAttempts.md)
 
 ---
 

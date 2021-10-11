@@ -15,6 +15,11 @@
 import { exists } from '../runtime'
 import { UnifiedApi, UnifiedApiFromJSON, UnifiedApiToJSON } from './UnifiedApi'
 import {
+  WebhookEventLogAttempts,
+  WebhookEventLogAttemptsFromJSON,
+  WebhookEventLogAttemptsToJSON
+} from './WebhookEventLogAttempts'
+import {
   WebhookEventLogService,
   WebhookEventLogServiceFromJSON,
   WebhookEventLogServiceToJSON
@@ -44,12 +49,6 @@ export interface WebhookEventLog {
    * @memberof WebhookEventLog
    */
   success?: boolean
-  /**
-   * If error occured, response captured here
-   * @type {string}
-   * @memberof WebhookEventLog
-   */
-  error_message?: string | null
   /**
    * ID of your Apideck Application
    * @type {string}
@@ -122,6 +121,12 @@ export interface WebhookEventLog {
    * @memberof WebhookEventLog
    */
   response_body?: string
+  /**
+   * record of each attempt to call webhook endpoint
+   * @type {Array<WebhookEventLogAttempts>}
+   * @memberof WebhookEventLog
+   */
+  attempts?: Array<WebhookEventLogAttempts>
 }
 
 export function WebhookEventLogFromJSON(json: any): WebhookEventLog {
@@ -139,7 +144,6 @@ export function WebhookEventLogFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     status_code: !exists(json, 'status_code') ? undefined : json['status_code'],
     success: !exists(json, 'success') ? undefined : json['success'],
-    error_message: !exists(json, 'error_message') ? undefined : json['error_message'],
     application_id: !exists(json, 'application_id') ? undefined : json['application_id'],
     consumer_id: !exists(json, 'consumer_id') ? undefined : json['consumer_id'],
     unified_api: !exists(json, 'unified_api') ? undefined : UnifiedApiFromJSON(json['unified_api']),
@@ -151,7 +155,10 @@ export function WebhookEventLogFromJSONTyped(
     timestamp: !exists(json, 'timestamp') ? undefined : json['timestamp'],
     entity_type: !exists(json, 'entity_type') ? undefined : json['entity_type'],
     request_body: !exists(json, 'request_body') ? undefined : json['request_body'],
-    response_body: !exists(json, 'response_body') ? undefined : json['response_body']
+    response_body: !exists(json, 'response_body') ? undefined : json['response_body'],
+    attempts: !exists(json, 'attempts')
+      ? undefined
+      : (json['attempts'] as Array<any>).map(WebhookEventLogAttemptsFromJSON)
   }
 }
 
@@ -166,7 +173,6 @@ export function WebhookEventLogToJSON(value?: WebhookEventLog | null): any {
     id: value.id,
     status_code: value.status_code,
     success: value.success,
-    error_message: value.error_message,
     application_id: value.application_id,
     consumer_id: value.consumer_id,
     unified_api: UnifiedApiToJSON(value.unified_api),
@@ -178,6 +184,10 @@ export function WebhookEventLogToJSON(value?: WebhookEventLog | null): any {
     timestamp: value.timestamp,
     entity_type: value.entity_type,
     request_body: value.request_body,
-    response_body: value.response_body
+    response_body: value.response_body,
+    attempts:
+      value.attempts === undefined
+        ? undefined
+        : (value.attempts as Array<any>).map(WebhookEventLogAttemptsToJSON)
   }
 }
