@@ -26,13 +26,13 @@ export interface SessionSettings {
    */
   hide_resource_settings?: boolean
   /**
-   * Forces Vault to shows a banner informing the current consumer is in a test environment.
+   * Configure [Vault](/apis/vault/reference#section/Get-Started) to show a banner informing the logged in user is in a test environment.
    * @type {boolean}
    * @memberof SessionSettings
    */
   sandbox_mode?: boolean
   /**
-   * Forces Vault to run in isolation mode, meaning it only shows the connection settings and hides the navigation items.
+   * Configure [Vault](/apis/vault/reference#section/Get-Started) to run in isolation mode, meaning it only shows the connection settings and hides the navigation items.
    * @type {boolean}
    * @memberof SessionSettings
    */
@@ -44,11 +44,17 @@ export interface SessionSettings {
    */
   session_length?: string
   /**
-   *
+   * Configure [Vault](/apis/vault/reference#section/Get-Started) to show the logs page. Defaults to `true`.
    * @type {boolean}
    * @memberof SessionSettings
    */
   show_logs?: boolean
+  /**
+   * Configure [Vault](/apis/vault/reference#section/Get-Started) to show the suggestions page. Defaults to `true`.
+   * @type {boolean}
+   * @memberof SessionSettings
+   */
+  show_suggestions?: boolean
 }
 
 export function SessionSettingsFromJSON(json: any): SessionSettings {
@@ -69,7 +75,8 @@ export function SessionSettingsFromJSONTyped(
     sandbox_mode: !exists(json, 'sandbox_mode') ? undefined : json['sandbox_mode'],
     isolation_mode: !exists(json, 'isolation_mode') ? undefined : json['isolation_mode'],
     session_length: !exists(json, 'session_length') ? undefined : json['session_length'],
-    show_logs: !exists(json, 'show_logs') ? undefined : json['show_logs']
+    show_logs: !exists(json, 'show_logs') ? undefined : json['show_logs'],
+    show_suggestions: !exists(json, 'show_suggestions') ? undefined : json['show_suggestions']
   }
 }
 
@@ -85,6 +92,7 @@ export function SessionSettingsToJSON(value?: SessionSettings | null): any {
     sandbox_mode: value.sandbox_mode,
     isolation_mode: value.isolation_mode,
     session_length: value.session_length,
-    show_logs: value.show_logs
+    show_logs: value.show_logs,
+    show_suggestions: value.show_suggestions
   }
 }

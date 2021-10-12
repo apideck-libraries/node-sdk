@@ -816,7 +816,8 @@ describe('VaultApi', () => {
             sandbox_mode: false,
             isolation_mode: false,
             session_length: '30m',
-            show_logs: true
+            show_logs: true,
+            show_suggestions: true
           },
           theme: {
             favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
