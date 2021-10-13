@@ -30,7 +30,7 @@ export interface WebhookEventLogsFilter {
    * @type {string}
    * @memberof WebhookEventLogsFilter
    */
-  exclude_unified_apis?: string | null
+  exclude_apis?: string | null
   /**
    *
    * @type {WebhookEventLogsFilterService}
@@ -69,9 +69,7 @@ export function WebhookEventLogsFilterFromJSONTyped(
     return json
   }
   return {
-    exclude_unified_apis: !exists(json, 'exclude_unified_apis')
-      ? undefined
-      : json['exclude_unified_apis'],
+    exclude_apis: !exists(json, 'exclude_apis') ? undefined : json['exclude_apis'],
     service: !exists(json, 'service')
       ? undefined
       : WebhookEventLogsFilterServiceFromJSON(json['service']),
@@ -89,7 +87,7 @@ export function WebhookEventLogsFilterToJSON(value?: WebhookEventLogsFilter | nu
     return null
   }
   return {
-    exclude_unified_apis: value.exclude_unified_apis,
+    exclude_apis: value.exclude_apis,
     service: WebhookEventLogsFilterServiceToJSON(value.service),
     consumer_id: value.consumer_id,
     entity_type: value.entity_type,

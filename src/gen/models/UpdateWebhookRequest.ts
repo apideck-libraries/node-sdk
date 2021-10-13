@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Event, EventFromJSON, EventToJSON } from './Event'
+import { EventType4, EventType4FromJSON, EventType4ToJSON } from './EventType4'
 import { Status, StatusFromJSON, StatusToJSON } from './Status'
 
 /**
@@ -28,6 +28,12 @@ export interface UpdateWebhookRequest {
    * @memberof UpdateWebhookRequest
    */
   readonly id?: string
+  /**
+   * The unifiedApi the webhook originated from
+   * @type {string}
+   * @memberof UpdateWebhookRequest
+   */
+  unified_api?: string
   /**
    * An optional description of what the webhook is used for.
    * @type {string}
@@ -48,10 +54,10 @@ export interface UpdateWebhookRequest {
   url?: string
   /**
    * The list of subscribed events for this webhook. [’*’] indicates that all events are enabled.
-   * @type {Array<Event>}
+   * @type {Array<EventType4>}
    * @memberof UpdateWebhookRequest
    */
-  events?: Array<Event>
+  events?: Array<EventType4>
   /**
    *
    * @type {Date}
@@ -79,10 +85,13 @@ export function UpdateWebhookRequestFromJSONTyped(
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    unified_api: !exists(json, 'unified_api') ? undefined : json['unified_api'],
     description: !exists(json, 'description') ? undefined : json['description'],
     status: !exists(json, 'status') ? undefined : StatusFromJSON(json['status']),
     url: !exists(json, 'url') ? undefined : json['url'],
-    events: !exists(json, 'events') ? undefined : (json['events'] as Array<any>).map(EventFromJSON),
+    events: !exists(json, 'events')
+      ? undefined
+      : (json['events'] as Array<any>).map(EventType4FromJSON),
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
@@ -96,9 +105,11 @@ export function UpdateWebhookRequestToJSON(value?: UpdateWebhookRequest | null):
     return null
   }
   return {
+    unified_api: value.unified_api,
     description: value.description,
     status: StatusToJSON(value.status),
     url: value.url,
-    events: value.events === undefined ? undefined : (value.events as Array<any>).map(EventToJSON)
+    events:
+      value.events === undefined ? undefined : (value.events as Array<any>).map(EventType4ToJSON)
   }
 }

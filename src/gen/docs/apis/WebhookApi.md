@@ -93,7 +93,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhook** | [CreateWebhookRequest](../models/CreateWebhookRequest.md)|  |
  **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
 
 
 
@@ -127,6 +126,7 @@ const apideck = new Apideck({
 
 const params = {
   webhook: {
+    unified_api: 'vault',
     description: 'This is a webhook. It listens to connection events',
     status: 'enabled',
     url: 'https://example.com/my/webhook/endpoint',
@@ -166,7 +166,6 @@ webhookApi.webhooksAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
 
@@ -230,9 +229,8 @@ webhookApi.webhooksDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
+ **id** | [**string**] | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source. | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
 
 
 
@@ -296,9 +294,8 @@ webhookApi.webhooksOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
+ **id** | [**string**] | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source. | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
 
 
 
@@ -363,9 +360,8 @@ webhookApi.webhooksUpdate(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhook** | [UpdateWebhookRequest](../models/UpdateWebhookRequest.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
+ **id** | [**string**] | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source. | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
 
 
 
@@ -400,6 +396,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   webhook: {
+    unified_api: 'vault',
     description: 'This is a webhook. It listens to connection events',
     status: 'enabled',
     url: 'https://example.com/my/webhook/endpoint',

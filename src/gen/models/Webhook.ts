@@ -13,7 +13,8 @@
  */
 
 import { exists } from '../runtime'
-import { Event, EventFromJSON, EventToJSON } from './Event'
+import { EventType4, EventType4FromJSON, EventType4ToJSON } from './EventType4'
+import { Status, StatusFromJSON, StatusToJSON } from './Status'
 
 /**
  *
@@ -22,11 +23,17 @@ import { Event, EventFromJSON, EventToJSON } from './Event'
  */
 export interface Webhook {
   /**
-   * The status of the webhook.
+   * The unifiedApi the webhook originated from
    * @type {string}
    * @memberof Webhook
    */
-  status: WebhookStatus
+  unified_api: string
+  /**
+   *
+   * @type {Status}
+   * @memberof Webhook
+   */
+  status: Status
   /**
    * The URL of the webhook endpoint.
    * @type {string}
@@ -34,11 +41,17 @@ export interface Webhook {
    */
   url: string
   /**
-   * The list of subscribed events for this webhook. [’*’] indicates that all events are enabled.
-   * @type {Array<Event>}
+   * The Unify Base URL events from connectors will be sent to after service id is appended.
+   * @type {string}
    * @memberof Webhook
    */
-  events: Array<Event>
+  readonly execute_base_url: string
+  /**
+   * The list of subscribed events for this webhook. [’*’] indicates that all events are enabled.
+   * @type {Array<EventType4>}
+   * @memberof Webhook
+   */
+  events: Array<EventType4>
   /**
    *
    * @type {string}
@@ -65,15 +78,6 @@ export interface Webhook {
   readonly created_at?: Date
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum WebhookStatus {
-  enabled = 'enabled',
-  disabled = 'disabled'
-}
-
 export function WebhookFromJSON(json: any): Webhook {
   return WebhookFromJSONTyped(json, false)
 }
@@ -83,9 +87,11 @@ export function WebhookFromJSONTyped(json: any, ignoreDiscriminator: boolean): W
     return json
   }
   return {
-    status: json['status'],
+    unified_api: json['unified_api'],
+    status: StatusFromJSON(json['status']),
     url: json['url'],
-    events: (json['events'] as Array<any>).map(EventFromJSON),
+    execute_base_url: json['execute_base_url'],
+    events: (json['events'] as Array<any>).map(EventType4FromJSON),
     id: !exists(json, 'id') ? undefined : json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -101,9 +107,10 @@ export function WebhookToJSON(value?: Webhook | null): any {
     return null
   }
   return {
-    status: value.status,
+    unified_api: value.unified_api,
+    status: StatusToJSON(value.status),
     url: value.url,
-    events: (value.events as Array<any>).map(EventToJSON),
+    events: (value.events as Array<any>).map(EventType4ToJSON),
     description: value.description
   }
 }
