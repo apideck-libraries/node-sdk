@@ -38,7 +38,7 @@ describe('WebhookApi', () => {
             success: true,
             application_id: '1111',
             consumer_id: 'test_consumer_id',
-            unified_api: 'crm',
+            unified_api: 'vault',
             service: {
               id: '101-data-solution',
               name: '101 Data Solution'
@@ -110,8 +110,10 @@ describe('WebhookApi', () => {
         data: {
           id: '1234',
           description: 'This is a webhook. It listens to connection events',
+          unified_api: 'vault',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
+          execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           events: ['vault.connection.created', 'vault.connection.updated']
@@ -125,6 +127,7 @@ describe('WebhookApi', () => {
       const { webhook } = apideck
       const params = {
         webhook: {
+          unified_api: 'vault',
           description: 'This is a webhook. It listens to connection events',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
@@ -158,8 +161,10 @@ describe('WebhookApi', () => {
           {
             id: '1234',
             description: 'This is a webhook. It listens to connection events',
+            unified_api: 'vault',
             status: 'enabled',
             url: 'https://example.com/my/webhook/endpoint',
+            execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
             events: ['vault.connection.created', 'vault.connection.updated']
@@ -212,8 +217,10 @@ describe('WebhookApi', () => {
         data: {
           id: '1234',
           description: 'This is a webhook. It listens to connection events',
+          unified_api: 'vault',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
+          execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           events: ['vault.connection.created', 'vault.connection.updated']
@@ -254,8 +261,10 @@ describe('WebhookApi', () => {
         data: {
           id: '1234',
           description: 'This is a webhook. It listens to connection events',
+          unified_api: 'vault',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
+          execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           events: ['vault.connection.created', 'vault.connection.updated']
@@ -296,8 +305,10 @@ describe('WebhookApi', () => {
         data: {
           id: '1234',
           description: 'This is a webhook. It listens to connection events',
+          unified_api: 'vault',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
+          execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           events: ['vault.connection.created', 'vault.connection.updated']
@@ -312,6 +323,7 @@ describe('WebhookApi', () => {
       const params = {
         id: 'id_example',
         webhook: {
+          unified_api: 'vault',
           description: 'This is a webhook. It listens to connection events',
           status: 'enabled',
           url: 'https://example.com/my/webhook/endpoint',
