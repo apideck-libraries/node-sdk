@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`exclude_unified_apis` | **string** |  | [optional] 
+`exclude_apis` | **string** |  | [optional] 
 `service` | [**WebhookEventLogsFilterService**](WebhookEventLogsFilterService.md) |  | [optional] 
 `consumer_id` | **string** |  | [optional] 
 `entity_type` | **string** |  | [optional] 

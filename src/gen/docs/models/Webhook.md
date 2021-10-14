@@ -5,9 +5,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`status` | **string** | The status of the webhook. | 
+`unified_api` | **string** | The unifiedApi the webhook originated from | 
+`status` | [**Status**](Status.md) |  | 
 `url` | **string** | The URL of the webhook endpoint. | 
-`events` | [**Array&lt;Event&gt;**](Event.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
+`execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
+`events` | [**Array&lt;EventType4&gt;**](EventType4.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 
 `description` | **string** | An optional description of what the webhook is used for. | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -17,21 +19,12 @@ Name | Type | Description | Notes
 
 
 
-<a name="WebhookStatus"></a>
-## Enum: Webhook.status
-
-
-* `enabled` (value: `'enabled'`)
-
-* `disabled` (value: `'disabled'`)
-
-
-
-
 ## Referenced Types:
 
+* [`Status`](Status.md)
 
-* [`Event`](Event.md)
+
+* [`EventType4`](EventType4.md)
 
 
 
