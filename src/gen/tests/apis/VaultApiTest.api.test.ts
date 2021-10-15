@@ -332,19 +332,6 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
-          form_fields: [
-            {
-              id: 'instance_url',
-              label: 'Instance url',
-              value: 'https://eu28.salesforce.com',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false
-            }
-          ],
           configuration: [
             {
               resource: 'leads',
@@ -468,19 +455,6 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
-          form_fields: [
-            {
-              id: 'instance_url',
-              label: 'Instance url',
-              value: 'https://eu28.salesforce.com',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false
-            }
-          ],
           configuration: [
             {
               resource: 'leads',
