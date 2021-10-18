@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 `execution_attempt` | **number** | Number of attempts webhook endpoint was called before a success was returned or eventually failed | [optional] 
 `status_code` | **number** | HTTP Status code that was returned. | [optional] 
 `success` | **boolean** | Whether or not the request was successful. | [optional] 
-`retry_scheduled` | **boolean** | If the request has not hit the max retry limit and will be retried. | [optional] 
 
 
 

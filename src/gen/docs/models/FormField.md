@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `type` | **string** |  | [optional] 
 `required` | **boolean** |  | [optional] 
 `custom_field` | **boolean** |  | [optional] 
+`allow_custom_values` | **boolean** | Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list. | [optional] 
 `disabled` | **boolean** |  | [optional] 
 `options` | [**Array&lt;FormFieldOption&gt;**](FormFieldOption.md) |  | [optional] 
 
@@ -53,6 +54,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

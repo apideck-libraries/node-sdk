@@ -5,25 +5,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`unified_api` | **string** | The unifiedApi the webhook originated from | 
 `status` | [**Status**](Status.md) |  | 
 `url` | **string** | The URL of the webhook endpoint. | 
-`events` | [**Array&lt;Event&gt;**](Event.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
-`id` | **string** |  | [optional] 
+`events` | [**Array&lt;EventType4&gt;**](EventType4.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `description` | **string** | An optional description of what the webhook is used for. | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
 
 
 
 
 
 ## Referenced Types:
+
 * [`Status`](Status.md)
 
-* [`Event`](Event.md)
-
-
-
+* [`EventType4`](EventType4.md)
 
 
 ---
