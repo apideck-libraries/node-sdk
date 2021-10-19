@@ -5,6 +5,7 @@
 ../../LICENSE
 ../../README.md
 ../../package.json
+../../patches/node-fetch+2.6.5.patch
 ../../tsconfig.json
 ../Apideck.ts
 ../index.ts

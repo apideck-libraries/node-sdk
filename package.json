@@ -1,6 +1,6 @@
 {
   "name": "@apideck/node",
-  "version": "1.0.0-beta.22",
+  "version": "1.0.0-beta.23",
   "description": "Apideck Node.js SDK",
   "keywords": [
     "apideck",
@@ -31,7 +31,8 @@
     "build": "tsdx build --target node",
     "lint": "tsdx lint",
     "test": "tsdx test --passWithNoTests",
-    "prepare": "tsdx build --target node"
+    "prepare": "tsdx build --target node",
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
@@ -41,7 +42,7 @@
   "license": "Apache-2.0",
   "peerDependencies": {},
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "2.6.5"
   },
   "devDependencies": {
     "@types/jest": "^27.0.0",
@@ -52,6 +53,7 @@
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^10.5.4",
     "nock": "^13.1.1",
+    "patch-package": "^6.4.7",
     "prettier": "^2.2.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
