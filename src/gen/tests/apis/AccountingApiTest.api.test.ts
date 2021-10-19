@@ -188,7 +188,7 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          status: 'Customer status'
+          status: 'active'
         }
       } as any
       const current = await accounting.customersAdd(params)
@@ -278,7 +278,7 @@ describe('AccountingApi', () => {
               account_number: '123456789',
               account_name: 'SPACEX LLC'
             },
-            status: 'Customer status',
+            status: 'active',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -432,7 +432,7 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          status: 'Customer status',
+          status: 'active',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -546,7 +546,7 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          status: 'Customer status'
+          status: 'active'
         }
       } as any
       const current = await accounting.customersUpdate(params)
