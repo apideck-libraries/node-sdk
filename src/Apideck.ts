@@ -16,7 +16,7 @@ export type ApideckConfiguration = {
 export class Apideck {
   readonly accounting: AccountingApi
   readonly crm: CrmApi
-  readonly fileStorage: FileStorageApi
+  readonly filestorage: FileStorageApi
   readonly lead: LeadApi
   readonly vault: VaultApi
   readonly webhook: WebhookApi
@@ -28,7 +28,7 @@ export class Apideck {
     }
 
     const configuration = new Configuration({
-      fetchApi: (url, options) => (fetch as any)(url, { ...options, highWaterMark: 10_000_000 }),
+      fetchApi: fetch as any,
       basePath: config.basePath,
       apiKey: `Bearer ${config.apiKey}`,
       headers: {
@@ -40,7 +40,7 @@ export class Apideck {
 
     this.accounting = new AccountingApi(configuration)
     this.crm = new CrmApi(configuration)
-    this.fileStorage = new FileStorageApi(configuration)
+    this.filestorage = new FileStorageApi(configuration)
     this.lead = new LeadApi(configuration)
     this.vault = new VaultApi(configuration)
     this.webhook = new WebhookApi(configuration)

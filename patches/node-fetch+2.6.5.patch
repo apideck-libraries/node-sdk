@@ -1,0 +1,33 @@
+diff --git a/node_modules/node-fetch/lib/index.js b/node_modules/node-fetch/lib/index.js
+index 4c5b8ff..4466b74 100644
+--- a/node_modules/node-fetch/lib/index.js
++++ b/node_modules/node-fetch/lib/index.js
+@@ -543,8 +543,8 @@ function clone(instance) {
+ 	// note: we can't clone the form-data object without having it as a dependency
+ 	if (body instanceof Stream && typeof body.getBoundary !== 'function') {
+ 		// tee instance body
+-		p1 = new PassThrough();
+-		p2 = new PassThrough();
++		p1 = new PassThrough({ highWaterMark: 10000000 });
++		p2 = new PassThrough({ highWaterMark: 10000000 });
+ 		body.pipe(p1);
+ 		body.pipe(p2);
+ 		// set instance body to teed body and return the other teed body
+@@ -1568,7 +1568,7 @@ function fetch(url, opts) {
+ 			res.once('end', function () {
+ 				if (signal) signal.removeEventListener('abort', abortAndFinalize);
+ 			});
+-			let body = res.pipe(new PassThrough$1());
++			let body = res.pipe(new PassThrough$1({ highWaterMark: 10000000 }));
+ 
+ 			const response_options = {
+ 				url: request.url,
+@@ -1619,7 +1619,7 @@ function fetch(url, opts) {
+ 			if (codings == 'deflate' || codings == 'x-deflate') {
+ 				// handle the infamous raw deflate response from old servers
+ 				// a hack for old IIS and Apache servers
+-				const raw = res.pipe(new PassThrough$1());
++				const raw = res.pipe(new PassThrough$1({ highWaterMark: 10000000 }));
+ 				raw.once('data', function (chunk) {
+ 					// see http://stackoverflow.com/questions/37519828
+ 					if ((chunk[0] & 0x0F) === 0x08) {
