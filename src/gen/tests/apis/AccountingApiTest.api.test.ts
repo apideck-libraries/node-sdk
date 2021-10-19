@@ -32,8 +32,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Company Info',
+        service: 'xero',
+        resource: 'company-info',
         operation: 'one',
         data: {
           id: '12345',
@@ -115,8 +115,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Customers',
+        service: 'xero',
+        resource: 'customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -215,8 +215,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Customers',
+        service: 'xero',
+        resource: 'customers',
         operation: 'one',
         data: [
           {
@@ -330,8 +330,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Customers',
+        service: 'xero',
+        resource: 'customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -370,8 +370,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Customers',
+        service: 'xero',
+        resource: 'customers',
         operation: 'one',
         data: {
           id: '12345',
@@ -472,8 +472,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Customers',
+        service: 'xero',
+        resource: 'customers',
         operation: 'one',
         data: {
           id: '12345'
@@ -573,8 +573,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'InvoiceItems',
+        service: 'xero',
+        resource: 'invoice-items',
         operation: 'one',
         data: {
           id: '12345'
@@ -638,8 +638,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'InvoiceItems',
+        service: 'xero',
+        resource: 'invoice-items',
         operation: 'one',
         data: [
           {
@@ -718,8 +718,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: {
           id: '12345'
@@ -758,8 +758,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'InvoiceItems',
+        service: 'xero',
+        resource: 'invoice-items',
         operation: 'one',
         data: {
           id: '12345',
@@ -825,8 +825,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: {
           id: '12345'
@@ -891,8 +891,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: {
           id: '12345'
@@ -1022,8 +1022,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: [
           {
@@ -1168,8 +1168,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: {
           id: '12345'
@@ -1208,8 +1208,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: {
           id: '12345',
@@ -1341,8 +1341,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Invoices',
+        service: 'xero',
+        resource: 'invoices',
         operation: 'one',
         data: {
           id: '12345'
@@ -1473,8 +1473,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'LedgerAccounts',
+        service: 'xero',
+        resource: 'ledger-accounts',
         operation: 'one',
         data: {
           id: '12345'
@@ -1542,8 +1542,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'LedgerAccounts',
+        service: 'xero',
+        resource: 'ledger-accounts',
         operation: 'one',
         data: [
           {
@@ -1640,8 +1640,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'LedgerAccounts',
+        service: 'xero',
+        resource: 'ledger-accounts',
         operation: 'one',
         data: {
           id: '12345'
@@ -1680,8 +1680,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'LedgerAccounts',
+        service: 'xero',
+        resource: 'ledger-accounts',
         operation: 'one',
         data: {
           id: '12345',
@@ -1765,8 +1765,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'LedgerAccounts',
+        service: 'xero',
+        resource: 'ledger-accounts',
         operation: 'one',
         data: {
           id: '12345'
@@ -1835,8 +1835,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: {
           id: '12345'
@@ -1892,8 +1892,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: [
           {
@@ -1964,8 +1964,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: {
           id: '12345'
@@ -2004,8 +2004,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: {
           id: '12345',
@@ -2063,8 +2063,8 @@ describe('AccountingApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'TaxRates',
+        service: 'xero',
+        resource: 'tax-rates',
         operation: 'one',
         data: {
           id: '12345'

@@ -32,8 +32,8 @@ describe('FileStorageApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Files',
+        service: 'google-drive',
+        resource: 'files',
         operation: 'one',
         data: [
           {
@@ -108,8 +108,8 @@ describe('FileStorageApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Files',
+        service: 'google-drive',
+        resource: 'files',
         operation: 'one',
         data: {
           id: '12345'
@@ -179,8 +179,8 @@ describe('FileStorageApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Files',
+        service: 'google-drive',
+        resource: 'files',
         operation: 'one',
         data: {
           id: '12345',
@@ -242,8 +242,8 @@ describe('FileStorageApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
-        resource: 'Files',
+        service: 'google-drive',
+        resource: 'files',
         operation: 'one',
         data: [
           {

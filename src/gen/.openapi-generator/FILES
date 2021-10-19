@@ -23,6 +23,8 @@ CompanyInfo.md
 Connection.md
 ConnectionConfiguration.md
 ConnectionDefaults.md
+ConnectionEvent1.md
+ConnectionEvent1Entity.md
 ConnectionMetadata.md
 ConnectionState.md
 Consumer.md
@@ -73,7 +75,14 @@ DeleteTaxRateResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Email.md
-Event.md
+EventType.md
+EventType1.md
+EventType2.md
+EventType3.md
+EventType4.md
+ExecuteWebhookEventRequest.md
+ExecuteWebhookEventsRequest.md
+ExecuteWebhookResponse.md
 File.md
 FileOwner.md
 FileStorageApi.md
@@ -163,7 +172,6 @@ Tags.md
 TaxRate.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
-UnifiedApi.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
@@ -215,6 +223,8 @@ models/CompanyInfo.ts
 models/Connection.ts
 models/ConnectionConfiguration.ts
 models/ConnectionDefaults.ts
+models/ConnectionEvent1.ts
+models/ConnectionEvent1Entity.ts
 models/ConnectionMetadata.ts
 models/ConnectionState.ts
 models/Consumer.ts
@@ -263,7 +273,14 @@ models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Email.ts
-models/Event.ts
+models/EventType.ts
+models/EventType1.ts
+models/EventType2.ts
+models/EventType3.ts
+models/EventType4.ts
+models/ExecuteWebhookEventRequest.ts
+models/ExecuteWebhookEventsRequest.ts
+models/ExecuteWebhookResponse.ts
 models/FileOwner.ts
 models/FilesFilter.ts
 models/FilesSearch.ts
@@ -349,7 +366,6 @@ models/Tags.ts
 models/TaxRate.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
-models/UnifiedApi.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
