@@ -7,7 +7,7 @@
 
 * [Get All Connections](#connectionsAll)
 * [Deletes A Connection](#connectionsDelete)
-* [Get Settings](#connectionsGetSettings)
+* [Get Resource Settings](#connectionsGetSettings)
 * [Update Connection](#connectionsUpdate)
 * [Update Settings](#connectionsUpdateSettings)
 * [Get All Consumers](#consumersAll)
@@ -152,7 +152,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="connectionsGetSettings"></a>
-# Get Settings
+# Get Resource Settings
 
 
 Method: **connectionsGetSettings**
@@ -288,19 +288,6 @@ const params = {
       plan: 'enterprise'
     },
     auth_type: 'oauth2',
-    form_fields: [
-      {
-        id: 'instance_url',
-        label: 'Instance url',
-        value: 'https://eu28.salesforce.com',
-        placeholder: '',
-        mask: false,
-        type: 'text',
-        required: true,
-        disabled: false,
-        custom_field: false
-      }
-    ],
     configuration: [
       {
         resource: 'leads',
@@ -399,19 +386,6 @@ const params = {
       plan: 'enterprise'
     },
     auth_type: 'oauth2',
-    form_fields: [
-      {
-        id: 'instance_url',
-        label: 'Instance url',
-        value: 'https://eu28.salesforce.com',
-        placeholder: '',
-        mask: false,
-        type: 'text',
-        required: true,
-        disabled: false,
-        custom_field: false
-      }
-    ],
     configuration: [
       {
         resource: 'leads',

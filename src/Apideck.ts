@@ -28,7 +28,7 @@ export class Apideck {
     }
 
     const configuration = new Configuration({
-      fetchApi: fetch as any,
+      fetchApi: (url, options) => (fetch as any)(url, { ...options, highWaterMark: 10_000_000 }),
       basePath: config.basePath,
       apiKey: `Bearer ${config.apiKey}`,
       headers: {
