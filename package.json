@@ -1,6 +1,6 @@
 {
   "name": "@apideck/node",
-  "version": "1.0.0-beta.23",
+  "version": "1.0.0-beta.24",
   "description": "Apideck Node.js SDK",
   "keywords": [
     "apideck",
@@ -31,8 +31,7 @@
     "build": "tsdx build --target node",
     "lint": "tsdx lint",
     "test": "tsdx test --passWithNoTests",
-    "prepare": "tsdx build --target node",
-    "postinstall": "patch-package"
+    "prepare": "tsdx build --target node"
   },
   "husky": {
     "hooks": {
