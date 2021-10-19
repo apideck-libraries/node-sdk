@@ -1,9 +1,14 @@
-import fetch from 'node-fetch'
 import { AccountingApi, CrmApi, FileStorageApi, LeadApi, VaultApi, WebhookApi } from './gen/'
 import { Configuration } from './gen/runtime'
 
+const _importDynamic = new Function('modulePath', 'return import(modulePath)')
 const isNode =
   typeof process !== 'undefined' && process.versions != null && process.versions.node != null
+
+async function fetch(...args: [any, any]) {
+  const { default: fetch } = await _importDynamic('node-fetch')
+  return fetch(...args)
+}
 
 export type ApideckConfiguration = {
   basePath?: string
