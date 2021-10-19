@@ -211,7 +211,7 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    status: 'Customer status'
+    status: 'active'
   }
 }
 
@@ -548,7 +548,7 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    status: 'Customer status'
+    status: 'active'
   }
 }
 
