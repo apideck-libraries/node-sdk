@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
-`status` | **string** |  | [optional] 
+`status` | **string** | Customer status | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
