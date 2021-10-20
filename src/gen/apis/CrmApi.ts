@@ -393,6 +393,8 @@ export interface CrmApiPipelinesAllRequest {
   consumerId?: string
   appId?: string
   serviceId?: string
+  cursor?: string | null
+  limit?: number
 }
 
 export interface CrmApiPipelinesDeleteRequest {
@@ -2483,6 +2485,14 @@ export class CrmApi extends runtime.BaseAPI {
 
     if (requestParameters.raw !== undefined) {
       queryParameters['raw'] = requestParameters.raw
+    }
+
+    if (requestParameters.cursor !== undefined) {
+      queryParameters['cursor'] = requestParameters.cursor
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit
     }
 
     const headerParameters: runtime.HTTPHeaders = {}
