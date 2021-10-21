@@ -33,7 +33,7 @@ export interface Invoice {
    * @type {string}
    * @memberof Invoice
    */
-  id?: string
+  readonly id?: string
   /**
    *
    * @type {string}
@@ -237,7 +237,6 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     return null
   }
   return {
-    id: value.id,
     type: value.type,
     number: value.number,
     customer: Customer1ToJSON(value.customer),

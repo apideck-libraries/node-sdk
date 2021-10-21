@@ -34,13 +34,13 @@ export interface LedgerAccount {
    * @type {string}
    * @memberof LedgerAccount
    */
-  id?: string
+  readonly id?: string
   /**
    *
    * @type {string}
    * @memberof LedgerAccount
    */
-  readonly display_id?: string
+  display_id?: string
   /**
    *
    * @type {string}
@@ -166,7 +166,7 @@ export interface LedgerAccount {
    * @type {string}
    * @memberof LedgerAccount
    */
-  readonly row_version?: string | null
+  row_version?: string | null
   /**
    *
    * @type {string}
@@ -288,7 +288,7 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
   }
   return {
     ...value,
-    id: value.id,
+    display_id: value.display_id,
     nominal_code: value.nominal_code,
     classification: value.classification,
     type: value.type,
@@ -306,6 +306,7 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
     header: value.header,
     bank_account: BankAccountToJSON(value.bank_account),
     parent_account: LedgerAccountParentAccountToJSON(value.parent_account),
-    sub_account: value.sub_account
+    sub_account: value.sub_account,
+    row_version: value.row_version
   }
 }

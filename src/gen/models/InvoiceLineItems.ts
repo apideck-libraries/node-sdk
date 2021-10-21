@@ -32,7 +32,7 @@ export interface InvoiceLineItems {
    * @type {string}
    * @memberof InvoiceLineItems
    */
-  id?: string
+  readonly id?: string
   /**
    *
    * @type {string}
@@ -170,7 +170,6 @@ export function InvoiceLineItemsToJSON(value?: InvoiceLineItems | null): any {
     return null
   }
   return {
-    id: value.id,
     row_id: value.row_id,
     code: value.code,
     line_number: value.line_number,

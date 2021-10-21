@@ -50,8 +50,6 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
 
 
 
@@ -153,7 +151,7 @@ const apideck = new Apideck({
 
 const params = {
   customer: {
-    id: '12345',
+    display_id: 'EMP00101',
     company_name: 'SpaceX',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -198,7 +196,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '12345',
+      id: '123456',
       code: 'N-T'
     },
     tax_number: 'US123945459',
@@ -490,7 +488,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   customer: {
-    id: '12345',
+    display_id: 'EMP00101',
     company_name: 'SpaceX',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -535,7 +533,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '12345',
+      id: '123456',
       code: 'N-T'
     },
     tax_number: 'US123945459',
@@ -619,7 +617,6 @@ const apideck = new Apideck({
 
 const params = {
   invoiceItem: {
-    id: '12345',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -630,14 +627,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '12345',
+        id: '123456',
         code: 'N-T'
       }
     },
     quantity: 2,
     unit_price: 27500.5,
     ledger_account: {
-      id: '12345',
       name: 'Bank account'
     },
     active: true,
@@ -920,7 +916,6 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoiceItem: {
-    id: '12345',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -931,14 +926,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '12345',
+        id: '123456',
         code: 'N-T'
       }
     },
     quantity: 2,
     unit_price: 27500.5,
     ledger_account: {
-      id: '12345',
       name: 'Bank account'
     },
     active: true,
@@ -1013,11 +1007,9 @@ const apideck = new Apideck({
 
 const params = {
   invoice: {
-    id: '12345',
     type: 'Service',
     number: 'OIT00546',
     customer: {
-      id: '12345',
       company_name: 'The boring company'
     },
     invoice_date: '2020-09-30',
@@ -1034,7 +1026,6 @@ const params = {
     customer_memo: 'Thank you for your business and have a great day!',
     line_items: [
       {
-        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -1051,11 +1042,10 @@ const params = {
           name: 'Model Y'
         },
         tax_rate: {
-          id: '12345',
+          id: '123456',
           code: 'N-T'
         },
         ledger_account: {
-          id: '12345',
           name: 'Bank account'
         },
         row_version: '1-12345'
@@ -1380,11 +1370,9 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoice: {
-    id: '12345',
     type: 'Service',
     number: 'OIT00546',
     customer: {
-      id: '12345',
       company_name: 'The boring company'
     },
     invoice_date: '2020-09-30',
@@ -1401,7 +1389,6 @@ const params = {
     customer_memo: 'Thank you for your business and have a great day!',
     line_items: [
       {
-        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -1418,11 +1405,10 @@ const params = {
           name: 'Model Y'
         },
         tax_rate: {
-          id: '12345',
+          id: '123456',
           code: 'N-T'
         },
         ledger_account: {
-          id: '12345',
           name: 'Bank account'
         },
         row_version: '1-12345'
@@ -1539,7 +1525,7 @@ const apideck = new Apideck({
 
 const params = {
   ledgerAccount: {
-    id: '12345',
+    display_id: '1-12345',
     nominal_code: '091',
     classification: 'asset',
     type: 'bank',
@@ -1552,10 +1538,10 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '12345',
+      id: '123456',
       code: 'N-T'
     },
-    level: 2,
+    level: 1,
     active: true,
     header: true,
     bank_account: {
@@ -1566,7 +1552,13 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    sub_account: true
+    parent_account: {
+      id: '12345',
+      name: 'Bank Accounts',
+      display_id: '1-1100'
+    },
+    sub_account: false,
+    row_version: '3144638439811448832'
   }
 }
 
@@ -1845,7 +1837,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   ledgerAccount: {
-    id: '12345',
+    display_id: '1-12345',
     nominal_code: '091',
     classification: 'asset',
     type: 'bank',
@@ -1858,10 +1850,10 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '12345',
+      id: '123456',
       code: 'N-T'
     },
-    level: 2,
+    level: 1,
     active: true,
     header: true,
     bank_account: {
@@ -1872,7 +1864,13 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    sub_account: true
+    parent_account: {
+      id: '12345',
+      name: 'Bank Accounts',
+      display_id: '1-1100'
+    },
+    sub_account: false,
+    row_version: '3144638439811448832'
   }
 }
 
@@ -1943,7 +1941,6 @@ const apideck = new Apideck({
 
 const params = {
   taxRate: {
-    id: '12345',
     name: '15% GST on Expenses',
     code: 'ABN',
     description: 'No ABN Withholding',
@@ -1956,7 +1953,7 @@ const params = {
         compound: true
       }
     ],
-    special_tax_type: 'NONE',
+    tax_type: 'NONE',
     original_tax_rate_id: '12345',
     active: true
   }
@@ -2237,7 +2234,6 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   taxRate: {
-    id: '12345',
     name: '15% GST on Expenses',
     code: 'ABN',
     description: 'No ABN Withholding',
@@ -2250,7 +2246,7 @@ const params = {
         compound: true
       }
     ],
-    special_tax_type: 'NONE',
+    tax_type: 'NONE',
     original_tax_rate_id: '12345',
     active: true
   }

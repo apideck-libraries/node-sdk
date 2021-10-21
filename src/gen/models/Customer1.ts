@@ -24,7 +24,7 @@ export interface Customer1 {
    * @type {string}
    * @memberof Customer1
    */
-  id: string
+  readonly id: string
   /**
    *
    * @type {string}
@@ -55,7 +55,6 @@ export function Customer1ToJSON(value?: Customer1 | null): any {
     return null
   }
   return {
-    id: value.id,
     company_name: value.company_name
   }
 }

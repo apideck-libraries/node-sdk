@@ -26,7 +26,7 @@ export interface ModelFile {
    * @type {string}
    * @memberof ModelFile
    */
-  id: string
+  readonly id: string
   /**
    * The name of the file
    * @type {string}
@@ -160,7 +160,6 @@ export function ModelFileToJSON(value?: ModelFile | null): any {
     return null
   }
   return {
-    id: value.id,
     name: value.name,
     description: value.description,
     path: value.path,

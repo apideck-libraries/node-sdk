@@ -24,7 +24,7 @@ export interface LinkedLedgerAccount {
    * @type {string}
    * @memberof LinkedLedgerAccount
    */
-  id?: string
+  readonly id?: string
   /**
    *
    * @type {string}
@@ -58,7 +58,6 @@ export function LinkedLedgerAccountToJSON(value?: LinkedLedgerAccount | null): a
     return null
   }
   return {
-    id: value.id,
     name: value.name
   }
 }
