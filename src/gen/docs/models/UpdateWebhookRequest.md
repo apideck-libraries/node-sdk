@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `description` | **string** | An optional description of what the webhook is used for. | [optional] 
 `status` | [**Status**](Status.md) |  | [optional] 
-`url` | **string** | The URL of the webhook endpoint. | [optional] 
+`delivery_url` | **string** | The delivery url of the webhook endpoint. | [optional] 
 `events` | [**Array&lt;EventType4&gt;**](EventType4.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | [optional] 
 
 

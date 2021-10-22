@@ -113,6 +113,10 @@ Read the full documentation of the AccountingApi [here](./src/gen/docs/apis/Acco
 
 Read the full documentation of the CrmApi [here](./src/gen/docs/apis/CrmApi.md).
 
+### CustomerSupportApi
+
+Read the full documentation of the CustomerSupportApi [here](./src/gen/docs/apis/CustomerSupportApi.md).
+
 ### FileStorageApi
 
 Read the full documentation of the FileStorageApi [here](./src/gen/docs/apis/FileStorageApi.md).
