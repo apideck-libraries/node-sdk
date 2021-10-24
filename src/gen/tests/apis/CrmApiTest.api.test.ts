@@ -2989,15 +2989,58 @@ describe('CrmApi', () => {
       const { crm } = apideck
       const params = {
         user: {
-          email: 'elon@musk.com',
           parent_id: '54321',
           username: 'masterofcoin',
           first_name: 'Elon',
           last_name: 'Musk',
+          title: 'CEO',
+          division: 'Europe',
+          department: 'R&amp;D',
+          company_name: 'SpaceX',
+          employee_number: '123456-AB',
+          description: 'A description',
           image: 'https://logo.clearbit.com/spacex.com?s=128',
           language: 'EN',
           status: 'active',
-          password: 'supersecretpassword'
+          password: 'supersecretpassword',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
+            }
+          ],
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ]
         }
       } as any
       const current = await crm.usersAdd(params)
@@ -3030,15 +3073,58 @@ describe('CrmApi', () => {
         data: [
           {
             id: '12345',
-            email: 'elon@musk.com',
             parent_id: '54321',
             username: 'masterofcoin',
             first_name: 'Elon',
             last_name: 'Musk',
+            title: 'CEO',
+            division: 'Europe',
+            department: 'R&amp;D',
+            company_name: 'SpaceX',
+            employee_number: '123456-AB',
+            description: 'A description',
             image: 'https://logo.clearbit.com/spacex.com?s=128',
             language: 'EN',
             status: 'active',
             password: 'supersecretpassword',
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                contact_name: '111-111-1111',
+                salutation: '111-111-1111',
+                phone_number: '111-111-1111',
+                fax: '111-111-1111',
+                email: '111-111-1111',
+                website: '111-111-1111'
+              }
+            ],
+            phone_numbers: [
+              {
+                id: '12345',
+                country_code: '1',
+                area_code: '323',
+                number: '111-111-1111',
+                type: 'primary'
+              }
+            ],
+            emails: [
+              {
+                id: '123',
+                email: 'elon@musk.com',
+                type: 'primary'
+              }
+            ],
             updated_at: '2017-08-12T20:43:21.291Z',
             created_at: '2017-08-12T20:43:21.291Z'
           }
@@ -3133,15 +3219,58 @@ describe('CrmApi', () => {
         operation: 'one',
         data: {
           id: '12345',
-          email: 'elon@musk.com',
           parent_id: '54321',
           username: 'masterofcoin',
           first_name: 'Elon',
           last_name: 'Musk',
+          title: 'CEO',
+          division: 'Europe',
+          department: 'R&amp;D',
+          company_name: 'SpaceX',
+          employee_number: '123456-AB',
+          description: 'A description',
           image: 'https://logo.clearbit.com/spacex.com?s=128',
           language: 'EN',
           status: 'active',
           password: 'supersecretpassword',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
+            }
+          ],
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
           updated_at: '2017-08-12T20:43:21.291Z',
           created_at: '2017-08-12T20:43:21.291Z'
         }
@@ -3195,15 +3324,58 @@ describe('CrmApi', () => {
       const params = {
         id: 'id_example',
         user: {
-          email: 'elon@musk.com',
           parent_id: '54321',
           username: 'masterofcoin',
           first_name: 'Elon',
           last_name: 'Musk',
+          title: 'CEO',
+          division: 'Europe',
+          department: 'R&amp;D',
+          company_name: 'SpaceX',
+          employee_number: '123456-AB',
+          description: 'A description',
           image: 'https://logo.clearbit.com/spacex.com?s=128',
           language: 'EN',
           status: 'active',
-          password: 'supersecretpassword'
+          password: 'supersecretpassword',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              contact_name: '111-111-1111',
+              salutation: '111-111-1111',
+              phone_number: '111-111-1111',
+              fax: '111-111-1111',
+              email: '111-111-1111',
+              website: '111-111-1111'
+            }
+          ],
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ]
         }
       } as any
       const current = await crm.usersUpdate(params)

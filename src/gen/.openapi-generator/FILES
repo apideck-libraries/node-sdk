@@ -40,6 +40,7 @@ CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
 CreateCustomerResponse.md
+CreateCustomerSupportCustomerResponse.md
 CreateFileResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
@@ -60,10 +61,14 @@ Currency.md
 CustomField.md
 Customer.md
 Customer1.md
+CustomerSupportApi.md
+CustomerSupportApiTest.api.test.ts
+CustomerSupportCustomer.md
 DeleteActivityResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
+DeleteCustomerSupportCustomerResponse.md
 DeleteFileResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
@@ -105,6 +110,8 @@ GetConsumersResponseData.md
 GetContactResponse.md
 GetContactsResponse.md
 GetCustomerResponse.md
+GetCustomerSupportCustomerResponse.md
+GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
 GetFileResponse.md
 GetFilesResponse.md
@@ -179,6 +186,7 @@ UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
 UpdateCustomerResponse.md
+UpdateCustomerSupportCustomerResponse.md
 UpdateFileResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
@@ -192,6 +200,8 @@ UpdateUserResponse.md
 UpdateWebhookRequest.md
 UpdateWebhookResponse.md
 User.md
+User1.md
+User2.md
 VaultApi.md
 VaultApiTest.api.test.ts
 Webhook.md
@@ -205,6 +215,7 @@ WebhookEventLogsFilterService.md
 Website.md
 apis/AccountingApi.ts
 apis/CrmApi.ts
+apis/CustomerSupportApi.ts
 apis/FileStorageApi.ts
 apis/LeadApi.ts
 apis/VaultApi.ts
@@ -240,6 +251,7 @@ models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
+models/CreateCustomerSupportCustomerResponse.ts
 models/CreateFileResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
@@ -258,10 +270,12 @@ models/Currency.ts
 models/CustomField.ts
 models/Customer.ts
 models/Customer1.ts
+models/CustomerSupportCustomer.ts
 models/DeleteActivityResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
+models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
@@ -300,6 +314,8 @@ models/GetConsumersResponseData.ts
 models/GetContactResponse.ts
 models/GetContactsResponse.ts
 models/GetCustomerResponse.ts
+models/GetCustomerSupportCustomerResponse.ts
+models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
 models/GetFileResponse.ts
 models/GetFilesResponse.ts
@@ -373,6 +389,7 @@ models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
+models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
@@ -386,6 +403,8 @@ models/UpdateUserResponse.ts
 models/UpdateWebhookRequest.ts
 models/UpdateWebhookResponse.ts
 models/User.ts
+models/User1.ts
+models/User2.ts
 models/Webhook.ts
 models/WebhookEventLog.ts
 models/WebhookEventLogAttempts.ts
