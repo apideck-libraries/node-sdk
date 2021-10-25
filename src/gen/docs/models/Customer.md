@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`display_id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
 `first_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
@@ -44,6 +45,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

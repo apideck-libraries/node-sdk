@@ -1,4 +1,4 @@
-# Apideck.EventType4
+# Apideck.WebhookEventType
 
 ## Enum
 
