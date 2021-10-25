@@ -1,4 +1,4 @@
-# Apideck.EventType3
+# Apideck.VaultEventType
 
 ## Enum
 

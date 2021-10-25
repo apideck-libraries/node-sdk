@@ -112,7 +112,7 @@ describe('WebhookApi', () => {
           description: 'This is a webhook. It listens to connection events',
           unified_api: 'vault',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           events: ['vault.connection.created', 'vault.connection.updated'],
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -130,7 +130,7 @@ describe('WebhookApi', () => {
           description: 'This is a webhook. It listens to connection events',
           unified_api: 'vault',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           events: ['vault.connection.created', 'vault.connection.updated']
         }
       } as any
@@ -163,7 +163,7 @@ describe('WebhookApi', () => {
             description: 'This is a webhook. It listens to connection events',
             unified_api: 'vault',
             status: 'enabled',
-            url: 'https://example.com/my/webhook/endpoint',
+            delivery_url: 'https://example.com/my/webhook/endpoint',
             execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
             events: ['vault.connection.created', 'vault.connection.updated'],
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -219,7 +219,7 @@ describe('WebhookApi', () => {
           description: 'This is a webhook. It listens to connection events',
           unified_api: 'vault',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           events: ['vault.connection.created', 'vault.connection.updated'],
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -263,7 +263,7 @@ describe('WebhookApi', () => {
           description: 'This is a webhook. It listens to connection events',
           unified_api: 'vault',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           events: ['vault.connection.created', 'vault.connection.updated'],
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -307,7 +307,7 @@ describe('WebhookApi', () => {
           description: 'This is a webhook. It listens to connection events',
           unified_api: 'vault',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           execute_base_url: 'https://unify.apideck.com/webhook/webhooks/1234/execute',
           events: ['vault.connection.created', 'vault.connection.updated'],
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -325,7 +325,7 @@ describe('WebhookApi', () => {
         webhook: {
           description: 'This is a webhook. It listens to connection events',
           status: 'enabled',
-          url: 'https://example.com/my/webhook/endpoint',
+          delivery_url: 'https://example.com/my/webhook/endpoint',
           events: ['vault.connection.created', 'vault.connection.updated']
         }
       } as any

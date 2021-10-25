@@ -129,7 +129,7 @@ const params = {
     description: 'This is a webhook. It listens to connection events',
     unified_api: 'vault',
     status: 'enabled',
-    url: 'https://example.com/my/webhook/endpoint',
+    delivery_url: 'https://example.com/my/webhook/endpoint',
     events: [
       'vault.connection.created',
       'vault.connection.updated'
@@ -398,7 +398,7 @@ const params = {
   webhook: {
     description: 'This is a webhook. It listens to connection events',
     status: 'enabled',
-    url: 'https://example.com/my/webhook/endpoint',
+    delivery_url: 'https://example.com/my/webhook/endpoint',
     events: [
       'vault.connection.created',
       'vault.connection.updated'

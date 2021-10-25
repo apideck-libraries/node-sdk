@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unified_api` | **string** | The unifiedApi the webhook originated from | 
 `status` | [**Status**](Status.md) |  | 
-`url` | **string** | The URL of the webhook endpoint. | 
-`events` | [**Array&lt;EventType4&gt;**](EventType4.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
+`delivery_url` | **string** | The delivery url of the webhook endpoint. | 
+`events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `description` | **string** | An optional description of what the webhook is used for. | [optional] 
 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 * [`Status`](Status.md)
 
-* [`EventType4`](EventType4.md)
+* [`WebhookEventType`](WebhookEventType.md)
 
 
 ---

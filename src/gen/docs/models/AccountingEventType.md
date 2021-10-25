@@ -1,4 +1,4 @@
-# Apideck.EventType2
+# Apideck.AccountingEventType
 
 ## Enum
 

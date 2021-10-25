@@ -2908,6 +2908,8 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
 
 
 
@@ -3231,15 +3233,58 @@ const apideck = new Apideck({
 
 const params = {
   user: {
-    email: 'elon@musk.com',
     parent_id: '54321',
     username: 'masterofcoin',
     first_name: 'Elon',
     last_name: 'Musk',
+    title: 'CEO',
+    division: 'Europe',
+    department: 'R&amp;D',
+    company_name: 'SpaceX',
+    employee_number: '123456-AB',
+    description: 'A description',
     image: 'https://logo.clearbit.com/spacex.com?s=128',
     language: 'EN',
     status: 'active',
-    password: 'supersecretpassword'
+    password: 'supersecretpassword',
+    addresses: [
+      {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        contact_name: '111-111-1111',
+        salutation: '111-111-1111',
+        phone_number: '111-111-1111',
+        fax: '111-111-1111',
+        email: '111-111-1111',
+        website: '111-111-1111'
+      }
+    ],
+    phone_numbers: [
+      {
+        id: '12345',
+        country_code: '1',
+        area_code: '323',
+        number: '111-111-1111',
+        type: 'primary'
+      }
+    ],
+    emails: [
+      {
+        id: '123',
+        email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ]
   }
 }
 
@@ -3518,15 +3563,58 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   user: {
-    email: 'elon@musk.com',
     parent_id: '54321',
     username: 'masterofcoin',
     first_name: 'Elon',
     last_name: 'Musk',
+    title: 'CEO',
+    division: 'Europe',
+    department: 'R&amp;D',
+    company_name: 'SpaceX',
+    employee_number: '123456-AB',
+    description: 'A description',
     image: 'https://logo.clearbit.com/spacex.com?s=128',
     language: 'EN',
     status: 'active',
-    password: 'supersecretpassword'
+    password: 'supersecretpassword',
+    addresses: [
+      {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        contact_name: '111-111-1111',
+        salutation: '111-111-1111',
+        phone_number: '111-111-1111',
+        fax: '111-111-1111',
+        email: '111-111-1111',
+        website: '111-111-1111'
+      }
+    ],
+    phone_numbers: [
+      {
+        id: '12345',
+        country_code: '1',
+        area_code: '323',
+        number: '111-111-1111',
+        type: 'primary'
+      }
+    ],
+    emails: [
+      {
+        id: '123',
+        email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ]
   }
 }
 
