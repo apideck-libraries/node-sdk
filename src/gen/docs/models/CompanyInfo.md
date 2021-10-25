@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
-`salex_tax_number` | **string** |  | [optional] 
+`sales_tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`addressses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `updated_by` | **string** |  | [optional] 

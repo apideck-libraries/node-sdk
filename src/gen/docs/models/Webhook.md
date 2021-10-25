@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unified_api` | **string** | The unifiedApi the webhook originated from | 
 `status` | [**Status**](Status.md) |  | 
-`url` | **string** | The URL of the webhook endpoint. | 
+`delivery_url` | **string** | The delivery url of the webhook endpoint. | 
 `execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
 `events` | [**Array&lt;EventType4&gt;**](EventType4.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 

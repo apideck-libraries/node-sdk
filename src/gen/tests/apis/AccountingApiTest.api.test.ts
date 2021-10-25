@@ -38,9 +38,9 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           company_name: 'SpaceX',
-          salex_tax_number: '111.222.333',
+          sales_tax_number: '111.222.333',
           currency: 'USD',
-          addressses: [
+          addresses: [
             {
               id: '123',
               type: 'primary',
@@ -130,7 +130,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         customer: {
-          id: '12345',
+          display_id: 'EMP00101',
           company_name: 'SpaceX',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -175,7 +175,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
           tax_number: 'US123945459',
@@ -221,6 +221,7 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
+            display_id: 'EMP00101',
             company_name: 'SpaceX',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -265,7 +266,7 @@ describe('AccountingApi', () => {
               }
             ],
             tax_rate: {
-              id: '12345',
+              id: '123456',
               code: 'N-T'
             },
             tax_number: 'US123945459',
@@ -375,6 +376,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          display_id: 'EMP00101',
           company_name: 'SpaceX',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -419,7 +421,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
           tax_number: 'US123945459',
@@ -488,7 +490,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         customer: {
-          id: '12345',
+          display_id: 'EMP00101',
           company_name: 'SpaceX',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -533,7 +535,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
           tax_number: 'US123945459',
@@ -588,7 +590,6 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoiceItem: {
-          id: '12345',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -600,14 +601,13 @@ describe('AccountingApi', () => {
             unit_of_measure: 'hour',
             tax_inclusive: true,
             tax_rate: {
-              id: '12345',
+              id: '123456',
               code: 'N-T'
             }
           },
           quantity: 2,
           unit_price: 27500.5,
           ledger_account: {
-            id: '12345',
             name: 'Bank account'
           },
           active: true,
@@ -655,7 +655,7 @@ describe('AccountingApi', () => {
               unit_of_measure: 'hour',
               tax_inclusive: true,
               tax_rate: {
-                id: '12345',
+                id: '123456',
                 code: 'N-T'
               }
             },
@@ -774,7 +774,7 @@ describe('AccountingApi', () => {
             unit_of_measure: 'hour',
             tax_inclusive: true,
             tax_rate: {
-              id: '12345',
+              id: '123456',
               code: 'N-T'
             }
           },
@@ -841,7 +841,6 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoiceItem: {
-          id: '12345',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -853,14 +852,13 @@ describe('AccountingApi', () => {
             unit_of_measure: 'hour',
             tax_inclusive: true,
             tax_rate: {
-              id: '12345',
+              id: '123456',
               code: 'N-T'
             }
           },
           quantity: 2,
           unit_price: 27500.5,
           ledger_account: {
-            id: '12345',
             name: 'Bank account'
           },
           active: true,
@@ -906,11 +904,9 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoice: {
-          id: '12345',
           type: 'Service',
           number: 'OIT00546',
           customer: {
-            id: '12345',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
@@ -927,7 +923,6 @@ describe('AccountingApi', () => {
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
-              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -945,11 +940,10 @@ describe('AccountingApi', () => {
                 name: 'Model Y'
               },
               tax_rate: {
-                id: '12345',
+                id: '123456',
                 code: 'N-T'
               },
               ledger_account: {
-                id: '12345',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1066,7 +1060,7 @@ describe('AccountingApi', () => {
                   name: 'Model Y'
                 },
                 tax_rate: {
-                  id: '12345',
+                  id: '123456',
                   code: 'N-T'
                 },
                 ledger_account: {
@@ -1251,7 +1245,7 @@ describe('AccountingApi', () => {
                 name: 'Model Y'
               },
               tax_rate: {
-                id: '12345',
+                id: '123456',
                 code: 'N-T'
               },
               ledger_account: {
@@ -1357,11 +1351,9 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoice: {
-          id: '12345',
           type: 'Service',
           number: 'OIT00546',
           customer: {
-            id: '12345',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
@@ -1378,7 +1370,6 @@ describe('AccountingApi', () => {
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
-              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -1396,11 +1387,10 @@ describe('AccountingApi', () => {
                 name: 'Model Y'
               },
               tax_rate: {
-                id: '12345',
+                id: '123456',
                 code: 'N-T'
               },
               ledger_account: {
-                id: '12345',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1488,7 +1478,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         ledgerAccount: {
-          id: '12345',
+          display_id: '1-12345',
           nominal_code: '091',
           classification: 'asset',
           type: 'bank',
@@ -1501,10 +1491,10 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
-          level: 2,
+          level: 1,
           active: true,
           header: true,
           bank_account: {
@@ -1515,7 +1505,14 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          sub_account: true
+          parent_account: {
+            id: '12345',
+            name: 'Bank Accounts',
+            display_id: '1-1100'
+          },
+          sub_account: false,
+          last_reconciliation_date: '2020-09-30',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.ledgerAccountsAdd(params)
@@ -1561,10 +1558,10 @@ describe('AccountingApi', () => {
             currency: 'USD',
             tax_type: 'USD',
             tax_rate: {
-              id: '12345',
+              id: '123456',
               code: 'N-T'
             },
-            level: 2,
+            level: 1,
             active: true,
             header: true,
             bank_account: {
@@ -1580,7 +1577,7 @@ describe('AccountingApi', () => {
               name: 'Bank Accounts',
               display_id: '1-1100'
             },
-            sub_account: true,
+            sub_account: false,
             sub_accounts: [
               {
                 id: '12345',
@@ -1698,10 +1695,10 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
-          level: 2,
+          level: 1,
           active: true,
           header: true,
           bank_account: {
@@ -1717,7 +1714,7 @@ describe('AccountingApi', () => {
             name: 'Bank Accounts',
             display_id: '1-1100'
           },
-          sub_account: true,
+          sub_account: false,
           sub_accounts: [
             {
               id: '12345',
@@ -1781,7 +1778,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         ledgerAccount: {
-          id: '12345',
+          display_id: '1-12345',
           nominal_code: '091',
           classification: 'asset',
           type: 'bank',
@@ -1794,10 +1791,10 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '12345',
+            id: '123456',
             code: 'N-T'
           },
-          level: 2,
+          level: 1,
           active: true,
           header: true,
           bank_account: {
@@ -1808,7 +1805,14 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          sub_account: true
+          parent_account: {
+            id: '12345',
+            name: 'Bank Accounts',
+            display_id: '1-1100'
+          },
+          sub_account: false,
+          last_reconciliation_date: '2020-09-30',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.ledgerAccountsUpdate(params)
@@ -1850,12 +1854,13 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         taxRate: {
-          id: '12345',
           name: '15% GST on Expenses',
           code: 'ABN',
           description: 'No ABN Withholding',
           effective_tax_rate: 10,
           total_tax_rate: 10,
+          tax_payable_account_id: '123456',
+          tax_remitted_account_id: '123456',
           components: [
             {
               name: 'City tax',
@@ -1863,9 +1868,10 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          special_tax_type: 'NONE',
+          tax_type: 'output_gst',
           original_tax_rate_id: '12345',
-          active: true
+          active: true,
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.taxRatesAdd(params)
@@ -1903,6 +1909,8 @@ describe('AccountingApi', () => {
             description: 'No ABN Withholding',
             effective_tax_rate: 10,
             total_tax_rate: 10,
+            tax_payable_account_id: '123456',
+            tax_remitted_account_id: '123456',
             components: [
               {
                 name: 'City tax',
@@ -1910,9 +1918,10 @@ describe('AccountingApi', () => {
                 compound: true
               }
             ],
-            special_tax_type: 'NONE',
+            tax_type: 'output_gst',
             original_tax_rate_id: '12345',
             active: true,
+            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -2014,6 +2023,8 @@ describe('AccountingApi', () => {
           description: 'No ABN Withholding',
           effective_tax_rate: 10,
           total_tax_rate: 10,
+          tax_payable_account_id: '123456',
+          tax_remitted_account_id: '123456',
           components: [
             {
               name: 'City tax',
@@ -2021,9 +2032,10 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          special_tax_type: 'NONE',
+          tax_type: 'output_gst',
           original_tax_rate_id: '12345',
           active: true,
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -2079,12 +2091,13 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         taxRate: {
-          id: '12345',
           name: '15% GST on Expenses',
           code: 'ABN',
           description: 'No ABN Withholding',
           effective_tax_rate: 10,
           total_tax_rate: 10,
+          tax_payable_account_id: '123456',
+          tax_remitted_account_id: '123456',
           components: [
             {
               name: 'City tax',
@@ -2092,9 +2105,10 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          special_tax_type: 'NONE',
+          tax_type: 'output_gst',
           original_tax_rate_id: '12345',
-          active: true
+          active: true,
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.taxRatesUpdate(params)
