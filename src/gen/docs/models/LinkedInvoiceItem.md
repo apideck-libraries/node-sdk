@@ -1,24 +1,17 @@
-# Apideck.Price
+# Apideck.LinkedInvoiceItem
 
 ### Description
-
-Price of the message.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`per_unit` | **string** |  | [optional] 
-`total_amount` | **string** |  | [optional] 
-`currency` | [**Currency**](Currency.md) |  | [optional] 
+`id` | **string** | ID of the linked item | [optional] 
+`code` | **string** | User defined item code | [optional] 
+`name` | **string** |  | [optional] 
 
 
 
 
-
-## Referenced Types:
-
-
-* [`Currency`](Currency.md)
 
 ---
 

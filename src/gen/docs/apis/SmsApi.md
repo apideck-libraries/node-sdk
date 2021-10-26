@@ -67,6 +67,7 @@ const params = {
     from: '+15017122661',
     to: '+15017122662',
     body: 'Hi! How are you doing?',
+    type: 'SMS',
     messaging_service_id: '123456'
   }
 }
@@ -349,6 +350,7 @@ const params = {
     from: '+15017122661',
     to: '+15017122662',
     body: 'Hi! How are you doing?',
+    type: 'SMS',
     messaging_service_id: '123456'
   }
 }

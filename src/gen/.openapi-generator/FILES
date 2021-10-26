@@ -149,6 +149,7 @@ LeadsFilter.md
 LeadsSort.md
 LedgerAccount.md
 LedgerAccountParentAccount.md
+LinkedInvoiceItem.md
 LinkedLedgerAccount.md
 LinkedTaxRate.md
 Links.md
@@ -357,6 +358,7 @@ models/LeadsFilter.ts
 models/LeadsSort.ts
 models/LedgerAccount.ts
 models/LedgerAccountParentAccount.ts
+models/LinkedInvoiceItem.ts
 models/LinkedLedgerAccount.ts
 models/LinkedTaxRate.ts
 models/Links.ts

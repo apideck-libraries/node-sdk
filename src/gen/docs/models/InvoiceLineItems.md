@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
 `discount_percentage` | **number** |  | [optional] 
-`item` | [**InvoiceItem**](InvoiceItem.md) |  | [optional] 
+`item` | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `row_version` | **string** |  | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 
 
 
-* [`InvoiceItem`](InvoiceItem.md)
+* [`LinkedInvoiceItem`](LinkedInvoiceItem.md)
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 

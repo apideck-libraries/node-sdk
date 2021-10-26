@@ -16,50 +16,57 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface FileOwner
+ * @interface LinkedInvoiceItem
  */
-export interface FileOwner {
+export interface LinkedInvoiceItem {
   /**
-   * ID of the owner of the file
+   * ID of the linked item
    * @type {string}
-   * @memberof FileOwner
+   * @memberof LinkedInvoiceItem
    */
-  readonly id?: string
+  id?: string | null
   /**
-   * Email of the owner of the file
+   * User defined item code
    * @type {string}
-   * @memberof FileOwner
+   * @memberof LinkedInvoiceItem
    */
-  readonly email?: string
+  code?: string | null
   /**
-   * Name of the owner of the file
+   *
    * @type {string}
-   * @memberof FileOwner
+   * @memberof LinkedInvoiceItem
    */
-  readonly name?: string
+  name?: string | null
 }
 
-export function FileOwnerFromJSON(json: any): FileOwner {
-  return FileOwnerFromJSONTyped(json, false)
+export function LinkedInvoiceItemFromJSON(json: any): LinkedInvoiceItem {
+  return LinkedInvoiceItemFromJSONTyped(json, false)
 }
 
-export function FileOwnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): FileOwner {
+export function LinkedInvoiceItemFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LinkedInvoiceItem {
   if (json === undefined || json === null) {
     return json
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    email: !exists(json, 'email') ? undefined : json['email'],
+    code: !exists(json, 'code') ? undefined : json['code'],
     name: !exists(json, 'name') ? undefined : json['name']
   }
 }
 
-export function FileOwnerToJSON(value?: FileOwner | null): any {
+export function LinkedInvoiceItemToJSON(value?: LinkedInvoiceItem | null): any {
   if (value === undefined) {
     return undefined
   }
   if (value === null) {
     return null
   }
-  return {}
+  return {
+    id: value.id,
+    code: value.code,
+    name: value.name
+  }
 }

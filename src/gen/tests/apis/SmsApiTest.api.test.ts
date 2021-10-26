@@ -50,6 +50,7 @@ describe('SmsApi', () => {
           from: '+15017122661',
           to: '+15017122662',
           body: 'Hi! How are you doing?',
+          type: 'SMS',
           messaging_service_id: '123456'
         }
       } as any
@@ -86,13 +87,15 @@ describe('SmsApi', () => {
             from: '+15017122661',
             to: '+15017122662',
             body: 'Hi! How are you doing?',
-            number_of_segments: 1,
+            type: 'SMS',
+            number_of_units: 1,
             number_of_media_files: 1,
             direction: 'outbound-api',
             status: 'sent',
             sent_at: '2020-09-30T07:43:32.000Z',
             price: {
-              amount: '444',
+              per_unit: '444',
+              total_amount: '444',
               currency: 'USD'
             },
             error: {
@@ -199,13 +202,15 @@ describe('SmsApi', () => {
           from: '+15017122661',
           to: '+15017122662',
           body: 'Hi! How are you doing?',
-          number_of_segments: 1,
+          type: 'SMS',
+          number_of_units: 1,
           number_of_media_files: 1,
           direction: 'outbound-api',
           status: 'sent',
           sent_at: '2020-09-30T07:43:32.000Z',
           price: {
-            amount: '444',
+            per_unit: '444',
+            total_amount: '444',
             currency: 'USD'
           },
           error: {
@@ -271,6 +276,7 @@ describe('SmsApi', () => {
           from: '+15017122661',
           to: '+15017122662',
           body: 'Hi! How are you doing?',
+          type: 'SMS',
           messaging_service_id: '123456'
         }
       } as any
