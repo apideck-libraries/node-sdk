@@ -9,19 +9,31 @@ Name | Type | Description | Notes
 `to` | **string** | The phone number that received the message. | 
 `body` | **string** | The message text. | 
 `id` | **string** |  | [optional] 
-`number_of_segments` | **number** | The number of segments that make up the complete message. Messages can be split up due to the constraints of the message size. | [optional] 
+`type` | **string** | Set to sms for SMS messages and mms for MMS messages. | [optional] 
+`number_of_units` | **number** | The number of units that make up the complete message. Messages can be split up due to the constraints of the message size. | [optional] 
 `number_of_media_files` | **number** | The number of media files associated with the message. | [optional] 
 `direction` | **string** | The direction of the message. | [optional] 
 `status` | **string** | Status of the delivery of the message. | [optional] 
 `sent_at` | **Date** | The date and time that the message was sent | [optional] 
 `price` | [**Price**](Price.md) |  | [optional] 
 `error` | **Error** |  | [optional] 
-`messaging_service_id` | **string** | The ID of the Messaging Service used with the message. | [optional] 
+`messaging_service_id` | **string** | The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID. | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="MessageType"></a>
+## Enum: Message.type
+
+
+* `sms` (value: `'sms'`)
+
+* `mms` (value: `'mms'`)
 
 
 
@@ -75,6 +87,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 
