@@ -196,8 +196,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -533,8 +532,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -617,6 +615,7 @@ const apideck = new Apideck({
 
 const params = {
   invoiceItem: {
+    id: '123456',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -627,13 +626,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456',
-        code: 'N-T'
+        id: '123456'
       }
     },
     quantity: 2,
     unit_price: 27500.5,
     ledger_account: {
+      id: '123456',
       name: 'Bank account'
     },
     active: true,
@@ -916,6 +915,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoiceItem: {
+    id: '123456',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -926,13 +926,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456',
-        code: 'N-T'
+        id: '123456'
       }
     },
     quantity: 2,
     unit_price: 27500.5,
     ledger_account: {
+      id: '123456',
       name: 'Bank account'
     },
     active: true,
@@ -1007,15 +1007,15 @@ const apideck = new Apideck({
 
 const params = {
   invoice: {
-    type: 'Service',
+    type: 'service',
     number: 'OIT00546',
     customer: {
-      company_name: 'The boring company'
+      id: '12345'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'paid',
+    status: 'submitted',
     currency: 'USD',
     tax_inclusive: true,
     sub_total: 27500,
@@ -1035,6 +1035,7 @@ const params = {
         total_amount: 27500,
         quantity: 2,
         unit_price: 27500.5,
+        unit_of_measure: 'each',
         discount_percentage: 15,
         item: {
           id: '12344',
@@ -1042,10 +1043,10 @@ const params = {
           name: 'Model Y'
         },
         tax_rate: {
-          id: '123456',
-          code: 'N-T'
+          id: '123456'
         },
         ledger_account: {
+          id: '123456',
           name: 'Bank account'
         },
         row_version: '1-12345'
@@ -1370,15 +1371,15 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoice: {
-    type: 'Service',
+    type: 'service',
     number: 'OIT00546',
     customer: {
-      company_name: 'The boring company'
+      id: '12345'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'paid',
+    status: 'submitted',
     currency: 'USD',
     tax_inclusive: true,
     sub_total: 27500,
@@ -1398,6 +1399,7 @@ const params = {
         total_amount: 27500,
         quantity: 2,
         unit_price: 27500.5,
+        unit_of_measure: 'each',
         discount_percentage: 15,
         item: {
           id: '12344',
@@ -1405,10 +1407,10 @@ const params = {
           name: 'Model Y'
         },
         tax_rate: {
-          id: '123456',
-          code: 'N-T'
+          id: '123456'
         },
         ledger_account: {
+          id: '123456',
           name: 'Bank account'
         },
         row_version: '1-12345'
@@ -1538,8 +1540,7 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     level: 1,
     active: true,
@@ -1851,8 +1852,7 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     level: 1,
     active: true,

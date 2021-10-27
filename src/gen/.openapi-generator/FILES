@@ -141,6 +141,7 @@ Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
 InvoiceLineItems.md
+InvoiceResponse.md
 Lead.md
 LeadApi.md
 LeadApiTest.api.test.ts
@@ -352,6 +353,7 @@ models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceLineItems.ts
+models/InvoiceResponse.ts
 models/Lead.ts
 models/LeadEventType.ts
 models/LeadsFilter.ts

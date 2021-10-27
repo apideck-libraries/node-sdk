@@ -16,49 +16,46 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface LinkedLedgerAccount
+ * @interface InvoiceResponse
  */
-export interface LinkedLedgerAccount {
+export interface InvoiceResponse {
   /**
    *
    * @type {string}
-   * @memberof LinkedLedgerAccount
+   * @memberof InvoiceResponse
    */
-  id: string
+  readonly id?: string
   /**
-   *
+   * The third-party API ID of original entity
    * @type {string}
-   * @memberof LinkedLedgerAccount
+   * @memberof InvoiceResponse
    */
-  name?: string | null
+  readonly downstream_id?: string | null
 }
 
-export function LinkedLedgerAccountFromJSON(json: any): LinkedLedgerAccount {
-  return LinkedLedgerAccountFromJSONTyped(json, false)
+export function InvoiceResponseFromJSON(json: any): InvoiceResponse {
+  return InvoiceResponseFromJSONTyped(json, false)
 }
 
-export function LinkedLedgerAccountFromJSONTyped(
+export function InvoiceResponseFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): LinkedLedgerAccount {
+): InvoiceResponse {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name']
+    id: !exists(json, 'id') ? undefined : json['id'],
+    downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id']
   }
 }
 
-export function LinkedLedgerAccountToJSON(value?: LinkedLedgerAccount | null): any {
+export function InvoiceResponseToJSON(value?: InvoiceResponse | null): any {
   if (value === undefined) {
     return undefined
   }
   if (value === null) {
     return null
   }
-  return {
-    id: value.id,
-    name: value.name
-  }
+  return {}
 }

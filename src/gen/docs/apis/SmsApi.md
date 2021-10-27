@@ -66,8 +66,10 @@ const params = {
   message: {
     from: '+15017122661',
     to: '+15017122662',
+    subject: 'Picture',
     body: 'Hi! How are you doing?',
     type: 'SMS',
+    webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
     messaging_service_id: '123456'
   }
 }
@@ -349,8 +351,10 @@ const params = {
   message: {
     from: '+15017122661',
     to: '+15017122662',
+    subject: 'Picture',
     body: 'Hi! How are you doing?',
     type: 'SMS',
+    webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
     messaging_service_id: '123456'
   }
 }

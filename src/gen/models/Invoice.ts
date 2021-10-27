@@ -35,11 +35,17 @@ export interface Invoice {
    */
   readonly id?: string
   /**
+   * The third-party API ID of original entity
+   * @type {string}
+   * @memberof Invoice
+   */
+  readonly downstream_id?: string | null
+  /**
    *
    * @type {string}
    * @memberof Invoice
    */
-  type?: string | null
+  type?: InvoiceType
   /**
    *
    * @type {string}
@@ -178,6 +184,17 @@ export interface Invoice {
  * @export
  * @enum {string}
  */
+export enum InvoiceType {
+  standard = 'standard',
+  credit = 'credit',
+  service = 'service',
+  product = 'product',
+  other = 'other'
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum InvoiceStatus {
   draft = 'draft',
   submitted = 'submitted',
@@ -197,6 +214,7 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     type: !exists(json, 'type') ? undefined : json['type'],
     number: !exists(json, 'number') ? undefined : json['number'],
     customer: !exists(json, 'customer') ? undefined : Customer1FromJSON(json['customer']),

@@ -49,8 +49,10 @@ describe('SmsApi', () => {
         message: {
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
           type: 'SMS',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
           messaging_service_id: '123456'
         }
       } as any
@@ -86,6 +88,7 @@ describe('SmsApi', () => {
             id: '12345',
             from: '+15017122661',
             to: '+15017122662',
+            subject: 'Picture',
             body: 'Hi! How are you doing?',
             type: 'SMS',
             number_of_units: 1,
@@ -93,6 +96,7 @@ describe('SmsApi', () => {
             direction: 'outbound-api',
             status: 'sent',
             sent_at: '2020-09-30T07:43:32.000Z',
+            webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
             price: {
               per_unit: '444',
               total_amount: '444',
@@ -201,6 +205,7 @@ describe('SmsApi', () => {
           id: '12345',
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
           type: 'SMS',
           number_of_units: 1,
@@ -208,6 +213,7 @@ describe('SmsApi', () => {
           direction: 'outbound-api',
           status: 'sent',
           sent_at: '2020-09-30T07:43:32.000Z',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
           price: {
             per_unit: '444',
             total_amount: '444',
@@ -275,8 +281,10 @@ describe('SmsApi', () => {
         message: {
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
           type: 'SMS',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
           messaging_service_id: '123456'
         }
       } as any
