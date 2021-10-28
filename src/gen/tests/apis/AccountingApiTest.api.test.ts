@@ -175,8 +175,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -535,8 +534,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -590,6 +588,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoiceItem: {
+          id: '123456',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -601,13 +600,13 @@ describe('AccountingApi', () => {
             unit_of_measure: 'hour',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456',
-              code: 'N-T'
+              id: '123456'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
           ledger_account: {
+            id: '123456',
             name: 'Bank account'
           },
           active: true,
@@ -643,7 +642,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: [
           {
-            id: '12345',
+            id: '123456',
             code: '120-C',
             sold: true,
             name: 'Model Y',
@@ -659,10 +658,10 @@ describe('AccountingApi', () => {
                 code: 'N-T'
               }
             },
-            quantity: 2,
+            quantity: 1,
             unit_price: 27500.5,
             ledger_account: {
-              id: '12345',
+              id: '123456',
               name: 'Bank account'
             },
             active: true,
@@ -762,7 +761,7 @@ describe('AccountingApi', () => {
         resource: 'invoice-items',
         operation: 'one',
         data: {
-          id: '12345',
+          id: '123456',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -778,10 +777,10 @@ describe('AccountingApi', () => {
               code: 'N-T'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
           ledger_account: {
-            id: '12345',
+            id: '123456',
             name: 'Bank account'
           },
           active: true,
@@ -841,6 +840,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoiceItem: {
+          id: '123456',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -852,13 +852,13 @@ describe('AccountingApi', () => {
             unit_of_measure: 'hour',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456',
-              code: 'N-T'
+              id: '123456'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
           ledger_account: {
+            id: '123456',
             name: 'Bank account'
           },
           active: true,
@@ -893,7 +893,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -904,22 +905,22 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoice: {
-          type: 'Service',
+          type: 'service',
           number: 'OIT00546',
           customer: {
-            company_name: 'The boring company'
+            id: '12345'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -931,19 +932,20 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
                 id: '12344',
                 code: '120-C',
                 name: 'Model Y'
               },
               tax_rate: {
-                id: '123456',
-                code: 'N-T'
+                id: '123456'
               },
               ledger_account: {
+                id: '123456',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1022,23 +1024,25 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
-            type: 'Service',
+            downstream_id: '12345',
+            type: 'service',
             number: 'OIT00546',
             customer: {
               id: '12345',
+              display_id: 'CUST00101',
               company_name: 'The boring company'
             },
             invoice_date: '2020-09-30',
             due_date: '2020-10-30',
             po_number: '90000117',
-            status: 'paid',
+            status: 'submitted',
             currency: 'USD',
             tax_inclusive: true,
             sub_total: 27500,
-            total_tax: 1000,
-            total: 28500,
-            balance: 26500,
-            deposit: 2000,
+            total_tax: 2500,
+            total: 27500,
+            balance: 27500,
+            deposit: 0,
             customer_memo: 'Thank you for your business and have a great day!',
             line_items: [
               {
@@ -1051,9 +1055,10 @@ describe('AccountingApi', () => {
                 type: 'Inventory',
                 tax_amount: 27500,
                 total_amount: 27500,
-                quantity: 2,
+                quantity: 1,
                 unit_price: 27500.5,
-                discount_percentage: 15,
+                unit_of_measure: 'pc.',
+                discount_percentage: 0,
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -1064,7 +1069,7 @@ describe('AccountingApi', () => {
                   code: 'N-T'
                 },
                 ledger_account: {
-                  id: '12345',
+                  id: '123456',
                   name: 'Bank account'
                 },
                 row_version: '1-12345'
@@ -1166,7 +1171,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -1207,23 +1213,25 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
-          type: 'Service',
+          downstream_id: '12345',
+          type: 'service',
           number: 'OIT00546',
           customer: {
             id: '12345',
+            display_id: 'CUST00101',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -1236,9 +1244,10 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1249,7 +1258,7 @@ describe('AccountingApi', () => {
                 code: 'N-T'
               },
               ledger_account: {
-                id: '12345',
+                id: '123456',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1339,7 +1348,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -1351,22 +1361,22 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoice: {
-          type: 'Service',
+          type: 'service',
           number: 'OIT00546',
           customer: {
-            company_name: 'The boring company'
+            id: '12345'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -1378,19 +1388,20 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
                 id: '12344',
                 code: '120-C',
                 name: 'Model Y'
               },
               tax_rate: {
-                id: '123456',
-                code: 'N-T'
+                id: '123456'
               },
               ledger_account: {
+                id: '123456',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1491,8 +1502,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           level: 1,
           active: true,
@@ -1791,8 +1801,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           level: 1,
           active: true,

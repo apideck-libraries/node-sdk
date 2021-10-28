@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 `execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
 `events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 
-`description` | **string** | An optional description of what the webhook is used for. | [optional] 
+`description` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 

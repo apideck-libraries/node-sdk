@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `type` | **string** |  | [optional] 
 `number` | **string** |  | [optional] 
 `customer` | [**Customer1**](Customer1.md) |  | [optional] 
@@ -34,6 +35,23 @@ Name | Type | Description | Notes
 
 
 
+<a name="InvoiceType"></a>
+## Enum: Invoice.type
+
+
+* `standard` (value: `'standard'`)
+
+* `credit` (value: `'credit'`)
+
+* `service` (value: `'service'`)
+
+* `product` (value: `'product'`)
+
+* `other` (value: `'other'`)
+
+
+
+
 <a name="InvoiceStatus"></a>
 ## Enum: Invoice.status
 
@@ -54,6 +72,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

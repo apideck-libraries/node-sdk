@@ -51,11 +51,11 @@ export interface CreateWebhookRequest {
    */
   events: Array<WebhookEventType>
   /**
-   * An optional description of what the webhook is used for.
+   *
    * @type {string}
    * @memberof CreateWebhookRequest
    */
-  description?: string
+  description?: string | null
 }
 
 export function CreateWebhookRequestFromJSON(json: any): CreateWebhookRequest {

@@ -1,12 +1,12 @@
-# Apideck.LinkedLedgerAccount
+# Apideck.InvoiceResponse
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
-`name` | **string** |  | [optional] 
+`id` | **string** |  | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 
 
 

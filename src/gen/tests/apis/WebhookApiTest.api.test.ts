@@ -109,7 +109,7 @@ describe('WebhookApi', () => {
         status: 'OK',
         data: {
           id: '1234',
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           unified_api: 'vault',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -127,7 +127,7 @@ describe('WebhookApi', () => {
       const { webhook } = apideck
       const params = {
         webhook: {
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           unified_api: 'vault',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -160,7 +160,7 @@ describe('WebhookApi', () => {
         data: [
           {
             id: '1234',
-            description: 'This is a webhook. It listens to connection events',
+            description: 'A description',
             unified_api: 'vault',
             status: 'enabled',
             delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -216,7 +216,7 @@ describe('WebhookApi', () => {
         status: 'OK',
         data: {
           id: '1234',
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           unified_api: 'vault',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -260,7 +260,7 @@ describe('WebhookApi', () => {
         status: 'OK',
         data: {
           id: '1234',
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           unified_api: 'vault',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -304,7 +304,7 @@ describe('WebhookApi', () => {
         status: 'OK',
         data: {
           id: '1234',
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           unified_api: 'vault',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
@@ -323,7 +323,7 @@ describe('WebhookApi', () => {
       const params = {
         id: 'id_example',
         webhook: {
-          description: 'This is a webhook. It listens to connection events',
+          description: 'A description',
           status: 'enabled',
           delivery_url: 'https://example.com/my/webhook/endpoint',
           events: ['vault.connection.created', 'vault.connection.updated']

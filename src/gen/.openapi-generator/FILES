@@ -14,6 +14,8 @@ AccountingApiTest.api.test.ts
 AccountingEventType.md
 Activity.md
 Address.md
+AtsApi.md
+AtsApiTest.api.test.ts
 AuthType.md
 BadRequestResponse.md
 BankAccount.md
@@ -117,6 +119,8 @@ GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
 GetInvoicesResponse.md
+GetJobResponse.md
+GetJobsResponse.md
 GetLeadResponse.md
 GetLeadsResponse.md
 GetLedgerAccountResponse.md
@@ -141,6 +145,9 @@ Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
 InvoiceLineItems.md
+InvoiceResponse.md
+Job.md
+JobStatus.md
 Lead.md
 LeadApi.md
 LeadApiTest.api.test.ts
@@ -221,6 +228,7 @@ WebhookEventLogsFilterService.md
 WebhookEventType.md
 Website.md
 apis/AccountingApi.ts
+apis/AtsApi.ts
 apis/CrmApi.ts
 apis/CustomerSupportApi.ts
 apis/FileStorageApi.ts
@@ -328,6 +336,8 @@ models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
 models/GetInvoicesResponse.ts
+models/GetJobResponse.ts
+models/GetJobsResponse.ts
 models/GetLeadResponse.ts
 models/GetLeadsResponse.ts
 models/GetLedgerAccountResponse.ts
@@ -352,6 +362,9 @@ models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceLineItems.ts
+models/InvoiceResponse.ts
+models/Job.ts
+models/JobStatus.ts
 models/Lead.ts
 models/LeadEventType.ts
 models/LeadsFilter.ts

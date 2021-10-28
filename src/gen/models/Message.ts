@@ -46,6 +46,12 @@ export interface Message {
    */
   readonly id?: string
   /**
+   *
+   * @type {string}
+   * @memberof Message
+   */
+  subject?: string
+  /**
    * Set to sms for SMS messages and mms for MMS messages.
    * @type {string}
    * @memberof Message
@@ -81,6 +87,12 @@ export interface Message {
    * @memberof Message
    */
   readonly sent_at?: Date
+  /**
+   * Define a webhook to receive delivery notifications.
+   * @type {string}
+   * @memberof Message
+   */
+  webhook_url?: string
   /**
    *
    * @type {Price}
@@ -176,6 +188,7 @@ export function MessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): M
     to: json['to'],
     body: json['body'],
     id: !exists(json, 'id') ? undefined : json['id'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     type: !exists(json, 'type') ? undefined : json['type'],
     number_of_units: !exists(json, 'number_of_units') ? undefined : json['number_of_units'],
     number_of_media_files: !exists(json, 'number_of_media_files')
@@ -184,6 +197,7 @@ export function MessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): M
     direction: !exists(json, 'direction') ? undefined : json['direction'],
     status: !exists(json, 'status') ? undefined : json['status'],
     sent_at: !exists(json, 'sent_at') ? undefined : new Date(json['sent_at']),
+    webhook_url: !exists(json, 'webhook_url') ? undefined : json['webhook_url'],
     price: !exists(json, 'price') ? undefined : PriceFromJSON(json['price']),
     error: !exists(json, 'error') ? undefined : json['error'],
     messaging_service_id: !exists(json, 'messaging_service_id')
@@ -207,7 +221,9 @@ export function MessageToJSON(value?: Message | null): any {
     from: value.from,
     to: value.to,
     body: value.body,
+    subject: value.subject,
     type: value.type,
+    webhook_url: value.webhook_url,
     price: PriceToJSON(value.price),
     error: value.error,
     messaging_service_id: value.messaging_service_id

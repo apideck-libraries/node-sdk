@@ -63,11 +63,11 @@ export interface Webhook {
    */
   readonly id?: string
   /**
-   * An optional description of what the webhook is used for.
+   *
    * @type {string}
    * @memberof Webhook
    */
-  description?: string
+  description?: string | null
   /**
    *
    * @type {Date}

@@ -12,60 +12,75 @@
  * Do not edit the class manually.
  */
 
-import { InvoiceResponse, InvoiceResponseFromJSON, InvoiceResponseToJSON } from './InvoiceResponse'
+import { exists } from '../runtime'
+import { Job, JobFromJSON, JobToJSON } from './Job'
+import { Links, LinksFromJSON, LinksToJSON } from './Links'
+import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 
 /**
  *
  * @export
- * @interface CreateInvoiceResponse
+ * @interface GetJobsResponse
  */
-export interface CreateInvoiceResponse {
+export interface GetJobsResponse {
   /**
    * HTTP Response Status Code
    * @type {number}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobsResponse
    */
   status_code: number
   /**
    * HTTP Response Status
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobsResponse
    */
   status: string
   /**
    * Apideck ID of service provider
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobsResponse
    */
   service: string
   /**
    * Unified API resource name
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobsResponse
    */
   resource: string
   /**
    * Operation performed
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobsResponse
    */
   operation: string
   /**
    *
-   * @type {InvoiceResponse}
-   * @memberof CreateInvoiceResponse
+   * @type {Array<Job>}
+   * @memberof GetJobsResponse
    */
-  data: InvoiceResponse
+  data: Array<Job>
+  /**
+   *
+   * @type {Meta}
+   * @memberof GetJobsResponse
+   */
+  meta?: Meta
+  /**
+   *
+   * @type {Links}
+   * @memberof GetJobsResponse
+   */
+  links?: Links
 }
 
-export function CreateInvoiceResponseFromJSON(json: any): CreateInvoiceResponse {
-  return CreateInvoiceResponseFromJSONTyped(json, false)
+export function GetJobsResponseFromJSON(json: any): GetJobsResponse {
+  return GetJobsResponseFromJSONTyped(json, false)
 }
 
-export function CreateInvoiceResponseFromJSONTyped(
+export function GetJobsResponseFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): CreateInvoiceResponse {
+): GetJobsResponse {
   if (json === undefined || json === null) {
     return json
   }
@@ -75,11 +90,13 @@ export function CreateInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: InvoiceResponseFromJSON(json['data'])
+    data: (json['data'] as Array<any>).map(JobFromJSON),
+    meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
 }
 
-export function CreateInvoiceResponseToJSON(value?: CreateInvoiceResponse | null): any {
+export function GetJobsResponseToJSON(value?: GetJobsResponse | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -92,6 +109,8 @@ export function CreateInvoiceResponseToJSON(value?: CreateInvoiceResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: InvoiceResponseToJSON(value.data)
+    data: (value.data as Array<any>).map(JobToJSON),
+    meta: MetaToJSON(value.meta),
+    links: LinksToJSON(value.links)
   }
 }
