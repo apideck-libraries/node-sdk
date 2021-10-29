@@ -27,11 +27,11 @@ import {
  */
 export interface UpdateWebhookRequest {
   /**
-   * An optional description of what the webhook is used for.
+   *
    * @type {string}
    * @memberof UpdateWebhookRequest
    */
-  description?: string
+  description?: string | null
   /**
    *
    * @type {Status}

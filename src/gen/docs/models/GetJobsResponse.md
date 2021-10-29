@@ -1,4 +1,4 @@
-# Apideck.UpdateInvoiceResponse
+# Apideck.GetJobsResponse
 
 ### Description
 
@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**InvoiceResponse**](InvoiceResponse.md) |  | 
+`data` | [**Array&lt;Job&gt;**](Job.md) |  | 
+`meta` | [**Meta**](Meta.md) |  | [optional] 
+`links` | [**Links**](Links.md) |  | [optional] 
 
 
 
@@ -22,7 +24,9 @@ Name | Type | Description | Notes
 
 
 
-* [`InvoiceResponse`](InvoiceResponse.md)
+* [`Job`](Job.md)
+* [`Meta`](Meta.md)
+* [`Links`](Links.md)
 
 ---
 

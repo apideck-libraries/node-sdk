@@ -24,13 +24,19 @@ export interface Customer1 {
    * @type {string}
    * @memberof Customer1
    */
-  readonly id: string
+  id: string
   /**
    *
    * @type {string}
    * @memberof Customer1
    */
-  company_name?: string | null
+  readonly display_id?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Customer1
+   */
+  readonly company_name?: string | null
 }
 
 export function Customer1FromJSON(json: any): Customer1 {
@@ -43,6 +49,7 @@ export function Customer1FromJSONTyped(json: any, ignoreDiscriminator: boolean):
   }
   return {
     id: json['id'],
+    display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name']
   }
 }
@@ -55,6 +62,6 @@ export function Customer1ToJSON(value?: Customer1 | null): any {
     return null
   }
   return {
-    company_name: value.company_name
+    id: value.id
   }
 }

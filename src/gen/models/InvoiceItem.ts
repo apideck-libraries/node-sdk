@@ -35,7 +35,7 @@ export interface InvoiceItem {
    * @type {string}
    * @memberof InvoiceItem
    */
-  readonly id?: string
+  id?: string
   /**
    * User defined item code
    * @type {string}
@@ -177,6 +177,7 @@ export function InvoiceItemToJSON(value?: InvoiceItem | null): any {
     return null
   }
   return {
+    id: value.id,
     code: value.code,
     sold: value.sold,
     name: value.name,

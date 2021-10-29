@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { UnifiedId, UnifiedIdFromJSON, UnifiedIdToJSON } from './UnifiedId'
+import { InvoiceResponse, InvoiceResponseFromJSON, InvoiceResponseToJSON } from './InvoiceResponse'
 
 /**
  *
@@ -52,10 +52,10 @@ export interface DeleteInvoiceResponse {
   operation: string
   /**
    *
-   * @type {UnifiedId}
+   * @type {InvoiceResponse}
    * @memberof DeleteInvoiceResponse
    */
-  data: UnifiedId
+  data: InvoiceResponse
 }
 
 export function DeleteInvoiceResponseFromJSON(json: any): DeleteInvoiceResponse {
@@ -75,7 +75,7 @@ export function DeleteInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UnifiedIdFromJSON(json['data'])
+    data: InvoiceResponseFromJSON(json['data'])
   }
 }
 
@@ -92,6 +92,6 @@ export function DeleteInvoiceResponseToJSON(value?: DeleteInvoiceResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UnifiedIdToJSON(value.data)
+    data: InvoiceResponseToJSON(value.data)
   }
 }

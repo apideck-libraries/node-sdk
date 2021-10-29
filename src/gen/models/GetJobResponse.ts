@@ -12,60 +12,60 @@
  * Do not edit the class manually.
  */
 
-import { InvoiceResponse, InvoiceResponseFromJSON, InvoiceResponseToJSON } from './InvoiceResponse'
+import { Job, JobFromJSON, JobToJSON } from './Job'
 
 /**
  *
  * @export
- * @interface CreateInvoiceResponse
+ * @interface GetJobResponse
  */
-export interface CreateInvoiceResponse {
+export interface GetJobResponse {
   /**
    * HTTP Response Status Code
    * @type {number}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobResponse
    */
   status_code: number
   /**
    * HTTP Response Status
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobResponse
    */
   status: string
   /**
    * Apideck ID of service provider
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobResponse
    */
   service: string
   /**
    * Unified API resource name
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobResponse
    */
   resource: string
   /**
    * Operation performed
    * @type {string}
-   * @memberof CreateInvoiceResponse
+   * @memberof GetJobResponse
    */
   operation: string
   /**
    *
-   * @type {InvoiceResponse}
-   * @memberof CreateInvoiceResponse
+   * @type {Job}
+   * @memberof GetJobResponse
    */
-  data: InvoiceResponse
+  data: Job
 }
 
-export function CreateInvoiceResponseFromJSON(json: any): CreateInvoiceResponse {
-  return CreateInvoiceResponseFromJSONTyped(json, false)
+export function GetJobResponseFromJSON(json: any): GetJobResponse {
+  return GetJobResponseFromJSONTyped(json, false)
 }
 
-export function CreateInvoiceResponseFromJSONTyped(
+export function GetJobResponseFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): CreateInvoiceResponse {
+): GetJobResponse {
   if (json === undefined || json === null) {
     return json
   }
@@ -75,11 +75,11 @@ export function CreateInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: InvoiceResponseFromJSON(json['data'])
+    data: JobFromJSON(json['data'])
   }
 }
 
-export function CreateInvoiceResponseToJSON(value?: CreateInvoiceResponse | null): any {
+export function GetJobResponseToJSON(value?: GetJobResponse | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -92,6 +92,6 @@ export function CreateInvoiceResponseToJSON(value?: CreateInvoiceResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: InvoiceResponseToJSON(value.data)
+    data: JobToJSON(value.data)
   }
 }
