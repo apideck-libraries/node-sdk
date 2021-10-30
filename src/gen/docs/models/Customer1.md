@@ -2,12 +2,13 @@
 
 ### Description
 
-The customer this invoice is linked to.
+The customer this payment is linked to.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | 
+`display_id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
 
 

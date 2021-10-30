@@ -121,6 +121,12 @@ export interface Customer {
    * @type {string}
    * @memberof Customer
    */
+  row_version?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Customer
+   */
   readonly updated_by?: string | null
   /**
    *
@@ -183,6 +189,7 @@ export function CustomerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       ? undefined
       : BankAccountFromJSON(json['bank_accounts']),
     status: !exists(json, 'status') ? undefined : json['status'],
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -217,6 +224,7 @@ export function CustomerToJSON(value?: Customer | null): any {
     tax_number: value.tax_number,
     currency: CurrencyToJSON(value.currency),
     bank_accounts: BankAccountToJSON(value.bank_accounts),
-    status: value.status
+    status: value.status,
+    row_version: value.row_version
   }
 }

@@ -24,13 +24,13 @@ export interface LinkedLedgerAccount {
    * @type {string}
    * @memberof LinkedLedgerAccount
    */
-  readonly id?: string
+  id: string
   /**
    *
    * @type {string}
    * @memberof LinkedLedgerAccount
    */
-  name?: string | null
+  readonly name?: string | null
 }
 
 export function LinkedLedgerAccountFromJSON(json: any): LinkedLedgerAccount {
@@ -45,7 +45,7 @@ export function LinkedLedgerAccountFromJSONTyped(
     return json
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     name: !exists(json, 'name') ? undefined : json['name']
   }
 }
@@ -58,6 +58,6 @@ export function LinkedLedgerAccountToJSON(value?: LinkedLedgerAccount | null): a
     return null
   }
   return {
-    name: value.name
+    id: value.id
   }
 }

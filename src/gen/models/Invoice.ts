@@ -15,7 +15,7 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
-import { Customer1, Customer1FromJSON, Customer1ToJSON } from './Customer1'
+import { Customer2, Customer2FromJSON, Customer2ToJSON } from './Customer2'
 import {
   InvoiceLineItems,
   InvoiceLineItemsFromJSON,
@@ -35,11 +35,17 @@ export interface Invoice {
    */
   readonly id?: string
   /**
+   * The third-party API ID of original entity
+   * @type {string}
+   * @memberof Invoice
+   */
+  readonly downstream_id?: string | null
+  /**
    *
    * @type {string}
    * @memberof Invoice
    */
-  type?: string | null
+  type?: InvoiceType
   /**
    *
    * @type {string}
@@ -48,10 +54,10 @@ export interface Invoice {
   number?: string | null
   /**
    *
-   * @type {Customer1}
+   * @type {Customer2}
    * @memberof Invoice
    */
-  customer?: Customer1 | null
+  customer?: Customer2 | null
   /**
    * Date invoice was issued - YYYY-MM-DD
    * @type {Date}
@@ -178,6 +184,17 @@ export interface Invoice {
  * @export
  * @enum {string}
  */
+export enum InvoiceType {
+  standard = 'standard',
+  credit = 'credit',
+  service = 'service',
+  product = 'product',
+  other = 'other'
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum InvoiceStatus {
   draft = 'draft',
   submitted = 'submitted',
@@ -197,9 +214,10 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     type: !exists(json, 'type') ? undefined : json['type'],
     number: !exists(json, 'number') ? undefined : json['number'],
-    customer: !exists(json, 'customer') ? undefined : Customer1FromJSON(json['customer']),
+    customer: !exists(json, 'customer') ? undefined : Customer2FromJSON(json['customer']),
     invoice_date: !exists(json, 'invoice_date') ? undefined : new Date(json['invoice_date']),
     due_date: !exists(json, 'due_date') ? undefined : new Date(json['due_date']),
     po_number: !exists(json, 'po_number') ? undefined : json['po_number'],
@@ -239,7 +257,7 @@ export function InvoiceToJSON(value?: Invoice | null): any {
   return {
     type: value.type,
     number: value.number,
-    customer: Customer1ToJSON(value.customer),
+    customer: Customer2ToJSON(value.customer),
     invoice_date:
       value.invoice_date === undefined
         ? undefined

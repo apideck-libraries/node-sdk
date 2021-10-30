@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `total_amount` | **number** |  | [optional] 
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
+`unit_of_measure` | **string** |  | [optional] 
 `discount_percentage` | **number** |  | [optional] 
 `item` | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
@@ -37,6 +38,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

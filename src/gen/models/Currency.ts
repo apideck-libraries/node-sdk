@@ -163,6 +163,7 @@ export enum Currency {
   TMT = 'TMT',
   TND = 'TND',
   TOP = 'TOP',
+  TRC = 'TRC',
   TRY = 'TRY',
   TTD = 'TTD',
   TWD = 'TWD',

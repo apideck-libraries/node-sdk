@@ -109,6 +109,10 @@ The following Apis are currently available:
 
 Read the full documentation of the AccountingApi [here](./src/gen/docs/apis/AccountingApi.md).
 
+### AtsApi
+
+Read the full documentation of the AtsApi [here](./src/gen/docs/apis/AtsApi.md).
+
 ### CrmApi
 
 Read the full documentation of the CrmApi [here](./src/gen/docs/apis/CrmApi.md).

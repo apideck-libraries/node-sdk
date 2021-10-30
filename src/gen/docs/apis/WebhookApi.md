@@ -126,8 +126,8 @@ const apideck = new Apideck({
 
 const params = {
   webhook: {
-    description: 'This is a webhook. It listens to connection events',
-    unified_api: 'vault',
+    description: 'A description',
+    unified_api: 'crm',
     status: 'enabled',
     delivery_url: 'https://example.com/my/webhook/endpoint',
     events: [
@@ -396,7 +396,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   webhook: {
-    description: 'This is a webhook. It listens to connection events',
+    description: 'A description',
     status: 'enabled',
     delivery_url: 'https://example.com/my/webhook/endpoint',
     events: [

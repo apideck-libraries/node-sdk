@@ -21,6 +21,8 @@ import {
   CreateInvoiceResponseFromJSON,
   CreateLedgerAccountResponse,
   CreateLedgerAccountResponseFromJSON,
+  CreatePaymentResponse,
+  CreatePaymentResponseFromJSON,
   CreateTaxRateResponse,
   CreateTaxRateResponseFromJSON,
   Customer,
@@ -31,6 +33,8 @@ import {
   DeleteInvoiceResponseFromJSON,
   DeleteLedgerAccountResponse,
   DeleteLedgerAccountResponseFromJSON,
+  DeletePaymentResponse,
+  DeletePaymentResponseFromJSON,
   DeleteTaxRateResponse,
   DeleteTaxRateResponseFromJSON,
   GetCompanyInfoResponse,
@@ -51,6 +55,10 @@ import {
   GetLedgerAccountResponseFromJSON,
   GetLedgerAccountsResponse,
   GetLedgerAccountsResponseFromJSON,
+  GetPaymentResponse,
+  GetPaymentResponseFromJSON,
+  GetPaymentsResponse,
+  GetPaymentsResponseFromJSON,
   GetTaxRateResponse,
   GetTaxRateResponseFromJSON,
   GetTaxRatesResponse,
@@ -61,6 +69,8 @@ import {
   InvoiceToJSON,
   LedgerAccount,
   LedgerAccountToJSON,
+  Payment,
+  PaymentToJSON,
   TaxRate,
   TaxRateToJSON,
   UpdateCustomerResponse,
@@ -71,6 +81,8 @@ import {
   UpdateInvoiceResponseFromJSON,
   UpdateLedgerAccountResponse,
   UpdateLedgerAccountResponseFromJSON,
+  UpdatePaymentResponse,
+  UpdatePaymentResponseFromJSON,
   UpdateTaxRateResponse,
   UpdateTaxRateResponseFromJSON
 } from '../models'
@@ -245,6 +257,48 @@ export interface AccountingApiLedgerAccountsOneRequest {
 export interface AccountingApiLedgerAccountsUpdateRequest {
   id: string
   ledgerAccount: LedgerAccount
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AccountingApiPaymentsAddRequest {
+  payment: Payment
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+}
+
+export interface AccountingApiPaymentsAllRequest {
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  cursor?: string | null
+  limit?: number
+}
+
+export interface AccountingApiPaymentsDeleteRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AccountingApiPaymentsOneRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AccountingApiPaymentsUpdateRequest {
+  id: string
+  payment: Payment
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -1658,6 +1712,332 @@ export class AccountingApi extends runtime.BaseAPI {
     requestParameters: AccountingApiLedgerAccountsUpdateRequest
   ): Promise<UpdateLedgerAccountResponse> {
     const response = await this.ledgerAccountsUpdateRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * Create Payment
+   * Create Payment
+   */
+  async paymentsAddRaw(
+    requestParameters: AccountingApiPaymentsAddRequest
+  ): Promise<runtime.ApiResponse<CreatePaymentResponse>> {
+    if (requestParameters.payment === null || requestParameters.payment === undefined) {
+      throw new runtime.RequiredError(
+        'payment',
+        'Required parameter requestParameters.payment was null or undefined when calling paymentsAdd.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/accounting/payments`,
+      method: 'POST',
+      headers: headerParameters,
+      query: queryParameters,
+      body: PaymentToJSON(requestParameters.payment)
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      CreatePaymentResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Create Payment
+   * Create Payment
+   */
+  async paymentsAdd(
+    requestParameters: AccountingApiPaymentsAddRequest
+  ): Promise<CreatePaymentResponse> {
+    const response = await this.paymentsAddRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * List Payments
+   * List Payments
+   */
+  async paymentsAllRaw(
+    requestParameters: AccountingApiPaymentsAllRequest
+  ): Promise<runtime.ApiResponse<GetPaymentsResponse>> {
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    if (requestParameters.cursor !== undefined) {
+      queryParameters['cursor'] = requestParameters.cursor
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/accounting/payments`,
+      method: 'GET',
+      headers: headerParameters,
+      query: queryParameters
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetPaymentsResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * List Payments
+   * List Payments
+   */
+  async paymentsAll(
+    requestParameters: AccountingApiPaymentsAllRequest
+  ): Promise<GetPaymentsResponse> {
+    const response = await this.paymentsAllRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * Delete Payment
+   * Delete Payment
+   */
+  async paymentsDeleteRaw(
+    requestParameters: AccountingApiPaymentsDeleteRequest
+  ): Promise<runtime.ApiResponse<DeletePaymentResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling paymentsDelete.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/accounting/payments/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(requestParameters.id))
+      ),
+      method: 'DELETE',
+      headers: headerParameters,
+      query: queryParameters
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      DeletePaymentResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Delete Payment
+   * Delete Payment
+   */
+  async paymentsDelete(
+    requestParameters: AccountingApiPaymentsDeleteRequest
+  ): Promise<DeletePaymentResponse> {
+    const response = await this.paymentsDeleteRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * Get Payment
+   * Get Payment
+   */
+  async paymentsOneRaw(
+    requestParameters: AccountingApiPaymentsOneRequest
+  ): Promise<runtime.ApiResponse<GetPaymentResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling paymentsOne.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/accounting/payments/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(requestParameters.id))
+      ),
+      method: 'GET',
+      headers: headerParameters,
+      query: queryParameters
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue => GetPaymentResponseFromJSON(jsonValue))
+  }
+
+  /**
+   * Get Payment
+   * Get Payment
+   */
+  async paymentsOne(
+    requestParameters: AccountingApiPaymentsOneRequest
+  ): Promise<GetPaymentResponse> {
+    const response = await this.paymentsOneRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * Update Payment
+   * Update Payment
+   */
+  async paymentsUpdateRaw(
+    requestParameters: AccountingApiPaymentsUpdateRequest
+  ): Promise<runtime.ApiResponse<UpdatePaymentResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling paymentsUpdate.'
+      )
+    }
+
+    if (requestParameters.payment === null || requestParameters.payment === undefined) {
+      throw new runtime.RequiredError(
+        'payment',
+        'Required parameter requestParameters.payment was null or undefined when calling paymentsUpdate.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/accounting/payments/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(requestParameters.id))
+      ),
+      method: 'PATCH',
+      headers: headerParameters,
+      query: queryParameters,
+      body: PaymentToJSON(requestParameters.payment)
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      UpdatePaymentResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Update Payment
+   * Update Payment
+   */
+  async paymentsUpdate(
+    requestParameters: AccountingApiPaymentsUpdateRequest
+  ): Promise<UpdatePaymentResponse> {
+    const response = await this.paymentsUpdateRaw(requestParameters)
     return await response.value()
   }
 
