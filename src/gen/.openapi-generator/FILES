@@ -14,6 +14,8 @@ AccountingApiTest.api.test.ts
 AccountingEventType.md
 Activity.md
 Address.md
+AtsApi.md
+AtsApiTest.api.test.ts
 AuthType.md
 BadRequestResponse.md
 BankAccount.md
@@ -40,6 +42,7 @@ CreateConnectionResponse.md
 CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
+CreateEmployeeResponse.md
 CreateFileResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
@@ -48,6 +51,7 @@ CreateLedgerAccountResponse.md
 CreateMessageResponse.md
 CreateNoteResponse.md
 CreateOpportunityResponse.md
+CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
@@ -61,6 +65,7 @@ Currency.md
 CustomField.md
 Customer.md
 Customer1.md
+Customer2.md
 CustomerSupportApi.md
 CustomerSupportApiTest.api.test.ts
 CustomerSupportCustomer.md
@@ -69,6 +74,7 @@ DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
+DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
@@ -76,11 +82,15 @@ DeleteLedgerAccountResponse.md
 DeleteMessageResponse.md
 DeleteNoteResponse.md
 DeleteOpportunityResponse.md
+DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeleteTaxRateResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Email.md
+Employee.md
+EmployeeCompensations.md
+EmployeeJobs.md
 Error.md
 EventType.md
 ExecuteWebhookEventRequest.md
@@ -95,6 +105,7 @@ FilesSearch.md
 FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
+Gender.md
 GetActivitiesResponse.md
 GetActivityResponse.md
 GetCompaniesResponse.md
@@ -111,12 +122,16 @@ GetCustomerResponse.md
 GetCustomerSupportCustomerResponse.md
 GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
+GetEmployeeResponse.md
+GetEmployeesResponse.md
 GetFileResponse.md
 GetFilesResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
 GetInvoicesResponse.md
+GetJobResponse.md
+GetJobsResponse.md
 GetLeadResponse.md
 GetLeadsResponse.md
 GetLedgerAccountResponse.md
@@ -128,6 +143,8 @@ GetNoteResponse.md
 GetNotesResponse.md
 GetOpportunitiesResponse.md
 GetOpportunityResponse.md
+GetPaymentResponse.md
+GetPaymentsResponse.md
 GetPipelineResponse.md
 GetPipelinesResponse.md
 GetTaxRateResponse.md
@@ -137,10 +154,15 @@ GetUsersResponse.md
 GetWebhookEventLogsResponse.md
 GetWebhookResponse.md
 GetWebhooksResponse.md
+HrisApi.md
+HrisApiTest.api.test.ts
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
 InvoiceLineItems.md
+InvoiceResponse.md
+Job.md
+JobStatus.md
 Lead.md
 LeadApi.md
 LeadApiTest.api.test.ts
@@ -166,7 +188,9 @@ Note.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
+Payment.md
 PaymentRequiredResponse.md
+PaymentUnit.md
 PhoneNumber.md
 Pipeline.md
 PipelineStages.md
@@ -185,6 +209,7 @@ Tags.md
 TaxRate.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
+UnifiedApiId.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
@@ -193,6 +218,7 @@ UpdateConnectionResponse.md
 UpdateContactResponse.md
 UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
+UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
@@ -201,6 +227,7 @@ UpdateLedgerAccountResponse.md
 UpdateMessageResponse.md
 UpdateNoteResponse.md
 UpdateOpportunityResponse.md
+UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdateTaxRateResponse.md
 UpdateUserResponse.md
@@ -221,9 +248,11 @@ WebhookEventLogsFilterService.md
 WebhookEventType.md
 Website.md
 apis/AccountingApi.ts
+apis/AtsApi.ts
 apis/CrmApi.ts
 apis/CustomerSupportApi.ts
 apis/FileStorageApi.ts
+apis/HrisApi.ts
 apis/LeadApi.ts
 apis/SmsApi.ts
 apis/VaultApi.ts
@@ -259,6 +288,7 @@ models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
+models/CreateEmployeeResponse.ts
 models/CreateFileResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
@@ -267,6 +297,7 @@ models/CreateLedgerAccountResponse.ts
 models/CreateMessageResponse.ts
 models/CreateNoteResponse.ts
 models/CreateOpportunityResponse.ts
+models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
@@ -278,12 +309,14 @@ models/Currency.ts
 models/CustomField.ts
 models/Customer.ts
 models/Customer1.ts
+models/Customer2.ts
 models/CustomerSupportCustomer.ts
 models/DeleteActivityResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
+models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
@@ -291,11 +324,15 @@ models/DeleteLedgerAccountResponse.ts
 models/DeleteMessageResponse.ts
 models/DeleteNoteResponse.ts
 models/DeleteOpportunityResponse.ts
+models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Email.ts
+models/Employee.ts
+models/EmployeeCompensations.ts
+models/EmployeeJobs.ts
 models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
@@ -306,6 +343,7 @@ models/FilesSearch.ts
 models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
+models/Gender.ts
 models/GetActivitiesResponse.ts
 models/GetActivityResponse.ts
 models/GetCompaniesResponse.ts
@@ -322,12 +360,16 @@ models/GetCustomerResponse.ts
 models/GetCustomerSupportCustomerResponse.ts
 models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
+models/GetEmployeeResponse.ts
+models/GetEmployeesResponse.ts
 models/GetFileResponse.ts
 models/GetFilesResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
 models/GetInvoicesResponse.ts
+models/GetJobResponse.ts
+models/GetJobsResponse.ts
 models/GetLeadResponse.ts
 models/GetLeadsResponse.ts
 models/GetLedgerAccountResponse.ts
@@ -339,6 +381,8 @@ models/GetNoteResponse.ts
 models/GetNotesResponse.ts
 models/GetOpportunitiesResponse.ts
 models/GetOpportunityResponse.ts
+models/GetPaymentResponse.ts
+models/GetPaymentsResponse.ts
 models/GetPipelineResponse.ts
 models/GetPipelinesResponse.ts
 models/GetTaxRateResponse.ts
@@ -352,6 +396,9 @@ models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceLineItems.ts
+models/InvoiceResponse.ts
+models/Job.ts
+models/JobStatus.ts
 models/Lead.ts
 models/LeadEventType.ts
 models/LeadsFilter.ts
@@ -377,7 +424,9 @@ models/Note.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
+models/Payment.ts
 models/PaymentRequiredResponse.ts
+models/PaymentUnit.ts
 models/PhoneNumber.ts
 models/Pipeline.ts
 models/PipelineStages.ts
@@ -394,6 +443,7 @@ models/Tags.ts
 models/TaxRate.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
+models/UnifiedApiId.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
@@ -402,6 +452,7 @@ models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
+models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
@@ -410,6 +461,7 @@ models/UpdateLedgerAccountResponse.ts
 models/UpdateMessageResponse.ts
 models/UpdateNoteResponse.ts
 models/UpdateOpportunityResponse.ts
+models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateUserResponse.ts
