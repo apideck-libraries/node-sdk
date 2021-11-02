@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `description` | **string** |  | [optional] 
 `image` | **string** |  | [optional] 
-`language` | **string** |  | [optional] 
+`language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `status` | **string** |  | [optional] 
 `password` | **string** |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 

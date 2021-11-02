@@ -32,7 +32,7 @@ describe('SmsApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
+        service: 'twilio',
         resource: 'Messages',
         operation: 'one',
         data: {
@@ -49,8 +49,12 @@ describe('SmsApi', () => {
         message: {
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
-          type: 'SMS',
+          type: 'sms',
+          scheduled_at: '2020-09-30T07:43:32.000Z',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          reference: 'CUST001',
           messaging_service_id: '123456'
         }
       } as any
@@ -78,7 +82,7 @@ describe('SmsApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
+        service: 'twilio',
         resource: 'Messages',
         operation: 'one',
         data: [
@@ -86,20 +90,24 @@ describe('SmsApi', () => {
             id: '12345',
             from: '+15017122661',
             to: '+15017122662',
+            subject: 'Picture',
             body: 'Hi! How are you doing?',
-            type: 'SMS',
+            type: 'sms',
             number_of_units: 1,
             number_of_media_files: 1,
             direction: 'outbound-api',
             status: 'sent',
+            scheduled_at: '2020-09-30T07:43:32.000Z',
             sent_at: '2020-09-30T07:43:32.000Z',
+            webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+            reference: 'CUST001',
             price: {
-              per_unit: '444',
-              total_amount: '444',
+              per_unit: '0.01',
+              total_amount: '0.01',
               currency: 'USD'
             },
             error: {
-              code: '444',
+              code: 'X1',
               message: 'Something went wrong'
             },
             messaging_service_id: '123456',
@@ -154,7 +162,7 @@ describe('SmsApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
+        service: 'twilio',
         resource: 'Messages',
         operation: 'one',
         data: {
@@ -194,27 +202,31 @@ describe('SmsApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
+        service: 'twilio',
         resource: 'Messages',
         operation: 'one',
         data: {
           id: '12345',
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
-          type: 'SMS',
+          type: 'sms',
           number_of_units: 1,
           number_of_media_files: 1,
           direction: 'outbound-api',
           status: 'sent',
+          scheduled_at: '2020-09-30T07:43:32.000Z',
           sent_at: '2020-09-30T07:43:32.000Z',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          reference: 'CUST001',
           price: {
-            per_unit: '444',
-            total_amount: '444',
+            per_unit: '0.01',
+            total_amount: '0.01',
             currency: 'USD'
           },
           error: {
-            code: '444',
+            code: 'X1',
             message: 'Something went wrong'
           },
           messaging_service_id: '123456',
@@ -257,7 +269,7 @@ describe('SmsApi', () => {
       const mockedResponse: Record<string, unknown> = {
         status_code: 200,
         status: 'OK',
-        service: 'zoho-crm',
+        service: 'twilio',
         resource: 'Messages',
         operation: 'one',
         data: {
@@ -275,8 +287,12 @@ describe('SmsApi', () => {
         message: {
           from: '+15017122661',
           to: '+15017122662',
+          subject: 'Picture',
           body: 'Hi! How are you doing?',
-          type: 'SMS',
+          type: 'sms',
+          scheduled_at: '2020-09-30T07:43:32.000Z',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          reference: 'CUST001',
           messaging_service_id: '123456'
         }
       } as any

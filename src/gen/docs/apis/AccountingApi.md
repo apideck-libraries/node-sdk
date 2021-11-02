@@ -26,6 +26,11 @@
 * [Delete Ledger Account](#ledgerAccountsDelete)
 * [Get Ledger Account](#ledgerAccountsOne)
 * [Update Ledger Account](#ledgerAccountsUpdate)
+* [Create Payment](#paymentsAdd)
+* [List Payments](#paymentsAll)
+* [Delete Payment](#paymentsDelete)
+* [Get Payment](#paymentsOne)
+* [Update Payment](#paymentsUpdate)
 * [Create Tax Rate](#taxRatesAdd)
 * [List Tax Rates](#taxRatesAll)
 * [Delete Tax Rate](#taxRatesDelete)
@@ -196,8 +201,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -209,7 +213,8 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    status: 'active'
+    status: 'active',
+    row_version: '1-12345'
   }
 }
 
@@ -395,7 +400,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Customers | 
+**200** | Customer | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -533,8 +538,7 @@ const params = {
       }
     ],
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -546,7 +550,8 @@ const params = {
       account_number: '123456789',
       account_name: 'SPACEX LLC'
     },
-    status: 'active'
+    status: 'active',
+    row_version: '1-12345'
   }
 }
 
@@ -617,6 +622,7 @@ const apideck = new Apideck({
 
 const params = {
   invoiceItem: {
+    id: '123456',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -627,14 +633,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456',
-        code: 'N-T'
+        id: '123456'
       }
     },
-    quantity: 2,
+    quantity: 1,
     unit_price: 27500.5,
     ledger_account: {
-      name: 'Bank account'
+      id: '123456'
     },
     active: true,
     row_version: '1-12345'
@@ -916,6 +921,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoiceItem: {
+    id: '123456',
     code: '120-C',
     sold: true,
     name: 'Model Y',
@@ -926,14 +932,13 @@ const params = {
       unit_of_measure: 'hour',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456',
-        code: 'N-T'
+        id: '123456'
       }
     },
-    quantity: 2,
+    quantity: 1,
     unit_price: 27500.5,
     ledger_account: {
-      name: 'Bank account'
+      id: '123456'
     },
     active: true,
     row_version: '1-12345'
@@ -1007,22 +1012,22 @@ const apideck = new Apideck({
 
 const params = {
   invoice: {
-    type: 'Service',
+    type: 'service',
     number: 'OIT00546',
     customer: {
-      company_name: 'The boring company'
+      id: '12345'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'paid',
+    status: 'submitted',
     currency: 'USD',
     tax_inclusive: true,
     sub_total: 27500,
-    total_tax: 1000,
-    total: 28500,
-    balance: 26500,
-    deposit: 2000,
+    total_tax: 2500,
+    total: 27500,
+    balance: 27500,
+    deposit: 0,
     customer_memo: 'Thank you for your business and have a great day!',
     line_items: [
       {
@@ -1033,20 +1038,18 @@ const params = {
         type: 'Inventory',
         tax_amount: 27500,
         total_amount: 27500,
-        quantity: 2,
+        quantity: 1,
         unit_price: 27500.5,
-        discount_percentage: 15,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0,
         item: {
-          id: '12344',
-          code: '120-C',
-          name: 'Model Y'
+          id: '12344'
         },
         tax_rate: {
-          id: '123456',
-          code: 'N-T'
+          id: '123456'
         },
         ledger_account: {
-          name: 'Bank account'
+          id: '123456'
         },
         row_version: '1-12345'
       }
@@ -1370,22 +1373,22 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoice: {
-    type: 'Service',
+    type: 'service',
     number: 'OIT00546',
     customer: {
-      company_name: 'The boring company'
+      id: '12345'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'paid',
+    status: 'submitted',
     currency: 'USD',
     tax_inclusive: true,
     sub_total: 27500,
-    total_tax: 1000,
-    total: 28500,
-    balance: 26500,
-    deposit: 2000,
+    total_tax: 2500,
+    total: 27500,
+    balance: 27500,
+    deposit: 0,
     customer_memo: 'Thank you for your business and have a great day!',
     line_items: [
       {
@@ -1396,20 +1399,18 @@ const params = {
         type: 'Inventory',
         tax_amount: 27500,
         total_amount: 27500,
-        quantity: 2,
+        quantity: 1,
         unit_price: 27500.5,
-        discount_percentage: 15,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0,
         item: {
-          id: '12344',
-          code: '120-C',
-          name: 'Model Y'
+          id: '12344'
         },
         tax_rate: {
-          id: '123456',
-          code: 'N-T'
+          id: '123456'
         },
         ledger_account: {
-          name: 'Bank account'
+          id: '123456'
         },
         row_version: '1-12345'
       }
@@ -1538,8 +1539,7 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     level: 1,
     active: true,
@@ -1851,8 +1851,7 @@ const params = {
     currency: 'USD',
     tax_type: 'USD',
     tax_rate: {
-      id: '123456',
-      code: 'N-T'
+      id: '123456'
     },
     level: 1,
     active: true,
@@ -1878,6 +1877,388 @@ const params = {
 
 try {
   const { data } = await apideck.accounting.ledgerAccountsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="paymentsAdd"></a>
+# Create Payment
+
+
+Method: **paymentsAdd**
+
+```typescript
+accountingApi.paymentsAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payment** | [Payment](../models/Payment.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreatePaymentResponse`](../models/CreatePaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Payment created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  payment: {
+    currency: 'USD',
+    currency_rate: 0.69,
+    total_amount: 49.99,
+    reference: '123456',
+    accounts_receivable_account_type: 'Account',
+    accounts_receivable_account_id: '123456',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    customer: {
+      id: '12345'
+    },
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.paymentsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="paymentsAll"></a>
+# List Payments
+
+
+Method: **paymentsAll**
+
+```typescript
+accountingApi.paymentsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetPaymentsResponse`](../models/GetPaymentsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payments | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.paymentsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="paymentsDelete"></a>
+# Delete Payment
+
+
+Method: **paymentsDelete**
+
+```typescript
+accountingApi.paymentsDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`DeletePaymentResponse`](../models/DeletePaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payment deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.paymentsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="paymentsOne"></a>
+# Get Payment
+
+
+Method: **paymentsOne**
+
+```typescript
+accountingApi.paymentsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`GetPaymentResponse`](../models/GetPaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payment | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.paymentsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="paymentsUpdate"></a>
+# Update Payment
+
+
+Method: **paymentsUpdate**
+
+```typescript
+accountingApi.paymentsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payment** | [Payment](../models/Payment.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`UpdatePaymentResponse`](../models/UpdatePaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payment Updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  payment: {
+    currency: 'USD',
+    currency_rate: 0.69,
+    total_amount: 49.99,
+    reference: '123456',
+    accounts_receivable_account_type: 'Account',
+    accounts_receivable_account_id: '123456',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    customer: {
+      id: '12345'
+    },
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.paymentsUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
