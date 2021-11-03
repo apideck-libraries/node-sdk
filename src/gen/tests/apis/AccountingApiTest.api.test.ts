@@ -175,8 +175,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -188,7 +187,8 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          status: 'active'
+          status: 'active',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.customersAdd(params)
@@ -280,6 +280,7 @@ describe('AccountingApi', () => {
               account_name: 'SPACEX LLC'
             },
             status: 'active',
+            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -435,6 +436,7 @@ describe('AccountingApi', () => {
             account_name: 'SPACEX LLC'
           },
           status: 'active',
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -535,8 +537,7 @@ describe('AccountingApi', () => {
             }
           ],
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -548,7 +549,8 @@ describe('AccountingApi', () => {
             account_number: '123456789',
             account_name: 'SPACEX LLC'
           },
-          status: 'active'
+          status: 'active',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.customersUpdate(params)
@@ -598,17 +600,19 @@ describe('AccountingApi', () => {
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
-            unit_of_measure: 'hour',
+            unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456',
-              code: 'N-T'
+              id: '123456'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
-          ledger_account: {
-            name: 'Bank account'
+          income_account: {
+            id: '123456'
+          },
+          expense_account: {
+            id: '123456'
           },
           active: true,
           row_version: '1-12345'
@@ -643,7 +647,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: [
           {
-            id: '12345',
+            id: '123456',
             code: '120-C',
             sold: true,
             name: 'Model Y',
@@ -652,17 +656,21 @@ describe('AccountingApi', () => {
             type: 'inventory',
             sales_details: {
               unit_price: 27500.5,
-              unit_of_measure: 'hour',
+              unit_of_measure: 'pc.',
               tax_inclusive: true,
               tax_rate: {
                 id: '123456',
                 code: 'N-T'
               }
             },
-            quantity: 2,
+            quantity: 1,
             unit_price: 27500.5,
-            ledger_account: {
-              id: '12345',
+            income_account: {
+              id: '123456',
+              name: 'Bank account'
+            },
+            expense_account: {
+              id: '123456',
               name: 'Bank account'
             },
             active: true,
@@ -762,7 +770,7 @@ describe('AccountingApi', () => {
         resource: 'invoice-items',
         operation: 'one',
         data: {
-          id: '12345',
+          id: '123456',
           code: '120-C',
           sold: true,
           name: 'Model Y',
@@ -771,17 +779,21 @@ describe('AccountingApi', () => {
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
-            unit_of_measure: 'hour',
+            unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
               id: '123456',
               code: 'N-T'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
-          ledger_account: {
-            id: '12345',
+          income_account: {
+            id: '123456',
+            name: 'Bank account'
+          },
+          expense_account: {
+            id: '123456',
             name: 'Bank account'
           },
           active: true,
@@ -826,7 +838,7 @@ describe('AccountingApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'xero',
-        resource: 'invoices',
+        resource: 'invoice-items',
         operation: 'one',
         data: {
           id: '12345'
@@ -849,17 +861,19 @@ describe('AccountingApi', () => {
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
-            unit_of_measure: 'hour',
+            unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456',
-              code: 'N-T'
+              id: '123456'
             }
           },
-          quantity: 2,
+          quantity: 1,
           unit_price: 27500.5,
-          ledger_account: {
-            name: 'Bank account'
+          income_account: {
+            id: '123456'
+          },
+          expense_account: {
+            id: '123456'
           },
           active: true,
           row_version: '1-12345'
@@ -893,7 +907,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -904,22 +919,22 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoice: {
-          type: 'Service',
+          type: 'service',
           number: 'OIT00546',
           customer: {
-            company_name: 'The boring company'
+            id: '12345'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -931,20 +946,18 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
-                id: '12344',
-                code: '120-C',
-                name: 'Model Y'
+                id: '12344'
               },
               tax_rate: {
-                id: '123456',
-                code: 'N-T'
+                id: '123456'
               },
               ledger_account: {
-                name: 'Bank account'
+                id: '123456'
               },
               row_version: '1-12345'
             }
@@ -1022,23 +1035,25 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
-            type: 'Service',
+            downstream_id: '12345',
+            type: 'service',
             number: 'OIT00546',
             customer: {
               id: '12345',
+              display_id: 'CUST00101',
               company_name: 'The boring company'
             },
             invoice_date: '2020-09-30',
             due_date: '2020-10-30',
             po_number: '90000117',
-            status: 'paid',
+            status: 'submitted',
             currency: 'USD',
             tax_inclusive: true,
             sub_total: 27500,
-            total_tax: 1000,
-            total: 28500,
-            balance: 26500,
-            deposit: 2000,
+            total_tax: 2500,
+            total: 27500,
+            balance: 27500,
+            deposit: 0,
             customer_memo: 'Thank you for your business and have a great day!',
             line_items: [
               {
@@ -1051,9 +1066,10 @@ describe('AccountingApi', () => {
                 type: 'Inventory',
                 tax_amount: 27500,
                 total_amount: 27500,
-                quantity: 2,
+                quantity: 1,
                 unit_price: 27500.5,
-                discount_percentage: 15,
+                unit_of_measure: 'pc.',
+                discount_percentage: 0,
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -1064,7 +1080,7 @@ describe('AccountingApi', () => {
                   code: 'N-T'
                 },
                 ledger_account: {
-                  id: '12345',
+                  id: '123456',
                   name: 'Bank account'
                 },
                 row_version: '1-12345'
@@ -1166,7 +1182,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -1207,23 +1224,25 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
-          type: 'Service',
+          downstream_id: '12345',
+          type: 'service',
           number: 'OIT00546',
           customer: {
             id: '12345',
+            display_id: 'CUST00101',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -1236,9 +1255,10 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1249,7 +1269,7 @@ describe('AccountingApi', () => {
                 code: 'N-T'
               },
               ledger_account: {
-                id: '12345',
+                id: '123456',
                 name: 'Bank account'
               },
               row_version: '1-12345'
@@ -1339,7 +1359,8 @@ describe('AccountingApi', () => {
         resource: 'invoices',
         operation: 'one',
         data: {
-          id: '12345'
+          id: '12345',
+          downstream_id: '12345'
         }
       } as any
 
@@ -1351,22 +1372,22 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoice: {
-          type: 'Service',
+          type: 'service',
           number: 'OIT00546',
           customer: {
-            company_name: 'The boring company'
+            id: '12345'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'paid',
+          status: 'submitted',
           currency: 'USD',
           tax_inclusive: true,
           sub_total: 27500,
-          total_tax: 1000,
-          total: 28500,
-          balance: 26500,
-          deposit: 2000,
+          total_tax: 2500,
+          total: 27500,
+          balance: 27500,
+          deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
           line_items: [
             {
@@ -1378,20 +1399,18 @@ describe('AccountingApi', () => {
               type: 'Inventory',
               tax_amount: 27500,
               total_amount: 27500,
-              quantity: 2,
+              quantity: 1,
               unit_price: 27500.5,
-              discount_percentage: 15,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0,
               item: {
-                id: '12344',
-                code: '120-C',
-                name: 'Model Y'
+                id: '12344'
               },
               tax_rate: {
-                id: '123456',
-                code: 'N-T'
+                id: '123456'
               },
               ledger_account: {
-                name: 'Bank account'
+                id: '123456'
               },
               row_version: '1-12345'
             }
@@ -1491,8 +1510,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           level: 1,
           active: true,
@@ -1791,8 +1809,7 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'USD',
           tax_rate: {
-            id: '123456',
-            code: 'N-T'
+            id: '123456'
           },
           level: 1,
           active: true,
@@ -1816,6 +1833,294 @@ describe('AccountingApi', () => {
         }
       } as any
       const current = await accounting.ledgerAccountsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#paymentsAdd', () => {
+    const endpoint = '/accounting/payments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        payment: {
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 49.99,
+          reference: '123456',
+          accounts_receivable_account_type: 'Account',
+          accounts_receivable_account_id: '123456',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          customer: {
+            id: '12345'
+          },
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.paymentsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#paymentsAll', () => {
+    const endpoint = '/accounting/payments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'all',
+        data: [
+          {
+            id: '123456',
+            currency: 'USD',
+            currency_rate: 0.69,
+            total_amount: 49.99,
+            reference: '123456',
+            accounts_receivable_account_type: 'Account',
+            accounts_receivable_account_id: '123456',
+            transaction_date: '2021-05-01T12:00:00.000Z',
+            customer: {
+              id: '12345',
+              display_id: 'CUST00101',
+              company_name: 'The boring company'
+            },
+            allocations: [
+              {
+                id: '123456',
+                type: 'invoice',
+                amount: 49.99
+              }
+            ]
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.paymentsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#paymentsDelete', () => {
+    const endpoint = '/accounting/payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.paymentsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#paymentsOne', () => {
+    const endpoint = '/accounting/payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'one',
+        data: {
+          id: '123456',
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 49.99,
+          reference: '123456',
+          accounts_receivable_account_type: 'Account',
+          accounts_receivable_account_id: '123456',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          customer: {
+            id: '12345',
+            display_id: 'CUST00101',
+            company_name: 'The boring company'
+          },
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.paymentsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#paymentsUpdate', () => {
+    const endpoint = '/accounting/payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        payment: {
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 49.99,
+          reference: '123456',
+          accounts_receivable_account_type: 'Account',
+          accounts_receivable_account_id: '123456',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          customer: {
+            id: '12345'
+          },
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.paymentsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

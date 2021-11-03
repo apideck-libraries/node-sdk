@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unit_price` | **number** |  | [optional] 
-`unit_of_measure` | **string** |  | [optional] 
+`unit_of_measure` | **string** | Description of the unit type the item is sold as, ie: kg, hour. | [optional] 
 `tax_inclusive` | **boolean** | Indicates the unit price includes tax. | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 
