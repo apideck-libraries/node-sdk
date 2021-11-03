@@ -25,7 +25,7 @@ customerSupportApi.customersAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerSupportCustomer** | [CustomerSupportCustomer](../models/CustomerSupportCustomer.md)|  |
+ **customer** | [CustomerSupportCustomer](../models/CustomerSupportCustomer.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -63,7 +63,7 @@ const apideck = new Apideck({
 });
 
 const params = {
-  customerSupportCustomer: {
+  customer: {
     company_name: 'SpaceX',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -355,7 +355,7 @@ customerSupportApi.customersUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerSupportCustomer** | [CustomerSupportCustomer](../models/CustomerSupportCustomer.md)|  |
+ **customer** | [CustomerSupportCustomer](../models/CustomerSupportCustomer.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -395,7 +395,7 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
-  customerSupportCustomer: {
+  customer: {
     company_name: 'SpaceX',
     first_name: 'Elon',
     last_name: 'Musk',

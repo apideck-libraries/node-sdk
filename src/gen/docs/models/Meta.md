@@ -2,7 +2,7 @@
 
 ### Description
 
-Reponse metadata
+Response metadata
 
 ## Properties
 Name | Type | Description | Notes

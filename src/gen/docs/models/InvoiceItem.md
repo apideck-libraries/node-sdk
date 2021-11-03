@@ -14,7 +14,8 @@ Name | Type | Description | Notes
 `sales_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
-`ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+`income_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+`expense_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `active` | **boolean** |  | [optional] 
 `row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
@@ -47,6 +48,7 @@ Name | Type | Description | Notes
 * [`InvoiceItemSalesDetails`](InvoiceItemSalesDetails.md)
 
 
+* [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 
 
