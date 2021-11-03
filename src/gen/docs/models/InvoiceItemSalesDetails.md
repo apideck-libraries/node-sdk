@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unit_price` | **number** |  | [optional] 
-`unit_of_measure` | **string** |  | [optional] 
+`unit_of_measure` | [**UnitOfMeasure**](UnitOfMeasure.md) |  | [optional] 
 `tax_inclusive` | **boolean** | Indicates the unit price includes tax. | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 
-
+* [`UnitOfMeasure`](UnitOfMeasure.md)
 
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 

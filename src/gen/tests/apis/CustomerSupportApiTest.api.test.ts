@@ -46,7 +46,7 @@ describe('CustomerSupportApi', () => {
 
       const { customerSupport } = apideck
       const params = {
-        customerSupportCustomer: {
+        customer: {
           company_name: 'SpaceX',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -391,7 +391,7 @@ describe('CustomerSupportApi', () => {
       const { customerSupport } = apideck
       const params = {
         id: 'id_example',
-        customerSupportCustomer: {
+        customer: {
           company_name: 'SpaceX',
           first_name: 'Elon',
           last_name: 'Musk',

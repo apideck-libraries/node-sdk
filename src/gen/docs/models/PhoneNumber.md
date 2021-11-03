@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 
 * `direct_dial_in` (value: `'direct-dial-in'`)
 
+* `personal` (value: `'personal'`)
+
 * `other` (value: `'other'`)
 
 

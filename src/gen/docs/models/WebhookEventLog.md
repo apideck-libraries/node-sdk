@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `success` | **boolean** | Whether or not the request was successful. | [optional] 
 `application_id` | **string** | ID of your Apideck Application | [optional] 
 `consumer_id` | **string** | Consumer identifier | [optional] 
-`unified_api` | **string** | The unifiedApi the webhook originated from | [optional] 
+`unified_api` | [**UnifiedApiId**](UnifiedApiId.md) |  | [optional] 
 `service` | [**WebhookEventLogService**](WebhookEventLogService.md) |  | [optional] 
 `endpoint` | **string** | The URL of the webhook endpoint. | [optional] 
 `event_type` | **string** | Name of source event that webhook is subscribed to. | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`UnifiedApiId`](UnifiedApiId.md)
 * [`WebhookEventLogService`](WebhookEventLogService.md)
 
 
