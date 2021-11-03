@@ -117,7 +117,9 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 'custom_technologies',
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
             }
           ],
@@ -224,7 +226,9 @@ describe('LeadApi', () => {
             ],
             custom_fields: [
               {
-                id: 'custom_technologies',
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
               }
             ],
@@ -393,7 +397,9 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 'custom_technologies',
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
             }
           ],
@@ -521,7 +527,9 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 'custom_technologies',
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
             }
           ],

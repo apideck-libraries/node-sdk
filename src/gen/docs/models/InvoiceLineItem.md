@@ -1,4 +1,4 @@
-# Apideck.InvoiceLineItems
+# Apideck.InvoiceLineItem
 
 ### Description
 
@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `total_amount` | **number** |  | [optional] 
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
+`unit_of_measure` | **string** |  | [optional] 
 `discount_percentage` | **number** |  | [optional] 
 `item` | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
@@ -25,8 +26,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="InvoiceLineItemsType"></a>
-## Enum: InvoiceLineItems.type
+<a name="InvoiceLineItemType"></a>
+## Enum: InvoiceLineItem.type
 
 
 * `inventory` (value: `'inventory'`)
@@ -37,6 +38,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 
