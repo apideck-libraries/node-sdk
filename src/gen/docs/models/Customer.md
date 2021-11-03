@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `status` | **string** | Customer status | [optional] 
+`row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -59,6 +60,7 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`BankAccount`](BankAccount.md)
+
 
 
 

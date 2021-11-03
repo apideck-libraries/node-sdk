@@ -5,13 +5,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`unified_api` | **string** | The unifiedApi the webhook originated from | 
+`unified_api` | [**UnifiedApiId**](UnifiedApiId.md) |  | 
 `status` | [**Status**](Status.md) |  | 
 `delivery_url` | **string** | The delivery url of the webhook endpoint. | 
 `execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
 `events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 
-`description` | **string** | An optional description of what the webhook is used for. | [optional] 
+`description` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
-
+* [`UnifiedApiId`](UnifiedApiId.md)
 * [`Status`](Status.md)
 
 
