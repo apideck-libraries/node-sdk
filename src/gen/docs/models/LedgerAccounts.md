@@ -1,14 +1,10 @@
-# Apideck.Customer1
+# Apideck.LedgerAccounts
 
 ### Description
-
-The customer this invoice is linked to.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
-`company_name` | **string** |  | [optional] 
 
 
 

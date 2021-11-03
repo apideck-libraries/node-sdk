@@ -1,9 +1,11 @@
 import fetch from 'node-fetch'
 import {
   AccountingApi,
+  AtsApi,
   CrmApi,
   CustomerSupportApi,
   FileStorageApi,
+  HrisApi,
   LeadApi,
   SmsApi,
   VaultApi,
@@ -24,9 +26,11 @@ export type ApideckConfiguration = {
 
 export class Apideck {
   readonly accounting: AccountingApi
+  readonly ats: AtsApi
   readonly crm: CrmApi
   readonly customerSupport: CustomerSupportApi
   readonly fileStorage: FileStorageApi
+  readonly hris: HrisApi
   readonly lead: LeadApi
   readonly sms: SmsApi
   readonly vault: VaultApi
@@ -50,9 +54,11 @@ export class Apideck {
     })
 
     this.accounting = new AccountingApi(configuration)
+    this.ats = new AtsApi(configuration)
     this.crm = new CrmApi(configuration)
     this.customerSupport = new CustomerSupportApi(configuration)
     this.fileStorage = new FileStorageApi(configuration)
+    this.hris = new HrisApi(configuration)
     this.lead = new LeadApi(configuration)
     this.sms = new SmsApi(configuration)
     this.vault = new VaultApi(configuration)

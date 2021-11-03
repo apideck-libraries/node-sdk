@@ -753,6 +753,9 @@ const params = {
     },
     redirect_uri: 'https://mysaas.com/dashboard',
     settings: {
+      unified_apis: [
+        'crm'
+      ],
       hide_resource_settings: false,
       sandbox_mode: false,
       isolation_mode: false,

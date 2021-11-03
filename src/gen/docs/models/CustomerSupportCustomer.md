@@ -321,6 +321,8 @@ Name | Type | Description | Notes
 
 * `TOP` (value: `'TOP'`)
 
+* `TRC` (value: `'TRC'`)
+
 * `TRY` (value: `'TRY'`)
 
 * `TTD` (value: `'TTD'`)

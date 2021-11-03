@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 `success` | **boolean** | Whether or not the request was successful. | 
 `timestamp` | **string** | ISO Date and time when the request was made. | 
 `unified_api` | **string** | Which Unified Api request was made to. | 
-`error_message` | **string** | If error occured, this is brief explanation | [optional] 
+`error_message` | **string** | If error occurred, this is brief explanation | [optional] 
 `source_ip` | **string** | The IP address of the source of the request. | [optional] 
 
 
