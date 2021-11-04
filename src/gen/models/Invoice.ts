@@ -85,7 +85,7 @@ export interface Invoice {
    */
   currency?: Currency | null
   /**
-   * Amounts include tax
+   * Amounts are including tax
    * @type {boolean}
    * @memberof Invoice
    */

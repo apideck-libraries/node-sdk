@@ -13,7 +13,7 @@
  */
 
 /**
- *
+ * Type of authorization used by the connector
  * @export
  * @enum {string}
  */

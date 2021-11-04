@@ -34,7 +34,7 @@ export interface InvoiceItemSalesDetails {
    */
   unit_of_measure?: string | null
   /**
-   * Indicates the unit price includes tax.
+   * Amounts are including tax
    * @type {boolean}
    * @memberof InvoiceItemSalesDetails
    */
