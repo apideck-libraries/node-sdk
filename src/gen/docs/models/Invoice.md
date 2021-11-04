@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
 `status` | **string** | Invoice status | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`tax_inclusive` | **boolean** | Amounts include tax | [optional] 
+`tax_inclusive` | **boolean** | Amounts are including tax | [optional] 
 `sub_total` | **number** |  | [optional] 
 `total_tax` | **number** |  | [optional] 
 `total` | **number** |  | [optional] 
