@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
-`job_id` | **number** | The ID of the job to which the compensation belongs. | [optional] 
+`job_id` | **string** | The ID of the job to which the compensation belongs. | [optional] 
 `rate` | **string** | The amount paid per payment unit. | [optional] 
 `payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
 `flsa_status` | **string** | The FLSA status for this compensation. | [optional] 
