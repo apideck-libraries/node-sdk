@@ -13,6 +13,13 @@
  */
 
 import { exists } from '../runtime'
+import {
+  ApiResourceLinkedResources,
+  ApiResourceLinkedResourcesFromJSON,
+  ApiResourceLinkedResourcesToJSON
+} from './ApiResourceLinkedResources'
+import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
+
 /**
  *
  * @export
@@ -32,28 +39,23 @@ export interface ApiResource {
    */
   name?: string
   /**
-   * Status of the resource. Resources with status live or beta are available.
-   * @type {string}
+   *
+   * @type {ResourceStatus}
    * @memberof ApiResource
    */
-  status?: ApiResourceStatus
+  status?: ResourceStatus
+  /**
+   * List of linked resources.
+   * @type {Array<ApiResourceLinkedResources>}
+   * @memberof ApiResource
+   */
+  linked_resources?: Array<ApiResourceLinkedResources>
   /**
    * JSON Schema of the resource in our Unified API
    * @type {object}
    * @memberof ApiResource
    */
   schema?: object
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ApiResourceStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
 }
 
 export function ApiResourceFromJSON(json: any): ApiResource {
@@ -67,7 +69,10 @@ export function ApiResourceFromJSONTyped(json: any, ignoreDiscriminator: boolean
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    status: !exists(json, 'status') ? undefined : json['status'],
+    status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status']),
+    linked_resources: !exists(json, 'linked_resources')
+      ? undefined
+      : (json['linked_resources'] as Array<any>).map(ApiResourceLinkedResourcesFromJSON),
     schema: !exists(json, 'schema') ? undefined : json['schema']
   }
 }
@@ -82,7 +87,11 @@ export function ApiResourceToJSON(value?: ApiResource | null): any {
   return {
     id: value.id,
     name: value.name,
-    status: value.status,
+    status: ResourceStatusToJSON(value.status),
+    linked_resources:
+      value.linked_resources === undefined
+        ? undefined
+        : (value.linked_resources as Array<any>).map(ApiResourceLinkedResourcesToJSON),
     schema: value.schema
   }
 }

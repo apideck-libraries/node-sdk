@@ -18,7 +18,9 @@ Address.md
 Api.md
 ApiResource.md
 ApiResourceCoverage.md
+ApiResourceLinkedResources.md
 ApiResources.md
+ApiStatus.md
 ApisFilter.md
 Applicant.md
 AtsApi.md
@@ -42,6 +44,7 @@ ConnectorOauthScopes.md
 ConnectorResource.md
 ConnectorResourceSupportedFields.md
 ConnectorSetting.md
+ConnectorStatus.md
 ConnectorSupportedEvents.md
 ConnectorSupportedResources.md
 ConnectorUnifiedApis.md
@@ -225,6 +228,7 @@ Pipeline.md
 PipelineStages.md
 Price.md
 RequestCountAllocation.md
+ResourceStatus.md
 Session.md
 SessionSettings.md
 SessionTheme.md
@@ -296,7 +300,9 @@ models/Address.ts
 models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
+models/ApiResourceLinkedResources.ts
 models/ApiResources.ts
+models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
 models/AuthType.ts
@@ -316,6 +322,7 @@ models/ConnectorOauthScopes.ts
 models/ConnectorResource.ts
 models/ConnectorResourceSupportedFields.ts
 models/ConnectorSetting.ts
+models/ConnectorStatus.ts
 models/ConnectorSupportedEvents.ts
 models/ConnectorSupportedResources.ts
 models/ConnectorUnifiedApis.ts
@@ -489,6 +496,7 @@ models/Pipeline.ts
 models/PipelineStages.ts
 models/Price.ts
 models/RequestCountAllocation.ts
+models/ResourceStatus.ts
 models/Session.ts
 models/SessionSettings.ts
 models/SessionTheme.ts

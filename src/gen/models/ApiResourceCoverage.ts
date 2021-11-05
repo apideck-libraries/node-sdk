@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
+
 /**
  *
  * @export
@@ -32,28 +34,17 @@ export interface ApiResourceCoverage {
    */
   name?: string
   /**
-   * Status of the resource. Resources with status live or beta are available.
-   * @type {string}
+   *
+   * @type {ResourceStatus}
    * @memberof ApiResourceCoverage
    */
-  status?: ApiResourceCoverageStatus
+  status?: ResourceStatus
   /**
    *
    * @type {Array<any>}
    * @memberof ApiResourceCoverage
    */
   coverage?: Array<any>
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ApiResourceCoverageStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
 }
 
 export function ApiResourceCoverageFromJSON(json: any): ApiResourceCoverage {
@@ -70,7 +61,7 @@ export function ApiResourceCoverageFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    status: !exists(json, 'status') ? undefined : json['status'],
+    status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status']),
     coverage: !exists(json, 'coverage') ? undefined : json['coverage']
   }
 }
@@ -85,7 +76,7 @@ export function ApiResourceCoverageToJSON(value?: ApiResourceCoverage | null): a
   return {
     id: value.id,
     name: value.name,
-    status: value.status,
+    status: ResourceStatusToJSON(value.status),
     coverage: value.coverage
   }
 }

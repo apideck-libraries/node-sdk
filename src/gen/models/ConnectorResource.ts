@@ -18,6 +18,7 @@ import {
   ConnectorResourceSupportedFieldsFromJSON,
   ConnectorResourceSupportedFieldsToJSON
 } from './ConnectorResourceSupportedFields'
+import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
 
 /**
  *
@@ -50,11 +51,11 @@ export interface ConnectorResource {
    */
   downstream_name?: string
   /**
-   * Status of the resource. Resources with status live or beta are available.
-   * @type {string}
+   *
+   * @type {ResourceStatus}
    * @memberof ConnectorResource
    */
-  status?: ConnectorResourceStatus
+  status?: ResourceStatus
   /**
    * Indicates if pagination (cursor and limit parameters) is supported on the list endpoint of the resource.
    * @type {boolean}
@@ -87,17 +88,6 @@ export interface ConnectorResource {
   supported_fields?: Array<ConnectorResourceSupportedFields>
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorResourceStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
-}
-
 export function ConnectorResourceFromJSON(json: any): ConnectorResource {
   return ConnectorResourceFromJSONTyped(json, false)
 }
@@ -114,7 +104,7 @@ export function ConnectorResourceFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     downstream_name: !exists(json, 'downstream_name') ? undefined : json['downstream_name'],
-    status: !exists(json, 'status') ? undefined : json['status'],
+    status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status']),
     pagination_supported: !exists(json, 'pagination_supported')
       ? undefined
       : json['pagination_supported'],
@@ -141,7 +131,7 @@ export function ConnectorResourceToJSON(value?: ConnectorResource | null): any {
     name: value.name,
     downstream_id: value.downstream_id,
     downstream_name: value.downstream_name,
-    status: value.status,
+    status: ResourceStatusToJSON(value.status),
     pagination_supported: value.pagination_supported,
     supported_operations: value.supported_operations,
     supported_filters: value.supported_filters,

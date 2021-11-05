@@ -1,20 +1,16 @@
-# Apideck.ConnectorsFilter
+# Apideck.ApiResourceLinkedResources
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`unified_api` | [**UnifiedApiId**](UnifiedApiId.md) |  | [optional] 
-`status` | [**ConnectorStatus**](ConnectorStatus.md) |  | [optional] 
+`id` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
+`unified_property` | **string** | Name of the property in our Unified API. | [optional] 
 
 
 
 
-
-## Referenced Types:
-* [`UnifiedApiId`](UnifiedApiId.md)
-* [`ConnectorStatus`](ConnectorStatus.md)
 
 ---
 

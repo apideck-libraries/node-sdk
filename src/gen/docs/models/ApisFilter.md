@@ -5,26 +5,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`status` | **string** | Status to filter on | [optional] 
+`status` | [**ApiStatus**](ApiStatus.md) |  | [optional] 
 
 
 
 
 
-<a name="ApisFilterStatus"></a>
-## Enum: ApisFilter.status
-
-
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
-
+## Referenced Types:
+* [`ApiStatus`](ApiStatus.md)
 
 ---
 

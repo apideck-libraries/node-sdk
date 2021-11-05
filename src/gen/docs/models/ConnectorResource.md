@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 `name` | **string** | Name of the resource (plural) | [optional] 
 `downstream_id` | **string** | ID of the resource in the Connector\'s API (downstream) | [optional] 
 `downstream_name` | **string** | Name of the resource in the Connector\'s API (downstream) | [optional] 
-`status` | **string** | Status of the resource. Resources with status live or beta are available. | [optional] 
+`status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
 `pagination_supported` | **boolean** | Indicates if pagination (cursor and limit parameters) is supported on the list endpoint of the resource. | [optional] 
 `supported_operations` | **Array&lt;string&gt;** | List of supported operations on the resource. | [optional] 
 `supported_filters` | **Array&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
@@ -20,27 +20,12 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorResourceStatus"></a>
-## Enum: ConnectorResource.status
-
-
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
-
-
 ## Referenced Types:
 
 
 
 
-
+* [`ResourceStatus`](ResourceStatus.md)
 
 
 

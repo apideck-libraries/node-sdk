@@ -13,6 +13,9 @@
  */
 
 import { exists } from '../runtime'
+import { ConnectorStatus, ConnectorStatusFromJSON, ConnectorStatusToJSON } from './ConnectorStatus'
+import { UnifiedApiId, UnifiedApiIdFromJSON, UnifiedApiIdToJSON } from './UnifiedApiId'
+
 /**
  *
  * @export
@@ -20,28 +23,17 @@ import { exists } from '../runtime'
  */
 export interface ConnectorsFilter {
   /**
-   * Unified API to filter on
-   * @type {string}
+   *
+   * @type {UnifiedApiId}
    * @memberof ConnectorsFilter
    */
-  unified_api?: string
+  unified_api?: UnifiedApiId
   /**
-   * Status to filter on
-   * @type {string}
+   *
+   * @type {ConnectorStatus}
    * @memberof ConnectorsFilter
    */
-  status?: ConnectorsFilterStatus
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorsFilterStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
+  status?: ConnectorStatus
 }
 
 export function ConnectorsFilterFromJSON(json: any): ConnectorsFilter {
@@ -56,8 +48,10 @@ export function ConnectorsFilterFromJSONTyped(
     return json
   }
   return {
-    unified_api: !exists(json, 'unified_api') ? undefined : json['unified_api'],
-    status: !exists(json, 'status') ? undefined : json['status']
+    unified_api: !exists(json, 'unified_api')
+      ? undefined
+      : UnifiedApiIdFromJSON(json['unified_api']),
+    status: !exists(json, 'status') ? undefined : ConnectorStatusFromJSON(json['status'])
   }
 }
 
@@ -69,7 +63,7 @@ export function ConnectorsFilterToJSON(value?: ConnectorsFilter | null): any {
     return null
   }
   return {
-    unified_api: value.unified_api,
-    status: value.status
+    unified_api: UnifiedApiIdToJSON(value.unified_api),
+    status: ConnectorStatusToJSON(value.status)
   }
 }

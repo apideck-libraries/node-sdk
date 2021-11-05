@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
+
 /**
  *
  * @export
@@ -20,7 +22,7 @@ import { exists } from '../runtime'
  */
 export interface ConnectorSupportedResources {
   /**
-   * ID of the resource, typically a lowercased version of its name.
+   * ID of the resource, typically a lowercased version of name.
    * @type {string}
    * @memberof ConnectorSupportedResources
    */
@@ -32,11 +34,11 @@ export interface ConnectorSupportedResources {
    */
   name?: string
   /**
-   * Status of the resource. Resources with status live or beta are available.
-   * @type {string}
+   *
+   * @type {ResourceStatus}
    * @memberof ConnectorSupportedResources
    */
-  status?: ConnectorSupportedResourcesStatus
+  status?: ResourceStatus
   /**
    * ID of the resource in the Connector's API (downstream)
    * @type {string}
@@ -49,17 +51,6 @@ export interface ConnectorSupportedResources {
    * @memberof ConnectorSupportedResources
    */
   downstream_name?: string
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorSupportedResourcesStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
 }
 
 export function ConnectorSupportedResourcesFromJSON(json: any): ConnectorSupportedResources {
@@ -76,7 +67,7 @@ export function ConnectorSupportedResourcesFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    status: !exists(json, 'status') ? undefined : json['status'],
+    status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status']),
     downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     downstream_name: !exists(json, 'downstream_name') ? undefined : json['downstream_name']
   }
@@ -92,7 +83,7 @@ export function ConnectorSupportedResourcesToJSON(value?: ConnectorSupportedReso
   return {
     id: value.id,
     name: value.name,
-    status: value.status,
+    status: ResourceStatusToJSON(value.status),
     downstream_id: value.downstream_id,
     downstream_name: value.downstream_name
   }

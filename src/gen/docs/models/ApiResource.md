@@ -7,26 +7,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
 `name` | **string** | Name of the resource (plural) | [optional] 
-`status` | **string** | Status of the resource. Resources with status live or beta are available. | [optional] 
+`status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
+`linked_resources` | [**Array&lt;ApiResourceLinkedResources&gt;**](ApiResourceLinkedResources.md) | List of linked resources. | [optional] 
 `schema` | **object** | JSON Schema of the resource in our Unified API | [optional] 
 
 
 
 
 
-<a name="ApiResourceStatus"></a>
-## Enum: ApiResource.status
+## Referenced Types:
 
 
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
+* [`ResourceStatus`](ResourceStatus.md)
+* [`ApiResourceLinkedResources`](ApiResourceLinkedResources.md)
 
 
 ---

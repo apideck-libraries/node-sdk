@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
+
 /**
  *
  * @export
@@ -32,22 +34,11 @@ export interface ApiResources {
    */
   name?: string
   /**
-   * Status of the resource. Resources with status live or beta are available.
-   * @type {string}
+   *
+   * @type {ResourceStatus}
    * @memberof ApiResources
    */
-  status?: ApiResourcesStatus
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ApiResourcesStatus {
-  live = 'live',
-  beta = 'beta',
-  development = 'development',
-  considering = 'considering'
+  status?: ResourceStatus
 }
 
 export function ApiResourcesFromJSON(json: any): ApiResources {
@@ -61,7 +52,7 @@ export function ApiResourcesFromJSONTyped(json: any, ignoreDiscriminator: boolea
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    status: !exists(json, 'status') ? undefined : json['status']
+    status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status'])
   }
 }
 
@@ -75,6 +66,6 @@ export function ApiResourcesToJSON(value?: ApiResources | null): any {
   return {
     id: value.id,
     name: value.name,
-    status: value.status
+    status: ResourceStatusToJSON(value.status)
   }
 }

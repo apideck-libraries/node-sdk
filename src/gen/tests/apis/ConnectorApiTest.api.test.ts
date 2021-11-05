@@ -88,6 +88,12 @@ describe('ConnectorApi', () => {
           id: 'companies',
           name: 'Companies',
           status: 'live',
+          linked_resources: [
+            {
+              id: 'companies',
+              unified_property: 'owner_id'
+            }
+          ],
           schema: {
             required: ['name', 'company_name'],
             'x-pii': ['name', 'email', 'first_name', 'last_name'],
@@ -390,7 +396,7 @@ describe('ConnectorApi', () => {
               {
                 event_type: 'string',
                 downstream_event_type: 'string',
-                resource: 'string'
+                resource_id: 'companies'
               }
             ]
           }
@@ -483,7 +489,7 @@ describe('ConnectorApi', () => {
             {
               event_type: 'string',
               downstream_event_type: 'string',
-              resource: 'string'
+              resource_id: 'companies'
             }
           ]
         },

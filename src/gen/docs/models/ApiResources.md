@@ -7,26 +7,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | ID of the resource, typically a lowercased version of its name. | [optional] 
 `name` | **string** | Name of the resource (plural) | [optional] 
-`status` | **string** | Status of the resource. Resources with status live or beta are available. | [optional] 
+`status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
 
 
 
 
 
-<a name="ApiResourcesStatus"></a>
-## Enum: ApiResources.status
+## Referenced Types:
 
 
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
-
+* [`ResourceStatus`](ResourceStatus.md)
 
 ---
 

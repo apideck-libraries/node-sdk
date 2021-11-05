@@ -18,6 +18,7 @@ import {
   ConnectorOauthScopesFromJSON,
   ConnectorOauthScopesToJSON
 } from './ConnectorOauthScopes'
+import { UnifiedApiId, UnifiedApiIdFromJSON, UnifiedApiIdToJSON } from './UnifiedApiId'
 
 /**
  *
@@ -26,45 +27,17 @@ import {
  */
 export interface ConnectorUnifiedApis {
   /**
-   * Name of Apideck Unified API
-   * @type {string}
+   *
+   * @type {UnifiedApiId}
    * @memberof ConnectorUnifiedApis
    */
-  id?: ConnectorUnifiedApisId
+  id?: UnifiedApiId
   /**
    *
    * @type {Array<ConnectorOauthScopes>}
    * @memberof ConnectorUnifiedApis
    */
   oauth_scopes?: Array<ConnectorOauthScopes>
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorUnifiedApisId {
-  vault = 'vault',
-  lead = 'lead',
-  crm = 'crm',
-  accounting = 'accounting',
-  file_storage = 'file-storage',
-  spreadsheet = 'spreadsheet',
-  email = 'email',
-  script = 'script',
-  sms = 'sms',
-  team_messaging = 'team-messaging',
-  ecommerce = 'ecommerce',
-  payroll = 'payroll',
-  customer_support = 'customer-support',
-  time_registration = 'time-registration',
-  transactional_email = 'transactional-email',
-  hcm = 'hcm',
-  form = 'form',
-  csp = 'csp',
-  email_marketing = 'email-marketing',
-  ats = 'ats',
-  hris = 'hris'
 }
 
 export function ConnectorUnifiedApisFromJSON(json: any): ConnectorUnifiedApis {
@@ -79,7 +52,7 @@ export function ConnectorUnifiedApisFromJSONTyped(
     return json
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: !exists(json, 'id') ? undefined : UnifiedApiIdFromJSON(json['id']),
     oauth_scopes: !exists(json, 'oauth_scopes')
       ? undefined
       : (json['oauth_scopes'] as Array<any>).map(ConnectorOauthScopesFromJSON)
@@ -94,7 +67,7 @@ export function ConnectorUnifiedApisToJSON(value?: ConnectorUnifiedApis | null):
     return null
   }
   return {
-    id: value.id,
+    id: UnifiedApiIdToJSON(value.id),
     oauth_scopes:
       value.oauth_scopes === undefined
         ? undefined

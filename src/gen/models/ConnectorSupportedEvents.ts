@@ -32,11 +32,11 @@ export interface ConnectorSupportedEvents {
    */
   downstream_event_type?: string
   /**
-   *
+   * ID of the resource, typically a lowercased version of name.
    * @type {string}
    * @memberof ConnectorSupportedEvents
    */
-  resource?: string
+  resource_id?: string
 }
 
 export function ConnectorSupportedEventsFromJSON(json: any): ConnectorSupportedEvents {
@@ -55,7 +55,7 @@ export function ConnectorSupportedEventsFromJSONTyped(
     downstream_event_type: !exists(json, 'downstream_event_type')
       ? undefined
       : json['downstream_event_type'],
-    resource: !exists(json, 'resource') ? undefined : json['resource']
+    resource_id: !exists(json, 'resource_id') ? undefined : json['resource_id']
   }
 }
 
@@ -69,6 +69,6 @@ export function ConnectorSupportedEventsToJSON(value?: ConnectorSupportedEvents 
   return {
     event_type: value.event_type,
     downstream_event_type: value.downstream_event_type,
-    resource: value.resource
+    resource_id: value.resource_id
   }
 }

@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** | ID of the resource, typically a lowercased version of its name. | [optional] 
+`id` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
 `name` | **string** | Name of the resource (plural) | [optional] 
-`status` | **string** | Status of the resource. Resources with status live or beta are available. | [optional] 
+`status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
 `downstream_id` | **string** | ID of the resource in the Connector\'s API (downstream) | [optional] 
 `downstream_name` | **string** | Name of the resource in the Connector\'s API (downstream) | [optional] 
 
@@ -15,18 +15,10 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorSupportedResourcesStatus"></a>
-## Enum: ConnectorSupportedResources.status
+## Referenced Types:
 
 
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
+* [`ResourceStatus`](ResourceStatus.md)
 
 
 
