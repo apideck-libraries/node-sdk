@@ -949,7 +949,7 @@ describe('AccountingApi', () => {
               quantity: 1,
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
-              discount_percentage: 0,
+              discount_percentage: 0.01,
               item: {
                 id: '12344'
               },
@@ -1069,7 +1069,7 @@ describe('AccountingApi', () => {
                 quantity: 1,
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
-                discount_percentage: 0,
+                discount_percentage: 0.01,
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -1258,7 +1258,7 @@ describe('AccountingApi', () => {
               quantity: 1,
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
-              discount_percentage: 0,
+              discount_percentage: 0.01,
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1402,7 +1402,7 @@ describe('AccountingApi', () => {
               quantity: 1,
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
-              discount_percentage: 0,
+              discount_percentage: 0.01,
               item: {
                 id: '12344'
               },
