@@ -10,10 +10,13 @@ Name | Type | Description | Notes
 `last_name` | **string** |  | [optional] 
 `middle_name` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
+`picture_url` | **string** | The URL pointing to a picture. | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
+`team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
 `company_id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
+`employment_start_date` | **string** | A Start Date is the date that the employee started working at the company | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `employment_status` | **string** |  | [optional] 
 `manager_id` | **string** |  | [optional] 
@@ -56,6 +59,9 @@ Name | Type | Description | Notes
 
 
 
+
+
+* [`EmployeeTeam`](EmployeeTeam.md)
 
 
 

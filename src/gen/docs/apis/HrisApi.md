@@ -68,10 +68,16 @@ const params = {
     last_name: 'Musk',
     middle_name: 'D.',
     title: 'CEO',
+    picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
+    team: {
+      id: '1234',
+      name: 'Full Stack Engineers'
+    },
     company_id: '23456',
     company_name: 'SpaceX',
+    employment_start_date: '2021-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
     manager_id: '23456',
@@ -447,10 +453,16 @@ const params = {
     last_name: 'Musk',
     middle_name: 'D.',
     title: 'CEO',
+    picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
+    team: {
+      id: '1234',
+      name: 'Full Stack Engineers'
+    },
     company_id: '23456',
     company_name: 'SpaceX',
+    employment_start_date: '2021-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
     manager_id: '23456',

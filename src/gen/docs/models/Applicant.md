@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`position_id` | **string** | The PositionId the applicant applied for. | [optional] 
 `name` | **string** | The name of an applicant. | [optional] 
 `first_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

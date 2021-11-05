@@ -64,6 +64,7 @@ const apideck = new Apideck({
 
 const params = {
   applicant: {
+    position_id: '123',
     name: 'Elon Musk',
     first_name: 'Elon',
     last_name: 'Musk',
