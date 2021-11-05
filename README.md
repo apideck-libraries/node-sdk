@@ -14,13 +14,13 @@
 Install the latest SDK using npm:
 
 ```console
-$ npm install @apideck/node@beta
+$ npm install @apideck/node
 ```
 
 or Yarn
 
 ```console
-$ yarn add @apideck/node@beta
+$ yarn add @apideck/node
 ```
 
 ## Getting started
