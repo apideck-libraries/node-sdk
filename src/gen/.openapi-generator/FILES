@@ -18,6 +18,7 @@ Address.md
 Api.md
 ApiResource.md
 ApiResourceCoverage.md
+ApiResourceCoverageCoverage.md
 ApiResourceLinkedResources.md
 ApiResources.md
 ApiStatus.md
@@ -311,6 +312,7 @@ models/Address.ts
 models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
+models/ApiResourceCoverageCoverage.ts
 models/ApiResourceLinkedResources.ts
 models/ApiResources.ts
 models/ApiStatus.ts

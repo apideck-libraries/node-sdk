@@ -13,6 +13,11 @@
  */
 
 import { exists } from '../runtime'
+import {
+  ApiResourceCoverageCoverage,
+  ApiResourceCoverageCoverageFromJSON,
+  ApiResourceCoverageCoverageToJSON
+} from './ApiResourceCoverageCoverage'
 import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
 
 /**
@@ -41,10 +46,10 @@ export interface ApiResourceCoverage {
   status?: ResourceStatus
   /**
    *
-   * @type {Array<any>}
+   * @type {Array<ApiResourceCoverageCoverage>}
    * @memberof ApiResourceCoverage
    */
-  coverage?: Array<any>
+  coverage?: Array<ApiResourceCoverageCoverage>
 }
 
 export function ApiResourceCoverageFromJSON(json: any): ApiResourceCoverage {
@@ -62,7 +67,9 @@ export function ApiResourceCoverageFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     status: !exists(json, 'status') ? undefined : ResourceStatusFromJSON(json['status']),
-    coverage: !exists(json, 'coverage') ? undefined : json['coverage']
+    coverage: !exists(json, 'coverage')
+      ? undefined
+      : (json['coverage'] as Array<any>).map(ApiResourceCoverageCoverageFromJSON)
   }
 }
 
@@ -77,6 +84,9 @@ export function ApiResourceCoverageToJSON(value?: ApiResourceCoverage | null): a
     id: value.id,
     name: value.name,
     status: ResourceStatusToJSON(value.status),
-    coverage: value.coverage
+    coverage:
+      value.coverage === undefined
+        ? undefined
+        : (value.coverage as Array<any>).map(ApiResourceCoverageCoverageToJSON)
   }
 }

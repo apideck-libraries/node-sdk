@@ -13,12 +13,8 @@
  */
 
 import { exists } from '../runtime'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
 import { LinkedFolder, LinkedFolderFromJSON, LinkedFolderToJSON } from './LinkedFolder'
 import { Owner, OwnerFromJSON, OwnerToJSON } from './Owner'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { UpdatedBy, UpdatedByFromJSON, UpdatedByToJSON } from './UpdatedBy'
 
 /**
  *
@@ -76,28 +72,28 @@ export interface Folder {
   readonly parent_folders_complete?: boolean
   /**
    *
-   * @type {UpdatedBy}
+   * @type {string}
    * @memberof Folder
    */
-  updated_by?: UpdatedBy
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof Folder
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof Folder
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof Folder
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 export function FolderFromJSON(json: any): Folder {
@@ -119,10 +115,10 @@ export function FolderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fo
     parent_folders_complete: !exists(json, 'parent_folders_complete')
       ? undefined
       : json['parent_folders_complete'],
-    updated_by: !exists(json, 'updated_by') ? undefined : UpdatedByFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -137,10 +133,6 @@ export function FolderToJSON(value?: Folder | null): any {
     name: value.name,
     parent_folders: (value.parent_folders as Array<any>).map(LinkedFolderToJSON),
     description: value.description,
-    owner: OwnerToJSON(value.owner),
-    updated_by: UpdatedByToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    owner: OwnerToJSON(value.owner)
   }
 }

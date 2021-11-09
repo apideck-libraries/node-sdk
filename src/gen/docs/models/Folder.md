@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 `size` | **number** | The size of the folder in bytes | [optional] 
 `owner` | [**Owner**](Owner.md) |  | [optional] 
 `parent_folders_complete` | **boolean** | Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder | [optional] 
-`updated_by` | [**UpdatedBy**](UpdatedBy.md) |  | [optional] 
-`created_by` | [**CreatedBy**](CreatedBy.md) |  | [optional] 
-`updated_at` | [**UpdatedAt**](UpdatedAt.md) |  | [optional] 
-`created_at` | [**CreatedAt**](CreatedAt.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 
@@ -31,10 +31,10 @@ Name | Type | Description | Notes
 
 * [`Owner`](Owner.md)
 
-* [`UpdatedBy`](UpdatedBy.md)
-* [`CreatedBy`](CreatedBy.md)
-* [`UpdatedAt`](UpdatedAt.md)
-* [`CreatedAt`](CreatedAt.md)
+
+
+
+
 
 ---
 

@@ -35,7 +35,21 @@ describe('ConnectorApi', () => {
           id: 'companies',
           name: 'Companies',
           status: 'live',
-          coverage: [null]
+          coverage: [
+            {
+              downstream_id: 'accounts',
+              downstream_name: 'Accounts',
+              pagination_supported: true,
+              supported_operations: ['all', 'one', 'add', 'update', 'delete'],
+              supported_filters: ['name', 'email'],
+              supported_sort_by: ['updated_at', 'created_at', 'name'],
+              supported_fields: [
+                {
+                  unified_property: 'owner_id'
+                }
+              ]
+            }
+          ]
         },
         meta: {
           items_on_page: 50,

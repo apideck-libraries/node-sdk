@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
 `name` | **string** | Name of the resource (plural) | [optional] 
 `status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
-`coverage` | **Array&lt;any&gt;** |  | [optional] 
+`coverage` | [**Array&lt;ApiResourceCoverageCoverage&gt;**](ApiResourceCoverageCoverage.md) |  | [optional] 
 
 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 
 * [`ResourceStatus`](ResourceStatus.md)
-
+* [`ApiResourceCoverageCoverage`](ApiResourceCoverageCoverage.md)
 
 ---
 
