@@ -32,6 +32,7 @@ Name | Type | Description  | Notes
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
  **filter** | **FilesFilter** | Apply filters (beta) | (optional) 
+ **sort** | **FilesSort** | Apply sorting | (optional) 
 
 
 

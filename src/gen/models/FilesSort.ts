@@ -18,19 +18,19 @@ import { SortDirection, SortDirectionFromJSON, SortDirectionToJSON } from './Sor
 /**
  *
  * @export
- * @interface LeadsSort
+ * @interface FilesSort
  */
-export interface LeadsSort {
+export interface FilesSort {
   /**
-   * The field on which to sort the Leads
+   * The field on which to sort the Files
    * @type {string}
-   * @memberof LeadsSort
+   * @memberof FilesSort
    */
-  by: LeadsSortBy
+  by: FilesSortBy
   /**
    *
    * @type {SortDirection}
-   * @memberof LeadsSort
+   * @memberof FilesSort
    */
   direction?: SortDirection
 }
@@ -39,20 +39,16 @@ export interface LeadsSort {
  * @export
  * @enum {string}
  */
-export enum LeadsSortBy {
-  created_at = 'created_at',
+export enum FilesSortBy {
   updated_at = 'updated_at',
-  name = 'name',
-  first_name = 'first_name',
-  last_name = 'last_name',
-  email = 'email'
+  name = 'name'
 }
 
-export function LeadsSortFromJSON(json: any): LeadsSort {
-  return LeadsSortFromJSONTyped(json, false)
+export function FilesSortFromJSON(json: any): FilesSort {
+  return FilesSortFromJSONTyped(json, false)
 }
 
-export function LeadsSortFromJSONTyped(json: any, ignoreDiscriminator: boolean): LeadsSort {
+export function FilesSortFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilesSort {
   if (json === undefined || json === null) {
     return json
   }
@@ -62,7 +58,7 @@ export function LeadsSortFromJSONTyped(json: any, ignoreDiscriminator: boolean):
   }
 }
 
-export function LeadsSortToJSON(value?: LeadsSort | null): any {
+export function FilesSortToJSON(value?: FilesSort | null): any {
   if (value === undefined) {
     return undefined
   }

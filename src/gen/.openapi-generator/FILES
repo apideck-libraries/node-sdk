@@ -122,6 +122,7 @@ FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FilesFilter.md
 FilesSearch.md
+FilesSort.md
 FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
@@ -392,6 +393,7 @@ models/ExecuteWebhookResponse.ts
 models/FileOwner.ts
 models/FilesFilter.ts
 models/FilesSearch.ts
+models/FilesSort.ts
 models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
