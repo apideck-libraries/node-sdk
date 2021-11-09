@@ -53,7 +53,7 @@ describe('FileStorageApi', () => {
             parent_folders: [
               {
                 id: '12345',
-                name: 'Documents'
+                name: 'Personal'
               }
             ],
             parent_folders_complete: true,
@@ -199,7 +199,7 @@ describe('FileStorageApi', () => {
           parent_folders: [
             {
               id: '12345',
-              name: 'Documents'
+              name: 'Personal'
             }
           ],
           parent_folders_complete: true,
@@ -263,7 +263,7 @@ describe('FileStorageApi', () => {
             parent_folders: [
               {
                 id: '12345',
-                name: 'Documents'
+                name: 'Personal'
               }
             ],
             parent_folders_complete: true,
@@ -299,6 +299,239 @@ describe('FileStorageApi', () => {
         }
       } as any
       const current = await fileStorage.filesSearch(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#foldersAdd', () => {
+    const endpoint = '/file-storage/folders'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Folders',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        folder: {
+          name: 'Documents',
+          description: 'My Personal Documents',
+          parent_folder_id: '1234'
+        }
+      } as any
+      const current = await fileStorage.foldersAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#foldersCopy', () => {
+    const endpoint = '/file-storage/folders/{id}/copy'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Folders',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example',
+        foldersCopy: {
+          name: 'Documents',
+          parent_folder_id: '1234'
+        }
+      } as any
+      const current = await fileStorage.foldersCopy(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#foldersDelete', () => {
+    const endpoint = '/file-storage/folders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Folders',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.foldersDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#foldersOne', () => {
+    const endpoint = '/file-storage/folders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Folders',
+        operation: 'one',
+        data: {
+          id: '12345',
+          name: 'Documents',
+          description: 'My Personal Documents',
+          path: '/Personal/Documents',
+          size: 1810673,
+          owner: {
+            id: '12345',
+            email: 'hello@apideck.com',
+            name: 'Elon Musk'
+          },
+          parent_folders: [
+            {
+              id: '12345',
+              name: 'Personal'
+            }
+          ],
+          parent_folders_complete: true,
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.foldersOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#foldersUpdate', () => {
+    const endpoint = '/file-storage/folders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Folders',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example',
+        folder: {
+          name: 'Documents',
+          description: 'My Personal Documents',
+          parent_folder_id: '1234'
+        }
+      } as any
+      const current = await fileStorage.foldersUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
