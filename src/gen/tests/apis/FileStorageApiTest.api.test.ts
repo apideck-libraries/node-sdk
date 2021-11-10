@@ -381,7 +381,7 @@ describe('FileStorageApi', () => {
       const { fileStorage } = apideck
       const params = {
         id: 'id_example',
-        foldersCopy: {
+        folder: {
           name: 'Documents',
           parent_folder_id: '1234'
         }

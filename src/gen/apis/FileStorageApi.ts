@@ -82,7 +82,7 @@ export interface FileStorageApiFilesSearchRequest {
 }
 
 export interface FileStorageApiFoldersAddRequest {
-  createFolderRequest: CreateFolderRequest
+  folder: CreateFolderRequest
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -91,7 +91,7 @@ export interface FileStorageApiFoldersAddRequest {
 
 export interface FileStorageApiFoldersCopyRequest {
   id: string
-  copyFolderRequest: CopyFolderRequest
+  folder: CopyFolderRequest
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -116,7 +116,7 @@ export interface FileStorageApiFoldersOneRequest {
 
 export interface FileStorageApiFoldersUpdateRequest {
   id: string
-  updateFolderRequest: UpdateFolderRequest
+  folder: UpdateFolderRequest
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -436,13 +436,10 @@ export class FileStorageApi extends runtime.BaseAPI {
   async foldersAddRaw(
     requestParameters: FileStorageApiFoldersAddRequest
   ): Promise<runtime.ApiResponse<CreateFolderResponse>> {
-    if (
-      requestParameters.createFolderRequest === null ||
-      requestParameters.createFolderRequest === undefined
-    ) {
+    if (requestParameters.folder === null || requestParameters.folder === undefined) {
       throw new runtime.RequiredError(
-        'createFolderRequest',
-        'Required parameter requestParameters.createFolderRequest was null or undefined when calling foldersAdd.'
+        'folder',
+        'Required parameter requestParameters.folder was null or undefined when calling foldersAdd.'
       )
     }
 
@@ -477,7 +474,7 @@ export class FileStorageApi extends runtime.BaseAPI {
       method: 'POST',
       headers: headerParameters,
       query: queryParameters,
-      body: CreateFolderRequestToJSON(requestParameters.createFolderRequest)
+      body: CreateFolderRequestToJSON(requestParameters.folder)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
@@ -510,13 +507,10 @@ export class FileStorageApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.copyFolderRequest === null ||
-      requestParameters.copyFolderRequest === undefined
-    ) {
+    if (requestParameters.folder === null || requestParameters.folder === undefined) {
       throw new runtime.RequiredError(
-        'copyFolderRequest',
-        'Required parameter requestParameters.copyFolderRequest was null or undefined when calling foldersCopy.'
+        'folder',
+        'Required parameter requestParameters.folder was null or undefined when calling foldersCopy.'
       )
     }
 
@@ -554,7 +548,7 @@ export class FileStorageApi extends runtime.BaseAPI {
       method: 'POST',
       headers: headerParameters,
       query: queryParameters,
-      body: CopyFolderRequestToJSON(requestParameters.copyFolderRequest)
+      body: CopyFolderRequestToJSON(requestParameters.folder)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
@@ -711,13 +705,10 @@ export class FileStorageApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.updateFolderRequest === null ||
-      requestParameters.updateFolderRequest === undefined
-    ) {
+    if (requestParameters.folder === null || requestParameters.folder === undefined) {
       throw new runtime.RequiredError(
-        'updateFolderRequest',
-        'Required parameter requestParameters.updateFolderRequest was null or undefined when calling foldersUpdate.'
+        'folder',
+        'Required parameter requestParameters.folder was null or undefined when calling foldersUpdate.'
       )
     }
 
@@ -755,7 +746,7 @@ export class FileStorageApi extends runtime.BaseAPI {
       method: 'PATCH',
       headers: headerParameters,
       query: queryParameters,
-      body: UpdateFolderRequestToJSON(requestParameters.updateFolderRequest)
+      body: UpdateFolderRequestToJSON(requestParameters.folder)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>

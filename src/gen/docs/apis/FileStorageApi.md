@@ -376,7 +376,7 @@ fileStorageApi.foldersAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createFolderRequest** | [CreateFolderRequest](../models/CreateFolderRequest.md)|  |
+ **folder** | [CreateFolderRequest](../models/CreateFolderRequest.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -449,7 +449,7 @@ fileStorageApi.foldersCopy(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **copyFolderRequest** | [CopyFolderRequest](../models/CopyFolderRequest.md)|  |
+ **folder** | [CopyFolderRequest](../models/CopyFolderRequest.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -489,7 +489,7 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
-  foldersCopy: {
+  folder: {
     name: 'Documents',
     parent_folder_id: '1234'
   }
@@ -661,7 +661,7 @@ fileStorageApi.foldersUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateFolderRequest** | [UpdateFolderRequest](../models/UpdateFolderRequest.md)|  |
+ **folder** | [UpdateFolderRequest](../models/UpdateFolderRequest.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
