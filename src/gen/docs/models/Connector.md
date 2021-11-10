@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 `logo_url` | **string** | Link to the full logo for the connector. | [optional] 
 `website_url` | **string** | Link to the connector\'s website. | [optional] 
 `auth_type` | **string** | Type of authorization used by the connector | [optional] 
-`status` | **string** | Status of the connector. Connectors with status live or beta are callable. | [optional] 
+`status` | [**ConnectorStatus**](ConnectorStatus.md) |  | [optional] 
 `settings` | [**Array&lt;ConnectorSetting&gt;**](ConnectorSetting.md) |  | [optional] 
 `service_id` | **string** | Service provider identifier | [optional] 
 `unified_apis` | [**Array&lt;ConnectorUnifiedApis&gt;**](ConnectorUnifiedApis.md) | List of Unified APIs that feature this connector. | [optional] 
 `supported_resources` | [**Array&lt;ConnectorSupportedResources&gt;**](ConnectorSupportedResources.md) | List of resources that are supported on the connector. | [optional] 
 `configurable_resources` | **Array&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
-`supported_events` | [**Array&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of resources that are supported on the connector. | [optional] 
+`supported_events` | [**Array&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of events that are supported on the connector. Events are delivered via Webhooks. | [optional] 
 
 
 
@@ -39,21 +39,6 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorStatus"></a>
-## Enum: Connector.status
-
-
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
-
-
 ## Referenced Types:
 
 
@@ -62,7 +47,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`ConnectorStatus`](ConnectorStatus.md)
 * [`ConnectorSetting`](ConnectorSetting.md)
 
 * [`ConnectorUnifiedApis`](ConnectorUnifiedApis.md)

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 `mime_type` | **string** | The MIME type of the file. | [optional] 
 `downloadable` | **boolean** | Whether the current user can download this file | [optional] 
 `size` | **number** | The size of the file in bytes | [optional] 
-`owner` | [**FileOwner**](FileOwner.md) |  | [optional] 
-`parent_folders` | **Array&lt;object&gt;** | The parent folders of the file, starting from the root | [optional] 
+`owner` | [**Owner**](Owner.md) |  | [optional] 
+`parent_folders` | [**Array&lt;LinkedFolder&gt;**](LinkedFolder.md) | The parent folders of the file, starting from the root | [optional] 
 `parent_folders_complete` | **boolean** | Whether the list of parent folder is complete. Some connectors only return the direct parent of a file | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
@@ -47,8 +47,8 @@ Name | Type | Description | Notes
 
 
 
-* [`FileOwner`](FileOwner.md)
-
+* [`Owner`](Owner.md)
+* [`LinkedFolder`](LinkedFolder.md)
 
 
 

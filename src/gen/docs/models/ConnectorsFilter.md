@@ -5,27 +5,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`unified_api` | **string** | Unified API to filter on | [optional] 
-`status` | **string** | Status to filter on | [optional] 
+`unified_api` | [**UnifiedApiId**](UnifiedApiId.md) |  | [optional] 
+`status` | [**ConnectorStatus**](ConnectorStatus.md) |  | [optional] 
 
 
 
 
 
-<a name="ConnectorsFilterStatus"></a>
-## Enum: ConnectorsFilter.status
-
-
-* `live` (value: `'live'`)
-
-* `beta` (value: `'beta'`)
-
-* `development` (value: `'development'`)
-
-* `considering` (value: `'considering'`)
-
-
-
+## Referenced Types:
+* [`UnifiedApiId`](UnifiedApiId.md)
+* [`ConnectorStatus`](ConnectorStatus.md)
 
 ---
 

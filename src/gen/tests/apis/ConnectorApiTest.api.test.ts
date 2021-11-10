@@ -35,7 +35,21 @@ describe('ConnectorApi', () => {
           id: 'companies',
           name: 'Companies',
           status: 'live',
-          coverage: [null]
+          coverage: [
+            {
+              downstream_id: 'accounts',
+              downstream_name: 'Accounts',
+              pagination_supported: true,
+              supported_operations: ['all', 'one', 'add', 'update', 'delete'],
+              supported_filters: ['name', 'email'],
+              supported_sort_by: ['updated_at', 'created_at', 'name'],
+              supported_fields: [
+                {
+                  unified_property: 'owner_id'
+                }
+              ]
+            }
+          ]
         },
         meta: {
           items_on_page: 50,
@@ -88,6 +102,12 @@ describe('ConnectorApi', () => {
           id: 'companies',
           name: 'Companies',
           status: 'live',
+          linked_resources: [
+            {
+              id: 'companies',
+              unified_property: 'owner_id'
+            }
+          ],
           schema: {
             required: ['name', 'company_name'],
             'x-pii': ['name', 'email', 'first_name', 'last_name'],
@@ -390,7 +410,7 @@ describe('ConnectorApi', () => {
               {
                 event_type: 'string',
                 downstream_event_type: 'string',
-                resource: 'string'
+                resource_id: 'companies'
               }
             ]
           }
@@ -483,7 +503,7 @@ describe('ConnectorApi', () => {
             {
               event_type: 'string',
               downstream_event_type: 'string',
-              resource: 'string'
+              resource_id: 'companies'
             }
           ]
         },

@@ -18,7 +18,10 @@ Address.md
 Api.md
 ApiResource.md
 ApiResourceCoverage.md
+ApiResourceCoverageCoverage.md
+ApiResourceLinkedResources.md
 ApiResources.md
+ApiStatus.md
 ApisFilter.md
 Applicant.md
 AtsApi.md
@@ -42,6 +45,7 @@ ConnectorOauthScopes.md
 ConnectorResource.md
 ConnectorResourceSupportedFields.md
 ConnectorSetting.md
+ConnectorStatus.md
 ConnectorSupportedEvents.md
 ConnectorSupportedResources.md
 ConnectorUnifiedApis.md
@@ -54,6 +58,7 @@ ConsumerRequestCountsInDateRangeResponseData.md
 Contact.md
 ContactsFilter.md
 ContactsSort.md
+CopyFolderRequest.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
 CreateCompanyResponse.md
@@ -63,6 +68,8 @@ CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
 CreateEmployeeResponse.md
 CreateFileResponse.md
+CreateFolderRequest.md
+CreateFolderResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
@@ -92,6 +99,7 @@ DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
+DeleteFolderResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
@@ -114,11 +122,12 @@ ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
 File.md
-FileOwner.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FilesFilter.md
 FilesSearch.md
+FilesSort.md
+Folder.md
 FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
@@ -152,6 +161,8 @@ GetEmployeeResponse.md
 GetEmployeesResponse.md
 GetFileResponse.md
 GetFilesResponse.md
+GetFolderResponse.md
+GetFoldersResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -200,6 +211,7 @@ LedgerAccount.md
 LedgerAccountParentAccount.md
 LedgerAccounts.md
 LinkedCustomer.md
+LinkedFolder.md
 LinkedInvoiceItem.md
 LinkedLedgerAccount.md
 LinkedTaxRate.md
@@ -217,6 +229,7 @@ Note.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
+Owner.md
 Payment.md
 PaymentRequiredResponse.md
 PaymentUnit.md
@@ -225,6 +238,7 @@ Pipeline.md
 PipelineStages.md
 Price.md
 RequestCountAllocation.md
+ResourceStatus.md
 Session.md
 SessionSettings.md
 SessionTheme.md
@@ -249,6 +263,8 @@ UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
 UpdateEmployeeResponse.md
 UpdateFileResponse.md
+UpdateFolderRequest.md
+UpdateFolderResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
@@ -296,7 +312,10 @@ models/Address.ts
 models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
+models/ApiResourceCoverageCoverage.ts
+models/ApiResourceLinkedResources.ts
 models/ApiResources.ts
+models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
 models/AuthType.ts
@@ -316,6 +335,7 @@ models/ConnectorOauthScopes.ts
 models/ConnectorResource.ts
 models/ConnectorResourceSupportedFields.ts
 models/ConnectorSetting.ts
+models/ConnectorStatus.ts
 models/ConnectorSupportedEvents.ts
 models/ConnectorSupportedResources.ts
 models/ConnectorUnifiedApis.ts
@@ -328,6 +348,7 @@ models/ConsumerRequestCountsInDateRangeResponseData.ts
 models/Contact.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
+models/CopyFolderRequest.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
 models/CreateCompanyResponse.ts
@@ -337,6 +358,8 @@ models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
 models/CreateEmployeeResponse.ts
 models/CreateFileResponse.ts
+models/CreateFolderRequest.ts
+models/CreateFolderResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
@@ -362,6 +385,7 @@ models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
+models/DeleteFolderResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
@@ -382,9 +406,10 @@ models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
-models/FileOwner.ts
 models/FilesFilter.ts
 models/FilesSearch.ts
+models/FilesSort.ts
+models/Folder.ts
 models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
@@ -418,6 +443,8 @@ models/GetEmployeeResponse.ts
 models/GetEmployeesResponse.ts
 models/GetFileResponse.ts
 models/GetFilesResponse.ts
+models/GetFolderResponse.ts
+models/GetFoldersResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -462,6 +489,7 @@ models/LedgerAccount.ts
 models/LedgerAccountParentAccount.ts
 models/LedgerAccounts.ts
 models/LinkedCustomer.ts
+models/LinkedFolder.ts
 models/LinkedInvoiceItem.ts
 models/LinkedLedgerAccount.ts
 models/LinkedTaxRate.ts
@@ -481,6 +509,7 @@ models/Note.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
+models/Owner.ts
 models/Payment.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
@@ -489,6 +518,7 @@ models/Pipeline.ts
 models/PipelineStages.ts
 models/Price.ts
 models/RequestCountAllocation.ts
+models/ResourceStatus.ts
 models/Session.ts
 models/SessionSettings.ts
 models/SessionTheme.ts
@@ -511,6 +541,8 @@ models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
+models/UpdateFolderRequest.ts
+models/UpdateFolderResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts
