@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `tax_remitted_account_id` | **string** | Unique identifier for the account for tax remitted. | [optional] 
 `components` | **Array&lt;object&gt;** |  | [optional] 
 `tax_type` | **string** | Tax type used to define the source of tax collected or paid | [optional] 
+`type` | **string** | Tax type used to indicate the source of tax collected or paid | [optional] 
 `original_tax_rate_id` | **string** | ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities. | [optional] 
 `active` | **boolean** |  | [optional] 
 `row_version` | **string** |  | [optional] 

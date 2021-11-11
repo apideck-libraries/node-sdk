@@ -2343,6 +2343,7 @@ const params = {
       }
     ],
     tax_type: 'output_gst',
+    type: 'GST_VAT',
     original_tax_rate_id: '12345',
     active: true,
     row_version: '1-12345'
@@ -2639,6 +2640,7 @@ const params = {
       }
     ],
     tax_type: 'output_gst',
+    type: 'GST_VAT',
     original_tax_rate_id: '12345',
     active: true,
     row_version: '1-12345'
