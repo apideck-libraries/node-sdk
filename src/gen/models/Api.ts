@@ -41,6 +41,12 @@ export interface Api {
    */
   name?: string
   /**
+   * Description of the API.
+   * @type {string}
+   * @memberof Api
+   */
+  description?: string | null
+  /**
    *
    * @type {ApiStatus}
    * @memberof Api
@@ -58,6 +64,12 @@ export interface Api {
    * @memberof Api
    */
   api_reference_url?: string
+  /**
+   * ID of the Postman collection of the API.
+   * @type {string}
+   * @memberof Api
+   */
+  postman_collection_id?: string | null
   /**
    * List of categories the API belongs to.
    * @type {Array<string>}
@@ -93,9 +105,13 @@ export function ApiFromJSONTyped(json: any, ignoreDiscriminator: boolean): Api {
     id: !exists(json, 'id') ? undefined : json['id'],
     type: !exists(json, 'type') ? undefined : json['type'],
     name: !exists(json, 'name') ? undefined : json['name'],
+    description: !exists(json, 'description') ? undefined : json['description'],
     status: !exists(json, 'status') ? undefined : ApiStatusFromJSON(json['status']),
     spec_url: !exists(json, 'spec_url') ? undefined : json['spec_url'],
     api_reference_url: !exists(json, 'api_reference_url') ? undefined : json['api_reference_url'],
+    postman_collection_id: !exists(json, 'postman_collection_id')
+      ? undefined
+      : json['postman_collection_id'],
     categories: !exists(json, 'categories') ? undefined : json['categories'],
     resources: !exists(json, 'resources')
       ? undefined
@@ -113,9 +129,11 @@ export function ApiToJSON(value?: Api | null): any {
   return {
     type: value.type,
     name: value.name,
+    description: value.description,
     status: ApiStatusToJSON(value.status),
     spec_url: value.spec_url,
     api_reference_url: value.api_reference_url,
+    postman_collection_id: value.postman_collection_id,
     categories: value.categories,
     resources:
       value.resources === undefined
