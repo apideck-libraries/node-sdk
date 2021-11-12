@@ -78,18 +78,20 @@ describe('LeadApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           social_links: [
@@ -187,18 +189,20 @@ describe('LeadApi', () => {
                 name: 'HQ US',
                 line1: 'Main street',
                 line2: 'apt #',
+                street_number: '25',
                 city: 'San Francisco',
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
                 latitude: '40.759211',
                 longitude: '-73.984638',
-                contact_name: '111-111-1111',
-                salutation: '111-111-1111',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
                 phone_number: '111-111-1111',
-                fax: '111-111-1111',
-                email: '111-111-1111',
-                website: '111-111-1111'
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com'
               }
             ],
             social_links: [
@@ -358,18 +362,20 @@ describe('LeadApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           social_links: [
@@ -488,18 +494,20 @@ describe('LeadApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           social_links: [
