@@ -630,10 +630,12 @@ const apideck = new Apideck({
 
 const params = {
   invoiceItem: {
-    code: '120-C',
-    sold: true,
     name: 'Model Y',
     description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+    code: '120-C',
+    sold: true,
+    purchased: true,
+    tracked: true,
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
@@ -643,8 +645,19 @@ const params = {
         id: '123456'
       }
     },
+    purchase_details: {
+      unit_price: 27500.5,
+      unit_of_measure: 'pc.',
+      tax_inclusive: true,
+      tax_rate: {
+        id: '123456'
+      }
+    },
     quantity: 1,
     unit_price: 27500.5,
+    asset_account: {
+      id: '123456'
+    },
     income_account: {
       id: '123456'
     },
@@ -931,10 +944,12 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoiceItem: {
-    code: '120-C',
-    sold: true,
     name: 'Model Y',
     description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+    code: '120-C',
+    sold: true,
+    purchased: true,
+    tracked: true,
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
@@ -944,8 +959,19 @@ const params = {
         id: '123456'
       }
     },
+    purchase_details: {
+      unit_price: 27500.5,
+      unit_of_measure: 'pc.',
+      tax_inclusive: true,
+      tax_rate: {
+        id: '123456'
+      }
+    },
     quantity: 1,
     unit_price: 27500.5,
+    asset_account: {
+      id: '123456'
+    },
     income_account: {
       id: '123456'
     },

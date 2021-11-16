@@ -6,14 +6,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
-`code` | **string** | User defined item code | [optional] 
-`sold` | **boolean** | Item can be sold | [optional] 
 `name` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
+`code` | **string** | User defined item code | [optional] 
+`sold` | **boolean** | Item will be available on sales transactions | [optional] 
+`purchased` | **boolean** | Item is available for purchase transactions | [optional] 
+`tracked` | **boolean** | Item is inventoried | [optional] 
 `type` | **string** |  | [optional] 
 `sales_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
+`purchase_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
 `quantity` | **number** |  | [optional] 
 `unit_price` | **number** |  | [optional] 
+`asset_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `income_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `expense_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `active` | **boolean** |  | [optional] 
@@ -45,9 +49,13 @@ Name | Type | Description | Notes
 
 
 
+
+
+* [`InvoiceItemSalesDetails`](InvoiceItemSalesDetails.md)
 * [`InvoiceItemSalesDetails`](InvoiceItemSalesDetails.md)
 
 
+* [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 
