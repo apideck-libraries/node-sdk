@@ -16,48 +16,55 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface CopyFolderRequest
+ * @interface CreateFileRequest
  */
-export interface CopyFolderRequest {
+export interface CreateFileRequest {
   /**
-   * The parent folder to copy the folder to.
+   * The name of the file.
    * @type {string}
-   * @memberof CopyFolderRequest
+   * @memberof CreateFileRequest
+   */
+  name: string
+  /**
+   * The parent folder to create the new file within.
+   * @type {string}
+   * @memberof CreateFileRequest
    */
   parent_folder_id: string
   /**
    *
    * @type {string}
-   * @memberof CopyFolderRequest
+   * @memberof CreateFileRequest
    */
   readonly id?: string
   /**
-   * The name of the folder.
+   * Optional description of the file.
    * @type {string}
-   * @memberof CopyFolderRequest
+   * @memberof CreateFileRequest
    */
-  name?: string
+  description?: string
 }
 
-export function CopyFolderRequestFromJSON(json: any): CopyFolderRequest {
-  return CopyFolderRequestFromJSONTyped(json, false)
+export function CreateFileRequestFromJSON(json: any): CreateFileRequest {
+  return CreateFileRequestFromJSONTyped(json, false)
 }
 
-export function CopyFolderRequestFromJSONTyped(
+export function CreateFileRequestFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): CopyFolderRequest {
+): CreateFileRequest {
   if (json === undefined || json === null) {
     return json
   }
   return {
+    name: json['name'],
     parent_folder_id: json['parent_folder_id'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    name: !exists(json, 'name') ? undefined : json['name']
+    description: !exists(json, 'description') ? undefined : json['description']
   }
 }
 
-export function CopyFolderRequestToJSON(value?: CopyFolderRequest | null): any {
+export function CreateFileRequestToJSON(value?: CreateFileRequest | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -65,7 +72,8 @@ export function CopyFolderRequestToJSON(value?: CopyFolderRequest | null): any {
     return null
   }
   return {
+    name: value.name,
     parent_folder_id: value.parent_folder_id,
-    name: value.name
+    description: value.description
   }
 }

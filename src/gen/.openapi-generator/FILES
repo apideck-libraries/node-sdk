@@ -68,6 +68,7 @@ CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
 CreateEmployeeResponse.md
+CreateFileRequest.md
 CreateFileResponse.md
 CreateFolderRequest.md
 CreateFolderResponse.md
@@ -359,6 +360,7 @@ models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
 models/CreateEmployeeResponse.ts
+models/CreateFileRequest.ts
 models/CreateFileResponse.ts
 models/CreateFolderRequest.ts
 models/CreateFolderResponse.ts

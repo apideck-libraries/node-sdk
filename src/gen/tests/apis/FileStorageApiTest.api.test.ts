@@ -304,6 +304,45 @@ describe('FileStorageApi', () => {
     })
   })
 
+  describe('#filesUpload', () => {
+    const endpoint = '/file-storage/files'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID',
+      metadata: 'REPLACE_WITH_METADATA'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'files',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {} as any
+      const current = await fileStorage.filesUpload(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#foldersAdd', () => {
     const endpoint = '/file-storage/folders'
 
