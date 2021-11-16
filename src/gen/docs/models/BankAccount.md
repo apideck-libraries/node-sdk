@@ -11,10 +11,35 @@ Name | Type | Description | Notes
 `bank_code` | **string** | A bank code is a code assigned by a central bank, a bank supervisory body or a Bankers Association in a country to all its licensed member banks or financial institutions. | [optional] 
 `account_number` | **string** | A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number. | [optional] 
 `account_name` | **string** | The name which you used in opening your bank account. | [optional] 
+`account_type` | **string** | The type of bank account. | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 
 
 
 
+
+<a name="BankAccountAccountType"></a>
+## Enum: BankAccount.account_type
+
+
+* `bank_account` (value: `'bank_account'`)
+
+* `credit_card` (value: `'credit_card'`)
+
+* `other` (value: `'other'`)
+
+
+
+
+## Referenced Types:
+
+
+
+
+
+
+
+* [`Currency`](Currency.md)
 
 ---
 

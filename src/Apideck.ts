@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch-commonjs'
 import {
   AccountingApi,
   AtsApi,
@@ -45,7 +45,7 @@ export class Apideck {
     }
 
     const configuration = new Configuration({
-      fetchApi: fetch as any,
+      fetchApi: (url, options) => (fetch as any)(url, { highWaterMark: 10000000, ...options }),
       basePath: config.basePath,
       apiKey: `Bearer ${config.apiKey}`,
       headers: {

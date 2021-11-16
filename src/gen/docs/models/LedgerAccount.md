@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `level` | **number** |  | [optional] 
 `active` | **boolean** |  | [optional] 
+`status` | **string** |  | [optional] 
 `header` | **boolean** |  | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `parent_account` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
@@ -68,9 +69,13 @@ Name | Type | Description | Notes
 
 * `accounts_receivable` (value: `'accounts_receivable'`)
 
+* `revenue` (value: `'revenue'`)
+
 * `bank` (value: `'bank'`)
 
 * `current_asset` (value: `'current_asset'`)
+
+* `fixed_asset` (value: `'fixed_asset'`)
 
 * `non_current_asset` (value: `'non_current_asset'`)
 
@@ -97,6 +102,19 @@ Name | Type | Description | Notes
 
 
 
+<a name="LedgerAccountStatus"></a>
+## Enum: LedgerAccount.status
+
+
+* `active` (value: `'active'`)
+
+* `inactive` (value: `'inactive'`)
+
+* `archived` (value: `'archived'`)
+
+
+
+
 ## Referenced Types:
 
 
@@ -112,6 +130,7 @@ Name | Type | Description | Notes
 * [`Currency`](Currency.md)
 
 * [`LinkedTaxRate`](LinkedTaxRate.md)
+
 
 
 

@@ -169,18 +169,20 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        street_number: '25',
         city: 'San Francisco',
         state: 'CA',
         postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638',
-        contact_name: '111-111-1111',
-        salutation: '111-111-1111',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
         phone_number: '111-111-1111',
-        fax: '111-111-1111',
-        email: '111-111-1111',
-        website: '111-111-1111'
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com'
       }
     ],
     notes: 'Some notes about this customer',
@@ -211,7 +213,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active',
     row_version: '1-12345'
@@ -506,18 +510,20 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        street_number: '25',
         city: 'San Francisco',
         state: 'CA',
         postal_code: '94104',
         country: 'US',
         latitude: '40.759211',
         longitude: '-73.984638',
-        contact_name: '111-111-1111',
-        salutation: '111-111-1111',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
         phone_number: '111-111-1111',
-        fax: '111-111-1111',
-        email: '111-111-1111',
-        website: '111-111-1111'
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com'
       }
     ],
     notes: 'Some notes about this customer',
@@ -548,7 +554,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active',
     row_version: '1-12345'
@@ -1065,18 +1073,20 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      street_number: '25',
       city: 'San Francisco',
       state: 'CA',
       postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638',
-      contact_name: '111-111-1111',
-      salutation: '111-111-1111',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
       phone_number: '111-111-1111',
-      fax: '111-111-1111',
-      email: '111-111-1111',
-      website: '111-111-1111'
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com'
     },
     shipping_address: {
       id: '123',
@@ -1085,18 +1095,20 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      street_number: '25',
       city: 'San Francisco',
       state: 'CA',
       postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638',
-      contact_name: '111-111-1111',
-      salutation: '111-111-1111',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
       phone_number: '111-111-1111',
-      fax: '111-111-1111',
-      email: '111-111-1111',
-      website: '111-111-1111'
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com'
     },
     row_version: '1-12345'
   }
@@ -1426,18 +1438,20 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      street_number: '25',
       city: 'San Francisco',
       state: 'CA',
       postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638',
-      contact_name: '111-111-1111',
-      salutation: '111-111-1111',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
       phone_number: '111-111-1111',
-      fax: '111-111-1111',
-      email: '111-111-1111',
-      website: '111-111-1111'
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com'
     },
     shipping_address: {
       id: '123',
@@ -1446,18 +1460,20 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      street_number: '25',
       city: 'San Francisco',
       state: 'CA',
       postal_code: '94104',
       country: 'US',
       latitude: '40.759211',
       longitude: '-73.984638',
-      contact_name: '111-111-1111',
-      salutation: '111-111-1111',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
       phone_number: '111-111-1111',
-      fax: '111-111-1111',
-      email: '111-111-1111',
-      website: '111-111-1111'
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com'
     },
     row_version: '1-12345'
   }
@@ -1541,12 +1557,13 @@ const params = {
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
-    tax_type: 'USD',
+    tax_type: 'NONE',
     tax_rate: {
       id: '123456'
     },
     level: 1,
     active: true,
+    status: 'active',
     header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
@@ -1554,7 +1571,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     parent_account: {
       id: '12345',
@@ -1853,12 +1872,13 @@ const params = {
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
-    tax_type: 'USD',
+    tax_type: 'NONE',
     tax_rate: {
       id: '123456'
     },
     level: 1,
     active: true,
+    status: 'active',
     header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
@@ -1866,7 +1886,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     parent_account: {
       id: '12345',
@@ -2328,23 +2350,25 @@ const apideck = new Apideck({
 
 const params = {
   taxRate: {
-    name: '15% GST on Expenses',
+    id: '1234',
+    name: 'GST on Purchases',
     code: 'ABN',
-    description: 'No ABN Withholding',
+    description: 'Reduced rate GST Purchases',
     effective_tax_rate: 10,
     total_tax_rate: 10,
     tax_payable_account_id: '123456',
     tax_remitted_account_id: '123456',
     components: [
       {
-        name: 'City tax',
+        name: 'GST',
         rate: 10,
         compound: true
       }
     ],
     tax_type: 'output_gst',
+    type: 'NONE',
     original_tax_rate_id: '12345',
-    active: true,
+    status: 'active',
     row_version: '1-12345'
   }
 }
@@ -2624,23 +2648,25 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   taxRate: {
-    name: '15% GST on Expenses',
+    id: '1234',
+    name: 'GST on Purchases',
     code: 'ABN',
-    description: 'No ABN Withholding',
+    description: 'Reduced rate GST Purchases',
     effective_tax_rate: 10,
     total_tax_rate: 10,
     tax_payable_account_id: '123456',
     tax_remitted_account_id: '123456',
     components: [
       {
-        name: 'City tax',
+        name: 'GST',
         rate: 10,
         compound: true
       }
     ],
     tax_type: 'output_gst',
+    type: 'NONE',
     original_tax_rate_id: '12345',
-    active: true,
+    status: 'active',
     row_version: '1-12345'
   }
 }

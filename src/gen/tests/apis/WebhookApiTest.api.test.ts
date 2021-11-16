@@ -1,8 +1,8 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch-commonjs'
 import { Apideck } from '../../../'
-const { Response } = jest.requireActual('node-fetch')
+const { Response } = jest.requireActual('node-fetch-commonjs')
 
-jest.mock('node-fetch', () => jest.fn())
+jest.mock('node-fetch-commonjs', () => jest.fn())
 
 const basePath = 'https://example.com'
 

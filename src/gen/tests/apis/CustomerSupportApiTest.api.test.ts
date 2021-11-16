@@ -1,8 +1,8 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch-commonjs'
 import { Apideck } from '../../../'
-const { Response } = jest.requireActual('node-fetch')
+const { Response } = jest.requireActual('node-fetch-commonjs')
 
-jest.mock('node-fetch', () => jest.fn())
+jest.mock('node-fetch-commonjs', () => jest.fn())
 
 const basePath = 'https://example.com'
 
@@ -59,18 +59,20 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           notes: 'Some notes about this customer',
@@ -98,7 +100,9 @@ describe('CustomerSupportApi', () => {
             bsb_number: '062-001',
             bank_code: 'BNH',
             account_number: '123456789',
-            account_name: 'SPACEX LLC'
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
           },
           status: 'active'
         }
@@ -145,18 +149,20 @@ describe('CustomerSupportApi', () => {
                 name: 'HQ US',
                 line1: 'Main street',
                 line2: 'apt #',
+                street_number: '25',
                 city: 'San Francisco',
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
                 latitude: '40.759211',
                 longitude: '-73.984638',
-                contact_name: '111-111-1111',
-                salutation: '111-111-1111',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
                 phone_number: '111-111-1111',
-                fax: '111-111-1111',
-                email: '111-111-1111',
-                website: '111-111-1111'
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com'
               }
             ],
             notes: 'Some notes about this customer',
@@ -184,7 +190,9 @@ describe('CustomerSupportApi', () => {
               bsb_number: '062-001',
               bank_code: 'BNH',
               account_number: '123456789',
-              account_name: 'SPACEX LLC'
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
             },
             status: 'active',
             updated_by: '12345',
@@ -295,18 +303,20 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           notes: 'Some notes about this customer',
@@ -334,7 +344,9 @@ describe('CustomerSupportApi', () => {
             bsb_number: '062-001',
             bank_code: 'BNH',
             account_number: '123456789',
-            account_name: 'SPACEX LLC'
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
           },
           status: 'active',
           updated_by: '12345',
@@ -404,18 +416,20 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              street_number: '25',
               city: 'San Francisco',
               state: 'CA',
               postal_code: '94104',
               country: 'US',
               latitude: '40.759211',
               longitude: '-73.984638',
-              contact_name: '111-111-1111',
-              salutation: '111-111-1111',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
               phone_number: '111-111-1111',
-              fax: '111-111-1111',
-              email: '111-111-1111',
-              website: '111-111-1111'
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com'
             }
           ],
           notes: 'Some notes about this customer',
@@ -443,7 +457,9 @@ describe('CustomerSupportApi', () => {
             bsb_number: '062-001',
             bank_code: 'BNH',
             account_number: '123456789',
-            account_name: 'SPACEX LLC'
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
           },
           status: 'active'
         }

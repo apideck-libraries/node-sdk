@@ -1,6 +1,7 @@
 export * from './AccountingCustomer'
 export * from './AccountingEventType'
 export * from './Activity'
+export * from './ActivityAttendee'
 export * from './Address'
 export * from './Api'
 export * from './ApiResource'

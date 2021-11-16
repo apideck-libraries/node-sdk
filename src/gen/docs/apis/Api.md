@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 `id` | **string** | ID of the API. | [optional] 
 `type` | **string** | Indicates whether the API is a Unified API. If unified_api is false, the API is a Platform API. | [optional] 
 `name` | **string** | Name of the API. | [optional] 
+`description` | **string** | Description of the API. | [optional] 
 `status` | [**ApiStatus**](ApiStatus.md) |  | [optional] 
 `spec_url` | **string** | Link to the latest OpenAPI specification of the API. | [optional] 
 `api_reference_url` | **string** | Link to the API reference of the API. | [optional] 
+`postman_collection_id` | **string** | ID of the Postman collection of the API. | [optional] 
 `categories` | **Array&lt;string&gt;** | List of categories the API belongs to. | [optional] 
 `resources` | [**Array&lt;ApiResources&gt;**](ApiResources.md) | List of resources supported in this API. | [optional] 
 
@@ -33,7 +35,9 @@ Name | Type | Description | Notes
 
 
 
+
 * [`ApiStatus`](ApiStatus.md)
+
 
 
 

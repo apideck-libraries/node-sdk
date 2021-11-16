@@ -1,8 +1,8 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch-commonjs'
 import { Apideck } from '../../../'
-const { Response } = jest.requireActual('node-fetch')
+const { Response } = jest.requireActual('node-fetch-commonjs')
 
-jest.mock('node-fetch', () => jest.fn())
+jest.mock('node-fetch-commonjs', () => jest.fn())
 
 const basePath = 'https://example.com'
 
@@ -188,9 +188,11 @@ describe('ConnectorApi', () => {
             id: 'file-storage',
             type: 'platform',
             name: 'File Storage API',
+            description: 'Manage API keys, access tokens, OAuth flows and integrations.',
             status: 'live',
             spec_url: 'https://specs.apideck.com/file-storage.yml',
             api_reference_url: 'https://developers.apideck.com/apis/file-storage/reference',
+            postman_collection_id: '1311564-00e7266b-a3d6-4f40-b172-baaa66a3ed6f',
             categories: ['files', 'file-storage', 'cloud-storage', 'object-storage'],
             resources: [
               {
@@ -249,9 +251,11 @@ describe('ConnectorApi', () => {
           id: 'file-storage',
           type: 'platform',
           name: 'File Storage API',
+          description: 'Manage API keys, access tokens, OAuth flows and integrations.',
           status: 'live',
           spec_url: 'https://specs.apideck.com/file-storage.yml',
           api_reference_url: 'https://developers.apideck.com/apis/file-storage/reference',
+          postman_collection_id: '1311564-00e7266b-a3d6-4f40-b172-baaa66a3ed6f',
           categories: ['files', 'file-storage', 'cloud-storage', 'object-storage'],
           resources: [
             {

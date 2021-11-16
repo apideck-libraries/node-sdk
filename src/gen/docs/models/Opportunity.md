@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 `description` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 `monetary_amount` | **number** |  | [optional] 
-`currency` | **string** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `win_probability` | **number** |  | [optional] 
 `expected_revenue` | **number** | Expected Revenue | [optional] 
 `close_date` | **Date** |  | [optional] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`Currency`](Currency.md)
 
 
 

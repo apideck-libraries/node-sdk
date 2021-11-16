@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `status` | **string** |  | [optional] 
 `monetary_amount` | **number** |  | [optional] 
-`currency` | **string** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `fax` | **string** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`Currency`](Currency.md)
 
 * [`Website`](Website.md)
 * [`Address`](Address.md)

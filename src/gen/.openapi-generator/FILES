@@ -14,6 +14,7 @@ AccountingApiTest.api.test.ts
 AccountingCustomer.md
 AccountingEventType.md
 Activity.md
+ActivityAttendee.md
 Address.md
 Api.md
 ApiResource.md
@@ -308,6 +309,7 @@ index.ts
 models/AccountingCustomer.ts
 models/AccountingEventType.ts
 models/Activity.ts
+models/ActivityAttendee.ts
 models/Address.ts
 models/Api.ts
 models/ApiResource.ts
