@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** |  | 
 `id` | **string** |  | [optional] 
-`currency` | **string** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `archived` | **boolean** |  | [optional] 
 `display_order` | **number** |  | [optional] 
 `stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Referenced Types:
 
 
-
+* [`Currency`](Currency.md)
 
 
 * [`PipelineStages`](PipelineStages.md)

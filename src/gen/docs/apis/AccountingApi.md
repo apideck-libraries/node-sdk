@@ -213,7 +213,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active',
     row_version: '1-12345'
@@ -552,7 +554,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active',
     row_version: '1-12345'
@@ -1553,12 +1557,13 @@ const params = {
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
-    tax_type: 'USD',
+    tax_type: 'NONE',
     tax_rate: {
       id: '123456'
     },
     level: 1,
     active: true,
+    status: 'active',
     header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
@@ -1566,7 +1571,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     parent_account: {
       id: '12345',
@@ -1865,12 +1872,13 @@ const params = {
     opening_balance: 75000,
     current_balance: 20000,
     currency: 'USD',
-    tax_type: 'USD',
+    tax_type: 'NONE',
     tax_rate: {
       id: '123456'
     },
     level: 1,
     active: true,
+    status: 'active',
     header: true,
     bank_account: {
       iban: 'CH2989144532982975332',
@@ -1878,7 +1886,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     parent_account: {
       id: '12345',
@@ -2340,24 +2350,25 @@ const apideck = new Apideck({
 
 const params = {
   taxRate: {
-    name: '15% GST on Expenses',
+    id: '1234',
+    name: 'GST on Purchases',
     code: 'ABN',
-    description: 'No ABN Withholding',
+    description: 'Reduced rate GST Purchases',
     effective_tax_rate: 10,
     total_tax_rate: 10,
     tax_payable_account_id: '123456',
     tax_remitted_account_id: '123456',
     components: [
       {
-        name: 'City tax',
+        name: 'GST',
         rate: 10,
         compound: true
       }
     ],
     tax_type: 'output_gst',
-    type: 'GST_VAT',
+    type: 'NONE',
     original_tax_rate_id: '12345',
-    active: true,
+    status: 'active',
     row_version: '1-12345'
   }
 }
@@ -2637,24 +2648,25 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   taxRate: {
-    name: '15% GST on Expenses',
+    id: '1234',
+    name: 'GST on Purchases',
     code: 'ABN',
-    description: 'No ABN Withholding',
+    description: 'Reduced rate GST Purchases',
     effective_tax_rate: 10,
     total_tax_rate: 10,
     tax_payable_account_id: '123456',
     tax_remitted_account_id: '123456',
     components: [
       {
-        name: 'City tax',
+        name: 'GST',
         rate: 10,
         compound: true
       }
     ],
     tax_type: 'output_gst',
-    type: 'GST_VAT',
+    type: 'NONE',
     original_tax_rate_id: '12345',
-    active: true,
+    status: 'active',
     row_version: '1-12345'
   }
 }

@@ -13,6 +13,7 @@
  */
 
 import { exists } from '../runtime'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { PipelineStages, PipelineStagesFromJSON, PipelineStagesToJSON } from './PipelineStages'
 
 /**
@@ -35,10 +36,10 @@ export interface Pipeline {
   id?: string
   /**
    *
-   * @type {string}
+   * @type {Currency}
    * @memberof Pipeline
    */
-  currency?: string
+  currency?: Currency | null
   /**
    *
    * @type {boolean}
@@ -82,7 +83,7 @@ export function PipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
   return {
     name: json['name'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    currency: !exists(json, 'currency') ? undefined : json['currency'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     archived: !exists(json, 'archived') ? undefined : json['archived'],
     display_order: !exists(json, 'display_order') ? undefined : json['display_order'],
     stages: !exists(json, 'stages')
@@ -103,7 +104,7 @@ export function PipelineToJSON(value?: Pipeline | null): any {
   return {
     name: value.name,
     id: value.id,
-    currency: value.currency,
+    currency: CurrencyToJSON(value.currency),
     archived: value.archived,
     display_order: value.display_order,
     stages:

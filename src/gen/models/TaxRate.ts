@@ -24,7 +24,7 @@ export interface TaxRate {
    * @type {string}
    * @memberof TaxRate
    */
-  readonly id?: string
+  id?: string | null
   /**
    *
    * @type {string}
@@ -93,10 +93,10 @@ export interface TaxRate {
   original_tax_rate_id?: string | null
   /**
    *
-   * @type {boolean}
+   * @type {string}
    * @memberof TaxRate
    */
-  active?: boolean | null
+  status?: TaxRateStatus
   /**
    *
    * @type {string}
@@ -145,6 +145,15 @@ export enum TaxRateTaxType {
   luxury_car_tax = 'luxury_car_tax',
   none = 'none'
 }
+/**
+ * @export
+ * @enum {string}
+ */
+export enum TaxRateStatus {
+  active = 'active',
+  inactive = 'inactive',
+  archived = 'archived'
+}
 
 export function TaxRateFromJSON(json: any): TaxRate {
   return TaxRateFromJSONTyped(json, false)
@@ -175,7 +184,7 @@ export function TaxRateFromJSONTyped(json: any, ignoreDiscriminator: boolean): T
     original_tax_rate_id: !exists(json, 'original_tax_rate_id')
       ? undefined
       : json['original_tax_rate_id'],
-    active: !exists(json, 'active') ? undefined : json['active'],
+    status: !exists(json, 'status') ? undefined : json['status'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -192,6 +201,7 @@ export function TaxRateToJSON(value?: TaxRate | null): any {
     return null
   }
   return {
+    id: value.id,
     name: value.name,
     code: value.code,
     description: value.description,
@@ -203,7 +213,7 @@ export function TaxRateToJSON(value?: TaxRate | null): any {
     tax_type: value.tax_type,
     type: value.type,
     original_tax_rate_id: value.original_tax_rate_id,
-    active: value.active,
+    status: value.status,
     row_version: value.row_version
   }
 }

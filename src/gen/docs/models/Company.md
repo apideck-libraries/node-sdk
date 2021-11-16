@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 `image` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
 `vat_number` | **string** | VAT number | [optional] 
-`currency` | **string** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `status` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
 `annual_revenue` | **string** | Annual revenue | [optional] 
@@ -53,7 +53,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`Currency`](Currency.md)
 
 
 

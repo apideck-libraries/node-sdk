@@ -13,6 +13,7 @@
  */
 
 import { exists } from '../runtime'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
 
@@ -60,10 +61,10 @@ export interface Opportunity {
   monetary_amount?: number | null
   /**
    *
-   * @type {string}
+   * @type {Currency}
    * @memberof Opportunity
    */
-  currency?: string | null
+  currency?: Currency | null
   /**
    *
    * @type {number}
@@ -273,7 +274,7 @@ export function OpportunityFromJSONTyped(json: any, ignoreDiscriminator: boolean
     description: !exists(json, 'description') ? undefined : json['description'],
     type: !exists(json, 'type') ? undefined : json['type'],
     monetary_amount: !exists(json, 'monetary_amount') ? undefined : json['monetary_amount'],
-    currency: !exists(json, 'currency') ? undefined : json['currency'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     win_probability: !exists(json, 'win_probability') ? undefined : json['win_probability'],
     expected_revenue: !exists(json, 'expected_revenue') ? undefined : json['expected_revenue'],
     close_date: !exists(json, 'close_date')
@@ -344,7 +345,7 @@ export function OpportunityToJSON(value?: Opportunity | null): any {
     description: value.description,
     type: value.type,
     monetary_amount: value.monetary_amount,
-    currency: value.currency,
+    currency: CurrencyToJSON(value.currency),
     win_probability: value.win_probability,
     close_date:
       value.close_date === undefined

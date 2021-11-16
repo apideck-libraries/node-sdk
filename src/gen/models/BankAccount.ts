@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+
 /**
  *
  * @export
@@ -55,6 +57,28 @@ export interface BankAccount {
    * @memberof BankAccount
    */
   account_name?: string | null
+  /**
+   * The type of bank account.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  account_type?: BankAccountAccountType
+  /**
+   *
+   * @type {Currency}
+   * @memberof BankAccount
+   */
+  currency?: Currency | null
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum BankAccountAccountType {
+  bank_account = 'bank_account',
+  credit_card = 'credit_card',
+  other = 'other'
 }
 
 export function BankAccountFromJSON(json: any): BankAccount {
@@ -71,7 +95,9 @@ export function BankAccountFromJSONTyped(json: any, ignoreDiscriminator: boolean
     bsb_number: !exists(json, 'bsb_number') ? undefined : json['bsb_number'],
     bank_code: !exists(json, 'bank_code') ? undefined : json['bank_code'],
     account_number: !exists(json, 'account_number') ? undefined : json['account_number'],
-    account_name: !exists(json, 'account_name') ? undefined : json['account_name']
+    account_name: !exists(json, 'account_name') ? undefined : json['account_name'],
+    account_type: !exists(json, 'account_type') ? undefined : json['account_type'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency'])
   }
 }
 
@@ -88,6 +114,8 @@ export function BankAccountToJSON(value?: BankAccount | null): any {
     bsb_number: value.bsb_number,
     bank_code: value.bank_code,
     account_number: value.account_number,
-    account_name: value.account_name
+    account_name: value.account_name,
+    account_type: value.account_type,
+    currency: CurrencyToJSON(value.currency)
   }
 }

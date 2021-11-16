@@ -117,7 +117,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active'
   }
@@ -451,7 +453,9 @@ const params = {
       bsb_number: '062-001',
       bank_code: 'BNH',
       account_number: '123456789',
-      account_name: 'SPACEX LLC'
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
     },
     status: 'active'
   }

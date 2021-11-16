@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 `tax_type` | **string** | Tax type used to define the source of tax collected or paid | [optional] 
 `type` | **string** | Tax type used to indicate the source of tax collected or paid | [optional] 
 `original_tax_rate_id` | **string** | ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities. | [optional] 
-`active` | **boolean** |  | [optional] 
+`status` | **string** |  | [optional] 
 `row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
@@ -51,6 +51,19 @@ Name | Type | Description | Notes
 * `luxury_car_tax` (value: `'luxury_car_tax'`)
 
 * `none` (value: `'none'`)
+
+
+
+
+<a name="TaxRateStatus"></a>
+## Enum: TaxRate.status
+
+
+* `active` (value: `'active'`)
+
+* `inactive` (value: `'inactive'`)
+
+* `archived` (value: `'archived'`)
 
 
 
