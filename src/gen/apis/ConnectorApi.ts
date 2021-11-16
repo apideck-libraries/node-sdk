@@ -293,8 +293,8 @@ export class ConnectorApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get ConnectorResource
-   * Get ConnectorResource
+   * Get Connector Resource
+   * Get Connector Resource
    */
   async connectorResourcesOneRaw(
     requestParameters: ConnectorApiConnectorResourcesOneRequest
@@ -340,8 +340,8 @@ export class ConnectorApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get ConnectorResource
-   * Get ConnectorResource
+   * Get Connector Resource
+   * Get Connector Resource
    */
   async connectorResourcesOne(
     requestParameters: ConnectorApiConnectorResourcesOneRequest

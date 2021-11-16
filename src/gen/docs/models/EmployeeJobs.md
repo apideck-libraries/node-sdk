@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `employee_id` | **string** |  | [optional] 
-`title` | **string** |  | [optional] 
+`title` | [**Title**](Title.md) |  | [optional] 
 `compensation_rate` | **string** |  | [optional] 
 `hired_at` | **Date** |  | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Referenced Types:
 
 
-
+* [`Title`](Title.md)
 
 
 

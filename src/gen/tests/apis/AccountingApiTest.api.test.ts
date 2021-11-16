@@ -961,7 +961,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1085,7 +1085,7 @@ describe('AccountingApi', () => {
                 line_number: 1,
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: 'Inventory',
+                type: 'inventory',
                 tax_amount: 27500,
                 total_amount: 27500,
                 quantity: 1,
@@ -1278,7 +1278,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1426,7 +1426,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1532,7 +1532,7 @@ describe('AccountingApi', () => {
       const params = {
         ledgerAccount: {
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -1601,7 +1601,7 @@ describe('AccountingApi', () => {
           {
             id: '12345',
             display_id: '1-12345',
-            nominal_code: '091',
+            nominal_code: 'N091',
             classification: 'asset',
             type: 'bank',
             sub_type: 'CHECKING_ACCOUNT',
@@ -1741,7 +1741,7 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -1840,7 +1840,7 @@ describe('AccountingApi', () => {
         id: 'id_example',
         ledgerAccount: {
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',

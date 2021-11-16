@@ -1047,7 +1047,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'Inventory',
+        type: 'inventory',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1412,7 +1412,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'Inventory',
+        type: 'inventory',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1547,7 +1547,7 @@ const apideck = new Apideck({
 const params = {
   ledgerAccount: {
     display_id: '1-12345',
-    nominal_code: '091',
+    nominal_code: 'N091',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',
@@ -1862,7 +1862,7 @@ const params = {
   id: 'id_example',
   ledgerAccount: {
     display_id: '1-12345',
-    nominal_code: '091',
+    nominal_code: 'N091',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',

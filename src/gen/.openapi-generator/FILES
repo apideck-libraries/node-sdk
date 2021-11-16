@@ -72,6 +72,7 @@ CreateFileRequest.md
 CreateFileResponse.md
 CreateFolderRequest.md
 CreateFolderResponse.md
+CreateHrisCompanyResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
@@ -102,6 +103,7 @@ DeleteCustomerSupportCustomerResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
+DeleteHrisCompanyResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
@@ -165,6 +167,8 @@ GetFileResponse.md
 GetFilesResponse.md
 GetFolderResponse.md
 GetFoldersResponse.md
+GetHrisCompaniesResponse.md
+GetHrisCompanyResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -195,6 +199,7 @@ GetWebhookResponse.md
 GetWebhooksResponse.md
 HrisApi.md
 HrisApiTest.api.test.ts
+HrisCompany.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -267,6 +272,7 @@ UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
 UpdateFolderResponse.md
+UpdateHrisCompanyResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
@@ -364,6 +370,7 @@ models/CreateFileRequest.ts
 models/CreateFileResponse.ts
 models/CreateFolderRequest.ts
 models/CreateFolderResponse.ts
+models/CreateHrisCompanyResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
@@ -390,6 +397,7 @@ models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
+models/DeleteHrisCompanyResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
@@ -449,6 +457,8 @@ models/GetFileResponse.ts
 models/GetFilesResponse.ts
 models/GetFolderResponse.ts
 models/GetFoldersResponse.ts
+models/GetHrisCompaniesResponse.ts
+models/GetHrisCompanyResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -477,6 +487,7 @@ models/GetUsersResponse.ts
 models/GetWebhookEventLogsResponse.ts
 models/GetWebhookResponse.ts
 models/GetWebhooksResponse.ts
+models/HrisCompany.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
@@ -547,6 +558,7 @@ models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts
 models/UpdateFolderResponse.ts
+models/UpdateHrisCompanyResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts

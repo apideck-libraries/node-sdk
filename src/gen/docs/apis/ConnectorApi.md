@@ -9,7 +9,7 @@
 * [Get API Resource](#apiResourcesOne)
 * [List APIs](#apisAll)
 * [Get API](#apisOne)
-* [Get ConnectorResource](#connectorResourcesOne)
+* [Get Connector Resource](#connectorResourcesOne)
 * [List Connectors](#connectorsAll)
 * [Get Connector](#connectorsOne)
 
@@ -270,7 +270,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="connectorResourcesOne"></a>
-# Get ConnectorResource
+# Get Connector Resource
 
 
 Method: **connectorResourcesOne**

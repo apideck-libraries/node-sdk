@@ -56,7 +56,37 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
+  display_name?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
+  preffered_name?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
+  initials?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
+  salutation?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
   title?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
+  marital_status?: string | null
   /**
    * The URL pointing to a picture.
    * @type {string}
@@ -100,6 +130,12 @@ export interface Employee {
    */
   employment_start_date?: string | null
   /**
+   * A Start Date is the date that the employee ended working at the company
+   * @type {string}
+   * @memberof Employee
+   */
+  employment_end_date?: string | null
+  /**
    * An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.
    * @type {string}
    * @memberof Employee
@@ -130,6 +166,12 @@ export interface Employee {
    */
   birthday?: Date | null
   /**
+   * country code according to ISO 3166-1 alpha-2.
+   * @type {string}
+   * @memberof Employee
+   */
+  country_of_birth?: string | null
+  /**
    *
    * @type {string}
    * @memberof Employee
@@ -146,7 +188,19 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
-  language?: string | null
+  prefered_language?: string | null
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof Employee
+   */
+  languages?: Array<string>
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof Employee
+   */
+  nationalities?: Array<string>
   /**
    *
    * @type {Array<EmployeeJobs>}
@@ -226,7 +280,12 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     middle_name: !exists(json, 'middle_name') ? undefined : json['middle_name'],
+    display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
+    preffered_name: !exists(json, 'preffered_name') ? undefined : json['preffered_name'],
+    initials: !exists(json, 'initials') ? undefined : json['initials'],
+    salutation: !exists(json, 'salutation') ? undefined : json['salutation'],
     title: !exists(json, 'title') ? undefined : json['title'],
+    marital_status: !exists(json, 'marital_status') ? undefined : json['marital_status'],
     picture_url: !exists(json, 'picture_url') ? undefined : json['picture_url'],
     division: !exists(json, 'division') ? undefined : json['division'],
     department: !exists(json, 'department') ? undefined : json['department'],
@@ -236,6 +295,9 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     employment_start_date: !exists(json, 'employment_start_date')
       ? undefined
       : json['employment_start_date'],
+    employment_end_date: !exists(json, 'employment_end_date')
+      ? undefined
+      : json['employment_end_date'],
     employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number'],
     employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status'],
     manager_id: !exists(json, 'manager_id') ? undefined : json['manager_id'],
@@ -247,9 +309,12 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : json['birthday'] === null
       ? null
       : new Date(json['birthday']),
+    country_of_birth: !exists(json, 'country_of_birth') ? undefined : json['country_of_birth'],
     description: !exists(json, 'description') ? undefined : json['description'],
     gender: !exists(json, 'gender') ? undefined : GenderFromJSON(json['gender']),
-    language: !exists(json, 'language') ? undefined : json['language'],
+    prefered_language: !exists(json, 'prefered_language') ? undefined : json['prefered_language'],
+    languages: !exists(json, 'languages') ? undefined : json['languages'],
+    nationalities: !exists(json, 'nationalities') ? undefined : json['nationalities'],
     jobs: !exists(json, 'jobs')
       ? undefined
       : (json['jobs'] as Array<any>).map(EmployeeJobsFromJSON),
@@ -281,7 +346,12 @@ export function EmployeeToJSON(value?: Employee | null): any {
     first_name: value.first_name,
     last_name: value.last_name,
     middle_name: value.middle_name,
+    display_name: value.display_name,
+    preffered_name: value.preffered_name,
+    initials: value.initials,
+    salutation: value.salutation,
     title: value.title,
+    marital_status: value.marital_status,
     picture_url: value.picture_url,
     division: value.division,
     department: value.department,
@@ -289,6 +359,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     company_id: value.company_id,
     company_name: value.company_name,
     employment_start_date: value.employment_start_date,
+    employment_end_date: value.employment_end_date,
     employee_number: value.employee_number,
     employment_status: value.employment_status,
     manager_id: value.manager_id,
@@ -299,9 +370,12 @@ export function EmployeeToJSON(value?: Employee | null): any {
         : value.birthday === null
         ? null
         : new Date(value.birthday).toISOString().substr(0, 10),
+    country_of_birth: value.country_of_birth,
     description: value.description,
     gender: GenderToJSON(value.gender),
-    language: value.language,
+    prefered_language: value.prefered_language,
+    languages: value.languages,
+    nationalities: value.nationalities,
     jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(EmployeeJobsToJSON),
     addresses:
       value.addresses === undefined
