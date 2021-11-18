@@ -24,7 +24,7 @@ export interface LinkedTaxRate {
    * @type {string}
    * @memberof LinkedTaxRate
    */
-  id: string
+  id?: string | null
   /**
    *
    * @type {string}
@@ -42,7 +42,7 @@ export function LinkedTaxRateFromJSONTyped(json: any, ignoreDiscriminator: boole
     return json
   }
   return {
-    id: json['id'],
+    id: !exists(json, 'id') ? undefined : json['id'],
     code: !exists(json, 'code') ? undefined : json['code']
   }
 }

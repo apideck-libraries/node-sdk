@@ -53,7 +53,7 @@ export interface Payment {
    */
   currency?: Currency | null
   /**
-   * Exchange rate when payment is received
+   * Currency Exchange Rate at the time entity was recorded/generated.
    * @type {number}
    * @memberof Payment
    */

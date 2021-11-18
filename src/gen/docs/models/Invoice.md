@@ -13,8 +13,11 @@ Name | Type | Description | Notes
 `invoice_date` | **Date** | Date invoice was issued - YYYY-MM-DD | [optional] 
 `due_date` | **Date** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
+`reference` | **string** | Optional invoice reference. | [optional] 
 `status` | **string** | Invoice status | [optional] 
+`invoice_sent` | **boolean** | Invoice sent to contact/customer | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
+`currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `tax_inclusive` | **boolean** | Amounts are including tax | [optional] 
 `sub_total` | **number** |  | [optional] 
 `total_tax` | **number** |  | [optional] 
@@ -47,6 +50,8 @@ Name | Type | Description | Notes
 
 * `product` (value: `'product'`)
 
+* `supplier` (value: `'supplier'`)
+
 * `other` (value: `'other'`)
 
 
@@ -59,6 +64,8 @@ Name | Type | Description | Notes
 * `draft` (value: `'draft'`)
 
 * `submitted` (value: `'submitted'`)
+
+* `authorised` (value: `'authorised'`)
 
 * `partially_paid` (value: `'partially_paid'`)
 
@@ -81,7 +88,10 @@ Name | Type | Description | Notes
 
 
 
+
+
 * [`Currency`](Currency.md)
+
 
 
 

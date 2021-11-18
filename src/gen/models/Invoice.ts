@@ -73,17 +73,35 @@ export interface Invoice {
    */
   po_number?: string | null
   /**
+   * Optional invoice reference.
+   * @type {string}
+   * @memberof Invoice
+   */
+  reference?: string | null
+  /**
    * Invoice status
    * @type {string}
    * @memberof Invoice
    */
   status?: InvoiceStatus
   /**
+   * Invoice sent to contact/customer
+   * @type {boolean}
+   * @memberof Invoice
+   */
+  invoice_sent?: boolean
+  /**
    *
    * @type {Currency}
    * @memberof Invoice
    */
   currency?: Currency | null
+  /**
+   * Currency Exchange Rate at the time entity was recorded/generated.
+   * @type {number}
+   * @memberof Invoice
+   */
+  currency_rate?: number | null
   /**
    * Amounts are including tax
    * @type {boolean}
@@ -185,6 +203,7 @@ export enum InvoiceType {
   credit = 'credit',
   service = 'service',
   product = 'product',
+  supplier = 'supplier',
   other = 'other'
 }
 /**
@@ -194,6 +213,7 @@ export enum InvoiceType {
 export enum InvoiceStatus {
   draft = 'draft',
   submitted = 'submitted',
+  authorised = 'authorised',
   partially_paid = 'partially_paid',
   paid = 'paid',
   void = 'void',
@@ -217,8 +237,11 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     invoice_date: !exists(json, 'invoice_date') ? undefined : new Date(json['invoice_date']),
     due_date: !exists(json, 'due_date') ? undefined : new Date(json['due_date']),
     po_number: !exists(json, 'po_number') ? undefined : json['po_number'],
+    reference: !exists(json, 'reference') ? undefined : json['reference'],
     status: !exists(json, 'status') ? undefined : json['status'],
+    invoice_sent: !exists(json, 'invoice_sent') ? undefined : json['invoice_sent'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    currency_rate: !exists(json, 'currency_rate') ? undefined : json['currency_rate'],
     tax_inclusive: !exists(json, 'tax_inclusive') ? undefined : json['tax_inclusive'],
     sub_total: !exists(json, 'sub_total') ? undefined : json['sub_total'],
     total_tax: !exists(json, 'total_tax') ? undefined : json['total_tax'],
@@ -263,8 +286,11 @@ export function InvoiceToJSON(value?: Invoice | null): any {
         ? undefined
         : new Date(value.due_date).toISOString().substr(0, 10),
     po_number: value.po_number,
+    reference: value.reference,
     status: value.status,
+    invoice_sent: value.invoice_sent,
     currency: CurrencyToJSON(value.currency),
+    currency_rate: value.currency_rate,
     tax_inclusive: value.tax_inclusive,
     sub_total: value.sub_total,
     total_tax: value.total_tax,
