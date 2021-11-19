@@ -1002,7 +1002,7 @@ describe('AccountingApi', () => {
           due_date: '2020-10-30',
           po_number: '90000117',
           reference: '123456',
-          status: 'submitted',
+          status: 'draft',
           invoice_sent: true,
           currency: 'USD',
           currency_rate: 0.69,
@@ -1083,6 +1083,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345'
         }
       } as any
@@ -1128,7 +1129,7 @@ describe('AccountingApi', () => {
             due_date: '2020-10-30',
             po_number: '90000117',
             reference: '123456',
-            status: 'submitted',
+            status: 'draft',
             invoice_sent: true,
             currency: 'USD',
             currency_rate: 0.69,
@@ -1214,6 +1215,7 @@ describe('AccountingApi', () => {
               email: 'elon@musk.com',
               website: 'https://elonmusk.com'
             },
+            template_id: '123456',
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1324,7 +1326,7 @@ describe('AccountingApi', () => {
           due_date: '2020-10-30',
           po_number: '90000117',
           reference: '123456',
-          status: 'submitted',
+          status: 'draft',
           invoice_sent: true,
           currency: 'USD',
           currency_rate: 0.69,
@@ -1410,6 +1412,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1476,7 +1479,7 @@ describe('AccountingApi', () => {
           due_date: '2020-10-30',
           po_number: '90000117',
           reference: '123456',
-          status: 'submitted',
+          status: 'draft',
           invoice_sent: true,
           currency: 'USD',
           currency_rate: 0.69,
@@ -1557,6 +1560,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345'
         }
       } as any

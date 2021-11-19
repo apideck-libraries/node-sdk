@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
+`template_id` | **string** | Optional invoice template | [optional] 
 `row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
@@ -75,6 +76,8 @@ Name | Type | Description | Notes
 
 * `credit` (value: `'credit'`)
 
+* `deleted` (value: `'deleted'`)
+
 
 
 
@@ -102,6 +105,7 @@ Name | Type | Description | Notes
 * [`InvoiceLineItem`](InvoiceLineItem.md)
 * [`Address`](Address.md)
 * [`Address`](Address.md)
+
 
 
 

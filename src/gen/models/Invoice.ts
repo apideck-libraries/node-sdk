@@ -163,6 +163,12 @@ export interface Invoice {
    */
   shipping_address?: Address
   /**
+   * Optional invoice template
+   * @type {string}
+   * @memberof Invoice
+   */
+  template_id?: string | null
+  /**
    *
    * @type {string}
    * @memberof Invoice
@@ -217,7 +223,8 @@ export enum InvoiceStatus {
   partially_paid = 'partially_paid',
   paid = 'paid',
   void = 'void',
-  credit = 'credit'
+  credit = 'credit',
+  deleted = 'deleted'
 }
 
 export function InvoiceFromJSON(json: any): Invoice {
@@ -258,6 +265,7 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     shipping_address: !exists(json, 'shipping_address')
       ? undefined
       : AddressFromJSON(json['shipping_address']),
+    template_id: !exists(json, 'template_id') ? undefined : json['template_id'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -304,6 +312,7 @@ export function InvoiceToJSON(value?: Invoice | null): any {
         : (value.line_items as Array<any>).map(InvoiceLineItemToJSON),
     billing_address: AddressToJSON(value.billing_address),
     shipping_address: AddressToJSON(value.shipping_address),
+    template_id: value.template_id,
     row_version: value.row_version
   }
 }

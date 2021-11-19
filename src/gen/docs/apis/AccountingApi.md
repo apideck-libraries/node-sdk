@@ -1059,7 +1059,7 @@ const params = {
     due_date: '2020-10-30',
     po_number: '90000117',
     reference: '123456',
-    status: 'submitted',
+    status: 'draft',
     invoice_sent: true,
     currency: 'USD',
     currency_rate: 0.69,
@@ -1139,6 +1139,7 @@ const params = {
       email: 'elon@musk.com',
       website: 'https://elonmusk.com'
     },
+    template_id: '123456',
     row_version: '1-12345'
   }
 }
@@ -1427,7 +1428,7 @@ const params = {
     due_date: '2020-10-30',
     po_number: '90000117',
     reference: '123456',
-    status: 'submitted',
+    status: 'draft',
     invoice_sent: true,
     currency: 'USD',
     currency_rate: 0.69,
@@ -1507,6 +1508,7 @@ const params = {
       email: 'elon@musk.com',
       website: 'https://elonmusk.com'
     },
+    template_id: '123456',
     row_version: '1-12345'
   }
 }
