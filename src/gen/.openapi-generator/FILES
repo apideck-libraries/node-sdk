@@ -84,6 +84,7 @@ CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
+CreateSharedLinkResponse.md
 CreateTaxRateResponse.md
 CreateUserResponse.md
 CreateWebhookRequest.md
@@ -112,6 +113,7 @@ DeleteNoteResponse.md
 DeleteOpportunityResponse.md
 DeletePaymentResponse.md
 DeletePipelineResponse.md
+DeleteSharedLinkResponse.md
 DeleteTaxRateResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
@@ -128,6 +130,7 @@ ExecuteWebhookResponse.md
 File.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
+FileType.md
 FilesFilter.md
 FilesSearch.md
 FilesSort.md
@@ -190,6 +193,8 @@ GetPaymentResponse.md
 GetPaymentsResponse.md
 GetPipelineResponse.md
 GetPipelinesResponse.md
+GetSharedLinkResponse.md
+GetSharedLinksResponse.md
 GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetUserResponse.md
@@ -249,6 +254,8 @@ ResourceStatus.md
 Session.md
 SessionSettings.md
 SessionTheme.md
+SharedLink.md
+SharedLinkTarget.md
 SimpleFormFieldOption.md
 SmsApi.md
 SmsApiTest.api.test.ts
@@ -282,6 +289,7 @@ UpdateNoteResponse.md
 UpdateOpportunityResponse.md
 UpdatePaymentResponse.md
 UpdatePipelineResponse.md
+UpdateSharedLinkResponse.md
 UpdateTaxRateResponse.md
 UpdateUserResponse.md
 UpdateWebhookRequest.md
@@ -382,6 +390,7 @@ models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
+models/CreateSharedLinkResponse.ts
 models/CreateTaxRateResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
@@ -406,6 +415,7 @@ models/DeleteNoteResponse.ts
 models/DeleteOpportunityResponse.ts
 models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
+models/DeleteSharedLinkResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
@@ -418,6 +428,7 @@ models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
+models/FileType.ts
 models/FilesFilter.ts
 models/FilesSearch.ts
 models/FilesSort.ts
@@ -480,6 +491,8 @@ models/GetPaymentResponse.ts
 models/GetPaymentsResponse.ts
 models/GetPipelineResponse.ts
 models/GetPipelinesResponse.ts
+models/GetSharedLinkResponse.ts
+models/GetSharedLinksResponse.ts
 models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
@@ -537,6 +550,8 @@ models/ResourceStatus.ts
 models/Session.ts
 models/SessionSettings.ts
 models/SessionTheme.ts
+models/SharedLink.ts
+models/SharedLinkTarget.ts
 models/SimpleFormFieldOption.ts
 models/SocialLink.ts
 models/SortDirection.ts
@@ -568,6 +583,7 @@ models/UpdateNoteResponse.ts
 models/UpdateOpportunityResponse.ts
 models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
+models/UpdateSharedLinkResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateUserResponse.ts
 models/UpdateWebhookRequest.ts

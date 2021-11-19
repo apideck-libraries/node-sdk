@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | 
 `name` | **string** | The name of the file | 
-`type` | **string** | The type of resource. Could be file, folder or url | 
+`type` | [**FileType**](FileType.md) |  | 
 `description` | **string** | Optional description of the file | [optional] 
 `path` | **string** | The full path of the file or folder (includes the file name) | [optional] 
 `mime_type` | **string** | The MIME type of the file. | [optional] 
@@ -25,23 +25,10 @@ Name | Type | Description | Notes
 
 
 
-<a name="ModelFileType"></a>
-## Enum: ModelFile.type
-
-
-* `file` (value: `'file'`)
-
-* `folder` (value: `'folder'`)
-
-* `url` (value: `'url'`)
-
-
-
-
 ## Referenced Types:
 
 
-
+* [`FileType`](FileType.md)
 
 
 
