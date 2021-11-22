@@ -18,9 +18,10 @@
  * @enum {string}
  */
 export enum LeadEventType {
-  created = 'lead.lead.created',
-  updated = 'lead.lead.updated',
-  deleted = 'lead.lead.deleted'
+  Star = '*',
+  lead_lead_created = 'lead.lead.created',
+  lead_lead_updated = 'lead.lead.updated',
+  lead_lead_deleted = 'lead.lead.deleted'
 }
 
 export function LeadEventTypeFromJSON(json: any): LeadEventType {

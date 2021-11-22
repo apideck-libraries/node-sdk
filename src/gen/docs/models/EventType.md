@@ -3,41 +3,43 @@
 ## Enum
 
 
-* `activity_created` (value: `'crm.activity.created'`)
+* `Star` (value: `'*'`)
 
-* `activity_updated` (value: `'crm.activity.updated'`)
+* `crm_activity_created` (value: `'crm.activity.created'`)
 
-* `activity_deleted` (value: `'crm.activity.deleted'`)
+* `crm_activity_updated` (value: `'crm.activity.updated'`)
 
-* `company_created` (value: `'crm.company.created'`)
+* `crm_activity_deleted` (value: `'crm.activity.deleted'`)
 
-* `company_updated` (value: `'crm.company.updated'`)
+* `crm_company_created` (value: `'crm.company.created'`)
 
-* `company_deleted` (value: `'crm.company.deleted'`)
+* `crm_company_updated` (value: `'crm.company.updated'`)
 
-* `contact_created` (value: `'crm.contact.created'`)
+* `crm_company_deleted` (value: `'crm.company.deleted'`)
 
-* `contact_updated` (value: `'crm.contact.updated'`)
+* `crm_contact_created` (value: `'crm.contact.created'`)
 
-* `contact_deleted` (value: `'crm.contact.deleted'`)
+* `crm_contact_updated` (value: `'crm.contact.updated'`)
 
-* `lead_created` (value: `'crm.lead.created'`)
+* `crm_contact_deleted` (value: `'crm.contact.deleted'`)
 
-* `lead_updated` (value: `'crm.lead.updated'`)
+* `crm_lead_created` (value: `'crm.lead.created'`)
 
-* `lead_deleted` (value: `'crm.lead.deleted'`)
+* `crm_lead_updated` (value: `'crm.lead.updated'`)
 
-* `note_created` (value: `'crm.note.created'`)
+* `crm_lead_deleted` (value: `'crm.lead.deleted'`)
 
-* `note_updated` (value: `'crm.note.updated'`)
+* `crm_note_created` (value: `'crm.note.created'`)
 
-* `note_deleted` (value: `'crm.note.deleted'`)
+* `crm_note_updated` (value: `'crm.note.updated'`)
 
-* `opportunity_created` (value: `'crm.opportunity.created'`)
+* `crm_note_deleted` (value: `'crm.note.deleted'`)
 
-* `opportunity_updated` (value: `'crm.opportunity.updated'`)
+* `crm_opportunity_created` (value: `'crm.opportunity.created'`)
 
-* `opportunity_deleted` (value: `'crm.opportunity.deleted'`)
+* `crm_opportunity_updated` (value: `'crm.opportunity.updated'`)
+
+* `crm_opportunity_deleted` (value: `'crm.opportunity.deleted'`)
 
 
 ---

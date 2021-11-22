@@ -18,24 +18,25 @@
  * @enum {string}
  */
 export enum EventType {
-  activity_created = 'crm.activity.created',
-  activity_updated = 'crm.activity.updated',
-  activity_deleted = 'crm.activity.deleted',
-  company_created = 'crm.company.created',
-  company_updated = 'crm.company.updated',
-  company_deleted = 'crm.company.deleted',
-  contact_created = 'crm.contact.created',
-  contact_updated = 'crm.contact.updated',
-  contact_deleted = 'crm.contact.deleted',
-  lead_created = 'crm.lead.created',
-  lead_updated = 'crm.lead.updated',
-  lead_deleted = 'crm.lead.deleted',
-  note_created = 'crm.note.created',
-  note_updated = 'crm.note.updated',
-  note_deleted = 'crm.note.deleted',
-  opportunity_created = 'crm.opportunity.created',
-  opportunity_updated = 'crm.opportunity.updated',
-  opportunity_deleted = 'crm.opportunity.deleted'
+  Star = '*',
+  crm_activity_created = 'crm.activity.created',
+  crm_activity_updated = 'crm.activity.updated',
+  crm_activity_deleted = 'crm.activity.deleted',
+  crm_company_created = 'crm.company.created',
+  crm_company_updated = 'crm.company.updated',
+  crm_company_deleted = 'crm.company.deleted',
+  crm_contact_created = 'crm.contact.created',
+  crm_contact_updated = 'crm.contact.updated',
+  crm_contact_deleted = 'crm.contact.deleted',
+  crm_lead_created = 'crm.lead.created',
+  crm_lead_updated = 'crm.lead.updated',
+  crm_lead_deleted = 'crm.lead.deleted',
+  crm_note_created = 'crm.note.created',
+  crm_note_updated = 'crm.note.updated',
+  crm_note_deleted = 'crm.note.deleted',
+  crm_opportunity_created = 'crm.opportunity.created',
+  crm_opportunity_updated = 'crm.opportunity.updated',
+  crm_opportunity_deleted = 'crm.opportunity.deleted'
 }
 
 export function EventTypeFromJSON(json: any): EventType {

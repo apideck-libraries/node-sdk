@@ -18,10 +18,11 @@
  * @enum {string}
  */
 export enum VaultEventType {
-  created = 'vault.connection.created',
-  updated = 'vault.connection.updated',
-  deleted = 'vault.connection.deleted',
-  callable = 'vault.connection.callable'
+  Star = '*',
+  vault_connection_created = 'vault.connection.created',
+  vault_connection_updated = 'vault.connection.updated',
+  vault_connection_deleted = 'vault.connection.deleted',
+  vault_connection_callable = 'vault.connection.callable'
 }
 
 export function VaultEventTypeFromJSON(json: any): VaultEventType {

@@ -18,21 +18,22 @@
  * @enum {string}
  */
 export enum AccountingEventType {
-  customer_created = 'accounting.customer.created',
-  customer_updated = 'accounting.customer.updated',
-  customer_deleted = 'accounting.customer.deleted',
-  invoice_created = 'accounting.invoice.created',
-  invoice_updated = 'accounting.invoice.updated',
-  invoice_deleted = 'accounting.invoice.deleted',
-  invoice_item_created = 'accounting.invoice_item.created',
-  invoice_item_updated = 'accounting.invoice_item.updated',
-  invoice_item_deleted = 'accounting.invoice_item.deleted',
-  ledger_account_created = 'accounting.ledger_account.created',
-  ledger_account_updated = 'accounting.ledger_account.updated',
-  ledger_account_deleted = 'accounting.ledger_account.deleted',
-  tax_rate_created = 'accounting.tax_rate.created',
-  tax_rate_updated = 'accounting.tax_rate.updated',
-  tax_rate_deleted = 'accounting.tax_rate.deleted'
+  Star = '*',
+  accounting_customer_created = 'accounting.customer.created',
+  accounting_customer_updated = 'accounting.customer.updated',
+  accounting_customer_deleted = 'accounting.customer.deleted',
+  accounting_invoice_created = 'accounting.invoice.created',
+  accounting_invoice_updated = 'accounting.invoice.updated',
+  accounting_invoice_deleted = 'accounting.invoice.deleted',
+  accounting_invoice_item_created = 'accounting.invoice_item.created',
+  accounting_invoice_item_updated = 'accounting.invoice_item.updated',
+  accounting_invoice_item_deleted = 'accounting.invoice_item.deleted',
+  accounting_ledger_account_created = 'accounting.ledger_account.created',
+  accounting_ledger_account_updated = 'accounting.ledger_account.updated',
+  accounting_ledger_account_deleted = 'accounting.ledger_account.deleted',
+  accounting_tax_rate_created = 'accounting.tax_rate.created',
+  accounting_tax_rate_updated = 'accounting.tax_rate.updated',
+  accounting_tax_rate_deleted = 'accounting.tax_rate.deleted'
 }
 
 export function AccountingEventTypeFromJSON(json: any): AccountingEventType {
