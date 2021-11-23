@@ -62,7 +62,7 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
-  preffered_name?: string | null
+  preferred_name?: string | null
   /**
    *
    * @type {string}
@@ -281,7 +281,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     middle_name: !exists(json, 'middle_name') ? undefined : json['middle_name'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
-    preffered_name: !exists(json, 'preffered_name') ? undefined : json['preffered_name'],
+    preferred_name: !exists(json, 'preferred_name') ? undefined : json['preferred_name'],
     initials: !exists(json, 'initials') ? undefined : json['initials'],
     salutation: !exists(json, 'salutation') ? undefined : json['salutation'],
     title: !exists(json, 'title') ? undefined : json['title'],
@@ -347,7 +347,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     last_name: value.last_name,
     middle_name: value.middle_name,
     display_name: value.display_name,
-    preffered_name: value.preffered_name,
+    preferred_name: value.preferred_name,
     initials: value.initials,
     salutation: value.salutation,
     title: value.title,

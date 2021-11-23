@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `last_name` | **string** |  | [optional] 
 `middle_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
-`preffered_name` | **string** |  | [optional] 
+`preferred_name` | **string** |  | [optional] 
 `initials` | **string** |  | [optional] 
 `salutation` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
