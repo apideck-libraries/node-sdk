@@ -40,6 +40,12 @@ export interface Activity {
    */
   readonly id?: string
   /**
+   * The third-party API ID of original entity
+   * @type {string}
+   * @memberof Activity
+   */
+  readonly downstream_id?: string | null
+  /**
    *
    * @type {string}
    * @memberof Activity
@@ -358,6 +364,7 @@ export function ActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
   return {
     type: json['type'],
     id: !exists(json, 'id') ? undefined : json['id'],
+    downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     activity_datetime: !exists(json, 'activity_datetime') ? undefined : json['activity_datetime'],
     duration_seconds: !exists(json, 'duration_seconds') ? undefined : json['duration_seconds'],
     user_id: !exists(json, 'user_id') ? undefined : json['user_id'],

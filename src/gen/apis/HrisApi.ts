@@ -41,7 +41,7 @@ import {
 import * as runtime from '../runtime'
 
 export interface HrisApiCompaniesAddRequest {
-  hrisCompany: HrisCompany
+  company: HrisCompany
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -75,7 +75,7 @@ export interface HrisApiCompaniesOneRequest {
 
 export interface HrisApiCompaniesUpdateRequest {
   id: string
-  hrisCompany: HrisCompany
+  company: HrisCompany
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -135,10 +135,10 @@ export class HrisApi extends runtime.BaseAPI {
   async companiesAddRaw(
     requestParameters: HrisApiCompaniesAddRequest
   ): Promise<runtime.ApiResponse<CreateHrisCompanyResponse>> {
-    if (requestParameters.hrisCompany === null || requestParameters.hrisCompany === undefined) {
+    if (requestParameters.company === null || requestParameters.company === undefined) {
       throw new runtime.RequiredError(
-        'hrisCompany',
-        'Required parameter requestParameters.hrisCompany was null or undefined when calling companiesAdd.'
+        'company',
+        'Required parameter requestParameters.company was null or undefined when calling companiesAdd.'
       )
     }
 
@@ -173,7 +173,7 @@ export class HrisApi extends runtime.BaseAPI {
       method: 'POST',
       headers: headerParameters,
       query: queryParameters,
-      body: HrisCompanyToJSON(requestParameters.hrisCompany)
+      body: HrisCompanyToJSON(requestParameters.company)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
@@ -396,10 +396,10 @@ export class HrisApi extends runtime.BaseAPI {
       )
     }
 
-    if (requestParameters.hrisCompany === null || requestParameters.hrisCompany === undefined) {
+    if (requestParameters.company === null || requestParameters.company === undefined) {
       throw new runtime.RequiredError(
-        'hrisCompany',
-        'Required parameter requestParameters.hrisCompany was null or undefined when calling companiesUpdate.'
+        'company',
+        'Required parameter requestParameters.company was null or undefined when calling companiesUpdate.'
       )
     }
 
@@ -437,7 +437,7 @@ export class HrisApi extends runtime.BaseAPI {
       method: 'PATCH',
       headers: headerParameters,
       query: queryParameters,
-      body: HrisCompanyToJSON(requestParameters.hrisCompany)
+      body: HrisCompanyToJSON(requestParameters.company)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>

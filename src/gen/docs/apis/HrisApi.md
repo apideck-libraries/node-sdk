@@ -30,7 +30,7 @@ hrisApi.companiesAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hrisCompany** | [HrisCompany](../models/HrisCompany.md)|  |
+ **company** | [HrisCompany](../models/HrisCompany.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -309,7 +309,7 @@ hrisApi.companiesUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hrisCompany** | [HrisCompany](../models/HrisCompany.md)|  |
+ **company** | [HrisCompany](../models/HrisCompany.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 

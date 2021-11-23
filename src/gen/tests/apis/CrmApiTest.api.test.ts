@@ -162,6 +162,7 @@ describe('CrmApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             activity_datetime: '2021-05-01T12:00:00.000Z',
             duration_seconds: 1800,
             user_id: '12345',
@@ -347,6 +348,7 @@ describe('CrmApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           activity_datetime: '2021-05-01T12:00:00.000Z',
           duration_seconds: 1800,
           user_id: '12345',

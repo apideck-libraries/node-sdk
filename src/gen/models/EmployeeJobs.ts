@@ -20,7 +20,6 @@ import {
   EmployeeCompensationsToJSON
 } from './EmployeeCompensations'
 import { PaymentUnit, PaymentUnitFromJSON, PaymentUnitToJSON } from './PaymentUnit'
-import { Title, TitleFromJSON, TitleToJSON } from './Title'
 
 /**
  *
@@ -42,10 +41,10 @@ export interface EmployeeJobs {
   readonly employee_id?: string
   /**
    *
-   * @type {Title}
+   * @type {string}
    * @memberof EmployeeJobs
    */
-  title?: Title
+  title?: string | null
   /**
    *
    * @type {string}
@@ -95,7 +94,7 @@ export function EmployeeJobsFromJSONTyped(json: any, ignoreDiscriminator: boolea
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     employee_id: !exists(json, 'employee_id') ? undefined : json['employee_id'],
-    title: !exists(json, 'title') ? undefined : TitleFromJSON(json['title']),
+    title: !exists(json, 'title') ? undefined : json['title'],
     compensation_rate: !exists(json, 'compensation_rate') ? undefined : json['compensation_rate'],
     hired_at: !exists(json, 'hired_at')
       ? undefined
@@ -121,7 +120,7 @@ export function EmployeeJobsToJSON(value?: EmployeeJobs | null): any {
     return null
   }
   return {
-    title: TitleToJSON(value.title),
+    title: value.title,
     compensation_rate: value.compensation_rate,
     hired_at:
       value.hired_at === undefined
