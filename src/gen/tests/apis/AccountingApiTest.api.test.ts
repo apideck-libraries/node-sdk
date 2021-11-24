@@ -637,13 +637,16 @@ describe('AccountingApi', () => {
           quantity: 1,
           unit_price: 27500.5,
           asset_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           income_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           expense_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345'
@@ -709,15 +712,18 @@ describe('AccountingApi', () => {
             unit_price: 27500.5,
             asset_account: {
               id: '123456',
-              name: 'Bank account'
+              name: 'Bank account',
+              nominal_code: 'N091'
             },
             income_account: {
               id: '123456',
-              name: 'Bank account'
+              name: 'Bank account',
+              nominal_code: 'N091'
             },
             expense_account: {
               id: '123456',
-              name: 'Bank account'
+              name: 'Bank account',
+              nominal_code: 'N091'
             },
             active: true,
             row_version: '1-12345',
@@ -847,15 +853,18 @@ describe('AccountingApi', () => {
           unit_price: 27500.5,
           asset_account: {
             id: '123456',
-            name: 'Bank account'
+            name: 'Bank account',
+            nominal_code: 'N091'
           },
           income_account: {
             id: '123456',
-            name: 'Bank account'
+            name: 'Bank account',
+            nominal_code: 'N091'
           },
           expense_account: {
             id: '123456',
-            name: 'Bank account'
+            name: 'Bank account',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345',
@@ -941,13 +950,16 @@ describe('AccountingApi', () => {
           quantity: 1,
           unit_price: 27500.5,
           asset_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           income_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           expense_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345'
@@ -1034,7 +1046,8 @@ describe('AccountingApi', () => {
                 id: '123456'
               },
               ledger_account: {
-                id: '123456'
+                id: '123456',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1166,7 +1179,8 @@ describe('AccountingApi', () => {
                 },
                 ledger_account: {
                   id: '123456',
-                  name: 'Bank account'
+                  name: 'Bank account',
+                  nominal_code: 'N091'
                 },
                 row_version: '1-12345'
               }
@@ -1363,7 +1377,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                name: 'Bank account'
+                name: 'Bank account',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1511,7 +1526,8 @@ describe('AccountingApi', () => {
                 id: '123456'
               },
               ledger_account: {
-                id: '123456'
+                id: '123456',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1995,10 +2011,17 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
@@ -2044,19 +2067,29 @@ describe('AccountingApi', () => {
             reference: '123456',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091'
+            },
             transaction_date: '2021-05-01T12:00:00.000Z',
             customer: {
               id: '12345',
               display_id: 'CUST00101',
               company_name: 'The boring company'
             },
+            reconciled: true,
+            status: 'authorised',
+            type: 'accounts_receivable',
             allocations: [
               {
                 id: '123456',
                 type: 'invoice',
+                code: 'N091',
                 amount: 49.99
               }
-            ]
+            ],
+            updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
         meta: {
@@ -2155,19 +2188,29 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345',
             display_id: 'CUST00101',
             company_name: 'The boring company'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
               type: 'invoice',
+              code: 'N091',
               amount: 49.99
             }
-          ]
+          ],
+          updated_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
 
@@ -2225,10 +2268,17 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
@@ -2292,7 +2342,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
@@ -2343,7 +2392,6 @@ describe('AccountingApi', () => {
                 compound: true
               }
             ],
-            tax_type: 'output_gst',
             type: 'NONE',
             original_tax_rate_id: '12345',
             status: 'active',
@@ -2458,7 +2506,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
@@ -2533,7 +2580,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',

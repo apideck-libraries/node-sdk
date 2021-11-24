@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 `tax_payable_account_id` | **string** | Unique identifier for the account for tax collected. | [optional] 
 `tax_remitted_account_id` | **string** | Unique identifier for the account for tax remitted. | [optional] 
 `components` | **Array&lt;object&gt;** |  | [optional] 
-`tax_type` | **string** | Tax type used to define the source of tax collected or paid | [optional] 
 `type` | **string** | Tax type used to indicate the source of tax collected or paid | [optional] 
 `original_tax_rate_id` | **string** | ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities. | [optional] 
 `status` | **string** |  | [optional] 
@@ -24,33 +23,6 @@ Name | Type | Description | Notes
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
-
-
-
-
-<a name="TaxRateTaxType"></a>
-## Enum: TaxRate.tax_type
-
-
-* `output` (value: `'output'`)
-
-* `input` (value: `'input'`)
-
-* `withholdings` (value: `'withholdings'`)
-
-* `import_gst` (value: `'import_gst'`)
-
-* `output_gst` (value: `'output_gst'`)
-
-* `input_exempt` (value: `'input_exempt'`)
-
-* `output_exempt` (value: `'output_exempt'`)
-
-* `consolidated` (value: `'consolidated'`)
-
-* `luxury_car_tax` (value: `'luxury_car_tax'`)
-
-* `none` (value: `'none'`)
 
 
 
