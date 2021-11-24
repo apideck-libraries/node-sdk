@@ -5,11 +5,370 @@
 
 ## Methods
 
+* [Create Company](#companiesAdd)
+* [List Companies](#companiesAll)
+* [Delete Company](#companiesDelete)
+* [Get Company](#companiesOne)
+* [Update Company](#companiesUpdate)
 * [Create Employee](#employeesAdd)
 * [List Employees](#employeesAll)
 * [Delete Employee](#employeesDelete)
 * [Get Employee](#employeesOne)
 * [Update Employee](#employeesUpdate)
+
+<a name="companiesAdd"></a>
+# Create Company
+
+
+Method: **companiesAdd**
+
+```typescript
+hrisApi.companiesAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company** | [HrisCompany](../models/HrisCompany.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateHrisCompanyResponse`](../models/CreateHrisCompanyResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Companies | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  company: {
+    legal_name: 'SpaceX',
+    display_name: 'SpaceX',
+    debtor_id: '12345'
+  }
+}
+
+try {
+  const { data } = await apideck.hris.companiesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="companiesAll"></a>
+# List Companies
+
+
+Method: **companiesAll**
+
+```typescript
+hrisApi.companiesAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetHrisCompaniesResponse`](../models/GetHrisCompaniesResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Company | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.hris.companiesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="companiesDelete"></a>
+# Delete Company
+
+
+Method: **companiesDelete**
+
+```typescript
+hrisApi.companiesDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`DeleteHrisCompanyResponse`](../models/DeleteHrisCompanyResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Companies | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.hris.companiesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="companiesOne"></a>
+# Get Company
+
+
+Method: **companiesOne**
+
+```typescript
+hrisApi.companiesOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`GetHrisCompanyResponse`](../models/GetHrisCompanyResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Companies | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.hris.companiesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="companiesUpdate"></a>
+# Update Company
+
+
+Method: **companiesUpdate**
+
+```typescript
+hrisApi.companiesUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company** | [HrisCompany](../models/HrisCompany.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+
+
+
+### Response Type
+
+[`UpdateHrisCompanyResponse`](../models/UpdateHrisCompanyResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Companies | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  company: {
+    legal_name: 'SpaceX',
+    display_name: 'SpaceX',
+    debtor_id: '12345'
+  }
+}
+
+try {
+  const { data } = await apideck.hris.companiesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="employeesAdd"></a>
 # Create Employee
@@ -67,7 +426,12 @@ const params = {
     first_name: 'Elon',
     last_name: 'Musk',
     middle_name: 'D.',
+    display_name: 'Technoking',
+    preferred_name: 'Elon Musk',
+    initials: 'EM',
+    salutation: 'Mr',
     title: 'CEO',
+    marital_status: 'married',
     picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
@@ -78,14 +442,22 @@ const params = {
     company_id: '23456',
     company_name: 'SpaceX',
     employment_start_date: '2021-10-26',
+    employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
     manager_id: '23456',
     social_security_number: '123456789',
     birthday: '2000-08-12',
+    country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
-    language: 'EN',
+    prefered_language: 'EN',
+    languages: [
+      'EN'
+    ],
+    nationalities: [
+      'US'
+    ],
     jobs: [
       {
         title: 'CEO',
@@ -456,7 +828,12 @@ const params = {
     first_name: 'Elon',
     last_name: 'Musk',
     middle_name: 'D.',
+    display_name: 'Technoking',
+    preferred_name: 'Elon Musk',
+    initials: 'EM',
+    salutation: 'Mr',
     title: 'CEO',
+    marital_status: 'married',
     picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
@@ -467,14 +844,22 @@ const params = {
     company_id: '23456',
     company_name: 'SpaceX',
     employment_start_date: '2021-10-26',
+    employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
     manager_id: '23456',
     social_security_number: '123456789',
     birthday: '2000-08-12',
+    country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
-    language: 'EN',
+    prefered_language: 'EN',
+    languages: [
+      'EN'
+    ],
+    nationalities: [
+      'US'
+    ],
     jobs: [
       {
         title: 'CEO',

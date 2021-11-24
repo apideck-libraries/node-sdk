@@ -99,6 +99,8 @@ Name | Type | Description | Notes
 
 * `other_liability` (value: `'other_liability'`)
 
+* `sales` (value: `'sales'`)
+
 
 
 

@@ -68,9 +68,11 @@ CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
 CreateEmployeeResponse.md
+CreateFileRequest.md
 CreateFileResponse.md
 CreateFolderRequest.md
 CreateFolderResponse.md
+CreateHrisCompanyResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateLeadResponse.md
@@ -82,6 +84,7 @@ CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
+CreateSharedLinkResponse.md
 CreateTaxRateResponse.md
 CreateUserResponse.md
 CreateWebhookRequest.md
@@ -101,6 +104,7 @@ DeleteCustomerSupportCustomerResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
+DeleteHrisCompanyResponse.md
 DeleteInvoiceResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
@@ -109,6 +113,7 @@ DeleteNoteResponse.md
 DeleteOpportunityResponse.md
 DeletePaymentResponse.md
 DeletePipelineResponse.md
+DeleteSharedLinkResponse.md
 DeleteTaxRateResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
@@ -125,6 +130,7 @@ ExecuteWebhookResponse.md
 File.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
+FileType.md
 FilesFilter.md
 FilesSearch.md
 FilesSort.md
@@ -164,6 +170,8 @@ GetFileResponse.md
 GetFilesResponse.md
 GetFolderResponse.md
 GetFoldersResponse.md
+GetHrisCompaniesResponse.md
+GetHrisCompanyResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -185,6 +193,8 @@ GetPaymentResponse.md
 GetPaymentsResponse.md
 GetPipelineResponse.md
 GetPipelinesResponse.md
+GetSharedLinkResponse.md
+GetSharedLinksResponse.md
 GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetUserResponse.md
@@ -194,6 +204,7 @@ GetWebhookResponse.md
 GetWebhooksResponse.md
 HrisApi.md
 HrisApiTest.api.test.ts
+HrisCompany.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -243,6 +254,8 @@ ResourceStatus.md
 Session.md
 SessionSettings.md
 SessionTheme.md
+SharedLink.md
+SharedLinkTarget.md
 SimpleFormFieldOption.md
 SmsApi.md
 SmsApiTest.api.test.ts
@@ -266,6 +279,7 @@ UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
 UpdateFolderResponse.md
+UpdateHrisCompanyResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateLeadResponse.md
@@ -275,6 +289,7 @@ UpdateNoteResponse.md
 UpdateOpportunityResponse.md
 UpdatePaymentResponse.md
 UpdatePipelineResponse.md
+UpdateSharedLinkResponse.md
 UpdateTaxRateResponse.md
 UpdateUserResponse.md
 UpdateWebhookRequest.md
@@ -359,9 +374,11 @@ models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
 models/CreateEmployeeResponse.ts
+models/CreateFileRequest.ts
 models/CreateFileResponse.ts
 models/CreateFolderRequest.ts
 models/CreateFolderResponse.ts
+models/CreateHrisCompanyResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateLeadResponse.ts
@@ -373,6 +390,7 @@ models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
+models/CreateSharedLinkResponse.ts
 models/CreateTaxRateResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
@@ -388,6 +406,7 @@ models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
+models/DeleteHrisCompanyResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
@@ -396,6 +415,7 @@ models/DeleteNoteResponse.ts
 models/DeleteOpportunityResponse.ts
 models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
+models/DeleteSharedLinkResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
@@ -408,6 +428,7 @@ models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
+models/FileType.ts
 models/FilesFilter.ts
 models/FilesSearch.ts
 models/FilesSort.ts
@@ -447,6 +468,8 @@ models/GetFileResponse.ts
 models/GetFilesResponse.ts
 models/GetFolderResponse.ts
 models/GetFoldersResponse.ts
+models/GetHrisCompaniesResponse.ts
+models/GetHrisCompanyResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -468,6 +491,8 @@ models/GetPaymentResponse.ts
 models/GetPaymentsResponse.ts
 models/GetPipelineResponse.ts
 models/GetPipelinesResponse.ts
+models/GetSharedLinkResponse.ts
+models/GetSharedLinksResponse.ts
 models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetUserResponse.ts
@@ -475,6 +500,7 @@ models/GetUsersResponse.ts
 models/GetWebhookEventLogsResponse.ts
 models/GetWebhookResponse.ts
 models/GetWebhooksResponse.ts
+models/HrisCompany.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
@@ -524,6 +550,8 @@ models/ResourceStatus.ts
 models/Session.ts
 models/SessionSettings.ts
 models/SessionTheme.ts
+models/SharedLink.ts
+models/SharedLinkTarget.ts
 models/SimpleFormFieldOption.ts
 models/SocialLink.ts
 models/SortDirection.ts
@@ -545,6 +573,7 @@ models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts
 models/UpdateFolderResponse.ts
+models/UpdateHrisCompanyResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateLeadResponse.ts
@@ -554,6 +583,7 @@ models/UpdateNoteResponse.ts
 models/UpdateOpportunityResponse.ts
 models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
+models/UpdateSharedLinkResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateUserResponse.ts
 models/UpdateWebhookRequest.ts

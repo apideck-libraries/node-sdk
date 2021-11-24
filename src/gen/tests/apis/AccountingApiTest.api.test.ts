@@ -610,11 +610,13 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         invoiceItem: {
-          code: '120-C',
-          sold: true,
           name: 'Model Y',
           description:
             'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          code: '120-C',
+          sold: true,
+          purchased: true,
+          tracked: true,
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
@@ -624,13 +626,27 @@ describe('AccountingApi', () => {
               id: '123456'
             }
           },
+          purchase_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'pc.',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '123456'
+            }
+          },
           quantity: 1,
           unit_price: 27500.5,
+          asset_account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           income_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           expense_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345'
@@ -666,11 +682,13 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '123456',
-            code: '120-C',
-            sold: true,
             name: 'Model Y',
             description:
               'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+            code: '120-C',
+            sold: true,
+            purchased: true,
+            tracked: true,
             type: 'inventory',
             sales_details: {
               unit_price: 27500.5,
@@ -681,15 +699,31 @@ describe('AccountingApi', () => {
                 code: 'N-T'
               }
             },
+            purchase_details: {
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              tax_inclusive: true,
+              tax_rate: {
+                id: '123456',
+                code: 'N-T'
+              }
+            },
             quantity: 1,
             unit_price: 27500.5,
+            asset_account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091'
+            },
             income_account: {
               id: '123456',
-              name: 'Bank account'
+              name: 'Bank account',
+              nominal_code: 'N091'
             },
             expense_account: {
               id: '123456',
-              name: 'Bank account'
+              name: 'Bank account',
+              nominal_code: 'N091'
             },
             active: true,
             row_version: '1-12345',
@@ -789,11 +823,13 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '123456',
-          code: '120-C',
-          sold: true,
           name: 'Model Y',
           description:
             'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          code: '120-C',
+          sold: true,
+          purchased: true,
+          tracked: true,
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
@@ -804,15 +840,31 @@ describe('AccountingApi', () => {
               code: 'N-T'
             }
           },
+          purchase_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'pc.',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '123456',
+              code: 'N-T'
+            }
+          },
           quantity: 1,
           unit_price: 27500.5,
+          asset_account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091'
+          },
           income_account: {
             id: '123456',
-            name: 'Bank account'
+            name: 'Bank account',
+            nominal_code: 'N091'
           },
           expense_account: {
             id: '123456',
-            name: 'Bank account'
+            name: 'Bank account',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345',
@@ -871,11 +923,13 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         invoiceItem: {
-          code: '120-C',
-          sold: true,
           name: 'Model Y',
           description:
             'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+          code: '120-C',
+          sold: true,
+          purchased: true,
+          tracked: true,
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
@@ -885,13 +939,27 @@ describe('AccountingApi', () => {
               id: '123456'
             }
           },
+          purchase_details: {
+            unit_price: 27500.5,
+            unit_of_measure: 'pc.',
+            tax_inclusive: true,
+            tax_rate: {
+              id: '123456'
+            }
+          },
           quantity: 1,
           unit_price: 27500.5,
+          asset_account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           income_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           expense_account: {
-            id: '123456'
+            id: '123456',
+            nominal_code: 'N091'
           },
           active: true,
           row_version: '1-12345'
@@ -945,8 +1013,11 @@ describe('AccountingApi', () => {
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'submitted',
+          reference: '123456',
+          status: 'draft',
+          invoice_sent: true,
           currency: 'USD',
+          currency_rate: 0.69,
           tax_inclusive: true,
           sub_total: 27500,
           total_tax: 2500,
@@ -961,7 +1032,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -975,7 +1046,8 @@ describe('AccountingApi', () => {
                 id: '123456'
               },
               ledger_account: {
-                id: '123456'
+                id: '123456',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1024,6 +1096,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345'
         }
       } as any
@@ -1068,8 +1141,11 @@ describe('AccountingApi', () => {
             invoice_date: '2020-09-30',
             due_date: '2020-10-30',
             po_number: '90000117',
-            status: 'submitted',
+            reference: '123456',
+            status: 'draft',
+            invoice_sent: true,
             currency: 'USD',
+            currency_rate: 0.69,
             tax_inclusive: true,
             sub_total: 27500,
             total_tax: 2500,
@@ -1085,7 +1161,7 @@ describe('AccountingApi', () => {
                 line_number: 1,
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: 'Inventory',
+                type: 'inventory',
                 tax_amount: 27500,
                 total_amount: 27500,
                 quantity: 1,
@@ -1103,7 +1179,8 @@ describe('AccountingApi', () => {
                 },
                 ledger_account: {
                   id: '123456',
-                  name: 'Bank account'
+                  name: 'Bank account',
+                  nominal_code: 'N091'
                 },
                 row_version: '1-12345'
               }
@@ -1152,6 +1229,7 @@ describe('AccountingApi', () => {
               email: 'elon@musk.com',
               website: 'https://elonmusk.com'
             },
+            template_id: '123456',
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1261,8 +1339,11 @@ describe('AccountingApi', () => {
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'submitted',
+          reference: '123456',
+          status: 'draft',
+          invoice_sent: true,
           currency: 'USD',
+          currency_rate: 0.69,
           tax_inclusive: true,
           sub_total: 27500,
           total_tax: 2500,
@@ -1278,7 +1359,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1296,7 +1377,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                name: 'Bank account'
+                name: 'Bank account',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1345,6 +1427,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1410,8 +1493,11 @@ describe('AccountingApi', () => {
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
           po_number: '90000117',
-          status: 'submitted',
+          reference: '123456',
+          status: 'draft',
+          invoice_sent: true,
           currency: 'USD',
+          currency_rate: 0.69,
           tax_inclusive: true,
           sub_total: 27500,
           total_tax: 2500,
@@ -1426,7 +1512,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'Inventory',
+              type: 'inventory',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1440,7 +1526,8 @@ describe('AccountingApi', () => {
                 id: '123456'
               },
               ledger_account: {
-                id: '123456'
+                id: '123456',
+                nominal_code: 'N091'
               },
               row_version: '1-12345'
             }
@@ -1489,6 +1576,7 @@ describe('AccountingApi', () => {
             email: 'elon@musk.com',
             website: 'https://elonmusk.com'
           },
+          template_id: '123456',
           row_version: '1-12345'
         }
       } as any
@@ -1532,7 +1620,7 @@ describe('AccountingApi', () => {
       const params = {
         ledgerAccount: {
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -1601,7 +1689,7 @@ describe('AccountingApi', () => {
           {
             id: '12345',
             display_id: '1-12345',
-            nominal_code: '091',
+            nominal_code: 'N091',
             classification: 'asset',
             type: 'bank',
             sub_type: 'CHECKING_ACCOUNT',
@@ -1741,7 +1829,7 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -1840,7 +1928,7 @@ describe('AccountingApi', () => {
         id: 'id_example',
         ledgerAccount: {
           display_id: '1-12345',
-          nominal_code: '091',
+          nominal_code: 'N091',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -1923,10 +2011,17 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
@@ -1972,19 +2067,29 @@ describe('AccountingApi', () => {
             reference: '123456',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091'
+            },
             transaction_date: '2021-05-01T12:00:00.000Z',
             customer: {
               id: '12345',
               display_id: 'CUST00101',
               company_name: 'The boring company'
             },
+            reconciled: true,
+            status: 'authorised',
+            type: 'accounts_receivable',
             allocations: [
               {
                 id: '123456',
                 type: 'invoice',
+                code: 'N091',
                 amount: 49.99
               }
-            ]
+            ],
+            updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
         meta: {
@@ -2083,19 +2188,29 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345',
             display_id: 'CUST00101',
             company_name: 'The boring company'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
               type: 'invoice',
+              code: 'N091',
               amount: 49.99
             }
-          ]
+          ],
+          updated_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
 
@@ -2153,10 +2268,17 @@ describe('AccountingApi', () => {
           reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345'
           },
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
           allocations: [
             {
               id: '123456',
@@ -2220,7 +2342,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
@@ -2271,7 +2392,6 @@ describe('AccountingApi', () => {
                 compound: true
               }
             ],
-            tax_type: 'output_gst',
             type: 'NONE',
             original_tax_rate_id: '12345',
             status: 'active',
@@ -2386,7 +2506,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
@@ -2461,7 +2580,6 @@ describe('AccountingApi', () => {
               compound: true
             }
           ],
-          tax_type: 'output_gst',
           type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',

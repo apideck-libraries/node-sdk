@@ -3,13 +3,15 @@
 ## Enum
 
 
-* `created` (value: `'vault.connection.created'`)
+* `Star` (value: `'*'`)
 
-* `updated` (value: `'vault.connection.updated'`)
+* `vault_connection_created` (value: `'vault.connection.created'`)
 
-* `deleted` (value: `'vault.connection.deleted'`)
+* `vault_connection_updated` (value: `'vault.connection.updated'`)
 
-* `callable` (value: `'vault.connection.callable'`)
+* `vault_connection_deleted` (value: `'vault.connection.deleted'`)
+
+* `vault_connection_callable` (value: `'vault.connection.callable'`)
 
 
 ---

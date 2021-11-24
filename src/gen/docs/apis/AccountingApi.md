@@ -630,10 +630,12 @@ const apideck = new Apideck({
 
 const params = {
   invoiceItem: {
-    code: '120-C',
-    sold: true,
     name: 'Model Y',
     description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+    code: '120-C',
+    sold: true,
+    purchased: true,
+    tracked: true,
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
@@ -643,13 +645,27 @@ const params = {
         id: '123456'
       }
     },
+    purchase_details: {
+      unit_price: 27500.5,
+      unit_of_measure: 'pc.',
+      tax_inclusive: true,
+      tax_rate: {
+        id: '123456'
+      }
+    },
     quantity: 1,
     unit_price: 27500.5,
+    asset_account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
     income_account: {
-      id: '123456'
+      id: '123456',
+      nominal_code: 'N091'
     },
     expense_account: {
-      id: '123456'
+      id: '123456',
+      nominal_code: 'N091'
     },
     active: true,
     row_version: '1-12345'
@@ -931,10 +947,12 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   invoiceItem: {
-    code: '120-C',
-    sold: true,
     name: 'Model Y',
     description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+    code: '120-C',
+    sold: true,
+    purchased: true,
+    tracked: true,
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
@@ -944,13 +962,27 @@ const params = {
         id: '123456'
       }
     },
+    purchase_details: {
+      unit_price: 27500.5,
+      unit_of_measure: 'pc.',
+      tax_inclusive: true,
+      tax_rate: {
+        id: '123456'
+      }
+    },
     quantity: 1,
     unit_price: 27500.5,
+    asset_account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
     income_account: {
-      id: '123456'
+      id: '123456',
+      nominal_code: 'N091'
     },
     expense_account: {
-      id: '123456'
+      id: '123456',
+      nominal_code: 'N091'
     },
     active: true,
     row_version: '1-12345'
@@ -1032,8 +1064,11 @@ const params = {
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'submitted',
+    reference: '123456',
+    status: 'draft',
+    invoice_sent: true,
     currency: 'USD',
+    currency_rate: 0.69,
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1047,7 +1082,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'Inventory',
+        type: 'inventory',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1061,7 +1096,8 @@ const params = {
           id: '123456'
         },
         ledger_account: {
-          id: '123456'
+          id: '123456',
+          nominal_code: 'N091'
         },
         row_version: '1-12345'
       }
@@ -1110,6 +1146,7 @@ const params = {
       email: 'elon@musk.com',
       website: 'https://elonmusk.com'
     },
+    template_id: '123456',
     row_version: '1-12345'
   }
 }
@@ -1397,8 +1434,11 @@ const params = {
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
     po_number: '90000117',
-    status: 'submitted',
+    reference: '123456',
+    status: 'draft',
+    invoice_sent: true,
     currency: 'USD',
+    currency_rate: 0.69,
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1412,7 +1452,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'Inventory',
+        type: 'inventory',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1426,7 +1466,8 @@ const params = {
           id: '123456'
         },
         ledger_account: {
-          id: '123456'
+          id: '123456',
+          nominal_code: 'N091'
         },
         row_version: '1-12345'
       }
@@ -1475,6 +1516,7 @@ const params = {
       email: 'elon@musk.com',
       website: 'https://elonmusk.com'
     },
+    template_id: '123456',
     row_version: '1-12345'
   }
 }
@@ -1547,7 +1589,7 @@ const apideck = new Apideck({
 const params = {
   ledgerAccount: {
     display_id: '1-12345',
-    nominal_code: '091',
+    nominal_code: 'N091',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',
@@ -1862,7 +1904,7 @@ const params = {
   id: 'id_example',
   ledgerAccount: {
     display_id: '1-12345',
-    nominal_code: '091',
+    nominal_code: 'N091',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',
@@ -1974,10 +2016,17 @@ const params = {
     reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
+    account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345'
     },
+    reconciled: true,
+    status: 'authorised',
+    type: 'accounts_receivable',
     allocations: [
       {
         id: '123456',
@@ -2269,10 +2318,17 @@ const params = {
     reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
+    account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345'
     },
+    reconciled: true,
+    status: 'authorised',
+    type: 'accounts_receivable',
     allocations: [
       {
         id: '123456',
@@ -2365,7 +2421,6 @@ const params = {
         compound: true
       }
     ],
-    tax_type: 'output_gst',
     type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
@@ -2663,7 +2718,6 @@ const params = {
         compound: true
       }
     ],
-    tax_type: 'output_gst',
     type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',

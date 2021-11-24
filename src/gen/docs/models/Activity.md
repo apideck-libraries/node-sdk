@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `type` | **string** |  | 
 `id` | **string** |  | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `activity_datetime` | **string** |  | [optional] 
 `duration_seconds` | **number** |  | [optional] 
 `user_id` | **string** |  | [optional] 
@@ -96,6 +97,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

@@ -3,11 +3,13 @@
 ## Enum
 
 
-* `created` (value: `'lead.lead.created'`)
+* `Star` (value: `'*'`)
 
-* `updated` (value: `'lead.lead.updated'`)
+* `lead_lead_created` (value: `'lead.lead.created'`)
 
-* `deleted` (value: `'lead.lead.deleted'`)
+* `lead_lead_updated` (value: `'lead.lead.updated'`)
+
+* `lead_lead_deleted` (value: `'lead.lead.deleted'`)
 
 
 ---

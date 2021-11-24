@@ -3,35 +3,37 @@
 ## Enum
 
 
-* `customer_created` (value: `'accounting.customer.created'`)
+* `Star` (value: `'*'`)
 
-* `customer_updated` (value: `'accounting.customer.updated'`)
+* `accounting_customer_created` (value: `'accounting.customer.created'`)
 
-* `customer_deleted` (value: `'accounting.customer.deleted'`)
+* `accounting_customer_updated` (value: `'accounting.customer.updated'`)
 
-* `invoice_created` (value: `'accounting.invoice.created'`)
+* `accounting_customer_deleted` (value: `'accounting.customer.deleted'`)
 
-* `invoice_updated` (value: `'accounting.invoice.updated'`)
+* `accounting_invoice_created` (value: `'accounting.invoice.created'`)
 
-* `invoice_deleted` (value: `'accounting.invoice.deleted'`)
+* `accounting_invoice_updated` (value: `'accounting.invoice.updated'`)
 
-* `invoice_item_created` (value: `'accounting.invoice_item.created'`)
+* `accounting_invoice_deleted` (value: `'accounting.invoice.deleted'`)
 
-* `invoice_item_updated` (value: `'accounting.invoice_item.updated'`)
+* `accounting_invoice_item_created` (value: `'accounting.invoice_item.created'`)
 
-* `invoice_item_deleted` (value: `'accounting.invoice_item.deleted'`)
+* `accounting_invoice_item_updated` (value: `'accounting.invoice_item.updated'`)
 
-* `ledger_account_created` (value: `'accounting.ledger_account.created'`)
+* `accounting_invoice_item_deleted` (value: `'accounting.invoice_item.deleted'`)
 
-* `ledger_account_updated` (value: `'accounting.ledger_account.updated'`)
+* `accounting_ledger_account_created` (value: `'accounting.ledger_account.created'`)
 
-* `ledger_account_deleted` (value: `'accounting.ledger_account.deleted'`)
+* `accounting_ledger_account_updated` (value: `'accounting.ledger_account.updated'`)
 
-* `tax_rate_created` (value: `'accounting.tax_rate.created'`)
+* `accounting_ledger_account_deleted` (value: `'accounting.ledger_account.deleted'`)
 
-* `tax_rate_updated` (value: `'accounting.tax_rate.updated'`)
+* `accounting_tax_rate_created` (value: `'accounting.tax_rate.created'`)
 
-* `tax_rate_deleted` (value: `'accounting.tax_rate.deleted'`)
+* `accounting_tax_rate_updated` (value: `'accounting.tax_rate.updated'`)
+
+* `accounting_tax_rate_deleted` (value: `'accounting.tax_rate.deleted'`)
 
 
 ---
