@@ -59,6 +59,13 @@ export interface VaultApiConnectionsGetSettingsRequest {
   appId?: string
 }
 
+export interface VaultApiConnectionsOneRequest {
+  serviceId: string
+  unifiedApi: string
+  consumerId?: string
+  appId?: string
+}
+
 export interface VaultApiConnectionsUpdateRequest {
   serviceId: string
   unifiedApi: string
@@ -290,6 +297,68 @@ export class VaultApi extends runtime.BaseAPI {
     requestParameters: VaultApiConnectionsGetSettingsRequest
   ): Promise<GetConnectionResponse> {
     const response = await this.connectionsGetSettingsRaw(requestParameters)
+    return await response.value()
+  }
+
+  /**
+   * Get a connection
+   * Get connection
+   */
+  async connectionsOneRaw(
+    requestParameters: VaultApiConnectionsOneRequest
+  ): Promise<runtime.ApiResponse<GetConnectionResponse>> {
+    if (requestParameters.serviceId === null || requestParameters.serviceId === undefined) {
+      throw new runtime.RequiredError(
+        'serviceId',
+        'Required parameter requestParameters.serviceId was null or undefined when calling connectionsOne.'
+      )
+    }
+
+    if (requestParameters.unifiedApi === null || requestParameters.unifiedApi === undefined) {
+      throw new runtime.RequiredError(
+        'unifiedApi',
+        'Required parameter requestParameters.unifiedApi was null or undefined when calling connectionsOne.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request({
+      path: `/vault/connections/{unified_api}/{service_id}`
+        .replace(`{${'service_id'}}`, encodeURIComponent(String(requestParameters.serviceId)))
+        .replace(`{${'unified_api'}}`, encodeURIComponent(String(requestParameters.unifiedApi))),
+      method: 'GET',
+      headers: headerParameters,
+      query: queryParameters
+    })
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetConnectionResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Get a connection
+   * Get connection
+   */
+  async connectionsOne(
+    requestParameters: VaultApiConnectionsOneRequest
+  ): Promise<GetConnectionResponse> {
+    const response = await this.connectionsOneRaw(requestParameters)
     return await response.value()
   }
 

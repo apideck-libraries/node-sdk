@@ -8,6 +8,7 @@
 * [Get All Connections](#connectionsAll)
 * [Deletes A Connection](#connectionsDelete)
 * [Get Resource Settings](#connectionsGetSettings)
+* [Get Connection](#connectionsOne)
 * [Update Connection](#connectionsUpdate)
 * [Update Settings](#connectionsUpdateSettings)
 * [Get All Consumers](#consumersAll)
@@ -210,6 +211,75 @@ const params = {
 
 try {
   const { data } = await apideck.vault.connectionsGetSettings(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="connectionsOne"></a>
+# Get Connection
+
+
+Method: **connectionsOne**
+
+```typescript
+vaultApi.connectionsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **unifiedApi** | [**string**] | Unified API | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetConnectionResponse`](../models/GetConnectionResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connection | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  serviceId: 'pipedrive',
+  unifiedApi: 'crm'
+}
+
+try {
+  const { data } = await apideck.vault.connectionsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
