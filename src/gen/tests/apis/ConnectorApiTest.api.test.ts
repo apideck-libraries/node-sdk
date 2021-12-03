@@ -198,7 +198,8 @@ describe('ConnectorApi', () => {
               {
                 id: 'companies',
                 name: 'Companies',
-                status: 'live'
+                status: 'live',
+                excluded_from_coverage: false
               }
             ]
           }
@@ -261,7 +262,8 @@ describe('ConnectorApi', () => {
             {
               id: 'companies',
               name: 'Companies',
-              status: 'live'
+              status: 'live',
+              excluded_from_coverage: false
             }
           ]
         },

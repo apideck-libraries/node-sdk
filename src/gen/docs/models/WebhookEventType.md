@@ -55,6 +55,18 @@
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)
 
+* `ats_job_created` (value: `'ats.job.created'`)
+
+* `ats_job_updated` (value: `'ats.job.updated'`)
+
+* `ats_job_deleted` (value: `'ats.job.deleted'`)
+
+* `ats_applicant_created` (value: `'ats.applicant.created'`)
+
+* `ats_applicant_updated` (value: `'ats.applicant.updated'`)
+
+* `ats_applicant_deleted` (value: `'ats.applicant.deleted'`)
+
 
 ---
 

@@ -68,6 +68,7 @@ const params = {
     name: 'Elon Musk',
     first_name: 'Elon',
     last_name: 'Musk',
+    headline: 'PepsiCo, Inc, Central Perk',
     emails: [
       {
         id: '123',
@@ -83,7 +84,49 @@ const params = {
         number: '111-111-1111',
         type: 'primary'
       }
-    ]
+    ],
+    addresses: [
+      {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com'
+      }
+    ],
+    applications: [
+      'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+      'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+    ],
+    followers: [
+      'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+      'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+    ],
+    sources: [
+      'Job site'
+    ],
+    confidential: false,
+    anonymized: 'true',
+    tags: [
+      'New'
+    ],
+    archived: false,
+    owner_id: '54321'
   }
 }
 
