@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | ID of the resource, typically a lowercased version of its name. | [optional] 
 `name` | **string** | Name of the resource (plural) | [optional] 
 `status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
+`excluded_from_coverage` | **boolean** | Exclude from mapping coverage | [optional] 
 
 
 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 
 
 * [`ResourceStatus`](ResourceStatus.md)
+
 
 ---
 

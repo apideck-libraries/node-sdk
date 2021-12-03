@@ -1,6 +1,37 @@
-# Apideck.WebhookEventType
+# Apideck.ConsumerWebhook
 
-## Enum
+### Description
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+`unified_api` | [**UnifiedApiId**](UnifiedApiId.md) |  | 
+`status` | **string** | The status of the webhook. | 
+`delivery_url` | **string** | The delivery url of the webhook endpoint. | 
+`execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
+`events` | **Array&lt;string&gt;** | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
+`id` | **string** |  | [optional] 
+`description` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
+
+
+
+
+
+<a name="ConsumerWebhookStatus"></a>
+## Enum: ConsumerWebhook.status
+
+
+* `enabled` (value: `'enabled'`)
+
+* `disabled` (value: `'disabled'`)
+
+
+
+
+<a name="Array<ConsumerWebhookEvents>"></a>
+## Enum: ConsumerWebhook.events
 
 
 * `Star` (value: `'*'`)
@@ -66,6 +97,19 @@
 * `ats_applicant_updated` (value: `'ats.applicant.updated'`)
 
 * `ats_applicant_deleted` (value: `'ats.applicant.deleted'`)
+
+
+
+
+## Referenced Types:
+* [`UnifiedApiId`](UnifiedApiId.md)
+
+
+
+
+
+
+
 
 
 ---

@@ -1,4 +1,4 @@
-# Apideck.ConnectorResourceSupportedFields
+# Apideck.ApiResourceCoverageSupportedFields
 
 ### Description
 

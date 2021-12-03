@@ -9,6 +9,8 @@
 
 * `development` (value: `'development'`)
 
+* `upcoming` (value: `'upcoming'`)
+
 * `considering` (value: `'considering'`)
 
 

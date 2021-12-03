@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 `supported_operations` | **Array&lt;string&gt;** | List of supported operations on the resource. | [optional] 
 `supported_filters` | **Array&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 `supported_sort_by` | **Array&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
-`supported_fields` | [**Array&lt;ConnectorResourceSupportedFields&gt;**](ConnectorResourceSupportedFields.md) | Supported fields. | [optional] 
+`supported_fields` | [**Array&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields. | [optional] 
 
 
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 
 
-* [`ConnectorResourceSupportedFields`](ConnectorResourceSupportedFields.md)
+* [`ApiResourceCoverageSupportedFields`](ApiResourceCoverageSupportedFields.md)
 
 ---
 

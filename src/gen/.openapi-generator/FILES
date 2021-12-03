@@ -20,6 +20,7 @@ Api.md
 ApiResource.md
 ApiResourceCoverage.md
 ApiResourceCoverageCoverage.md
+ApiResourceCoverageSupportedFields.md
 ApiResourceLinkedResources.md
 ApiResources.md
 ApiStatus.md
@@ -44,7 +45,6 @@ ConnectorApi.md
 ConnectorApiTest.api.test.ts
 ConnectorOauthScopes.md
 ConnectorResource.md
-ConnectorResourceSupportedFields.md
 ConnectorSetting.md
 ConnectorStatus.md
 ConnectorSupportedEvents.md
@@ -56,6 +56,7 @@ ConsumerConnection.md
 ConsumerMetadata.md
 ConsumerRequestCountsInDateRangeResponse.md
 ConsumerRequestCountsInDateRangeResponseData.md
+ConsumerWebhook.md
 Contact.md
 ContactsFilter.md
 ContactsSort.md
@@ -330,6 +331,7 @@ models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
 models/ApiResourceCoverageCoverage.ts
+models/ApiResourceCoverageSupportedFields.ts
 models/ApiResourceLinkedResources.ts
 models/ApiResources.ts
 models/ApiStatus.ts
@@ -350,7 +352,6 @@ models/ConnectionState.ts
 models/Connector.ts
 models/ConnectorOauthScopes.ts
 models/ConnectorResource.ts
-models/ConnectorResourceSupportedFields.ts
 models/ConnectorSetting.ts
 models/ConnectorStatus.ts
 models/ConnectorSupportedEvents.ts
@@ -362,6 +363,7 @@ models/ConsumerConnection.ts
 models/ConsumerMetadata.ts
 models/ConsumerRequestCountsInDateRangeResponse.ts
 models/ConsumerRequestCountsInDateRangeResponseData.ts
+models/ConsumerWebhook.ts
 models/Contact.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
