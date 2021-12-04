@@ -38,7 +38,8 @@ export enum UnifiedApiId {
   csp = 'csp',
   email_marketing = 'email-marketing',
   ats = 'ats',
-  hris = 'hris'
+  hris = 'hris',
+  pos = 'pos'
 }
 
 export function UnifiedApiIdFromJSON(json: any): UnifiedApiId {

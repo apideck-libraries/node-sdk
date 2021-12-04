@@ -98,6 +98,12 @@ Name | Type | Description | Notes
 
 * `ats_applicant_deleted` (value: `'ats.applicant.deleted'`)
 
+* `pos_order_created` (value: `'pos.order.created'`)
+
+* `pos_order_updated` (value: `'pos.order.updated'`)
+
+* `pos_order_deleted` (value: `'pos.order.deleted'`)
+
 
 
 

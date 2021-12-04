@@ -121,7 +121,10 @@ export enum ConsumerWebhookEvents {
   ats_job_deleted = 'ats.job.deleted',
   ats_applicant_created = 'ats.applicant.created',
   ats_applicant_updated = 'ats.applicant.updated',
-  ats_applicant_deleted = 'ats.applicant.deleted'
+  ats_applicant_deleted = 'ats.applicant.deleted',
+  pos_order_created = 'pos.order.created',
+  pos_order_updated = 'pos.order.updated',
+  pos_order_deleted = 'pos.order.deleted'
 }
 
 export function ConsumerWebhookFromJSON(json: any): ConsumerWebhook {

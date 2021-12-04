@@ -8,6 +8,7 @@ import {
   FileStorageApi,
   HrisApi,
   LeadApi,
+  PosApi,
   SmsApi,
   VaultApi,
   WebhookApi
@@ -34,6 +35,7 @@ export class Apideck {
   readonly fileStorage: FileStorageApi
   readonly hris: HrisApi
   readonly lead: LeadApi
+  readonly pos: PosApi
   readonly sms: SmsApi
   readonly vault: VaultApi
   readonly webhook: WebhookApi
@@ -63,6 +65,7 @@ export class Apideck {
     this.fileStorage = new FileStorageApi(configuration)
     this.hris = new HrisApi(configuration)
     this.lead = new LeadApi(configuration)
+    this.pos = new PosApi(configuration)
     this.sms = new SmsApi(configuration)
     this.vault = new VaultApi(configuration)
     this.webhook = new WebhookApi(configuration)

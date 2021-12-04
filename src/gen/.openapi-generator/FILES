@@ -81,6 +81,7 @@ CreateLedgerAccountResponse.md
 CreateMessageResponse.md
 CreateNoteResponse.md
 CreateOpportunityResponse.md
+CreateOrderResponse.md
 CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreateSessionResponse.md
@@ -112,6 +113,7 @@ DeleteLedgerAccountResponse.md
 DeleteMessageResponse.md
 DeleteNoteResponse.md
 DeleteOpportunityResponse.md
+DeleteOrderResponse.md
 DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeleteSharedLinkResponse.md
@@ -190,6 +192,8 @@ GetNoteResponse.md
 GetNotesResponse.md
 GetOpportunitiesResponse.md
 GetOpportunityResponse.md
+GetOrderResponse.md
+GetOrdersResponse.md
 GetPaymentResponse.md
 GetPaymentsResponse.md
 GetPipelineResponse.md
@@ -242,6 +246,8 @@ Note.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
+Order.md
+OrderMerchant.md
 Owner.md
 Payment.md
 PaymentRequiredResponse.md
@@ -249,6 +255,8 @@ PaymentUnit.md
 PhoneNumber.md
 Pipeline.md
 PipelineStages.md
+PosApi.md
+PosApiTest.api.test.ts
 Price.md
 RequestCountAllocation.md
 ResourceStatus.md
@@ -288,6 +296,7 @@ UpdateLedgerAccountResponse.md
 UpdateMessageResponse.md
 UpdateNoteResponse.md
 UpdateOpportunityResponse.md
+UpdateOrderResponse.md
 UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdateSharedLinkResponse.md
@@ -317,6 +326,7 @@ apis/CustomerSupportApi.ts
 apis/FileStorageApi.ts
 apis/HrisApi.ts
 apis/LeadApi.ts
+apis/PosApi.ts
 apis/SmsApi.ts
 apis/VaultApi.ts
 apis/WebhookApi.ts
@@ -388,6 +398,7 @@ models/CreateLedgerAccountResponse.ts
 models/CreateMessageResponse.ts
 models/CreateNoteResponse.ts
 models/CreateOpportunityResponse.ts
+models/CreateOrderResponse.ts
 models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreateSessionResponse.ts
@@ -415,6 +426,7 @@ models/DeleteLedgerAccountResponse.ts
 models/DeleteMessageResponse.ts
 models/DeleteNoteResponse.ts
 models/DeleteOpportunityResponse.ts
+models/DeleteOrderResponse.ts
 models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteSharedLinkResponse.ts
@@ -489,6 +501,8 @@ models/GetNoteResponse.ts
 models/GetNotesResponse.ts
 models/GetOpportunitiesResponse.ts
 models/GetOpportunityResponse.ts
+models/GetOrderResponse.ts
+models/GetOrdersResponse.ts
 models/GetPaymentResponse.ts
 models/GetPaymentsResponse.ts
 models/GetPipelineResponse.ts
@@ -539,6 +553,8 @@ models/Note.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
+models/Order.ts
+models/OrderMerchant.ts
 models/Owner.ts
 models/Payment.ts
 models/PaymentRequiredResponse.ts
@@ -583,6 +599,7 @@ models/UpdateLedgerAccountResponse.ts
 models/UpdateMessageResponse.ts
 models/UpdateNoteResponse.ts
 models/UpdateOpportunityResponse.ts
+models/UpdateOrderResponse.ts
 models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateSharedLinkResponse.ts
