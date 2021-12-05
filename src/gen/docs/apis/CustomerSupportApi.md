@@ -99,6 +99,7 @@ const params = {
         country_code: '1',
         area_code: '323',
         number: '111-111-1111',
+        extension: '105',
         type: 'primary'
       }
     ],
@@ -435,6 +436,7 @@ const params = {
         country_code: '1',
         area_code: '323',
         number: '111-111-1111',
+        extension: '105',
         type: 'primary'
       }
     ],

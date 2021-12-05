@@ -124,6 +124,8 @@ Email.md
 Employee.md
 EmployeeCompensations.md
 EmployeeJobs.md
+EmployeeManager.md
+EmployeeSocialLinks.md
 EmployeeTeam.md
 Error.md
 EventType.md
@@ -437,6 +439,8 @@ models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
 models/EmployeeJobs.ts
+models/EmployeeManager.ts
+models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
 models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
