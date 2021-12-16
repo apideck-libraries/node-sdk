@@ -77,6 +77,12 @@ export interface FormField {
   disabled?: boolean | null
   /**
    *
+   * @type {boolean}
+   * @memberof FormField
+   */
+  sensitive?: boolean | null
+  /**
+   *
    * @type {Array<FormFieldOption>}
    * @memberof FormField
    */
@@ -123,6 +129,7 @@ export function FormFieldFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       ? undefined
       : json['allow_custom_values'],
     disabled: !exists(json, 'disabled') ? undefined : json['disabled'],
+    sensitive: !exists(json, 'sensitive') ? undefined : json['sensitive'],
     options: !exists(json, 'options')
       ? undefined
       : (json['options'] as Array<any>).map(FormFieldOptionFromJSON)
@@ -146,6 +153,7 @@ export function FormFieldToJSON(value?: FormField | null): any {
     custom_field: value.custom_field,
     allow_custom_values: value.allow_custom_values,
     disabled: value.disabled,
+    sensitive: value.sensitive,
     options:
       value.options === undefined
         ? undefined

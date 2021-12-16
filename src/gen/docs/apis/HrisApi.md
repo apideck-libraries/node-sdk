@@ -448,7 +448,8 @@ const params = {
     manager: {
       name: 'Elon Musk',
       first_name: 'Elon',
-      last_name: 'Musk'
+      last_name: 'Musk',
+      email: 'elon@musk.com'
     },
     social_security_number: '123456789',
     birthday: '2000-08-12',
@@ -868,7 +869,8 @@ const params = {
     manager: {
       name: 'Elon Musk',
       first_name: 'Elon',
-      last_name: 'Musk'
+      last_name: 'Musk',
+      email: 'elon@musk.com'
     },
     social_security_number: '123456789',
     birthday: '2000-08-12',

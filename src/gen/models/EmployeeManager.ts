@@ -43,6 +43,12 @@ export interface EmployeeManager {
    * @memberof EmployeeManager
    */
   last_name?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof EmployeeManager
+   */
+  email?: string | null
 }
 
 export function EmployeeManagerFromJSON(json: any): EmployeeManager {
@@ -60,7 +66,8 @@ export function EmployeeManagerFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
-    last_name: !exists(json, 'last_name') ? undefined : json['last_name']
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
+    email: !exists(json, 'email') ? undefined : json['email']
   }
 }
 
@@ -74,6 +81,7 @@ export function EmployeeManagerToJSON(value?: EmployeeManager | null): any {
   return {
     name: value.name,
     first_name: value.first_name,
-    last_name: value.last_name
+    last_name: value.last_name,
+    email: value.email
   }
 }
