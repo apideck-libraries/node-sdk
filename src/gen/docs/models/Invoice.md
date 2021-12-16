@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `customer` | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 `invoice_date` | **Date** | Date invoice was issued - YYYY-MM-DD | [optional] 
 `due_date` | **Date** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD | [optional] 
+`terms` | **string** | Terms of payment | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
 `reference` | **string** | Optional invoice reference. | [optional] 
 `status` | **string** | Invoice status | [optional] 
@@ -87,6 +88,7 @@ Name | Type | Description | Notes
 
 
 * [`LinkedCustomer`](LinkedCustomer.md)
+
 
 
 

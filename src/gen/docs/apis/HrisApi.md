@@ -456,7 +456,7 @@ const params = {
     description: 'A description',
     gender: 'male',
     pronouns: 'she,her',
-    prefered_language: 'EN',
+    preferred_language: 'EN',
     languages: [
       'EN'
     ],
@@ -467,7 +467,7 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: 'year',
+        compensation_rate: '72000',
         hired_at: '2020-08-12',
         is_primary: true,
         payment_unit: 'year',
@@ -478,6 +478,8 @@ const params = {
           name: 'HQ US',
           line1: 'Main street',
           line2: 'apt #',
+          line3: 'Suite #',
+          line4: 'delivery instructions',
           street_number: '25',
           city: 'San Francisco',
           state: 'CA',
@@ -513,6 +515,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',
@@ -872,7 +876,7 @@ const params = {
     description: 'A description',
     gender: 'male',
     pronouns: 'she,her',
-    prefered_language: 'EN',
+    preferred_language: 'EN',
     languages: [
       'EN'
     ],
@@ -883,7 +887,7 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: 'year',
+        compensation_rate: '72000',
         hired_at: '2020-08-12',
         is_primary: true,
         payment_unit: 'year',
@@ -894,6 +898,8 @@ const params = {
           name: 'HQ US',
           line1: 'Main street',
           line2: 'apt #',
+          line3: 'Suite #',
+          line4: 'delivery instructions',
           street_number: '25',
           city: 'San Francisco',
           state: 'CA',
@@ -929,6 +935,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',

@@ -850,7 +850,9 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           session_uri:
-            'http://vault.apideck.com/session/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj'
+            'http://vault.apideck.com/session/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj',
+          session_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj'
         }
       } as any
 
@@ -888,7 +890,8 @@ describe('VaultApi', () => {
             isolation_mode: false,
             session_length: '30m',
             show_logs: true,
-            show_suggestions: false
+            show_suggestions: false,
+            auto_redirect: false
           },
           theme: {
             favicon: 'https://res.cloudinary.com/apideck/icons/intercom',

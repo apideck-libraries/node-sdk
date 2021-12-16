@@ -11,6 +11,12 @@ export interface CreateSessionResponseData {
    * @memberof CreateSessionResponseData
    */
   readonly session_uri: string
+  /**
+   *
+   * @type {string}
+   * @memberof CreateSessionResponseData
+   */
+  readonly session_token: string
 }
 
 export function CreateSessionResponseDataFromJSON(json: any): CreateSessionResponseData {
@@ -25,7 +31,8 @@ export function CreateSessionResponseDataFromJSONTyped(
     return json
   }
   return {
-    session_uri: json['session_uri']
+    session_uri: json['session_uri'],
+    session_token: json['session_token']
   }
 }
 

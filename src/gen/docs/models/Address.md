@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 `name` | **string** |  | [optional] 
 `line1` | **string** | Line 1 of the address e.g. number, street, suite, apt #, etc. | [optional] 
 `line2` | **string** | Line 2 of the address | [optional] 
+`line3` | **string** | Line 3 of the address | [optional] 
+`line4` | **string** | Line 4 of the address | [optional] 
 `street_number` | **string** | Street number | [optional] 
 `city` | **string** | Name of city. | [optional] 
 `state` | **string** | Name of state | [optional] 

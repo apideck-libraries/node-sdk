@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 
 * `service` (value: `'service'`)
 
+* `other` (value: `'other'`)
+
 
 
 

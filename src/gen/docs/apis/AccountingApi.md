@@ -157,9 +157,13 @@ const apideck = new Apideck({
 const params = {
   customer: {
     display_id: 'EMP00101',
+    display_name: &quot;Bill's Windsurf Shop&quot;,
     company_name: 'SpaceX',
+    title: 'CEO',
     first_name: 'Elon',
+    middle_name: 'D.',
     last_name: 'Musk',
+    suffix: 'Jr.',
     individual: true,
     addresses: [
       {
@@ -169,6 +173,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',
@@ -200,6 +206,13 @@ const params = {
       {
         id: '123',
         email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ],
+    websites: [
+      {
+        id: '12345',
+        url: 'http://example.com',
         type: 'primary'
       }
     ],
@@ -499,9 +512,13 @@ const params = {
   id: 'id_example',
   customer: {
     display_id: 'EMP00101',
+    display_name: &quot;Bill's Windsurf Shop&quot;,
     company_name: 'SpaceX',
+    title: 'CEO',
     first_name: 'Elon',
+    middle_name: 'D.',
     last_name: 'Musk',
+    suffix: 'Jr.',
     individual: true,
     addresses: [
       {
@@ -511,6 +528,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',
@@ -542,6 +561,13 @@ const params = {
       {
         id: '123',
         email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ],
+    websites: [
+      {
+        id: '12345',
+        url: 'http://example.com',
         type: 'primary'
       }
     ],
@@ -1061,10 +1087,12 @@ const params = {
     type: 'service',
     number: 'OIT00546',
     customer: {
-      id: '12345'
+      id: '12345',
+      display_name: &quot;Bill's Windsurf Shop&quot;
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
+    terms: 'Net 30 days',
     po_number: '90000117',
     reference: '123456',
     status: 'draft',
@@ -1084,7 +1112,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'inventory',
+        type: 'sales_item',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1111,6 +1139,8 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
       street_number: '25',
       city: 'San Francisco',
       state: 'CA',
@@ -1133,6 +1163,8 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
       street_number: '25',
       city: 'San Francisco',
       state: 'CA',
@@ -1431,10 +1463,12 @@ const params = {
     type: 'service',
     number: 'OIT00546',
     customer: {
-      id: '12345'
+      id: '12345',
+      display_name: &quot;Bill's Windsurf Shop&quot;
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
+    terms: 'Net 30 days',
     po_number: '90000117',
     reference: '123456',
     status: 'draft',
@@ -1454,7 +1488,7 @@ const params = {
         code: '120-C',
         line_number: 1,
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-        type: 'inventory',
+        type: 'sales_item',
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
@@ -1481,6 +1515,8 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
       street_number: '25',
       city: 'San Francisco',
       state: 'CA',
@@ -1503,6 +1539,8 @@ const params = {
       name: 'HQ US',
       line1: 'Main street',
       line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
       street_number: '25',
       city: 'San Francisco',
       state: 'CA',
@@ -2016,6 +2054,7 @@ const params = {
     currency_rate: 0.69,
     total_amount: 49.99,
     reference: '123456',
+    payment_method_reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
     account: {
@@ -2024,7 +2063,8 @@ const params = {
     },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
-      id: '12345'
+      id: '12345',
+      display_name: &quot;Bill's Windsurf Shop&quot;
     },
     reconciled: true,
     status: 'authorised',
@@ -2035,7 +2075,9 @@ const params = {
         type: 'invoice',
         amount: 49.99
       }
-    ]
+    ],
+    note: 'Some notes about this payment',
+    row_version: '1-12345'
   }
 }
 
@@ -2318,6 +2360,7 @@ const params = {
     currency_rate: 0.69,
     total_amount: 49.99,
     reference: '123456',
+    payment_method_reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
     account: {
@@ -2326,7 +2369,8 @@ const params = {
     },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
-      id: '12345'
+      id: '12345',
+      display_name: &quot;Bill's Windsurf Shop&quot;
     },
     reconciled: true,
     status: 'authorised',
@@ -2337,7 +2381,9 @@ const params = {
         type: 'invoice',
         amount: 49.99
       }
-    ]
+    ],
+    note: 'Some notes about this payment',
+    row_version: '1-12345'
   }
 }
 
@@ -2418,6 +2464,7 @@ const params = {
     tax_remitted_account_id: '123456',
     components: [
       {
+        id: 10,
         name: 'GST',
         rate: 10,
         compound: true
@@ -2715,6 +2762,7 @@ const params = {
     tax_remitted_account_id: '123456',
     components: [
       {
+        id: 10,
         name: 'GST',
         rate: 10,
         compound: true

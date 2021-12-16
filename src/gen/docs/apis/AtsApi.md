@@ -94,6 +94,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',

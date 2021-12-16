@@ -88,6 +88,8 @@ CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateSharedLinkResponse.md
 CreateTaxRateResponse.md
+CreateUploadSessionRequest.md
+CreateUploadSessionResponse.md
 CreateUserResponse.md
 CreateWebhookRequest.md
 CreateWebhookResponse.md
@@ -118,6 +120,7 @@ DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeleteSharedLinkResponse.md
 DeleteTaxRateResponse.md
+DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Email.md
@@ -204,6 +207,7 @@ GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetTaxRateResponse.md
 GetTaxRatesResponse.md
+GetUploadSessionResponse.md
 GetUserResponse.md
 GetUsersResponse.md
 GetWebhookEventLogsResponse.md
@@ -303,9 +307,11 @@ UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdateSharedLinkResponse.md
 UpdateTaxRateResponse.md
+UpdateUploadSessionResponse.md
 UpdateUserResponse.md
 UpdateWebhookRequest.md
 UpdateWebhookResponse.md
+UploadSession.md
 User.md
 VaultApi.md
 VaultApiTest.api.test.ts
@@ -407,6 +413,8 @@ models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateSharedLinkResponse.ts
 models/CreateTaxRateResponse.ts
+models/CreateUploadSessionRequest.ts
+models/CreateUploadSessionResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
 models/CreateWebhookResponse.ts
@@ -433,6 +441,7 @@ models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteSharedLinkResponse.ts
 models/DeleteTaxRateResponse.ts
+models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Email.ts
@@ -515,6 +524,7 @@ models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
+models/GetUploadSessionResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
 models/GetWebhookEventLogsResponse.ts
@@ -608,9 +618,11 @@ models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateSharedLinkResponse.ts
 models/UpdateTaxRateResponse.ts
+models/UpdateUploadSessionResponse.ts
 models/UpdateUserResponse.ts
 models/UpdateWebhookRequest.ts
 models/UpdateWebhookResponse.ts
+models/UploadSession.ts
 models/User.ts
 models/VaultEventType.ts
 models/Webhook.ts

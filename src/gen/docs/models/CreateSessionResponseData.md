@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `session_uri` | **string** |  | 
+`session_token` | **string** |  | 
 
 
 

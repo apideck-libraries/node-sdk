@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `session_length` | **string** | The duration of time the session is valid for (maximum 1 week). | [optional] 
 `show_logs` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the logs page. Defaults to &#x60;true&#x60;. | [optional] 
 `show_suggestions` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the suggestions page. Defaults to &#x60;true&#x60;. | [optional] 
+`auto_redirect` | **boolean** | Automatically redirect to redirect uri after the connection has been configured as callable. Defaults to &#x60;false&#x60;. | [optional] 
 
 
 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 * [`UnifiedApiId`](UnifiedApiId.md)
+
 
 
 

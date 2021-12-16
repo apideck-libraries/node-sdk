@@ -7,14 +7,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `display_id` | **string** |  | [optional] 
+`display_name` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
+`title` | **string** |  | [optional] 
 `first_name` | **string** |  | [optional] 
+`middle_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
+`suffix` | **string** |  | [optional] 
 `individual` | **boolean** |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `notes` | **string** |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
@@ -52,10 +57,15 @@ Name | Type | Description | Notes
 
 
 
+
+
+
+
 * [`Address`](Address.md)
 
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
+* [`Website`](Website.md)
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 
 * [`Currency`](Currency.md)

@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 `description` | **string** |  | [optional] 
 `gender` | [**Gender**](Gender.md) |  | [optional] 
 `pronouns` | **string** |  | [optional] 
-`prefered_language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
+`preferred_language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `languages` | **Array&lt;string&gt;** |  | [optional] 
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
