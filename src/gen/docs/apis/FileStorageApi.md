@@ -426,7 +426,9 @@ const apideck = new Apideck({
   metadata: 'REPLACE_WITH_METADATA'
 });
 
-const params = {}
+const params = {
+  filesUpload: 'string'
+}
 
 try {
   const { data } = await apideck.fileStorage.filesUpload(params)
@@ -1172,7 +1174,7 @@ fileStorageApi.uploadSessionsAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createUploadSessionRequest** | [CreateUploadSessionRequest](../models/CreateUploadSessionRequest.md)|  |
+ **uploadSession** | [CreateUploadSessionRequest](../models/CreateUploadSessionRequest.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -1495,7 +1497,8 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
-  partNumber: undefined
+  partNumber: 0,
+  body: '<binary string>'
 }
 
 try {

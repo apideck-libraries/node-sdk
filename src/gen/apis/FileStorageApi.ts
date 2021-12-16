@@ -200,7 +200,7 @@ export interface FileStorageApiSharedLinksUpdateRequest {
 }
 
 export interface FileStorageApiUploadSessionsAddRequest {
-  createUploadSessionRequest: CreateUploadSessionRequest
+  uploadSession: CreateUploadSessionRequest
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -217,11 +217,11 @@ export interface FileStorageApiUploadSessionsDeleteRequest {
 
 export interface FileStorageApiUploadSessionsFinishRequest {
   id: string
-  body: object
   raw?: boolean
   consumerId?: string
   appId?: string
   serviceId?: string
+  body?: object
 }
 
 export interface FileStorageApiUploadSessionsOneRequest {
@@ -1281,13 +1281,10 @@ export class FileStorageApi extends runtime.BaseAPI {
   async uploadSessionsAddRaw(
     requestParameters: FileStorageApiUploadSessionsAddRequest
   ): Promise<runtime.ApiResponse<CreateUploadSessionResponse>> {
-    if (
-      requestParameters.createUploadSessionRequest === null ||
-      requestParameters.createUploadSessionRequest === undefined
-    ) {
+    if (requestParameters.uploadSession === null || requestParameters.uploadSession === undefined) {
       throw new runtime.RequiredError(
-        'createUploadSessionRequest',
-        'Required parameter requestParameters.createUploadSessionRequest was null or undefined when calling uploadSessionsAdd.'
+        'uploadSession',
+        'Required parameter requestParameters.uploadSession was null or undefined when calling uploadSessionsAdd.'
       )
     }
 
@@ -1322,7 +1319,7 @@ export class FileStorageApi extends runtime.BaseAPI {
       method: 'POST',
       headers: headerParameters,
       query: queryParameters,
-      body: CreateUploadSessionRequestToJSON(requestParameters.createUploadSessionRequest)
+      body: CreateUploadSessionRequestToJSON(requestParameters.uploadSession)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
@@ -1416,13 +1413,6 @@ export class FileStorageApi extends runtime.BaseAPI {
       throw new runtime.RequiredError(
         'id',
         'Required parameter requestParameters.id was null or undefined when calling uploadSessionsFinish.'
-      )
-    }
-
-    if (requestParameters.body === null || requestParameters.body === undefined) {
-      throw new runtime.RequiredError(
-        'body',
-        'Required parameter requestParameters.body was null or undefined when calling uploadSessionsFinish.'
       )
     }
 

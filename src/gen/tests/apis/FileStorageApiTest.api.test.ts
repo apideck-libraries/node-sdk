@@ -336,7 +336,9 @@ describe('FileStorageApi', () => {
       )
 
       const { fileStorage } = apideck
-      const params = {} as any
+      const params = {
+        filesUpload: 'string'
+      } as any
       const current = await fileStorage.filesUpload(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -1052,7 +1054,8 @@ describe('FileStorageApi', () => {
       const { fileStorage } = apideck
       const params = {
         id: 'id_example',
-        partNumber: undefined
+        partNumber: 0,
+        body: '&lt;binary string&gt;'
       } as any
       const current = await fileStorage.uploadSessionsUpload(params)
 

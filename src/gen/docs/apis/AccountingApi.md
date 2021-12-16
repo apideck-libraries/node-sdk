@@ -157,7 +157,7 @@ const apideck = new Apideck({
 const params = {
   customer: {
     display_id: 'EMP00101',
-    display_name: &quot;Bill's Windsurf Shop&quot;,
+    display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
     title: 'CEO',
     first_name: 'Elon',
@@ -512,7 +512,7 @@ const params = {
   id: 'id_example',
   customer: {
     display_id: 'EMP00101',
-    display_name: &quot;Bill's Windsurf Shop&quot;,
+    display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
     title: 'CEO',
     first_name: 'Elon',
@@ -1088,7 +1088,7 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: &quot;Bill's Windsurf Shop&quot;
+      display_name: 'Windsurf Shop'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
@@ -1464,7 +1464,7 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: &quot;Bill's Windsurf Shop&quot;
+      display_name: 'Windsurf Shop'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-10-30',
@@ -2064,7 +2064,7 @@ const params = {
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345',
-      display_name: &quot;Bill's Windsurf Shop&quot;
+      display_name: 'Windsurf Shop'
     },
     reconciled: true,
     status: 'authorised',
@@ -2370,7 +2370,7 @@ const params = {
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345',
-      display_name: &quot;Bill's Windsurf Shop&quot;
+      display_name: 'Windsurf Shop'
     },
     reconciled: true,
     status: 'authorised',
