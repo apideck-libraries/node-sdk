@@ -34,7 +34,7 @@ describe('VaultApi', () => {
         status: 'OK',
         data: [
           {
-            id: 'lead+close',
+            id: 'crm+salesforce',
             service_id: 'salesforce',
             name: 'Salesforce',
             tag_line:
@@ -65,7 +65,20 @@ describe('VaultApi', () => {
                 type: 'text',
                 required: true,
                 disabled: false,
-                custom_field: false
+                custom_field: false,
+                sensitive: false
+              },
+              {
+                id: 'api_key',
+                label: 'API Key',
+                value: '123455677',
+                placeholder: '',
+                mask: false,
+                type: 'text',
+                required: true,
+                disabled: false,
+                custom_field: false,
+                sensitive: true
               }
             ],
             configuration: [
@@ -153,7 +166,7 @@ describe('VaultApi', () => {
         status_code: 200,
         status: 'OK',
         data: {
-          id: 'lead+close',
+          id: 'crm+salesforce',
           service_id: 'salesforce',
           name: 'Salesforce',
           tag_line:
@@ -184,7 +197,20 @@ describe('VaultApi', () => {
               type: 'text',
               required: true,
               disabled: false,
-              custom_field: false
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
             }
           ],
           configuration: [
@@ -250,7 +276,7 @@ describe('VaultApi', () => {
         status_code: 200,
         status: 'OK',
         data: {
-          id: 'lead+close',
+          id: 'crm+salesforce',
           service_id: 'salesforce',
           name: 'Salesforce',
           tag_line:
@@ -281,7 +307,20 @@ describe('VaultApi', () => {
               type: 'text',
               required: true,
               disabled: false,
-              custom_field: false
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
             }
           ],
           configuration: [
@@ -346,7 +385,7 @@ describe('VaultApi', () => {
         status_code: 200,
         status: 'OK',
         data: {
-          id: 'lead+close',
+          id: 'crm+salesforce',
           service_id: 'salesforce',
           name: 'Salesforce',
           tag_line:
@@ -377,7 +416,20 @@ describe('VaultApi', () => {
               type: 'text',
               required: true,
               disabled: false,
-              custom_field: false
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
             }
           ],
           configuration: [
@@ -468,7 +520,7 @@ describe('VaultApi', () => {
         status_code: 200,
         status: 'OK',
         data: {
-          id: 'lead+close',
+          id: 'crm+salesforce',
           service_id: 'salesforce',
           name: 'Salesforce',
           tag_line:
@@ -499,7 +551,20 @@ describe('VaultApi', () => {
               type: 'text',
               required: true,
               disabled: false,
-              custom_field: false
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
             }
           ],
           configuration: [
@@ -850,7 +915,9 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           session_uri:
-            'http://vault.apideck.com/session/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj'
+            'http://vault.apideck.com/session/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj',
+          session_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj'
         }
       } as any
 
@@ -888,7 +955,8 @@ describe('VaultApi', () => {
             isolation_mode: false,
             session_length: '30m',
             show_logs: true,
-            show_suggestions: false
+            show_suggestions: false,
+            auto_redirect: false
           },
           theme: {
             favicon: 'https://res.cloudinary.com/apideck/icons/intercom',

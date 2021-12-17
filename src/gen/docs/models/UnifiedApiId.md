@@ -45,6 +45,8 @@
 
 * `hris` (value: `'hris'`)
 
+* `pos` (value: `'pos'`)
+
 
 ---
 

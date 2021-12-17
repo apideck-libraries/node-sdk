@@ -48,6 +48,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -70,6 +72,7 @@ describe('AccountingApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -133,9 +136,13 @@ describe('AccountingApi', () => {
       const params = {
         customer: {
           display_id: 'EMP00101',
+          display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          title: 'CEO',
           first_name: 'Elon',
+          middle_name: 'D.',
           last_name: 'Musk',
+          suffix: 'Jr.',
           individual: true,
           addresses: [
             {
@@ -145,6 +152,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -168,6 +177,7 @@ describe('AccountingApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -175,6 +185,13 @@ describe('AccountingApi', () => {
             {
               id: '123',
               email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
               type: 'primary'
             }
           ],
@@ -228,9 +245,13 @@ describe('AccountingApi', () => {
           {
             id: '12345',
             display_id: 'EMP00101',
+            display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
+            title: 'CEO',
             first_name: 'Elon',
+            middle_name: 'D.',
             last_name: 'Musk',
+            suffix: 'Jr.',
             individual: true,
             addresses: [
               {
@@ -240,6 +261,8 @@ describe('AccountingApi', () => {
                 name: 'HQ US',
                 line1: 'Main street',
                 line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
                 street_number: '25',
                 city: 'San Francisco',
                 state: 'CA',
@@ -263,6 +286,7 @@ describe('AccountingApi', () => {
                 country_code: '1',
                 area_code: '323',
                 number: '111-111-1111',
+                extension: '105',
                 type: 'primary'
               }
             ],
@@ -273,9 +297,17 @@ describe('AccountingApi', () => {
                 type: 'primary'
               }
             ],
+            websites: [
+              {
+                id: '12345',
+                url: 'http://example.com',
+                type: 'primary'
+              }
+            ],
             tax_rate: {
               id: '123456',
-              code: 'N-T'
+              code: 'N-T',
+              name: 'GST on Purchases'
             },
             tax_number: 'US123945459',
             currency: 'USD',
@@ -388,9 +420,13 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           display_id: 'EMP00101',
+          display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          title: 'CEO',
           first_name: 'Elon',
+          middle_name: 'D.',
           last_name: 'Musk',
+          suffix: 'Jr.',
           individual: true,
           addresses: [
             {
@@ -400,6 +436,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -423,6 +461,7 @@ describe('AccountingApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -433,9 +472,17 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
           tax_rate: {
             id: '123456',
-            code: 'N-T'
+            code: 'N-T',
+            name: 'GST on Purchases'
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -507,9 +554,13 @@ describe('AccountingApi', () => {
         id: 'id_example',
         customer: {
           display_id: 'EMP00101',
+          display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          title: 'CEO',
           first_name: 'Elon',
+          middle_name: 'D.',
           last_name: 'Musk',
+          suffix: 'Jr.',
           individual: true,
           addresses: [
             {
@@ -519,6 +570,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -542,6 +595,7 @@ describe('AccountingApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -549,6 +603,13 @@ describe('AccountingApi', () => {
             {
               id: '123',
               email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
               type: 'primary'
             }
           ],
@@ -696,7 +757,8 @@ describe('AccountingApi', () => {
               tax_inclusive: true,
               tax_rate: {
                 id: '123456',
-                code: 'N-T'
+                code: 'N-T',
+                name: 'GST on Purchases'
               }
             },
             purchase_details: {
@@ -705,7 +767,8 @@ describe('AccountingApi', () => {
               tax_inclusive: true,
               tax_rate: {
                 id: '123456',
-                code: 'N-T'
+                code: 'N-T',
+                name: 'GST on Purchases'
               }
             },
             quantity: 1,
@@ -837,7 +900,8 @@ describe('AccountingApi', () => {
             tax_inclusive: true,
             tax_rate: {
               id: '123456',
-              code: 'N-T'
+              code: 'N-T',
+              name: 'GST on Purchases'
             }
           },
           purchase_details: {
@@ -846,7 +910,8 @@ describe('AccountingApi', () => {
             tax_inclusive: true,
             tax_rate: {
               id: '123456',
-              code: 'N-T'
+              code: 'N-T',
+              name: 'GST on Purchases'
             }
           },
           quantity: 1,
@@ -1008,10 +1073,12 @@ describe('AccountingApi', () => {
           type: 'service',
           number: 'OIT00546',
           customer: {
-            id: '12345'
+            id: '12345',
+            display_name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
+          terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
           status: 'draft',
@@ -1032,7 +1099,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'inventory',
+              type: 'sales_item',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1059,6 +1126,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1081,6 +1150,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1136,10 +1207,12 @@ describe('AccountingApi', () => {
             customer: {
               id: '12345',
               display_id: 'CUST00101',
+              display_name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
             invoice_date: '2020-09-30',
             due_date: '2020-10-30',
+            terms: 'Net 30 days',
             po_number: '90000117',
             reference: '123456',
             status: 'draft',
@@ -1161,7 +1234,7 @@ describe('AccountingApi', () => {
                 line_number: 1,
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: 'inventory',
+                type: 'sales_item',
                 tax_amount: 27500,
                 total_amount: 27500,
                 quantity: 1,
@@ -1175,7 +1248,8 @@ describe('AccountingApi', () => {
                 },
                 tax_rate: {
                   id: '123456',
-                  code: 'N-T'
+                  code: 'N-T',
+                  name: 'GST on Purchases'
                 },
                 ledger_account: {
                   id: '123456',
@@ -1192,6 +1266,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -1214,6 +1290,8 @@ describe('AccountingApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -1334,10 +1412,12 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_id: 'CUST00101',
+            display_name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
+          terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
           status: 'draft',
@@ -1359,7 +1439,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'inventory',
+              type: 'sales_item',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1373,7 +1453,8 @@ describe('AccountingApi', () => {
               },
               tax_rate: {
                 id: '123456',
-                code: 'N-T'
+                code: 'N-T',
+                name: 'GST on Purchases'
               },
               ledger_account: {
                 id: '123456',
@@ -1390,6 +1471,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1412,6 +1495,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1488,10 +1573,12 @@ describe('AccountingApi', () => {
           type: 'service',
           number: 'OIT00546',
           customer: {
-            id: '12345'
+            id: '12345',
+            display_name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-10-30',
+          terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
           status: 'draft',
@@ -1512,7 +1599,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'inventory',
+              type: 'sales_item',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -1539,6 +1626,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1561,6 +1650,8 @@ describe('AccountingApi', () => {
             name: 'HQ US',
             line1: 'Main street',
             line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
             street_number: '25',
             city: 'San Francisco',
             state: 'CA',
@@ -1702,7 +1793,8 @@ describe('AccountingApi', () => {
             tax_type: 'NONE',
             tax_rate: {
               id: '123456',
-              code: 'N-T'
+              code: 'N-T',
+              name: 'GST on Purchases'
             },
             level: 1,
             active: true,
@@ -1842,7 +1934,8 @@ describe('AccountingApi', () => {
           tax_type: 'NONE',
           tax_rate: {
             id: '123456',
-            code: 'N-T'
+            code: 'N-T',
+            name: 'GST on Purchases'
           },
           level: 1,
           active: true,
@@ -2009,6 +2102,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -2017,7 +2111,8 @@ describe('AccountingApi', () => {
           },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
-            id: '12345'
+            id: '12345',
+            display_name: 'Windsurf Shop'
           },
           reconciled: true,
           status: 'authorised',
@@ -2028,7 +2123,9 @@ describe('AccountingApi', () => {
               type: 'invoice',
               amount: 49.99
             }
-          ]
+          ],
+          note: 'Some notes about this payment',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.paymentsAdd(params)
@@ -2065,6 +2162,7 @@ describe('AccountingApi', () => {
             currency_rate: 0.69,
             total_amount: 49.99,
             reference: '123456',
+            payment_method_reference: '123456',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
             account: {
@@ -2076,6 +2174,7 @@ describe('AccountingApi', () => {
             customer: {
               id: '12345',
               display_id: 'CUST00101',
+              display_name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
             reconciled: true,
@@ -2089,6 +2188,9 @@ describe('AccountingApi', () => {
                 amount: 49.99
               }
             ],
+            note: 'Some notes about this payment',
+            row_version: '1-12345',
+            created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
@@ -2186,6 +2288,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -2197,6 +2300,7 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_id: 'CUST00101',
+            display_name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
           reconciled: true,
@@ -2210,6 +2314,9 @@ describe('AccountingApi', () => {
               amount: 49.99
             }
           ],
+          note: 'Some notes about this payment',
+          row_version: '1-12345',
+          created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
@@ -2266,6 +2373,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -2274,7 +2382,8 @@ describe('AccountingApi', () => {
           },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
-            id: '12345'
+            id: '12345',
+            display_name: 'Windsurf Shop'
           },
           reconciled: true,
           status: 'authorised',
@@ -2285,7 +2394,9 @@ describe('AccountingApi', () => {
               type: 'invoice',
               amount: 49.99
             }
-          ]
+          ],
+          note: 'Some notes about this payment',
+          row_version: '1-12345'
         }
       } as any
       const current = await accounting.paymentsUpdate(params)
@@ -2337,6 +2448,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
+              id: 10,
               name: 'GST',
               rate: 10,
               compound: true
@@ -2387,6 +2499,7 @@ describe('AccountingApi', () => {
             tax_remitted_account_id: '123456',
             components: [
               {
+                id: 10,
                 name: 'GST',
                 rate: 10,
                 compound: true
@@ -2501,6 +2614,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
+              id: 10,
               name: 'GST',
               rate: 10,
               compound: true
@@ -2575,6 +2689,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
+              id: 10,
               name: 'GST',
               rate: 10,
               compound: true

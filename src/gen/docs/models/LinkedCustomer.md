@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | 
 `display_id` | **string** |  | [optional] 
+`display_name` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
 
 

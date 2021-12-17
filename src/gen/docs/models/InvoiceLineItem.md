@@ -30,9 +30,13 @@ Name | Type | Description | Notes
 ## Enum: InvoiceLineItem.type
 
 
-* `inventory` (value: `'inventory'`)
+* `sales_item` (value: `'sales_item'`)
 
-* `service` (value: `'service'`)
+* `discount` (value: `'discount'`)
+
+* `info` (value: `'info'`)
+
+* `sub_total` (value: `'sub_total'`)
 
 
 

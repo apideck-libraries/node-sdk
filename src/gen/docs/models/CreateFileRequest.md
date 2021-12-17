@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** | The name of the file. | 
 `parent_folder_id` | **string** | The parent folder to create the new file within. | 
-`id` | **string** |  | [optional] 
 `description` | **string** | Optional description of the file. | [optional] 
 
 

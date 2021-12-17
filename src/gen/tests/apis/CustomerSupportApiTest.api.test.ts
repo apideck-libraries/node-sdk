@@ -59,6 +59,8 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -82,6 +84,7 @@ describe('CustomerSupportApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -149,6 +152,8 @@ describe('CustomerSupportApi', () => {
                 name: 'HQ US',
                 line1: 'Main street',
                 line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
                 street_number: '25',
                 city: 'San Francisco',
                 state: 'CA',
@@ -172,6 +177,7 @@ describe('CustomerSupportApi', () => {
                 country_code: '1',
                 area_code: '323',
                 number: '111-111-1111',
+                extension: '105',
                 type: 'primary'
               }
             ],
@@ -303,6 +309,8 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -326,6 +334,7 @@ describe('CustomerSupportApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],
@@ -416,6 +425,8 @@ describe('CustomerSupportApi', () => {
               name: 'HQ US',
               line1: 'Main street',
               line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
               street_number: '25',
               city: 'San Francisco',
               state: 'CA',
@@ -439,6 +450,7 @@ describe('CustomerSupportApi', () => {
               country_code: '1',
               area_code: '323',
               number: '111-111-1111',
+              extension: '105',
               type: 'primary'
             }
           ],

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `reference` | **string** | Optional payment reference message ie: Debit remittance detail. | [optional] 
+`payment_method_reference` | **string** | Optional reference message returned by payment method on processing | [optional] 
 `accounts_receivable_account_type` | **string** | Type of accounts receivable account. | [optional] 
 `accounts_receivable_account_id` | **string** | Unique identifier for the account to allocate payment to. | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
@@ -19,6 +20,9 @@ Name | Type | Description | Notes
 `status` | **string** | Status of payment | [optional] 
 `type` | **string** | Type of payment | [optional] 
 `allocations` | **Array&lt;object&gt;** |  | [optional] 
+`note` | **string** |  | [optional] 
+`row_version` | **string** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 
 
@@ -72,8 +76,12 @@ Name | Type | Description | Notes
 
 
 
+
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedCustomer`](LinkedCustomer.md)
+
+
+
 
 
 

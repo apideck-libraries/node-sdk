@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `code` | **string** |  | [optional] 
+`name` | **string** |  | [optional] 
 
 
 

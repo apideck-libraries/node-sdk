@@ -445,23 +445,30 @@ const params = {
     employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
-    manager_id: '23456',
+    manager: {
+      name: 'Elon Musk',
+      first_name: 'Elon',
+      last_name: 'Musk',
+      email: 'elon@musk.com'
+    },
     social_security_number: '123456789',
     birthday: '2000-08-12',
     country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
-    prefered_language: 'EN',
+    pronouns: 'she,her',
+    preferred_language: 'EN',
     languages: [
       'EN'
     ],
     nationalities: [
       'US'
     ],
+    photo_url: 'https://unavatar.io/elon-musk',
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: 'year',
+        compensation_rate: '72000',
         hired_at: '2020-08-12',
         is_primary: true,
         payment_unit: 'year',
@@ -472,6 +479,8 @@ const params = {
           name: 'HQ US',
           line1: 'Main street',
           line2: 'apt #',
+          line3: 'Suite #',
+          line4: 'delivery instructions',
           street_number: '25',
           city: 'San Francisco',
           state: 'CA',
@@ -507,6 +516,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',
@@ -529,6 +540,7 @@ const params = {
         country_code: '1',
         area_code: '323',
         number: '111-111-1111',
+        extension: '105',
         type: 'primary'
       }
     ],
@@ -545,6 +557,13 @@ const params = {
         name: 'employee_level',
         description: 'Employee Level',
         value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    social_links: [
+      {
+        id: '12345',
+        url: 'https://www.twitter.com/apideck-io',
+        type: 'twitter'
       }
     ]
   }
@@ -847,23 +866,30 @@ const params = {
     employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
-    manager_id: '23456',
+    manager: {
+      name: 'Elon Musk',
+      first_name: 'Elon',
+      last_name: 'Musk',
+      email: 'elon@musk.com'
+    },
     social_security_number: '123456789',
     birthday: '2000-08-12',
     country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
-    prefered_language: 'EN',
+    pronouns: 'she,her',
+    preferred_language: 'EN',
     languages: [
       'EN'
     ],
     nationalities: [
       'US'
     ],
+    photo_url: 'https://unavatar.io/elon-musk',
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: 'year',
+        compensation_rate: '72000',
         hired_at: '2020-08-12',
         is_primary: true,
         payment_unit: 'year',
@@ -874,6 +900,8 @@ const params = {
           name: 'HQ US',
           line1: 'Main street',
           line2: 'apt #',
+          line3: 'Suite #',
+          line4: 'delivery instructions',
           street_number: '25',
           city: 'San Francisco',
           state: 'CA',
@@ -909,6 +937,8 @@ const params = {
         name: 'HQ US',
         line1: 'Main street',
         line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
         street_number: '25',
         city: 'San Francisco',
         state: 'CA',
@@ -931,6 +961,7 @@ const params = {
         country_code: '1',
         area_code: '323',
         number: '111-111-1111',
+        extension: '105',
         type: 'primary'
       }
     ],
@@ -947,6 +978,13 @@ const params = {
         name: 'employee_level',
         description: 'Employee Level',
         value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    social_links: [
+      {
+        id: '12345',
+        url: 'https://www.twitter.com/apideck-io',
+        type: 'twitter'
       }
     ]
   }

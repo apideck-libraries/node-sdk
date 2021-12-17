@@ -71,6 +71,10 @@ Name | Type | Description | Notes
 
 * `revenue` (value: `'revenue'`)
 
+* `sales` (value: `'sales'`)
+
+* `other_income` (value: `'other_income'`)
+
 * `bank` (value: `'bank'`)
 
 * `current_asset` (value: `'current_asset'`)
@@ -98,8 +102,6 @@ Name | Type | Description | Notes
 * `non_current_liability` (value: `'non_current_liability'`)
 
 * `other_liability` (value: `'other_liability'`)
-
-* `sales` (value: `'sales'`)
 
 
 

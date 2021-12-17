@@ -831,7 +831,8 @@ const params = {
       isolation_mode: false,
       session_length: '30m',
       show_logs: true,
-      show_suggestions: false
+      show_suggestions: false,
+      auto_redirect: false
     },
     theme: {
       favicon: 'https://res.cloudinary.com/apideck/icons/intercom',

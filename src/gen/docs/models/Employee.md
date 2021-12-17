@@ -25,20 +25,23 @@ Name | Type | Description | Notes
 `employment_end_date` | **string** | A Start Date is the date that the employee ended working at the company | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `employment_status` | **string** |  | [optional] 
-`manager_id` | **string** |  | [optional] 
+`manager` | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
 `social_security_number` | **string** |  | [optional] 
 `birthday` | **Date** |  | [optional] 
 `country_of_birth` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `description` | **string** |  | [optional] 
 `gender` | [**Gender**](Gender.md) |  | [optional] 
-`prefered_language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
+`pronouns` | **string** |  | [optional] 
+`preferred_language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `languages` | **Array&lt;string&gt;** |  | [optional] 
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
+`photo_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
+`social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -82,7 +85,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`EmployeeManager`](EmployeeManager.md)
 
 
 
@@ -91,11 +94,14 @@ Name | Type | Description | Notes
 
 
 
+
+
 * [`EmployeeJobs`](EmployeeJobs.md)
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
+* [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
 
 
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 `scope` | **string** | The scope of the shared link. | [optional] 
 `password_protected` | **boolean** | Indicated if the shared link is password protected. | [optional] 
 `password` | **string** | Optional password for the shared link. | [optional] 
-`expires_at` | **Date** | Optional datetime when the shared link expires. | [optional] 
+`expires_at` | **Date** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 

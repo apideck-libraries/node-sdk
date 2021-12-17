@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `country_code` | **string** |  | [optional] 
 `area_code` | **string** |  | [optional] 
+`extension` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 
 
@@ -24,6 +25,8 @@ Name | Type | Description | Notes
 * `secondary` (value: `'secondary'`)
 
 * `home` (value: `'home'`)
+
+* `work` (value: `'work'`)
 
 * `office` (value: `'office'`)
 
