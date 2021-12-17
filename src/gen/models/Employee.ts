@@ -16,6 +16,11 @@ import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
+import {
+  EmployeeEmploymentRole,
+  EmployeeEmploymentRoleFromJSON,
+  EmployeeEmploymentRoleToJSON
+} from './EmployeeEmploymentRole'
 import { EmployeeJobs, EmployeeJobsFromJSON, EmployeeJobsToJSON } from './EmployeeJobs'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
 import {
@@ -155,6 +160,12 @@ export interface Employee {
   employment_status?: EmployeeEmploymentStatus
   /**
    *
+   * @type {EmployeeEmploymentRole}
+   * @memberof Employee
+   */
+  employment_role?: EmployeeEmploymentRole
+  /**
+   *
    * @type {EmployeeManager}
    * @memberof Employee
    */
@@ -288,6 +299,7 @@ export interface Employee {
 export enum EmployeeEmploymentStatus {
   active = 'active',
   inactive = 'inactive',
+  terminated = 'terminated',
   other = 'other'
 }
 
@@ -324,6 +336,9 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : json['employment_end_date'],
     employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number'],
     employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status'],
+    employment_role: !exists(json, 'employment_role')
+      ? undefined
+      : EmployeeEmploymentRoleFromJSON(json['employment_role']),
     manager: !exists(json, 'manager') ? undefined : EmployeeManagerFromJSON(json['manager']),
     social_security_number: !exists(json, 'social_security_number')
       ? undefined
@@ -393,6 +408,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     employment_end_date: value.employment_end_date,
     employee_number: value.employee_number,
     employment_status: value.employment_status,
+    employment_role: EmployeeEmploymentRoleToJSON(value.employment_role),
     manager: EmployeeManagerToJSON(value.manager),
     social_security_number: value.social_security_number,
     birthday:

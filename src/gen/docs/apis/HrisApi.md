@@ -445,6 +445,10 @@ const params = {
     employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
+    employment_role: {
+      type: 'contractor',
+      sub_type: 'full_time'
+    },
     manager: {
       name: 'Elon Musk',
       first_name: 'Elon',
@@ -866,6 +870,10 @@ const params = {
     employment_end_date: '2028-10-26',
     employee_number: '123456-AB',
     employment_status: 'active',
+    employment_role: {
+      type: 'contractor',
+      sub_type: 'full_time'
+    },
     manager: {
       name: 'Elon Musk',
       first_name: 'Elon',

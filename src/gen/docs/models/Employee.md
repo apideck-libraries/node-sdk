@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 `employment_end_date` | **string** | A Start Date is the date that the employee ended working at the company | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `employment_status` | **string** |  | [optional] 
+`employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
 `manager` | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
 `social_security_number` | **string** |  | [optional] 
 `birthday` | **Date** |  | [optional] 
@@ -59,6 +60,8 @@ Name | Type | Description | Notes
 
 * `inactive` (value: `'inactive'`)
 
+* `terminated` (value: `'terminated'`)
+
 * `other` (value: `'other'`)
 
 
@@ -85,6 +88,7 @@ Name | Type | Description | Notes
 
 
 
+* [`EmployeeEmploymentRole`](EmployeeEmploymentRole.md)
 * [`EmployeeManager`](EmployeeManager.md)
 
 
