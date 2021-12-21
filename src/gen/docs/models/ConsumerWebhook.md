@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 `status` | **string** | The status of the webhook. | 
 `delivery_url` | **string** | The delivery url of the webhook endpoint. | 
 `execute_base_url` | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | 
-`events` | **Array&lt;string&gt;** | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | 
+`events` | **Array&lt;string&gt;** | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 

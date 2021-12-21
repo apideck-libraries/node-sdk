@@ -479,7 +479,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
           configuration: [
             {
               resource: 'leads',
@@ -615,7 +614,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
           configuration: [
             {
               resource: 'leads',

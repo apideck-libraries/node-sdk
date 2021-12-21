@@ -46,7 +46,7 @@ export interface CreateWebhookRequest {
    */
   delivery_url: string
   /**
-   * The list of subscribed events for this webhook. [’*’] indicates that all events are enabled.
+   * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
    * @type {Array<WebhookEventType>}
    * @memberof CreateWebhookRequest
    */

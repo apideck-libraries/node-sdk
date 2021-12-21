@@ -859,7 +859,7 @@ const params = {
   sharedLink: {
     download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
     target_id: 'string',
-    scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+    scope: 'company',
     password: 'string'
   }
 }
@@ -1141,7 +1141,7 @@ const params = {
   sharedLink: {
     download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
     target_id: 'string',
-    scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+    scope: 'company',
     password: 'string'
   }
 }
