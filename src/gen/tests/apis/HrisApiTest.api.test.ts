@@ -307,6 +307,10 @@ describe('HrisApi', () => {
           employment_end_date: '2028-10-26',
           employee_number: '123456-AB',
           employment_status: 'active',
+          employment_role: {
+            type: 'contractor',
+            sub_type: 'full_time'
+          },
           manager: {
             name: 'Elon Musk',
             first_name: 'Elon',
@@ -478,6 +482,10 @@ describe('HrisApi', () => {
             employment_end_date: '2028-10-26',
             employee_number: '123456-AB',
             employment_status: 'active',
+            employment_role: {
+              type: 'contractor',
+              sub_type: 'full_time'
+            },
             manager: {
               id: '12345',
               name: 'Elon Musk',
@@ -707,6 +715,10 @@ describe('HrisApi', () => {
           employment_end_date: '2028-10-26',
           employee_number: '123456-AB',
           employment_status: 'active',
+          employment_role: {
+            type: 'contractor',
+            sub_type: 'full_time'
+          },
           manager: {
             id: '12345',
             name: 'Elon Musk',
@@ -904,6 +916,10 @@ describe('HrisApi', () => {
           employment_end_date: '2028-10-26',
           employee_number: '123456-AB',
           employment_status: 'active',
+          employment_role: {
+            type: 'contractor',
+            sub_type: 'full_time'
+          },
           manager: {
             name: 'Elon Musk',
             first_name: 'Elon',

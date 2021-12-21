@@ -357,7 +357,6 @@ const params = {
       },
       plan: 'enterprise'
     },
-    auth_type: 'oauth2',
     configuration: [
       {
         resource: 'leads',
@@ -455,7 +454,6 @@ const params = {
       },
       plan: 'enterprise'
     },
-    auth_type: 'oauth2',
     configuration: [
       {
         resource: 'leads',

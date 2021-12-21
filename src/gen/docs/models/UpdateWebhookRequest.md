@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `description` | **string** |  | [optional] 
 `status` | [**Status**](Status.md) |  | [optional] 
 `delivery_url` | **string** | The delivery url of the webhook endpoint. | [optional] 
-`events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [’*’] indicates that all events are enabled. | [optional] 
+`events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | [optional] 
 
 
 

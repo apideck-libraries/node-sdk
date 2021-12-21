@@ -82,7 +82,7 @@ export interface Connector {
    * @type {string}
    * @memberof Connector
    */
-  auth_type?: ConnectorAuthType
+  readonly auth_type?: ConnectorAuthType
   /**
    *
    * @type {ConnectorStatus}
@@ -187,7 +187,6 @@ export function ConnectorToJSON(value?: Connector | null): any {
     icon_url: value.icon_url,
     logo_url: value.logo_url,
     website_url: value.website_url,
-    auth_type: value.auth_type,
     status: ConnectorStatusToJSON(value.status),
     settings:
       value.settings === undefined

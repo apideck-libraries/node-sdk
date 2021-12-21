@@ -126,6 +126,7 @@ DeleteWebhookResponse.md
 Email.md
 Employee.md
 EmployeeCompensations.md
+EmployeeEmploymentRole.md
 EmployeeJobs.md
 EmployeeManager.md
 EmployeeSocialLinks.md
@@ -447,6 +448,7 @@ models/DeleteWebhookResponse.ts
 models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
+models/EmployeeEmploymentRole.ts
 models/EmployeeJobs.ts
 models/EmployeeManager.ts
 models/EmployeeSocialLinks.ts

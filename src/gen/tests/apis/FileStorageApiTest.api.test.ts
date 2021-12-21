@@ -613,7 +613,7 @@ describe('FileStorageApi', () => {
         sharedLink: {
           download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
           target_id: 'string',
-          scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+          scope: 'company',
           password: 'string'
         }
       } as any
@@ -654,7 +654,7 @@ describe('FileStorageApi', () => {
               name: 'sample.jpg',
               type: 'file'
             },
-            scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+            scope: 'company',
             password_protected: true,
             password: 'string',
             expires_at: '2022-09-30T07:43:32.000Z',
@@ -759,7 +759,7 @@ describe('FileStorageApi', () => {
             name: 'sample.jpg',
             type: 'file'
           },
-          scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+          scope: 'company',
           password_protected: true,
           password: 'string',
           expires_at: '2022-09-30T07:43:32.000Z',
@@ -818,7 +818,7 @@ describe('FileStorageApi', () => {
         sharedLink: {
           download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
           target_id: 'string',
-          scope: 'https://www.box.com/s/vspke7y05sb214wjokpk',
+          scope: 'company',
           password: 'string'
         }
       } as any

@@ -124,7 +124,7 @@ const params = {
       'Job site'
     ],
     confidential: false,
-    anonymized: 'true',
+    anonymized: true,
     tags: [
       'New'
     ],
