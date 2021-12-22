@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `status` | **string** |  | [optional] 
 `password` | **string** |  | [optional] 
-`addresses` | [**Array&lt;Address2&gt;**](Address2.md) |  | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `updated_at` | **string** |  | [optional] 
 `created_at` | **string** |  | [optional] 
@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Address2`](Address2.md)
+* [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 
 

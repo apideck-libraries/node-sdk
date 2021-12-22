@@ -18,7 +18,7 @@ import {
   ActivityAttendeeFromJSON,
   ActivityAttendeeToJSON
 } from './ActivityAttendee'
-import { Address2, Address2FromJSON, Address2ToJSON } from './Address2'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 
 /**
@@ -167,10 +167,10 @@ export interface Activity {
   location?: string | null
   /**
    *
-   * @type {Address2}
+   * @type {Address}
    * @memberof Activity
    */
-  location_address?: Address2
+  location_address?: Address
   /**
    *
    * @type {boolean}
@@ -387,7 +387,7 @@ export function ActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     location: !exists(json, 'location') ? undefined : json['location'],
     location_address: !exists(json, 'location_address')
       ? undefined
-      : Address2FromJSON(json['location_address']),
+      : AddressFromJSON(json['location_address']),
     all_day_event: !exists(json, 'all_day_event') ? undefined : json['all_day_event'],
     _private: !exists(json, 'private') ? undefined : json['private'],
     group_event: !exists(json, 'group_event') ? undefined : json['group_event'],
@@ -454,7 +454,7 @@ export function ActivityToJSON(value?: Activity | null): any {
     description: value.description,
     note: value.note,
     location: value.location,
-    location_address: Address2ToJSON(value.location_address),
+    location_address: AddressToJSON(value.location_address),
     all_day_event: value.all_day_event,
     private: value._private,
     group_event: value.group_event,

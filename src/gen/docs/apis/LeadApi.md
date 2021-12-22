@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`GetLeadResponse1`](../models/GetLeadResponse1.md)
+[`GetLeadResponse`](../models/GetLeadResponse.md)
 
 
 

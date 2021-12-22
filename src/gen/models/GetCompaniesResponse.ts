@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Company1, Company1FromJSON, Company1ToJSON } from './Company1'
+import { Company, CompanyFromJSON, CompanyToJSON } from './Company'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 
@@ -55,10 +55,10 @@ export interface GetCompaniesResponse {
   operation: string
   /**
    *
-   * @type {Array<Company1>}
+   * @type {Array<Company>}
    * @memberof GetCompaniesResponse
    */
-  data: Array<Company1>
+  data: Array<Company>
   /**
    *
    * @type {Meta}
@@ -90,7 +90,7 @@ export function GetCompaniesResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: (json['data'] as Array<any>).map(Company1FromJSON),
+    data: (json['data'] as Array<any>).map(CompanyFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -109,7 +109,7 @@ export function GetCompaniesResponseToJSON(value?: GetCompaniesResponse | null):
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: (value.data as Array<any>).map(Company1ToJSON),
+    data: (value.data as Array<any>).map(CompanyToJSON),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

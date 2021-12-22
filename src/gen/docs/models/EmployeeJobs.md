@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 `hired_at` | **Date** |  | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job | [optional] 
 `payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
-`location` | [**Address4**](Address4.md) |  | [optional] 
+`location` | [**Address**](Address.md) |  | [optional] 
 `compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 
 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 
 * [`PaymentUnit`](PaymentUnit.md)
-* [`Address4`](Address4.md)
+* [`Address`](Address.md)
 * [`EmployeeCompensations`](EmployeeCompensations.md)
 
 ---

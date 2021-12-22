@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address2, Address2FromJSON, Address2ToJSON } from './Address2'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 
@@ -121,10 +121,10 @@ export interface User {
   password?: string
   /**
    *
-   * @type {Array<Address2>}
+   * @type {Array<Address>}
    * @memberof User
    */
-  addresses?: Array<Address2>
+  addresses?: Array<Address>
   /**
    *
    * @type {Array<PhoneNumber>}
@@ -172,7 +172,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
     password: !exists(json, 'password') ? undefined : json['password'],
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address2FromJSON),
+      : (json['addresses'] as Array<any>).map(AddressFromJSON),
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
@@ -207,7 +207,7 @@ export function UserToJSON(value?: User | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address2ToJSON),
+        : (value.addresses as Array<any>).map(AddressToJSON),
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined

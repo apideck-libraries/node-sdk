@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address5, Address5FromJSON, Address5ToJSON } from './Address5'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
@@ -138,10 +138,10 @@ export interface Lead {
   websites?: Array<Website>
   /**
    *
-   * @type {Array<Address5>}
+   * @type {Array<Address>}
    * @memberof Lead
    */
-  addresses?: Array<Address5>
+  addresses?: Array<Address>
   /**
    *
    * @type {Array<SocialLink>}
@@ -217,7 +217,7 @@ export function LeadFromJSONTyped(json: any, ignoreDiscriminator: boolean): Lead
       : (json['websites'] as Array<any>).map(WebsiteFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address5FromJSON),
+      : (json['addresses'] as Array<any>).map(AddressFromJSON),
     social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
@@ -263,7 +263,7 @@ export function LeadToJSON(value?: Lead | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address5ToJSON),
+        : (value.addresses as Array<any>).map(AddressToJSON),
     social_links:
       value.social_links === undefined
         ? undefined

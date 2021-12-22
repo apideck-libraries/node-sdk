@@ -580,7 +580,7 @@ crmApi.companiesAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company1** | [Company1](../models/Company1.md)|  |
+ **company** | [Company](../models/Company.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -957,7 +957,7 @@ crmApi.companiesUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company1** | [Company1](../models/Company1.md)|  |
+ **company** | [Company](../models/Company.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 

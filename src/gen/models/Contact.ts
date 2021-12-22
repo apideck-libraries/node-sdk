@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address2, Address2FromJSON, Address2ToJSON } from './Address2'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
@@ -179,10 +179,10 @@ export interface Contact {
   websites?: Array<Website>
   /**
    *
-   * @type {Array<Address2>}
+   * @type {Array<Address>}
    * @memberof Contact
    */
-  addresses?: Array<Address2>
+  addresses?: Array<Address>
   /**
    *
    * @type {Array<SocialLink>}
@@ -303,7 +303,7 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       : (json['websites'] as Array<any>).map(WebsiteFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address2FromJSON),
+      : (json['addresses'] as Array<any>).map(AddressFromJSON),
     social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
@@ -371,7 +371,7 @@ export function ContactToJSON(value?: Contact | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address2ToJSON),
+        : (value.addresses as Array<any>).map(AddressToJSON),
     social_links:
       value.social_links === undefined
         ? undefined

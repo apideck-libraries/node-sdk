@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address4, Address4FromJSON, Address4ToJSON } from './Address4'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
@@ -31,7 +31,6 @@ import {
 import { EmployeeTeam, EmployeeTeamFromJSON, EmployeeTeamToJSON } from './EmployeeTeam'
 import { Gender, GenderFromJSON, GenderToJSON } from './Gender'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
-import { RowVersion, RowVersionFromJSON, RowVersionToJSON } from './RowVersion'
 
 /**
  *
@@ -239,10 +238,10 @@ export interface Employee {
   jobs?: Array<EmployeeJobs>
   /**
    *
-   * @type {Array<Address4>}
+   * @type {Array<Address>}
    * @memberof Employee
    */
-  addresses?: Array<Address4>
+  addresses?: Array<Address>
   /**
    *
    * @type {Array<PhoneNumber>}
@@ -269,10 +268,10 @@ export interface Employee {
   social_links?: Array<EmployeeSocialLinks>
   /**
    *
-   * @type {RowVersion}
+   * @type {string}
    * @memberof Employee
    */
-  row_version?: RowVersion
+  row_version?: string | null
   /**
    *
    * @type {string}
@@ -370,7 +369,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : (json['jobs'] as Array<any>).map(EmployeeJobsFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address4FromJSON),
+      : (json['addresses'] as Array<any>).map(AddressFromJSON),
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
@@ -381,7 +380,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(EmployeeSocialLinksFromJSON),
-    row_version: !exists(json, 'row_version') ? undefined : RowVersionFromJSON(json['row_version']),
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -437,7 +436,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address4ToJSON),
+        : (value.addresses as Array<any>).map(AddressToJSON),
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined
@@ -451,6 +450,6 @@ export function EmployeeToJSON(value?: Employee | null): any {
       value.social_links === undefined
         ? undefined
         : (value.social_links as Array<any>).map(EmployeeSocialLinksToJSON),
-    row_version: RowVersionToJSON(value.row_version)
+    row_version: value.row_version
   }
 }

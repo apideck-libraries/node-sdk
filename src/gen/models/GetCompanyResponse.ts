@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { Company1, Company1FromJSON, Company1ToJSON } from './Company1'
+import { Company, CompanyFromJSON, CompanyToJSON } from './Company'
 
 /**
  *
@@ -52,10 +52,10 @@ export interface GetCompanyResponse {
   operation: string
   /**
    *
-   * @type {Company1}
+   * @type {Company}
    * @memberof GetCompanyResponse
    */
-  data: Company1
+  data: Company
 }
 
 export function GetCompanyResponseFromJSON(json: any): GetCompanyResponse {
@@ -75,7 +75,7 @@ export function GetCompanyResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: Company1FromJSON(json['data'])
+    data: CompanyFromJSON(json['data'])
   }
 }
 
@@ -92,6 +92,6 @@ export function GetCompanyResponseToJSON(value?: GetCompanyResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: Company1ToJSON(value.data)
+    data: CompanyToJSON(value.data)
   }
 }

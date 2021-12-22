@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 `status` | **string** |  | [optional] 
 `active` | **boolean** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
-`addresses` | [**Array&lt;Address2&gt;**](Address2.md) |  | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -100,7 +100,7 @@ Name | Type | Description | Notes
 
 
 * [`Website`](Website.md)
-* [`Address2`](Address2.md)
+* [`Address`](Address.md)
 * [`SocialLink`](SocialLink.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)

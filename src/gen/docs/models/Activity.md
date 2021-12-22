@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 `description` | **string** |  | [optional] 
 `note` | **string** |  | [optional] 
 `location` | **string** |  | [optional] 
-`location_address` | [**Address2**](Address2.md) |  | [optional] 
+`location_address` | [**Address**](Address.md) |  | [optional] 
 `all_day_event` | **boolean** |  | [optional] 
 `private` | **boolean** |  | [optional] 
 `group_event` | **boolean** |  | [optional] 
@@ -120,7 +120,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Address2`](Address2.md)
+* [`Address`](Address.md)
 
 
 

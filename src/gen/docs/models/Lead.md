@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `fax` | **string** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
-`addresses` | [**Array&lt;Address5&gt;**](Address5.md) |  | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 * [`Currency`](Currency.md)
 
 * [`Website`](Website.md)
-* [`Address5`](Address5.md)
+* [`Address`](Address.md)
 * [`SocialLink`](SocialLink.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
