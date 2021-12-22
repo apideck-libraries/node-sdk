@@ -1,4 +1,4 @@
-# Apideck.Address
+# Apideck.Address5
 
 ### Description
 
@@ -33,8 +33,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="AddressType"></a>
-## Enum: Address.type
+<a name="Address5Type"></a>
+## Enum: Address5.type
 
 
 * `primary` (value: `'primary'`)

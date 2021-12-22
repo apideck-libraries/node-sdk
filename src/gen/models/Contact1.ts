@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address2, Address2FromJSON, Address2ToJSON } from './Address2'
+import { Address3, Address3FromJSON, Address3ToJSON } from './Address3'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
@@ -24,223 +24,223 @@ import { Website, WebsiteFromJSON, WebsiteToJSON } from './Website'
 /**
  *
  * @export
- * @interface Contact
+ * @interface Contact1
  */
-export interface Contact {
+export interface Contact1 {
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   name: string
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly id?: string
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   owner_id?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
-  type?: ContactType
+  type?: Contact1Type
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   company_id?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   company_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   lead_id?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   first_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   middle_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   last_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   prefix?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   suffix?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   title?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   department?: string | null
   /**
    * language code according to ISO 639-1. For the United States - EN
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   language?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
-  gender?: ContactGender
+  gender?: Contact1Gender
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   birthday?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   image?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   lead_source?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   fax?: string | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   description?: string | null
   /**
    *
    * @type {number}
-   * @memberof Contact
+   * @memberof Contact1
    */
   current_balance?: number | null
   /**
    *
    * @type {string}
-   * @memberof Contact
+   * @memberof Contact1
    */
   status?: string | null
   /**
    *
    * @type {boolean}
-   * @memberof Contact
+   * @memberof Contact1
    */
   active?: boolean | null
   /**
    *
    * @type {Array<Website>}
-   * @memberof Contact
+   * @memberof Contact1
    */
   websites?: Array<Website>
   /**
    *
-   * @type {Array<Address2>}
-   * @memberof Contact
+   * @type {Array<Address3>}
+   * @memberof Contact1
    */
-  addresses?: Array<Address2>
+  addresses?: Array<Address3>
   /**
    *
    * @type {Array<SocialLink>}
-   * @memberof Contact
+   * @memberof Contact1
    */
   social_links?: Array<SocialLink>
   /**
    *
    * @type {Array<PhoneNumber>}
-   * @memberof Contact
+   * @memberof Contact1
    */
   phone_numbers?: Array<PhoneNumber>
   /**
    *
    * @type {Array<Email>}
-   * @memberof Contact
+   * @memberof Contact1
    */
   emails?: Array<Email>
   /**
    *
    * @type {Array<CustomField>}
-   * @memberof Contact
+   * @memberof Contact1
    */
   custom_fields?: Array<CustomField>
   /**
    *
    * @type {Tags}
-   * @memberof Contact
+   * @memberof Contact1
    */
   tags?: Tags
   /**
    *
    * @type {Date}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly first_call_at?: Date | null
   /**
    *
    * @type {Date}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly first_email_at?: Date | null
   /**
    *
    * @type {Date}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly last_activity_at?: Date | null
   /**
    *
    * @type {Date}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly updated_at?: Date
   /**
    *
    * @type {Date}
-   * @memberof Contact
+   * @memberof Contact1
    */
   readonly created_at?: Date
 }
@@ -249,7 +249,7 @@ export interface Contact {
  * @export
  * @enum {string}
  */
-export enum ContactType {
+export enum Contact1Type {
   customer = 'customer',
   supplier = 'supplier',
   employee = 'employee',
@@ -259,17 +259,17 @@ export enum ContactType {
  * @export
  * @enum {string}
  */
-export enum ContactGender {
+export enum Contact1Gender {
   male = 'male',
   female = 'female',
   unisex = 'unisex'
 }
 
-export function ContactFromJSON(json: any): Contact {
-  return ContactFromJSONTyped(json, false)
+export function Contact1FromJSON(json: any): Contact1 {
+  return Contact1FromJSONTyped(json, false)
 }
 
-export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): Contact {
+export function Contact1FromJSONTyped(json: any, ignoreDiscriminator: boolean): Contact1 {
   if (json === undefined || json === null) {
     return json
   }
@@ -303,7 +303,7 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       : (json['websites'] as Array<any>).map(WebsiteFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address2FromJSON),
+      : (json['addresses'] as Array<any>).map(Address3FromJSON),
     social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
@@ -335,7 +335,7 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
   }
 }
 
-export function ContactToJSON(value?: Contact | null): any {
+export function Contact1ToJSON(value?: Contact1 | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -371,7 +371,7 @@ export function ContactToJSON(value?: Contact | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address2ToJSON),
+        : (value.addresses as Array<any>).map(Address3ToJSON),
     social_links:
       value.social_links === undefined
         ? undefined

@@ -16,6 +16,12 @@ AccountingEventType.md
 Activity.md
 ActivityAttendee.md
 Address.md
+Address1.md
+Address2.md
+Address3.md
+Address4.md
+Address5.md
+Address6.md
 Api.md
 ApiResource.md
 ApiResourceCoverage.md
@@ -34,6 +40,8 @@ BankAccount.md
 CompaniesFilter.md
 CompaniesSort.md
 Company.md
+Company1.md
+Company2.md
 CompanyInfo.md
 Connection.md
 ConnectionConfiguration.md
@@ -58,6 +66,7 @@ ConsumerRequestCountsInDateRangeResponse.md
 ConsumerRequestCountsInDateRangeResponseData.md
 ConsumerWebhook.md
 Contact.md
+Contact1.md
 ContactsFilter.md
 ContactsSort.md
 CopyFolderRequest.md
@@ -188,6 +197,7 @@ GetInvoicesResponse.md
 GetJobResponse.md
 GetJobsResponse.md
 GetLeadResponse.md
+GetLeadResponse1.md
 GetLeadsResponse.md
 GetLedgerAccountResponse.md
 GetLedgerAccountsResponse.md
@@ -314,6 +324,7 @@ UpdateWebhookRequest.md
 UpdateWebhookResponse.md
 UploadSession.md
 User.md
+User1.md
 VaultApi.md
 VaultApiTest.api.test.ts
 VaultEventType.md
@@ -346,6 +357,12 @@ models/AccountingEventType.ts
 models/Activity.ts
 models/ActivityAttendee.ts
 models/Address.ts
+models/Address1.ts
+models/Address2.ts
+models/Address3.ts
+models/Address4.ts
+models/Address5.ts
+models/Address6.ts
 models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
@@ -362,6 +379,8 @@ models/BankAccount.ts
 models/CompaniesFilter.ts
 models/CompaniesSort.ts
 models/Company.ts
+models/Company1.ts
+models/Company2.ts
 models/CompanyInfo.ts
 models/Connection.ts
 models/ConnectionConfiguration.ts
@@ -384,6 +403,7 @@ models/ConsumerRequestCountsInDateRangeResponse.ts
 models/ConsumerRequestCountsInDateRangeResponseData.ts
 models/ConsumerWebhook.ts
 models/Contact.ts
+models/Contact1.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
 models/CopyFolderRequest.ts
@@ -506,6 +526,7 @@ models/GetInvoicesResponse.ts
 models/GetJobResponse.ts
 models/GetJobsResponse.ts
 models/GetLeadResponse.ts
+models/GetLeadResponse1.ts
 models/GetLeadsResponse.ts
 models/GetLedgerAccountResponse.ts
 models/GetLedgerAccountsResponse.ts
@@ -626,6 +647,7 @@ models/UpdateWebhookRequest.ts
 models/UpdateWebhookResponse.ts
 models/UploadSession.ts
 models/User.ts
+models/User1.ts
 models/VaultEventType.ts
 models/Webhook.ts
 models/WebhookEventLog.ts

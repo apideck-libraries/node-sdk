@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Address1, Address1FromJSON, Address1ToJSON } from './Address1'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
@@ -74,10 +74,10 @@ export interface Applicant {
   phone_numbers?: Array<PhoneNumber>
   /**
    *
-   * @type {Array<Address>}
+   * @type {Array<Address1>}
    * @memberof Applicant
    */
-  addresses?: Array<Address>
+  addresses?: Array<Address1>
   /**
    *
    * @type {string}
@@ -191,7 +191,7 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(AddressFromJSON),
+      : (json['addresses'] as Array<any>).map(Address1FromJSON),
     stage_id: !exists(json, 'stage_id') ? undefined : json['stage_id'],
     applications: !exists(json, 'applications') ? undefined : json['applications'],
     followers: !exists(json, 'followers') ? undefined : json['followers'],
@@ -237,7 +237,7 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(AddressToJSON),
+        : (value.addresses as Array<any>).map(Address1ToJSON),
     applications: value.applications,
     followers: value.followers,
     sources: value.sources,

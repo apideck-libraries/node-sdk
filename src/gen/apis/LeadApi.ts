@@ -17,8 +17,8 @@ import {
   CreateLeadResponseFromJSON,
   DeleteLeadResponse,
   DeleteLeadResponseFromJSON,
-  GetLeadResponse,
-  GetLeadResponseFromJSON,
+  GetLeadResponse1,
+  GetLeadResponse1FromJSON,
   GetLeadsResponse,
   GetLeadsResponseFromJSON,
   Lead,
@@ -270,7 +270,7 @@ export class LeadApi extends runtime.BaseAPI {
    */
   async leadsOneRaw(
     requestParameters: LeadApiLeadsOneRequest
-  ): Promise<runtime.ApiResponse<GetLeadResponse>> {
+  ): Promise<runtime.ApiResponse<GetLeadResponse1>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
@@ -312,14 +312,14 @@ export class LeadApi extends runtime.BaseAPI {
       query: queryParameters
     })
 
-    return new runtime.JSONApiResponse(response, jsonValue => GetLeadResponseFromJSON(jsonValue))
+    return new runtime.JSONApiResponse(response, jsonValue => GetLeadResponse1FromJSON(jsonValue))
   }
 
   /**
    * Get lead
    * Get lead
    */
-  async leadsOne(requestParameters: LeadApiLeadsOneRequest): Promise<GetLeadResponse> {
+  async leadsOne(requestParameters: LeadApiLeadsOneRequest): Promise<GetLeadResponse1> {
     const response = await this.leadsOneRaw(requestParameters)
     return await response.value()
   }

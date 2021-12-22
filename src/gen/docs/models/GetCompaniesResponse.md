@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Array&lt;Company&gt;**](Company.md) |  | 
+`data` | [**Array&lt;Company1&gt;**](Company1.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Company`](Company.md)
+* [`Company1`](Company1.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
 

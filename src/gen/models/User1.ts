@@ -13,143 +13,143 @@
  */
 
 import { exists } from '../runtime'
-import { Address2, Address2FromJSON, Address2ToJSON } from './Address2'
+import { Address6, Address6FromJSON, Address6ToJSON } from './Address6'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 
 /**
  *
  * @export
- * @interface User
+ * @interface User1
  */
-export interface User {
+export interface User1 {
   /**
    *
    * @type {Array<Email>}
-   * @memberof User
+   * @memberof User1
    */
   emails: Array<Email>
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   readonly id?: string
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   parent_id?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   username?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   first_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   last_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   title?: string | null
   /**
    * The division the user is currently in.
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   division?: string | null
   /**
    * The department the user is currently in.
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   department?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   company_name?: string | null
   /**
    * An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   employee_number?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   description?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   image?: string | null
   /**
    * language code according to ISO 639-1. For the United States - EN
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   language?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   status?: string | null
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   password?: string
   /**
    *
-   * @type {Array<Address2>}
-   * @memberof User
+   * @type {Array<Address6>}
+   * @memberof User1
    */
-  addresses?: Array<Address2>
+  addresses?: Array<Address6>
   /**
    *
    * @type {Array<PhoneNumber>}
-   * @memberof User
+   * @memberof User1
    */
   phone_numbers?: Array<PhoneNumber>
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   readonly updated_at?: string
   /**
    *
    * @type {string}
-   * @memberof User
+   * @memberof User1
    */
   readonly created_at?: string
 }
 
-export function UserFromJSON(json: any): User {
-  return UserFromJSONTyped(json, false)
+export function User1FromJSON(json: any): User1 {
+  return User1FromJSONTyped(json, false)
 }
 
-export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User {
+export function User1FromJSONTyped(json: any, ignoreDiscriminator: boolean): User1 {
   if (json === undefined || json === null) {
     return json
   }
@@ -172,7 +172,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
     password: !exists(json, 'password') ? undefined : json['password'],
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(Address2FromJSON),
+      : (json['addresses'] as Array<any>).map(Address6FromJSON),
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
@@ -181,7 +181,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
   }
 }
 
-export function UserToJSON(value?: User | null): any {
+export function User1ToJSON(value?: User1 | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -207,7 +207,7 @@ export function UserToJSON(value?: User | null): any {
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(Address2ToJSON),
+        : (value.addresses as Array<any>).map(Address6ToJSON),
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined

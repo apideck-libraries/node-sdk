@@ -38,11 +38,12 @@ Name | Type | Description | Notes
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
-`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`addresses` | [**Array&lt;Address4&gt;**](Address4.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
+`row_version` | [**RowVersion**](RowVersion.md) |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -101,11 +102,12 @@ Name | Type | Description | Notes
 
 
 * [`EmployeeJobs`](EmployeeJobs.md)
-* [`Address`](Address.md)
+* [`Address4`](Address4.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
+* [`RowVersion`](RowVersion.md)
 
 
 

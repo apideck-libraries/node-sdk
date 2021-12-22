@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `headline` | **string** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
-`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`addresses` | [**Array&lt;Address1&gt;**](Address1.md) |  | [optional] 
 `stage_id` | **string** |  | [optional] 
 `applications` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 
 * [`Email`](Email.md)
 * [`PhoneNumber`](PhoneNumber.md)
-* [`Address`](Address.md)
+* [`Address1`](Address1.md)
 
 
 

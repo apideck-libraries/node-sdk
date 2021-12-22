@@ -16,145 +16,145 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface Address
+ * @interface Address6
  */
-export interface Address {
+export interface Address6 {
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   id?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
-  type?: AddressType
+  type?: Address6Type
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   string?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   name?: string | null
   /**
    * Line 1 of the address e.g. number, street, suite, apt #, etc.
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   line1?: string | null
   /**
    * Line 2 of the address
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   line2?: string | null
   /**
    * Line 3 of the address
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   line3?: string | null
   /**
    * Line 4 of the address
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   line4?: string | null
   /**
    * Street number
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   street_number?: string | null
   /**
    * Name of city.
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   city?: string | null
   /**
    * Name of state
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   state?: string | null
   /**
    * Zip code or equivalent.
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   postal_code?: string | null
   /**
    * country code according to ISO 3166-1 alpha-2.
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   country?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   latitude?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   longitude?: string | null
   /**
    * Address field that holds a sublocality, such as a county
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   county?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   contact_name?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   salutation?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   phone_number?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   fax?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   email?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   website?: string | null
   /**
    *
    * @type {string}
-   * @memberof Address
+   * @memberof Address6
    */
   row_version?: string | null
 }
@@ -163,7 +163,7 @@ export interface Address {
  * @export
  * @enum {string}
  */
-export enum AddressType {
+export enum Address6Type {
   primary = 'primary',
   secondary = 'secondary',
   home = 'home',
@@ -173,11 +173,11 @@ export enum AddressType {
   other = 'other'
 }
 
-export function AddressFromJSON(json: any): Address {
-  return AddressFromJSONTyped(json, false)
+export function Address6FromJSON(json: any): Address6 {
+  return Address6FromJSONTyped(json, false)
 }
 
-export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): Address {
+export function Address6FromJSONTyped(json: any, ignoreDiscriminator: boolean): Address6 {
   if (json === undefined || json === null) {
     return json
   }
@@ -208,7 +208,7 @@ export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
   }
 }
 
-export function AddressToJSON(value?: Address | null): any {
+export function Address6ToJSON(value?: Address6 | null): any {
   if (value === undefined) {
     return undefined
   }

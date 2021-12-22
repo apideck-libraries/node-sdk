@@ -12,60 +12,60 @@
  * Do not edit the class manually.
  */
 
-import { Company1, Company1FromJSON, Company1ToJSON } from './Company1'
+import { Lead, LeadFromJSON, LeadToJSON } from './Lead'
 
 /**
  *
  * @export
- * @interface GetCompanyResponse
+ * @interface GetLeadResponse1
  */
-export interface GetCompanyResponse {
+export interface GetLeadResponse1 {
   /**
    * HTTP Response Status Code
    * @type {number}
-   * @memberof GetCompanyResponse
+   * @memberof GetLeadResponse1
    */
   status_code: number
   /**
    * HTTP Response Status
    * @type {string}
-   * @memberof GetCompanyResponse
+   * @memberof GetLeadResponse1
    */
   status: string
   /**
    * Apideck ID of service provider
    * @type {string}
-   * @memberof GetCompanyResponse
+   * @memberof GetLeadResponse1
    */
   service: string
   /**
    * Unified API resource name
    * @type {string}
-   * @memberof GetCompanyResponse
+   * @memberof GetLeadResponse1
    */
   resource: string
   /**
    * Operation performed
    * @type {string}
-   * @memberof GetCompanyResponse
+   * @memberof GetLeadResponse1
    */
   operation: string
   /**
    *
-   * @type {Company1}
-   * @memberof GetCompanyResponse
+   * @type {Lead}
+   * @memberof GetLeadResponse1
    */
-  data: Company1
+  data: Lead
 }
 
-export function GetCompanyResponseFromJSON(json: any): GetCompanyResponse {
-  return GetCompanyResponseFromJSONTyped(json, false)
+export function GetLeadResponse1FromJSON(json: any): GetLeadResponse1 {
+  return GetLeadResponse1FromJSONTyped(json, false)
 }
 
-export function GetCompanyResponseFromJSONTyped(
+export function GetLeadResponse1FromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): GetCompanyResponse {
+): GetLeadResponse1 {
   if (json === undefined || json === null) {
     return json
   }
@@ -75,11 +75,11 @@ export function GetCompanyResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: Company1FromJSON(json['data'])
+    data: LeadFromJSON(json['data'])
   }
 }
 
-export function GetCompanyResponseToJSON(value?: GetCompanyResponse | null): any {
+export function GetLeadResponse1ToJSON(value?: GetLeadResponse1 | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -92,6 +92,6 @@ export function GetCompanyResponseToJSON(value?: GetCompanyResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: Company1ToJSON(value.data)
+    data: LeadToJSON(value.data)
   }
 }

@@ -356,7 +356,8 @@ describe('HrisApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               },
               compensations: [
                 {
@@ -393,7 +394,8 @@ describe('HrisApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [
@@ -427,7 +429,8 @@ describe('HrisApi', () => {
               url: 'https://www.twitter.com/apideck-io',
               type: 'twitter'
             }
-          ]
+          ],
+          row_version: '1-12345'
         }
       } as any
       const current = await hris.employeesAdd(params)
@@ -534,7 +537,8 @@ describe('HrisApi', () => {
                   phone_number: '111-111-1111',
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
-                  website: 'https://elonmusk.com'
+                  website: 'https://elonmusk.com',
+                  row_version: '1-12345'
                 },
                 compensations: [[Object]]
               }
@@ -562,7 +566,8 @@ describe('HrisApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             phone_numbers: [
@@ -597,6 +602,7 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -767,7 +773,8 @@ describe('HrisApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               },
               compensations: [
                 {
@@ -804,7 +811,8 @@ describe('HrisApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [
@@ -839,6 +847,7 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -965,7 +974,8 @@ describe('HrisApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               },
               compensations: [
                 {
@@ -1002,7 +1012,8 @@ describe('HrisApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [
@@ -1036,7 +1047,8 @@ describe('HrisApi', () => {
               url: 'https://www.twitter.com/apideck-io',
               type: 'twitter'
             }
-          ]
+          ],
+          row_version: '1-12345'
         }
       } as any
       const current = await hris.employeesUpdate(params)

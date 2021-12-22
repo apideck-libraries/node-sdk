@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `first_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
 `individual` | **boolean** |  | [optional] 
-`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`addresses` | [**Array&lt;Address3&gt;**](Address3.md) |  | [optional] 
 `notes` | **string** |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Address`](Address.md)
+* [`Address3`](Address3.md)
 
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)

@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Address4, Address4FromJSON, Address4ToJSON } from './Address4'
 import {
   EmployeeCompensations,
   EmployeeCompensationsFromJSON,
@@ -71,10 +71,10 @@ export interface EmployeeJobs {
   payment_unit?: PaymentUnit
   /**
    *
-   * @type {Address}
+   * @type {Address4}
    * @memberof EmployeeJobs
    */
-  location?: Address
+  location?: Address4
   /**
    *
    * @type {Array<EmployeeCompensations>}
@@ -105,7 +105,7 @@ export function EmployeeJobsFromJSONTyped(json: any, ignoreDiscriminator: boolea
     payment_unit: !exists(json, 'payment_unit')
       ? undefined
       : PaymentUnitFromJSON(json['payment_unit']),
-    location: !exists(json, 'location') ? undefined : AddressFromJSON(json['location']),
+    location: !exists(json, 'location') ? undefined : Address4FromJSON(json['location']),
     compensations: !exists(json, 'compensations')
       ? undefined
       : (json['compensations'] as Array<any>).map(EmployeeCompensationsFromJSON)
@@ -130,7 +130,7 @@ export function EmployeeJobsToJSON(value?: EmployeeJobs | null): any {
         : new Date(value.hired_at).toISOString().substr(0, 10),
     is_primary: value.is_primary,
     payment_unit: PaymentUnitToJSON(value.payment_unit),
-    location: AddressToJSON(value.location),
+    location: Address4ToJSON(value.location),
     compensations:
       value.compensations === undefined
         ? undefined

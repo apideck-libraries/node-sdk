@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Address3, Address3FromJSON, Address3ToJSON } from './Address3'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
@@ -57,10 +57,10 @@ export interface CustomerSupportCustomer {
   individual?: boolean | null
   /**
    *
-   * @type {Array<Address>}
+   * @type {Array<Address3>}
    * @memberof CustomerSupportCustomer
    */
-  addresses?: Array<Address>
+  addresses?: Array<Address3>
   /**
    *
    * @type {string}
@@ -159,7 +159,7 @@ export function CustomerSupportCustomerFromJSONTyped(
     individual: !exists(json, 'individual') ? undefined : json['individual'],
     addresses: !exists(json, 'addresses')
       ? undefined
-      : (json['addresses'] as Array<any>).map(AddressFromJSON),
+      : (json['addresses'] as Array<any>).map(Address3FromJSON),
     notes: !exists(json, 'notes') ? undefined : json['notes'],
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
@@ -193,7 +193,7 @@ export function CustomerSupportCustomerToJSON(value?: CustomerSupportCustomer | 
     addresses:
       value.addresses === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(AddressToJSON),
+        : (value.addresses as Array<any>).map(Address3ToJSON),
     notes: value.notes,
     phone_numbers:
       value.phone_numbers === undefined

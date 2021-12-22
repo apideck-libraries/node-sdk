@@ -1,4 +1,4 @@
-# Apideck.Lead
+# Apideck.Contact1
 
 ### Description
 
@@ -6,32 +6,70 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** |  | 
-`company_name` | **string** |  | 
 `id` | **string** |  | [optional] 
 `owner_id` | **string** |  | [optional] 
+`type` | **string** |  | [optional] 
 `company_id` | **string** |  | [optional] 
-`contact_id` | **string** |  | [optional] 
-`lead_source` | **string** |  | [optional] 
+`company_name` | **string** |  | [optional] 
+`lead_id` | **string** |  | [optional] 
 `first_name` | **string** |  | [optional] 
+`middle_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
-`description` | **string** |  | [optional] 
 `prefix` | **string** |  | [optional] 
+`suffix` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
+`department` | **string** |  | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
-`status` | **string** |  | [optional] 
-`monetary_amount` | **number** |  | [optional] 
-`currency` | [**Currency**](Currency.md) |  | [optional] 
+`gender` | **string** |  | [optional] 
+`birthday` | **string** |  | [optional] 
+`image` | **string** |  | [optional] 
+`lead_source` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
+`description` | **string** |  | [optional] 
+`current_balance` | **number** |  | [optional] 
+`status` | **string** |  | [optional] 
+`active` | **boolean** |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
-`addresses` | [**Array&lt;Address5&gt;**](Address5.md) |  | [optional] 
+`addresses` | [**Array&lt;Address3&gt;**](Address3.md) |  | [optional] 
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
-`updated_at` | **string** |  | [optional] 
-`created_at` | **string** |  | [optional] 
+`first_call_at` | **Date** |  | [optional] 
+`first_email_at` | **Date** |  | [optional] 
+`last_activity_at` | **Date** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="Contact1Type"></a>
+## Enum: Contact1.type
+
+
+* `customer` (value: `'customer'`)
+
+* `supplier` (value: `'supplier'`)
+
+* `employee` (value: `'employee'`)
+
+* `personal` (value: `'personal'`)
+
+
+
+
+<a name="Contact1Gender"></a>
+## Enum: Contact1.gender
+
+
+* `male` (value: `'male'`)
+
+* `female` (value: `'female'`)
+
+* `unisex` (value: `'unisex'`)
 
 
 
@@ -52,15 +90,25 @@ Name | Type | Description | Notes
 
 
 
-* [`Currency`](Currency.md)
+
+
+
+
+
+
+
+
 
 * [`Website`](Website.md)
-* [`Address5`](Address5.md)
+* [`Address3`](Address3.md)
 * [`SocialLink`](SocialLink.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
+
+
 
 
 

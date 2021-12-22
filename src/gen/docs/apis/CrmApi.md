@@ -142,7 +142,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     all_day_event: false,
     private: true,
@@ -505,7 +506,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     all_day_event: false,
     private: true,
@@ -578,7 +580,7 @@ crmApi.companiesAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | [Company](../models/Company.md)|  |
+ **company1** | [Company1](../models/Company1.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -676,7 +678,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -954,7 +957,7 @@ crmApi.companiesUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | [Company](../models/Company.md)|  |
+ **company1** | [Company1](../models/Company1.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
@@ -1054,7 +1057,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -1216,7 +1220,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -1587,7 +1592,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -1741,7 +1747,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -2105,7 +2112,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -3408,7 +3416,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     phone_numbers: [
@@ -3743,7 +3752,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     phone_numbers: [

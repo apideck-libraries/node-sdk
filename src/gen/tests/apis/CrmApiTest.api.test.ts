@@ -90,7 +90,8 @@ describe('CrmApi', () => {
             phone_number: '111-111-1111',
             fax: '122-111-1111',
             email: 'elon@musk.com',
-            website: 'https://elonmusk.com'
+            website: 'https://elonmusk.com',
+            row_version: '1-12345'
           },
           all_day_event: false,
           private: true,
@@ -208,7 +209,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             },
             all_day_event: false,
             private: true,
@@ -396,7 +398,8 @@ describe('CrmApi', () => {
             phone_number: '111-111-1111',
             fax: '122-111-1111',
             email: 'elon@musk.com',
-            website: 'https://elonmusk.com'
+            website: 'https://elonmusk.com',
+            row_version: '1-12345'
           },
           all_day_event: false,
           private: true,
@@ -542,7 +545,8 @@ describe('CrmApi', () => {
             phone_number: '111-111-1111',
             fax: '122-111-1111',
             email: 'elon@musk.com',
-            website: 'https://elonmusk.com'
+            website: 'https://elonmusk.com',
+            row_version: '1-12345'
           },
           all_day_event: false,
           private: true,
@@ -685,7 +689,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -816,7 +821,8 @@ describe('CrmApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             social_links: [
@@ -1013,7 +1019,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1167,7 +1174,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1298,7 +1306,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1419,7 +1428,8 @@ describe('CrmApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             social_links: [
@@ -1605,7 +1615,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1750,7 +1761,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1873,7 +1885,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -1987,7 +2000,8 @@ describe('CrmApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             social_links: [
@@ -2163,7 +2177,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -2298,7 +2313,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           social_links: [
@@ -3314,7 +3330,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [
@@ -3403,7 +3420,8 @@ describe('CrmApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             phone_numbers: [
@@ -3554,7 +3572,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [
@@ -3664,7 +3683,8 @@ describe('CrmApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           phone_numbers: [

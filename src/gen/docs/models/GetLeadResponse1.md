@@ -1,4 +1,4 @@
-# Apideck.GetCompanyResponse
+# Apideck.GetLeadResponse1
 
 ### Description
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Company1**](Company1.md) |  | 
+`data` | [**Lead**](Lead.md) |  | 
 
 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Company1`](Company1.md)
+* [`Lead`](Lead.md)
 
 ---
 

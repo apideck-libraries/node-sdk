@@ -17,8 +17,8 @@ import {
   ActivityToJSON,
   CompaniesFilter,
   CompaniesSort,
-  Company,
-  CompanyToJSON,
+  Company1,
+  Company1ToJSON,
   Contact,
   ContactsFilter,
   ContactsSort,
@@ -163,7 +163,7 @@ export interface CrmApiActivitiesUpdateRequest {
 }
 
 export interface CrmApiCompaniesAddRequest {
-  company: Company
+  company1: Company1
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -199,7 +199,7 @@ export interface CrmApiCompaniesOneRequest {
 
 export interface CrmApiCompaniesUpdateRequest {
   id: string
-  company: Company
+  company1: Company1
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -801,10 +801,10 @@ export class CrmApi extends runtime.BaseAPI {
   async companiesAddRaw(
     requestParameters: CrmApiCompaniesAddRequest
   ): Promise<runtime.ApiResponse<CreateCompanyResponse>> {
-    if (requestParameters.company === null || requestParameters.company === undefined) {
+    if (requestParameters.company1 === null || requestParameters.company1 === undefined) {
       throw new runtime.RequiredError(
-        'company',
-        'Required parameter requestParameters.company was null or undefined when calling companiesAdd.'
+        'company1',
+        'Required parameter requestParameters.company1 was null or undefined when calling companiesAdd.'
       )
     }
 
@@ -839,7 +839,7 @@ export class CrmApi extends runtime.BaseAPI {
       method: 'POST',
       headers: headerParameters,
       query: queryParameters,
-      body: CompanyToJSON(requestParameters.company)
+      body: Company1ToJSON(requestParameters.company1)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
@@ -1062,10 +1062,10 @@ export class CrmApi extends runtime.BaseAPI {
       )
     }
 
-    if (requestParameters.company === null || requestParameters.company === undefined) {
+    if (requestParameters.company1 === null || requestParameters.company1 === undefined) {
       throw new runtime.RequiredError(
-        'company',
-        'Required parameter requestParameters.company was null or undefined when calling companiesUpdate.'
+        'company1',
+        'Required parameter requestParameters.company1 was null or undefined when calling companiesUpdate.'
       )
     }
 
@@ -1103,7 +1103,7 @@ export class CrmApi extends runtime.BaseAPI {
       method: 'PATCH',
       headers: headerParameters,
       query: queryParameters,
-      body: CompanyToJSON(requestParameters.company)
+      body: Company1ToJSON(requestParameters.company1)
     })
 
     return new runtime.JSONApiResponse(response, jsonValue =>
