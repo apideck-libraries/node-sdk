@@ -10,7 +10,6 @@
 * [Download File](#filesDownload)
 * [Get File](#filesOne)
 * [Search Files](#filesSearch)
-* [Upload File](#filesUpload)
 * [Create Folder](#foldersAdd)
 * [Copy Folder](#foldersCopy)
 * [Delete Folder](#foldersDelete)
@@ -25,7 +24,6 @@
 * [Abort Upload Session](#uploadSessionsDelete)
 * [Finish Upload Session](#uploadSessionsFinish)
 * [Get Upload Session](#uploadSessionsOne)
-* [Upload Part Of File To Upload Session](#uploadSessionsUpload)
 
 <a name="filesAll"></a>
 # List Files
@@ -361,77 +359,6 @@ const params = {
 
 try {
   const { data } = await apideck.fileStorage.filesSearch(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="filesUpload"></a>
-# Upload File
-
-
-Method: **filesUpload**
-
-```typescript
-fileStorageApi.filesUpload(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Blob**|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
- **xApideckMetadata** | **CreateFileRequest** | Metadata to attach to the file | (optional) 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`CreateFileResponse`](../models/CreateFileResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**201** | Files | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  metadata: 'REPLACE_WITH_METADATA'
-});
-
-const params = {
-  filesUpload: 'string'
-}
-
-try {
-  const { data } = await apideck.fileStorage.filesUpload(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -1430,79 +1357,6 @@ const params = {
 
 try {
   const { data } = await apideck.fileStorage.uploadSessionsOne(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="uploadSessionsUpload"></a>
-# Upload Part Of File To Upload Session
-
-
-Method: **uploadSessionsUpload**
-
-```typescript
-fileStorageApi.uploadSessionsUpload(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Blob**|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **partNumber** | [**number**] | Part number of the file part being uploaded. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
-
-
-
-### Response Type
-
-[`UpdateUploadSessionResponse`](../models/UpdateUploadSessionResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | UploadSessions | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  id: 'id_example',
-  partNumber: 0,
-  body: '<binary string>'
-}
-
-try {
-  const { data } = await apideck.fileStorage.uploadSessionsUpload(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

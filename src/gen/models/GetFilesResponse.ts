@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { UnifiedFile, UnifiedFileFromJSON, UnifiedFileToJSON } from './UnifiedFile'
 
 /**
  *
@@ -54,10 +55,10 @@ export interface GetFilesResponse {
   operation: string
   /**
    *
-   * @type {Array<any>}
+   * @type {Array<UnifiedFile>}
    * @memberof GetFilesResponse
    */
-  data: Array<any>
+  data: Array<UnifiedFile>
   /**
    *
    * @type {Meta}
@@ -89,7 +90,7 @@ export function GetFilesResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: json['data'],
+    data: (json['data'] as Array<any>).map(UnifiedFileFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -108,7 +109,7 @@ export function GetFilesResponseToJSON(value?: GetFilesResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: value.data,
+    data: (value.data as Array<any>).map(UnifiedFileToJSON),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }
