@@ -154,6 +154,30 @@ Read the full documentation of the VaultApi [here](./src/gen/docs/apis/VaultApi.
 Read the full documentation of the WebhookApi [here](./src/gen/docs/apis/WebhookApi.md).
 
 
+### Utils
+
+#### uploadFile
+
+A utility for uploading files using the File Storage API. `uploadFile` will automatically use upload sessions for files larger than 4MB. Smaller files will be uploaded with a simple upload call.
+
+**Example Usage**
+
+```ts
+const apideck = new Apideck({
+  apiKey: '<insert-api-key-here>',
+  appId: '<insert-application-id-here>',
+  consumerId: '<insert-consumer-id-here>'
+});
+
+
+const file = await apideck.utils.uploadFile({
+  serviceId: 'dropbox',
+  file: buffer, // Buffer | string
+  name: "test.jpg",
+  size: fileSize, // file size in bytes
+  contentType: "image/jpg", // optional
+});
+```
 
 ## Support
 

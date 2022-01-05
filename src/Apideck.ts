@@ -14,6 +14,7 @@ import {
   WebhookApi
 } from './gen/'
 import { Configuration } from './gen/runtime'
+import { Utils } from './utils'
 
 const isNode =
   typeof process !== 'undefined' && process.versions != null && process.versions.node != null
@@ -39,6 +40,7 @@ export class Apideck {
   readonly sms: SmsApi
   readonly vault: VaultApi
   readonly webhook: WebhookApi
+  readonly utils: Utils
   constructor(readonly config: ApideckConfiguration) {
     if (!isNode) {
       console.warn(
@@ -69,5 +71,7 @@ export class Apideck {
     this.sms = new SmsApi(configuration)
     this.vault = new VaultApi(configuration)
     this.webhook = new WebhookApi(configuration)
+
+    this.utils = new Utils(this)
   }
 }

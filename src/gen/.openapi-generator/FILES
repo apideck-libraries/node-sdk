@@ -8,6 +8,7 @@
 ../../tsconfig.json
 ../Apideck.ts
 ../index.ts
+../utils.ts
 .openapi-generator-ignore
 AccountingApi.md
 AccountingApiTest.api.test.ts
