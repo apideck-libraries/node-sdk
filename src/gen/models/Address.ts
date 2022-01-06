@@ -151,6 +151,12 @@ export interface Address {
    * @memberof Address
    */
   website?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  row_version?: string | null
 }
 
 /**
@@ -197,7 +203,8 @@ export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
     phone_number: !exists(json, 'phone_number') ? undefined : json['phone_number'],
     fax: !exists(json, 'fax') ? undefined : json['fax'],
     email: !exists(json, 'email') ? undefined : json['email'],
-    website: !exists(json, 'website') ? undefined : json['website']
+    website: !exists(json, 'website') ? undefined : json['website'],
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version']
   }
 }
 
@@ -230,6 +237,7 @@ export function AddressToJSON(value?: Address | null): any {
     phone_number: value.phone_number,
     fax: value.fax,
     email: value.email,
-    website: value.website
+    website: value.website,
+    row_version: value.row_version
   }
 }

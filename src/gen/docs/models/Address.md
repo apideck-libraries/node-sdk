@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 `fax` | **string** |  | [optional] 
 `email` | **string** |  | [optional] 
 `website` | **string** |  | [optional] 
+`row_version` | **string** |  | [optional] 
 
 
 

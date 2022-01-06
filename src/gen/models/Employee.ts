@@ -271,6 +271,12 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
+  row_version?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Employee
+   */
   readonly updated_by?: string | null
   /**
    *
@@ -374,6 +380,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     social_links: !exists(json, 'social_links')
       ? undefined
       : (json['social_links'] as Array<any>).map(EmployeeSocialLinksFromJSON),
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -442,6 +449,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     social_links:
       value.social_links === undefined
         ? undefined
-        : (value.social_links as Array<any>).map(EmployeeSocialLinksToJSON)
+        : (value.social_links as Array<any>).map(EmployeeSocialLinksToJSON),
+    row_version: value.row_version
   }
 }

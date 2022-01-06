@@ -20,106 +20,106 @@ import { Owner, OwnerFromJSON, OwnerToJSON } from './Owner'
 /**
  *
  * @export
- * @interface ModelFile
+ * @interface UnifiedFile
  */
-export interface ModelFile {
+export interface UnifiedFile {
   /**
    *
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   readonly id: string
   /**
    * The name of the file
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   name: string
   /**
    *
    * @type {FileType}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   type: FileType
   /**
    * Optional description of the file
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   description?: string
   /**
    * The full path of the file or folder (includes the file name)
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   path?: string
   /**
    * The MIME type of the file.
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   mime_type?: string
   /**
    * Whether the current user can download this file
    * @type {boolean}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   downloadable?: boolean
   /**
    * The size of the file in bytes
    * @type {number}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   size?: number
   /**
    *
    * @type {Owner}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   owner?: Owner
   /**
    * The parent folders of the file, starting from the root
    * @type {Array<LinkedFolder>}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   parent_folders?: Array<LinkedFolder>
   /**
    * Whether the list of parent folder is complete. Some connectors only return the direct parent of a file
    * @type {boolean}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   parent_folders_complete?: boolean
   /**
    *
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   readonly updated_by?: string | null
   /**
    *
    * @type {string}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   readonly created_by?: string | null
   /**
    *
    * @type {Date}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   readonly updated_at?: Date
   /**
    *
    * @type {Date}
-   * @memberof ModelFile
+   * @memberof UnifiedFile
    */
   readonly created_at?: Date
 }
 
-export function ModelFileFromJSON(json: any): ModelFile {
-  return ModelFileFromJSONTyped(json, false)
+export function UnifiedFileFromJSON(json: any): UnifiedFile {
+  return UnifiedFileFromJSONTyped(json, false)
 }
 
-export function ModelFileFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelFile {
+export function UnifiedFileFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnifiedFile {
   if (json === undefined || json === null) {
     return json
   }
@@ -146,7 +146,7 @@ export function ModelFileFromJSONTyped(json: any, ignoreDiscriminator: boolean):
   }
 }
 
-export function ModelFileToJSON(value?: ModelFile | null): any {
+export function UnifiedFileToJSON(value?: UnifiedFile | null): any {
   if (value === undefined) {
     return undefined
   }

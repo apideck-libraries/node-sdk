@@ -110,7 +110,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [
@@ -474,7 +475,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     social_links: [

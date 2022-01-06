@@ -188,7 +188,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     notes: 'Some notes about this customer',
@@ -543,7 +544,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     notes: 'Some notes about this customer',
@@ -1154,7 +1156,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     shipping_address: {
       id: '123',
@@ -1178,7 +1181,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     template_id: '123456',
     row_version: '1-12345'
@@ -1530,7 +1534,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     shipping_address: {
       id: '123',
@@ -1554,7 +1559,8 @@ const params = {
       phone_number: '111-111-1111',
       fax: '122-111-1111',
       email: 'elon@musk.com',
-      website: 'https://elonmusk.com'
+      website: 'https://elonmusk.com',
+      row_version: '1-12345'
     },
     template_id: '123456',
     row_version: '1-12345'

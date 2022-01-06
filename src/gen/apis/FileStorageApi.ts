@@ -15,9 +15,6 @@
 import {
   CopyFolderRequest,
   CopyFolderRequestToJSON,
-  CreateFileRequest,
-  CreateFileResponse,
-  CreateFileResponseFromJSON,
   CreateFolderRequest,
   CreateFolderRequestToJSON,
   CreateFolderResponse,
@@ -59,9 +56,7 @@ import {
   UpdateFolderResponse,
   UpdateFolderResponseFromJSON,
   UpdateSharedLinkResponse,
-  UpdateSharedLinkResponseFromJSON,
-  UpdateUploadSessionResponse,
-  UpdateUploadSessionResponseFromJSON
+  UpdateSharedLinkResponseFromJSON
 } from '../models'
 import * as runtime from '../runtime'
 
@@ -104,15 +99,6 @@ export interface FileStorageApiFilesSearchRequest {
   consumerId?: string
   appId?: string
   serviceId?: string
-}
-
-export interface FileStorageApiFilesUploadRequest {
-  raw?: boolean
-  xApideckMetadata?: CreateFileRequest
-  consumerId?: string
-  appId?: string
-  serviceId?: string
-  body?: Blob
 }
 
 export interface FileStorageApiFoldersAddRequest {
@@ -226,16 +212,6 @@ export interface FileStorageApiUploadSessionsFinishRequest {
 
 export interface FileStorageApiUploadSessionsOneRequest {
   id: string
-  consumerId?: string
-  appId?: string
-  serviceId?: string
-  raw?: boolean
-}
-
-export interface FileStorageApiUploadSessionsUploadRequest {
-  id: string
-  partNumber: number
-  body: Blob
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -545,68 +521,6 @@ export class FileStorageApi extends runtime.BaseAPI {
     requestParameters: FileStorageApiFilesSearchRequest
   ): Promise<GetFilesResponse> {
     const response = await this.filesSearchRaw(requestParameters)
-    return await response.value()
-  }
-
-  /**
-   * Upload file (max 4MB). Please use the Upload Session API to upload bigger files.
-   * Upload file
-   */
-  async filesUploadRaw(
-    requestParameters: FileStorageApiFilesUploadRequest
-  ): Promise<runtime.ApiResponse<CreateFileResponse>> {
-    const queryParameters: any = {}
-
-    if (requestParameters.raw !== undefined) {
-      queryParameters['raw'] = requestParameters.raw
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {}
-
-    headerParameters['Content-Type'] = 'application/json'
-
-    if (
-      requestParameters.xApideckMetadata !== undefined &&
-      requestParameters.xApideckMetadata !== null
-    ) {
-      headerParameters['x-apideck-metadata'] = String(requestParameters.xApideckMetadata)
-    }
-
-    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
-      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
-    }
-
-    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
-      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
-    }
-
-    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
-      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
-    }
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
-    }
-
-    const response = await this.request({
-      path: `/file-storage/files`,
-      method: 'POST',
-      headers: headerParameters,
-      query: queryParameters,
-      body: requestParameters.body as any
-    })
-
-    return new runtime.JSONApiResponse(response, jsonValue => CreateFileResponseFromJSON(jsonValue))
-  }
-
-  /**
-   * Upload file (max 4MB). Please use the Upload Session API to upload bigger files.
-   * Upload file
-   */
-  async filesUpload(
-    requestParameters: FileStorageApiFilesUploadRequest
-  ): Promise<CreateFileResponse> {
-    const response = await this.filesUploadRaw(requestParameters)
     return await response.value()
   }
 
@@ -1528,91 +1442,6 @@ export class FileStorageApi extends runtime.BaseAPI {
     requestParameters: FileStorageApiUploadSessionsOneRequest
   ): Promise<GetUploadSessionResponse> {
     const response = await this.uploadSessionsOneRaw(requestParameters)
-    return await response.value()
-  }
-
-  /**
-   * Upload part of file to Upload Session
-   * Upload part of file to Upload Session
-   */
-  async uploadSessionsUploadRaw(
-    requestParameters: FileStorageApiUploadSessionsUploadRequest
-  ): Promise<runtime.ApiResponse<UpdateUploadSessionResponse>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling uploadSessionsUpload.'
-      )
-    }
-
-    if (requestParameters.partNumber === null || requestParameters.partNumber === undefined) {
-      throw new runtime.RequiredError(
-        'partNumber',
-        'Required parameter requestParameters.partNumber was null or undefined when calling uploadSessionsUpload.'
-      )
-    }
-
-    if (requestParameters.body === null || requestParameters.body === undefined) {
-      throw new runtime.RequiredError(
-        'body',
-        'Required parameter requestParameters.body was null or undefined when calling uploadSessionsUpload.'
-      )
-    }
-
-    const queryParameters: any = {}
-
-    if (requestParameters.partNumber !== undefined) {
-      queryParameters['part_number'] = requestParameters.partNumber
-    }
-
-    if (requestParameters.raw !== undefined) {
-      queryParameters['raw'] = requestParameters.raw
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {}
-
-    headerParameters['Content-Type'] = 'application/json'
-
-    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
-      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
-    }
-
-    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
-      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
-    }
-
-    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
-      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
-    }
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
-    }
-
-    const response = await this.request({
-      path: `/file-storage/upload-sessions/{id}`.replace(
-        `{${'id'}}`,
-        encodeURIComponent(String(requestParameters.id))
-      ),
-      method: 'PUT',
-      headers: headerParameters,
-      query: queryParameters,
-      body: requestParameters.body as any
-    })
-
-    return new runtime.JSONApiResponse(response, jsonValue =>
-      UpdateUploadSessionResponseFromJSON(jsonValue)
-    )
-  }
-
-  /**
-   * Upload part of file to Upload Session
-   * Upload part of file to Upload Session
-   */
-  async uploadSessionsUpload(
-    requestParameters: FileStorageApiUploadSessionsUploadRequest
-  ): Promise<UpdateUploadSessionResponse> {
-    const response = await this.uploadSessionsUploadRaw(requestParameters)
     return await response.value()
   }
 }

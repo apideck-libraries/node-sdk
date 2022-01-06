@@ -92,7 +92,8 @@ describe('AtsApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           applications: [
@@ -186,7 +187,8 @@ describe('AtsApi', () => {
                 phone_number: '111-111-1111',
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
-                website: 'https://elonmusk.com'
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
               }
             ],
             stage_id: '12345',
@@ -307,7 +309,8 @@ describe('AtsApi', () => {
               phone_number: '111-111-1111',
               fax: '122-111-1111',
               email: 'elon@musk.com',
-              website: 'https://elonmusk.com'
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
             }
           ],
           stage_id: '12345',

@@ -498,7 +498,8 @@ const params = {
           phone_number: '111-111-1111',
           fax: '122-111-1111',
           email: 'elon@musk.com',
-          website: 'https://elonmusk.com'
+          website: 'https://elonmusk.com',
+          row_version: '1-12345'
         },
         compensations: [
           {
@@ -535,7 +536,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     phone_numbers: [
@@ -569,7 +571,8 @@ const params = {
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
-    ]
+    ],
+    row_version: '1-12345'
   }
 }
 
@@ -923,7 +926,8 @@ const params = {
           phone_number: '111-111-1111',
           fax: '122-111-1111',
           email: 'elon@musk.com',
-          website: 'https://elonmusk.com'
+          website: 'https://elonmusk.com',
+          row_version: '1-12345'
         },
         compensations: [
           {
@@ -960,7 +964,8 @@ const params = {
         phone_number: '111-111-1111',
         fax: '122-111-1111',
         email: 'elon@musk.com',
-        website: 'https://elonmusk.com'
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
       }
     ],
     phone_numbers: [
@@ -994,7 +999,8 @@ const params = {
         url: 'https://www.twitter.com/apideck-io',
         type: 'twitter'
       }
-    ]
+    ],
+    row_version: '1-12345'
   }
 }
 
