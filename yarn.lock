@@ -2194,9 +2194,9 @@ camelcase@^6.0.0, camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001286:
-  version "1.0.30001296"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001296.tgz#d99f0f3bee66544800b93d261c4be55a35f1cec8"
-  integrity sha512-WfrtPEoNSoeATDlf4y3QvkwiELl9GyPLISV5GejTbbQRtQx4LhsXmc9IQ6XCL2d7UxCyEzToEZNMeqR79OUw8Q==
+  version "1.0.30001297"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001297.tgz#ea7776ccc4992956582cae5b8fea127fbebde430"
+  integrity sha512-6bbIbowYG8vFs/Lk4hU9jFt7NknGDleVAciK916tp6ft1j+D//ZwwL6LbF1wXMQ32DMSjeuUV8suhh6dlmFjcA==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -2516,9 +2516,9 @@ cssstyle@^2.0.0, cssstyle@^2.3.0:
     cssom "~0.3.6"
 
 damerau-levenshtein@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.7.tgz#64368003512a1a6992593741a09a9d31a836f55d"
-  integrity sha512-VvdQIPGdWP0SqFXghj79Wf/5LArmreyMsGLa6FG6iC4t3j7j5s71TrwWmT/4akbDQIqjfACkLZmjXhA7g2oUZw==
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
+  integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -2689,9 +2689,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.4.17:
-  version "1.4.36"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.36.tgz#446c6184dbe5baeb5eae9a875490831e4bc5319a"
-  integrity sha512-MbLlbF39vKrXWlFEFpCgDHwdlz4O3LmHM5W4tiLRHjSmEUXjJjz8sZkMgWgvYxlZw3N1iDTmCEtOkkESb5TMCg==
+  version "1.4.37"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.37.tgz#eedd53cad229ae2d1632b958a92a3d7d7b27f553"
+  integrity sha512-XIvFB1omSAxYgHYX48sC+HR8i/p7lx7R+0cX9faElg1g++h9IilCrJ12+bQuY+d96Wp7zkBiJwMOv+AhLtLrTg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3671,9 +3671,9 @@ import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
     resolve-from "^4.0.0"
 
 import-local@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/import-local/-/import-local-3.0.3.tgz#4d51c2c495ca9393da259ec66b62e022920211e0"
-  integrity sha512-bE9iaUY3CXH8Cwfan/abDKAxe1KGT9kyGsBPqf6DMK/z0a2OzAsrukeYNgIH6cH5Xr452jb1TUL8rSfCLjZ9uA==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/import-local/-/import-local-3.1.0.tgz#b4479df8a5fd44f6cdce24070675676063c95cb4"
+  integrity sha512-ASB07uLtnDs1o6EHjKpX34BKYDSqnFerfTOJL2HvMqF70LnxpjkzDB8J44oT9pu4AMPkQwf8jl6szgvNd2tRIg==
   dependencies:
     pkg-dir "^4.2.0"
     resolve-cwd "^3.0.0"
@@ -6297,9 +6297,9 @@ rxjs@^7.5.1:
     tslib "^2.1.0"
 
 sade@^1.4.2:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/sade/-/sade-1.8.0.tgz#c9905381e236953a635450803633902095e8ec36"
-  integrity sha512-NRfCA8AVYuAA7Hu8bs18od6J4BdcXXwOv6OJuNgwbw8LcLK8JKwaM3WckLZ+MGyPJUS/ivVgK3twltrOIJJnug==
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/sade/-/sade-1.8.1.tgz#0a78e81d658d394887be57d2a409bf703a3b2701"
+  integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
 
@@ -6428,9 +6428,9 @@ shebang-regex@^3.0.0:
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
 shelljs@^0.8.3:
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.4.tgz#de7684feeb767f8716b326078a8a00875890e3c2"
-  integrity sha512-7gk3UZ9kOfPLIAbslLzyWeGiEqx9e3rxwZM0KE6EL8GlGwjym9Mrlx5/p33bWTu9YG6vcS4MBxYZDHYr5lr8BQ==
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.5.tgz#de055408d8361bed66c669d2f000538ced8ee20c"
+  integrity sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
