@@ -96,6 +96,7 @@ CreateWebhookRequest.md
 CreateWebhookResponse.md
 CrmApi.md
 CrmApiTest.api.test.ts
+CrmEventType.md
 Currency.md
 CustomField.md
 CustomerSupportApi.md
@@ -133,7 +134,6 @@ EmployeeManager.md
 EmployeeSocialLinks.md
 EmployeeTeam.md
 Error.md
-EventType.md
 ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
@@ -420,6 +420,7 @@ models/CreateUploadSessionResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
 models/CreateWebhookResponse.ts
+models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
 models/CustomerSupportCustomer.ts
@@ -454,7 +455,6 @@ models/EmployeeJobs.ts
 models/EmployeeManager.ts
 models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
-models/EventType.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts

@@ -17,7 +17,7 @@
  * @export
  * @enum {string}
  */
-export enum EventType {
+export enum CrmEventType {
   Star = '*',
   crm_activity_created = 'crm.activity.created',
   crm_activity_updated = 'crm.activity.updated',
@@ -39,14 +39,14 @@ export enum EventType {
   crm_opportunity_deleted = 'crm.opportunity.deleted'
 }
 
-export function EventTypeFromJSON(json: any): EventType {
-  return EventTypeFromJSONTyped(json, false)
+export function CrmEventTypeFromJSON(json: any): CrmEventType {
+  return CrmEventTypeFromJSONTyped(json, false)
 }
 
-export function EventTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): EventType {
-  return json as EventType
+export function CrmEventTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): CrmEventType {
+  return json as CrmEventType
 }
 
-export function EventTypeToJSON(value?: EventType | null): any {
+export function CrmEventTypeToJSON(value?: CrmEventType | null): any {
   return value as any
 }
