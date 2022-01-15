@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
+`compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -102,6 +103,7 @@ Name | Type | Description | Notes
 
 
 * [`EmployeeJobs`](EmployeeJobs.md)
+* [`EmployeeCompensations`](EmployeeCompensations.md)
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
