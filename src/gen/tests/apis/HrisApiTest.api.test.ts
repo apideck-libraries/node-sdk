@@ -294,7 +294,6 @@ describe('HrisApi', () => {
           salutation: 'Mr',
           title: 'CEO',
           marital_status: 'married',
-          picture_url: 'https://example.com/picture.jpg',
           division: 'Europe',
           department: 'R&amp;D',
           team: {
@@ -430,7 +429,8 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          deleted: true
         }
       } as any
       const current = await hris.employeesAdd(params)
@@ -472,7 +472,6 @@ describe('HrisApi', () => {
             salutation: 'Mr',
             title: 'CEO',
             marital_status: 'married',
-            picture_url: 'https://example.com/picture.jpg',
             division: 'Europe',
             department: 'R&amp;D',
             team: {
@@ -612,6 +611,7 @@ describe('HrisApi', () => {
               }
             ],
             row_version: '1-12345',
+            deleted: true,
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -717,7 +717,6 @@ describe('HrisApi', () => {
           salutation: 'Mr',
           title: 'CEO',
           marital_status: 'married',
-          picture_url: 'https://example.com/picture.jpg',
           division: 'Europe',
           department: 'R&amp;D',
           team: {
@@ -857,6 +856,7 @@ describe('HrisApi', () => {
             }
           ],
           row_version: '1-12345',
+          deleted: true,
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -921,7 +921,6 @@ describe('HrisApi', () => {
           salutation: 'Mr',
           title: 'CEO',
           marital_status: 'married',
-          picture_url: 'https://example.com/picture.jpg',
           division: 'Europe',
           department: 'R&amp;D',
           team: {
@@ -1057,7 +1056,8 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          deleted: true
         }
       } as any
       const current = await hris.employeesUpdate(params)

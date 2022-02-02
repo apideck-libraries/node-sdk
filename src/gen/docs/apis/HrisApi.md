@@ -432,7 +432,6 @@ const params = {
     salutation: 'Mr',
     title: 'CEO',
     marital_status: 'married',
-    picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
     team: {
@@ -572,7 +571,8 @@ const params = {
         type: 'twitter'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    deleted: true
   }
 }
 
@@ -860,7 +860,6 @@ const params = {
     salutation: 'Mr',
     title: 'CEO',
     marital_status: 'married',
-    picture_url: 'https://example.com/picture.jpg',
     division: 'Europe',
     department: 'R&amp;D',
     team: {
@@ -1000,7 +999,8 @@ const params = {
         type: 'twitter'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    deleted: true
   }
 }
 

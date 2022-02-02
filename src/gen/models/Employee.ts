@@ -104,12 +104,6 @@ export interface Employee {
    */
   marital_status?: string | null
   /**
-   * The URL pointing to a picture.
-   * @type {string}
-   * @memberof Employee
-   */
-  picture_url?: string | null
-  /**
    * The division the user is currently in.
    * @type {string}
    * @memberof Employee
@@ -285,6 +279,12 @@ export interface Employee {
   row_version?: string | null
   /**
    *
+   * @type {boolean}
+   * @memberof Employee
+   */
+  deleted?: boolean | null
+  /**
+   *
    * @type {string}
    * @memberof Employee
    */
@@ -339,7 +339,6 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     salutation: !exists(json, 'salutation') ? undefined : json['salutation'],
     title: !exists(json, 'title') ? undefined : json['title'],
     marital_status: !exists(json, 'marital_status') ? undefined : json['marital_status'],
-    picture_url: !exists(json, 'picture_url') ? undefined : json['picture_url'],
     division: !exists(json, 'division') ? undefined : json['division'],
     department: !exists(json, 'department') ? undefined : json['department'],
     team: !exists(json, 'team') ? undefined : EmployeeTeamFromJSON(json['team']),
@@ -395,6 +394,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       ? undefined
       : (json['social_links'] as Array<any>).map(EmployeeSocialLinksFromJSON),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
+    deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
@@ -419,7 +419,6 @@ export function EmployeeToJSON(value?: Employee | null): any {
     salutation: value.salutation,
     title: value.title,
     marital_status: value.marital_status,
-    picture_url: value.picture_url,
     division: value.division,
     department: value.department,
     team: EmployeeTeamToJSON(value.team),
@@ -468,6 +467,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
       value.social_links === undefined
         ? undefined
         : (value.social_links as Array<any>).map(EmployeeSocialLinksToJSON),
-    row_version: value.row_version
+    row_version: value.row_version,
+    deleted: value.deleted
   }
 }

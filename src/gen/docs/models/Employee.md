@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 `salutation` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `marital_status` | **string** |  | [optional] 
-`picture_url` | **string** | The URL pointing to a picture. | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
@@ -45,6 +44,7 @@ Name | Type | Description | Notes
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
 `row_version` | **string** |  | [optional] 
+`deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -70,7 +70,6 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
-
 
 
 
@@ -109,6 +108,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
+
 
 
 
