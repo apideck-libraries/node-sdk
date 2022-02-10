@@ -2468,6 +2468,7 @@ describe('AccountingApi', () => {
             }
           ],
           type: 'NONE',
+          report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
           row_version: '1-12345'
@@ -2519,6 +2520,7 @@ describe('AccountingApi', () => {
               }
             ],
             type: 'NONE',
+            report_tax_type: 'NONE',
             original_tax_rate_id: '12345',
             status: 'active',
             row_version: '1-12345',
@@ -2634,6 +2636,7 @@ describe('AccountingApi', () => {
             }
           ],
           type: 'NONE',
+          report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
           row_version: '1-12345',
@@ -2709,6 +2712,7 @@ describe('AccountingApi', () => {
             }
           ],
           type: 'NONE',
+          report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
           row_version: '1-12345'
