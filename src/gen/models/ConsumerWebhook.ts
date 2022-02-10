@@ -124,7 +124,28 @@ export enum ConsumerWebhookEvents {
   ats_applicant_deleted = 'ats.applicant.deleted',
   pos_order_created = 'pos.order.created',
   pos_order_updated = 'pos.order.updated',
-  pos_order_deleted = 'pos.order.deleted'
+  pos_order_deleted = 'pos.order.deleted',
+  pos_product_created = 'pos.product.created',
+  pos_product_updated = 'pos.product.updated',
+  pos_product_deleted = 'pos.product.deleted',
+  pos_payment_created = 'pos.payment.created',
+  pos_payment_updated = 'pos.payment.updated',
+  pos_payment_deleted = 'pos.payment.deleted',
+  pos_merchant_created = 'pos.merchant.created',
+  pos_merchant_updated = 'pos.merchant.updated',
+  pos_merchant_deleted = 'pos.merchant.deleted',
+  pos_location_created = 'pos.location.created',
+  pos_location_updated = 'pos.location.updated',
+  pos_location_deleted = 'pos.location.deleted',
+  pos_item_created = 'pos.item.created',
+  pos_item_updated = 'pos.item.updated',
+  pos_item_deleted = 'pos.item.deleted',
+  pos_modifier_created = 'pos.modifier.created',
+  pos_modifier_updated = 'pos.modifier.updated',
+  pos_modifier_deleted = 'pos.modifier.deleted',
+  pos_modifier_group_created = 'pos.modifier-group.created',
+  pos_modifier_group_updated = 'pos.modifier-group.updated',
+  pos_modifier_group_deleted = 'pos.modifier-group.deleted'
 }
 
 export function ConsumerWebhookFromJSON(json: any): ConsumerWebhook {

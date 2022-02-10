@@ -73,6 +73,48 @@
 
 * `pos_order_deleted` (value: `'pos.order.deleted'`)
 
+* `pos_product_created` (value: `'pos.product.created'`)
+
+* `pos_product_updated` (value: `'pos.product.updated'`)
+
+* `pos_product_deleted` (value: `'pos.product.deleted'`)
+
+* `pos_payment_created` (value: `'pos.payment.created'`)
+
+* `pos_payment_updated` (value: `'pos.payment.updated'`)
+
+* `pos_payment_deleted` (value: `'pos.payment.deleted'`)
+
+* `pos_merchant_created` (value: `'pos.merchant.created'`)
+
+* `pos_merchant_updated` (value: `'pos.merchant.updated'`)
+
+* `pos_merchant_deleted` (value: `'pos.merchant.deleted'`)
+
+* `pos_location_created` (value: `'pos.location.created'`)
+
+* `pos_location_updated` (value: `'pos.location.updated'`)
+
+* `pos_location_deleted` (value: `'pos.location.deleted'`)
+
+* `pos_item_created` (value: `'pos.item.created'`)
+
+* `pos_item_updated` (value: `'pos.item.updated'`)
+
+* `pos_item_deleted` (value: `'pos.item.deleted'`)
+
+* `pos_modifier_created` (value: `'pos.modifier.created'`)
+
+* `pos_modifier_updated` (value: `'pos.modifier.updated'`)
+
+* `pos_modifier_deleted` (value: `'pos.modifier.deleted'`)
+
+* `pos_modifier_group_created` (value: `'pos.modifier-group.created'`)
+
+* `pos_modifier_group_updated` (value: `'pos.modifier-group.updated'`)
+
+* `pos_modifier_group_deleted` (value: `'pos.modifier-group.deleted'`)
+
 
 ---
 
