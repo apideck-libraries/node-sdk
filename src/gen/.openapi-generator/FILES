@@ -246,6 +246,7 @@ MetaCursors.md
 NotFoundResponse.md
 NotImplementedResponse.md
 Note.md
+OAuthGrantType.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
@@ -272,6 +273,7 @@ SortDirection.md
 Status.md
 Tags.md
 TaxRate.md
+TaxRatesFilter.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
@@ -552,6 +554,7 @@ models/ModelError.ts
 models/NotFoundResponse.ts
 models/NotImplementedResponse.ts
 models/Note.ts
+models/OAuthGrantType.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
@@ -576,6 +579,7 @@ models/SortDirection.ts
 models/Status.ts
 models/Tags.ts
 models/TaxRate.ts
+models/TaxRatesFilter.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts

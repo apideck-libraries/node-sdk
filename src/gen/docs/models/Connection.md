@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 `settings` | **object** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
 `metadata` | **{ [key: string]: object; }** | Attach your own consumer specific metadata | [optional] 
 `auth_type` | [**AuthType**](AuthType.md) |  | [optional] 
+`oauth_grant_type` | [**OAuthGrantType**](OAuthGrantType.md) |  | [optional] 
 `status` | **string** |  | [optional] 
 `form_fields` | [**Array&lt;FormField&gt;**](FormField.md) |  | [optional] 
 `configuration` | [**Array&lt;ConnectionConfiguration&gt;**](ConnectionConfiguration.md) |  | [optional] 
@@ -59,6 +60,7 @@ Name | Type | Description | Notes
 
 
 * [`AuthType`](AuthType.md)
+* [`OAuthGrantType`](OAuthGrantType.md)
 
 * [`FormField`](FormField.md)
 * [`ConnectionConfiguration`](ConnectionConfiguration.md)

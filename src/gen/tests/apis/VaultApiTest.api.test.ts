@@ -54,6 +54,7 @@ describe('VaultApi', () => {
               plan: 'enterprise'
             },
             auth_type: 'oauth2',
+            oauth_grant_type: 'authorization_code',
             status: 'live',
             form_fields: [
               {
@@ -186,6 +187,7 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
           status: 'live',
           form_fields: [
             {
@@ -296,6 +298,7 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
           status: 'live',
           form_fields: [
             {
@@ -405,6 +408,7 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
           status: 'live',
           form_fields: [
             {
@@ -539,6 +543,7 @@ describe('VaultApi', () => {
             plan: 'enterprise'
           },
           auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
           status: 'live',
           form_fields: [
             {
