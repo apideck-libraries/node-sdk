@@ -98,6 +98,36 @@ Name | Type | Description | Notes
 
 * `ats_applicant_deleted` (value: `'ats.applicant.deleted'`)
 
+* `accounting_customer_created` (value: `'accounting.customer.created'`)
+
+* `accounting_customer_updated` (value: `'accounting.customer.updated'`)
+
+* `accounting_customer_deleted` (value: `'accounting.customer.deleted'`)
+
+* `accounting_invoice_created` (value: `'accounting.invoice.created'`)
+
+* `accounting_invoice_updated` (value: `'accounting.invoice.updated'`)
+
+* `accounting_invoice_deleted` (value: `'accounting.invoice.deleted'`)
+
+* `accounting_invoice_item_created` (value: `'accounting.invoice_item.created'`)
+
+* `accounting_invoice_item_updated` (value: `'accounting.invoice_item.updated'`)
+
+* `accounting_invoice_item_deleted` (value: `'accounting.invoice_item.deleted'`)
+
+* `accounting_ledger_account_created` (value: `'accounting.ledger_account.created'`)
+
+* `accounting_ledger_account_updated` (value: `'accounting.ledger_account.updated'`)
+
+* `accounting_ledger_account_deleted` (value: `'accounting.ledger_account.deleted'`)
+
+* `accounting_tax_rate_created` (value: `'accounting.tax_rate.created'`)
+
+* `accounting_tax_rate_updated` (value: `'accounting.tax_rate.updated'`)
+
+* `accounting_tax_rate_deleted` (value: `'accounting.tax_rate.deleted'`)
+
 * `pos_order_created` (value: `'pos.order.created'`)
 
 * `pos_order_updated` (value: `'pos.order.updated'`)
