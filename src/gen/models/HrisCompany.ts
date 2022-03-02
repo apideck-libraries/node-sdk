@@ -13,6 +13,11 @@
  */
 
 import { exists } from '../runtime'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Email, EmailFromJSON, EmailToJSON } from './Email'
+import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
+import { Website, WebsiteFromJSON, WebsiteToJSON } from './Website'
+
 /**
  *
  * @export
@@ -37,6 +42,36 @@ export interface HrisCompany {
    * @memberof HrisCompany
    */
   display_name?: string
+  /**
+   * An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.
+   * @type {string}
+   * @memberof HrisCompany
+   */
+  company_number?: string | null
+  /**
+   *
+   * @type {Array<Address>}
+   * @memberof HrisCompany
+   */
+  addresses?: Array<Address>
+  /**
+   *
+   * @type {Array<PhoneNumber>}
+   * @memberof HrisCompany
+   */
+  phone_numbers?: Array<PhoneNumber>
+  /**
+   *
+   * @type {Array<Email>}
+   * @memberof HrisCompany
+   */
+  emails?: Array<Email>
+  /**
+   *
+   * @type {Array<Website>}
+   * @memberof HrisCompany
+   */
+  websites?: Array<Website>
   /**
    *
    * @type {string}
@@ -87,6 +122,17 @@ export function HrisCompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean
     id: !exists(json, 'id') ? undefined : json['id'],
     legal_name: !exists(json, 'legal_name') ? undefined : json['legal_name'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
+    company_number: !exists(json, 'company_number') ? undefined : json['company_number'],
+    addresses: !exists(json, 'addresses')
+      ? undefined
+      : (json['addresses'] as Array<any>).map(AddressFromJSON),
+    phone_numbers: !exists(json, 'phone_numbers')
+      ? undefined
+      : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
+    emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
+    websites: !exists(json, 'websites')
+      ? undefined
+      : (json['websites'] as Array<any>).map(WebsiteFromJSON),
     debtor_id: !exists(json, 'debtor_id') ? undefined : json['debtor_id'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -106,6 +152,18 @@ export function HrisCompanyToJSON(value?: HrisCompany | null): any {
   return {
     legal_name: value.legal_name,
     display_name: value.display_name,
+    company_number: value.company_number,
+    addresses:
+      value.addresses === undefined
+        ? undefined
+        : (value.addresses as Array<any>).map(AddressToJSON),
+    phone_numbers:
+      value.phone_numbers === undefined
+        ? undefined
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
+    emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
+    websites:
+      value.websites === undefined ? undefined : (value.websites as Array<any>).map(WebsiteToJSON),
     debtor_id: value.debtor_id
   }
 }
