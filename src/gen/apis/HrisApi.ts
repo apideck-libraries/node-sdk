@@ -22,6 +22,7 @@ import {
   DeleteHrisCompanyResponse,
   DeleteHrisCompanyResponseFromJSON,
   Employee,
+  EmployeesFilter,
   EmployeeToJSON,
   GetEmployeeResponse,
   GetEmployeeResponseFromJSON,
@@ -97,6 +98,7 @@ export interface HrisApiEmployeesAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: EmployeesFilter
 }
 
 export interface HrisApiEmployeesDeleteRequest {
@@ -539,6 +541,10 @@ export class HrisApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     const headerParameters: runtime.HTTPHeaders = {}

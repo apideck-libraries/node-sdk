@@ -131,6 +131,7 @@ EmployeeJobs.md
 EmployeeManager.md
 EmployeeSocialLinks.md
 EmployeeTeam.md
+EmployeesFilter.md
 Error.md
 ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
@@ -445,6 +446,7 @@ models/EmployeeJobs.ts
 models/EmployeeManager.ts
 models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
+models/EmployeesFilter.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
