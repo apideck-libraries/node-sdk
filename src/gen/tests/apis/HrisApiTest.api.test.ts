@@ -49,6 +49,7 @@ describe('HrisApi', () => {
         company: {
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
+          subdomain: 'company',
           company_number: '123456-AB',
           addresses: [
             {
@@ -136,6 +137,7 @@ describe('HrisApi', () => {
             id: '12345',
             legal_name: 'SpaceX',
             display_name: 'SpaceX',
+            subdomain: 'company',
             company_number: '123456-AB',
             addresses: [
               {
@@ -288,6 +290,7 @@ describe('HrisApi', () => {
           id: '12345',
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
+          subdomain: 'company',
           company_number: '123456-AB',
           addresses: [
             {
@@ -399,6 +402,7 @@ describe('HrisApi', () => {
         company: {
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
+          subdomain: 'company',
           company_number: '123456-AB',
           addresses: [
             {

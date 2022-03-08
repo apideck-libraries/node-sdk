@@ -43,6 +43,12 @@ export interface HrisCompany {
    */
   display_name?: string
   /**
+   *
+   * @type {string}
+   * @memberof HrisCompany
+   */
+  subdomain?: string
+  /**
    * An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.
    * @type {string}
    * @memberof HrisCompany
@@ -122,6 +128,7 @@ export function HrisCompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean
     id: !exists(json, 'id') ? undefined : json['id'],
     legal_name: !exists(json, 'legal_name') ? undefined : json['legal_name'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
+    subdomain: !exists(json, 'subdomain') ? undefined : json['subdomain'],
     company_number: !exists(json, 'company_number') ? undefined : json['company_number'],
     addresses: !exists(json, 'addresses')
       ? undefined
@@ -152,6 +159,7 @@ export function HrisCompanyToJSON(value?: HrisCompany | null): any {
   return {
     legal_name: value.legal_name,
     display_name: value.display_name,
+    subdomain: value.subdomain,
     company_number: value.company_number,
     addresses:
       value.addresses === undefined

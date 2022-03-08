@@ -71,6 +71,7 @@ const params = {
   company: {
     legal_name: 'SpaceX',
     display_name: 'SpaceX',
+    subdomain: 'company',
     company_number: '123456-AB',
     addresses: [
       {
@@ -404,6 +405,7 @@ const params = {
   company: {
     legal_name: 'SpaceX',
     display_name: 'SpaceX',
+    subdomain: 'company',
     company_number: '123456-AB',
     addresses: [
       {
