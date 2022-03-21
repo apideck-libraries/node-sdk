@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 
 * `basic` (value: `'basic'`)
 
+* `custom` (value: `'custom'`)
+
 * `none` (value: `'none'`)
 
 

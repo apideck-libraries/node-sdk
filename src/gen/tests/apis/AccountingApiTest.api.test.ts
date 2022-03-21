@@ -1823,6 +1823,12 @@ describe('AccountingApi', () => {
               account_type: 'credit_card',
               currency: 'USD'
             },
+            categories: [
+              {
+                id: '12345',
+                name: 'Finance Charges Expense'
+              }
+            ],
             parent_account: {
               id: '12345',
               name: 'Bank Accounts',
@@ -1964,6 +1970,12 @@ describe('AccountingApi', () => {
             account_type: 'credit_card',
             currency: 'USD'
           },
+          categories: [
+            {
+              id: '12345',
+              name: 'Finance Charges Expense'
+            }
+          ],
           parent_account: {
             id: '12345',
             name: 'Bank Accounts',
@@ -2115,6 +2127,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method: 'Credit Card',
           payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
@@ -2175,6 +2188,7 @@ describe('AccountingApi', () => {
             currency_rate: 0.69,
             total_amount: 49.99,
             reference: '123456',
+            payment_method: 'Credit Card',
             payment_method_reference: '123456',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
@@ -2301,6 +2315,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method: 'Credit Card',
           payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
@@ -2386,6 +2401,7 @@ describe('AccountingApi', () => {
           currency_rate: 0.69,
           total_amount: 49.99,
           reference: '123456',
+          payment_method: 'Credit Card',
           payment_method_reference: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',

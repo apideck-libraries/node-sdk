@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 `status` | **string** |  | [optional] 
 `header` | **boolean** |  | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`categories` | **Array&lt;object&gt;** |  | [optional] 
 `parent_account` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
 `sub_account` | **boolean** |  | [optional] 
 `sub_accounts` | **Array&lt;object&gt;** |  | [optional] 
@@ -85,6 +86,8 @@ Name | Type | Description | Notes
 
 * `other_asset` (value: `'other_asset'`)
 
+* `balancesheet` (value: `'balancesheet'`)
+
 * `equity` (value: `'equity'`)
 
 * `expense` (value: `'expense'`)
@@ -139,6 +142,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
+
 * [`LedgerAccountParentAccount`](LedgerAccountParentAccount.md)
 
 
