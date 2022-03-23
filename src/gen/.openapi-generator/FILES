@@ -27,6 +27,7 @@ ApiResources.md
 ApiStatus.md
 ApisFilter.md
 Applicant.md
+ApplicantWebsites.md
 AtsApi.md
 AtsApiTest.api.test.ts
 AuthType.md
@@ -350,6 +351,7 @@ models/ApiResources.ts
 models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
+models/ApplicantWebsites.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BankAccount.ts

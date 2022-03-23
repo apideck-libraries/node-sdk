@@ -52,6 +52,7 @@ describe('AtsApi', () => {
           first_name: 'Elon',
           last_name: 'Musk',
           headline: 'PepsiCo, Inc, Central Perk',
+          title: 'CEO',
           emails: [
             {
               id: '123',
@@ -94,6 +95,13 @@ describe('AtsApi', () => {
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
               row_version: '1-12345'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
             }
           ],
           applications: [
@@ -147,6 +155,7 @@ describe('AtsApi', () => {
             first_name: 'Elon',
             last_name: 'Musk',
             headline: 'PepsiCo, Inc, Central Perk',
+            title: 'CEO',
             emails: [
               {
                 id: '123',
@@ -191,7 +200,16 @@ describe('AtsApi', () => {
                 row_version: '1-12345'
               }
             ],
+            websites: [
+              {
+                id: '12345',
+                url: 'http://example.com',
+                type: 'primary'
+              }
+            ],
             stage_id: '12345',
+            recruiter_id: '12345',
+            coordinator_id: '12345',
             applications: [
               'a0d636c6-43b3-4bde-8c70-85b707d992f4',
               'a98lfd96-43b3-4bde-8c70-85b707d992e6'
@@ -269,6 +287,7 @@ describe('AtsApi', () => {
           first_name: 'Elon',
           last_name: 'Musk',
           headline: 'PepsiCo, Inc, Central Perk',
+          title: 'CEO',
           emails: [
             {
               id: '123',
@@ -313,7 +332,16 @@ describe('AtsApi', () => {
               row_version: '1-12345'
             }
           ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
           stage_id: '12345',
+          recruiter_id: '12345',
+          coordinator_id: '12345',
           applications: [
             'a0d636c6-43b3-4bde-8c70-85b707d992f4',
             'a98lfd96-43b3-4bde-8c70-85b707d992e6'

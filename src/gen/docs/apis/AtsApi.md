@@ -69,6 +69,7 @@ const params = {
     first_name: 'Elon',
     last_name: 'Musk',
     headline: 'PepsiCo, Inc, Central Perk',
+    title: 'CEO',
     emails: [
       {
         id: '123',
@@ -111,6 +112,13 @@ const params = {
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
         row_version: '1-12345'
+      }
+    ],
+    websites: [
+      {
+        id: '12345',
+        url: 'http://example.com',
+        type: 'primary'
       }
     ],
     applications: [

@@ -16,68 +16,60 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface ConnectorSetting
+ * @interface ApplicantWebsites
  */
-export interface ConnectorSetting {
+export interface ApplicantWebsites {
   /**
    *
    * @type {string}
-   * @memberof ConnectorSetting
+   * @memberof ApplicantWebsites
    */
-  id?: string
+  url: string
   /**
    *
    * @type {string}
-   * @memberof ConnectorSetting
+   * @memberof ApplicantWebsites
    */
-  label?: string
+  id?: string | null
   /**
    *
    * @type {string}
-   * @memberof ConnectorSetting
+   * @memberof ApplicantWebsites
    */
-  type?: ConnectorSettingType
+  type?: ApplicantWebsitesType
 }
 
 /**
  * @export
  * @enum {string}
  */
-export enum ConnectorSettingType {
-  text = 'text',
-  checkbox = 'checkbox',
-  tel = 'tel',
-  email = 'email',
-  url = 'url',
-  textarea = 'textarea',
-  select = 'select',
-  filtered_select = 'filtered-select',
-  multi_select = 'multi-select',
-  datetime = 'datetime',
-  date = 'date',
-  time = 'time',
-  number = 'number'
+export enum ApplicantWebsitesType {
+  primary = 'primary',
+  secondary = 'secondary',
+  work = 'work',
+  personal = 'personal',
+  other = 'other'
 }
 
-export function ConnectorSettingFromJSON(json: any): ConnectorSetting {
-  return ConnectorSettingFromJSONTyped(json, false)
+export function ApplicantWebsitesFromJSON(json: any): ApplicantWebsites {
+  return ApplicantWebsitesFromJSONTyped(json, false)
 }
 
-export function ConnectorSettingFromJSONTyped(
+export function ApplicantWebsitesFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): ConnectorSetting {
+): ApplicantWebsites {
   if (json === undefined || json === null) {
     return json
   }
   return {
+    url: json['url'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    label: !exists(json, 'label') ? undefined : json['label'],
     type: !exists(json, 'type') ? undefined : json['type']
   }
 }
 
-export function ConnectorSettingToJSON(value?: ConnectorSetting | null): any {
+export function ApplicantWebsitesToJSON(value?: ApplicantWebsites | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -85,8 +77,8 @@ export function ConnectorSettingToJSON(value?: ConnectorSetting | null): any {
     return null
   }
   return {
+    url: value.url,
     id: value.id,
-    label: value.label,
     type: value.type
   }
 }

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 `gender` | **string** |  | [optional] 
 `birthday` | **string** |  | [optional] 
 `image` | **string** |  | [optional] 
+`photo_url` | **string** |  | [optional] 
 `lead_source` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
@@ -75,6 +76,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

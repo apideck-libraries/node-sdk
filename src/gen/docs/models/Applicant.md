@@ -11,10 +11,14 @@ Name | Type | Description | Notes
 `first_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
 `headline` | **string** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
+`title` | **string** |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`websites` | [**Array&lt;ApplicantWebsites&gt;**](ApplicantWebsites.md) |  | [optional] 
 `stage_id` | **string** |  | [optional] 
+`recruiter_id` | **string** |  | [optional] 
+`coordinator_id` | **string** |  | [optional] 
 `applications` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
 `sources` | **Array&lt;string&gt;** |  | [optional] 
@@ -41,9 +45,13 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Email`](Email.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Address`](Address.md)
+* [`ApplicantWebsites`](ApplicantWebsites.md)
+
+
 
 
 
