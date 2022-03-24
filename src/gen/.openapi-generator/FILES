@@ -70,6 +70,7 @@ CreateConnectionResponse.md
 CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
+CreateDepartmentResponse.md
 CreateEmployeeResponse.md
 CreateFileRequest.md
 CreateFileResponse.md
@@ -107,6 +108,7 @@ DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
+DeleteDepartmentResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
@@ -124,6 +126,7 @@ DeleteTaxRateResponse.md
 DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
+Department.md
 Email.md
 Employee.md
 EmployeeCompensations.md
@@ -173,6 +176,8 @@ GetCustomerResponse.md
 GetCustomerSupportCustomerResponse.md
 GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
+GetDepartmentResponse.md
+GetDepartmentsResponse.md
 GetEmployeeResponse.md
 GetEmployeesResponse.md
 GetFileResponse.md
@@ -288,6 +293,7 @@ UpdateConnectionResponse.md
 UpdateContactResponse.md
 UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
+UpdateDepartmentResponse.md
 UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
@@ -390,6 +396,7 @@ models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
+models/CreateDepartmentResponse.ts
 models/CreateEmployeeResponse.ts
 models/CreateFileRequest.ts
 models/CreateFileResponse.ts
@@ -423,6 +430,7 @@ models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
+models/DeleteDepartmentResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
@@ -440,6 +448,7 @@ models/DeleteTaxRateResponse.ts
 models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
+models/Department.ts
 models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
@@ -486,6 +495,8 @@ models/GetCustomerResponse.ts
 models/GetCustomerSupportCustomerResponse.ts
 models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
+models/GetDepartmentResponse.ts
+models/GetDepartmentsResponse.ts
 models/GetEmployeeResponse.ts
 models/GetEmployeesResponse.ts
 models/GetFileResponse.ts
@@ -596,6 +607,7 @@ models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
+models/UpdateDepartmentResponse.ts
 models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts
