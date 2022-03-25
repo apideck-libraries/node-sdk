@@ -380,6 +380,7 @@ describe('ConnectorApi', () => {
           {
             id: 'crm+salesforce',
             name: 'Salesforce',
+            status: 'live',
             description: 'A description',
             icon_url:
               'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
@@ -387,7 +388,10 @@ describe('ConnectorApi', () => {
               'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
             website_url: 'https://www.salesforce.com',
             auth_type: 'oauth2',
-            status: 'live',
+            auth_only: true,
+            oauth_grant_type: 'authorization_code',
+            oauth_credentials_source: 'integration',
+            has_sandbox_credentials: true,
             settings: [
               {
                 id: 'pipeline_id',
@@ -468,6 +472,7 @@ describe('ConnectorApi', () => {
         data: {
           id: 'crm+salesforce',
           name: 'Salesforce',
+          status: 'live',
           description: 'A description',
           icon_url:
             'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
@@ -475,7 +480,10 @@ describe('ConnectorApi', () => {
             'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           website_url: 'https://www.salesforce.com',
           auth_type: 'oauth2',
-          status: 'live',
+          auth_only: true,
+          oauth_grant_type: 'authorization_code',
+          oauth_credentials_source: 'integration',
+          has_sandbox_credentials: true,
           settings: [
             {
               id: 'pipeline_id',
