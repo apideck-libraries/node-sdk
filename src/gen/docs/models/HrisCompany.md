@@ -8,12 +8,35 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `legal_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
+`subdomain` | **string** |  | [optional] 
+`company_number` | **string** | An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company. | [optional] 
+`addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
+`phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
+`emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `debtor_id` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
+
+
+
+
+
+## Referenced Types:
+
+
+
+
+
+* [`Address`](Address.md)
+* [`PhoneNumber`](PhoneNumber.md)
+* [`Email`](Email.md)
+* [`Website`](Website.md)
+
+
 
 
 

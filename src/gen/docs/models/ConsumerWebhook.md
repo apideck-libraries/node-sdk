@@ -98,11 +98,89 @@ Name | Type | Description | Notes
 
 * `ats_applicant_deleted` (value: `'ats.applicant.deleted'`)
 
+* `accounting_customer_created` (value: `'accounting.customer.created'`)
+
+* `accounting_customer_updated` (value: `'accounting.customer.updated'`)
+
+* `accounting_customer_deleted` (value: `'accounting.customer.deleted'`)
+
+* `accounting_invoice_created` (value: `'accounting.invoice.created'`)
+
+* `accounting_invoice_updated` (value: `'accounting.invoice.updated'`)
+
+* `accounting_invoice_deleted` (value: `'accounting.invoice.deleted'`)
+
+* `accounting_invoice_item_created` (value: `'accounting.invoice_item.created'`)
+
+* `accounting_invoice_item_updated` (value: `'accounting.invoice_item.updated'`)
+
+* `accounting_invoice_item_deleted` (value: `'accounting.invoice_item.deleted'`)
+
+* `accounting_ledger_account_created` (value: `'accounting.ledger_account.created'`)
+
+* `accounting_ledger_account_updated` (value: `'accounting.ledger_account.updated'`)
+
+* `accounting_ledger_account_deleted` (value: `'accounting.ledger_account.deleted'`)
+
+* `accounting_tax_rate_created` (value: `'accounting.tax_rate.created'`)
+
+* `accounting_tax_rate_updated` (value: `'accounting.tax_rate.updated'`)
+
+* `accounting_tax_rate_deleted` (value: `'accounting.tax_rate.deleted'`)
+
 * `pos_order_created` (value: `'pos.order.created'`)
 
 * `pos_order_updated` (value: `'pos.order.updated'`)
 
 * `pos_order_deleted` (value: `'pos.order.deleted'`)
+
+* `pos_product_created` (value: `'pos.product.created'`)
+
+* `pos_product_updated` (value: `'pos.product.updated'`)
+
+* `pos_product_deleted` (value: `'pos.product.deleted'`)
+
+* `pos_payment_created` (value: `'pos.payment.created'`)
+
+* `pos_payment_updated` (value: `'pos.payment.updated'`)
+
+* `pos_payment_deleted` (value: `'pos.payment.deleted'`)
+
+* `pos_merchant_created` (value: `'pos.merchant.created'`)
+
+* `pos_merchant_updated` (value: `'pos.merchant.updated'`)
+
+* `pos_merchant_deleted` (value: `'pos.merchant.deleted'`)
+
+* `pos_location_created` (value: `'pos.location.created'`)
+
+* `pos_location_updated` (value: `'pos.location.updated'`)
+
+* `pos_location_deleted` (value: `'pos.location.deleted'`)
+
+* `pos_item_created` (value: `'pos.item.created'`)
+
+* `pos_item_updated` (value: `'pos.item.updated'`)
+
+* `pos_item_deleted` (value: `'pos.item.deleted'`)
+
+* `pos_modifier_created` (value: `'pos.modifier.created'`)
+
+* `pos_modifier_updated` (value: `'pos.modifier.updated'`)
+
+* `pos_modifier_deleted` (value: `'pos.modifier.deleted'`)
+
+* `pos_modifier_group_created` (value: `'pos.modifier-group.created'`)
+
+* `pos_modifier_group_updated` (value: `'pos.modifier-group.updated'`)
+
+* `pos_modifier_group_deleted` (value: `'pos.modifier-group.deleted'`)
+
+* `hris_department_created` (value: `'hris.department.created'`)
+
+* `hris_department_updated` (value: `'hris.department.updated'`)
+
+* `hris_department_deleted` (value: `'hris.department.deleted'`)
 
 
 

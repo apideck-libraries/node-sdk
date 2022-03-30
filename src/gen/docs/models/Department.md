@@ -1,4 +1,4 @@
-# Apideck.Order
+# Apideck.Department
 
 ### Description
 
@@ -6,19 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
-`merchant` | [**OrderMerchant**](OrderMerchant.md) |  | [optional] 
+`name` | **string** | Department name | [optional] 
+`code` | **string** |  | [optional] 
+`description` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
-
-
-
-
-
-## Referenced Types:
-
-* [`OrderMerchant`](OrderMerchant.md)
 
 
 

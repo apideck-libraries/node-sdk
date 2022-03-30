@@ -9,11 +9,10 @@ Name | Type | Description | Notes
 `employee_id` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `compensation_rate` | **string** |  | [optional] 
+`payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
 `hired_at` | **Date** |  | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job | [optional] 
-`payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
 `location` | [**Address**](Address.md) |  | [optional] 
-`compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 
 
 
@@ -24,11 +23,10 @@ Name | Type | Description | Notes
 
 
 
-
-
 * [`PaymentUnit`](PaymentUnit.md)
+
+
 * [`Address`](Address.md)
-* [`EmployeeCompensations`](EmployeeCompensations.md)
 
 ---
 

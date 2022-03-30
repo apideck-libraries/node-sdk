@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 `salutation` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `marital_status` | **string** |  | [optional] 
-`picture_url` | **string** | The URL pointing to a picture. | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
@@ -38,12 +37,14 @@ Name | Type | Description | Notes
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
+`compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
 `row_version` | **string** |  | [optional] 
+`deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -81,7 +82,6 @@ Name | Type | Description | Notes
 
 
 
-
 * [`EmployeeTeam`](EmployeeTeam.md)
 
 
@@ -102,11 +102,13 @@ Name | Type | Description | Notes
 
 
 * [`EmployeeJobs`](EmployeeJobs.md)
+* [`EmployeeCompensations`](EmployeeCompensations.md)
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
+
 
 
 

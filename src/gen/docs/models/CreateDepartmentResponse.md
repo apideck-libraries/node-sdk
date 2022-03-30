@@ -1,4 +1,4 @@
-# Apideck.UpdateOrderResponse
+# Apideck.CreateDepartmentResponse
 
 ### Description
 

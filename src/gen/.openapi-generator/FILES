@@ -27,6 +27,7 @@ ApiResources.md
 ApiStatus.md
 ApisFilter.md
 Applicant.md
+ApplicantWebsites.md
 AtsApi.md
 AtsApiTest.api.test.ts
 AuthType.md
@@ -69,6 +70,7 @@ CreateConnectionResponse.md
 CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
+CreateDepartmentResponse.md
 CreateEmployeeResponse.md
 CreateFileRequest.md
 CreateFileResponse.md
@@ -82,7 +84,6 @@ CreateLedgerAccountResponse.md
 CreateMessageResponse.md
 CreateNoteResponse.md
 CreateOpportunityResponse.md
-CreateOrderResponse.md
 CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreateSessionResponse.md
@@ -96,6 +97,7 @@ CreateWebhookRequest.md
 CreateWebhookResponse.md
 CrmApi.md
 CrmApiTest.api.test.ts
+CrmEventType.md
 Currency.md
 CustomField.md
 CustomerSupportApi.md
@@ -106,6 +108,7 @@ DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
+DeleteDepartmentResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
@@ -116,7 +119,6 @@ DeleteLedgerAccountResponse.md
 DeleteMessageResponse.md
 DeleteNoteResponse.md
 DeleteOpportunityResponse.md
-DeleteOrderResponse.md
 DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeleteSharedLinkResponse.md
@@ -124,6 +126,7 @@ DeleteTaxRateResponse.md
 DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
+Department.md
 Email.md
 Employee.md
 EmployeeCompensations.md
@@ -132,8 +135,8 @@ EmployeeJobs.md
 EmployeeManager.md
 EmployeeSocialLinks.md
 EmployeeTeam.md
+EmployeesFilter.md
 Error.md
-EventType.md
 ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
@@ -173,6 +176,8 @@ GetCustomerResponse.md
 GetCustomerSupportCustomerResponse.md
 GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
+GetDepartmentResponse.md
+GetDepartmentsResponse.md
 GetEmployeeResponse.md
 GetEmployeesResponse.md
 GetFileResponse.md
@@ -198,8 +203,6 @@ GetNoteResponse.md
 GetNotesResponse.md
 GetOpportunitiesResponse.md
 GetOpportunityResponse.md
-GetOrderResponse.md
-GetOrdersResponse.md
 GetPaymentResponse.md
 GetPaymentsResponse.md
 GetPipelineResponse.md
@@ -250,11 +253,10 @@ MetaCursors.md
 NotFoundResponse.md
 NotImplementedResponse.md
 Note.md
+OAuthGrantType.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
-Order.md
-OrderMerchant.md
 Owner.md
 Payment.md
 PaymentRequiredResponse.md
@@ -262,8 +264,6 @@ PaymentUnit.md
 PhoneNumber.md
 Pipeline.md
 PipelineStages.md
-PosApi.md
-PosApiTest.api.test.ts
 Price.md
 RequestCountAllocation.md
 ResourceStatus.md
@@ -280,6 +280,7 @@ SortDirection.md
 Status.md
 Tags.md
 TaxRate.md
+TaxRatesFilter.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
@@ -292,6 +293,7 @@ UpdateConnectionResponse.md
 UpdateContactResponse.md
 UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
+UpdateDepartmentResponse.md
 UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
@@ -304,7 +306,6 @@ UpdateLedgerAccountResponse.md
 UpdateMessageResponse.md
 UpdateNoteResponse.md
 UpdateOpportunityResponse.md
-UpdateOrderResponse.md
 UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdateSharedLinkResponse.md
@@ -336,7 +337,6 @@ apis/CustomerSupportApi.ts
 apis/FileStorageApi.ts
 apis/HrisApi.ts
 apis/LeadApi.ts
-apis/PosApi.ts
 apis/SmsApi.ts
 apis/VaultApi.ts
 apis/WebhookApi.ts
@@ -357,6 +357,7 @@ models/ApiResources.ts
 models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
+models/ApplicantWebsites.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BankAccount.ts
@@ -395,6 +396,7 @@ models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
+models/CreateDepartmentResponse.ts
 models/CreateEmployeeResponse.ts
 models/CreateFileRequest.ts
 models/CreateFileResponse.ts
@@ -408,7 +410,6 @@ models/CreateLedgerAccountResponse.ts
 models/CreateMessageResponse.ts
 models/CreateNoteResponse.ts
 models/CreateOpportunityResponse.ts
-models/CreateOrderResponse.ts
 models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreateSessionResponse.ts
@@ -420,6 +421,7 @@ models/CreateUploadSessionResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
 models/CreateWebhookResponse.ts
+models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
 models/CustomerSupportCustomer.ts
@@ -428,6 +430,7 @@ models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
+models/DeleteDepartmentResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
@@ -438,7 +441,6 @@ models/DeleteLedgerAccountResponse.ts
 models/DeleteMessageResponse.ts
 models/DeleteNoteResponse.ts
 models/DeleteOpportunityResponse.ts
-models/DeleteOrderResponse.ts
 models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeleteSharedLinkResponse.ts
@@ -446,6 +448,7 @@ models/DeleteTaxRateResponse.ts
 models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
+models/Department.ts
 models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
@@ -454,7 +457,7 @@ models/EmployeeJobs.ts
 models/EmployeeManager.ts
 models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
-models/EventType.ts
+models/EmployeesFilter.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
@@ -492,6 +495,8 @@ models/GetCustomerResponse.ts
 models/GetCustomerSupportCustomerResponse.ts
 models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
+models/GetDepartmentResponse.ts
+models/GetDepartmentsResponse.ts
 models/GetEmployeeResponse.ts
 models/GetEmployeesResponse.ts
 models/GetFileResponse.ts
@@ -517,8 +522,6 @@ models/GetNoteResponse.ts
 models/GetNotesResponse.ts
 models/GetOpportunitiesResponse.ts
 models/GetOpportunityResponse.ts
-models/GetOrderResponse.ts
-models/GetOrdersResponse.ts
 models/GetPaymentResponse.ts
 models/GetPaymentsResponse.ts
 models/GetPipelineResponse.ts
@@ -566,11 +569,10 @@ models/ModelError.ts
 models/NotFoundResponse.ts
 models/NotImplementedResponse.ts
 models/Note.ts
+models/OAuthGrantType.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
-models/Order.ts
-models/OrderMerchant.ts
 models/Owner.ts
 models/Payment.ts
 models/PaymentRequiredResponse.ts
@@ -592,6 +594,7 @@ models/SortDirection.ts
 models/Status.ts
 models/Tags.ts
 models/TaxRate.ts
+models/TaxRatesFilter.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts
@@ -604,6 +607,7 @@ models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
+models/UpdateDepartmentResponse.ts
 models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts
@@ -616,7 +620,6 @@ models/UpdateLedgerAccountResponse.ts
 models/UpdateMessageResponse.ts
 models/UpdateNoteResponse.ts
 models/UpdateOpportunityResponse.ts
-models/UpdateOrderResponse.ts
 models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdateSharedLinkResponse.ts

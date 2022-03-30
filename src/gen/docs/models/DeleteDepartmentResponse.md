@@ -1,4 +1,4 @@
-# Apideck.GetOrdersResponse
+# Apideck.DeleteDepartmentResponse
 
 ### Description
 
@@ -10,9 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Array&lt;Order&gt;**](Order.md) |  | 
-`meta` | [**Meta**](Meta.md) |  | [optional] 
-`links` | [**Links**](Links.md) |  | [optional] 
+`data` | [**UnifiedId**](UnifiedId.md) |  | 
 
 
 
@@ -24,9 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Order`](Order.md)
-* [`Meta`](Meta.md)
-* [`Links`](Links.md)
+* [`UnifiedId`](UnifiedId.md)
 
 ---
 

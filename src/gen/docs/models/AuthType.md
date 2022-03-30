@@ -9,6 +9,8 @@
 
 * `basic` (value: `'basic'`)
 
+* `custom` (value: `'custom'`)
+
 * `none` (value: `'none'`)
 
 

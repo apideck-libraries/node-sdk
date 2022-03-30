@@ -41,6 +41,8 @@ Name | Type | Description | Notes
 
 * `active` (value: `'active'`)
 
+* `inactive` (value: `'inactive'`)
+
 * `archived` (value: `'archived'`)
 
 * `gdpr_erasure_request` (value: `'gdpr-erasure-request'`)

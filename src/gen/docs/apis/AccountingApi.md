@@ -2060,6 +2060,7 @@ const params = {
     currency_rate: 0.69,
     total_amount: 49.99,
     reference: '123456',
+    payment_method: 'Credit Card',
     payment_method_reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
@@ -2366,6 +2367,7 @@ const params = {
     currency_rate: 0.69,
     total_amount: 49.99,
     reference: '123456',
+    payment_method: 'Credit Card',
     payment_method_reference: '123456',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
@@ -2477,6 +2479,7 @@ const params = {
       }
     ],
     type: 'NONE',
+    report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
     row_version: '1-12345'
@@ -2517,6 +2520,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **filter** | **TaxRatesFilter** | Apply filters (beta) | (optional) 
 
 
 
@@ -2775,6 +2779,7 @@ const params = {
       }
     ],
     type: 'NONE',
+    report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
     row_version: '1-12345'

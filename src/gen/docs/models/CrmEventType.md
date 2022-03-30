@@ -1,4 +1,4 @@
-# Apideck.EventType
+# Apideck.CrmEventType
 
 ## Enum
 

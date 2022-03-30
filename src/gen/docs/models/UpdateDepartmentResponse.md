@@ -1,4 +1,4 @@
-# Apideck.DeleteOrderResponse
+# Apideck.UpdateDepartmentResponse
 
 ### Description
 

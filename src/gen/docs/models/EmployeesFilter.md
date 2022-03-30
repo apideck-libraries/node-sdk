@@ -1,11 +1,11 @@
-# Apideck.OrderMerchant
+# Apideck.EmployeesFilter
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`company_id` | **string** | Company ID to filter on | [optional] 
 
 
 
