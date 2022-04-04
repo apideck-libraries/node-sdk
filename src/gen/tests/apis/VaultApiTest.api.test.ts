@@ -97,6 +97,7 @@ describe('VaultApi', () => {
             revoke_url:
               'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
             enabled: true,
+            has_guide: true,
             created_at: 1615563533390,
             updated_at: 1616662325753,
             state: 'authorized'
@@ -237,6 +238,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -348,6 +350,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -458,6 +461,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -593,6 +597,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'

@@ -201,7 +201,8 @@ describe('ConnectorApi', () => {
                 status: 'live',
                 excluded_from_coverage: false
               }
-            ]
+            ],
+            events: ['crm.contact.updated', 'accounting.invoice.created']
           }
         ],
         meta: {
@@ -265,7 +266,8 @@ describe('ConnectorApi', () => {
               status: 'live',
               excluded_from_coverage: false
             }
-          ]
+          ],
+          events: ['crm.contact.updated', 'accounting.invoice.created']
         },
         meta: {
           items_on_page: 50,
@@ -291,6 +293,114 @@ describe('ConnectorApi', () => {
         id: 'id_example'
       } as any
       const current = await connector.apisOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#connectorDocsOne', () => {
+    const endpoint = '/connector/connectors/{id}/docs/{doc_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          name: 'Salesforce',
+          status: 'live',
+          description: 'A description',
+          icon_url:
+            'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+          logo_url:
+            'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          website_url: 'https://www.salesforce.com',
+          auth_type: 'oauth2',
+          auth_only: true,
+          oauth_grant_type: 'authorization_code',
+          oauth_credentials_source: 'integration',
+          has_sandbox_credentials: true,
+          settings: [
+            {
+              id: 'pipeline_id',
+              label: 'Pipeline',
+              type: 'select'
+            }
+          ],
+          service_id: 'close',
+          unified_apis: [
+            {
+              id: 'crm',
+              oauth_scopes: [
+                {
+                  id: 'contacts:all',
+                  label: 'Read/write on the Contacts resource'
+                }
+              ]
+            }
+          ],
+          supported_resources: [
+            {
+              id: 'companies',
+              name: 'Companies',
+              status: 'live',
+              downstream_id: 'accounts',
+              downstream_name: 'Accounts'
+            }
+          ],
+          configurable_resources: ['leads', 'companies'],
+          supported_events: [
+            {
+              event_type: 'string',
+              downstream_event_type: 'string',
+              resource_id: 'companies'
+            }
+          ],
+          docs: [
+            {
+              id: '12345',
+              name: 'connection',
+              audience: 'application_owner',
+              format: 'markdown',
+              url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
+            }
+          ]
+        },
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { connector } = apideck
+      const params = {
+        id: 'id_example',
+        docId: 'doc_id_example'
+      } as any
+      const current = await connector.connectorDocsOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -422,6 +532,15 @@ describe('ConnectorApi', () => {
                 downstream_event_type: 'string',
                 resource_id: 'companies'
               }
+            ],
+            docs: [
+              {
+                id: '12345',
+                name: 'connection',
+                audience: 'application_owner',
+                format: 'markdown',
+                url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
+              }
             ]
           }
         ],
@@ -518,6 +637,15 @@ describe('ConnectorApi', () => {
               event_type: 'string',
               downstream_event_type: 'string',
               resource_id: 'companies'
+            }
+          ],
+          docs: [
+            {
+              id: '12345',
+              name: 'connection',
+              audience: 'application_owner',
+              format: 'markdown',
+              url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
             }
           ]
         },

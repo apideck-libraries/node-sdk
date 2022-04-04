@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 `supported_resources` | [**Array&lt;ConnectorSupportedResources&gt;**](ConnectorSupportedResources.md) | List of resources that are supported on the connector. | [optional] 
 `configurable_resources` | **Array&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
 `supported_events` | [**Array&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of events that are supported on the connector. Events are delivered via Webhooks. | [optional] 
+`docs` | [**Array&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
 
 
 
@@ -86,6 +87,7 @@ Name | Type | Description | Notes
 * [`ConnectorSupportedResources`](ConnectorSupportedResources.md)
 
 * [`ConnectorSupportedEvents`](ConnectorSupportedEvents.md)
+* [`ConnectorDoc`](ConnectorDoc.md)
 
 ---
 

@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 `authorize_url` | **string** |  | [optional] 
 `revoke_url` | **string** |  | [optional] 
 `enabled` | **boolean** |  | [optional] 
+`has_guide` | **boolean** |  | [optional] 
 `created_at` | **number** |  | [optional] 
 `updated_at` | **number** |  | [optional] 
 `state` | [**ConnectionState**](ConnectionState.md) |  | [optional] 
@@ -64,6 +65,7 @@ Name | Type | Description | Notes
 
 * [`FormField`](FormField.md)
 * [`ConnectionConfiguration`](ConnectionConfiguration.md)
+
 
 
 

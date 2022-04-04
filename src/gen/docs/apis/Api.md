@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `postman_collection_id` | **string** | ID of the Postman collection of the API. | [optional] 
 `categories` | **Array&lt;string&gt;** | List of categories the API belongs to. | [optional] 
 `resources` | [**Array&lt;ApiResources&gt;**](ApiResources.md) | List of resources supported in this API. | [optional] 
+`events` | **Array&lt;string&gt;** | List of event types this API supports. | [optional] 
 
 
 
@@ -42,6 +43,7 @@ Name | Type | Description | Notes
 
 
 * [`ApiResources`](ApiResources.md)
+
 
 ---
 

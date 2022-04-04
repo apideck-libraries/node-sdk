@@ -45,6 +45,7 @@ ConnectionState.md
 Connector.md
 ConnectorApi.md
 ConnectorApiTest.api.test.ts
+ConnectorDoc.md
 ConnectorOauthScopes.md
 ConnectorResource.md
 ConnectorSetting.md
@@ -371,6 +372,7 @@ models/ConnectionDefaults.ts
 models/ConnectionMetadata.ts
 models/ConnectionState.ts
 models/Connector.ts
+models/ConnectorDoc.ts
 models/ConnectorOauthScopes.ts
 models/ConnectorResource.ts
 models/ConnectorSetting.ts
