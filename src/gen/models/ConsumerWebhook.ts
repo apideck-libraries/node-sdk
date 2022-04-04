@@ -116,6 +116,7 @@ export enum ConsumerWebhookEvents {
   vault_connection_updated = 'vault.connection.updated',
   vault_connection_deleted = 'vault.connection.deleted',
   vault_connection_callable = 'vault.connection.callable',
+  vault_connection_token_refresh_failed = 'vault.connection.token_refresh.failed',
   ats_job_created = 'ats.job.created',
   ats_job_updated = 'ats.job.updated',
   ats_job_deleted = 'ats.job.deleted',

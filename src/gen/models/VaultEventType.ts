@@ -22,7 +22,8 @@ export enum VaultEventType {
   vault_connection_created = 'vault.connection.created',
   vault_connection_updated = 'vault.connection.updated',
   vault_connection_deleted = 'vault.connection.deleted',
-  vault_connection_callable = 'vault.connection.callable'
+  vault_connection_callable = 'vault.connection.callable',
+  vault_connection_token_refresh_failed = 'vault.connection.token_refresh.failed'
 }
 
 export function VaultEventTypeFromJSON(json: any): VaultEventType {

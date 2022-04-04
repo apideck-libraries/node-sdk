@@ -13,6 +13,8 @@
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)
 
+* `vault_connection_token_refresh_failed` (value: `'vault.connection.token_refresh.failed'`)
+
 
 ---
 
