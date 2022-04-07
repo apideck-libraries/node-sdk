@@ -936,7 +936,8 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: '72000',
+        compensation_rate: 72000,
+        currency: 'USD',
         payment_unit: 'year',
         hired_at: '2020-08-12',
         is_primary: true,
@@ -1365,7 +1366,8 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: '72000',
+        compensation_rate: 72000,
+        currency: 'USD',
         payment_unit: 'year',
         hired_at: '2020-08-12',
         is_primary: true,
