@@ -1,3 +1,5 @@
+/* tslint:disable */
+/* eslint-disable */
 export * from './AccountingCustomer'
 export * from './AccountingEventType'
 export * from './Activity'

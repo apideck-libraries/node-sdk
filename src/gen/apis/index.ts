@@ -1,3 +1,5 @@
+/* tslint:disable */
+/* eslint-disable */
 export * from './AccountingApi'
 export * from './AtsApi'
 export * from './ConnectorApi'
