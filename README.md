@@ -181,7 +181,7 @@ Open an [issue][3]!
 
 ## License
 
-[MIT][4]
+[Apache-2.0][4]
 
 [1]: https://apideck.com
 [2]: https://developers.apideck.com/
