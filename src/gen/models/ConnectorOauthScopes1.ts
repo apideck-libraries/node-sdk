@@ -14,43 +14,43 @@
 
 import { exists } from '../runtime'
 /**
- *
+ * OAuth scopes required for the connector. Add these scopes to your OAuth app.
  * @export
- * @interface ConnectionMetadata
+ * @interface ConnectorOauthScopes1
  */
-export interface ConnectionMetadata {
+export interface ConnectorOauthScopes1 {
   /**
-   *
+   * ID of the OAuth scope.
    * @type {string}
-   * @memberof ConnectionMetadata
+   * @memberof ConnectorOauthScopes1
    */
   id?: string
   /**
-   *
+   * Label of the OAuth scope.
    * @type {string}
-   * @memberof ConnectionMetadata
+   * @memberof ConnectorOauthScopes1
    */
-  name?: string
+  label?: string
 }
 
-export function ConnectionMetadataFromJSON(json: any): ConnectionMetadata {
-  return ConnectionMetadataFromJSONTyped(json, false)
+export function ConnectorOauthScopes1FromJSON(json: any): ConnectorOauthScopes1 {
+  return ConnectorOauthScopes1FromJSONTyped(json, false)
 }
 
-export function ConnectionMetadataFromJSONTyped(
+export function ConnectorOauthScopes1FromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): ConnectionMetadata {
+): ConnectorOauthScopes1 {
   if (json === undefined || json === null) {
     return json
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    name: !exists(json, 'name') ? undefined : json['name']
+    label: !exists(json, 'label') ? undefined : json['label']
   }
 }
 
-export function ConnectionMetadataToJSON(value?: ConnectionMetadata | null): any {
+export function ConnectorOauthScopes1ToJSON(value?: ConnectorOauthScopes1 | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -59,6 +59,6 @@ export function ConnectionMetadataToJSON(value?: ConnectionMetadata | null): any
   }
   return {
     id: value.id,
-    name: value.name
+    label: value.label
   }
 }

@@ -329,6 +329,13 @@ describe('ConnectorApi', () => {
           auth_only: true,
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
+          oauth_scopes: [
+            {
+              id: 'contacts:all',
+              label: 'Read/write on the Contacts resource',
+              default_apis: ['crm']
+            }
+          ],
           has_sandbox_credentials: true,
           settings: [
             {
@@ -501,6 +508,13 @@ describe('ConnectorApi', () => {
             auth_only: true,
             oauth_grant_type: 'authorization_code',
             oauth_credentials_source: 'integration',
+            oauth_scopes: [
+              {
+                id: 'contacts:all',
+                label: 'Read/write on the Contacts resource',
+                default_apis: ['crm']
+              }
+            ],
             has_sandbox_credentials: true,
             settings: [
               {
@@ -602,6 +616,13 @@ describe('ConnectorApi', () => {
           auth_only: true,
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
+          oauth_scopes: [
+            {
+              id: 'contacts:all',
+              label: 'Read/write on the Contacts resource',
+              default_apis: ['crm']
+            }
+          ],
           has_sandbox_credentials: true,
           settings: [
             {
