@@ -20,7 +20,7 @@ import { exists } from '../runtime'
  */
 export interface LinkedInvoiceItem {
   /**
-   * ID of the linked item
+   * ID of the linked item. A reference to the [invoice item](https://developers.apideck.com/apis/accounting/reference#tag/Invoice-Items) that was used to create this line item
    * @type {string}
    * @memberof LinkedInvoiceItem
    */

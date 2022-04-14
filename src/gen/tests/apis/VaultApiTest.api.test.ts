@@ -44,7 +44,8 @@ describe('VaultApi', () => {
             icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
             logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
             settings: {
-              instance_url: 'https://eu28.salesforce.com'
+              instance_url: 'https://eu28.salesforce.com',
+              api_key: '12345xxxxxx'
             },
             metadata: {
               account: {
@@ -178,7 +179,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -290,7 +292,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -401,7 +404,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -478,7 +482,8 @@ describe('VaultApi', () => {
         unifiedApi: 'crm',
         connection: {
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -537,7 +542,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -615,7 +621,8 @@ describe('VaultApi', () => {
         resource: 'leads',
         connection: {
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {

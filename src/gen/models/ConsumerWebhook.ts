@@ -161,10 +161,7 @@ export enum ConsumerWebhookEvents {
   pos_modifier_deleted = 'pos.modifier.deleted',
   pos_modifier_group_created = 'pos.modifier-group.created',
   pos_modifier_group_updated = 'pos.modifier-group.updated',
-  pos_modifier_group_deleted = 'pos.modifier-group.deleted',
-  hris_department_created = 'hris.department.created',
-  hris_department_updated = 'hris.department.updated',
-  hris_department_deleted = 'hris.department.deleted'
+  pos_modifier_group_deleted = 'pos.modifier-group.deleted'
 }
 
 export function ConsumerWebhookFromJSON(json: any): ConsumerWebhook {

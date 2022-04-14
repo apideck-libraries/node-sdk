@@ -348,7 +348,8 @@ const params = {
   unifiedApi: 'crm',
   connection: {
     settings: {
-      instance_url: 'https://eu28.salesforce.com'
+      instance_url: 'https://eu28.salesforce.com',
+      api_key: '12345xxxxxx'
     },
     metadata: {
       account: {
@@ -445,7 +446,8 @@ const params = {
   resource: 'leads',
   connection: {
     settings: {
-      instance_url: 'https://eu28.salesforce.com'
+      instance_url: 'https://eu28.salesforce.com',
+      api_key: '12345xxxxxx'
     },
     metadata: {
       account: {
