@@ -38,8 +38,12 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           company_name: 'SpaceX',
+          legal_name: 'SpaceX Inc.',
           sales_tax_number: '111.222.333',
           currency: 'USD',
+          language: 'EN',
+          fiscal_year_start_month: 'January',
+          company_start_date: '2015-06-05',
           addresses: [
             {
               id: '123',
@@ -84,6 +88,7 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
