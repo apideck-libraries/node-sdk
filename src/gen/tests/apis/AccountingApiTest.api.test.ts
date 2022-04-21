@@ -2482,7 +2482,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
-              id: 10,
+              id: '10',
               name: 'GST',
               rate: 10,
               compound: true
@@ -2534,7 +2534,7 @@ describe('AccountingApi', () => {
             tax_remitted_account_id: '123456',
             components: [
               {
-                id: 10,
+                id: '10',
                 name: 'GST',
                 rate: 10,
                 compound: true
@@ -2650,7 +2650,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
-              id: 10,
+              id: '10',
               name: 'GST',
               rate: 10,
               compound: true
@@ -2726,7 +2726,7 @@ describe('AccountingApi', () => {
           tax_remitted_account_id: '123456',
           components: [
             {
-              id: 10,
+              id: '10',
               name: 'GST',
               rate: 10,
               compound: true
