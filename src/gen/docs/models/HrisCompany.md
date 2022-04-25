@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`legal_name` | **string** |  | 
 `id` | **string** |  | [optional] 
-`legal_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
 `subdomain` | **string** |  | [optional] 
 `company_number` | **string** | An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company. | [optional] 

@@ -33,10 +33,12 @@ AtsApiTest.api.test.ts
 AuthType.md
 BadRequestResponse.md
 BankAccount.md
+Benefit.md
 CompaniesFilter.md
 CompaniesSort.md
 Company.md
 CompanyInfo.md
+Compensation.md
 Connection.md
 ConnectionConfiguration.md
 ConnectionDefaults.md
@@ -107,6 +109,7 @@ CustomField.md
 CustomerSupportApi.md
 CustomerSupportApiTest.api.test.ts
 CustomerSupportCustomer.md
+Deduction.md
 DeleteActivityResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
@@ -137,6 +140,8 @@ EmployeeCompensations.md
 EmployeeEmploymentRole.md
 EmployeeJobs.md
 EmployeeManager.md
+EmployeePayroll.md
+EmployeePayrolls.md
 EmployeeSocialLinks.md
 EmployeeTeam.md
 EmployeesFilter.md
@@ -182,6 +187,8 @@ GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
 GetDepartmentsResponse.md
+GetEmployeePayrollResponse.md
+GetEmployeePayrollsResponse.md
 GetEmployeeResponse.md
 GetEmployeesResponse.md
 GetFileResponse.md
@@ -209,6 +216,8 @@ GetOpportunitiesResponse.md
 GetOpportunityResponse.md
 GetPaymentResponse.md
 GetPaymentsResponse.md
+GetPayrollResponse.md
+GetPayrollsResponse.md
 GetPipelineResponse.md
 GetPipelinesResponse.md
 GetSharedLinkResponse.md
@@ -265,6 +274,9 @@ Owner.md
 Payment.md
 PaymentRequiredResponse.md
 PaymentUnit.md
+Payroll.md
+PayrollTotals.md
+PayrollsFilter.md
 PhoneNumber.md
 Pipeline.md
 PipelineStages.md
@@ -283,6 +295,7 @@ SocialLink.md
 SortDirection.md
 Status.md
 Tags.md
+Tax.md
 TaxRate.md
 TaxRatesFilter.md
 UnauthorizedResponse.md
@@ -365,10 +378,12 @@ models/ApplicantWebsites.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BankAccount.ts
+models/Benefit.ts
 models/CompaniesFilter.ts
 models/CompaniesSort.ts
 models/Company.ts
 models/CompanyInfo.ts
+models/Compensation.ts
 models/Connection.ts
 models/ConnectionConfiguration.ts
 models/ConnectionDefaults.ts
@@ -433,6 +448,7 @@ models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
 models/CustomerSupportCustomer.ts
+models/Deduction.ts
 models/DeleteActivityResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
@@ -463,6 +479,8 @@ models/EmployeeCompensations.ts
 models/EmployeeEmploymentRole.ts
 models/EmployeeJobs.ts
 models/EmployeeManager.ts
+models/EmployeePayroll.ts
+models/EmployeePayrolls.ts
 models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
 models/EmployeesFilter.ts
@@ -505,6 +523,8 @@ models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
 models/GetDepartmentsResponse.ts
+models/GetEmployeePayrollResponse.ts
+models/GetEmployeePayrollsResponse.ts
 models/GetEmployeeResponse.ts
 models/GetEmployeesResponse.ts
 models/GetFileResponse.ts
@@ -532,6 +552,8 @@ models/GetOpportunitiesResponse.ts
 models/GetOpportunityResponse.ts
 models/GetPaymentResponse.ts
 models/GetPaymentsResponse.ts
+models/GetPayrollResponse.ts
+models/GetPayrollsResponse.ts
 models/GetPipelineResponse.ts
 models/GetPipelinesResponse.ts
 models/GetSharedLinkResponse.ts
@@ -585,6 +607,9 @@ models/Owner.ts
 models/Payment.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
+models/Payroll.ts
+models/PayrollTotals.ts
+models/PayrollsFilter.ts
 models/PhoneNumber.ts
 models/Pipeline.ts
 models/PipelineStages.ts
@@ -601,6 +626,7 @@ models/SocialLink.ts
 models/SortDirection.ts
 models/Status.ts
 models/Tags.ts
+models/Tax.ts
 models/TaxRate.ts
 models/TaxRatesFilter.ts
 models/UnauthorizedResponse.ts
