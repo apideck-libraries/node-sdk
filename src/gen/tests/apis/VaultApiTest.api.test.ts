@@ -858,13 +858,13 @@ describe('VaultApi', () => {
             base_url: 'unify.apideck.com',
             child_request: false,
             consumer_id: 'test-consumer',
-            duration: '2220.379304===',
+            duration: 2220.379304,
             error_message: 'Refresh token is invalid',
             execution: 2248,
             has_children: false,
             http_method: 'GET',
             id: '0b5f7480-5550-4f5c-a5fc-3c01ac43dd0f',
-            latency: '27.620695999999953===',
+            latency: 27.620695999999953,
             operation: {
               id: 'connectionsAll',
               name: 'Get All Connections'
