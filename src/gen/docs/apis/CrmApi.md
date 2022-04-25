@@ -1188,7 +1188,7 @@ const params = {
     lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    current_balance: 10.5,
+    current_balance: '10.5===',
     status: 'open',
     active: true,
     websites: [
@@ -1561,7 +1561,7 @@ const params = {
     lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    current_balance: 10.5,
+    current_balance: '10.5===',
     status: 'open',
     active: true,
     websites: [

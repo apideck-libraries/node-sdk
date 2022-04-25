@@ -13,72 +13,62 @@
  */
 
 import { exists } from '../runtime'
-import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import {
+  BankAccountAchDetails,
+  BankAccountAchDetailsFromJSON,
+  BankAccountAchDetailsToJSON
+} from './BankAccountAchDetails'
 
 /**
- *
+ * Card details for this payment. This field is currently not available. Reach out to our team for more info.
  * @export
  * @interface BankAccount
  */
 export interface BankAccount {
   /**
-   *
+   * The name of the bank associated with the bank account.
    * @type {string}
    * @memberof BankAccount
    */
-  iban?: string | null
+  bank_name?: string
+  /**
+   * The type of the bank transfer. The type can be `ACH` or `UNKNOWN`.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  transfer_type?: string
+  /**
+   * The ownership type of the bank account performing the transfer.
+   * The type can be `INDIVIDUAL`, `COMPANY`, or `UNKNOWN`.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  account_ownership_type?: string
+  /**
+   * Uniquely identifies the bank account for this seller and can be used
+   * to determine if payments are from the same bank account.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  fingerprint?: string
+  /**
+   * country code according to ISO 3166-1 alpha-2.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  country?: string | null
+  /**
+   * The statement description as sent to the bank.
+   * @type {string}
+   * @memberof BankAccount
+   */
+  statement_description?: string
   /**
    *
-   * @type {string}
+   * @type {BankAccountAchDetails}
    * @memberof BankAccount
    */
-  bic?: string | null
-  /**
-   * A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution.
-   * @type {string}
-   * @memberof BankAccount
-   */
-  bsb_number?: string | null
-  /**
-   * A bank code is a code assigned by a central bank, a bank supervisory body or a Bankers Association in a country to all its licensed member banks or financial institutions.
-   * @type {string}
-   * @memberof BankAccount
-   */
-  bank_code?: string | null
-  /**
-   * A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number.
-   * @type {string}
-   * @memberof BankAccount
-   */
-  account_number?: string | null
-  /**
-   * The name which you used in opening your bank account.
-   * @type {string}
-   * @memberof BankAccount
-   */
-  account_name?: string | null
-  /**
-   * The type of bank account.
-   * @type {string}
-   * @memberof BankAccount
-   */
-  account_type?: BankAccountAccountType
-  /**
-   *
-   * @type {Currency}
-   * @memberof BankAccount
-   */
-  currency?: Currency | null
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum BankAccountAccountType {
-  bank_account = 'bank_account',
-  credit_card = 'credit_card',
-  other = 'other'
+  ach_details?: BankAccountAchDetails
 }
 
 export function BankAccountFromJSON(json: any): BankAccount {
@@ -90,14 +80,19 @@ export function BankAccountFromJSONTyped(json: any, ignoreDiscriminator: boolean
     return json
   }
   return {
-    iban: !exists(json, 'iban') ? undefined : json['iban'],
-    bic: !exists(json, 'bic') ? undefined : json['bic'],
-    bsb_number: !exists(json, 'bsb_number') ? undefined : json['bsb_number'],
-    bank_code: !exists(json, 'bank_code') ? undefined : json['bank_code'],
-    account_number: !exists(json, 'account_number') ? undefined : json['account_number'],
-    account_name: !exists(json, 'account_name') ? undefined : json['account_name'],
-    account_type: !exists(json, 'account_type') ? undefined : json['account_type'],
-    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency'])
+    bank_name: !exists(json, 'bank_name') ? undefined : json['bank_name'],
+    transfer_type: !exists(json, 'transfer_type') ? undefined : json['transfer_type'],
+    account_ownership_type: !exists(json, 'account_ownership_type')
+      ? undefined
+      : json['account_ownership_type'],
+    fingerprint: !exists(json, 'fingerprint') ? undefined : json['fingerprint'],
+    country: !exists(json, 'country') ? undefined : json['country'],
+    statement_description: !exists(json, 'statement_description')
+      ? undefined
+      : json['statement_description'],
+    ach_details: !exists(json, 'ach_details')
+      ? undefined
+      : BankAccountAchDetailsFromJSON(json['ach_details'])
   }
 }
 
@@ -109,13 +104,12 @@ export function BankAccountToJSON(value?: BankAccount | null): any {
     return null
   }
   return {
-    iban: value.iban,
-    bic: value.bic,
-    bsb_number: value.bsb_number,
-    bank_code: value.bank_code,
-    account_number: value.account_number,
-    account_name: value.account_name,
-    account_type: value.account_type,
-    currency: CurrencyToJSON(value.currency)
+    bank_name: value.bank_name,
+    transfer_type: value.transfer_type,
+    account_ownership_type: value.account_ownership_type,
+    fingerprint: value.fingerprint,
+    country: value.country,
+    statement_description: value.statement_description,
+    ach_details: BankAccountAchDetailsToJSON(value.ach_details)
   }
 }

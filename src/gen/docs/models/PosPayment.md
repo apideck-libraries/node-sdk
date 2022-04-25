@@ -1,0 +1,125 @@
+# Apideck.PosPayment
+
+### Description
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+`source_id` | **string** |  | 
+`order_id` | **string** |  | 
+`customer_id` | **string** |  | 
+`tender_id` | **string** |  | 
+`amount` | **number** |  | 
+`currency` | [**Currency**](Currency.md) |  | 
+`id` | **string** |  | [optional] 
+`merchant_id` | **string** |  | [optional] 
+`employee_id` | **string** |  | [optional] 
+`location_id` | **string** |  | [optional] 
+`device_id` | **string** |  | [optional] 
+`external_payment_id` | **string** |  | [optional] 
+`idempotency_key` | [**IdempotencyKey**](IdempotencyKey.md) |  | [optional] 
+`tip` | **number** |  | [optional] 
+`tax` | **number** |  | [optional] 
+`total` | **number** |  | [optional] 
+`app_fee` | **number** | The amount the developer is taking as a fee for facilitating the payment on behalf of the seller. | [optional] 
+`change_back_cash_amount` | **number** |  | [optional] 
+`approved` | **number** | The initial amount of money approved for this payment. | [optional] 
+`refunded` | **number** | The initial amount of money approved for this payment. | [optional] 
+`processing_fees` | **Array&lt;object&gt;** |  | [optional] 
+`source` | **string** | Source of this payment. | [optional] 
+`status` | **string** | Status of this payment. | [optional] 
+`cash` | [**CashDetails**](CashDetails.md) |  | [optional] 
+`card_details` | [**PosPaymentCardDetails**](PosPaymentCardDetails.md) |  | [optional] 
+`bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`wallet` | [**WalletDetails**](WalletDetails.md) |  | [optional] 
+`external_details` | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
+`service_charges` | [**ServiceCharges**](ServiceCharges.md) |  | [optional] 
+`updated_by` | [**Version**](Version.md) |  | [optional] 
+`created_by` | [**CreatedBy**](CreatedBy.md) |  | [optional] 
+`updated_at` | [**UpdatedAt**](UpdatedAt.md) |  | [optional] 
+`created_at` | [**CreatedAt**](CreatedAt.md) |  | [optional] 
+
+
+
+
+
+<a name="PosPaymentSource"></a>
+## Enum: PosPayment.source
+
+
+* `card` (value: `'card'`)
+
+* `bank_account` (value: `'bank_account'`)
+
+* `wallet` (value: `'wallet'`)
+
+* `bnpl` (value: `'bnpl'`)
+
+* `cash` (value: `'cash'`)
+
+* `external` (value: `'external'`)
+
+* `other` (value: `'other'`)
+
+
+
+
+<a name="PosPaymentStatus"></a>
+## Enum: PosPayment.status
+
+
+* `approved` (value: `'approved'`)
+
+* `pending` (value: `'pending'`)
+
+* `completed` (value: `'completed'`)
+
+* `canceled` (value: `'canceled'`)
+
+* `failed` (value: `'failed'`)
+
+* `other` (value: `'other'`)
+
+
+
+
+## Referenced Types:
+
+
+
+
+
+* [`Currency`](Currency.md)
+
+
+
+
+
+
+* [`IdempotencyKey`](IdempotencyKey.md)
+
+
+
+
+
+
+
+
+
+
+* [`CashDetails`](CashDetails.md)
+* [`PosPaymentCardDetails`](PosPaymentCardDetails.md)
+* [`BankAccount`](BankAccount.md)
+* [`WalletDetails`](WalletDetails.md)
+* [`PosPaymentExternalDetails`](PosPaymentExternalDetails.md)
+* [`ServiceCharges`](ServiceCharges.md)
+* [`Version`](Version.md)
+* [`CreatedBy`](CreatedBy.md)
+* [`UpdatedAt`](UpdatedAt.md)
+* [`CreatedAt`](CreatedAt.md)
+
+---
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+
