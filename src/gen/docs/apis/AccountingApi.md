@@ -51,7 +51,7 @@ accountingApi.companyInfoOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -118,7 +118,7 @@ accountingApi.customersAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer** | [AccountingCustomer](../models/AccountingCustomer.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -265,7 +265,7 @@ accountingApi.customersAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -622,7 +622,7 @@ accountingApi.invoiceItemsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceItem** | [InvoiceItem](../models/InvoiceItem.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -668,7 +668,7 @@ const params = {
     tracked: true,
     type: 'inventory',
     sales_details: {
-      unit_price: 27500.5,
+      unit_price: '27500.5===',
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -676,7 +676,7 @@ const params = {
       }
     },
     purchase_details: {
-      unit_price: 27500.5,
+      unit_price: '27500.5===',
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -684,7 +684,7 @@ const params = {
       }
     },
     quantity: 1,
-    unit_price: 27500.5,
+    unit_price: '27500.5===',
     asset_account: {
       id: '123456',
       nominal_code: 'N091'
@@ -730,7 +730,7 @@ accountingApi.invoiceItemsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -871,7 +871,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -941,7 +941,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -985,7 +985,7 @@ const params = {
     tracked: true,
     type: 'inventory',
     sales_details: {
-      unit_price: 27500.5,
+      unit_price: '27500.5===',
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -993,7 +993,7 @@ const params = {
       }
     },
     purchase_details: {
-      unit_price: 27500.5,
+      unit_price: '27500.5===',
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -1001,7 +1001,7 @@ const params = {
       }
     },
     quantity: 1,
-    unit_price: 27500.5,
+    unit_price: '27500.5===',
     asset_account: {
       id: '123456',
       nominal_code: 'N091'
@@ -1048,7 +1048,7 @@ accountingApi.invoicesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoice** | [Invoice](../models/Invoice.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1100,7 +1100,7 @@ const params = {
     status: 'draft',
     invoice_sent: true,
     currency: 'USD',
-    currency_rate: 0.69,
+    currency_rate: '0.69===',
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1118,9 +1118,9 @@ const params = {
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
-        unit_price: 27500.5,
+        unit_price: '27500.5===',
         unit_of_measure: 'pc.',
-        discount_percentage: 0.01,
+        discount_percentage: '0.01===',
         item: {
           id: '12344'
         },
@@ -1217,7 +1217,7 @@ accountingApi.invoicesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1289,7 +1289,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1358,7 +1358,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1428,7 +1428,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1478,7 +1478,7 @@ const params = {
     status: 'draft',
     invoice_sent: true,
     currency: 'USD',
-    currency_rate: 0.69,
+    currency_rate: '0.69===',
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1496,9 +1496,9 @@ const params = {
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
-        unit_price: 27500.5,
+        unit_price: '27500.5===',
         unit_of_measure: 'pc.',
-        discount_percentage: 0.01,
+        discount_percentage: '0.01===',
         item: {
           id: '12344'
         },
@@ -1596,7 +1596,7 @@ accountingApi.ledgerAccountsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ledgerAccount** | [LedgerAccount](../models/LedgerAccount.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1702,7 +1702,7 @@ accountingApi.ledgerAccountsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1774,7 +1774,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1913,7 +1913,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2018,7 +2018,7 @@ accountingApi.paymentsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment** | [Payment](../models/Payment.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2057,8 +2057,8 @@ const apideck = new Apideck({
 const params = {
   payment: {
     currency: 'USD',
-    currency_rate: 0.69,
-    total_amount: 49.99,
+    currency_rate: '0.69===',
+    total_amount: '49.99===',
     reference: '123456',
     payment_method: 'Credit Card',
     payment_method_reference: '123456',
@@ -2080,7 +2080,7 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: '49.99==='
       }
     ],
     note: 'Some notes about this payment',
@@ -2116,7 +2116,7 @@ accountingApi.paymentsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2188,7 +2188,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2257,7 +2257,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2327,7 +2327,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2364,8 +2364,8 @@ const params = {
   id: 'id_example',
   payment: {
     currency: 'USD',
-    currency_rate: 0.69,
-    total_amount: 49.99,
+    currency_rate: '0.69===',
+    total_amount: '49.99===',
     reference: '123456',
     payment_method: 'Credit Card',
     payment_method_reference: '123456',
@@ -2387,7 +2387,7 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: '49.99==='
       }
     ],
     note: 'Some notes about this payment',
@@ -2424,7 +2424,7 @@ accountingApi.taxRatesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxRate** | [TaxRate](../models/TaxRate.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2472,7 +2472,7 @@ const params = {
     tax_remitted_account_id: '123456',
     components: [
       {
-        id: 10,
+        id: '10',
         name: 'GST',
         rate: 10,
         compound: true
@@ -2514,7 +2514,7 @@ accountingApi.taxRatesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2587,7 +2587,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2656,7 +2656,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2726,7 +2726,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2772,7 +2772,7 @@ const params = {
     tax_remitted_account_id: '123456',
     components: [
       {
-        id: 10,
+        id: '10',
         name: 'GST',
         rate: 10,
         compound: true

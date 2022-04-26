@@ -44,7 +44,8 @@ describe('VaultApi', () => {
             icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
             logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
             settings: {
-              instance_url: 'https://eu28.salesforce.com'
+              instance_url: 'https://eu28.salesforce.com',
+              api_key: '12345xxxxxx'
             },
             metadata: {
               account: {
@@ -97,6 +98,7 @@ describe('VaultApi', () => {
             revoke_url:
               'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
             enabled: true,
+            has_guide: true,
             created_at: 1615563533390,
             updated_at: 1616662325753,
             state: 'authorized'
@@ -177,7 +179,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -237,6 +240,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -254,6 +258,136 @@ describe('VaultApi', () => {
         resource: 'leads'
       } as any
       const current = await vault.connectionsGetSettings(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#connectionsImport', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/import'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 201,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          service_id: 'salesforce',
+          name: 'Salesforce',
+          tag_line:
+            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+          unified_api: 'crm',
+          website: 'https://www.salesforce.com',
+          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          settings: {
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          },
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          form_fields: [
+            {
+              id: 'instance_url',
+              label: 'Instance url',
+              value: 'https://eu28.salesforce.com',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
+            }
+          ],
+          configuration: [
+            {
+              resource: 'leads',
+              defaults: [
+                {
+                  target: 'custom_fields',
+                  id: 'ProductInterest',
+                  options: [Array],
+                  value: 'GC5000 series'
+                }
+              ]
+            }
+          ],
+          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
+          resource_schema_support: ['leads'],
+          resource_settings_support: ['leads'],
+          settings_required_for_authorization: ['instance_url'],
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          enabled: true,
+          has_guide: true,
+          created_at: 1615563533390,
+          updated_at: 1616662325753,
+          state: 'authorized'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        serviceId: 'pipedrive',
+        unifiedApi: 'crm',
+        connection: {
+          credentials: {
+            access_token:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+            refresh_token:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ'
+          },
+          settings: {
+            instance_url: 'https://eu28.salesforce.com'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          }
+        }
+      } as any
+      const current = await vault.connectionsImport(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -288,7 +422,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -348,6 +483,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -398,7 +534,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -458,6 +595,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -474,7 +612,8 @@ describe('VaultApi', () => {
         unifiedApi: 'crm',
         connection: {
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -533,7 +672,8 @@ describe('VaultApi', () => {
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -593,6 +733,7 @@ describe('VaultApi', () => {
           revoke_url:
             'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           enabled: true,
+          has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753,
           state: 'authorized'
@@ -610,7 +751,8 @@ describe('VaultApi', () => {
         resource: 'leads',
         connection: {
           settings: {
-            instance_url: 'https://eu28.salesforce.com'
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
           },
           metadata: {
             account: {
@@ -846,13 +988,13 @@ describe('VaultApi', () => {
             base_url: 'unify.apideck.com',
             child_request: false,
             consumer_id: 'test-consumer',
-            duration: 2220.379304,
+            duration: '2220.379304===',
             error_message: 'Refresh token is invalid',
             execution: 2248,
             has_children: false,
             http_method: 'GET',
             id: '0b5f7480-5550-4f5c-a5fc-3c01ac43dd0f',
-            latency: 27.620695999999953,
+            latency: '27.620695999999953===',
             operation: {
               id: 'connectionsAll',
               name: 'Get All Connections'

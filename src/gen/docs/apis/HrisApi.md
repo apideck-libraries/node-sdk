@@ -15,11 +15,15 @@
 * [Delete Department](#departmentsDelete)
 * [Get Department](#departmentsOne)
 * [Update Department](#departmentsUpdate)
+* [List Employee Payrolls](#employeePayrollsAll)
+* [Get Employee Payroll](#employeePayrollsOne)
 * [Create Employee](#employeesAdd)
 * [List Employees](#employeesAll)
 * [Delete Employee](#employeesDelete)
 * [Get Employee](#employeesOne)
 * [Update Employee](#employeesUpdate)
+* [List Payroll](#payrollsAll)
+* [Get Payroll](#payrollsOne)
 
 <a name="companiesAdd"></a>
 # Create Company
@@ -36,7 +40,7 @@ hrisApi.companiesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | [HrisCompany](../models/HrisCompany.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -161,7 +165,7 @@ hrisApi.companiesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -179,7 +183,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Company | 
+**200** | Companies | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -233,7 +237,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -302,7 +306,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -315,7 +319,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Companies | 
+**200** | Company | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -372,7 +376,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -496,7 +500,7 @@ hrisApi.departmentsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **department** | [Department](../models/Department.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -568,7 +572,7 @@ hrisApi.departmentsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -640,7 +644,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -709,7 +713,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -779,7 +783,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -835,6 +839,147 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="employeePayrollsAll"></a>
+# List Employee Payrolls
+
+
+Method: **employeePayrollsAll**
+
+```typescript
+hrisApi.employeePayrollsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **filter** | **PayrollsFilter** | Apply filters (beta) | (optional) 
+
+
+
+### Response Type
+
+[`GetEmployeePayrollsResponse`](../models/GetEmployeePayrollsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | EmployeePayrolls | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  employeeId: 'employee_id_example'
+}
+
+try {
+  const { data } = await apideck.hris.employeePayrollsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="employeePayrollsOne"></a>
+# Get Employee Payroll
+
+
+Method: **employeePayrollsOne**
+
+```typescript
+hrisApi.employeePayrollsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payrollId** | [**string**] | ID of the payroll you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`GetEmployeePayrollResponse`](../models/GetEmployeePayrollResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payrolls | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  payrollId: 'payroll_id_example',
+  employeeId: 'employee_id_example'
+}
+
+try {
+  const { data } = await apideck.hris.employeePayrollsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="employeesAdd"></a>
 # Create Employee
 
@@ -850,7 +995,7 @@ hrisApi.employeesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee** | [Employee](../models/Employee.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -936,7 +1081,8 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: '72000',
+        compensation_rate: 72000,
+        currency: 'USD',
         payment_unit: 'year',
         hired_at: '2020-08-12',
         is_primary: true,
@@ -1069,7 +1215,7 @@ hrisApi.employeesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1142,7 +1288,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1211,7 +1357,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1281,7 +1427,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1365,7 +1511,8 @@ const params = {
     jobs: [
       {
         title: 'CEO',
-        compensation_rate: '72000',
+        compensation_rate: 72000,
+        currency: 'USD',
         payment_unit: 'year',
         hired_at: '2020-08-12',
         is_primary: true,
@@ -1472,6 +1619,142 @@ const params = {
 
 try {
   const { data } = await apideck.hris.employeesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="payrollsAll"></a>
+# List Payroll
+
+
+Method: **payrollsAll**
+
+```typescript
+hrisApi.payrollsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **filter** | **PayrollsFilter** | Apply filters (beta) | (optional) 
+
+
+
+### Response Type
+
+[`GetPayrollsResponse`](../models/GetPayrollsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payrolls | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.hris.payrollsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="payrollsOne"></a>
+# Get Payroll
+
+
+Method: **payrollsOne**
+
+```typescript
+hrisApi.payrollsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payrollId** | [**string**] | ID of the payroll you are acting upon. | 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`GetPayrollResponse`](../models/GetPayrollResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Payrolls | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  payrollId: 'payroll_id_example'
+}
+
+try {
+  const { data } = await apideck.hris.payrollsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

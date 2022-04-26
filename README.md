@@ -137,6 +137,10 @@ Read the full documentation of the HrisApi [here](./src/gen/docs/apis/HrisApi.md
 
 Read the full documentation of the LeadApi [here](./src/gen/docs/apis/LeadApi.md).
 
+### PosApi
+
+Read the full documentation of the PosApi [here](./src/gen/docs/apis/PosApi.md).
+
 ### SmsApi
 
 Read the full documentation of the SmsApi [here](./src/gen/docs/apis/SmsApi.md).
@@ -181,7 +185,7 @@ Open an [issue][3]!
 
 ## License
 
-[MIT][4]
+[Apache-2.0][4]
 
 [1]: https://apideck.com
 [2]: https://developers.apideck.com/

@@ -2,31 +2,19 @@
 
 ### Description
 
+Card details for this payment. This field is currently not available. Reach out to our team for more info.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`iban` | **string** |  | [optional] 
-`bic` | **string** |  | [optional] 
-`bsb_number` | **string** | A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution. | [optional] 
-`bank_code` | **string** | A bank code is a code assigned by a central bank, a bank supervisory body or a Bankers Association in a country to all its licensed member banks or financial institutions. | [optional] 
-`account_number` | **string** | A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number. | [optional] 
-`account_name` | **string** | The name which you used in opening your bank account. | [optional] 
-`account_type` | **string** | The type of bank account. | [optional] 
-`currency` | [**Currency**](Currency.md) |  | [optional] 
+`bank_name` | **string** | The name of the bank associated with the bank account. | [optional] 
+`transfer_type` | **string** | The type of the bank transfer. The type can be &#x60;ACH&#x60; or &#x60;UNKNOWN&#x60;. | [optional] 
+`account_ownership_type` | **string** | The ownership type of the bank account performing the transfer. The type can be &#x60;INDIVIDUAL&#x60;, &#x60;COMPANY&#x60;, or &#x60;UNKNOWN&#x60;. | [optional] 
+`fingerprint` | **string** | Uniquely identifies the bank account for this seller and can be used to determine if payments are from the same bank account. | [optional] 
+`country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
+`statement_description` | **string** | The statement description as sent to the bank. | [optional] 
+`ach_details` | [**BankAccountAchDetails**](BankAccountAchDetails.md) |  | [optional] 
 
-
-
-
-
-<a name="BankAccountAccountType"></a>
-## Enum: BankAccount.account_type
-
-
-* `bank_account` (value: `'bank_account'`)
-
-* `credit_card` (value: `'credit_card'`)
-
-* `other` (value: `'other'`)
 
 
 
@@ -38,8 +26,7 @@ Name | Type | Description | Notes
 
 
 
-
-* [`Currency`](Currency.md)
+* [`BankAccountAchDetails`](BankAccountAchDetails.md)
 
 ---
 

@@ -9,6 +9,7 @@
 * [Get API Resource](#apiResourcesOne)
 * [List APIs](#apisAll)
 * [Get API](#apisOne)
+* [Get Connector Doc Content](#connectorDocsOne)
 * [Get Connector Resource](#connectorResourcesOne)
 * [List Connectors](#connectorsAll)
 * [Get Connector](#connectorsOne)
@@ -257,6 +258,71 @@ const params = {
 
 try {
   const { data } = await apideck.connector.apisOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="connectorDocsOne"></a>
+# Get Connector Doc Content
+
+
+Method: **connectorDocsOne**
+
+```typescript
+connectorApi.connectorDocsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **docId** | [**string**] | ID of the Doc | 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetConnectorResponse`](../models/GetConnectorResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connectors | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID'
+});
+
+const params = {
+  id: 'id_example',
+  docId: 'doc_id_example'
+}
+
+try {
+  const { data } = await apideck.connector.connectorDocsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

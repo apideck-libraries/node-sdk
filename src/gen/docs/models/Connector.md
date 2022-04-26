@@ -13,9 +13,10 @@ Name | Type | Description | Notes
 `logo_url` | **string** | Link to the full logo for the connector. | [optional] 
 `website_url` | **string** | Link to the connector\'s website. | [optional] 
 `auth_type` | **string** | Type of authorization used by the connector | [optional] 
-`auth_only` | **boolean** |  | [optional] 
+`auth_only` | **boolean** | Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API | [optional] 
 `oauth_grant_type` | **string** | OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types | [optional] 
 `oauth_credentials_source` | **string** | Location of the OAuth client credentials. For most connectors the OAuth client credentials are stored on integration and managed by the application owner. For others they are stored on connection and managed by the consumer in Vault. | [optional] 
+`oauth_scopes` | [**Array&lt;ConnectorOauthScopes&gt;**](ConnectorOauthScopes.md) | List of OAuth Scopes available for this connector. | [optional] 
 `has_sandbox_credentials` | **boolean** | Indicates whether Apideck Sandbox OAuth credentials are available. | [optional] 
 `settings` | [**Array&lt;ConnectorSetting&gt;**](ConnectorSetting.md) |  | [optional] 
 `service_id` | **string** | Service provider identifier | [optional] 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 `supported_resources` | [**Array&lt;ConnectorSupportedResources&gt;**](ConnectorSupportedResources.md) | List of resources that are supported on the connector. | [optional] 
 `configurable_resources` | **Array&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
 `supported_events` | [**Array&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of events that are supported on the connector. Events are delivered via Webhooks. | [optional] 
+`docs` | [**Array&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
 
 
 
@@ -79,6 +81,7 @@ Name | Type | Description | Notes
 
 
 
+* [`ConnectorOauthScopes`](ConnectorOauthScopes.md)
 
 * [`ConnectorSetting`](ConnectorSetting.md)
 
@@ -86,6 +89,7 @@ Name | Type | Description | Notes
 * [`ConnectorSupportedResources`](ConnectorSupportedResources.md)
 
 * [`ConnectorSupportedEvents`](ConnectorSupportedEvents.md)
+* [`ConnectorDoc`](ConnectorDoc.md)
 
 ---
 

@@ -86,6 +86,8 @@ Name | Type | Description | Notes
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)
 
+* `vault_connection_token_refresh_failed` (value: `'vault.connection.token_refresh.failed'`)
+
 * `ats_job_created` (value: `'ats.job.created'`)
 
 * `ats_job_updated` (value: `'ats.job.updated'`)
@@ -175,12 +177,6 @@ Name | Type | Description | Notes
 * `pos_modifier_group_updated` (value: `'pos.modifier-group.updated'`)
 
 * `pos_modifier_group_deleted` (value: `'pos.modifier-group.deleted'`)
-
-* `hris_department_created` (value: `'hris.department.created'`)
-
-* `hris_department_updated` (value: `'hris.department.updated'`)
-
-* `hris_department_deleted` (value: `'hris.department.deleted'`)
 
 
 

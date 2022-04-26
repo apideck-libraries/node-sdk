@@ -700,6 +700,459 @@ describe('HrisApi', () => {
     })
   })
 
+  describe('#employeePayrollsAll', () => {
+    const endpoint = '/hris/payrolls/employees/{employee_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'sage-hr',
+        resource: 'Employees',
+        operation: 'one',
+        data: {
+          employee: {
+            id: '12345',
+            first_name: 'Elon',
+            last_name: 'Musk',
+            middle_name: 'D.',
+            display_name: 'Technoking',
+            preferred_name: 'Elon Musk',
+            initials: 'EM',
+            salutation: 'Mr',
+            title: 'CEO',
+            marital_status: 'married',
+            division: 'Europe',
+            department: 'R&amp;D',
+            team: {
+              id: '1234',
+              name: 'Full Stack Engineers'
+            },
+            company_id: '23456',
+            company_name: 'SpaceX',
+            employment_start_date: '2021-10-26',
+            employment_end_date: '2028-10-26',
+            employee_number: '123456-AB',
+            employment_status: 'active',
+            employment_role: {
+              type: 'contractor',
+              sub_type: 'full_time'
+            },
+            manager: {
+              id: '12345',
+              name: 'Elon Musk',
+              first_name: 'Elon',
+              last_name: 'Musk',
+              email: 'elon@musk.com'
+            },
+            social_security_number: '123456789',
+            birthday: '2000-08-12',
+            country_of_birth: 'US',
+            description: 'A description',
+            gender: 'male',
+            pronouns: 'she,her',
+            preferred_language: 'EN',
+            languages: ['EN'],
+            nationalities: ['US'],
+            photo_url: 'https://unavatar.io/elon-musk',
+            jobs: [
+              {
+                id: '12345',
+                employee_id: '12345',
+                title: 'CEO',
+                compensation_rate: 72000,
+                currency: 'USD',
+                payment_unit: 'year',
+                hired_at: '2020-08-12',
+                is_primary: true,
+                location: {
+                  id: '123',
+                  type: 'primary',
+                  string: '25 Spring Street, Blackburn, VIC 3130',
+                  name: 'HQ US',
+                  line1: 'Main street',
+                  line2: 'apt #',
+                  line3: 'Suite #',
+                  line4: 'delivery instructions',
+                  street_number: '25',
+                  city: 'San Francisco',
+                  state: 'CA',
+                  postal_code: '94104',
+                  country: 'US',
+                  latitude: '40.759211',
+                  longitude: '-73.984638',
+                  county: 'Santa Clara',
+                  contact_name: 'Elon Musk',
+                  salutation: 'Mr',
+                  phone_number: '111-111-1111',
+                  fax: '122-111-1111',
+                  email: 'elon@musk.com',
+                  website: 'https://elonmusk.com',
+                  row_version: '1-12345'
+                }
+              }
+            ],
+            compensations: [
+              {
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
+                rate: '50.00',
+                payment_unit: 'hour',
+                flsa_status: 'nonexempt',
+                effective_date: '2021-06-11'
+              }
+            ],
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
+            ],
+            phone_numbers: [
+              {
+                id: '12345',
+                country_code: '1',
+                area_code: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: 'primary'
+              }
+            ],
+            emails: [
+              {
+                id: '123',
+                email: 'elon@musk.com',
+                type: 'primary'
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            social_links: [
+              {
+                id: '12345',
+                url: 'https://www.twitter.com/apideck-io',
+                type: 'twitter'
+              }
+            ],
+            row_version: '1-12345',
+            deleted: true,
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          },
+          payrolls: {
+            id: '12345',
+            company_id: '23456',
+            processed: false,
+            processed_date: '2022-04-08',
+            check_date: '2022-04-08',
+            start_date: '2022-04-08',
+            end_date: '2022-04-21',
+            totals: {
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
+              employer_benefit_contributions: 0,
+              employee_benefit_deductions: 0
+            },
+            compensations: [
+              {
+                employee_id: '12345',
+                net_pay: '2199.93===',
+                gross_pay: 3000,
+                taxes: [[Object]],
+                deductions: [[Object]],
+                benefits: [[Object]]
+              }
+            ]
+          }
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        employeeId: 'employee_id_example'
+      } as any
+      const current = await hris.employeePayrollsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#employeePayrollsOne', () => {
+    const endpoint = '/hris/payrolls/employees/{employee_id}/payrolls/{payroll_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Companies',
+        operation: 'one',
+        data: {
+          employee: {
+            id: '12345',
+            first_name: 'Elon',
+            last_name: 'Musk',
+            middle_name: 'D.',
+            display_name: 'Technoking',
+            preferred_name: 'Elon Musk',
+            initials: 'EM',
+            salutation: 'Mr',
+            title: 'CEO',
+            marital_status: 'married',
+            division: 'Europe',
+            department: 'R&amp;D',
+            team: {
+              id: '1234',
+              name: 'Full Stack Engineers'
+            },
+            company_id: '23456',
+            company_name: 'SpaceX',
+            employment_start_date: '2021-10-26',
+            employment_end_date: '2028-10-26',
+            employee_number: '123456-AB',
+            employment_status: 'active',
+            employment_role: {
+              type: 'contractor',
+              sub_type: 'full_time'
+            },
+            manager: {
+              id: '12345',
+              name: 'Elon Musk',
+              first_name: 'Elon',
+              last_name: 'Musk',
+              email: 'elon@musk.com'
+            },
+            social_security_number: '123456789',
+            birthday: '2000-08-12',
+            country_of_birth: 'US',
+            description: 'A description',
+            gender: 'male',
+            pronouns: 'she,her',
+            preferred_language: 'EN',
+            languages: ['EN'],
+            nationalities: ['US'],
+            photo_url: 'https://unavatar.io/elon-musk',
+            jobs: [
+              {
+                id: '12345',
+                employee_id: '12345',
+                title: 'CEO',
+                compensation_rate: 72000,
+                currency: 'USD',
+                payment_unit: 'year',
+                hired_at: '2020-08-12',
+                is_primary: true,
+                location: {
+                  id: '123',
+                  type: 'primary',
+                  string: '25 Spring Street, Blackburn, VIC 3130',
+                  name: 'HQ US',
+                  line1: 'Main street',
+                  line2: 'apt #',
+                  line3: 'Suite #',
+                  line4: 'delivery instructions',
+                  street_number: '25',
+                  city: 'San Francisco',
+                  state: 'CA',
+                  postal_code: '94104',
+                  country: 'US',
+                  latitude: '40.759211',
+                  longitude: '-73.984638',
+                  county: 'Santa Clara',
+                  contact_name: 'Elon Musk',
+                  salutation: 'Mr',
+                  phone_number: '111-111-1111',
+                  fax: '122-111-1111',
+                  email: 'elon@musk.com',
+                  website: 'https://elonmusk.com',
+                  row_version: '1-12345'
+                }
+              }
+            ],
+            compensations: [
+              {
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
+                rate: '50.00',
+                payment_unit: 'hour',
+                flsa_status: 'nonexempt',
+                effective_date: '2021-06-11'
+              }
+            ],
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
+            ],
+            phone_numbers: [
+              {
+                id: '12345',
+                country_code: '1',
+                area_code: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: 'primary'
+              }
+            ],
+            emails: [
+              {
+                id: '123',
+                email: 'elon@musk.com',
+                type: 'primary'
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            social_links: [
+              {
+                id: '12345',
+                url: 'https://www.twitter.com/apideck-io',
+                type: 'twitter'
+              }
+            ],
+            row_version: '1-12345',
+            deleted: true,
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          },
+          payroll: {
+            id: '12345',
+            company_id: '23456',
+            processed: false,
+            processed_date: '2022-04-08',
+            check_date: '2022-04-08',
+            start_date: '2022-04-08',
+            end_date: '2022-04-21',
+            totals: {
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
+              employer_benefit_contributions: 0,
+              employee_benefit_deductions: 0
+            },
+            compensations: [
+              {
+                employee_id: '12345',
+                net_pay: '2199.93===',
+                gross_pay: 3000,
+                taxes: [[Object]],
+                deductions: [[Object]],
+                benefits: [[Object]]
+              }
+            ]
+          }
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        payrollId: 'payroll_id_example',
+        employeeId: 'employee_id_example'
+      } as any
+      const current = await hris.employeePayrollsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#employeesAdd', () => {
     const endpoint = '/hris/employees'
 
@@ -777,7 +1230,8 @@ describe('HrisApi', () => {
           jobs: [
             {
               title: 'CEO',
-              compensation_rate: '72000',
+              compensation_rate: 72000,
+              currency: 'USD',
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
@@ -958,7 +1412,8 @@ describe('HrisApi', () => {
                 id: '12345',
                 employee_id: '12345',
                 title: 'CEO',
-                compensation_rate: '72000',
+                compensation_rate: 72000,
+                currency: 'USD',
                 payment_unit: 'year',
                 hired_at: '2020-08-12',
                 is_primary: true,
@@ -1203,7 +1658,8 @@ describe('HrisApi', () => {
               id: '12345',
               employee_id: '12345',
               title: 'CEO',
-              compensation_rate: '72000',
+              compensation_rate: 72000,
+              currency: 'USD',
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
@@ -1404,7 +1860,8 @@ describe('HrisApi', () => {
           jobs: [
             {
               title: 'CEO',
-              compensation_rate: '72000',
+              compensation_rate: 72000,
+              currency: 'USD',
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
@@ -1509,6 +1966,157 @@ describe('HrisApi', () => {
         }
       } as any
       const current = await hris.employeesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#payrollsAll', () => {
+    const endpoint = '/hris/payrolls'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'sage-hr',
+        resource: 'Employees',
+        operation: 'one',
+        data: [
+          {
+            id: '12345',
+            company_id: '23456',
+            processed: false,
+            processed_date: '2022-04-08',
+            check_date: '2022-04-08',
+            start_date: '2022-04-08',
+            end_date: '2022-04-21',
+            totals: {
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
+              employer_benefit_contributions: 0,
+              employee_benefit_deductions: 0
+            },
+            compensations: [
+              {
+                employee_id: '12345',
+                net_pay: '2199.93===',
+                gross_pay: 3000,
+                taxes: [[Object]],
+                deductions: [[Object]],
+                benefits: [[Object]]
+              }
+            ]
+          }
+        ]
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {} as any
+      const current = await hris.payrollsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#payrollsOne', () => {
+    const endpoint = '/hris/payrolls/{payroll_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'undefined',
+        resource: 'Companies',
+        operation: 'one',
+        data: {
+          id: '12345',
+          company_id: '23456',
+          processed: false,
+          processed_date: '2022-04-08',
+          check_date: '2022-04-08',
+          start_date: '2022-04-08',
+          end_date: '2022-04-21',
+          totals: {
+            company_debit: '27992.49===',
+            tax_debit: '8655.32===',
+            check_amount: '27966.23===',
+            net_pay: '19337.17===',
+            gross_pay: '27966.23===',
+            employer_taxes: '2038.93===',
+            employee_taxes: '6616.39===',
+            employer_benefit_contributions: 0,
+            employee_benefit_deductions: 0
+          },
+          compensations: [
+            {
+              employee_id: '12345',
+              net_pay: '2199.93===',
+              gross_pay: 3000,
+              taxes: [
+                {
+                  name: 'CA State Income Tax',
+                  employer: false,
+                  amount: '1.97==='
+                }
+              ],
+              deductions: [
+                {
+                  name: 'Company Car',
+                  amount: '10.97==='
+                }
+              ],
+              benefits: [
+                {
+                  name: 'Health Insurance',
+                  employee_deduction: '142.94===',
+                  employer_contribution: '141.14==='
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        payrollId: 'payroll_id_example'
+      } as any
+      const current = await hris.payrollsOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

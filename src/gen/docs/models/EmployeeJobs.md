@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `employee_id` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
-`compensation_rate` | **string** |  | [optional] 
+`compensation_rate` | **number** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
 `hired_at` | **Date** |  | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job | [optional] 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 
 
 
+* [`Currency`](Currency.md)
 * [`PaymentUnit`](PaymentUnit.md)
 
 

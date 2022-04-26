@@ -61,7 +61,7 @@ crmApi.activitiesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activity** | [Activity](../models/Activity.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -216,7 +216,7 @@ crmApi.activitiesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -581,7 +581,7 @@ crmApi.companiesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | [Company](../models/Company.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -749,7 +749,7 @@ crmApi.companiesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -820,7 +820,7 @@ crmApi.companiesDelete(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**] | ID of the record you are acting upon. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -889,7 +889,7 @@ crmApi.companiesOne(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**] | ID of the record you are acting upon. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -959,7 +959,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | [Company](../models/Company.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1129,7 +1129,7 @@ crmApi.contactsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contact** | [Contact](../models/Contact.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1188,7 +1188,7 @@ const params = {
     lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    current_balance: 10.5,
+    current_balance: '10.5===',
     status: 'open',
     active: true,
     websites: [
@@ -1291,7 +1291,7 @@ crmApi.contactsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1365,7 +1365,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1504,7 +1504,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1561,7 +1561,7 @@ const params = {
     lead_source: 'Cold Call',
     fax: '+12129876543',
     description: 'Internal champion',
-    current_balance: 10.5,
+    current_balance: '10.5===',
     status: 'open',
     active: true,
     websites: [
@@ -1665,7 +1665,7 @@ crmApi.leadsAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead** | [Lead](../models/Lead.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1819,7 +1819,7 @@ crmApi.leadsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -1893,7 +1893,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -1962,7 +1962,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2032,7 +2032,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2185,7 +2185,7 @@ crmApi.notesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **note** | [Note](../models/Note.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2262,7 +2262,7 @@ crmApi.notesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2334,7 +2334,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2403,7 +2403,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2473,7 +2473,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2549,7 +2549,7 @@ crmApi.opportunitiesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **opportunity** | [Opportunity](../models/Opportunity.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2654,7 +2654,7 @@ crmApi.opportunitiesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2728,7 +2728,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2797,7 +2797,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2867,7 +2867,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -2971,7 +2971,7 @@ crmApi.pipelinesAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pipeline** | [Pipeline](../models/Pipeline.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -3052,7 +3052,7 @@ crmApi.pipelinesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -3124,7 +3124,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -3193,7 +3193,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -3263,7 +3263,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -3343,7 +3343,7 @@ crmApi.usersAdd(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user** | [User](../models/User.md)|  |
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -3470,7 +3470,7 @@ crmApi.usersAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -3542,7 +3542,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -3611,7 +3611,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
@@ -3681,7 +3681,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to true
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
 
