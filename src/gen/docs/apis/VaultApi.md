@@ -8,6 +8,7 @@
 * [Get All Connections](#connectionsAll)
 * [Deletes A Connection](#connectionsDelete)
 * [Get Resource Settings](#connectionsGetSettings)
+* [Import Connection](#connectionsImport)
 * [Get Connection](#connectionsOne)
 * [Update Connection](#connectionsUpdate)
 * [Update Settings](#connectionsUpdateSettings)
@@ -211,6 +212,92 @@ const params = {
 
 try {
   const { data } = await apideck.vault.connectionsGetSettings(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="connectionsImport"></a>
+# Import Connection
+
+
+Method: **connectionsImport**
+
+```typescript
+vaultApi.connectionsImport(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectionImportData** | [ConnectionImportData](../models/ConnectionImportData.md)| Fields that need to be persisted on the resource |
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **unifiedApi** | [**string**] | Unified API | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`CreateConnectionResponse`](../models/CreateConnectionResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connection created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  serviceId: 'pipedrive',
+  unifiedApi: 'crm',
+  connectionsImport: {
+    credentials: {
+      access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+      refresh_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ'
+    },
+    settings: {
+      instance_url: 'https://eu28.salesforce.com'
+    },
+    metadata: {
+      account: {
+        name: 'My Company',
+        id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+      },
+      plan: 'enterprise'
+    }
+  }
+}
+
+try {
+  const { data } = await apideck.vault.connectionsImport(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
