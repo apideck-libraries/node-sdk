@@ -368,7 +368,7 @@ describe('VaultApi', () => {
       const params = {
         serviceId: 'pipedrive',
         unifiedApi: 'crm',
-        connectionsImport: {
+        connection: {
           credentials: {
             access_token:
               'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
@@ -988,13 +988,13 @@ describe('VaultApi', () => {
             base_url: 'unify.apideck.com',
             child_request: false,
             consumer_id: 'test-consumer',
-            duration: 2220.379304,
+            duration: '2220.379304===',
             error_message: 'Refresh token is invalid',
             execution: 2248,
             has_children: false,
             http_method: 'GET',
             id: '0b5f7480-5550-4f5c-a5fc-3c01ac43dd0f',
-            latency: 27.620695999999953,
+            latency: '27.620695999999953===',
             operation: {
               id: 'connectionsAll',
               name: 'Get All Connections'

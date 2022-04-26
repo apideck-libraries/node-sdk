@@ -13,8 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { OrderCustomers, OrderCustomersFromJSON, OrderCustomersToJSON } from './OrderCustomers'
 import { OrderDiscounts, OrderDiscountsFromJSON, OrderDiscountsToJSON } from './OrderDiscounts'
 import {
@@ -27,8 +26,6 @@ import { OrderPayments, OrderPaymentsFromJSON, OrderPaymentsToJSON } from './Ord
 import { OrderRefunds, OrderRefundsFromJSON, OrderRefundsToJSON } from './OrderRefunds'
 import { OrderTenders, OrderTendersFromJSON, OrderTendersToJSON } from './OrderTenders'
 import { ServiceCharges, ServiceChargesFromJSON, ServiceChargesToJSON } from './ServiceCharges'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
 
 /**
  *
@@ -97,11 +94,11 @@ export interface Order {
    */
   payment_status?: OrderPaymentStatus
   /**
-   * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-   * @type {string}
+   *
+   * @type {Currency}
    * @memberof Order
    */
-  currency?: OrderCurrency
+  currency?: Currency | null
   /**
    *
    * @type {string}
@@ -266,28 +263,28 @@ export interface Order {
   version?: string | null
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof Order
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof Order
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof Order
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof Order
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 /**
@@ -314,194 +311,6 @@ export enum OrderPaymentStatus {
   partially_paid = 'partially_paid',
   partially_refunded = 'partially_refunded',
   unknown = 'unknown'
-}
-/**
- * @export
- * @enum {string}
- */
-export enum OrderCurrency {
-  UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY',
-  AED = 'AED',
-  AFN = 'AFN',
-  ALL = 'ALL',
-  AMD = 'AMD',
-  ANG = 'ANG',
-  AOA = 'AOA',
-  ARS = 'ARS',
-  AUD = 'AUD',
-  AWG = 'AWG',
-  AZN = 'AZN',
-  BAM = 'BAM',
-  BBD = 'BBD',
-  BDT = 'BDT',
-  BGN = 'BGN',
-  BHD = 'BHD',
-  BIF = 'BIF',
-  BMD = 'BMD',
-  BND = 'BND',
-  BOB = 'BOB',
-  BOV = 'BOV',
-  BRL = 'BRL',
-  BSD = 'BSD',
-  BTN = 'BTN',
-  BWP = 'BWP',
-  BYR = 'BYR',
-  BZD = 'BZD',
-  CAD = 'CAD',
-  CDF = 'CDF',
-  CHE = 'CHE',
-  CHF = 'CHF',
-  CHW = 'CHW',
-  CLF = 'CLF',
-  CLP = 'CLP',
-  CNY = 'CNY',
-  COP = 'COP',
-  COU = 'COU',
-  CRC = 'CRC',
-  CUC = 'CUC',
-  CUP = 'CUP',
-  CVE = 'CVE',
-  CZK = 'CZK',
-  DJF = 'DJF',
-  DKK = 'DKK',
-  DOP = 'DOP',
-  DZD = 'DZD',
-  EGP = 'EGP',
-  ERN = 'ERN',
-  ETB = 'ETB',
-  EUR = 'EUR',
-  FJD = 'FJD',
-  FKP = 'FKP',
-  GBP = 'GBP',
-  GEL = 'GEL',
-  GHS = 'GHS',
-  GIP = 'GIP',
-  GMD = 'GMD',
-  GNF = 'GNF',
-  GTQ = 'GTQ',
-  GYD = 'GYD',
-  HKD = 'HKD',
-  HNL = 'HNL',
-  HRK = 'HRK',
-  HTG = 'HTG',
-  HUF = 'HUF',
-  IDR = 'IDR',
-  ILS = 'ILS',
-  INR = 'INR',
-  IQD = 'IQD',
-  IRR = 'IRR',
-  ISK = 'ISK',
-  JMD = 'JMD',
-  JOD = 'JOD',
-  JPY = 'JPY',
-  KES = 'KES',
-  KGS = 'KGS',
-  KHR = 'KHR',
-  KMF = 'KMF',
-  KPW = 'KPW',
-  KRW = 'KRW',
-  KWD = 'KWD',
-  KYD = 'KYD',
-  KZT = 'KZT',
-  LAK = 'LAK',
-  LBP = 'LBP',
-  LKR = 'LKR',
-  LRD = 'LRD',
-  LSL = 'LSL',
-  LTL = 'LTL',
-  LVL = 'LVL',
-  LYD = 'LYD',
-  MAD = 'MAD',
-  MDL = 'MDL',
-  MGA = 'MGA',
-  MKD = 'MKD',
-  MMK = 'MMK',
-  MNT = 'MNT',
-  MOP = 'MOP',
-  MRO = 'MRO',
-  MUR = 'MUR',
-  MVR = 'MVR',
-  MWK = 'MWK',
-  MXN = 'MXN',
-  MXV = 'MXV',
-  MYR = 'MYR',
-  MZN = 'MZN',
-  NAD = 'NAD',
-  NGN = 'NGN',
-  NIO = 'NIO',
-  NOK = 'NOK',
-  NPR = 'NPR',
-  NZD = 'NZD',
-  OMR = 'OMR',
-  PAB = 'PAB',
-  PEN = 'PEN',
-  PGK = 'PGK',
-  PHP = 'PHP',
-  PKR = 'PKR',
-  PLN = 'PLN',
-  PYG = 'PYG',
-  QAR = 'QAR',
-  RON = 'RON',
-  RSD = 'RSD',
-  RUB = 'RUB',
-  RWF = 'RWF',
-  SAR = 'SAR',
-  SBD = 'SBD',
-  SCR = 'SCR',
-  SDG = 'SDG',
-  SEK = 'SEK',
-  SGD = 'SGD',
-  SHP = 'SHP',
-  SLL = 'SLL',
-  SOS = 'SOS',
-  SRD = 'SRD',
-  SSP = 'SSP',
-  STD = 'STD',
-  SVC = 'SVC',
-  SYP = 'SYP',
-  SZL = 'SZL',
-  THB = 'THB',
-  TJS = 'TJS',
-  TMT = 'TMT',
-  TND = 'TND',
-  TOP = 'TOP',
-  TRC = 'TRC',
-  TRY = 'TRY',
-  TTD = 'TTD',
-  TWD = 'TWD',
-  TZS = 'TZS',
-  UAH = 'UAH',
-  UGX = 'UGX',
-  USD = 'USD',
-  USN = 'USN',
-  USS = 'USS',
-  UYI = 'UYI',
-  UYU = 'UYU',
-  UZS = 'UZS',
-  VEF = 'VEF',
-  VND = 'VND',
-  VUV = 'VUV',
-  WST = 'WST',
-  XAF = 'XAF',
-  XAG = 'XAG',
-  XAU = 'XAU',
-  XBA = 'XBA',
-  XBB = 'XBB',
-  XBC = 'XBC',
-  XBD = 'XBD',
-  XCD = 'XCD',
-  XDR = 'XDR',
-  XOF = 'XOF',
-  XPD = 'XPD',
-  XPF = 'XPF',
-  XPT = 'XPT',
-  XTS = 'XTS',
-  XXX = 'XXX',
-  YER = 'YER',
-  ZAR = 'ZAR',
-  ZMK = 'ZMK',
-  ZMW = 'ZMW',
-  BTC = 'BTC'
 }
 /**
  * @export
@@ -545,7 +354,7 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
     status: !exists(json, 'status') ? undefined : json['status'],
     state: !exists(json, 'state') ? undefined : json['state'],
     payment_status: !exists(json, 'payment_status') ? undefined : json['payment_status'],
-    currency: !exists(json, 'currency') ? undefined : json['currency'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     title: !exists(json, 'title') ? undefined : json['title'],
     note: !exists(json, 'note') ? undefined : json['note'],
     customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
@@ -591,10 +400,10 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
     voided: !exists(json, 'voided') ? undefined : json['voided'],
     voided_at: !exists(json, 'voided_at') ? undefined : new Date(json['voided_at']),
     version: !exists(json, 'version') ? undefined : json['version'],
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -625,7 +434,7 @@ export function OrderToJSON(value?: Order | null): any {
     status: value.status,
     state: value.state,
     payment_status: value.payment_status,
-    currency: value.currency,
+    currency: CurrencyToJSON(value.currency),
     title: value.title,
     note: value.note,
     customer_id: value.customer_id,
@@ -671,10 +480,6 @@ export function OrderToJSON(value?: Order | null): any {
         ? undefined
         : (value.tenders as Array<any>).map(OrderTendersToJSON),
     voided: value.voided,
-    version: value.version,
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    version: value.version
   }
 }

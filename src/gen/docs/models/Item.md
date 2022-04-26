@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 `hidden` | **boolean** |  | [optional] 
 `version` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
-`updated_by` | [**Version**](Version.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
@@ -85,7 +85,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Version`](Version.md)
+
 
 
 

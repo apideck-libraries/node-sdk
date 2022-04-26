@@ -14,7 +14,6 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
 
 /**
  * A card's non-confidential details.
@@ -114,10 +113,10 @@ export interface PaymentCard {
   reference_id?: string | null
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof PaymentCard
    */
-  version?: Version
+  version?: string | null
 }
 
 /**
@@ -186,7 +185,7 @@ export function PaymentCardFromJSONTyped(json: any, ignoreDiscriminator: boolean
       ? undefined
       : AddressFromJSON(json['billing_address']),
     reference_id: !exists(json, 'reference_id') ? undefined : json['reference_id'],
-    version: !exists(json, 'version') ? undefined : VersionFromJSON(json['version'])
+    version: !exists(json, 'version') ? undefined : json['version']
   }
 }
 
@@ -212,6 +211,6 @@ export function PaymentCardToJSON(value?: PaymentCard | null): any {
     enabled: value.enabled,
     billing_address: AddressToJSON(value.billing_address),
     reference_id: value.reference_id,
-    version: VersionToJSON(value.version)
+    version: value.version
   }
 }

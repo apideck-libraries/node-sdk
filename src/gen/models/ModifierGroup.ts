@@ -13,11 +13,6 @@
  */
 
 import { exists } from '../runtime'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
-
 /**
  *
  * @export
@@ -56,28 +51,28 @@ export interface ModifierGroup {
   maximum_allowed?: number
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof ModifierGroup
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof ModifierGroup
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof ModifierGroup
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof ModifierGroup
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 export function ModifierGroupFromJSON(json: any): ModifierGroup {
@@ -94,10 +89,10 @@ export function ModifierGroupFromJSONTyped(json: any, ignoreDiscriminator: boole
     alternate_name: !exists(json, 'alternate_name') ? undefined : json['alternate_name'],
     minimum_required: !exists(json, 'minimum_required') ? undefined : json['minimum_required'],
     maximum_allowed: !exists(json, 'maximum_allowed') ? undefined : json['maximum_allowed'],
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -112,10 +107,6 @@ export function ModifierGroupToJSON(value?: ModifierGroup | null): any {
     name: value.name,
     alternate_name: value.alternate_name,
     minimum_required: value.minimum_required,
-    maximum_allowed: value.maximum_allowed,
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    maximum_allowed: value.maximum_allowed
   }
 }

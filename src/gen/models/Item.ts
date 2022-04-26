@@ -14,7 +14,6 @@
 
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
 
 /**
  *
@@ -75,7 +74,7 @@ export interface Item {
    * @type {Currency}
    * @memberof Item
    */
-  price_currency?: Currency
+  price_currency?: Currency | null
   /**
    *
    * @type {number}
@@ -156,10 +155,10 @@ export interface Item {
   deleted?: boolean | null
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof Item
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
    * @type {string}
@@ -236,7 +235,7 @@ export function ItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): Item
     hidden: !exists(json, 'hidden') ? undefined : json['hidden'],
     version: !exists(json, 'version') ? undefined : json['version'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
@@ -271,7 +270,6 @@ export function ItemToJSON(value?: Item | null): any {
     variations: value.variations,
     available: value.available,
     hidden: value.hidden,
-    deleted: value.deleted,
-    updated_by: VersionToJSON(value.updated_by)
+    deleted: value.deleted
   }
 }

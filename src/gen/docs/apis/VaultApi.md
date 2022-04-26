@@ -238,7 +238,7 @@ vaultApi.connectionsImport(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionImportData** | [ConnectionImportData](../models/ConnectionImportData.md)| Fields that need to be persisted on the resource |
+ **connection** | [ConnectionImportData](../models/ConnectionImportData.md)| Fields that need to be persisted on the resource |
  **serviceId** | [**string**] | Service ID of the resource to return | 
  **unifiedApi** | [**string**] | Unified API | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
@@ -278,7 +278,7 @@ const apideck = new Apideck({
 const params = {
   serviceId: 'pipedrive',
   unifiedApi: 'crm',
-  connectionsImport: {
+  connection: {
     credentials: {
       access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
       refresh_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ'

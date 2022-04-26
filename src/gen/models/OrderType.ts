@@ -13,11 +13,6 @@
  */
 
 import { exists } from '../runtime'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
-
 /**
  *
  * @export
@@ -44,28 +39,28 @@ export interface OrderType {
   _default?: boolean
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof OrderType
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof OrderType
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof OrderType
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof OrderType
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 export function OrderTypeFromJSON(json: any): OrderType {
@@ -80,10 +75,10 @@ export function OrderTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     id: !exists(json, 'id') ? undefined : json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     _default: !exists(json, 'default') ? undefined : json['default'],
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -96,10 +91,6 @@ export function OrderTypeToJSON(value?: OrderType | null): any {
   }
   return {
     name: value.name,
-    default: value._default,
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    default: value._default
   }
 }

@@ -14,11 +14,7 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
 
 /**
  *
@@ -67,31 +63,31 @@ export interface Location {
    * @type {Currency}
    * @memberof Location
    */
-  currency?: Currency
+  currency?: Currency | null
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof Location
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof Location
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof Location
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof Location
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 /**
@@ -120,10 +116,10 @@ export function LocationFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     status: !exists(json, 'status') ? undefined : json['status'],
     merchant_id: !exists(json, 'merchant_id') ? undefined : json['merchant_id'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -140,10 +136,6 @@ export function LocationToJSON(value?: Location | null): any {
     address: AddressToJSON(value.address),
     status: value.status,
     merchant_id: value.merchant_id,
-    currency: CurrencyToJSON(value.currency),
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    currency: CurrencyToJSON(value.currency)
   }
 }

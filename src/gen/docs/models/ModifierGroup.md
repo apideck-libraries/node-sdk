@@ -10,25 +10,14 @@ Name | Type | Description | Notes
 `alternate_name` | **string** |  | [optional] 
 `minimum_required` | **number** |  | [optional] 
 `maximum_allowed` | **number** |  | [optional] 
-`updated_by` | [**Version**](Version.md) |  | [optional] 
-`created_by` | [**CreatedBy**](CreatedBy.md) |  | [optional] 
-`updated_at` | [**UpdatedAt**](UpdatedAt.md) |  | [optional] 
-`created_at` | [**CreatedAt**](CreatedAt.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 
 
-
-## Referenced Types:
-
-
-
-
-
-* [`Version`](Version.md)
-* [`CreatedBy`](CreatedBy.md)
-* [`UpdatedAt`](UpdatedAt.md)
-* [`CreatedAt`](CreatedAt.md)
 
 ---
 

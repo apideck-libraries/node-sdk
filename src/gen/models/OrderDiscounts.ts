@@ -56,7 +56,7 @@ export interface OrderDiscounts {
    * @type {Currency}
    * @memberof OrderDiscounts
    */
-  currency?: Currency
+  currency?: Currency | null
   /**
    *
    * @type {string}

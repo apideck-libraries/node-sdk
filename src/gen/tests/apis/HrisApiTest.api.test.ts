@@ -888,20 +888,20 @@ describe('HrisApi', () => {
             start_date: '2022-04-08',
             end_date: '2022-04-21',
             totals: {
-              company_debit: 27992.49,
-              tax_debit: 8655.32,
-              check_amount: 27966.23,
-              net_pay: 19337.17,
-              gross_pay: 27966.23,
-              employer_taxes: 2038.93,
-              employee_taxes: 6616.39,
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
               employer_benefit_contributions: 0,
               employee_benefit_deductions: 0
             },
             compensations: [
               {
                 employee_id: '12345',
-                net_pay: 2199.93,
+                net_pay: '2199.93===',
                 gross_pay: 3000,
                 taxes: [[Object]],
                 deductions: [[Object]],
@@ -1114,20 +1114,20 @@ describe('HrisApi', () => {
             start_date: '2022-04-08',
             end_date: '2022-04-21',
             totals: {
-              company_debit: 27992.49,
-              tax_debit: 8655.32,
-              check_amount: 27966.23,
-              net_pay: 19337.17,
-              gross_pay: 27966.23,
-              employer_taxes: 2038.93,
-              employee_taxes: 6616.39,
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
               employer_benefit_contributions: 0,
               employee_benefit_deductions: 0
             },
             compensations: [
               {
                 employee_id: '12345',
-                net_pay: 2199.93,
+                net_pay: '2199.93===',
                 gross_pay: 3000,
                 taxes: [[Object]],
                 deductions: [[Object]],
@@ -2002,20 +2002,20 @@ describe('HrisApi', () => {
             start_date: '2022-04-08',
             end_date: '2022-04-21',
             totals: {
-              company_debit: 27992.49,
-              tax_debit: 8655.32,
-              check_amount: 27966.23,
-              net_pay: 19337.17,
-              gross_pay: 27966.23,
-              employer_taxes: 2038.93,
-              employee_taxes: 6616.39,
+              company_debit: '27992.49===',
+              tax_debit: '8655.32===',
+              check_amount: '27966.23===',
+              net_pay: '19337.17===',
+              gross_pay: '27966.23===',
+              employer_taxes: '2038.93===',
+              employee_taxes: '6616.39===',
               employer_benefit_contributions: 0,
               employee_benefit_deductions: 0
             },
             compensations: [
               {
                 employee_id: '12345',
-                net_pay: 2199.93,
+                net_pay: '2199.93===',
                 gross_pay: 3000,
                 taxes: [[Object]],
                 deductions: [[Object]],
@@ -2068,39 +2068,39 @@ describe('HrisApi', () => {
           start_date: '2022-04-08',
           end_date: '2022-04-21',
           totals: {
-            company_debit: 27992.49,
-            tax_debit: 8655.32,
-            check_amount: 27966.23,
-            net_pay: 19337.17,
-            gross_pay: 27966.23,
-            employer_taxes: 2038.93,
-            employee_taxes: 6616.39,
+            company_debit: '27992.49===',
+            tax_debit: '8655.32===',
+            check_amount: '27966.23===',
+            net_pay: '19337.17===',
+            gross_pay: '27966.23===',
+            employer_taxes: '2038.93===',
+            employee_taxes: '6616.39===',
             employer_benefit_contributions: 0,
             employee_benefit_deductions: 0
           },
           compensations: [
             {
               employee_id: '12345',
-              net_pay: 2199.93,
+              net_pay: '2199.93===',
               gross_pay: 3000,
               taxes: [
                 {
                   name: 'CA State Income Tax',
                   employer: false,
-                  amount: 1.97
+                  amount: '1.97==='
                 }
               ],
               deductions: [
                 {
                   name: 'Company Car',
-                  amount: 10.97
+                  amount: '10.97==='
                 }
               ],
               benefits: [
                 {
                   name: 'Health Insurance',
-                  employee_deduction: 142.94,
-                  employer_contribution: 141.14
+                  employee_deduction: '142.94===',
+                  employer_contribution: '141.14==='
                 }
               ]
             }

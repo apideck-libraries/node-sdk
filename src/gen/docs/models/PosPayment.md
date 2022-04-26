@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 `location_id` | **string** |  | [optional] 
 `device_id` | **string** |  | [optional] 
 `external_payment_id` | **string** |  | [optional] 
-`idempotency_key` | [**IdempotencyKey**](IdempotencyKey.md) |  | [optional] 
+`idempotency_key` | **string** | A value you specify that uniquely identifies this request among requests you have sent. | [optional] 
 `tip` | **number** |  | [optional] 
 `tax` | **number** |  | [optional] 
 `total` | **number** |  | [optional] 
@@ -34,10 +34,10 @@ Name | Type | Description | Notes
 `wallet` | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 `external_details` | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
 `service_charges` | [**ServiceCharges**](ServiceCharges.md) |  | [optional] 
-`updated_by` | [**Version**](Version.md) |  | [optional] 
-`created_by` | [**CreatedBy**](CreatedBy.md) |  | [optional] 
-`updated_at` | [**UpdatedAt**](UpdatedAt.md) |  | [optional] 
-`created_at` | [**CreatedAt**](CreatedAt.md) |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 
@@ -96,7 +96,7 @@ Name | Type | Description | Notes
 
 
 
-* [`IdempotencyKey`](IdempotencyKey.md)
+
 
 
 
@@ -113,10 +113,10 @@ Name | Type | Description | Notes
 * [`WalletDetails`](WalletDetails.md)
 * [`PosPaymentExternalDetails`](PosPaymentExternalDetails.md)
 * [`ServiceCharges`](ServiceCharges.md)
-* [`Version`](Version.md)
-* [`CreatedBy`](CreatedBy.md)
-* [`UpdatedAt`](UpdatedAt.md)
-* [`CreatedAt`](CreatedAt.md)
+
+
+
+
 
 ---
 

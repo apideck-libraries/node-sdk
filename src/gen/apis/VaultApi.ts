@@ -66,7 +66,7 @@ export interface VaultApiConnectionsGetSettingsRequest {
 export interface VaultApiConnectionsImportRequest {
   serviceId: string
   unifiedApi: string
-  connectionImportData: ConnectionImportData
+  connection: ConnectionImportData
   consumerId?: string
   appId?: string
 }
@@ -351,13 +351,10 @@ export class VaultApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.connectionImportData === null ||
-      requestParameters.connectionImportData === undefined
-    ) {
+    if (requestParameters.connection === null || requestParameters.connection === undefined) {
       throw new runtime.RequiredError(
-        'connectionImportData',
-        'Required parameter requestParameters.connectionImportData was null or undefined when calling connectionsImport.'
+        'connection',
+        'Required parameter requestParameters.connection was null or undefined when calling connectionsImport.'
       )
     }
 
@@ -387,7 +384,7 @@ export class VaultApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: ConnectionImportDataToJSON(requestParameters.connectionImportData)
+        body: ConnectionImportDataToJSON(requestParameters.connection)
       },
       initOverrides
     )

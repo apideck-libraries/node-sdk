@@ -13,12 +13,6 @@
  */
 
 import { exists } from '../runtime'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
-import { Hidden, HiddenFromJSON, HiddenToJSON } from './Hidden'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
-
 /**
  *
  * @export
@@ -51,16 +45,16 @@ export interface Tender {
   active?: boolean | null
   /**
    *
-   * @type {Hidden}
+   * @type {boolean}
    * @memberof Tender
    */
-  hidden?: Hidden
+  hidden?: boolean | null
   /**
    *
-   * @type {Hidden}
+   * @type {boolean}
    * @memberof Tender
    */
-  editable?: Hidden
+  editable?: boolean | null
   /**
    * If this tender opens the cash drawer
    * @type {boolean}
@@ -75,28 +69,28 @@ export interface Tender {
   allows_tipping?: boolean
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof Tender
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof Tender
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof Tender
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof Tender
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 export function TenderFromJSON(json: any): Tender {
@@ -112,14 +106,14 @@ export function TenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Te
     key: !exists(json, 'key') ? undefined : json['key'],
     label: !exists(json, 'label') ? undefined : json['label'],
     active: !exists(json, 'active') ? undefined : json['active'],
-    hidden: !exists(json, 'hidden') ? undefined : HiddenFromJSON(json['hidden']),
-    editable: !exists(json, 'editable') ? undefined : HiddenFromJSON(json['editable']),
+    hidden: !exists(json, 'hidden') ? undefined : json['hidden'],
+    editable: !exists(json, 'editable') ? undefined : json['editable'],
     opens_cash_drawer: !exists(json, 'opens_cash_drawer') ? undefined : json['opens_cash_drawer'],
     allows_tipping: !exists(json, 'allows_tipping') ? undefined : json['allows_tipping'],
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -134,13 +128,9 @@ export function TenderToJSON(value?: Tender | null): any {
     key: value.key,
     label: value.label,
     active: value.active,
-    hidden: HiddenToJSON(value.hidden),
-    editable: HiddenToJSON(value.editable),
+    hidden: value.hidden,
+    editable: value.editable,
     opens_cash_drawer: value.opens_cash_drawer,
-    allows_tipping: value.allows_tipping,
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    allows_tipping: value.allows_tipping
   }
 }

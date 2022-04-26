@@ -44,7 +44,7 @@ export interface OrderRefunds {
    * @type {Currency}
    * @memberof OrderRefunds
    */
-  currency?: Currency
+  currency?: Currency | null
   /**
    *
    * @type {string}

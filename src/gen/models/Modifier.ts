@@ -13,12 +13,6 @@
  */
 
 import { exists } from '../runtime'
-import { Available, AvailableFromJSON, AvailableToJSON } from './Available'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
-
 /**
  *
  * @export
@@ -57,34 +51,34 @@ export interface Modifier {
   price_amount?: number
   /**
    *
-   * @type {Available}
+   * @type {boolean}
    * @memberof Modifier
    */
-  available?: Available
+  available?: boolean | null
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof Modifier
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof Modifier
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof Modifier
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof Modifier
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 export function ModifierFromJSON(json: any): Modifier {
@@ -101,11 +95,11 @@ export function ModifierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     id: !exists(json, 'id') ? undefined : json['id'],
     alternate_name: !exists(json, 'alternate_name') ? undefined : json['alternate_name'],
     price_amount: !exists(json, 'price_amount') ? undefined : json['price_amount'],
-    available: !exists(json, 'available') ? undefined : AvailableFromJSON(json['available']),
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    available: !exists(json, 'available') ? undefined : json['available'],
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -121,10 +115,6 @@ export function ModifierToJSON(value?: Modifier | null): any {
     modifier_group_id: value.modifier_group_id,
     alternate_name: value.alternate_name,
     price_amount: value.price_amount,
-    available: AvailableToJSON(value.available),
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    available: value.available
   }
 }

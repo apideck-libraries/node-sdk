@@ -57,7 +57,7 @@ export interface OrderTenders {
    * @type {Currency}
    * @memberof OrderTenders
    */
-  currency?: Currency
+  currency?: Currency | null
   /**
    *
    * @type {number}

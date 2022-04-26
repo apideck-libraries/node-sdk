@@ -38,7 +38,7 @@ export interface OrderPayments {
    * @type {Currency}
    * @memberof OrderPayments
    */
-  currency?: Currency
+  currency?: Currency | null
 }
 
 export function OrderPaymentsFromJSON(json: any): OrderPayments {

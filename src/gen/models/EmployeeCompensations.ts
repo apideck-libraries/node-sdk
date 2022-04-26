@@ -51,7 +51,7 @@ export interface EmployeeCompensations {
    * @type {Currency}
    * @memberof EmployeeCompensations
    */
-  currency?: Currency
+  currency?: Currency | null
   /**
    * The FLSA status for this compensation.
    * @type {string}

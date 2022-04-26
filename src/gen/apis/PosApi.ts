@@ -429,7 +429,7 @@ export interface PosApiOrdersUpdateRequest {
 }
 
 export interface PosApiPaymentsAddRequest {
-  posPayment: PosPayment
+  payment: PosPayment
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -463,7 +463,7 @@ export interface PosApiPaymentsOneRequest {
 
 export interface PosApiPaymentsUpdateRequest {
   id: string
-  posPayment: PosPayment
+  payment: PosPayment
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -3064,10 +3064,10 @@ export class PosApi extends runtime.BaseAPI {
     requestParameters: PosApiPaymentsAddRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CreatePosPaymentResponse>> {
-    if (requestParameters.posPayment === null || requestParameters.posPayment === undefined) {
+    if (requestParameters.payment === null || requestParameters.payment === undefined) {
       throw new runtime.RequiredError(
-        'posPayment',
-        'Required parameter requestParameters.posPayment was null or undefined when calling paymentsAdd.'
+        'payment',
+        'Required parameter requestParameters.payment was null or undefined when calling paymentsAdd.'
       )
     }
 
@@ -3103,7 +3103,7 @@ export class PosApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: PosPaymentToJSON(requestParameters.posPayment)
+        body: PosPaymentToJSON(requestParameters.payment)
       },
       initOverrides
     )
@@ -3345,10 +3345,10 @@ export class PosApi extends runtime.BaseAPI {
       )
     }
 
-    if (requestParameters.posPayment === null || requestParameters.posPayment === undefined) {
+    if (requestParameters.payment === null || requestParameters.payment === undefined) {
       throw new runtime.RequiredError(
-        'posPayment',
-        'Required parameter requestParameters.posPayment was null or undefined when calling paymentsUpdate.'
+        'payment',
+        'Required parameter requestParameters.payment was null or undefined when calling paymentsUpdate.'
       )
     }
 
@@ -3387,7 +3387,7 @@ export class PosApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: PosPaymentToJSON(requestParameters.posPayment)
+        body: PosPaymentToJSON(requestParameters.payment)
       },
       initOverrides
     )

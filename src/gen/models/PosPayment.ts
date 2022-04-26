@@ -15,10 +15,7 @@
 import { exists } from '../runtime'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { CashDetails, CashDetailsFromJSON, CashDetailsToJSON } from './CashDetails'
-import { CreatedAt, CreatedAtFromJSON, CreatedAtToJSON } from './CreatedAt'
-import { CreatedBy, CreatedByFromJSON, CreatedByToJSON } from './CreatedBy'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
-import { IdempotencyKey, IdempotencyKeyFromJSON, IdempotencyKeyToJSON } from './IdempotencyKey'
 import {
   PosPaymentCardDetails,
   PosPaymentCardDetailsFromJSON,
@@ -30,8 +27,6 @@ import {
   PosPaymentExternalDetailsToJSON
 } from './PosPaymentExternalDetails'
 import { ServiceCharges, ServiceChargesFromJSON, ServiceChargesToJSON } from './ServiceCharges'
-import { UpdatedAt, UpdatedAtFromJSON, UpdatedAtToJSON } from './UpdatedAt'
-import { Version, VersionFromJSON, VersionToJSON } from './Version'
 import { WalletDetails, WalletDetailsFromJSON, WalletDetailsToJSON } from './WalletDetails'
 
 /**
@@ -75,7 +70,7 @@ export interface PosPayment {
    * @type {Currency}
    * @memberof PosPayment
    */
-  currency: Currency
+  currency: Currency | null
   /**
    *
    * @type {string}
@@ -113,11 +108,11 @@ export interface PosPayment {
    */
   external_payment_id?: string
   /**
-   *
-   * @type {IdempotencyKey}
+   * A value you specify that uniquely identifies this request among requests you have sent.
+   * @type {string}
    * @memberof PosPayment
    */
-  idempotency_key?: IdempotencyKey
+  idempotency_key?: string
   /**
    *
    * @type {number}
@@ -216,28 +211,28 @@ export interface PosPayment {
   service_charges?: ServiceCharges
   /**
    *
-   * @type {Version}
+   * @type {string}
    * @memberof PosPayment
    */
-  updated_by?: Version
+  readonly updated_by?: string | null
   /**
    *
-   * @type {CreatedBy}
+   * @type {string}
    * @memberof PosPayment
    */
-  created_by?: CreatedBy
+  readonly created_by?: string | null
   /**
    *
-   * @type {UpdatedAt}
+   * @type {Date}
    * @memberof PosPayment
    */
-  updated_at?: UpdatedAt
+  readonly updated_at?: Date
   /**
    *
-   * @type {CreatedAt}
+   * @type {Date}
    * @memberof PosPayment
    */
-  created_at?: CreatedAt
+  readonly created_at?: Date
 }
 
 /**
@@ -289,9 +284,7 @@ export function PosPaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     external_payment_id: !exists(json, 'external_payment_id')
       ? undefined
       : json['external_payment_id'],
-    idempotency_key: !exists(json, 'idempotency_key')
-      ? undefined
-      : IdempotencyKeyFromJSON(json['idempotency_key']),
+    idempotency_key: !exists(json, 'idempotency_key') ? undefined : json['idempotency_key'],
     tip: !exists(json, 'tip') ? undefined : json['tip'],
     tax: !exists(json, 'tax') ? undefined : json['tax'],
     total: !exists(json, 'total') ? undefined : json['total'],
@@ -318,10 +311,10 @@ export function PosPaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     service_charges: !exists(json, 'service_charges')
       ? undefined
       : ServiceChargesFromJSON(json['service_charges']),
-    updated_by: !exists(json, 'updated_by') ? undefined : VersionFromJSON(json['updated_by']),
-    created_by: !exists(json, 'created_by') ? undefined : CreatedByFromJSON(json['created_by']),
-    updated_at: !exists(json, 'updated_at') ? undefined : UpdatedAtFromJSON(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : CreatedAtFromJSON(json['created_at'])
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
+    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
 
@@ -344,7 +337,7 @@ export function PosPaymentToJSON(value?: PosPayment | null): any {
     location_id: value.location_id,
     device_id: value.device_id,
     external_payment_id: value.external_payment_id,
-    idempotency_key: IdempotencyKeyToJSON(value.idempotency_key),
+    idempotency_key: value.idempotency_key,
     tip: value.tip,
     tax: value.tax,
     total: value.total,
@@ -360,10 +353,6 @@ export function PosPaymentToJSON(value?: PosPayment | null): any {
     bank_account: BankAccountToJSON(value.bank_account),
     wallet: WalletDetailsToJSON(value.wallet),
     external_details: PosPaymentExternalDetailsToJSON(value.external_details),
-    service_charges: ServiceChargesToJSON(value.service_charges),
-    updated_by: VersionToJSON(value.updated_by),
-    created_by: CreatedByToJSON(value.created_by),
-    updated_at: UpdatedAtToJSON(value.updated_at),
-    created_at: CreatedAtToJSON(value.created_at)
+    service_charges: ServiceChargesToJSON(value.service_charges)
   }
 }
