@@ -40,9 +40,18 @@ describe('VaultApi', () => {
             tag_line:
               'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
             unified_api: 'crm',
+            state: 'authorized',
+            auth_type: 'oauth2',
+            oauth_grant_type: 'authorization_code',
+            status: 'live',
+            enabled: true,
             website: 'https://www.salesforce.com',
             icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
             logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+            authorize_url:
+              'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+            revoke_url:
+              'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
             settings: {
               instance_url: 'https://eu28.salesforce.com',
               api_key: '12345xxxxxx'
@@ -54,9 +63,6 @@ describe('VaultApi', () => {
               },
               plan: 'enterprise'
             },
-            auth_type: 'oauth2',
-            oauth_grant_type: 'authorization_code',
-            status: 'live',
             form_fields: [
               {
                 id: 'instance_url',
@@ -93,15 +99,9 @@ describe('VaultApi', () => {
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
             settings_required_for_authorization: ['instance_url'],
-            authorize_url:
-              'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-            revoke_url:
-              'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-            enabled: true,
             has_guide: true,
             created_at: 1615563533390,
-            updated_at: 1616662325753,
-            state: 'authorized'
+            updated_at: 1616662325753
           }
         ]
       } as any
@@ -175,9 +175,18 @@ describe('VaultApi', () => {
           tag_line:
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
           website: 'https://www.salesforce.com',
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -189,9 +198,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
           form_fields: [
             {
               id: 'instance_url',
@@ -235,15 +241,9 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['instance_url'],
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          enabled: true,
           has_guide: true,
           created_at: 1615563533390,
-          updated_at: 1616662325753,
-          state: 'authorized'
+          updated_at: 1616662325753
         }
       } as any
 
@@ -288,9 +288,18 @@ describe('VaultApi', () => {
           tag_line:
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
           website: 'https://www.salesforce.com',
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -302,9 +311,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
           form_fields: [
             {
               id: 'instance_url',
@@ -348,15 +354,9 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['instance_url'],
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          enabled: true,
           has_guide: true,
           created_at: 1615563533390,
-          updated_at: 1616662325753,
-          state: 'authorized'
+          updated_at: 1616662325753
         }
       } as any
 
@@ -418,9 +418,18 @@ describe('VaultApi', () => {
           tag_line:
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
           website: 'https://www.salesforce.com',
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -432,9 +441,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
           form_fields: [
             {
               id: 'instance_url',
@@ -478,15 +484,9 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['instance_url'],
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          enabled: true,
           has_guide: true,
           created_at: 1615563533390,
-          updated_at: 1616662325753,
-          state: 'authorized'
+          updated_at: 1616662325753
         }
       } as any
 
@@ -530,9 +530,18 @@ describe('VaultApi', () => {
           tag_line:
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
           website: 'https://www.salesforce.com',
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -544,9 +553,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
           form_fields: [
             {
               id: 'instance_url',
@@ -590,15 +596,9 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['instance_url'],
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          enabled: true,
           has_guide: true,
           created_at: 1615563533390,
-          updated_at: 1616662325753,
-          state: 'authorized'
+          updated_at: 1616662325753
         }
       } as any
 
@@ -611,6 +611,7 @@ describe('VaultApi', () => {
         serviceId: 'pipedrive',
         unifiedApi: 'crm',
         connection: {
+          enabled: true,
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -633,8 +634,7 @@ describe('VaultApi', () => {
                 }
               ]
             }
-          ],
-          enabled: true
+          ]
         }
       } as any
       const current = await vault.connectionsUpdate(params)
@@ -668,9 +668,18 @@ describe('VaultApi', () => {
           tag_line:
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
           website: 'https://www.salesforce.com',
           icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
           logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -682,9 +691,6 @@ describe('VaultApi', () => {
             },
             plan: 'enterprise'
           },
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
           form_fields: [
             {
               id: 'instance_url',
@@ -728,15 +734,9 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['instance_url'],
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          enabled: true,
           has_guide: true,
           created_at: 1615563533390,
-          updated_at: 1616662325753,
-          state: 'authorized'
+          updated_at: 1616662325753
         }
       } as any
 
@@ -750,6 +750,7 @@ describe('VaultApi', () => {
         unifiedApi: 'crm',
         resource: 'leads',
         connection: {
+          enabled: true,
           settings: {
             instance_url: 'https://eu28.salesforce.com',
             api_key: '12345xxxxxx'
@@ -772,8 +773,7 @@ describe('VaultApi', () => {
                 }
               ]
             }
-          ],
-          enabled: true
+          ]
         }
       } as any
       const current = await vault.connectionsUpdateSettings(params)
@@ -988,13 +988,13 @@ describe('VaultApi', () => {
             base_url: 'unify.apideck.com',
             child_request: false,
             consumer_id: 'test-consumer',
-            duration: 2220.379304,
+            duration: '2220.379304===',
             error_message: 'Refresh token is invalid',
             execution: 2248,
             has_children: false,
             http_method: 'GET',
             id: '0b5f7480-5550-4f5c-a5fc-3c01ac43dd0f',
-            latency: 27.620695999999953,
+            latency: '27.620695999999953===',
             operation: {
               id: 'connectionsAll',
               name: 'Get All Connections'

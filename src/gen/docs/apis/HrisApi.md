@@ -97,7 +97,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -431,7 +431,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -1100,7 +1100,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',
@@ -1115,8 +1115,8 @@ const params = {
     ],
     compensations: [
       {
-        id: 3404301363494309004,
-        job_id: 3490439050957906679,
+        id: '3404301363494309004',
+        job_id: '3490439050957906679',
         rate: '50.00',
         payment_unit: 'hour',
         flsa_status: 'nonexempt',
@@ -1138,7 +1138,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -1169,7 +1169,7 @@ const params = {
     ],
     custom_fields: [
       {
-        id: 2389328923893298,
+        id: '2389328923893298',
         name: 'employee_level',
         description: 'Employee Level',
         value: 'Uses Salesforce and Marketo'
@@ -1530,7 +1530,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',
@@ -1545,8 +1545,8 @@ const params = {
     ],
     compensations: [
       {
-        id: 3404301363494309004,
-        job_id: 3490439050957906679,
+        id: '3404301363494309004',
+        job_id: '3490439050957906679',
         rate: '50.00',
         payment_unit: 'hour',
         flsa_status: 'nonexempt',
@@ -1568,7 +1568,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -1599,7 +1599,7 @@ const params = {
     ],
     custom_fields: [
       {
-        id: 2389328923893298,
+        id: '2389328923893298',
         name: 'employee_level',
         description: 'Employee Level',
         value: 'Uses Salesforce and Marketo'

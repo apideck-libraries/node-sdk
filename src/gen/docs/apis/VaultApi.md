@@ -434,6 +434,7 @@ const params = {
   serviceId: 'pipedrive',
   unifiedApi: 'crm',
   connection: {
+    enabled: true,
     settings: {
       instance_url: 'https://eu28.salesforce.com',
       api_key: '12345xxxxxx'
@@ -456,8 +457,7 @@ const params = {
           }
         ]
       }
-    ],
-    enabled: true
+    ]
   }
 }
 
@@ -532,6 +532,7 @@ const params = {
   unifiedApi: 'crm',
   resource: 'leads',
   connection: {
+    enabled: true,
     settings: {
       instance_url: 'https://eu28.salesforce.com',
       api_key: '12345xxxxxx'
@@ -554,8 +555,7 @@ const params = {
           }
         ]
       }
-    ],
-    enabled: true
+    ]
   }
 }
 

@@ -583,7 +583,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -891,7 +891,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -990,7 +990,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1299,7 +1299,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2472,9 +2472,9 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
+    total_amount: '27.5===',
     total_tip: 7,
-    total_tax: 2.75,
+    total_tax: '2.75===',
     total_discount: 3,
     total_refund: 0,
     total_service_charge: 0,
@@ -2546,7 +2546,7 @@ const params = {
         total_discount: 3000,
         total_amount: 27500,
         quantity: 1,
-        unit_price: 27500.5,
+        unit_price: '27500.5===',
         applied_taxes: [
           {
             tax_id: 'sales-tax',
@@ -2580,7 +2580,7 @@ const params = {
       {
         name: 'Charge for delivery',
         amount: 27500,
-        percentage: 12.5,
+        percentage: '12.5===',
         currency: 'USD',
         type: 'auto_gratuity'
       }
@@ -2621,10 +2621,10 @@ const params = {
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
         currency: 'USD',
-        total_amount: 27.5,
+        total_amount: '27.5===',
         total_tip: 7,
         total_processing_fee: 0,
-        total_tax: 2.75,
+        total_tax: '2.75===',
         total_discount: 3,
         total_refund: 0,
         total_service_charge: 0,
@@ -2657,7 +2657,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -2973,9 +2973,9 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
+    total_amount: '27.5===',
     total_tip: 7,
-    total_tax: 2.75,
+    total_tax: '2.75===',
     total_discount: 3,
     total_refund: 0,
     total_service_charge: 0,
@@ -3047,7 +3047,7 @@ const params = {
         total_discount: 3000,
         total_amount: 27500,
         quantity: 1,
-        unit_price: 27500.5,
+        unit_price: '27500.5===',
         applied_taxes: [
           {
             tax_id: 'sales-tax',
@@ -3081,7 +3081,7 @@ const params = {
       {
         name: 'Charge for delivery',
         amount: 27500,
-        percentage: 12.5,
+        percentage: '12.5===',
         currency: 'USD',
         type: 'auto_gratuity'
       }
@@ -3122,10 +3122,10 @@ const params = {
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
         currency: 'USD',
-        total_amount: 27.5,
+        total_amount: '27.5===',
         total_tip: 7,
         total_processing_fee: 0,
-        total_tax: 2.75,
+        total_tax: '2.75===',
         total_discount: 3,
         total_refund: 0,
         total_service_charge: 0,
@@ -3158,7 +3158,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -3267,9 +3267,9 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
+    total_amount: '27.5===',
     total_tip: 7,
-    total_tax: 2.75,
+    total_tax: '2.75===',
     total_discount: 3,
     total_refund: 0,
     total_service_charge: 0,
@@ -3341,7 +3341,7 @@ const params = {
         total_discount: 3000,
         total_amount: 27500,
         quantity: 1,
-        unit_price: 27500.5,
+        unit_price: '27500.5===',
         applied_taxes: [
           {
             tax_id: 'sales-tax',
@@ -3375,7 +3375,7 @@ const params = {
       {
         name: 'Charge for delivery',
         amount: 27500,
-        percentage: 12.5,
+        percentage: '12.5===',
         currency: 'USD',
         type: 'auto_gratuity'
       }
@@ -3416,10 +3416,10 @@ const params = {
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
         currency: 'USD',
-        total_amount: 27.5,
+        total_amount: '27.5===',
         total_tip: 7,
         total_processing_fee: 0,
-        total_tax: 2.75,
+        total_tax: '2.75===',
         total_discount: 3,
         total_refund: 0,
         total_service_charge: 0,
@@ -3452,7 +3452,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -3552,18 +3552,18 @@ const params = {
     tender_id: '12345',
     external_payment_id: '12345',
     idempotency_key: 'random_string',
-    amount: 27.5,
+    amount: '27.5===',
     currency: 'USD',
     tip: 7,
     tax: 20,
-    total: 37.5,
+    total: '37.5===',
     app_fee: 3,
     change_back_cash_amount: 20,
-    approved: 37.5,
-    refunded: 37.5,
+    approved: '37.5===',
+    refunded: '37.5===',
     processing_fees: [
       {
-        amount: 1.05,
+        amount: '1.05===',
         effective_at: '2020-09-30T07:43:32.000Z',
         processing_type: 'initial'
       }
@@ -3602,7 +3602,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',
@@ -3637,13 +3637,13 @@ const params = {
       type: 'check',
       source: 'string',
       source_id: 'string',
-      source_fee_amount: 2.5
+      source_fee_amount: '2.5==='
     },
     service_charges: [
       {
         name: 'Charge for delivery',
         amount: 27500,
-        percentage: 12.5,
+        percentage: '12.5===',
         currency: 'USD',
         type: 'auto_gratuity'
       }
@@ -3936,18 +3936,18 @@ const params = {
     tender_id: '12345',
     external_payment_id: '12345',
     idempotency_key: 'random_string',
-    amount: 27.5,
+    amount: '27.5===',
     currency: 'USD',
     tip: 7,
     tax: 20,
-    total: 37.5,
+    total: '37.5===',
     app_fee: 3,
     change_back_cash_amount: 20,
-    approved: 37.5,
-    refunded: 37.5,
+    approved: '37.5===',
+    refunded: '37.5===',
     processing_fees: [
       {
-        amount: 1.05,
+        amount: '1.05===',
         effective_at: '2020-09-30T07:43:32.000Z',
         processing_type: 'initial'
       }
@@ -3986,7 +3986,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',
@@ -4021,13 +4021,13 @@ const params = {
       type: 'check',
       source: 'string',
       source_id: 'string',
-      source_fee_amount: 2.5
+      source_fee_amount: '2.5==='
     },
     service_charges: [
       {
         name: 'Charge for delivery',
         amount: 27500,
-        percentage: 12.5,
+        percentage: '12.5===',
         currency: 'USD',
         type: 'auto_gratuity'
       }
