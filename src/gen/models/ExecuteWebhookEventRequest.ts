@@ -5,7 +5,7 @@
  * @interface ExecuteWebhookEventRequest
  */
 export interface ExecuteWebhookEventRequest {
-  [key: string]: object
+  [key: string]: unknown
 }
 
 export function ExecuteWebhookEventRequestFromJSON(json: any): ExecuteWebhookEventRequest {
