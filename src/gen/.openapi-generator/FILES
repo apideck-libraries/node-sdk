@@ -361,6 +361,8 @@ Tax.md
 TaxRate.md
 TaxRatesFilter.md
 Tender.md
+TooManyRequestsResponse.md
+TooManyRequestsResponseDetail.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
@@ -764,6 +766,8 @@ models/Tax.ts
 models/TaxRate.ts
 models/TaxRatesFilter.ts
 models/Tender.ts
+models/TooManyRequestsResponse.ts
+models/TooManyRequestsResponseDetail.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts
