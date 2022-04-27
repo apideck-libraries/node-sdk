@@ -39,10 +39,10 @@ export interface ConnectionImportData {
   settings?: object | null
   /**
    * Attach your own consumer specific metadata
-   * @type {{ [key: string]: object; }}
+   * @type {{ [key: string]: unknown; }}
    * @memberof ConnectionImportData
    */
-  metadata?: { [key: string]: object } | null
+  metadata?: { [key: string]: unknown } | null
 }
 
 export function ConnectionImportDataFromJSON(json: any): ConnectionImportData {

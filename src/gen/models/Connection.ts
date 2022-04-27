@@ -79,16 +79,16 @@ export interface Connection {
   readonly logo?: string
   /**
    * Connection settings. Values will persist to `form_fields` with corresponding id
-   * @type {{ [key: string]: object; }}
+   * @type {{ [key: string]: unknown; }}
    * @memberof Connection
    */
-  settings?: { [key: string]: object } | null
+  settings?: { [key: string]: unknown } | null
   /**
    * Attach your own consumer specific metadata
-   * @type {{ [key: string]: object; }}
+   * @type {{ [key: string]: unknown; }}
    * @memberof Connection
    */
-  metadata?: { [key: string]: object } | null
+  metadata?: { [key: string]: unknown } | null
   /**
    *
    * @type {AuthType}

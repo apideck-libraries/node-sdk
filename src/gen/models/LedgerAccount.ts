@@ -28,7 +28,7 @@ import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './Lin
  * @interface LedgerAccount
  */
 export interface LedgerAccount {
-  [key: string]: object | any
+  [key: string]: unknown | any
   /**
    *
    * @type {string}

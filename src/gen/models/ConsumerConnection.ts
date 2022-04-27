@@ -95,10 +95,10 @@ export interface ConsumerConnection {
   settings?: object | null
   /**
    * Attach your own consumer specific metadata
-   * @type {{ [key: string]: object; }}
+   * @type {{ [key: string]: unknown; }}
    * @memberof ConsumerConnection
    */
-  metadata?: { [key: string]: object } | null
+  metadata?: { [key: string]: unknown } | null
   /**
    *
    * @type {string}

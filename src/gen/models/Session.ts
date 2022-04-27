@@ -35,7 +35,7 @@ export interface Session {
   consumer_metadata?: ConsumerMetadata
   /**
    * Custom consumer settings that are passed as part of the session.
-   * @type {{ [key: string]: object; }}
+   * @type {{ [key: string]: unknown; }}
    * @memberof Session
    */
   custom_consumer_settings?: { [key: string]: unknown }
