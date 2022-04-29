@@ -82,7 +82,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: '40.759211',
+            latitude: 40.759211,
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -114,7 +114,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -201,7 +201,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -234,7 +234,7 @@ describe('CrmApi', () => {
             video_conference_id: 'zoom:88120759396',
             custom_fields: [
               {
-                id: '2389328923893298',
+                id: 2389328923893298,
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -390,7 +390,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: '40.759211',
+            latitude: 40.759211,
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -423,7 +423,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -537,7 +537,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: '40.759211',
+            latitude: 40.759211,
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -569,7 +569,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -681,7 +681,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -719,7 +719,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -813,7 +813,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: '40.759211',
+                latitude: 40.759211,
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -851,7 +851,7 @@ describe('CrmApi', () => {
             ],
             custom_fields: [
               {
-                id: '2389328923893298',
+                id: 2389328923893298,
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1011,7 +1011,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1049,7 +1049,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1166,7 +1166,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1204,7 +1204,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1274,7 +1274,7 @@ describe('CrmApi', () => {
           lead_source: 'Cold Call',
           fax: '+12129876543',
           description: 'Internal champion',
-          current_balance: '10.5===',
+          current_balance: 10.5,
           status: 'open',
           active: true,
           websites: [
@@ -1299,7 +1299,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1337,7 +1337,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1397,7 +1397,7 @@ describe('CrmApi', () => {
             lead_source: 'Cold Call',
             fax: '+12129876543',
             description: 'Internal champion',
-            current_balance: '10.5===',
+            current_balance: 10.5,
             status: 'open',
             active: true,
             websites: [
@@ -1422,7 +1422,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: '40.759211',
+                latitude: 40.759211,
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1460,7 +1460,7 @@ describe('CrmApi', () => {
             ],
             custom_fields: [
               {
-                id: '2389328923893298',
+                id: 2389328923893298,
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1585,7 +1585,7 @@ describe('CrmApi', () => {
           lead_source: 'Cold Call',
           fax: '+12129876543',
           description: 'Internal champion',
-          current_balance: '10.5===',
+          current_balance: 10.5,
           status: 'open',
           active: true,
           websites: [
@@ -1610,7 +1610,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1648,7 +1648,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1732,7 +1732,7 @@ describe('CrmApi', () => {
           lead_source: 'Cold Call',
           fax: '+12129876543',
           description: 'Internal champion',
-          current_balance: '10.5===',
+          current_balance: 10.5,
           status: 'open',
           active: true,
           websites: [
@@ -1757,7 +1757,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1795,7 +1795,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1881,7 +1881,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1919,7 +1919,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1996,7 +1996,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: '40.759211',
+                latitude: 40.759211,
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -2034,7 +2034,7 @@ describe('CrmApi', () => {
             ],
             custom_fields: [
               {
-                id: '2389328923893298',
+                id: 2389328923893298,
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -2173,7 +2173,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2211,7 +2211,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2309,7 +2309,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2347,7 +2347,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2679,7 +2679,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2748,7 +2748,7 @@ describe('CrmApi', () => {
             interaction_count: 0,
             custom_fields: [
               {
-                id: '2389328923893298',
+                id: 2389328923893298,
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -2886,7 +2886,7 @@ describe('CrmApi', () => {
           interaction_count: 0,
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2981,7 +2981,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           custom_fields: [
             {
-              id: '2389328923893298',
+              id: 2389328923893298,
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -3326,7 +3326,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -3416,7 +3416,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: '40.759211',
+                latitude: 40.759211,
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -3568,7 +3568,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -3679,7 +3679,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: '40.759211',
+              latitude: 40.759211,
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',

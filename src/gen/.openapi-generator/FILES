@@ -271,6 +271,7 @@ GetWebhooksResponse.md
 HrisApi.md
 HrisApiTest.api.test.ts
 HrisCompany.md
+HrisEventType.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -681,6 +682,7 @@ models/GetWebhookEventLogsResponse.ts
 models/GetWebhookResponse.ts
 models/GetWebhooksResponse.ts
 models/HrisCompany.ts
+models/HrisEventType.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts

@@ -180,7 +180,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: '40.759211',
+        latitude: 40.759211,
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -536,7 +536,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: '40.759211',
+        latitude: 40.759211,
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -668,7 +668,7 @@ const params = {
     tracked: true,
     type: 'inventory',
     sales_details: {
-      unit_price: '27500.5===',
+      unit_price: 27500.5,
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -676,7 +676,7 @@ const params = {
       }
     },
     purchase_details: {
-      unit_price: '27500.5===',
+      unit_price: 27500.5,
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -684,7 +684,7 @@ const params = {
       }
     },
     quantity: 1,
-    unit_price: '27500.5===',
+    unit_price: 27500.5,
     asset_account: {
       id: '123456',
       nominal_code: 'N091'
@@ -985,7 +985,7 @@ const params = {
     tracked: true,
     type: 'inventory',
     sales_details: {
-      unit_price: '27500.5===',
+      unit_price: 27500.5,
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -993,7 +993,7 @@ const params = {
       }
     },
     purchase_details: {
-      unit_price: '27500.5===',
+      unit_price: 27500.5,
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
@@ -1001,7 +1001,7 @@ const params = {
       }
     },
     quantity: 1,
-    unit_price: '27500.5===',
+    unit_price: 27500.5,
     asset_account: {
       id: '123456',
       nominal_code: 'N091'
@@ -1100,7 +1100,7 @@ const params = {
     status: 'draft',
     invoice_sent: true,
     currency: 'USD',
-    currency_rate: '0.69===',
+    currency_rate: 0.69,
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1118,9 +1118,9 @@ const params = {
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
-        unit_price: '27500.5===',
+        unit_price: 27500.5,
         unit_of_measure: 'pc.',
-        discount_percentage: '0.01===',
+        discount_percentage: 0.01,
         item: {
           id: '12344'
         },
@@ -1148,7 +1148,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: '40.759211',
+      latitude: 40.759211,
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1173,7 +1173,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: '40.759211',
+      latitude: 40.759211,
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1478,7 +1478,7 @@ const params = {
     status: 'draft',
     invoice_sent: true,
     currency: 'USD',
-    currency_rate: '0.69===',
+    currency_rate: 0.69,
     tax_inclusive: true,
     sub_total: 27500,
     total_tax: 2500,
@@ -1496,9 +1496,9 @@ const params = {
         tax_amount: 27500,
         total_amount: 27500,
         quantity: 1,
-        unit_price: '27500.5===',
+        unit_price: 27500.5,
         unit_of_measure: 'pc.',
-        discount_percentage: '0.01===',
+        discount_percentage: 0.01,
         item: {
           id: '12344'
         },
@@ -1526,7 +1526,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: '40.759211',
+      latitude: 40.759211,
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1551,7 +1551,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: '40.759211',
+      latitude: 40.759211,
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2057,8 +2057,8 @@ const apideck = new Apideck({
 const params = {
   payment: {
     currency: 'USD',
-    currency_rate: '0.69===',
-    total_amount: '49.99===',
+    currency_rate: 0.69,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'Credit Card',
     payment_method_reference: '123456',
@@ -2080,7 +2080,7 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: '49.99==='
+        amount: 49.99
       }
     ],
     note: 'Some notes about this payment',
@@ -2364,8 +2364,8 @@ const params = {
   id: 'id_example',
   payment: {
     currency: 'USD',
-    currency_rate: '0.69===',
-    total_amount: '49.99===',
+    currency_rate: 0.69,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'Credit Card',
     payment_method_reference: '123456',
@@ -2387,7 +2387,7 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: '49.99==='
+        amount: 49.99
       }
     ],
     note: 'Some notes about this payment',
