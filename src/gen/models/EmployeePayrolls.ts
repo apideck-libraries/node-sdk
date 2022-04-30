@@ -30,10 +30,10 @@ export interface EmployeePayrolls {
   employee?: Employee
   /**
    *
-   * @type {Payroll}
+   * @type {Array<Payroll>}
    * @memberof EmployeePayrolls
    */
-  payrolls?: Payroll
+  payrolls?: Array<Payroll>
 }
 
 export function EmployeePayrollsFromJSON(json: any): EmployeePayrolls {
@@ -49,7 +49,9 @@ export function EmployeePayrollsFromJSONTyped(
   }
   return {
     employee: !exists(json, 'employee') ? undefined : EmployeeFromJSON(json['employee']),
-    payrolls: !exists(json, 'payrolls') ? undefined : PayrollFromJSON(json['payrolls'])
+    payrolls: !exists(json, 'payrolls')
+      ? undefined
+      : (json['payrolls'] as Array<any>).map(PayrollFromJSON)
   }
 }
 
@@ -62,6 +64,7 @@ export function EmployeePayrollsToJSON(value?: EmployeePayrolls | null): any {
   }
   return {
     employee: EmployeeToJSON(value.employee),
-    payrolls: PayrollToJSON(value.payrolls)
+    payrolls:
+      value.payrolls === undefined ? undefined : (value.payrolls as Array<any>).map(PayrollToJSON)
   }
 }
