@@ -879,36 +879,38 @@ describe('HrisApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z'
           },
-          payrolls: {
-            id: '12345',
-            company_id: '23456',
-            processed: false,
-            processed_date: '2022-04-08',
-            check_date: '2022-04-08',
-            start_date: '2022-04-08',
-            end_date: '2022-04-21',
-            totals: {
-              company_debit: 27992.49,
-              tax_debit: 8655.32,
-              check_amount: 27966.23,
-              net_pay: 19337.17,
-              gross_pay: 27966.23,
-              employer_taxes: 2038.93,
-              employee_taxes: 6616.39,
-              employer_benefit_contributions: 0,
-              employee_benefit_deductions: 0
-            },
-            compensations: [
-              {
-                employee_id: '12345',
-                net_pay: 2199.93,
-                gross_pay: 3000,
-                taxes: [[Object]],
-                deductions: [[Object]],
-                benefits: [[Object]]
-              }
-            ]
-          }
+          payrolls: [
+            {
+              id: '12345',
+              company_id: '23456',
+              processed: false,
+              processed_date: '2022-04-08',
+              check_date: '2022-04-08',
+              start_date: '2022-04-08',
+              end_date: '2022-04-21',
+              totals: {
+                company_debit: 27992.49,
+                tax_debit: 8655.32,
+                check_amount: 27966.23,
+                net_pay: 19337.17,
+                gross_pay: 27966.23,
+                employer_taxes: 2038.93,
+                employee_taxes: 6616.39,
+                employer_benefit_contributions: 0,
+                employee_benefit_deductions: 0
+              },
+              compensations: [
+                {
+                  employee_id: '12345',
+                  net_pay: 2199.93,
+                  gross_pay: 3000,
+                  taxes: [Array],
+                  deductions: [Array],
+                  benefits: [Array]
+                }
+              ]
+            }
+          ]
         }
       } as any
 

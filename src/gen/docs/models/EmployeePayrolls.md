@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `employee` | [**Employee**](Employee.md) |  | [optional] 
-`payrolls` | [**Payroll**](Payroll.md) |  | [optional] 
+`payrolls` | [**Array&lt;Payroll&gt;**](Payroll.md) |  | [optional] 
 
 
 
