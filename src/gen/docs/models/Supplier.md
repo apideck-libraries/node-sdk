@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `status` | **string** | Customer status | [optional] 
 `updated_by` | **string** |  | [optional] 
@@ -68,7 +67,6 @@ Name | Type | Description | Notes
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 
 * [`Currency`](Currency.md)
-* [`BankAccount`](BankAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 
 

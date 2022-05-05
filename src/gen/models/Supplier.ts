@@ -14,7 +14,6 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
-import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
@@ -130,12 +129,6 @@ export interface Supplier {
   currency?: Currency | null
   /**
    *
-   * @type {BankAccount}
-   * @memberof Supplier
-   */
-  bank_accounts?: BankAccount
-  /**
-   *
    * @type {LinkedLedgerAccount}
    * @memberof Supplier
    */
@@ -221,9 +214,6 @@ export function SupplierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     tax_number: !exists(json, 'tax_number') ? undefined : json['tax_number'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
-    bank_accounts: !exists(json, 'bank_accounts')
-      ? undefined
-      : BankAccountFromJSON(json['bank_accounts']),
     account: !exists(json, 'account') ? undefined : LinkedLedgerAccountFromJSON(json['account']),
     status: !exists(json, 'status') ? undefined : json['status'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -264,7 +254,6 @@ export function SupplierToJSON(value?: Supplier | null): any {
     tax_rate: LinkedTaxRateToJSON(value.tax_rate),
     tax_number: value.tax_number,
     currency: CurrencyToJSON(value.currency),
-    bank_accounts: BankAccountToJSON(value.bank_accounts),
     account: LinkedLedgerAccountToJSON(value.account),
     status: value.status,
     row_version: value.row_version

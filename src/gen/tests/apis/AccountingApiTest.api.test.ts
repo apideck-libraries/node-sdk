@@ -2540,16 +2540,6 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
           account: {
             id: '123456',
             nominal_code: 'N091'
@@ -2654,16 +2644,6 @@ describe('AccountingApi', () => {
             },
             tax_number: 'US123945459',
             currency: 'USD',
-            bank_accounts: {
-              iban: 'CH2989144532982975332',
-              bic: 'AUDSCHGGXXX',
-              bsb_number: '062-001',
-              bank_code: 'BNH',
-              account_number: '123456789',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
-              currency: 'USD'
-            },
             account: {
               id: '123456',
               name: 'Bank account',
@@ -2833,16 +2813,6 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
           account: {
             id: '123456',
             name: 'Bank account',
@@ -2969,16 +2939,6 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
           account: {
             id: '123456',
             nominal_code: 'N091'
