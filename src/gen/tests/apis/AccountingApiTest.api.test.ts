@@ -2443,6 +2443,556 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#suppliersAdd', () => {
+    const endpoint = '/accounting/suppliers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        supplier: {
+          company_name: 'SpaceX',
+          display_name: 'Windsurf Shop',
+          title: 'CEO',
+          first_name: 'Elon',
+          middle_name: 'D.',
+          last_name: 'Musk',
+          suffix: 'Jr.',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
+          ],
+          notes: 'Some notes about this supplier',
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              extension: '105',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
+          tax_rate: {
+            id: '123456'
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          bank_accounts: {
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            bank_code: 'BNH',
+            account_number: '123456789',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
+          },
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
+          status: 'active',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.suppliersAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#suppliersAll', () => {
+    const endpoint = '/accounting/suppliers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'suppliers',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            company_name: 'SpaceX',
+            display_name: 'Windsurf Shop',
+            title: 'CEO',
+            first_name: 'Elon',
+            middle_name: 'D.',
+            last_name: 'Musk',
+            suffix: 'Jr.',
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: 40.759211,
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
+            ],
+            notes: 'Some notes about this supplier',
+            phone_numbers: [
+              {
+                id: '12345',
+                country_code: '1',
+                area_code: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: 'primary'
+              }
+            ],
+            emails: [
+              {
+                id: '123',
+                email: 'elon@musk.com',
+                type: 'primary'
+              }
+            ],
+            websites: [
+              {
+                id: '12345',
+                url: 'http://example.com',
+                type: 'primary'
+              }
+            ],
+            tax_rate: {
+              id: '123456',
+              code: 'N-T',
+              name: 'GST on Purchases'
+            },
+            tax_number: 'US123945459',
+            currency: 'USD',
+            bank_accounts: {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              bank_code: 'BNH',
+              account_number: '123456789',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            },
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091'
+            },
+            status: 'active',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.suppliersAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#suppliersDelete', () => {
+    const endpoint = '/accounting/suppliers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'suppliers',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.suppliersDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#suppliersOne', () => {
+    const endpoint = '/accounting/suppliers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'suppliers',
+        operation: 'one',
+        data: {
+          id: '12345',
+          company_name: 'SpaceX',
+          display_name: 'Windsurf Shop',
+          title: 'CEO',
+          first_name: 'Elon',
+          middle_name: 'D.',
+          last_name: 'Musk',
+          suffix: 'Jr.',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
+          ],
+          notes: 'Some notes about this supplier',
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              extension: '105',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
+          tax_rate: {
+            id: '123456',
+            code: 'N-T',
+            name: 'GST on Purchases'
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          bank_accounts: {
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            bank_code: 'BNH',
+            account_number: '123456789',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
+          },
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091'
+          },
+          status: 'active',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.suppliersOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#suppliersUpdate', () => {
+    const endpoint = '/accounting/suppliers/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'suppliers',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        supplier: {
+          company_name: 'SpaceX',
+          display_name: 'Windsurf Shop',
+          title: 'CEO',
+          first_name: 'Elon',
+          middle_name: 'D.',
+          last_name: 'Musk',
+          suffix: 'Jr.',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
+          ],
+          notes: 'Some notes about this supplier',
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              extension: '105',
+              type: 'primary'
+            }
+          ],
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
+          tax_rate: {
+            id: '123456'
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          bank_accounts: {
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            bank_code: 'BNH',
+            account_number: '123456789',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            currency: 'USD'
+          },
+          account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
+          status: 'active',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.suppliersUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#taxRatesAdd', () => {
     const endpoint = '/accounting/tax-rates'
 

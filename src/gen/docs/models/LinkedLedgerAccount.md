@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
-`name` | **string** |  | [optional] 
-`nominal_code` | **string** |  | [optional] 
+`id` | **string** | The unique identifier for the account. | 
+`name` | **string** | The name of the account. | [optional] 
+`nominal_code` | **string** | The nominal code of the account. | [optional] 
 
 
 

@@ -31,6 +31,11 @@
 * [Delete Payment](#paymentsDelete)
 * [Get Payment](#paymentsOne)
 * [Update Payment](#paymentsUpdate)
+* [Create Supplier](#suppliersAdd)
+* [List Suppliers](#suppliersAll)
+* [Delete Supplier](#suppliersDelete)
+* [Get Supplier](#suppliersOne)
+* [Update Supplier](#suppliersUpdate)
 * [Create Tax Rate](#taxRatesAdd)
 * [List Tax Rates](#taxRatesAll)
 * [Delete Tax Rate](#taxRatesDelete)
@@ -2399,6 +2404,514 @@ const params = {
 
 try {
   const { data } = await apideck.accounting.paymentsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="suppliersAdd"></a>
+# Create Supplier
+
+
+Method: **suppliersAdd**
+
+```typescript
+accountingApi.suppliersAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplier** | [Supplier](../models/Supplier.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateSupplierResponse`](../models/CreateSupplierResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Supplier created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  supplier: {
+    company_name: 'SpaceX',
+    display_name: 'Windsurf Shop',
+    title: 'CEO',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
+    suffix: 'Jr.',
+    addresses: [
+      {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: 40.759211,
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
+      }
+    ],
+    notes: 'Some notes about this supplier',
+    phone_numbers: [
+      {
+        id: '12345',
+        country_code: '1',
+        area_code: '323',
+        number: '111-111-1111',
+        extension: '105',
+        type: 'primary'
+      }
+    ],
+    emails: [
+      {
+        id: '123',
+        email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ],
+    websites: [
+      {
+        id: '12345',
+        url: 'http://example.com',
+        type: 'primary'
+      }
+    ],
+    tax_rate: {
+      id: '123456'
+    },
+    tax_number: 'US123945459',
+    currency: 'USD',
+    bank_accounts: {
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      bank_code: 'BNH',
+      account_number: '123456789',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
+    },
+    account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
+    status: 'active',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.suppliersAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="suppliersAll"></a>
+# List Suppliers
+
+
+Method: **suppliersAll**
+
+```typescript
+accountingApi.suppliersAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetSuppliersResponse`](../models/GetSuppliersResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Suppliers | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.suppliersAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="suppliersDelete"></a>
+# Delete Supplier
+
+
+Method: **suppliersDelete**
+
+```typescript
+accountingApi.suppliersDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteSupplierResponse`](../models/DeleteSupplierResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Supplier deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.suppliersDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="suppliersOne"></a>
+# Get Supplier
+
+
+Method: **suppliersOne**
+
+```typescript
+accountingApi.suppliersOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetSupplierResponse`](../models/GetSupplierResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Supplier | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.suppliersOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="suppliersUpdate"></a>
+# Update Supplier
+
+
+Method: **suppliersUpdate**
+
+```typescript
+accountingApi.suppliersUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplier** | [Supplier](../models/Supplier.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateSupplierResponse`](../models/UpdateSupplierResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Supplier updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  supplier: {
+    company_name: 'SpaceX',
+    display_name: 'Windsurf Shop',
+    title: 'CEO',
+    first_name: 'Elon',
+    middle_name: 'D.',
+    last_name: 'Musk',
+    suffix: 'Jr.',
+    addresses: [
+      {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: 40.759211,
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
+      }
+    ],
+    notes: 'Some notes about this supplier',
+    phone_numbers: [
+      {
+        id: '12345',
+        country_code: '1',
+        area_code: '323',
+        number: '111-111-1111',
+        extension: '105',
+        type: 'primary'
+      }
+    ],
+    emails: [
+      {
+        id: '123',
+        email: 'elon@musk.com',
+        type: 'primary'
+      }
+    ],
+    websites: [
+      {
+        id: '12345',
+        url: 'http://example.com',
+        type: 'primary'
+      }
+    ],
+    tax_rate: {
+      id: '123456'
+    },
+    tax_number: 'US123945459',
+    currency: 'USD',
+    bank_accounts: {
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      bank_code: 'BNH',
+      account_number: '123456789',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      currency: 'USD'
+    },
+    account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
+    status: 'active',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.suppliersUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
