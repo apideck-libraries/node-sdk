@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 `tax_inclusive` | **boolean** | Amounts are including tax | [optional] 
 `sub_total` | **number** |  | [optional] 
 `total_tax` | **number** |  | [optional] 
+`tax_code` | **string** |  | [optional] 
 `total` | **number** |  | [optional] 
 `balance` | **number** |  | [optional] 
 `deposit` | **number** |  | [optional] 
@@ -96,6 +97,7 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
 
 
 
