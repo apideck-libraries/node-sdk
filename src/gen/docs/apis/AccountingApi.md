@@ -5,6 +5,11 @@
 
 ## Methods
 
+* [Create Bill](#billsAdd)
+* [List Bills](#billsAll)
+* [Delete Bill](#billsDelete)
+* [Get Bill](#billsOne)
+* [Update Bill](#billsUpdate)
 * [Get Company Info](#companyInfoOne)
 * [Create Customer](#customersAdd)
 * [List Customers](#customersAll)
@@ -41,6 +46,448 @@
 * [Delete Tax Rate](#taxRatesDelete)
 * [Get Tax Rate](#taxRatesOne)
 * [Update Tax Rate](#taxRatesUpdate)
+
+<a name="billsAdd"></a>
+# Create Bill
+
+
+Method: **billsAdd**
+
+```typescript
+accountingApi.billsAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bill** | [Bill](../models/Bill.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateBillResponse`](../models/CreateBillResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Bill created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  bill: {
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop'
+    },
+    currency: 'USD',
+    currency_rate: 0.69,
+    tax_inclusive: true,
+    bill_date: '2020-09-30',
+    due_date: '2020-10-30',
+    po_number: '90000117',
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        item: {
+          id: '12344'
+        },
+        tax_rate: {
+          id: '123456'
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    terms: 'Net 30 days',
+    balance: 27500,
+    total: 27500,
+    tax_code: '1234',
+    notes: 'Some notes about this bill.',
+    status: 'draft',
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.billsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billsAll"></a>
+# List Bills
+
+
+Method: **billsAll**
+
+```typescript
+accountingApi.billsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetBillsResponse`](../models/GetBillsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bills | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.billsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billsDelete"></a>
+# Delete Bill
+
+
+Method: **billsDelete**
+
+```typescript
+accountingApi.billsDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteBillResponse`](../models/DeleteBillResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.billsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billsOne"></a>
+# Get Bill
+
+
+Method: **billsOne**
+
+```typescript
+accountingApi.billsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetBillResponse`](../models/GetBillResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.billsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billsUpdate"></a>
+# Update Bill
+
+
+Method: **billsUpdate**
+
+```typescript
+accountingApi.billsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bill** | [Bill](../models/Bill.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateBillResponse`](../models/UpdateBillResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill Updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  bill: {
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop'
+    },
+    currency: 'USD',
+    currency_rate: 0.69,
+    tax_inclusive: true,
+    bill_date: '2020-09-30',
+    due_date: '2020-10-30',
+    po_number: '90000117',
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        item: {
+          id: '12344'
+        },
+        tax_rate: {
+          id: '123456'
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    terms: 'Net 30 days',
+    balance: 27500,
+    total: 27500,
+    tax_code: '1234',
+    notes: 'Some notes about this bill.',
+    status: 'draft',
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091'
+    },
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.billsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="companyInfoOne"></a>
 # Get Company Info

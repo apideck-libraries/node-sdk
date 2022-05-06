@@ -14,6 +14,440 @@ const methodResponse = {
 }
 
 describe('AccountingApi', () => {
+  describe('#billsAdd', () => {
+    const endpoint = '/accounting/bills'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        bill: {
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          bill_date: '2020-09-30',
+          due_date: '2020-10-30',
+          po_number: '90000117',
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          terms: 'Net 30 days',
+          balance: 27500,
+          total: 27500,
+          tax_code: '1234',
+          notes: 'Some notes about this bill.',
+          status: 'draft',
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.billsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billsAll', () => {
+    const endpoint = '/accounting/bills'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            downstream_id: '12345',
+            supplier: {
+              id: '12345',
+              display_name: 'Windsurf Shop',
+              company_name: 'The boring company'
+            },
+            currency: 'USD',
+            currency_rate: 0.69,
+            tax_inclusive: true,
+            bill_date: '2020-09-30',
+            due_date: '2020-10-30',
+            po_number: '90000117',
+            line_items: [
+              {
+                id: '12345',
+                row_id: '12345',
+                code: '120-C',
+                line_number: 1,
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: 'sales_item',
+                tax_amount: 27500,
+                total_amount: 27500,
+                quantity: 1,
+                unit_price: 27500.5,
+                unit_of_measure: 'pc.',
+                discount_percentage: 0.01,
+                item: {
+                  id: '12344',
+                  code: '120-C',
+                  name: 'Model Y'
+                },
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases'
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091'
+                },
+                row_version: '1-12345'
+              }
+            ],
+            terms: 'Net 30 days',
+            balance: 27500,
+            total: 27500,
+            tax_code: '1234',
+            notes: 'Some notes about this bill.',
+            status: 'draft',
+            ledger_account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091'
+            },
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.billsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billsDelete', () => {
+    const endpoint = '/accounting/bills/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.billsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billsOne', () => {
+    const endpoint = '/accounting/bills/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'one',
+        data: {
+          id: '12345',
+          downstream_id: '12345',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            company_name: 'The boring company'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          bill_date: '2020-09-30',
+          due_date: '2020-10-30',
+          po_number: '90000117',
+          line_items: [
+            {
+              id: '12345',
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases'
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          terms: 'Net 30 days',
+          balance: 27500,
+          total: 27500,
+          tax_code: '1234',
+          notes: 'Some notes about this bill.',
+          status: 'draft',
+          ledger_account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091'
+          },
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.billsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billsUpdate', () => {
+    const endpoint = '/accounting/bills/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        bill: {
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          bill_date: '2020-09-30',
+          due_date: '2020-10-30',
+          po_number: '90000117',
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          terms: 'Net 30 days',
+          balance: 27500,
+          total: 27500,
+          tax_code: '1234',
+          notes: 'Some notes about this bill.',
+          status: 'draft',
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091'
+          },
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.billsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#companyInfoOne', () => {
     const endpoint = '/accounting/company-info'
 
@@ -2578,6 +3012,7 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             company_name: 'SpaceX',
             display_name: 'Windsurf Shop',
             title: 'CEO',
@@ -2747,6 +3182,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           company_name: 'SpaceX',
           display_name: 'Windsurf Shop',
           title: 'CEO',

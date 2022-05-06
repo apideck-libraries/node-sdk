@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `company_name` | **string** |  | [optional] 
 `display_name` | **string** | Display name of supplier. | [optional] 
 `title` | **string** |  | [optional] 
@@ -51,6 +52,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

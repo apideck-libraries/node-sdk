@@ -35,6 +35,7 @@ BadRequestResponse.md
 BankAccount.md
 BankAccountAchDetails.md
 Benefit.md
+Bill.md
 CashDetails.md
 CompaniesFilter.md
 CompaniesSort.md
@@ -73,6 +74,7 @@ ContactsSort.md
 CopyFolderRequest.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
+CreateBillResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
@@ -123,6 +125,7 @@ CustomerSupportApiTest.api.test.ts
 CustomerSupportCustomer.md
 Deduction.md
 DeleteActivityResponse.md
+DeleteBillResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
@@ -190,6 +193,8 @@ GetApiResponse.md
 GetApisResponse.md
 GetApplicantResponse.md
 GetApplicantsResponse.md
+GetBillResponse.md
+GetBillsResponse.md
 GetCompaniesResponse.md
 GetCompanyInfoResponse.md
 GetCompanyResponse.md
@@ -298,6 +303,7 @@ LinkedCustomer.md
 LinkedFolder.md
 LinkedInvoiceItem.md
 LinkedLedgerAccount.md
+LinkedSupplier.md
 LinkedTaxRate.md
 Links.md
 Location.md
@@ -376,6 +382,7 @@ UnifiedFile.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
+UpdateBillResponse.md
 UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
@@ -463,6 +470,7 @@ models/BadRequestResponse.ts
 models/BankAccount.ts
 models/BankAccountAchDetails.ts
 models/Benefit.ts
+models/Bill.ts
 models/CashDetails.ts
 models/CompaniesFilter.ts
 models/CompaniesSort.ts
@@ -499,6 +507,7 @@ models/ContactsSort.ts
 models/CopyFolderRequest.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
+models/CreateBillResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
@@ -545,6 +554,7 @@ models/CustomField.ts
 models/CustomerSupportCustomer.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
+models/DeleteBillResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
@@ -609,6 +619,8 @@ models/GetApiResponse.ts
 models/GetApisResponse.ts
 models/GetApplicantResponse.ts
 models/GetApplicantsResponse.ts
+models/GetBillResponse.ts
+models/GetBillsResponse.ts
 models/GetCompaniesResponse.ts
 models/GetCompanyInfoResponse.ts
 models/GetCompanyResponse.ts
@@ -713,6 +725,7 @@ models/LinkedCustomer.ts
 models/LinkedFolder.ts
 models/LinkedInvoiceItem.ts
 models/LinkedLedgerAccount.ts
+models/LinkedSupplier.ts
 models/LinkedTaxRate.ts
 models/Links.ts
 models/Location.ts
@@ -788,6 +801,7 @@ models/UnifiedFile.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
+models/UpdateBillResponse.ts
 models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
