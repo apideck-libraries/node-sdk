@@ -5,14 +5,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`name` | **string** |  | [optional] 
-`description` | **string** |  | [optional] 
+`id` | **string** | The ID of the item. | [optional] 
+`name` | **string** | Item name | [optional] 
+`description` | **string** | A short description of the item | [optional] 
 `code` | **string** | User defined item code | [optional] 
 `sold` | **boolean** | Item will be available on sales transactions | [optional] 
 `purchased` | **boolean** | Item is available for purchase transactions | [optional] 
 `tracked` | **boolean** | Item is inventoried | [optional] 
-`type` | **string** |  | [optional] 
+`type` | **string** | Item type | [optional] 
 `sales_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
 `purchase_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
 `quantity` | **number** |  | [optional] 

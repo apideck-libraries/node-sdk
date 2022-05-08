@@ -35,6 +35,8 @@ BadRequestResponse.md
 BankAccount.md
 BankAccountAchDetails.md
 Benefit.md
+Bill.md
+BillLineItem.md
 CashDetails.md
 CompaniesFilter.md
 CompaniesSort.md
@@ -73,6 +75,7 @@ ContactsSort.md
 CopyFolderRequest.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
+CreateBillResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
@@ -105,6 +108,7 @@ CreatePosPaymentResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateSharedLinkResponse.md
+CreateSupplierResponse.md
 CreateTaxRateResponse.md
 CreateTenderResponse.md
 CreateUploadSessionRequest.md
@@ -122,6 +126,7 @@ CustomerSupportApiTest.api.test.ts
 CustomerSupportCustomer.md
 Deduction.md
 DeleteActivityResponse.md
+DeleteBillResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
 DeleteCustomerResponse.md
@@ -148,6 +153,7 @@ DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeletePosPaymentResponse.md
 DeleteSharedLinkResponse.md
+DeleteSupplierResponse.md
 DeleteTaxRateResponse.md
 DeleteTenderResponse.md
 DeleteUploadSessionResponse.md
@@ -188,6 +194,8 @@ GetApiResponse.md
 GetApisResponse.md
 GetApplicantResponse.md
 GetApplicantsResponse.md
+GetBillResponse.md
+GetBillsResponse.md
 GetCompaniesResponse.md
 GetCompanyInfoResponse.md
 GetCompanyResponse.md
@@ -258,6 +266,8 @@ GetPosPaymentResponse.md
 GetPosPaymentsResponse.md
 GetSharedLinkResponse.md
 GetSharedLinksResponse.md
+GetSupplierResponse.md
+GetSuppliersResponse.md
 GetTaxRateResponse.md
 GetTaxRatesResponse.md
 GetTenderResponse.md
@@ -294,6 +304,7 @@ LinkedCustomer.md
 LinkedFolder.md
 LinkedInvoiceItem.md
 LinkedLedgerAccount.md
+LinkedSupplier.md
 LinkedTaxRate.md
 Links.md
 Location.md
@@ -357,6 +368,7 @@ SmsApiTest.api.test.ts
 SocialLink.md
 SortDirection.md
 Status.md
+Supplier.md
 Tags.md
 Tax.md
 TaxRate.md
@@ -371,6 +383,7 @@ UnifiedFile.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
+UpdateBillResponse.md
 UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
@@ -400,6 +413,7 @@ UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdatePosPaymentResponse.md
 UpdateSharedLinkResponse.md
+UpdateSupplierResponse.md
 UpdateTaxRateResponse.md
 UpdateTenderResponse.md
 UpdateUploadSessionResponse.md
@@ -457,6 +471,8 @@ models/BadRequestResponse.ts
 models/BankAccount.ts
 models/BankAccountAchDetails.ts
 models/Benefit.ts
+models/Bill.ts
+models/BillLineItem.ts
 models/CashDetails.ts
 models/CompaniesFilter.ts
 models/CompaniesSort.ts
@@ -493,6 +509,7 @@ models/ContactsSort.ts
 models/CopyFolderRequest.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
+models/CreateBillResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
@@ -525,6 +542,7 @@ models/CreatePosPaymentResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateSharedLinkResponse.ts
+models/CreateSupplierResponse.ts
 models/CreateTaxRateResponse.ts
 models/CreateTenderResponse.ts
 models/CreateUploadSessionRequest.ts
@@ -538,6 +556,7 @@ models/CustomField.ts
 models/CustomerSupportCustomer.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
+models/DeleteBillResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
@@ -564,6 +583,7 @@ models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeletePosPaymentResponse.ts
 models/DeleteSharedLinkResponse.ts
+models/DeleteSupplierResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteTenderResponse.ts
 models/DeleteUploadSessionResponse.ts
@@ -601,6 +621,8 @@ models/GetApiResponse.ts
 models/GetApisResponse.ts
 models/GetApplicantResponse.ts
 models/GetApplicantsResponse.ts
+models/GetBillResponse.ts
+models/GetBillsResponse.ts
 models/GetCompaniesResponse.ts
 models/GetCompanyInfoResponse.ts
 models/GetCompanyResponse.ts
@@ -671,6 +693,8 @@ models/GetPosPaymentResponse.ts
 models/GetPosPaymentsResponse.ts
 models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
+models/GetSupplierResponse.ts
+models/GetSuppliersResponse.ts
 models/GetTaxRateResponse.ts
 models/GetTaxRatesResponse.ts
 models/GetTenderResponse.ts
@@ -703,6 +727,7 @@ models/LinkedCustomer.ts
 models/LinkedFolder.ts
 models/LinkedInvoiceItem.ts
 models/LinkedLedgerAccount.ts
+models/LinkedSupplier.ts
 models/LinkedTaxRate.ts
 models/Links.ts
 models/Location.ts
@@ -763,6 +788,7 @@ models/SimpleFormFieldOption.ts
 models/SocialLink.ts
 models/SortDirection.ts
 models/Status.ts
+models/Supplier.ts
 models/Tags.ts
 models/Tax.ts
 models/TaxRate.ts
@@ -777,6 +803,7 @@ models/UnifiedFile.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
+models/UpdateBillResponse.ts
 models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
@@ -806,6 +833,7 @@ models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdatePosPaymentResponse.ts
 models/UpdateSharedLinkResponse.ts
+models/UpdateSupplierResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateTenderResponse.ts
 models/UpdateUploadSessionResponse.ts

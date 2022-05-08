@@ -7,10 +7,10 @@ The customer this entity is linked to.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
-`display_id` | **string** |  | [optional] 
-`display_name` | **string** |  | [optional] 
-`company_name` | **string** |  | [optional] 
+`id` | **string** | The ID of the customer this entity is linked to. | 
+`display_id` | **string** | The display ID of the customer. | [optional] 
+`display_name` | **string** | The display name of the customer. | [optional] 
+`company_name` | **string** | The company name of the customer. | [optional] 
 
 
 
