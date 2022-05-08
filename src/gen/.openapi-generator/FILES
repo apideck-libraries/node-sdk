@@ -36,6 +36,7 @@ BankAccount.md
 BankAccountAchDetails.md
 Benefit.md
 Bill.md
+BillLineItem.md
 CashDetails.md
 CompaniesFilter.md
 CompaniesSort.md
@@ -471,6 +472,7 @@ models/BankAccount.ts
 models/BankAccountAchDetails.ts
 models/Benefit.ts
 models/Bill.ts
+models/BillLineItem.ts
 models/CashDetails.ts
 models/CompaniesFilter.ts
 models/CompaniesSort.ts

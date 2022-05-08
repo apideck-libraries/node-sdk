@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { Address, AddressFromJSON, AddressToJSON } from './Address'
+
 /**
  * The supplier this entity is linked to.
  * @export
@@ -37,6 +39,12 @@ export interface LinkedSupplier {
    * @memberof LinkedSupplier
    */
   readonly company_name?: string | null
+  /**
+   *
+   * @type {Address}
+   * @memberof LinkedSupplier
+   */
+  address?: Address
 }
 
 export function LinkedSupplierFromJSON(json: any): LinkedSupplier {
@@ -53,7 +61,8 @@ export function LinkedSupplierFromJSONTyped(
   return {
     id: json['id'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
-    company_name: !exists(json, 'company_name') ? undefined : json['company_name']
+    company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
+    address: !exists(json, 'address') ? undefined : AddressFromJSON(json['address'])
   }
 }
 
@@ -66,6 +75,7 @@ export function LinkedSupplierToJSON(value?: LinkedSupplier | null): any {
   }
   return {
     id: value.id,
-    display_name: value.display_name
+    display_name: value.display_name,
+    address: AddressToJSON(value.address)
   }
 }

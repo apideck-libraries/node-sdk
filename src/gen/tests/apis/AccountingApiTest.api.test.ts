@@ -49,7 +49,32 @@ describe('AccountingApi', () => {
         bill: {
           supplier: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
           },
           currency: 'USD',
           currency_rate: 0.69,
@@ -64,7 +89,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'sales_item',
+              type: 'expense_account',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -74,12 +99,12 @@ describe('AccountingApi', () => {
               item: {
                 id: '12344'
               },
-              tax_rate: {
-                id: '123456'
-              },
               ledger_account: {
                 id: '123456',
                 nominal_code: 'N091'
+              },
+              tax_rate: {
+                id: '123456'
               },
               row_version: '1-12345'
             }
@@ -131,7 +156,32 @@ describe('AccountingApi', () => {
             supplier: {
               id: '12345',
               display_name: 'Windsurf Shop',
-              company_name: 'The boring company'
+              company_name: 'The boring company',
+              address: {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: 40.759211,
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
             },
             currency: 'USD',
             currency_rate: 0.69,
@@ -147,7 +197,7 @@ describe('AccountingApi', () => {
                 line_number: 1,
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: 'sales_item',
+                type: 'expense_account',
                 tax_amount: 27500,
                 total_amount: 27500,
                 quantity: 1,
@@ -159,15 +209,15 @@ describe('AccountingApi', () => {
                   code: '120-C',
                   name: 'Model Y'
                 },
-                tax_rate: {
-                  id: '123456',
-                  code: 'N-T',
-                  name: 'GST on Purchases'
-                },
                 ledger_account: {
                   id: '123456',
                   name: 'Bank account',
                   nominal_code: 'N091'
+                },
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases'
                 },
                 row_version: '1-12345'
               }
@@ -284,7 +334,32 @@ describe('AccountingApi', () => {
           supplier: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            company_name: 'The boring company'
+            company_name: 'The boring company',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
           },
           currency: 'USD',
           currency_rate: 0.69,
@@ -300,7 +375,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'sales_item',
+              type: 'expense_account',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -312,15 +387,15 @@ describe('AccountingApi', () => {
                 code: '120-C',
                 name: 'Model Y'
               },
-              tax_rate: {
-                id: '123456',
-                code: 'N-T',
-                name: 'GST on Purchases'
-              },
               ledger_account: {
                 id: '123456',
                 name: 'Bank account',
                 nominal_code: 'N091'
+              },
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases'
               },
               row_version: '1-12345'
             }
@@ -394,7 +469,32 @@ describe('AccountingApi', () => {
         bill: {
           supplier: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
           },
           currency: 'USD',
           currency_rate: 0.69,
@@ -409,7 +509,7 @@ describe('AccountingApi', () => {
               line_number: 1,
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-              type: 'sales_item',
+              type: 'expense_account',
               tax_amount: 27500,
               total_amount: 27500,
               quantity: 1,
@@ -419,12 +519,12 @@ describe('AccountingApi', () => {
               item: {
                 id: '12344'
               },
-              tax_rate: {
-                id: '123456'
-              },
               ledger_account: {
                 id: '123456',
                 nominal_code: 'N091'
+              },
+              tax_rate: {
+                id: '123456'
               },
               row_version: '1-12345'
             }

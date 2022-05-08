@@ -13,8 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { BillLineItem, BillLineItemFromJSON, BillLineItemToJSON } from './BillLineItem'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
-import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import {
   LinkedLedgerAccount,
   LinkedLedgerAccountFromJSON,
@@ -84,10 +84,10 @@ export interface Bill {
   po_number?: string | null
   /**
    *
-   * @type {Array<InvoiceLineItem>}
+   * @type {Array<BillLineItem>}
    * @memberof Bill
    */
-  line_items?: Array<InvoiceLineItem>
+  line_items?: Array<BillLineItem>
   /**
    * Terms of payment.
    * @type {string}
@@ -197,7 +197,7 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
     po_number: !exists(json, 'po_number') ? undefined : json['po_number'],
     line_items: !exists(json, 'line_items')
       ? undefined
-      : (json['line_items'] as Array<any>).map(InvoiceLineItemFromJSON),
+      : (json['line_items'] as Array<any>).map(BillLineItemFromJSON),
     terms: !exists(json, 'terms') ? undefined : json['terms'],
     balance: !exists(json, 'balance') ? undefined : json['balance'],
     total: !exists(json, 'total') ? undefined : json['total'],
@@ -239,7 +239,7 @@ export function BillToJSON(value?: Bill | null): any {
     line_items:
       value.line_items === undefined
         ? undefined
-        : (value.line_items as Array<any>).map(InvoiceLineItemToJSON),
+        : (value.line_items as Array<any>).map(BillLineItemToJSON),
     terms: value.terms,
     balance: value.balance,
     total: value.total,

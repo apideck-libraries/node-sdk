@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 `bill_date` | **Date** | Date bill was issued - YYYY-MM-DD. | [optional] 
 `due_date` | **Date** | The due date is the date on which a payment is scheduled to be received by the supplier - YYYY-MM-DD. | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
-`line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
+`line_items` | [**Array&lt;BillLineItem&gt;**](BillLineItem.md) |  | [optional] 
 `terms` | **string** | Terms of payment. | [optional] 
 `balance` | **number** | Balance of bill due. | [optional] 
 `total` | **number** | Total amount of bill, including tax. | [optional] 
@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 
 
 
-* [`InvoiceLineItem`](InvoiceLineItem.md)
+* [`BillLineItem`](BillLineItem.md)
 
 
 
