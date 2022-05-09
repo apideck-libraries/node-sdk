@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+
 /**
  *
  * @export
@@ -49,6 +51,12 @@ export interface Modifier {
    * @memberof Modifier
    */
   price_amount?: number
+  /**
+   *
+   * @type {Currency}
+   * @memberof Modifier
+   */
+  currency?: Currency | null
   /**
    *
    * @type {boolean}
@@ -95,6 +103,7 @@ export function ModifierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     id: !exists(json, 'id') ? undefined : json['id'],
     alternate_name: !exists(json, 'alternate_name') ? undefined : json['alternate_name'],
     price_amount: !exists(json, 'price_amount') ? undefined : json['price_amount'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     available: !exists(json, 'available') ? undefined : json['available'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -115,6 +124,7 @@ export function ModifierToJSON(value?: Modifier | null): any {
     modifier_group_id: value.modifier_group_id,
     alternate_name: value.alternate_name,
     price_amount: value.price_amount,
+    currency: CurrencyToJSON(value.currency),
     available: value.available
   }
 }

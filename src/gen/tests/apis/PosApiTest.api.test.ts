@@ -1146,7 +1146,18 @@ describe('PosApi', () => {
           name: 'Modifier',
           alternate_name: 'Modifier New',
           minimum_required: 1,
-          maximum_allowed: 5
+          maximum_allowed: 5,
+          modifiers: [
+            {
+              id: '12345',
+              name: 'Modifier',
+              alternate_name: 'Modifier New',
+              price_amount: 10,
+              currency: 'USD',
+              available: true
+            }
+          ],
+          row_version: '1-12345'
         }
       } as any
       const current = await pos.modifierGroupsAdd(params)
@@ -1183,6 +1194,17 @@ describe('PosApi', () => {
             alternate_name: 'Modifier New',
             minimum_required: 1,
             maximum_allowed: 5,
+            modifiers: [
+              {
+                id: '12345',
+                name: 'Modifier',
+                alternate_name: 'Modifier New',
+                price_amount: 10,
+                currency: 'USD',
+                available: true
+              }
+            ],
+            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1283,6 +1305,17 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           minimum_required: 1,
           maximum_allowed: 5,
+          modifiers: [
+            {
+              id: '12345',
+              name: 'Modifier',
+              alternate_name: 'Modifier New',
+              price_amount: 10,
+              currency: 'USD',
+              available: true
+            }
+          ],
+          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1341,7 +1374,18 @@ describe('PosApi', () => {
           name: 'Modifier',
           alternate_name: 'Modifier New',
           minimum_required: 1,
-          maximum_allowed: 5
+          maximum_allowed: 5,
+          modifiers: [
+            {
+              id: '12345',
+              name: 'Modifier',
+              alternate_name: 'Modifier New',
+              price_amount: 10,
+              currency: 'USD',
+              available: true
+            }
+          ],
+          row_version: '1-12345'
         }
       } as any
       const current = await pos.modifierGroupsUpdate(params)
@@ -1386,6 +1430,7 @@ describe('PosApi', () => {
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,
+          currency: 'USD',
           modifier_group_id: ['123'],
           available: true
         }
@@ -1423,6 +1468,7 @@ describe('PosApi', () => {
             name: 'Modifier',
             alternate_name: 'Modifier New',
             price_amount: 10,
+            currency: 'USD',
             modifier_group_id: ['123'],
             available: true,
             updated_by: '12345',
@@ -1524,6 +1570,7 @@ describe('PosApi', () => {
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,
+          currency: 'USD',
           modifier_group_id: ['123'],
           available: true,
           updated_by: '12345',
@@ -1584,6 +1631,7 @@ describe('PosApi', () => {
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,
+          currency: 'USD',
           modifier_group_id: ['123'],
           available: true
         }

@@ -3057,8 +3057,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create PosPayment
-   * Create PosPayment
+   * Create Payment
+   * CreateP ayment
    */
   async paymentsAddRaw(
     requestParameters: PosApiPaymentsAddRequest,
@@ -3114,8 +3114,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create PosPayment
-   * Create PosPayment
+   * Create Payment
+   * CreateP ayment
    */
   async paymentsAdd(
     requestParameters: PosApiPaymentsAddRequest,
@@ -3126,8 +3126,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * List PosPayments
-   * List PosPayments
+   * List Payments
+   * List Payments
    */
   async paymentsAllRaw(
     requestParameters: PosApiPaymentsAllRequest,
@@ -3181,8 +3181,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * List PosPayments
-   * List PosPayments
+   * List Payments
+   * List Payments
    */
   async paymentsAll(
     requestParameters: PosApiPaymentsAllRequest = {},
@@ -3193,8 +3193,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete PosPayment
-   * Delete PosPayment
+   * Delete Payment
+   * Delete Payment
    */
   async paymentsDeleteRaw(
     requestParameters: PosApiPaymentsDeleteRequest,
@@ -3250,8 +3250,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete PosPayment
-   * Delete PosPayment
+   * Delete Payment
+   * Delete Payment
    */
   async paymentsDelete(
     requestParameters: PosApiPaymentsDeleteRequest,
@@ -3262,8 +3262,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get PosPayment
-   * Get PosPayment
+   * Get Payment
+   * Get Payment
    */
   async paymentsOneRaw(
     requestParameters: PosApiPaymentsOneRequest,
@@ -3319,8 +3319,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get PosPayment
-   * Get PosPayment
+   * Get Payment
+   * Get Payment
    */
   async paymentsOne(
     requestParameters: PosApiPaymentsOneRequest,
@@ -3331,8 +3331,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update PosPayment
-   * Update PosPayment
+   * Update Payment
+   * Update Payment
    */
   async paymentsUpdateRaw(
     requestParameters: PosApiPaymentsUpdateRequest,
@@ -3398,8 +3398,8 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update PosPayment
-   * Update PosPayment
+   * Update Payment
+   * Update Payment
    */
   async paymentsUpdate(
     requestParameters: PosApiPaymentsUpdateRequest,
