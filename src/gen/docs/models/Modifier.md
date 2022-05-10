@@ -10,11 +10,25 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `alternate_name` | **string** |  | [optional] 
 `price_amount` | **number** |  | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `available` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
+
+
+
+
+
+## Referenced Types:
+
+
+
+
+
+* [`Currency`](Currency.md)
+
 
 
 

@@ -134,6 +134,7 @@ const params = {
     tax_inclusive: true,
     bill_date: '2020-09-30',
     due_date: '2020-10-30',
+    paid_date: '2020-10-30',
     po_number: '90000117',
     line_items: [
       {
@@ -163,6 +164,9 @@ const params = {
     ],
     terms: 'Net 30 days',
     balance: 27500,
+    deposit: 0,
+    sub_total: 27500,
+    total_tax: 2500,
     total: 27500,
     tax_code: '1234',
     notes: 'Some notes about this bill.',
@@ -484,6 +488,7 @@ const params = {
     tax_inclusive: true,
     bill_date: '2020-09-30',
     due_date: '2020-10-30',
+    paid_date: '2020-10-30',
     po_number: '90000117',
     line_items: [
       {
@@ -513,6 +518,9 @@ const params = {
     ],
     terms: 'Net 30 days',
     balance: 27500,
+    deposit: 0,
+    sub_total: 27500,
+    total_tax: 2500,
     total: 27500,
     tax_code: '1234',
     notes: 'Some notes about this bill.',
@@ -1168,6 +1176,7 @@ const params = {
     sold: true,
     purchased: true,
     tracked: true,
+    inventory_date: '2020-10-30',
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
@@ -1485,6 +1494,7 @@ const params = {
     sold: true,
     purchased: true,
     tracked: true,
+    inventory_date: '2020-10-30',
     type: 'inventory',
     sales_details: {
       unit_price: 27500.5,
