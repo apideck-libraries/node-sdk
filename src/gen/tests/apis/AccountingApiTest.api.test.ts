@@ -1222,6 +1222,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
@@ -1294,6 +1295,7 @@ describe('AccountingApi', () => {
             sold: true,
             purchased: true,
             tracked: true,
+            inventory_date: '2020-10-30',
             type: 'inventory',
             sales_details: {
               unit_price: 27500.5,
@@ -1437,6 +1439,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,
@@ -1539,6 +1542,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
             unit_price: 27500.5,

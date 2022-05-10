@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `sold` | **boolean** | Item will be available on sales transactions | [optional] 
 `purchased` | **boolean** | Item is available for purchase transactions | [optional] 
 `tracked` | **boolean** | Item is inventoried | [optional] 
+`inventory_date` | **Date** | The date of opening balance if inventory item is tracked - YYYY-MM-DD. | [optional] 
 `type` | **string** | Item type | [optional] 
 `sales_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
 `purchase_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
@@ -45,6 +46,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 
