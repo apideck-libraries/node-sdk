@@ -33,7 +33,16 @@ export enum AccountingEventType {
   accounting_ledger_account_deleted = 'accounting.ledger_account.deleted',
   accounting_tax_rate_created = 'accounting.tax_rate.created',
   accounting_tax_rate_updated = 'accounting.tax_rate.updated',
-  accounting_tax_rate_deleted = 'accounting.tax_rate.deleted'
+  accounting_tax_rate_deleted = 'accounting.tax_rate.deleted',
+  accounting_bill_created = 'accounting.bill.created',
+  accounting_bill_updated = 'accounting.bill.updated',
+  accounting_bill_deleted = 'accounting.bill.deleted',
+  accounting_payment_created = 'accounting.payment.created',
+  accounting_payment_updated = 'accounting.payment.updated',
+  accounting_payment_deleted = 'accounting.payment.deleted',
+  accounting_supplier_created = 'accounting.supplier.created',
+  accounting_supplier_updated = 'accounting.supplier.updated',
+  accounting_supplier_deleted = 'accounting.supplier.deleted'
 }
 
 export function AccountingEventTypeFromJSON(json: any): AccountingEventType {
