@@ -53,7 +53,7 @@ describe('SmsApi', () => {
           body: 'Hi! How are you doing?',
           type: 'sms',
           scheduled_at: '2020-09-30T07:43:32.000Z',
-          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
           messaging_service_id: '123456'
         }
@@ -99,7 +99,7 @@ describe('SmsApi', () => {
             status: 'sent',
             scheduled_at: '2020-09-30T07:43:32.000Z',
             sent_at: '2020-09-30T07:43:32.000Z',
-            webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+            webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
             reference: 'CUST001',
             price: {
               per_unit: 0.01,
@@ -218,7 +218,7 @@ describe('SmsApi', () => {
           status: 'sent',
           scheduled_at: '2020-09-30T07:43:32.000Z',
           sent_at: '2020-09-30T07:43:32.000Z',
-          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
           price: {
             per_unit: 0.01,
@@ -291,7 +291,7 @@ describe('SmsApi', () => {
           body: 'Hi! How are you doing?',
           type: 'sms',
           scheduled_at: '2020-09-30T07:43:32.000Z',
-          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/execute/sms',
+          webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
           messaging_service_id: '123456'
         }

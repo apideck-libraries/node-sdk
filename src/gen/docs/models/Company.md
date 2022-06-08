@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 `abn_or_tfn` | **string** | An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia. | [optional] 
 `abn_branch` | **string** | An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity. | [optional] 
 `acn` | **string** | The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank. | [optional] 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
 `parent_id` | **string** | Parent ID | [optional] 
 `bank_accounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
@@ -31,6 +33,7 @@ Name | Type | Description | Notes
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`row_type` | [**CompanyRowType**](CompanyRowType.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `read_only` | **boolean** |  | [optional] 
@@ -66,12 +69,15 @@ Name | Type | Description | Notes
 
 
 
+
+
 * [`BankAccount`](BankAccount.md)
 * [`Website`](Website.md)
 * [`Address`](Address.md)
 * [`SocialLink`](SocialLink.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
+* [`CompanyRowType`](CompanyRowType.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
 

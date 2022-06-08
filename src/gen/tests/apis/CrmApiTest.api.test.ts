@@ -647,13 +647,16 @@ describe('CrmApi', () => {
           abn_or_tfn: '46 115 614 695',
           abn_branch: '123',
           acn: 'XXX XXX XXX',
+          first_name: 'Elon',
+          last_name: 'Musk',
           bank_accounts: [
             {
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
+              branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123456789',
+              account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               currency: 'USD'
@@ -717,6 +720,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          row_type: {
+            id: '12345',
+            name: 'Customer Account'
+          },
           custom_fields: [
             {
               id: 2389328923893298,
@@ -778,14 +785,17 @@ describe('CrmApi', () => {
             abn_or_tfn: '46 115 614 695',
             abn_branch: '123',
             acn: 'XXX XXX XXX',
+            first_name: 'Elon',
+            last_name: 'Musk',
             parent_id: '22345',
             bank_accounts: [
               {
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 bsb_number: '062-001',
+                branch_identifier: '001',
                 bank_code: 'BNH',
-                account_number: '123456789',
+                account_number: '123465',
                 account_name: 'SPACEX LLC',
                 account_type: 'credit_card',
                 currency: 'USD'
@@ -849,6 +859,10 @@ describe('CrmApi', () => {
                 type: 'primary'
               }
             ],
+            row_type: {
+              id: '12345',
+              name: 'Customer Account'
+            },
             custom_fields: [
               {
                 id: 2389328923893298,
@@ -976,14 +990,17 @@ describe('CrmApi', () => {
           abn_or_tfn: '46 115 614 695',
           abn_branch: '123',
           acn: 'XXX XXX XXX',
+          first_name: 'Elon',
+          last_name: 'Musk',
           parent_id: '22345',
           bank_accounts: [
             {
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
+              branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123456789',
+              account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               currency: 'USD'
@@ -1047,6 +1064,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          row_type: {
+            id: '12345',
+            name: 'Customer Account'
+          },
           custom_fields: [
             {
               id: 2389328923893298,
@@ -1132,13 +1153,16 @@ describe('CrmApi', () => {
           abn_or_tfn: '46 115 614 695',
           abn_branch: '123',
           acn: 'XXX XXX XXX',
+          first_name: 'Elon',
+          last_name: 'Musk',
           bank_accounts: [
             {
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
+              branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123456789',
+              account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               currency: 'USD'
@@ -1202,6 +1226,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          row_type: {
+            id: '12345',
+            name: 'Customer Account'
+          },
           custom_fields: [
             {
               id: 2389328923893298,
@@ -3038,6 +3066,7 @@ describe('CrmApi', () => {
             {
               name: 'Contract Sent',
               value: 'CONTRACT_SENT',
+              win_probability: 50,
               display_order: 1
             }
           ]
@@ -3082,11 +3111,12 @@ describe('CrmApi', () => {
                 id: 'contractsent',
                 name: 'Contract Sent',
                 value: 'CONTRACT_SENT',
+                win_probability: 50,
                 display_order: 1
               }
             ],
-            updated_at: '2017-08-12T20:43:21.291Z',
-            created_at: '2017-08-12T20:43:21.291Z'
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
           }
         ],
         meta: {
@@ -3188,11 +3218,12 @@ describe('CrmApi', () => {
               id: 'contractsent',
               name: 'Contract Sent',
               value: 'CONTRACT_SENT',
+              win_probability: 50,
               display_order: 1
             }
           ],
-          updated_at: '2017-08-12T20:43:21.291Z',
-          created_at: '2017-08-12T20:43:21.291Z'
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
 
@@ -3253,6 +3284,7 @@ describe('CrmApi', () => {
             {
               name: 'Contract Sent',
               value: 'CONTRACT_SENT',
+              win_probability: 50,
               display_order: 1
             }
           ]

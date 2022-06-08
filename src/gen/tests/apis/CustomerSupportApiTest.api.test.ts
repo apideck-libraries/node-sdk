@@ -102,8 +102,9 @@ describe('CustomerSupportApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'
@@ -196,8 +197,9 @@ describe('CustomerSupportApi', () => {
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
+              branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123456789',
+              account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               currency: 'USD'
@@ -354,8 +356,9 @@ describe('CustomerSupportApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'
@@ -471,8 +474,9 @@ describe('CustomerSupportApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'

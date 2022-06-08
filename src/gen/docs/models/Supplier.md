@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
+`bank_accounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
@@ -66,6 +67,7 @@ Name | Type | Description | Notes
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`Website`](Website.md)
+* [`BankAccount`](BankAccount.md)
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 
 * [`Currency`](Currency.md)

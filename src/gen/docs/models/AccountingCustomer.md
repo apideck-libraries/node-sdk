@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`bank_accounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
 `status` | **string** | Customer status | [optional] 
 `row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 

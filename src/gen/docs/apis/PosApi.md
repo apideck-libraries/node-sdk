@@ -149,7 +149,7 @@ const params = {
         name: 'Food',
         sku: '11910345',
         item_id: '12345',
-        ordinal: 0,
+        sequence: 0,
         pricing_type: 'fixed',
         price_amount: 10,
         price_currency: 'USD',
@@ -484,7 +484,7 @@ const params = {
         name: 'Food',
         sku: '11910345',
         item_id: '12345',
-        ordinal: 0,
+        sequence: 0,
         pricing_type: 'fixed',
         price_amount: 10,
         price_currency: 'USD',
@@ -1389,6 +1389,8 @@ const params = {
     alternate_name: 'Modifier New',
     minimum_required: 1,
     maximum_allowed: 5,
+    selection_type: 'single',
+    present_at_all_locations: false,
     modifiers: [
       {
         id: '12345',
@@ -1399,6 +1401,7 @@ const params = {
         available: true
       }
     ],
+    deleted: true,
     row_version: '1-12345'
   }
 }
@@ -1682,6 +1685,8 @@ const params = {
     alternate_name: 'Modifier New',
     minimum_required: 1,
     maximum_allowed: 5,
+    selection_type: 'single',
+    present_at_all_locations: false,
     modifiers: [
       {
         id: '12345',
@@ -1692,6 +1697,7 @@ const params = {
         available: true
       }
     ],
+    deleted: true,
     row_version: '1-12345'
   }
 }
@@ -1875,6 +1881,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **filter** | **ModifierGroupFilter** | Apply filters (beta) | (optional) 
 
 
 
@@ -1944,6 +1951,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **filter** | **ModifierGroupFilter** | Apply filters (beta) | (optional) 
 
 
 
