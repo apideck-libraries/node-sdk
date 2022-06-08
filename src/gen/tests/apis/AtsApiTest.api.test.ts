@@ -443,8 +443,14 @@ describe('AtsApi', () => {
             remote: true,
             requisition_id: 'abc123',
             department: {
-              id: '123',
-              name: 'Engineering'
+              id: '12345',
+              name: 'R&amp;D',
+              code: '2',
+              description: 'R&amp;D',
+              updated_by: '12345',
+              created_by: '12345',
+              updated_at: '2020-09-30T07:43:32.000Z',
+              created_at: '2020-09-30T07:43:32.000Z'
             },
             branch: {
               id: '123',
@@ -576,8 +582,14 @@ describe('AtsApi', () => {
           remote: true,
           requisition_id: 'abc123',
           department: {
-            id: '123',
-            name: 'Engineering'
+            id: '12345',
+            name: 'R&amp;D',
+            code: '2',
+            description: 'R&amp;D',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
           },
           branch: {
             id: '123',

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 `experience` | **string** | Level of experience required for the job role. | [optional] 
 `remote` | **boolean** | Specifies whether the posting is for a remote job. | [optional] 
 `requisition_id` | **string** | A job\'s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company\'s internal processes. | [optional] 
-`department` | [**Department1**](Department1.md) |  | [optional] 
+`department` | [**Department**](Department.md) |  | [optional] 
 `branch` | [**Branch**](Branch.md) |  | [optional] 
 `recruiters` | **Array&lt;string&gt;** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
 `hiring_managers` | **Array&lt;object&gt;** |  | [optional] 
@@ -99,7 +99,7 @@ Name | Type | Description | Notes
 
 
 
-* [`Department1`](Department1.md)
+* [`Department`](Department.md)
 * [`Branch`](Branch.md)
 
 

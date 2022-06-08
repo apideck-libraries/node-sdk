@@ -172,7 +172,6 @@ DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Department.md
-Department1.md
 Email.md
 Employee.md
 EmployeeCompensations.md
@@ -620,7 +619,6 @@ models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Department.ts
-models/Department1.ts
 models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
