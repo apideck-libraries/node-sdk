@@ -68,6 +68,10 @@ const params = {
     name: 'Elon Musk',
     first_name: 'Elon',
     last_name: 'Musk',
+    middle_name: 'D.',
+    initials: 'EM',
+    birthday: '2000-08-12',
+    photo_url: 'https://unavatar.io/elon-musk',
     headline: 'PepsiCo, Inc, Central Perk',
     title: 'CEO',
     emails: [
@@ -138,7 +142,9 @@ const params = {
       'New'
     ],
     archived: false,
-    owner_id: '54321'
+    owner_id: '54321',
+    record_url: 'https://app.intercom.io/contacts/12345',
+    deleted: true
   }
 }
 

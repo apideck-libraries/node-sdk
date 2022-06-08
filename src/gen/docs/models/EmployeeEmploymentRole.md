@@ -24,6 +24,10 @@ Name | Type | Description | Notes
 
 * `temp` (value: `'temp'`)
 
+* `intership` (value: `'intership'`)
+
+* `other` (value: `'other'`)
+
 
 
 

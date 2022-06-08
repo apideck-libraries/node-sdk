@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 `employment_status` | **string** |  | [optional] 
 `employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
 `manager` | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
+`direct_reports` | **Array&lt;string&gt;** |  | [optional] 
 `social_security_number` | **string** |  | [optional] 
 `birthday` | **Date** |  | [optional] 
 `country_of_birth` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
@@ -36,13 +37,21 @@ Name | Type | Description | Notes
 `languages` | **Array&lt;string&gt;** |  | [optional] 
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
+`timezone` | **string** |  | [optional] 
+`source` | **string** |  | [optional] 
+`source_id` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
 `compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
+`works_remote` | **boolean** | Indicates whether the employee works remote | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
+`tax_code` | **string** |  | [optional] 
+`tax_id` | **string** |  | [optional] 
+`dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
+`food_allergies` | **Array&lt;string&gt;** | Indicate the employee\'s food allergies. | [optional] 
 `row_version` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
@@ -95,7 +104,11 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Gender`](Gender.md)
+
+
+
 
 
 
@@ -103,11 +116,16 @@ Name | Type | Description | Notes
 
 * [`EmployeeJobs`](EmployeeJobs.md)
 * [`EmployeeCompensations`](EmployeeCompensations.md)
+
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
+
+
+
+
 
 
 

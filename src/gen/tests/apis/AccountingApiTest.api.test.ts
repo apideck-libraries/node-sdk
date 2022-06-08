@@ -14,6 +14,103 @@ const methodResponse = {
 }
 
 describe('AccountingApi', () => {
+  describe('#balanceSheetOne', () => {
+    const endpoint = '/accounting/balance-sheet'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'BalanceSheets',
+        operation: 'one',
+        data: {
+          id: '12345',
+          report_name: 'BalanceSheet',
+          start_date: '2017-01-01',
+          assets: {
+            total: 200000,
+            current_assets: {
+              total: 100000,
+              accounts: [
+                {
+                  id: '1',
+                  name: 'Accounts Receivable (A/R)',
+                  value: 10000
+                },
+                {
+                  id: '2',
+                  name: 'Accounts Payable (A/P)',
+                  value: 10000
+                }
+              ]
+            },
+            fixed_assets: {
+              total: 100000,
+              accounts: [
+                {
+                  id: '1',
+                  name: 'Accounts Receivable (A/R)',
+                  value: 10000
+                },
+                {
+                  id: '2',
+                  name: 'Accounts Payable (A/P)',
+                  value: 10000
+                }
+              ]
+            }
+          },
+          liabilities: {
+            total: 200000,
+            accounts: [
+              {
+                id: '1',
+                name: 'Accounts Payable (A/P)',
+                value: 10000
+              }
+            ]
+          },
+          equity: {
+            total: 200000,
+            items: [
+              {
+                id: '1',
+                name: 'Retained Earnings',
+                value: 10000
+              }
+            ]
+          },
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.balanceSheetOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#billsAdd', () => {
     const endpoint = '/accounting/bills'
 
@@ -102,7 +199,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               tax_rate: {
                 id: '123456'
@@ -121,7 +219,8 @@ describe('AccountingApi', () => {
           status: 'draft',
           ledger_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           row_version: '1-12345'
         }
@@ -217,7 +316,8 @@ describe('AccountingApi', () => {
                 ledger_account: {
                   id: '123456',
                   name: 'Bank account',
-                  nominal_code: 'N091'
+                  nominal_code: 'N091',
+                  code: '453'
                 },
                 tax_rate: {
                   id: '123456',
@@ -239,7 +339,8 @@ describe('AccountingApi', () => {
             ledger_account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             updated_by: '12345',
             created_by: '12345',
@@ -399,7 +500,8 @@ describe('AccountingApi', () => {
               ledger_account: {
                 id: '123456',
                 name: 'Bank account',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               tax_rate: {
                 id: '123456',
@@ -421,7 +523,8 @@ describe('AccountingApi', () => {
           ledger_account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           updated_by: '12345',
           created_by: '12345',
@@ -534,7 +637,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               tax_rate: {
                 id: '123456'
@@ -553,7 +657,8 @@ describe('AccountingApi', () => {
           status: 'draft',
           ledger_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           row_version: '1-12345'
         }
@@ -757,16 +862,19 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           status: 'active',
           row_version: '1-12345'
         }
@@ -869,16 +977,19 @@ describe('AccountingApi', () => {
             },
             tax_number: 'US123945459',
             currency: 'USD',
-            bank_accounts: {
-              iban: 'CH2989144532982975332',
-              bic: 'AUDSCHGGXXX',
-              bsb_number: '062-001',
-              bank_code: 'BNH',
-              account_number: '123456789',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
-              currency: 'USD'
-            },
+            bank_accounts: [
+              {
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                currency: 'USD'
+              }
+            ],
             status: 'active',
             row_version: '1-12345',
             updated_by: '12345',
@@ -1045,16 +1156,19 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           status: 'active',
           row_version: '1-12345',
           updated_by: '12345',
@@ -1178,16 +1292,19 @@ describe('AccountingApi', () => {
           },
           tax_number: 'US123945459',
           currency: 'USD',
-          bank_accounts: {
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            bsb_number: '062-001',
-            bank_code: 'BNH',
-            account_number: '123456789',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
-            currency: 'USD'
-          },
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           status: 'active',
           row_version: '1-12345'
         }
@@ -1260,15 +1377,18 @@ describe('AccountingApi', () => {
           unit_price: 27500.5,
           asset_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           income_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           expense_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           active: true,
           row_version: '1-12345'
@@ -1338,17 +1458,20 @@ describe('AccountingApi', () => {
             asset_account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             income_account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             expense_account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             active: true,
             row_version: '1-12345',
@@ -1482,17 +1605,20 @@ describe('AccountingApi', () => {
           asset_account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           income_account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           expense_account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           active: true,
           row_version: '1-12345',
@@ -1580,15 +1706,18 @@ describe('AccountingApi', () => {
           unit_price: 27500.5,
           asset_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           income_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           expense_account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           active: true,
           row_version: '1-12345'
@@ -1679,7 +1808,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               row_version: '1-12345'
             }
@@ -1822,7 +1952,8 @@ describe('AccountingApi', () => {
                 ledger_account: {
                   id: '123456',
                   name: 'Bank account',
-                  nominal_code: 'N091'
+                  nominal_code: 'N091',
+                  code: '453'
                 },
                 row_version: '1-12345'
               }
@@ -2030,7 +2161,8 @@ describe('AccountingApi', () => {
               ledger_account: {
                 id: '123456',
                 name: 'Bank account',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               row_version: '1-12345'
             }
@@ -2188,7 +2320,8 @@ describe('AccountingApi', () => {
               },
               ledger_account: {
                 id: '123456',
-                nominal_code: 'N091'
+                nominal_code: 'N091',
+                code: '453'
               },
               row_version: '1-12345'
             }
@@ -2288,6 +2421,7 @@ describe('AccountingApi', () => {
         ledgerAccount: {
           display_id: '1-12345',
           nominal_code: 'N091',
+          code: '453',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -2309,8 +2443,9 @@ describe('AccountingApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'
@@ -2357,6 +2492,7 @@ describe('AccountingApi', () => {
             id: '12345',
             display_id: '1-12345',
             nominal_code: 'N091',
+            code: '453',
             classification: 'asset',
             type: 'bank',
             sub_type: 'CHECKING_ACCOUNT',
@@ -2380,8 +2516,9 @@ describe('AccountingApi', () => {
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
+              branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123456789',
+              account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               currency: 'USD'
@@ -2504,6 +2641,7 @@ describe('AccountingApi', () => {
           id: '12345',
           display_id: '1-12345',
           nominal_code: 'N091',
+          code: '453',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -2527,8 +2665,9 @@ describe('AccountingApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'
@@ -2610,6 +2749,7 @@ describe('AccountingApi', () => {
         ledgerAccount: {
           display_id: '1-12345',
           nominal_code: 'N091',
+          code: '453',
           classification: 'asset',
           type: 'bank',
           sub_type: 'CHECKING_ACCOUNT',
@@ -2631,8 +2771,9 @@ describe('AccountingApi', () => {
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
+            branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123456789',
+            account_number: '123465',
             account_name: 'SPACEX LLC',
             account_type: 'credit_card',
             currency: 'USD'
@@ -2696,7 +2837,8 @@ describe('AccountingApi', () => {
           accounts_receivable_account_id: '123456',
           account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
@@ -2758,7 +2900,8 @@ describe('AccountingApi', () => {
             account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             transaction_date: '2021-05-01T12:00:00.000Z',
             customer: {
@@ -2885,7 +3028,8 @@ describe('AccountingApi', () => {
           account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
@@ -2970,7 +3114,8 @@ describe('AccountingApi', () => {
           accounts_receivable_account_id: '123456',
           account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
@@ -3089,6 +3234,19 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           tax_rate: {
             id: '123456'
           },
@@ -3096,7 +3254,8 @@ describe('AccountingApi', () => {
           currency: 'USD',
           account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           status: 'active',
           row_version: '1-12345'
@@ -3192,6 +3351,19 @@ describe('AccountingApi', () => {
                 type: 'primary'
               }
             ],
+            bank_accounts: [
+              {
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                currency: 'USD'
+              }
+            ],
             tax_rate: {
               id: '123456',
               code: 'N-T',
@@ -3202,7 +3374,8 @@ describe('AccountingApi', () => {
             account: {
               id: '123456',
               name: 'Bank account',
-              nominal_code: 'N091'
+              nominal_code: 'N091',
+              code: '453'
             },
             status: 'active',
             updated_by: '12345',
@@ -3362,6 +3535,19 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           tax_rate: {
             id: '123456',
             code: 'N-T',
@@ -3372,7 +3558,8 @@ describe('AccountingApi', () => {
           account: {
             id: '123456',
             name: 'Bank account',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           status: 'active',
           updated_by: '12345',
@@ -3490,6 +3677,19 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          bank_accounts: [
+            {
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              currency: 'USD'
+            }
+          ],
           tax_rate: {
             id: '123456'
           },
@@ -3497,7 +3697,8 @@ describe('AccountingApi', () => {
           currency: 'USD',
           account: {
             id: '123456',
-            nominal_code: 'N091'
+            nominal_code: 'N091',
+            code: '453'
           },
           status: 'active',
           row_version: '1-12345'

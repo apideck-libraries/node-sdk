@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
 `subdomain` | **string** |  | [optional] 
+`status` | **string** |  | [optional] 
 `company_number` | **string** | An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company. | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
@@ -25,7 +26,23 @@ Name | Type | Description | Notes
 
 
 
+<a name="HrisCompanyStatus"></a>
+## Enum: HrisCompany.status
+
+
+* `active` (value: `'active'`)
+
+* `inactive` (value: `'inactive'`)
+
+* `trial` (value: `'trial'`)
+
+* `other` (value: `'other'`)
+
+
+
+
 ## Referenced Types:
+
 
 
 

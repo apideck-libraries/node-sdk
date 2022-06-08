@@ -10,6 +10,11 @@ Name | Type | Description | Notes
 `name` | **string** | The name of an applicant. | [optional] 
 `first_name` | **string** |  | [optional] 
 `last_name` | **string** |  | [optional] 
+`middle_name` | **string** |  | [optional] 
+`initials` | **string** |  | [optional] 
+`birthday` | **Date** |  | [optional] 
+`job_url` | **string** |  | [optional] 
+`photo_url` | **string** |  | [optional] 
 `headline` | **string** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
 `title` | **string** |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -22,6 +27,7 @@ Name | Type | Description | Notes
 `applications` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
 `sources` | **Array&lt;string&gt;** |  | [optional] 
+`source_id` | **string** |  | [optional] 
 `confidential` | **boolean** |  | [optional] 
 `anonymized` | **boolean** |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
@@ -29,6 +35,10 @@ Name | Type | Description | Notes
 `last_interaction_at` | **Date** |  | [optional] 
 `owner_id` | **string** |  | [optional] 
 `sourced_by` | **string** |  | [optional] 
+`cv_url` | **string** |  | [optional] 
+`record_url` | **string** |  | [optional] 
+`rejected_at` | **Date** |  | [optional] 
+`deleted` | **boolean** |  | [optional] 
 `deleted_by` | **string** |  | [optional] 
 `deleted_at` | **Date** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -39,6 +49,11 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
+
+
+
+
 
 
 
@@ -58,7 +73,12 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Tags`](Tags.md)
+
+
+
+
 
 
 

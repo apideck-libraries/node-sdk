@@ -5,6 +5,7 @@
 
 ## Methods
 
+* [Get BalanceSheet](#balanceSheetOne)
 * [Create Bill](#billsAdd)
 * [List Bills](#billsAll)
 * [Delete Bill](#billsDelete)
@@ -46,6 +47,73 @@
 * [Delete Tax Rate](#taxRatesDelete)
 * [Get Tax Rate](#taxRatesOne)
 * [Update Tax Rate](#taxRatesUpdate)
+
+<a name="balanceSheetOne"></a>
+# Get BalanceSheet
+
+
+Method: **balanceSheetOne**
+
+```typescript
+accountingApi.balanceSheetOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **passThrough** | **Passthrough** | Optional unmapped key/values that will be passed through to downstream as query parameters | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetBalanceSheetResponse`](../models/GetBalanceSheetResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | BalanceSheet | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.balanceSheetOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="billsAdd"></a>
 # Create Bill
@@ -154,7 +222,8 @@ const params = {
         },
         ledger_account: {
           id: '123456',
-          nominal_code: 'N091'
+          nominal_code: 'N091',
+          code: '453'
         },
         tax_rate: {
           id: '123456'
@@ -173,7 +242,8 @@ const params = {
     status: 'draft',
     ledger_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     row_version: '1-12345'
   }
@@ -508,7 +578,8 @@ const params = {
         },
         ledger_account: {
           id: '123456',
-          nominal_code: 'N091'
+          nominal_code: 'N091',
+          code: '453'
         },
         tax_rate: {
           id: '123456'
@@ -527,7 +598,8 @@ const params = {
     status: 'draft',
     ledger_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     row_version: '1-12345'
   }
@@ -732,16 +804,19 @@ const params = {
     },
     tax_number: 'US123945459',
     currency: 'USD',
-    bank_accounts: {
-      iban: 'CH2989144532982975332',
-      bic: 'AUDSCHGGXXX',
-      bsb_number: '062-001',
-      bank_code: 'BNH',
-      account_number: '123456789',
-      account_name: 'SPACEX LLC',
-      account_type: 'credit_card',
-      currency: 'USD'
-    },
+    bank_accounts: [
+      {
+        iban: 'CH2989144532982975332',
+        bic: 'AUDSCHGGXXX',
+        bsb_number: '062-001',
+        branch_identifier: '001',
+        bank_code: 'BNH',
+        account_number: '123465',
+        account_name: 'SPACEX LLC',
+        account_type: 'credit_card',
+        currency: 'USD'
+      }
+    ],
     status: 'active',
     row_version: '1-12345'
   }
@@ -1088,16 +1163,19 @@ const params = {
     },
     tax_number: 'US123945459',
     currency: 'USD',
-    bank_accounts: {
-      iban: 'CH2989144532982975332',
-      bic: 'AUDSCHGGXXX',
-      bsb_number: '062-001',
-      bank_code: 'BNH',
-      account_number: '123456789',
-      account_name: 'SPACEX LLC',
-      account_type: 'credit_card',
-      currency: 'USD'
-    },
+    bank_accounts: [
+      {
+        iban: 'CH2989144532982975332',
+        bic: 'AUDSCHGGXXX',
+        bsb_number: '062-001',
+        branch_identifier: '001',
+        bank_code: 'BNH',
+        account_number: '123465',
+        account_name: 'SPACEX LLC',
+        account_type: 'credit_card',
+        currency: 'USD'
+      }
+    ],
     status: 'active',
     row_version: '1-12345'
   }
@@ -1198,15 +1276,18 @@ const params = {
     unit_price: 27500.5,
     asset_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     income_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     expense_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     active: true,
     row_version: '1-12345'
@@ -1247,6 +1328,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **filter** | **InvoiceItemsFilter** | Apply filters (beta) | (optional) 
 
 
 
@@ -1516,15 +1598,18 @@ const params = {
     unit_price: 27500.5,
     asset_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     income_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     expense_account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     active: true,
     row_version: '1-12345'
@@ -1642,7 +1727,8 @@ const params = {
         },
         ledger_account: {
           id: '123456',
-          nominal_code: 'N091'
+          nominal_code: 'N091',
+          code: '453'
         },
         row_version: '1-12345'
       }
@@ -2021,7 +2107,8 @@ const params = {
         },
         ledger_account: {
           id: '123456',
-          nominal_code: 'N091'
+          nominal_code: 'N091',
+          code: '453'
         },
         row_version: '1-12345'
       }
@@ -2150,6 +2237,7 @@ const params = {
   ledgerAccount: {
     display_id: '1-12345',
     nominal_code: 'N091',
+    code: '453',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',
@@ -2171,8 +2259,9 @@ const params = {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
       bsb_number: '062-001',
+      branch_identifier: '001',
       bank_code: 'BNH',
-      account_number: '123456789',
+      account_number: '123465',
       account_name: 'SPACEX LLC',
       account_type: 'credit_card',
       currency: 'USD'
@@ -2465,6 +2554,7 @@ const params = {
   ledgerAccount: {
     display_id: '1-12345',
     nominal_code: 'N091',
+    code: '453',
     classification: 'asset',
     type: 'bank',
     sub_type: 'CHECKING_ACCOUNT',
@@ -2486,8 +2576,9 @@ const params = {
       iban: 'CH2989144532982975332',
       bic: 'AUDSCHGGXXX',
       bsb_number: '062-001',
+      branch_identifier: '001',
       bank_code: 'BNH',
-      account_number: '123456789',
+      account_number: '123465',
       account_name: 'SPACEX LLC',
       account_type: 'credit_card',
       currency: 'USD'
@@ -2580,7 +2671,8 @@ const params = {
     accounts_receivable_account_id: '123456',
     account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
@@ -2887,7 +2979,8 @@ const params = {
     accounts_receivable_account_id: '123456',
     account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
@@ -3035,6 +3128,19 @@ const params = {
         type: 'primary'
       }
     ],
+    bank_accounts: [
+      {
+        iban: 'CH2989144532982975332',
+        bic: 'AUDSCHGGXXX',
+        bsb_number: '062-001',
+        branch_identifier: '001',
+        bank_code: 'BNH',
+        account_number: '123465',
+        account_name: 'SPACEX LLC',
+        account_type: 'credit_card',
+        currency: 'USD'
+      }
+    ],
     tax_rate: {
       id: '123456'
     },
@@ -3042,7 +3148,8 @@ const params = {
     currency: 'USD',
     account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     status: 'active',
     row_version: '1-12345'
@@ -3383,6 +3490,19 @@ const params = {
         type: 'primary'
       }
     ],
+    bank_accounts: [
+      {
+        iban: 'CH2989144532982975332',
+        bic: 'AUDSCHGGXXX',
+        bsb_number: '062-001',
+        branch_identifier: '001',
+        bank_code: 'BNH',
+        account_number: '123465',
+        account_name: 'SPACEX LLC',
+        account_type: 'credit_card',
+        currency: 'USD'
+      }
+    ],
     tax_rate: {
       id: '123456'
     },
@@ -3390,7 +3510,8 @@ const params = {
     currency: 'USD',
     account: {
       id: '123456',
-      nominal_code: 'N091'
+      nominal_code: 'N091',
+      code: '453'
     },
     status: 'active',
     row_version: '1-12345'

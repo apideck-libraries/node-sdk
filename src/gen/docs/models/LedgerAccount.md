@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `display_id` | **string** | The human readable display ID used when displaying the account | [optional] 
 `nominal_code` | **string** | The nominal code of the ledger account. | [optional] 
+`code` | **string** | The code assigned to the account. | [optional] 
 `classification` | **string** | The classification of account. | [optional] 
 `type` | **string** | The type of account. | [optional] 
 `sub_type` | **string** | The sub type of account. | [optional] 
@@ -123,6 +124,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

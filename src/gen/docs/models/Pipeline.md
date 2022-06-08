@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 `archived` | **boolean** |  | [optional] 
 `display_order` | **number** |  | [optional] 
 `stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
-`updated_at` | **string** |  | [optional] 
-`created_at` | **string** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 

@@ -636,13 +636,16 @@ const params = {
     abn_or_tfn: '46 115 614 695',
     abn_branch: '123',
     acn: 'XXX XXX XXX',
+    first_name: 'Elon',
+    last_name: 'Musk',
     bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
         bsb_number: '062-001',
+        branch_identifier: '001',
         bank_code: 'BNH',
-        account_number: '123456789',
+        account_number: '123465',
         account_name: 'SPACEX LLC',
         account_type: 'credit_card',
         currency: 'USD'
@@ -706,6 +709,10 @@ const params = {
         type: 'primary'
       }
     ],
+    row_type: {
+      id: '12345',
+      name: 'Customer Account'
+    },
     custom_fields: [
       {
         id: 2389328923893298,
@@ -1015,13 +1022,16 @@ const params = {
     abn_or_tfn: '46 115 614 695',
     abn_branch: '123',
     acn: 'XXX XXX XXX',
+    first_name: 'Elon',
+    last_name: 'Musk',
     bank_accounts: [
       {
         iban: 'CH2989144532982975332',
         bic: 'AUDSCHGGXXX',
         bsb_number: '062-001',
+        branch_identifier: '001',
         bank_code: 'BNH',
-        account_number: '123456789',
+        account_number: '123465',
         account_name: 'SPACEX LLC',
         account_type: 'credit_card',
         currency: 'USD'
@@ -1085,6 +1095,10 @@ const params = {
         type: 'primary'
       }
     ],
+    row_type: {
+      id: '12345',
+      name: 'Customer Account'
+    },
     custom_fields: [
       {
         id: 2389328923893298,
@@ -3018,6 +3032,7 @@ const params = {
       {
         name: 'Contract Sent',
         value: 'CONTRACT_SENT',
+        win_probability: 50,
         display_order: 1
       }
     ]
@@ -3308,6 +3323,7 @@ const params = {
       {
         name: 'Contract Sent',
         value: 'CONTRACT_SENT',
+        win_probability: 50,
         display_order: 1
       }
     ]

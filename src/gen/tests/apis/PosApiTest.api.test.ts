@@ -82,7 +82,7 @@ describe('PosApi', () => {
               name: 'Food',
               sku: '11910345',
               item_id: '12345',
-              ordinal: 0,
+              sequence: 0,
               pricing_type: 'fixed',
               price_amount: 10,
               price_currency: 'USD',
@@ -158,7 +158,7 @@ describe('PosApi', () => {
                 name: 'Food',
                 sku: '11910345',
                 item_id: '12345',
-                ordinal: 0,
+                sequence: 0,
                 pricing_type: 'fixed',
                 price_amount: 10,
                 price_currency: 'USD',
@@ -299,7 +299,7 @@ describe('PosApi', () => {
               name: 'Food',
               sku: '11910345',
               item_id: '12345',
-              ordinal: 0,
+              sequence: 0,
               pricing_type: 'fixed',
               price_amount: 10,
               price_currency: 'USD',
@@ -400,7 +400,7 @@ describe('PosApi', () => {
               name: 'Food',
               sku: '11910345',
               item_id: '12345',
-              ordinal: 0,
+              sequence: 0,
               pricing_type: 'fixed',
               price_amount: 10,
               price_currency: 'USD',
@@ -1147,6 +1147,8 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           minimum_required: 1,
           maximum_allowed: 5,
+          selection_type: 'single',
+          present_at_all_locations: false,
           modifiers: [
             {
               id: '12345',
@@ -1157,6 +1159,7 @@ describe('PosApi', () => {
               available: true
             }
           ],
+          deleted: true,
           row_version: '1-12345'
         }
       } as any
@@ -1194,6 +1197,8 @@ describe('PosApi', () => {
             alternate_name: 'Modifier New',
             minimum_required: 1,
             maximum_allowed: 5,
+            selection_type: 'single',
+            present_at_all_locations: false,
             modifiers: [
               {
                 id: '12345',
@@ -1204,6 +1209,7 @@ describe('PosApi', () => {
                 available: true
               }
             ],
+            deleted: true,
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1305,6 +1311,8 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           minimum_required: 1,
           maximum_allowed: 5,
+          selection_type: 'single',
+          present_at_all_locations: false,
           modifiers: [
             {
               id: '12345',
@@ -1315,6 +1323,7 @@ describe('PosApi', () => {
               available: true
             }
           ],
+          deleted: true,
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1375,6 +1384,8 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           minimum_required: 1,
           maximum_allowed: 5,
+          selection_type: 'single',
+          present_at_all_locations: false,
           modifiers: [
             {
               id: '12345',
@@ -1385,6 +1396,7 @@ describe('PosApi', () => {
               available: true
             }
           ],
+          deleted: true,
           row_version: '1-12345'
         }
       } as any

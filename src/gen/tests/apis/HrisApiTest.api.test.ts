@@ -50,6 +50,7 @@ describe('HrisApi', () => {
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
           subdomain: 'company',
+          status: 'active',
           company_number: '123456-AB',
           addresses: [
             {
@@ -138,6 +139,7 @@ describe('HrisApi', () => {
             legal_name: 'SpaceX',
             display_name: 'SpaceX',
             subdomain: 'company',
+            status: 'active',
             company_number: '123456-AB',
             addresses: [
               {
@@ -291,6 +293,7 @@ describe('HrisApi', () => {
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
           subdomain: 'company',
+          status: 'active',
           company_number: '123456-AB',
           addresses: [
             {
@@ -403,6 +406,7 @@ describe('HrisApi', () => {
           legal_name: 'SpaceX',
           display_name: 'SpaceX',
           subdomain: 'company',
+          status: 'active',
           company_number: '123456-AB',
           addresses: [
             {
@@ -756,6 +760,10 @@ describe('HrisApi', () => {
               last_name: 'Musk',
               email: 'elon@musk.com'
             },
+            direct_reports: [
+              'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+              'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+            ],
             social_security_number: '123456789',
             birthday: '2000-08-12',
             country_of_birth: 'US',
@@ -766,11 +774,17 @@ describe('HrisApi', () => {
             languages: ['EN'],
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
+            timezone: 'Europe/London',
+            source:
+              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+            source_id:
+              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
             jobs: [
               {
                 id: '12345',
                 employee_id: '12345',
                 title: 'CEO',
+                role: 'Sales',
                 compensation_rate: 72000,
                 currency: 'USD',
                 payment_unit: 'year',
@@ -813,6 +827,7 @@ describe('HrisApi', () => {
                 effective_date: '2021-06-11'
               }
             ],
+            works_remote: true,
             addresses: [
               {
                 id: '123',
@@ -872,6 +887,10 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            tax_code: '1111',
+            tax_id: '234-32-0000',
+            dietary_preference: 'Veggie',
+            food_allergies: ['No allergies'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -984,6 +1003,10 @@ describe('HrisApi', () => {
               last_name: 'Musk',
               email: 'elon@musk.com'
             },
+            direct_reports: [
+              'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+              'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+            ],
             social_security_number: '123456789',
             birthday: '2000-08-12',
             country_of_birth: 'US',
@@ -994,11 +1017,17 @@ describe('HrisApi', () => {
             languages: ['EN'],
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
+            timezone: 'Europe/London',
+            source:
+              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+            source_id:
+              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
             jobs: [
               {
                 id: '12345',
                 employee_id: '12345',
                 title: 'CEO',
+                role: 'Sales',
                 compensation_rate: 72000,
                 currency: 'USD',
                 payment_unit: 'year',
@@ -1041,6 +1070,7 @@ describe('HrisApi', () => {
                 effective_date: '2021-06-11'
               }
             ],
+            works_remote: true,
             addresses: [
               {
                 id: '123',
@@ -1100,6 +1130,10 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            tax_code: '1111',
+            tax_id: '234-32-0000',
+            dietary_preference: 'Veggie',
+            food_allergies: ['No allergies'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -1219,6 +1253,10 @@ describe('HrisApi', () => {
             last_name: 'Musk',
             email: 'elon@musk.com'
           },
+          direct_reports: [
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+          ],
           social_security_number: '123456789',
           birthday: '2000-08-12',
           country_of_birth: 'US',
@@ -1229,9 +1267,15 @@ describe('HrisApi', () => {
           languages: ['EN'],
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
+          timezone: 'Europe/London',
+          source:
+            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+          source_id:
+            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
           jobs: [
             {
               title: 'CEO',
+              role: 'Sales',
               compensation_rate: 72000,
               currency: 'USD',
               payment_unit: 'year',
@@ -1274,6 +1318,7 @@ describe('HrisApi', () => {
               effective_date: '2021-06-11'
             }
           ],
+          works_remote: true,
           addresses: [
             {
               id: '123',
@@ -1333,6 +1378,10 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
+          tax_code: '1111',
+          tax_id: '234-32-0000',
+          dietary_preference: 'Veggie',
+          food_allergies: ['No allergies'],
           row_version: '1-12345',
           deleted: true
         }
@@ -1399,6 +1448,10 @@ describe('HrisApi', () => {
               last_name: 'Musk',
               email: 'elon@musk.com'
             },
+            direct_reports: [
+              'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+              'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+            ],
             social_security_number: '123456789',
             birthday: '2000-08-12',
             country_of_birth: 'US',
@@ -1409,11 +1462,17 @@ describe('HrisApi', () => {
             languages: ['EN'],
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
+            timezone: 'Europe/London',
+            source:
+              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+            source_id:
+              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
             jobs: [
               {
                 id: '12345',
                 employee_id: '12345',
                 title: 'CEO',
+                role: 'Sales',
                 compensation_rate: 72000,
                 currency: 'USD',
                 payment_unit: 'year',
@@ -1456,6 +1515,7 @@ describe('HrisApi', () => {
                 effective_date: '2021-06-11'
               }
             ],
+            works_remote: true,
             addresses: [
               {
                 id: '123',
@@ -1515,6 +1575,10 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            tax_code: '1111',
+            tax_id: '234-32-0000',
+            dietary_preference: 'Veggie',
+            food_allergies: ['No allergies'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -1645,6 +1709,10 @@ describe('HrisApi', () => {
             last_name: 'Musk',
             email: 'elon@musk.com'
           },
+          direct_reports: [
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+          ],
           social_security_number: '123456789',
           birthday: '2000-08-12',
           country_of_birth: 'US',
@@ -1655,11 +1723,17 @@ describe('HrisApi', () => {
           languages: ['EN'],
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
+          timezone: 'Europe/London',
+          source:
+            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+          source_id:
+            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
           jobs: [
             {
               id: '12345',
               employee_id: '12345',
               title: 'CEO',
+              role: 'Sales',
               compensation_rate: 72000,
               currency: 'USD',
               payment_unit: 'year',
@@ -1702,6 +1776,7 @@ describe('HrisApi', () => {
               effective_date: '2021-06-11'
             }
           ],
+          works_remote: true,
           addresses: [
             {
               id: '123',
@@ -1761,6 +1836,10 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
+          tax_code: '1111',
+          tax_id: '234-32-0000',
+          dietary_preference: 'Veggie',
+          food_allergies: ['No allergies'],
           row_version: '1-12345',
           deleted: true,
           updated_by: '12345',
@@ -1849,6 +1928,10 @@ describe('HrisApi', () => {
             last_name: 'Musk',
             email: 'elon@musk.com'
           },
+          direct_reports: [
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+          ],
           social_security_number: '123456789',
           birthday: '2000-08-12',
           country_of_birth: 'US',
@@ -1859,9 +1942,15 @@ describe('HrisApi', () => {
           languages: ['EN'],
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
+          timezone: 'Europe/London',
+          source:
+            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+          source_id:
+            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
           jobs: [
             {
               title: 'CEO',
+              role: 'Sales',
               compensation_rate: 72000,
               currency: 'USD',
               payment_unit: 'year',
@@ -1904,6 +1993,7 @@ describe('HrisApi', () => {
               effective_date: '2021-06-11'
             }
           ],
+          works_remote: true,
           addresses: [
             {
               id: '123',
@@ -1963,6 +2053,10 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
+          tax_code: '1111',
+          tax_id: '234-32-0000',
+          dietary_preference: 'Veggie',
+          food_allergies: ['No allergies'],
           row_version: '1-12345',
           deleted: true
         }
