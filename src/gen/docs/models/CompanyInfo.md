@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
 `legal_name` | **string** | The legal name of the company | [optional] 
+`country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `sales_tax_number` | **string** |  | [optional] 
+`sales_tax_enabled` | **boolean** | Whether sales tax is enabled for the company | [optional] 
+`default_sales_tax` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `fiscal_year_start_month` | **string** | The start month of fiscal year. | [optional] 
@@ -62,6 +65,9 @@ Name | Type | Description | Notes
 
 
 
+
+
+* [`LinkedTaxRate`](LinkedTaxRate.md)
 * [`Currency`](Currency.md)
 
 
