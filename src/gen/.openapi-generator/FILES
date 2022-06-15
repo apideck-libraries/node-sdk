@@ -136,6 +136,7 @@ CustomField.md
 CustomerSupportApi.md
 CustomerSupportApiTest.api.test.ts
 CustomerSupportCustomer.md
+CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
 DeleteBillResponse.md
@@ -583,6 +584,7 @@ models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
 models/CustomerSupportCustomer.ts
+models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
 models/DeleteBillResponse.ts
