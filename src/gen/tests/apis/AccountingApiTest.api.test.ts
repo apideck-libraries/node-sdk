@@ -695,7 +695,14 @@ describe('AccountingApi', () => {
           id: '12345',
           company_name: 'SpaceX',
           legal_name: 'SpaceX Inc.',
+          country: 'US',
           sales_tax_number: '111.222.333',
+          sales_tax_enabled: true,
+          default_sales_tax: {
+            id: '123456',
+            code: 'N-T',
+            name: 'GST on Purchases'
+          },
           currency: 'USD',
           language: 'EN',
           fiscal_year_start_month: 'January',
