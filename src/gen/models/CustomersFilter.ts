@@ -16,52 +16,48 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface LeadsFilter
+ * @interface CustomersFilter
  */
-export interface LeadsFilter {
+export interface CustomersFilter {
   /**
-   * Name of the lead to filter on
+   * Company Name of contact to search for
    * @type {string}
-   * @memberof LeadsFilter
+   * @memberof CustomersFilter
    */
-  name?: string
+  company_name?: string
   /**
-   * First name of the lead to filter on
+   * Last name of contact to search for
    * @type {string}
-   * @memberof LeadsFilter
-   */
-  first_name?: string
-  /**
-   * Last name of the lead to filter on
-   * @type {string}
-   * @memberof LeadsFilter
+   * @memberof CustomersFilter
    */
   last_name?: string
   /**
-   * E-mail of the lead to filter on
+   * Email of contact to search for
    * @type {string}
-   * @memberof LeadsFilter
+   * @memberof CustomersFilter
    */
   email?: string
 }
 
-export function LeadsFilterFromJSON(json: any): LeadsFilter {
-  return LeadsFilterFromJSONTyped(json, false)
+export function CustomersFilterFromJSON(json: any): CustomersFilter {
+  return CustomersFilterFromJSONTyped(json, false)
 }
 
-export function LeadsFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean): LeadsFilter {
+export function CustomersFilterFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CustomersFilter {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     email: !exists(json, 'email') ? undefined : json['email']
   }
 }
 
-export function LeadsFilterToJSON(value?: LeadsFilter | null): any {
+export function CustomersFilterToJSON(value?: CustomersFilter | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -69,8 +65,7 @@ export function LeadsFilterToJSON(value?: LeadsFilter | null): any {
     return null
   }
   return {
-    name: value.name,
-    first_name: value.first_name,
+    company_name: value.company_name,
     last_name: value.last_name,
     email: value.email
   }

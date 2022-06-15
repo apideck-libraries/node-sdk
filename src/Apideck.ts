@@ -1,4 +1,5 @@
 import fetch from 'node-fetch-commonjs'
+
 import {
   AccountingApi,
   AtsApi,
@@ -13,7 +14,9 @@ import {
   VaultApi,
   WebhookApi
 } from './gen/'
+
 import { Configuration } from './gen/runtime'
+
 import { Utils } from './utils'
 
 const isNode =
