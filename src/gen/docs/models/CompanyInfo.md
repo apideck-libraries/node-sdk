@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `legal_name` | **string** | The legal name of the company | [optional] 
 `country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `sales_tax_number` | **string** |  | [optional] 
+`automated_sales_tax` | **boolean** | Whether sales tax is calculated automatically for the company | [optional] 
 `sales_tax_enabled` | **boolean** | Whether sales tax is enabled for the company | [optional] 
 `default_sales_tax` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
@@ -61,6 +62,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

@@ -697,6 +697,7 @@ describe('AccountingApi', () => {
           legal_name: 'SpaceX Inc.',
           country: 'US',
           sales_tax_number: '111.222.333',
+          automated_sales_tax: true,
           sales_tax_enabled: true,
           default_sales_tax: {
             id: '123456',
