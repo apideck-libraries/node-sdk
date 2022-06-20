@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `due_date` | **Date** | The due date is the date on which a payment is scheduled to be received by the supplier - YYYY-MM-DD. | [optional] 
 `paid_date` | **Date** | The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD. | [optional] 
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
+`reference` | **string** | Optional invoice reference. | [optional] 
 `line_items` | [**Array&lt;BillLineItem&gt;**](BillLineItem.md) |  | [optional] 
 `terms` | **string** | Terms of payment. | [optional] 
 `balance` | **number** | Balance of bill due. | [optional] 
@@ -64,6 +65,7 @@ Name | Type | Description | Notes
 
 * [`LinkedSupplier`](LinkedSupplier.md)
 * [`Currency`](Currency.md)
+
 
 
 
