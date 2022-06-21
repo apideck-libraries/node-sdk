@@ -101,13 +101,13 @@ export interface OrderTenders {
    */
   total_service_charge?: number | null
   /**
-   * The amount of cash tendered by the buyer. Only applicable when the tender type is cash.
+   * The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash.
    * @type {number}
    * @memberof OrderTenders
    */
   buyer_tendered_cash_amount?: number | null
   /**
-   * The amount of cash returned to the buyer. Only applicable when the tender type is cash.
+   * The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash.
    * @type {number}
    * @memberof OrderTenders
    */

@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { ServiceCharge, ServiceChargeFromJSON, ServiceChargeToJSON } from './ServiceCharge'
 
 /**
  *
@@ -58,6 +59,12 @@ export interface Merchant {
    * @memberof Merchant
    */
   status?: MerchantStatus
+  /**
+   *
+   * @type {Array<ServiceCharge>}
+   * @memberof Merchant
+   */
+  service_charges?: Array<ServiceCharge>
   /**
    * language code according to ISO 639-1. For the United States - EN
    * @type {string}
@@ -121,6 +128,9 @@ export function MerchantFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
     main_location_id: !exists(json, 'main_location_id') ? undefined : json['main_location_id'],
     status: !exists(json, 'status') ? undefined : json['status'],
+    service_charges: !exists(json, 'service_charges')
+      ? undefined
+      : (json['service_charges'] as Array<any>).map(ServiceChargeFromJSON),
     language: !exists(json, 'language') ? undefined : json['language'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -143,6 +153,10 @@ export function MerchantToJSON(value?: Merchant | null): any {
     owner_id: value.owner_id,
     main_location_id: value.main_location_id,
     status: value.status,
+    service_charges:
+      value.service_charges === undefined
+        ? undefined
+        : (value.service_charges as Array<any>).map(ServiceChargeToJSON),
     language: value.language,
     currency: CurrencyToJSON(value.currency)
   }

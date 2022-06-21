@@ -374,6 +374,7 @@ PosPaymentExternalDetails.md
 Price.md
 RequestCountAllocation.md
 ResourceStatus.md
+ServiceCharge.md
 ServiceCharges.md
 Session.md
 SessionSettings.md
@@ -814,6 +815,7 @@ models/PosPaymentExternalDetails.ts
 models/Price.ts
 models/RequestCountAllocation.ts
 models/ResourceStatus.ts
+models/ServiceCharge.ts
 models/ServiceCharges.ts
 models/Session.ts
 models/SessionSettings.ts

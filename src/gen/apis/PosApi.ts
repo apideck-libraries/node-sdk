@@ -3069,7 +3069,7 @@ export class PosApi extends runtime.BaseAPI {
 
   /**
    * Create Payment
-   * CreateP ayment
+   * Create Payment
    */
   async paymentsAddRaw(
     requestParameters: PosApiPaymentsAddRequest,
@@ -3126,7 +3126,7 @@ export class PosApi extends runtime.BaseAPI {
 
   /**
    * Create Payment
-   * CreateP ayment
+   * Create Payment
    */
   async paymentsAdd(
     requestParameters: PosApiPaymentsAddRequest,

@@ -76,17 +76,11 @@ export interface Order {
    */
   reference_id?: string | null
   /**
-   *
+   * Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to 'open'. More info [https://docs.clover.com/reference/orderupdateorder]()
    * @type {string}
    * @memberof Order
    */
   status?: OrderStatus
-  /**
-   * A string describing the state of the order. Clover specific: If no value is set, the state defaults to null, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to 'open'. More info [https://docs.clover.com/reference/orderupdateorder]()
-   * @type {string}
-   * @memberof Order
-   */
-  state?: string
   /**
    * Is this order paid or not?
    * @type {string}
@@ -297,7 +291,8 @@ export enum OrderStatus {
   delivered = 'delivered',
   delayed = 'delayed',
   voided = 'voided',
-  completed = 'completed'
+  completed = 'completed',
+  hidden = 'hidden'
 }
 /**
  * @export
@@ -352,7 +347,6 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
       : new Date(json['closed_date']),
     reference_id: !exists(json, 'reference_id') ? undefined : json['reference_id'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    state: !exists(json, 'state') ? undefined : json['state'],
     payment_status: !exists(json, 'payment_status') ? undefined : json['payment_status'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     title: !exists(json, 'title') ? undefined : json['title'],
@@ -432,7 +426,6 @@ export function OrderToJSON(value?: Order | null): any {
         : new Date(value.closed_date).toISOString().substr(0, 10),
     reference_id: value.reference_id,
     status: value.status,
-    state: value.state,
     payment_status: value.payment_status,
     currency: CurrencyToJSON(value.currency),
     title: value.title,

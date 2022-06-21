@@ -41,7 +41,7 @@
 * [Get Order](#ordersOne)
 * [Pay Order](#ordersPay)
 * [Update Order](#ordersUpdate)
-* [CreateP Ayment](#paymentsAdd)
+* [Create Payment](#paymentsAdd)
 * [List Payments](#paymentsAll)
 * [Delete Payment](#paymentsDelete)
 * [Get Payment](#paymentsOne)
@@ -1004,6 +1004,16 @@ const params = {
     owner_id: '12345',
     main_location_id: '12345',
     status: 'active',
+    service_charges: [
+      {
+        name: 'Charge for delivery',
+        amount: 27500,
+        percentage: 12.5,
+        currency: 'USD',
+        active: true,
+        type: 'auto_gratuity'
+      }
+    ],
     language: 'EN',
     currency: 'USD'
   }
@@ -1313,6 +1323,16 @@ const params = {
     owner_id: '12345',
     main_location_id: '12345',
     status: 'active',
+    service_charges: [
+      {
+        name: 'Charge for delivery',
+        amount: 27500,
+        percentage: 12.5,
+        currency: 'USD',
+        active: true,
+        type: 'auto_gratuity'
+      }
+    ],
     language: 'EN',
     currency: 'USD'
   }
@@ -1773,9 +1793,7 @@ const params = {
     alternate_name: 'Modifier New',
     price_amount: 10,
     currency: 'USD',
-    modifier_group_id: [
-      '123'
-    ],
+    modifier_group_id: '123',
     available: true
   }
 }
@@ -2061,9 +2079,7 @@ const params = {
     alternate_name: 'Modifier New',
     price_amount: 10,
     currency: 'USD',
-    modifier_group_id: [
-      '123'
-    ],
+    modifier_group_id: '123',
     available: true
   }
 }
@@ -2492,7 +2508,6 @@ const params = {
     closed_date: '2022-08-13',
     reference_id: 'my-order-001',
     status: 'open',
-    state: 'open',
     payment_status: 'open',
     currency: 'USD',
     title: 'string',
@@ -2614,6 +2629,7 @@ const params = {
         amount: 27500,
         percentage: 12.5,
         currency: 'USD',
+        active: true,
         type: 'auto_gratuity'
       }
     ],
@@ -2993,7 +3009,6 @@ const params = {
     closed_date: '2022-08-13',
     reference_id: 'my-order-001',
     status: 'open',
-    state: 'open',
     payment_status: 'open',
     currency: 'USD',
     title: 'string',
@@ -3115,6 +3130,7 @@ const params = {
         amount: 27500,
         percentage: 12.5,
         currency: 'USD',
+        active: true,
         type: 'auto_gratuity'
       }
     ],
@@ -3287,7 +3303,6 @@ const params = {
     closed_date: '2022-08-13',
     reference_id: 'my-order-001',
     status: 'open',
-    state: 'open',
     payment_status: 'open',
     currency: 'USD',
     title: 'string',
@@ -3409,6 +3424,7 @@ const params = {
         amount: 27500,
         percentage: 12.5,
         currency: 'USD',
+        active: true,
         type: 'auto_gratuity'
       }
     ],
@@ -3522,7 +3538,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="paymentsAdd"></a>
-# CreateP Ayment
+# Create Payment
 
 
 Method: **paymentsAdd**
@@ -3677,6 +3693,7 @@ const params = {
         amount: 27500,
         percentage: 12.5,
         currency: 'USD',
+        active: true,
         type: 'auto_gratuity'
       }
     ]
@@ -4061,6 +4078,7 @@ const params = {
         amount: 27500,
         percentage: 12.5,
         currency: 'USD',
+        active: true,
         type: 'auto_gratuity'
       }
     ]

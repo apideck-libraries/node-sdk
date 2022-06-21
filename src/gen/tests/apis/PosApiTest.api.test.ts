@@ -825,6 +825,16 @@ describe('PosApi', () => {
           owner_id: '12345',
           main_location_id: '12345',
           status: 'active',
+          service_charges: [
+            {
+              name: 'Charge for delivery',
+              amount: 27500,
+              percentage: 12.5,
+              currency: 'USD',
+              active: true,
+              type: 'auto_gratuity'
+            }
+          ],
           language: 'EN',
           currency: 'USD'
         }
@@ -888,6 +898,17 @@ describe('PosApi', () => {
             owner_id: '12345',
             main_location_id: '12345',
             status: 'active',
+            service_charges: [
+              {
+                id: '12345',
+                name: 'Charge for delivery',
+                amount: 27500,
+                percentage: 12.5,
+                currency: 'USD',
+                active: true,
+                type: 'auto_gratuity'
+              }
+            ],
             language: 'EN',
             currency: 'USD',
             updated_by: '12345',
@@ -1015,6 +1036,17 @@ describe('PosApi', () => {
           owner_id: '12345',
           main_location_id: '12345',
           status: 'active',
+          service_charges: [
+            {
+              id: '12345',
+              name: 'Charge for delivery',
+              amount: 27500,
+              percentage: 12.5,
+              currency: 'USD',
+              active: true,
+              type: 'auto_gratuity'
+            }
+          ],
           language: 'EN',
           currency: 'USD',
           updated_by: '12345',
@@ -1101,6 +1133,16 @@ describe('PosApi', () => {
           owner_id: '12345',
           main_location_id: '12345',
           status: 'active',
+          service_charges: [
+            {
+              name: 'Charge for delivery',
+              amount: 27500,
+              percentage: 12.5,
+              currency: 'USD',
+              active: true,
+              type: 'auto_gratuity'
+            }
+          ],
           language: 'EN',
           currency: 'USD'
         }
@@ -1444,7 +1486,7 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           price_amount: 10,
           currency: 'USD',
-          modifier_group_id: ['123'],
+          modifier_group_id: '123',
           available: true
         }
       } as any
@@ -1482,7 +1524,7 @@ describe('PosApi', () => {
             alternate_name: 'Modifier New',
             price_amount: 10,
             currency: 'USD',
-            modifier_group_id: ['123'],
+            modifier_group_id: '123',
             available: true,
             updated_by: '12345',
             created_by: '12345',
@@ -1584,7 +1626,7 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           price_amount: 10,
           currency: 'USD',
-          modifier_group_id: ['123'],
+          modifier_group_id: '123',
           available: true,
           updated_by: '12345',
           created_by: '12345',
@@ -1645,7 +1687,7 @@ describe('PosApi', () => {
           alternate_name: 'Modifier New',
           price_amount: 10,
           currency: 'USD',
-          modifier_group_id: ['123'],
+          modifier_group_id: '123',
           available: true
         }
       } as any
@@ -1925,7 +1967,6 @@ describe('PosApi', () => {
           closed_date: '2022-08-13',
           reference_id: 'my-order-001',
           status: 'open',
-          state: 'open',
           payment_status: 'open',
           currency: 'USD',
           title: 'string',
@@ -2047,6 +2088,7 @@ describe('PosApi', () => {
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ],
@@ -2180,7 +2222,6 @@ describe('PosApi', () => {
             closed_date: '2022-08-13',
             reference_id: 'my-order-001',
             status: 'open',
-            state: 'open',
             payment_status: 'open',
             currency: 'USD',
             title: 'string',
@@ -2262,10 +2303,12 @@ describe('PosApi', () => {
             ],
             service_charges: [
               {
+                id: '12345',
                 name: 'Charge for delivery',
                 amount: 27500,
                 percentage: 12.5,
                 currency: 'USD',
+                active: true,
                 type: 'auto_gratuity'
               }
             ],
@@ -2452,7 +2495,6 @@ describe('PosApi', () => {
           closed_date: '2022-08-13',
           reference_id: 'my-order-001',
           status: 'open',
-          state: 'open',
           payment_status: 'open',
           currency: 'USD',
           title: 'string',
@@ -2577,10 +2619,12 @@ describe('PosApi', () => {
           ],
           service_charges: [
             {
+              id: '12345',
               name: 'Charge for delivery',
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ],
@@ -2750,7 +2794,6 @@ describe('PosApi', () => {
           closed_date: '2022-08-13',
           reference_id: 'my-order-001',
           status: 'open',
-          state: 'open',
           payment_status: 'open',
           currency: 'USD',
           title: 'string',
@@ -2872,6 +2915,7 @@ describe('PosApi', () => {
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ],
@@ -3015,7 +3059,6 @@ describe('PosApi', () => {
           closed_date: '2022-08-13',
           reference_id: 'my-order-001',
           status: 'open',
-          state: 'open',
           payment_status: 'open',
           currency: 'USD',
           title: 'string',
@@ -3137,6 +3180,7 @@ describe('PosApi', () => {
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ],
@@ -3378,6 +3422,7 @@ describe('PosApi', () => {
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ]
@@ -3514,10 +3559,12 @@ describe('PosApi', () => {
             },
             service_charges: [
               {
+                id: '12345',
                 name: 'Charge for delivery',
                 amount: 27500,
                 percentage: 12.5,
                 currency: 'USD',
+                active: true,
                 type: 'auto_gratuity'
               }
             ],
@@ -3718,10 +3765,12 @@ describe('PosApi', () => {
           },
           service_charges: [
             {
+              id: '12345',
               name: 'Charge for delivery',
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ],
@@ -3884,6 +3933,7 @@ describe('PosApi', () => {
               amount: 27500,
               percentage: 12.5,
               currency: 'USD',
+              active: true,
               type: 'auto_gratuity'
             }
           ]
