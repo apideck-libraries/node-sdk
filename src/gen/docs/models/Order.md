@@ -12,8 +12,7 @@ Name | Type | Description | Notes
 `order_date` | **Date** |  | [optional] 
 `closed_date` | **Date** |  | [optional] 
 `reference_id` | **string** | An optional user-defined reference ID that associates this record with another entity in an external system. For example, a customer ID from an external customer management system. | [optional] 
-`status` | **string** |  | [optional] 
-`state` | **string** | A string describing the state of the order. Clover specific: If no value is set, the state defaults to null, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to \'open\'. More info [https://docs.clover.com/reference/orderupdateorder]() | [optional] 
+`status` | **string** | Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to \'open\'. More info [https://docs.clover.com/reference/orderupdateorder]() | [optional] 
 `payment_status` | **string** | Is this order paid or not? | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `title` | **string** |  | [optional] 
@@ -68,6 +67,8 @@ Name | Type | Description | Notes
 
 * `completed` (value: `'completed'`)
 
+* `hidden` (value: `'hidden'`)
+
 
 
 
@@ -116,7 +117,6 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
-
 
 
 

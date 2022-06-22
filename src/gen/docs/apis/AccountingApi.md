@@ -204,6 +204,7 @@ const params = {
     due_date: '2020-10-30',
     paid_date: '2020-10-30',
     po_number: '90000117',
+    reference: '123456',
     line_items: [
       {
         row_id: '12345',
@@ -560,6 +561,7 @@ const params = {
     due_date: '2020-10-30',
     paid_date: '2020-10-30',
     po_number: '90000117',
+    reference: '123456',
     line_items: [
       {
         row_id: '12345',

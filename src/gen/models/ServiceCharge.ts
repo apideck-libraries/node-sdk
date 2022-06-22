@@ -18,92 +18,82 @@ import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 /**
  *
  * @export
- * @interface OrderDiscounts
+ * @interface ServiceCharge
  */
-export interface OrderDiscounts {
+export interface ServiceCharge {
   /**
    *
    * @type {string}
-   * @memberof OrderDiscounts
+   * @memberof ServiceCharge
    */
   readonly id?: string
   /**
-   *
+   * Service charge name
    * @type {string}
-   * @memberof OrderDiscounts
-   */
-  readonly product_id?: string
-  /**
-   *
-   * @type {string}
-   * @memberof OrderDiscounts
+   * @memberof ServiceCharge
    */
   name?: string
   /**
    *
-   * @type {string}
-   * @memberof OrderDiscounts
-   */
-  type?: OrderDiscountsType
-  /**
-   *
    * @type {number}
-   * @memberof OrderDiscounts
+   * @memberof ServiceCharge
    */
   amount?: number
   /**
+   * Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time.
+   * @type {number}
+   * @memberof ServiceCharge
+   */
+  percentage?: number
+  /**
    *
    * @type {Currency}
-   * @memberof OrderDiscounts
+   * @memberof ServiceCharge
    */
   currency?: Currency | null
   /**
    *
-   * @type {string}
-   * @memberof OrderDiscounts
+   * @type {boolean}
+   * @memberof ServiceCharge
    */
-  scope?: OrderDiscountsScope
+  active?: boolean | null
+  /**
+   * The type of the service charge.
+   * @type {string}
+   * @memberof ServiceCharge
+   */
+  type?: ServiceChargeType
 }
 
 /**
  * @export
  * @enum {string}
  */
-export enum OrderDiscountsType {
-  fixed_percentage = 'fixed_percentage'
-}
-/**
- * @export
- * @enum {string}
- */
-export enum OrderDiscountsScope {
-  order = 'order',
-  line_item = 'line_item'
+export enum ServiceChargeType {
+  auto_gratuity = 'auto_gratuity',
+  custom = 'custom'
 }
 
-export function OrderDiscountsFromJSON(json: any): OrderDiscounts {
-  return OrderDiscountsFromJSONTyped(json, false)
+export function ServiceChargeFromJSON(json: any): ServiceCharge {
+  return ServiceChargeFromJSONTyped(json, false)
 }
 
-export function OrderDiscountsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): OrderDiscounts {
+export function ServiceChargeFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceCharge {
   if (json === undefined || json === null) {
     return json
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    product_id: !exists(json, 'product_id') ? undefined : json['product_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    type: !exists(json, 'type') ? undefined : json['type'],
     amount: !exists(json, 'amount') ? undefined : json['amount'],
+    percentage: !exists(json, 'percentage') ? undefined : json['percentage'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
-    scope: !exists(json, 'scope') ? undefined : json['scope']
+    active: !exists(json, 'active') ? undefined : json['active'],
+    type: !exists(json, 'type') ? undefined : json['type']
   }
 }
 
-export function OrderDiscountsToJSON(value?: OrderDiscounts | null): any {
+export function ServiceChargeToJSON(value?: ServiceCharge | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -112,9 +102,10 @@ export function OrderDiscountsToJSON(value?: OrderDiscounts | null): any {
   }
   return {
     name: value.name,
-    type: value.type,
     amount: value.amount,
+    percentage: value.percentage,
     currency: CurrencyToJSON(value.currency),
-    scope: value.scope
+    active: value.active,
+    type: value.type
   }
 }
