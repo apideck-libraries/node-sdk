@@ -5,18 +5,187 @@
 
 ## Methods
 
+* [Get Resource Settings](#connectionSettingsAll)
+* [Update Settings](#connectionSettingsUpdate)
 * [Get All Connections](#connectionsAll)
 * [Deletes A Connection](#connectionsDelete)
-* [Get Resource Settings](#connectionsGetSettings)
 * [Import Connection](#connectionsImport)
 * [Get Connection](#connectionsOne)
 * [Update Connection](#connectionsUpdate)
-* [Update Settings](#connectionsUpdateSettings)
+* [Consumer Request Counts](#consumerRequestCountsAll)
 * [Get All Consumers](#consumersAll)
 * [Get Consumer](#consumersOne)
-* [Consumer Request Counts](#consumersRequestCounts)
 * [Get All Consumer Request Logs](#logsAll)
 * [Create Session](#sessionsCreate)
+
+<a name="connectionSettingsAll"></a>
+# Get Resource Settings
+
+
+Method: **connectionSettingsAll**
+
+```typescript
+vaultApi.connectionSettingsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | [**string**] | Unified API | 
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **resource** | [**string**] | Resource Name | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetConnectionResponse`](../models/GetConnectionResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connection | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  unifiedApi: 'crm',
+  serviceId: 'pipedrive',
+  resource: 'leads'
+}
+
+try {
+  const { data } = await apideck.vault.connectionSettingsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="connectionSettingsUpdate"></a>
+# Update Settings
+
+
+Method: **connectionSettingsUpdate**
+
+```typescript
+vaultApi.connectionSettingsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connection** | [Connection](../models/Connection.md)| Fields that need to be updated on the resource |
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **unifiedApi** | [**string**] | Unified API | 
+ **resource** | [**string**] | Resource Name | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`UpdateConnectionResponse`](../models/UpdateConnectionResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connection updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  serviceId: 'pipedrive',
+  unifiedApi: 'crm',
+  resource: 'leads',
+  connection: {
+    enabled: true,
+    settings: {
+      instance_url: 'https://eu28.salesforce.com',
+      api_key: '12345xxxxxx'
+    },
+    metadata: {
+      account: {
+        name: 'My Company',
+        id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+      },
+      plan: 'enterprise'
+    },
+    configuration: [
+      {
+        resource: 'leads',
+        defaults: [
+          {
+            id: 'ProductInterest',
+            options: [Array],
+            value: 'GC5000 series'
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.vault.connectionSettingsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="connectionsAll"></a>
 # Get All Connections
@@ -141,77 +310,6 @@ const params = {
 
 try {
   const { data } = await apideck.vault.connectionsDelete(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="connectionsGetSettings"></a>
-# Get Resource Settings
-
-
-Method: **connectionsGetSettings**
-
-```typescript
-vaultApi.connectionsGetSettings(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unifiedApi** | [**string**] | Unified API | 
- **serviceId** | [**string**] | Service ID of the resource to return | 
- **resource** | [**string**] | Resource Name | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
-
-
-
-### Response Type
-
-[`GetConnectionResponse`](../models/GetConnectionResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Connection | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  unifiedApi: 'crm',
-  serviceId: 'pipedrive',
-  resource: 'leads'
-}
-
-try {
-  const { data } = await apideck.vault.connectionsGetSettings(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -475,39 +573,37 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="connectionsUpdateSettings"></a>
-# Update Settings
+<a name="consumerRequestCountsAll"></a>
+# Consumer Request Counts
 
 
-Method: **connectionsUpdateSettings**
+Method: **consumerRequestCountsAll**
 
 ```typescript
-vaultApi.connectionsUpdateSettings(body)
+vaultApi.consumerRequestCountsAll(body)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection** | [Connection](../models/Connection.md)| Fields that need to be updated on the resource |
- **serviceId** | [**string**] | Service ID of the resource to return | 
- **unifiedApi** | [**string**] | Unified API | 
- **resource** | [**string**] | Resource Name | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **consumerId** | [**string**] | ID of the consumer to return | 
+ **startDatetime** | [**string**] | Scopes results to requests that happened after datetime | 
+ **endDatetime** | [**string**] | Scopes results to requests that happened before datetime | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
 
 
 
 ### Response Type
 
-[`UpdateConnectionResponse`](../models/UpdateConnectionResponse.md)
+[`ConsumerRequestCountsInDateRangeResponse`](../models/ConsumerRequestCountsInDateRangeResponse.md)
 
 
 
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Connection updated | 
+**200** | Consumers Request Counts within Date Range | 
 **400** | Bad Request | 
 **401** | Unauthorized | 
 **402** | Payment Required | 
@@ -523,44 +619,17 @@ import { Apideck } from '@apideck/node';
 
 const apideck = new Apideck({
   apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+  appId: 'REPLACE_WITH_APP_ID'
 });
 
 const params = {
-  serviceId: 'pipedrive',
-  unifiedApi: 'crm',
-  resource: 'leads',
-  connection: {
-    enabled: true,
-    settings: {
-      instance_url: 'https://eu28.salesforce.com',
-      api_key: '12345xxxxxx'
-    },
-    metadata: {
-      account: {
-        name: 'My Company',
-        id: 'c01458a5-7276-41ce-bc19-639906b0450a'
-      },
-      plan: 'enterprise'
-    },
-    configuration: [
-      {
-        resource: 'leads',
-        defaults: [
-          {
-            id: 'ProductInterest',
-            options: [Array],
-            value: 'GC5000 series'
-          }
-        ]
-      }
-    ]
-  }
+  consumerId: 'test_user_id',
+  startDatetime: '2021-05-01T12:00:00.000Z',
+  endDatetime: '2021-05-30T12:00:00.000Z'
 }
 
 try {
-  const { data } = await apideck.vault.connectionsUpdateSettings(params)
+  const { data } = await apideck.vault.consumerRequestCountsAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -690,75 +759,6 @@ const params = {
 
 try {
   const { data } = await apideck.vault.consumersOne(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="consumersRequestCounts"></a>
-# Consumer Request Counts
-
-
-Method: **consumersRequestCounts**
-
-```typescript
-vaultApi.consumersRequestCounts(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerId** | [**string**] | ID of the consumer to return | 
- **startDatetime** | [**string**] | Scopes results to requests that happened after datetime | 
- **endDatetime** | [**string**] | Scopes results to requests that happened before datetime | 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
-
-
-
-### Response Type
-
-[`ConsumerRequestCountsInDateRangeResponse`](../models/ConsumerRequestCountsInDateRangeResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Consumers Request Counts within Date Range | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID'
-});
-
-const params = {
-  consumerId: 'test_user_id',
-  startDatetime: '2021-05-01T12:00:00.000Z',
-  endDatetime: '2021-05-30T12:00:00.000Z'
-}
-
-try {
-  const { data } = await apideck.vault.consumersRequestCounts(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

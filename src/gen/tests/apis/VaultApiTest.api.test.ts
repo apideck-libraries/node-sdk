@@ -15,6 +15,258 @@ const methodResponse = {
 }
 
 describe('VaultApi', () => {
+  describe('#connectionSettingsAll', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/config'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          service_id: 'salesforce',
+          name: 'Salesforce',
+          tag_line:
+            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+          unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
+          website: 'https://www.salesforce.com',
+          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          settings: {
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          },
+          form_fields: [
+            {
+              id: 'instance_url',
+              label: 'Instance url',
+              value: 'https://eu28.salesforce.com',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
+            }
+          ],
+          configuration: [
+            {
+              resource: 'leads',
+              defaults: [
+                {
+                  target: 'custom_fields',
+                  id: 'ProductInterest',
+                  options: [Array],
+                  value: 'GC5000 series'
+                }
+              ]
+            }
+          ],
+          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
+          resource_schema_support: ['leads'],
+          resource_settings_support: ['leads'],
+          settings_required_for_authorization: ['instance_url'],
+          has_guide: true,
+          created_at: 1615563533390,
+          updated_at: 1616662325753
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        unifiedApi: 'crm',
+        serviceId: 'pipedrive',
+        resource: 'leads'
+      } as any
+      const current = await vault.connectionSettingsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#connectionSettingsUpdate', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/config'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          service_id: 'salesforce',
+          name: 'Salesforce',
+          tag_line:
+            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+          unified_api: 'crm',
+          state: 'authorized',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
+          website: 'https://www.salesforce.com',
+          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          settings: {
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          },
+          form_fields: [
+            {
+              id: 'instance_url',
+              label: 'Instance url',
+              value: 'https://eu28.salesforce.com',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
+            }
+          ],
+          configuration: [
+            {
+              resource: 'leads',
+              defaults: [
+                {
+                  target: 'custom_fields',
+                  id: 'ProductInterest',
+                  options: [Array],
+                  value: 'GC5000 series'
+                }
+              ]
+            }
+          ],
+          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
+          resource_schema_support: ['leads'],
+          resource_settings_support: ['leads'],
+          settings_required_for_authorization: ['instance_url'],
+          has_guide: true,
+          created_at: 1615563533390,
+          updated_at: 1616662325753
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        serviceId: 'pipedrive',
+        unifiedApi: 'crm',
+        resource: 'leads',
+        connection: {
+          enabled: true,
+          settings: {
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          },
+          configuration: [
+            {
+              resource: 'leads',
+              defaults: [
+                {
+                  id: 'ProductInterest',
+                  options: [Array],
+                  value: 'GC5000 series'
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await vault.connectionSettingsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#connectionsAll', () => {
     const endpoint = '/vault/connections'
 
@@ -146,119 +398,6 @@ describe('VaultApi', () => {
         unifiedApi: 'crm'
       } as any
       const current = await vault.connectionsDelete(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#connectionsGetSettings', () => {
-    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/config'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        data: {
-          id: 'crm+salesforce',
-          service_id: 'salesforce',
-          name: 'Salesforce',
-          tag_line:
-            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
-          unified_api: 'crm',
-          state: 'authorized',
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
-          enabled: true,
-          website: 'https://www.salesforce.com',
-          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
-          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          settings: {
-            instance_url: 'https://eu28.salesforce.com',
-            api_key: '12345xxxxxx'
-          },
-          metadata: {
-            account: {
-              name: 'My Company',
-              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
-            },
-            plan: 'enterprise'
-          },
-          form_fields: [
-            {
-              id: 'instance_url',
-              label: 'Instance url',
-              value: 'https://eu28.salesforce.com',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false,
-              sensitive: false
-            },
-            {
-              id: 'api_key',
-              label: 'API Key',
-              value: '123455677',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false,
-              sensitive: true
-            }
-          ],
-          configuration: [
-            {
-              resource: 'leads',
-              defaults: [
-                {
-                  target: 'custom_fields',
-                  id: 'ProductInterest',
-                  options: [Array],
-                  value: 'GC5000 series'
-                }
-              ]
-            }
-          ],
-          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
-          resource_schema_support: ['leads'],
-          resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
-          has_guide: true,
-          created_at: 1615563533390,
-          updated_at: 1616662325753
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { vault } = apideck
-      const params = {
-        unifiedApi: 'crm',
-        serviceId: 'pipedrive',
-        resource: 'leads'
-      } as any
-      const current = await vault.connectionsGetSettings(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -644,13 +783,12 @@ describe('VaultApi', () => {
     })
   })
 
-  describe('#connectionsUpdateSettings', () => {
-    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/config'
+  describe('#consumerRequestCountsAll', () => {
+    const endpoint = '/vault/consumers/{consumer_id}/stats'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+      appId: 'REPLACE_WITH_APP_ID'
     }
     const apideck = new Apideck({ ...config, basePath: basePath })
 
@@ -663,81 +801,16 @@ describe('VaultApi', () => {
         status_code: 200,
         status: 'OK',
         data: {
-          id: 'crm+salesforce',
-          service_id: 'salesforce',
-          name: 'Salesforce',
-          tag_line:
-            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
-          unified_api: 'crm',
-          state: 'authorized',
-          auth_type: 'oauth2',
-          oauth_grant_type: 'authorization_code',
-          status: 'live',
-          enabled: true,
-          website: 'https://www.salesforce.com',
-          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
-          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
-          authorize_url:
-            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          revoke_url:
-            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
-          settings: {
-            instance_url: 'https://eu28.salesforce.com',
-            api_key: '12345xxxxxx'
-          },
-          metadata: {
-            account: {
-              name: 'My Company',
-              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
-            },
-            plan: 'enterprise'
-          },
-          form_fields: [
-            {
-              id: 'instance_url',
-              label: 'Instance url',
-              value: 'https://eu28.salesforce.com',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false,
-              sensitive: false
-            },
-            {
-              id: 'api_key',
-              label: 'API Key',
-              value: '123455677',
-              placeholder: '',
-              mask: false,
-              type: 'text',
-              required: true,
-              disabled: false,
-              custom_field: false,
-              sensitive: true
-            }
-          ],
-          configuration: [
-            {
-              resource: 'leads',
-              defaults: [
-                {
-                  target: 'custom_fields',
-                  id: 'ProductInterest',
-                  options: [Array],
-                  value: 'GC5000 series'
-                }
-              ]
-            }
-          ],
-          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
-          resource_schema_support: ['leads'],
-          resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
-          has_guide: true,
-          created_at: 1615563533390,
-          updated_at: 1616662325753
+          application_id: '1111',
+          consumer_id: 'test_user_id',
+          start_datetime: '2021-05-01T12:00:00.000Z',
+          end_datetime: '2021-05-10T12:00:00.000Z',
+          aggregated_request_count: 40,
+          request_counts: {
+            unify: 100,
+            proxy: 10,
+            vault: 21
+          }
         }
       } as any
 
@@ -747,37 +820,11 @@ describe('VaultApi', () => {
 
       const { vault } = apideck
       const params = {
-        serviceId: 'pipedrive',
-        unifiedApi: 'crm',
-        resource: 'leads',
-        connection: {
-          enabled: true,
-          settings: {
-            instance_url: 'https://eu28.salesforce.com',
-            api_key: '12345xxxxxx'
-          },
-          metadata: {
-            account: {
-              name: 'My Company',
-              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
-            },
-            plan: 'enterprise'
-          },
-          configuration: [
-            {
-              resource: 'leads',
-              defaults: [
-                {
-                  id: 'ProductInterest',
-                  options: [Array],
-                  value: 'GC5000 series'
-                }
-              ]
-            }
-          ]
-        }
+        consumerId: 'test_user_id',
+        startDatetime: '2021-05-01T12:00:00.000Z',
+        endDatetime: '2021-05-30T12:00:00.000Z'
       } as any
-      const current = await vault.connectionsUpdateSettings(params)
+      const current = await vault.consumerRequestCountsAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -913,53 +960,6 @@ describe('VaultApi', () => {
         consumerId: 'test_user_id'
       } as any
       const current = await vault.consumersOne(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#consumersRequestCounts', () => {
-    const endpoint = '/vault/consumers/{consumer_id}/stats'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        data: {
-          application_id: '1111',
-          consumer_id: 'test_user_id',
-          start_datetime: '2021-05-01T12:00:00.000Z',
-          end_datetime: '2021-05-10T12:00:00.000Z',
-          aggregated_request_count: 40,
-          request_counts: {
-            unify: 100,
-            proxy: 10,
-            vault: 21
-          }
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { vault } = apideck
-      const params = {
-        consumerId: 'test_user_id',
-        startDatetime: '2021-05-01T12:00:00.000Z',
-        endDatetime: '2021-05-30T12:00:00.000Z'
-      } as any
-      const current = await vault.consumersRequestCounts(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
