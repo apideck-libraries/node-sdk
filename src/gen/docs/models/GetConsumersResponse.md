@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 `status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**Array&lt;GetConsumersResponseData&gt;**](GetConsumersResponseData.md) |  | 
+`meta` | [**Meta**](Meta.md) |  | [optional] 
+`links` | [**Links**](Links.md) |  | [optional] 
 
 
 
@@ -17,6 +19,8 @@ Name | Type | Description | Notes
 
 
 * [`GetConsumersResponseData`](GetConsumersResponseData.md)
+* [`Meta`](Meta.md)
+* [`Links`](Links.md)
 
 ---
 

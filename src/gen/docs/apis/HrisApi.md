@@ -1127,7 +1127,7 @@ const params = {
       {
         id: 3404301363494309004,
         job_id: 3490439050957906679,
-        rate: '50.00',
+        rate: 50,
         payment_unit: 'hour',
         flsa_status: 'nonexempt',
         effective_date: '2021-06-11'
@@ -1572,7 +1572,7 @@ const params = {
       {
         id: 3404301363494309004,
         job_id: 3490439050957906679,
-        rate: '50.00',
+        rate: 50,
         payment_unit: 'hour',
         flsa_status: 'nonexempt',
         effective_date: '2021-06-11'
