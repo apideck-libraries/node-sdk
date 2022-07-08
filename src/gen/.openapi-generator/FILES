@@ -179,6 +179,7 @@ EmployeeCompensations.md
 EmployeeEmploymentRole.md
 EmployeeJobs.md
 EmployeeManager.md
+EmployeePartner.md
 EmployeePayroll.md
 EmployeePayrolls.md
 EmployeeSchedules.md
@@ -241,6 +242,8 @@ GetFolderResponse.md
 GetFoldersResponse.md
 GetHrisCompaniesResponse.md
 GetHrisCompanyResponse.md
+GetHrisJobResponse.md
+GetHrisJobsResponse.md
 GetInvoiceItemResponse.md
 GetInvoiceItemsResponse.md
 GetInvoiceResponse.md
@@ -298,6 +301,9 @@ HrisApi.md
 HrisApiTest.api.test.ts
 HrisCompany.md
 HrisEventType.md
+HrisJob.md
+HrisJobLocation.md
+HrisJobs.md
 Invoice.md
 InvoiceItem.md
 InvoiceItemSalesDetails.md
@@ -633,6 +639,7 @@ models/EmployeeCompensations.ts
 models/EmployeeEmploymentRole.ts
 models/EmployeeJobs.ts
 models/EmployeeManager.ts
+models/EmployeePartner.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
@@ -692,6 +699,8 @@ models/GetFolderResponse.ts
 models/GetFoldersResponse.ts
 models/GetHrisCompaniesResponse.ts
 models/GetHrisCompanyResponse.ts
+models/GetHrisJobResponse.ts
+models/GetHrisJobsResponse.ts
 models/GetInvoiceItemResponse.ts
 models/GetInvoiceItemsResponse.ts
 models/GetInvoiceResponse.ts
@@ -747,6 +756,9 @@ models/GetWebhookResponse.ts
 models/GetWebhooksResponse.ts
 models/HrisCompany.ts
 models/HrisEventType.ts
+models/HrisJob.ts
+models/HrisJobLocation.ts
+models/HrisJobs.ts
 models/Invoice.ts
 models/InvoiceItem.ts
 models/InvoiceItemSalesDetails.ts
