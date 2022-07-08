@@ -1787,6 +1787,7 @@ const params = {
       row_version: '1-12345'
     },
     template_id: '123456',
+    source_document_url: 'https://www.invoicesolution.com/invoice/123456',
     row_version: '1-12345'
   }
 }
@@ -2167,6 +2168,7 @@ const params = {
       row_version: '1-12345'
     },
     template_id: '123456',
+    source_document_url: 'https://www.invoicesolution.com/invoice/123456',
     row_version: '1-12345'
   }
 }

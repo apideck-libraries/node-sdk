@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
 `template_id` | **string** | Optional invoice template | [optional] 
+`source_document_url` | **string** | URL link to a source document - shown as \'Go to [appName]\' in the downstream app. Currently only supported for Xero. | [optional] 
 `row_version` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
@@ -109,6 +110,7 @@ Name | Type | Description | Notes
 * [`InvoiceLineItem`](InvoiceLineItem.md)
 * [`Address`](Address.md)
 * [`Address`](Address.md)
+
 
 
 

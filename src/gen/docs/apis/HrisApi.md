@@ -23,6 +23,8 @@
 * [Delete Employee](#employeesDelete)
 * [Get Employee](#employeesOne)
 * [Update Employee](#employeesUpdate)
+* [List Jobs](#jobsAll)
+* [One Job](#jobsOne)
 * [List Payroll](#payrollsAll)
 * [Get Payroll](#payrollsOne)
 
@@ -1114,6 +1116,15 @@ const params = {
     salutation: 'Mr',
     title: 'CEO',
     marital_status: 'married',
+    partner: {
+      first_name: 'Elon',
+      last_name: 'Musk',
+      middle_name: 'D.',
+      gender: 'male',
+      initials: 'EM',
+      birthday: '2000-08-12',
+      deceased_on: '2000-08-12'
+    },
     division: 'Europe',
     department: 'R&amp;D',
     team: {
@@ -1142,6 +1153,7 @@ const params = {
     ],
     social_security_number: '123456789',
     birthday: '2000-08-12',
+    deceased_on: '2000-08-12',
     country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
@@ -1161,6 +1173,8 @@ const params = {
       {
         title: 'CEO',
         role: 'Sales',
+        start_date: '2020-08-12',
+        end_date: '2020-08-12',
         compensation_rate: 72000,
         currency: 'USD',
         payment_unit: 'year',
@@ -1559,6 +1573,15 @@ const params = {
     salutation: 'Mr',
     title: 'CEO',
     marital_status: 'married',
+    partner: {
+      first_name: 'Elon',
+      last_name: 'Musk',
+      middle_name: 'D.',
+      gender: 'male',
+      initials: 'EM',
+      birthday: '2000-08-12',
+      deceased_on: '2000-08-12'
+    },
     division: 'Europe',
     department: 'R&amp;D',
     team: {
@@ -1587,6 +1610,7 @@ const params = {
     ],
     social_security_number: '123456789',
     birthday: '2000-08-12',
+    deceased_on: '2000-08-12',
     country_of_birth: 'US',
     description: 'A description',
     gender: 'male',
@@ -1606,6 +1630,8 @@ const params = {
       {
         title: 'CEO',
         role: 'Sales',
+        start_date: '2020-08-12',
+        end_date: '2020-08-12',
         compensation_rate: 72000,
         currency: 'USD',
         payment_unit: 'year',
@@ -1721,6 +1747,146 @@ const params = {
 
 try {
   const { data } = await apideck.hris.employeesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="jobsAll"></a>
+# List Jobs
+
+
+Method: **jobsAll**
+
+```typescript
+hrisApi.jobsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`GetHrisJobsResponse`](../models/GetHrisJobsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Jobs | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  employeeId: 'employee_id_example'
+}
+
+try {
+  const { data } = await apideck.hris.jobsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="jobsOne"></a>
+# One Job
+
+
+Method: **jobsOne**
+
+```typescript
+hrisApi.jobsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **jobId** | [**string**] | ID of the job you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`GetHrisJobResponse`](../models/GetHrisJobResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Job | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  jobId: 'job_id_example',
+  employeeId: 'employee_id_example'
+}
+
+try {
+  const { data } = await apideck.hris.jobsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

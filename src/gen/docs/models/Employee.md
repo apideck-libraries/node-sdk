@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `salutation` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `marital_status` | **string** |  | [optional] 
+`partner` | [**EmployeePartner**](EmployeePartner.md) |  | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 `direct_reports` | **Array&lt;string&gt;** |  | [optional] 
 `social_security_number` | **string** |  | [optional] 
 `birthday` | **Date** |  | [optional] 
+`deceased_on` | **Date** |  | [optional] 
 `country_of_birth` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `description` | **string** |  | [optional] 
 `gender` | [**Gender**](Gender.md) |  | [optional] 
@@ -89,6 +91,7 @@ Name | Type | Description | Notes
 
 
 
+* [`EmployeePartner`](EmployeePartner.md)
 
 
 * [`EmployeeTeam`](EmployeeTeam.md)
@@ -100,6 +103,7 @@ Name | Type | Description | Notes
 
 * [`EmployeeEmploymentRole`](EmployeeEmploymentRole.md)
 * [`EmployeeManager`](EmployeeManager.md)
+
 
 
 

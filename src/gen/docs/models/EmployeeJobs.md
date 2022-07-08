@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 `employee_id` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `role` | **string** |  | [optional] 
+`start_date` | **Date** |  | [optional] 
+`end_date` | **Date** |  | [optional] 
 `compensation_rate` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
@@ -21,6 +23,8 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
+
 
 
 
