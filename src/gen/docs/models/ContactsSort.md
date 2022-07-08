@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Contacts | 
+`by` | **string** | The field on which to sort the Contacts | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 

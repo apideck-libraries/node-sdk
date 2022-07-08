@@ -822,7 +822,7 @@ describe('HrisApi', () => {
               {
                 id: 3404301363494309004,
                 job_id: 3490439050957906679,
-                rate: '50.00',
+                rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
                 effective_date: '2021-06-11'
@@ -1065,7 +1065,7 @@ describe('HrisApi', () => {
               {
                 id: 3404301363494309004,
                 job_id: 3490439050957906679,
-                rate: '50.00',
+                rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
                 effective_date: '2021-06-11'
@@ -1185,6 +1185,244 @@ describe('HrisApi', () => {
         employeeId: 'employee_id_example'
       } as any
       const current = await hris.employeePayrollsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#employeeSchedulesAll', () => {
+    const endpoint = '/hris/schedules/employees/{employee_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'sage-hr',
+        resource: 'Employees',
+        operation: 'one',
+        data: {
+          employee: {
+            id: '12345',
+            first_name: 'Elon',
+            last_name: 'Musk',
+            middle_name: 'D.',
+            display_name: 'Technoking',
+            preferred_name: 'Elon Musk',
+            initials: 'EM',
+            salutation: 'Mr',
+            title: 'CEO',
+            marital_status: 'married',
+            division: 'Europe',
+            department: 'R&amp;D',
+            team: {
+              id: '1234',
+              name: 'Full Stack Engineers'
+            },
+            company_id: '23456',
+            company_name: 'SpaceX',
+            employment_start_date: '2021-10-26',
+            employment_end_date: '2028-10-26',
+            employee_number: '123456-AB',
+            employment_status: 'active',
+            employment_role: {
+              type: 'contractor',
+              sub_type: 'full_time'
+            },
+            manager: {
+              id: '12345',
+              name: 'Elon Musk',
+              first_name: 'Elon',
+              last_name: 'Musk',
+              email: 'elon@musk.com'
+            },
+            direct_reports: [
+              'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+              'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+            ],
+            social_security_number: '123456789',
+            birthday: '2000-08-12',
+            country_of_birth: 'US',
+            description: 'A description',
+            gender: 'male',
+            pronouns: 'she,her',
+            preferred_language: 'EN',
+            languages: ['EN'],
+            nationalities: ['US'],
+            photo_url: 'https://unavatar.io/elon-musk',
+            timezone: 'Europe/London',
+            source:
+              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
+            source_id:
+              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            jobs: [
+              {
+                id: '12345',
+                employee_id: '12345',
+                title: 'CEO',
+                role: 'Sales',
+                compensation_rate: 72000,
+                currency: 'USD',
+                payment_unit: 'year',
+                hired_at: '2020-08-12',
+                is_primary: true,
+                location: {
+                  id: '123',
+                  type: 'primary',
+                  string: '25 Spring Street, Blackburn, VIC 3130',
+                  name: 'HQ US',
+                  line1: 'Main street',
+                  line2: 'apt #',
+                  line3: 'Suite #',
+                  line4: 'delivery instructions',
+                  street_number: '25',
+                  city: 'San Francisco',
+                  state: 'CA',
+                  postal_code: '94104',
+                  country: 'US',
+                  latitude: 40.759211,
+                  longitude: '-73.984638',
+                  county: 'Santa Clara',
+                  contact_name: 'Elon Musk',
+                  salutation: 'Mr',
+                  phone_number: '111-111-1111',
+                  fax: '122-111-1111',
+                  email: 'elon@musk.com',
+                  website: 'https://elonmusk.com',
+                  row_version: '1-12345'
+                }
+              }
+            ],
+            compensations: [
+              {
+                id: 3404301363494309004,
+                job_id: 3490439050957906679,
+                rate: 50,
+                payment_unit: 'hour',
+                flsa_status: 'nonexempt',
+                effective_date: '2021-06-11'
+              }
+            ],
+            works_remote: true,
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: 40.759211,
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
+            ],
+            phone_numbers: [
+              {
+                id: '12345',
+                country_code: '1',
+                area_code: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: 'primary'
+              }
+            ],
+            emails: [
+              {
+                id: '123',
+                email: 'elon@musk.com',
+                type: 'primary'
+              }
+            ],
+            custom_fields: [
+              {
+                id: 2389328923893298,
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            social_links: [
+              {
+                id: '12345',
+                url: 'https://www.twitter.com/apideck-io',
+                type: 'twitter'
+              }
+            ],
+            tax_code: '1111',
+            tax_id: '234-32-0000',
+            dietary_preference: 'Veggie',
+            food_allergies: ['No allergies'],
+            row_version: '1-12345',
+            deleted: true,
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          },
+          schedules: [
+            {
+              id: '12345',
+              start_date: '2022-04-08',
+              end_date: '2022-04-21',
+              work_pattern: {
+                odd_weeks: {
+                  hours_monday: 8,
+                  hours_tuesday: 8,
+                  hours_wednesday: 4,
+                  hours_thursday: 7.5,
+                  hours_friday: 4,
+                  hours_saturday: 0,
+                  hours_sunday: 0
+                },
+                even_weeks: {
+                  hours_monday: 8,
+                  hours_tuesday: 8,
+                  hours_wednesday: 4,
+                  hours_thursday: 7.5,
+                  hours_friday: 4,
+                  hours_saturday: 0,
+                  hours_sunday: 0
+                }
+              }
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        employeeId: 'employee_id_example'
+      } as any
+      const current = await hris.employeeSchedulesAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -1313,7 +1551,7 @@ describe('HrisApi', () => {
             {
               id: 3404301363494309004,
               job_id: 3490439050957906679,
-              rate: '50.00',
+              rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
               effective_date: '2021-06-11'
@@ -1510,7 +1748,7 @@ describe('HrisApi', () => {
               {
                 id: 3404301363494309004,
                 job_id: 3490439050957906679,
-                rate: '50.00',
+                rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
                 effective_date: '2021-06-11'
@@ -1771,7 +2009,7 @@ describe('HrisApi', () => {
             {
               id: 3404301363494309004,
               job_id: 3490439050957906679,
-              rate: '50.00',
+              rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
               effective_date: '2021-06-11'
@@ -1988,7 +2226,7 @@ describe('HrisApi', () => {
             {
               id: 3404301363494309004,
               job_id: 3490439050957906679,
-              rate: '50.00',
+              rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
               effective_date: '2021-06-11'

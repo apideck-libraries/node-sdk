@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Files | 
+`by` | **string** | The field on which to sort the Files | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 
