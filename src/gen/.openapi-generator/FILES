@@ -28,6 +28,7 @@ ApiStatus.md
 ApisFilter.md
 Applicant.md
 ApplicantWebsites.md
+AtsActivity.md
 AtsApi.md
 AtsApiTest.api.test.ts
 AuthType.md
@@ -348,6 +349,7 @@ NotFoundResponse.md
 NotImplementedResponse.md
 Note.md
 OAuthGrantType.md
+Offer.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
@@ -507,6 +509,7 @@ models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
 models/ApplicantWebsites.ts
+models/AtsActivity.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BalanceSheet.ts
@@ -813,6 +816,7 @@ models/NotFoundResponse.ts
 models/NotImplementedResponse.ts
 models/Note.ts
 models/OAuthGrantType.ts
+models/Offer.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts

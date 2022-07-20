@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `name` | **string** |  | 
 `modifier_group_id` | **string** |  | 
 `id` | **string** |  | [optional] 
+`idempotency_key` | **string** | A value you specify that uniquely identifies this request among requests you have sent. | [optional] 
 `alternate_name` | **string** |  | [optional] 
 `price_amount` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

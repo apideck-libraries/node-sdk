@@ -124,6 +124,8 @@ const params = {
       '67890'
     ],
     present_at_all_locations: false,
+    available_for_pickup: false,
+    available_online: false,
     sku: '11910345',
     code: '11910345',
     categories: [
@@ -157,6 +159,11 @@ const params = {
           '12345',
           '67890'
         ]
+      }
+    ],
+    modifier_groups: [
+      {
+        id: '12345'
       }
     ],
     available: true,
@@ -459,6 +466,8 @@ const params = {
       '67890'
     ],
     present_at_all_locations: false,
+    available_for_pickup: false,
+    available_online: false,
     sku: '11910345',
     code: '11910345',
     categories: [
@@ -492,6 +501,11 @@ const params = {
           '12345',
           '67890'
         ]
+      }
+    ],
+    modifier_groups: [
+      {
+        id: '12345'
       }
     ],
     available: true,
@@ -1789,6 +1803,7 @@ const apideck = new Apideck({
 
 const params = {
   modifier: {
+    idempotency_key: 'random_string',
     name: 'Modifier',
     alternate_name: 'Modifier New',
     price_amount: 10,
@@ -2075,6 +2090,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   modifier: {
+    idempotency_key: 'random_string',
     name: 'Modifier',
     alternate_name: 'Modifier New',
     price_amount: 10,
