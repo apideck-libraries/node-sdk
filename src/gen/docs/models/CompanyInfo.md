@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
+`status` | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
 `legal_name` | **string** | The legal name of the company | [optional] 
 `country` | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 `sales_tax_number` | **string** |  | [optional] 
@@ -26,6 +27,17 @@ Name | Type | Description | Notes
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="CompanyInfoStatus"></a>
+## Enum: CompanyInfo.status
+
+
+* `active` (value: `'active'`)
+
+* `inactive` (value: `'inactive'`)
 
 
 
@@ -62,6 +74,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

@@ -698,6 +698,7 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           company_name: 'SpaceX',
+          status: 'active',
           legal_name: 'SpaceX Inc.',
           country: 'US',
           sales_tax_number: '111.222.333',
