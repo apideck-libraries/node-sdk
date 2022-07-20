@@ -37,6 +37,7 @@
 * [Delete Payment](#paymentsDelete)
 * [Get Payment](#paymentsOne)
 * [Update Payment](#paymentsUpdate)
+* [List Profit And Loss](#profitAndLossOne)
 * [Create Supplier](#suppliersAdd)
 * [List Suppliers](#suppliersAll)
 * [Delete Supplier](#suppliersDelete)
@@ -3009,6 +3010,73 @@ const params = {
 
 try {
   const { data } = await apideck.accounting.paymentsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="profitAndLossOne"></a>
+# List Profit And Loss
+
+
+Method: **profitAndLossOne**
+
+```typescript
+accountingApi.profitAndLossOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **filter** | **ProfitAndLossFilter** | Apply filters (beta) | (optional) 
+
+
+
+### Response Type
+
+[`GetProfitAndLossResponse`](../models/GetProfitAndLossResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Profit &amp; Loss Report | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.profitAndLossOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
