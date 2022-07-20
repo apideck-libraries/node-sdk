@@ -37,7 +37,7 @@
 * [Delete Payment](#paymentsDelete)
 * [Get Payment](#paymentsOne)
 * [Update Payment](#paymentsUpdate)
-* [List Profit And Loss](#profitAndLossOne)
+* [Get Profit And Loss](#profitAndLossOne)
 * [Create Supplier](#suppliersAdd)
 * [List Suppliers](#suppliersAll)
 * [Delete Supplier](#suppliersDelete)
@@ -3023,7 +3023,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="profitAndLossOne"></a>
-# List Profit And Loss
+# Get Profit And Loss
 
 
 Method: **profitAndLossOne**
