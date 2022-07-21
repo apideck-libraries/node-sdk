@@ -18,11 +18,14 @@ Name | Type | Description | Notes
 `tax_ids` | **Array&lt;string&gt;** | A list of Tax IDs for the product. | [optional] 
 `absent_at_location_ids` | **Array&lt;string&gt;** | A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated. | [optional] 
 `present_at_all_locations` | **boolean** |  | [optional] 
+`available_for_pickup` | **boolean** |  | [optional] 
+`available_online` | **boolean** |  | [optional] 
 `sku` | **string** | SKU of the item | [optional] 
 `code` | **string** | Product code, e.g. UPC or EAN | [optional] 
 `categories` | **Array&lt;object&gt;** |  | [optional] 
 `options` | **Array&lt;object&gt;** | List of options pertaining to this item\'s attribute variation | [optional] 
 `variations` | **Array&lt;object&gt;** |  | [optional] 
+`modifier_groups` | **Array&lt;object&gt;** |  | [optional] 
 `available` | **boolean** |  | [optional] 
 `hidden` | **boolean** |  | [optional] 
 `version` | **string** |  | [optional] 
@@ -72,6 +75,9 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
+
+
 
 
 

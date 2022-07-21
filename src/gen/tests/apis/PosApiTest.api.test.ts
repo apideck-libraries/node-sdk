@@ -61,6 +61,8 @@ describe('PosApi', () => {
           tax_ids: ['12345', '67890'],
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
+          available_for_pickup: false,
+          available_online: false,
           sku: '11910345',
           code: '11910345',
           categories: [
@@ -88,6 +90,11 @@ describe('PosApi', () => {
               price_amount: 10,
               price_currency: 'USD',
               image_ids: ['12345', '67890']
+            }
+          ],
+          modifier_groups: [
+            {
+              id: '12345'
             }
           ],
           available: true,
@@ -137,6 +144,8 @@ describe('PosApi', () => {
             tax_ids: ['12345', '67890'],
             absent_at_location_ids: ['12345', '67890'],
             present_at_all_locations: false,
+            available_for_pickup: false,
+            available_online: false,
             sku: '11910345',
             code: '11910345',
             categories: [
@@ -164,6 +173,11 @@ describe('PosApi', () => {
                 price_amount: 10,
                 price_currency: 'USD',
                 image_ids: ['12345', '67890']
+              }
+            ],
+            modifier_groups: [
+              {
+                id: '12345'
               }
             ],
             available: true,
@@ -278,6 +292,8 @@ describe('PosApi', () => {
           tax_ids: ['12345', '67890'],
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
+          available_for_pickup: false,
+          available_online: false,
           sku: '11910345',
           code: '11910345',
           categories: [
@@ -305,6 +321,11 @@ describe('PosApi', () => {
               price_amount: 10,
               price_currency: 'USD',
               image_ids: ['12345', '67890']
+            }
+          ],
+          modifier_groups: [
+            {
+              id: '12345'
             }
           ],
           available: true,
@@ -379,6 +400,8 @@ describe('PosApi', () => {
           tax_ids: ['12345', '67890'],
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
+          available_for_pickup: false,
+          available_online: false,
           sku: '11910345',
           code: '11910345',
           categories: [
@@ -406,6 +429,11 @@ describe('PosApi', () => {
               price_amount: 10,
               price_currency: 'USD',
               image_ids: ['12345', '67890']
+            }
+          ],
+          modifier_groups: [
+            {
+              id: '12345'
             }
           ],
           available: true,
@@ -1482,6 +1510,7 @@ describe('PosApi', () => {
       const { pos } = apideck
       const params = {
         modifier: {
+          idempotency_key: 'random_string',
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,
@@ -1520,6 +1549,7 @@ describe('PosApi', () => {
         data: [
           {
             id: '12345',
+            idempotency_key: 'random_string',
             name: 'Modifier',
             alternate_name: 'Modifier New',
             price_amount: 10,
@@ -1622,6 +1652,7 @@ describe('PosApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          idempotency_key: 'random_string',
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,
@@ -1683,6 +1714,7 @@ describe('PosApi', () => {
       const params = {
         id: 'id_example',
         modifier: {
+          idempotency_key: 'random_string',
           name: 'Modifier',
           alternate_name: 'Modifier New',
           price_amount: 10,

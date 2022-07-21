@@ -698,6 +698,7 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           company_name: 'SpaceX',
+          status: 'active',
           legal_name: 'SpaceX Inc.',
           country: 'US',
           sales_tax_number: '111.222.333',
@@ -3154,6 +3155,88 @@ describe('AccountingApi', () => {
         }
       } as any
       const current = await accounting.paymentsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#profitAndLossOne', () => {
+    const endpoint = '/accounting/profit-and-loss'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'ProfitAndLosses',
+        operation: 'one',
+        data: {
+          id: '12345',
+          report_name: 'ProfitAndLoss',
+          start_date: '2017-01-01',
+          end_date: '2017-01-01',
+          currency: 'USD',
+          customer_id: '123',
+          income: {
+            total: 200000,
+            records: [
+              {
+                id: '123',
+                name: 'Income 1',
+                amount: 10000
+              },
+              {
+                id: '456',
+                name: 'Income 2',
+                amount: 20000
+              }
+            ]
+          },
+          expenses: {
+            total: 200000,
+            records: [
+              {
+                id: '123',
+                name: 'Expense 1',
+                amount: 10000
+              },
+              {
+                id: '456',
+                name: 'Expense 2',
+                amount: 20000
+              }
+            ]
+          },
+          net_income: {
+            total: 200000
+          },
+          net_operating_income: {
+            total: 200000
+          },
+          gross_profit: {
+            total: 200000
+          }
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.profitAndLossOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

@@ -28,6 +28,7 @@ ApiStatus.md
 ApisFilter.md
 Applicant.md
 ApplicantWebsites.md
+AtsActivity.md
 AtsApi.md
 AtsApiTest.api.test.ts
 AuthType.md
@@ -283,6 +284,7 @@ GetPipelineResponse.md
 GetPipelinesResponse.md
 GetPosPaymentResponse.md
 GetPosPaymentsResponse.md
+GetProfitAndLossResponse.md
 GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetSupplierResponse.md
@@ -347,6 +349,7 @@ NotFoundResponse.md
 NotImplementedResponse.md
 Note.md
 OAuthGrantType.md
+Offer.md
 OpportunitiesFilter.md
 OpportunitiesSort.md
 Opportunity.md
@@ -380,6 +383,16 @@ PosPayment.md
 PosPaymentCardDetails.md
 PosPaymentExternalDetails.md
 Price.md
+ProfitAndLoss.md
+ProfitAndLossExpenses.md
+ProfitAndLossFilter.md
+ProfitAndLossGrossProfit.md
+ProfitAndLossIncome.md
+ProfitAndLossNetIncome.md
+ProfitAndLossNetOperatingIncome.md
+ProfitAndLossRecord.md
+ProfitAndLossRecords.md
+ProfitAndLossSection.md
 RequestCountAllocation.md
 ResourceStatus.md
 Schedule.md
@@ -496,6 +509,7 @@ models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
 models/ApplicantWebsites.ts
+models/AtsActivity.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BalanceSheet.ts
@@ -740,6 +754,7 @@ models/GetPipelineResponse.ts
 models/GetPipelinesResponse.ts
 models/GetPosPaymentResponse.ts
 models/GetPosPaymentsResponse.ts
+models/GetProfitAndLossResponse.ts
 models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetSupplierResponse.ts
@@ -801,6 +816,7 @@ models/NotFoundResponse.ts
 models/NotImplementedResponse.ts
 models/Note.ts
 models/OAuthGrantType.ts
+models/Offer.ts
 models/OpportunitiesFilter.ts
 models/OpportunitiesSort.ts
 models/Opportunity.ts
@@ -832,6 +848,16 @@ models/PosPayment.ts
 models/PosPaymentCardDetails.ts
 models/PosPaymentExternalDetails.ts
 models/Price.ts
+models/ProfitAndLoss.ts
+models/ProfitAndLossExpenses.ts
+models/ProfitAndLossFilter.ts
+models/ProfitAndLossGrossProfit.ts
+models/ProfitAndLossIncome.ts
+models/ProfitAndLossNetIncome.ts
+models/ProfitAndLossNetOperatingIncome.ts
+models/ProfitAndLossRecord.ts
+models/ProfitAndLossRecords.ts
+models/ProfitAndLossSection.ts
 models/RequestCountAllocation.ts
 models/ResourceStatus.ts
 models/Schedule.ts
