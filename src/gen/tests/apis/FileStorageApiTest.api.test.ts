@@ -15,6 +15,474 @@ const methodResponse = {
 }
 
 describe('FileStorageApi', () => {
+  describe('#driveGroupsAdd', () => {
+    const endpoint = '/file-storage/drive-groups'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'DriveGroups',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        driveGroup: {
+          name: 'accounting',
+          display_name: 'accounting',
+          description: 'A description'
+        }
+      } as any
+      const current = await fileStorage.driveGroupsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#driveGroupsAll', () => {
+    const endpoint = '/file-storage/drive-groups'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'DriveGroups',
+        operation: 'one',
+        data: [
+          {
+            id: '12345',
+            name: 'accounting',
+            display_name: 'accounting',
+            description: 'A description',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {} as any
+      const current = await fileStorage.driveGroupsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#driveGroupsDelete', () => {
+    const endpoint = '/file-storage/drive-groups/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'DriveGroups',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.driveGroupsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#driveGroupsOne', () => {
+    const endpoint = '/file-storage/drive-groups/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'DriveGroups',
+        operation: 'one',
+        data: {
+          id: '12345',
+          name: 'accounting',
+          display_name: 'accounting',
+          description: 'A description',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.driveGroupsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#driveGroupsUpdate', () => {
+    const endpoint = '/file-storage/drive-groups/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'DriveGroups',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example',
+        driveGroup: {
+          name: 'accounting',
+          display_name: 'accounting',
+          description: 'A description'
+        }
+      } as any
+      const current = await fileStorage.driveGroupsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#drivesAdd', () => {
+    const endpoint = '/file-storage/drives'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'Drives',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        drive: {
+          name: 'Project Resources',
+          description: 'A description'
+        }
+      } as any
+      const current = await fileStorage.drivesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#drivesAll', () => {
+    const endpoint = '/file-storage/drives'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'Drives',
+        operation: 'one',
+        data: [
+          {
+            id: '12345',
+            name: 'Project Resources',
+            description: 'A description',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {} as any
+      const current = await fileStorage.drivesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#drivesDelete', () => {
+    const endpoint = '/file-storage/drives/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'Drives',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.drivesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#drivesOne', () => {
+    const endpoint = '/file-storage/drives/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'Drives',
+        operation: 'one',
+        data: {
+          id: '12345',
+          name: 'Project Resources',
+          description: 'A description',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await fileStorage.drivesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#drivesUpdate', () => {
+    const endpoint = '/file-storage/drives/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'google-drive',
+        resource: 'Drives',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example',
+        drive: {
+          name: 'Project Resources',
+          description: 'A description'
+        }
+      } as any
+      const current = await fileStorage.drivesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#filesAll', () => {
     const endpoint = '/file-storage/files'
 
@@ -39,6 +507,7 @@ describe('FileStorageApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             name: 'sample.jpg',
             description: 'A sample image',
             type: 'file',
@@ -185,6 +654,7 @@ describe('FileStorageApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           name: 'sample.jpg',
           description: 'A sample image',
           type: 'file',
@@ -249,6 +719,7 @@ describe('FileStorageApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             name: 'sample.jpg',
             description: 'A sample image',
             type: 'file',
@@ -340,7 +811,8 @@ describe('FileStorageApi', () => {
         folder: {
           name: 'Documents',
           description: 'My Personal Documents',
-          parent_folder_id: '1234'
+          parent_folder_id: '1234',
+          drive_id: '1234'
         }
       } as any
       const current = await fileStorage.foldersAdd(params)
@@ -823,6 +1295,7 @@ describe('FileStorageApi', () => {
         uploadSession: {
           name: 'Documents',
           parent_folder_id: '1234',
+          drive_id: '1234',
           size: 1810673
         }
       } as any
@@ -895,6 +1368,7 @@ describe('FileStorageApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           name: 'sample.jpg',
           description: 'A sample image',
           type: 'file',

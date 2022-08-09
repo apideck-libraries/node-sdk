@@ -95,6 +95,8 @@ CreateContactResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
 CreateDepartmentResponse.md
+CreateDriveGroupResponse.md
+CreateDriveResponse.md
 CreateEmployeeResponse.md
 CreateFileRequest.md
 CreateFileResponse.md
@@ -146,6 +148,8 @@ DeleteContactResponse.md
 DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
 DeleteDepartmentResponse.md
+DeleteDriveGroupResponse.md
+DeleteDriveResponse.md
 DeleteEmployeeResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
@@ -174,6 +178,10 @@ DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Department.md
+Drive.md
+DriveGroup.md
+DriveGroupsFilter.md
+DrivesFilter.md
 Email.md
 Employee.md
 EmployeeCompensations.md
@@ -232,6 +240,10 @@ GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
 GetDepartmentsResponse.md
+GetDriveGroupResponse.md
+GetDriveGroupsResponse.md
+GetDriveResponse.md
+GetDrivesResponse.md
 GetEmployeePayrollResponse.md
 GetEmployeePayrollsResponse.md
 GetEmployeeResponse.md
@@ -433,6 +445,8 @@ UpdateContactResponse.md
 UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
 UpdateDepartmentResponse.md
+UpdateDriveGroupResponse.md
+UpdateDriveResponse.md
 UpdateEmployeeResponse.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
@@ -572,6 +586,8 @@ models/CreateContactResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
 models/CreateDepartmentResponse.ts
+models/CreateDriveGroupResponse.ts
+models/CreateDriveResponse.ts
 models/CreateEmployeeResponse.ts
 models/CreateFileRequest.ts
 models/CreateFileResponse.ts
@@ -619,6 +635,8 @@ models/DeleteContactResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteDepartmentResponse.ts
+models/DeleteDriveGroupResponse.ts
+models/DeleteDriveResponse.ts
 models/DeleteEmployeeResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
@@ -647,6 +665,10 @@ models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Department.ts
+models/Drive.ts
+models/DriveGroup.ts
+models/DriveGroupsFilter.ts
+models/DrivesFilter.ts
 models/Email.ts
 models/Employee.ts
 models/EmployeeCompensations.ts
@@ -702,6 +724,10 @@ models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
 models/GetDepartmentsResponse.ts
+models/GetDriveGroupResponse.ts
+models/GetDriveGroupsResponse.ts
+models/GetDriveResponse.ts
+models/GetDrivesResponse.ts
 models/GetEmployeePayrollResponse.ts
 models/GetEmployeePayrollsResponse.ts
 models/GetEmployeeResponse.ts
@@ -896,6 +922,8 @@ models/UpdateContactResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
+models/UpdateDriveGroupResponse.ts
+models/UpdateDriveResponse.ts
 models/UpdateEmployeeResponse.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts

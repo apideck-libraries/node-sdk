@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `parent_folder_id` | **string** | The parent folder to create the new file within. | 
 `id` | **string** |  | [optional] 
 `description` | **string** | Optional description of the folder. | [optional] 
+`drive_id` | **string** | ID of the drive to create the folder in. | [optional] 
 
 
 
