@@ -70,7 +70,8 @@ export interface OrderDiscounts {
  * @enum {string}
  */
 export enum OrderDiscountsType {
-  fixed_percentage = 'fixed_percentage'
+  percentage = 'percentage',
+  flat_fee = 'flat_fee'
 }
 /**
  * @export

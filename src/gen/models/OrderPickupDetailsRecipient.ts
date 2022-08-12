@@ -31,6 +31,12 @@ export interface OrderPickupDetailsRecipient {
   customer_id?: string
   /**
    *
+   * @type {string}
+   * @memberof OrderPickupDetailsRecipient
+   */
+  display_name?: string
+  /**
+   *
    * @type {Address}
    * @memberof OrderPickupDetailsRecipient
    */
@@ -62,6 +68,7 @@ export function OrderPickupDetailsRecipientFromJSONTyped(
   }
   return {
     customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
+    display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
     address: !exists(json, 'address') ? undefined : AddressFromJSON(json['address']),
     phone_number: !exists(json, 'phone_number')
       ? undefined
@@ -79,6 +86,7 @@ export function OrderPickupDetailsRecipientToJSON(value?: OrderPickupDetailsReci
   }
   return {
     customer_id: value.customer_id,
+    display_name: value.display_name,
     address: AddressToJSON(value.address),
     phone_number: PhoneNumberToJSON(value.phone_number),
     email: EmailToJSON(value.email)

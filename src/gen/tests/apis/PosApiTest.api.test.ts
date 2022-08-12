@@ -2010,10 +2010,10 @@ describe('PosApi', () => {
           order_type_id: '12345',
           table: '1F',
           seat: '23F',
-          total_amount: 27.5,
-          total_tip: 7,
-          total_tax: 2.75,
-          total_discount: 3,
+          total_amount: 275,
+          total_tip: 700,
+          total_tax: 275,
+          total_discount: 300,
           total_refund: 0,
           total_service_charge: 0,
           refunded: false,
@@ -2068,6 +2068,7 @@ describe('PosApi', () => {
                 },
                 recipient: {
                   customer_id: '12345',
+                  display_name: 'Elon Musk',
                   address: [Object],
                   phone_number: [Object],
                   email: [Object]
@@ -2147,7 +2148,7 @@ describe('PosApi', () => {
           discounts: [
             {
               name: '10% off',
-              type: 'fixed_percentage',
+              type: 'percentage',
               amount: 27500,
               currency: 'USD',
               scope: 'order'
@@ -2159,6 +2160,7 @@ describe('PosApi', () => {
               type: 'cash',
               note: 'An optional note associated with the tender at the time of payment.',
               amount: 27500,
+              percentage: 10,
               currency: 'USD',
               total_amount: 27.5,
               total_tip: 7,
@@ -2265,10 +2267,10 @@ describe('PosApi', () => {
             order_type_id: '12345',
             table: '1F',
             seat: '23F',
-            total_amount: 27.5,
-            total_tip: 7,
-            total_tax: 2.75,
-            total_discount: 3,
+            total_amount: 275,
+            total_tip: 700,
+            total_tax: 275,
+            total_discount: 300,
             total_refund: 0,
             total_service_charge: 0,
             refunded: false,
@@ -2373,7 +2375,7 @@ describe('PosApi', () => {
                 id: '12345',
                 product_id: '12345',
                 name: '10% off',
-                type: 'fixed_percentage',
+                type: 'percentage',
                 amount: 27500,
                 currency: 'USD',
                 scope: 'order'
@@ -2386,6 +2388,7 @@ describe('PosApi', () => {
                 type: 'cash',
                 note: 'An optional note associated with the tender at the time of payment.',
                 amount: 27500,
+                percentage: 10,
                 currency: 'USD',
                 total_amount: 27.5,
                 total_tip: 7,
@@ -2538,10 +2541,10 @@ describe('PosApi', () => {
           order_type_id: '12345',
           table: '1F',
           seat: '23F',
-          total_amount: 27.5,
-          total_tip: 7,
-          total_tax: 2.75,
-          total_discount: 3,
+          total_amount: 275,
+          total_tip: 700,
+          total_tax: 275,
+          total_discount: 300,
           total_refund: 0,
           total_service_charge: 0,
           refunded: false,
@@ -2597,6 +2600,7 @@ describe('PosApi', () => {
                 },
                 recipient: {
                   customer_id: '12345',
+                  display_name: 'Elon Musk',
                   address: [Object],
                   phone_number: [Object],
                   email: [Object]
@@ -2689,7 +2693,7 @@ describe('PosApi', () => {
               id: '12345',
               product_id: '12345',
               name: '10% off',
-              type: 'fixed_percentage',
+              type: 'percentage',
               amount: 27500,
               currency: 'USD',
               scope: 'order'
@@ -2702,6 +2706,7 @@ describe('PosApi', () => {
               type: 'cash',
               note: 'An optional note associated with the tender at the time of payment.',
               amount: 27500,
+              percentage: 10,
               currency: 'USD',
               total_amount: 27.5,
               total_tip: 7,
@@ -2837,10 +2842,10 @@ describe('PosApi', () => {
           order_type_id: '12345',
           table: '1F',
           seat: '23F',
-          total_amount: 27.5,
-          total_tip: 7,
-          total_tax: 2.75,
-          total_discount: 3,
+          total_amount: 275,
+          total_tip: 700,
+          total_tax: 275,
+          total_discount: 300,
           total_refund: 0,
           total_service_charge: 0,
           refunded: false,
@@ -2895,6 +2900,7 @@ describe('PosApi', () => {
                 },
                 recipient: {
                   customer_id: '12345',
+                  display_name: 'Elon Musk',
                   address: [Object],
                   phone_number: [Object],
                   email: [Object]
@@ -2974,7 +2980,7 @@ describe('PosApi', () => {
           discounts: [
             {
               name: '10% off',
-              type: 'fixed_percentage',
+              type: 'percentage',
               amount: 27500,
               currency: 'USD',
               scope: 'order'
@@ -2986,6 +2992,7 @@ describe('PosApi', () => {
               type: 'cash',
               note: 'An optional note associated with the tender at the time of payment.',
               amount: 27500,
+              percentage: 10,
               currency: 'USD',
               total_amount: 27.5,
               total_tip: 7,
@@ -3102,10 +3109,10 @@ describe('PosApi', () => {
           order_type_id: '12345',
           table: '1F',
           seat: '23F',
-          total_amount: 27.5,
-          total_tip: 7,
-          total_tax: 2.75,
-          total_discount: 3,
+          total_amount: 275,
+          total_tip: 700,
+          total_tax: 275,
+          total_discount: 300,
           total_refund: 0,
           total_service_charge: 0,
           refunded: false,
@@ -3160,6 +3167,7 @@ describe('PosApi', () => {
                 },
                 recipient: {
                   customer_id: '12345',
+                  display_name: 'Elon Musk',
                   address: [Object],
                   phone_number: [Object],
                   email: [Object]
@@ -3239,7 +3247,7 @@ describe('PosApi', () => {
           discounts: [
             {
               name: '10% off',
-              type: 'fixed_percentage',
+              type: 'percentage',
               amount: 27500,
               currency: 'USD',
               scope: 'order'
@@ -3251,6 +3259,7 @@ describe('PosApi', () => {
               type: 'cash',
               note: 'An optional note associated with the tender at the time of payment.',
               amount: 27500,
+              percentage: 10,
               currency: 'USD',
               total_amount: 27.5,
               total_tip: 7,

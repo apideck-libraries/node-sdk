@@ -54,6 +54,12 @@ export interface OrderTenders {
   amount?: number
   /**
    *
+   * @type {number}
+   * @memberof OrderTenders
+   */
+  percentage?: number
+  /**
+   *
    * @type {Currency}
    * @memberof OrderTenders
    */
@@ -195,6 +201,7 @@ export function OrderTendersFromJSONTyped(json: any, ignoreDiscriminator: boolea
     type: !exists(json, 'type') ? undefined : json['type'],
     note: !exists(json, 'note') ? undefined : json['note'],
     amount: !exists(json, 'amount') ? undefined : json['amount'],
+    percentage: !exists(json, 'percentage') ? undefined : json['percentage'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     total_amount: !exists(json, 'total_amount') ? undefined : json['total_amount'],
     total_tip: !exists(json, 'total_tip') ? undefined : json['total_tip'],
@@ -234,6 +241,7 @@ export function OrderTendersToJSON(value?: OrderTenders | null): any {
     type: value.type,
     note: value.note,
     amount: value.amount,
+    percentage: value.percentage,
     currency: CurrencyToJSON(value.currency),
     total_amount: value.total_amount,
     total_tip: value.total_tip,

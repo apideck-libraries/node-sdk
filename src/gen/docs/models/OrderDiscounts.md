@@ -21,7 +21,9 @@ Name | Type | Description | Notes
 ## Enum: OrderDiscounts.type
 
 
-* `fixed_percentage` (value: `'fixed_percentage'`)
+* `percentage` (value: `'percentage'`)
+
+* `flat_fee` (value: `'flat_fee'`)
 
 
 
