@@ -40,6 +40,7 @@ describe('AccountingApi', () => {
           id: '12345',
           report_name: 'BalanceSheet',
           start_date: '2017-01-01',
+          end_date: '2017-01-01',
           assets: {
             total: 200000,
             current_assets: {

@@ -16,31 +16,31 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface PayrollsFilter
+ * @interface BalanceSheetFilter
  */
-export interface PayrollsFilter {
+export interface BalanceSheetFilter {
   /**
-   * Return payrolls whose pay period is after the start date
+   * Filter by start date. If start date is given, end date is required.
    * @type {string}
-   * @memberof PayrollsFilter
+   * @memberof BalanceSheetFilter
    */
   start_date?: string
   /**
-   * Return payrolls whose pay period is before the end date
+   * Filter by end date. If end date is given, start date is required.
    * @type {string}
-   * @memberof PayrollsFilter
+   * @memberof BalanceSheetFilter
    */
   end_date?: string
 }
 
-export function PayrollsFilterFromJSON(json: any): PayrollsFilter {
-  return PayrollsFilterFromJSONTyped(json, false)
+export function BalanceSheetFilterFromJSON(json: any): BalanceSheetFilter {
+  return BalanceSheetFilterFromJSONTyped(json, false)
 }
 
-export function PayrollsFilterFromJSONTyped(
+export function BalanceSheetFilterFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): PayrollsFilter {
+): BalanceSheetFilter {
   if (json === undefined || json === null) {
     return json
   }
@@ -50,7 +50,7 @@ export function PayrollsFilterFromJSONTyped(
   }
 }
 
-export function PayrollsFilterToJSON(value?: PayrollsFilter | null): any {
+export function BalanceSheetFilterToJSON(value?: BalanceSheetFilter | null): any {
   if (value === undefined) {
     return undefined
   }

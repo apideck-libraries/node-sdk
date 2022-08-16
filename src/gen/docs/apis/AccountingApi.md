@@ -67,6 +67,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **passThrough** | **Passthrough** | Optional unmapped key/values that will be passed through to downstream as query parameters | (optional) 
+ **filter** | **BalanceSheetFilter** | Apply filters (beta) | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 

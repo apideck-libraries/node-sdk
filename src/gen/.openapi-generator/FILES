@@ -41,6 +41,7 @@ BalanceSheetAssetsFixedAssets.md
 BalanceSheetAssetsFixedAssetsAccounts.md
 BalanceSheetEquity.md
 BalanceSheetEquityItems.md
+BalanceSheetFilter.md
 BalanceSheetLiabilities.md
 BalanceSheetLiabilitiesAccounts.md
 BankAccount.md
@@ -534,6 +535,7 @@ models/BalanceSheetAssetsFixedAssets.ts
 models/BalanceSheetAssetsFixedAssetsAccounts.ts
 models/BalanceSheetEquity.ts
 models/BalanceSheetEquityItems.ts
+models/BalanceSheetFilter.ts
 models/BalanceSheetLiabilities.ts
 models/BalanceSheetLiabilitiesAccounts.ts
 models/BankAccount.ts
