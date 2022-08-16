@@ -734,7 +734,9 @@ describe('CrmApi', () => {
             }
           ],
           tags: ['New'],
-          read_only: false
+          read_only: false,
+          salutation: 'Mr',
+          birthday: '2000-08-12'
         }
       } as any
       const current = await crm.companiesAdd(params)
@@ -876,6 +878,8 @@ describe('CrmApi', () => {
             read_only: false,
             last_activity_at: '2020-09-30T07:43:32.000Z',
             deleted: false,
+            salutation: 'Mr',
+            birthday: '2000-08-12',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1081,6 +1085,8 @@ describe('CrmApi', () => {
           read_only: false,
           last_activity_at: '2020-09-30T07:43:32.000Z',
           deleted: false,
+          salutation: 'Mr',
+          birthday: '2000-08-12',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1240,7 +1246,9 @@ describe('CrmApi', () => {
             }
           ],
           tags: ['New'],
-          read_only: false
+          read_only: false,
+          salutation: 'Mr',
+          birthday: '2000-08-12'
         }
       } as any
       const current = await crm.companiesUpdate(params)
