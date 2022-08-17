@@ -93,6 +93,7 @@ CreateBillResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
 CreateContactResponse.md
+CreateCreditNoteResponse.md
 CreateCustomerResponse.md
 CreateCustomerSupportCustomerResponse.md
 CreateDepartmentResponse.md
@@ -132,6 +133,7 @@ CreateUploadSessionResponse.md
 CreateUserResponse.md
 CreateWebhookRequest.md
 CreateWebhookResponse.md
+CreditNote.md
 CrmApi.md
 CrmApiTest.api.test.ts
 CrmEventType.md
@@ -146,6 +148,7 @@ DeleteActivityResponse.md
 DeleteBillResponse.md
 DeleteCompanyResponse.md
 DeleteContactResponse.md
+DeleteCreditNoteResponse.md
 DeleteCustomerResponse.md
 DeleteCustomerSupportCustomerResponse.md
 DeleteDepartmentResponse.md
@@ -235,6 +238,8 @@ GetConsumersResponse.md
 GetConsumersResponseData.md
 GetContactResponse.md
 GetContactsResponse.md
+GetCreditNoteResponse.md
+GetCreditNotesResponse.md
 GetCustomerResponse.md
 GetCustomerSupportCustomerResponse.md
 GetCustomerSupportCustomersResponse.md
@@ -443,6 +448,7 @@ UpdateBillResponse.md
 UpdateCompanyResponse.md
 UpdateConnectionResponse.md
 UpdateContactResponse.md
+UpdateCreditNoteResponse.md
 UpdateCustomerResponse.md
 UpdateCustomerSupportCustomerResponse.md
 UpdateDepartmentResponse.md
@@ -585,6 +591,7 @@ models/CreateBillResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts
 models/CreateContactResponse.ts
+models/CreateCreditNoteResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateCustomerSupportCustomerResponse.ts
 models/CreateDepartmentResponse.ts
@@ -624,6 +631,7 @@ models/CreateUploadSessionResponse.ts
 models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
 models/CreateWebhookResponse.ts
+models/CreditNote.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
@@ -634,6 +642,7 @@ models/DeleteActivityResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCompanyResponse.ts
 models/DeleteContactResponse.ts
+models/DeleteCreditNoteResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteDepartmentResponse.ts
@@ -720,6 +729,8 @@ models/GetConsumersResponse.ts
 models/GetConsumersResponseData.ts
 models/GetContactResponse.ts
 models/GetContactsResponse.ts
+models/GetCreditNoteResponse.ts
+models/GetCreditNotesResponse.ts
 models/GetCustomerResponse.ts
 models/GetCustomerSupportCustomerResponse.ts
 models/GetCustomerSupportCustomersResponse.ts
@@ -921,6 +932,7 @@ models/UpdateBillResponse.ts
 models/UpdateCompanyResponse.ts
 models/UpdateConnectionResponse.ts
 models/UpdateContactResponse.ts
+models/UpdateCreditNoteResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
