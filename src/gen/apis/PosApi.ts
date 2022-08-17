@@ -2989,7 +2989,7 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update Order
+   * Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a `completed` or `canceled` status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments).
    * Update Order
    */
   async ordersUpdateRaw(
@@ -3056,7 +3056,7 @@ export class PosApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update Order
+   * Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a `completed` or `canceled` status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments).
    * Update Order
    */
   async ordersUpdate(

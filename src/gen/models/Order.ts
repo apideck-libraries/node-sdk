@@ -52,6 +52,12 @@ export interface Order {
    */
   readonly id?: string
   /**
+   * A value you specify that uniquely identifies this request among requests you have sent.
+   * @type {string}
+   * @memberof Order
+   */
+  idempotency_key?: string
+  /**
    *
    * @type {string}
    * @memberof Order
@@ -334,6 +340,7 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
     merchant_id: json['merchant_id'],
     location_id: json['location_id'],
     id: !exists(json, 'id') ? undefined : json['id'],
+    idempotency_key: !exists(json, 'idempotency_key') ? undefined : json['idempotency_key'],
     order_number: !exists(json, 'order_number') ? undefined : json['order_number'],
     order_date: !exists(json, 'order_date')
       ? undefined
@@ -411,6 +418,7 @@ export function OrderToJSON(value?: Order | null): any {
   return {
     merchant_id: value.merchant_id,
     location_id: value.location_id,
+    idempotency_key: value.idempotency_key,
     order_number: value.order_number,
     order_date:
       value.order_date === undefined

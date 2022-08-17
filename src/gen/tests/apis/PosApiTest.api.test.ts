@@ -1994,6 +1994,7 @@ describe('PosApi', () => {
       const { pos } = apideck
       const params = {
         order: {
+          idempotency_key: 'random_string',
           order_number: '1F',
           order_date: '2022-08-12',
           closed_date: '2022-08-13',
@@ -2251,6 +2252,7 @@ describe('PosApi', () => {
         data: [
           {
             id: '12345',
+            idempotency_key: 'random_string',
             order_number: '1F',
             order_date: '2022-08-12',
             closed_date: '2022-08-13',
@@ -2525,6 +2527,7 @@ describe('PosApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          idempotency_key: 'random_string',
           order_number: '1F',
           order_date: '2022-08-12',
           closed_date: '2022-08-13',
@@ -2826,6 +2829,7 @@ describe('PosApi', () => {
       const params = {
         id: 'id_example',
         order: {
+          idempotency_key: 'random_string',
           order_number: '1F',
           order_date: '2022-08-12',
           closed_date: '2022-08-13',
@@ -3093,6 +3097,7 @@ describe('PosApi', () => {
       const params = {
         id: 'id_example',
         order: {
+          idempotency_key: 'random_string',
           order_number: '1F',
           order_date: '2022-08-12',
           closed_date: '2022-08-13',

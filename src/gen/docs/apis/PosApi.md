@@ -2519,6 +2519,7 @@ const apideck = new Apideck({
 
 const params = {
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',
@@ -3022,6 +3023,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',
@@ -3318,6 +3320,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',

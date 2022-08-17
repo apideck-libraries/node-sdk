@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `merchant_id` | **string** |  | 
 `location_id` | **string** |  | 
 `id` | **string** |  | [optional] 
+`idempotency_key` | **string** | A value you specify that uniquely identifies this request among requests you have sent. | [optional] 
 `order_number` | **string** |  | [optional] 
 `order_date` | **Date** |  | [optional] 
 `closed_date` | **Date** |  | [optional] 
@@ -117,6 +118,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 
