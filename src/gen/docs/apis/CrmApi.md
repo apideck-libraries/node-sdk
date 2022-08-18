@@ -724,7 +724,9 @@ const params = {
     tags: [
       'New'
     ],
-    read_only: false
+    read_only: false,
+    salutation: 'Mr',
+    birthday: '2000-08-12'
   }
 }
 
@@ -1110,7 +1112,9 @@ const params = {
     tags: [
       'New'
     ],
-    read_only: false
+    read_only: false,
+    salutation: 'Mr',
+    birthday: '2000-08-12'
   }
 }
 

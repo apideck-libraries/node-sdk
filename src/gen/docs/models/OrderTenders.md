@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `type` | **string** |  | [optional] 
 `note` | **string** |  | [optional] 
 `amount` | **number** |  | [optional] 
+`percentage` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `total_amount` | **number** |  | [optional] 
 `total_tip` | **number** |  | [optional] 
@@ -77,6 +78,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

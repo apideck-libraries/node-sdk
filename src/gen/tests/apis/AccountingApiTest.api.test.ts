@@ -40,6 +40,7 @@ describe('AccountingApi', () => {
           id: '12345',
           report_name: 'BalanceSheet',
           start_date: '2017-01-01',
+          end_date: '2017-01-01',
           assets: {
             total: 200000,
             current_assets: {
@@ -772,6 +773,468 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {} as any
       const current = await accounting.companyInfoOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#creditNotesAdd', () => {
+    const endpoint = '/accounting/credit-notes'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'credit-notes',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        creditNote: {
+          number: 'OIT00546',
+          customer: {
+            id: '12345',
+            display_name: 'Windsurf Shop'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          sub_total: 27500,
+          total_amount: 49.99,
+          total_tax: 2500,
+          tax_code: '1234',
+          balance: 27500,
+          remaining_credit: 27500,
+          status: 'authorised',
+          reference: '123456',
+          date_issued: '2021-05-01T12:00:00.000Z',
+          date_paid: '2021-05-01T12:00:00.000Z',
+          type: 'accounts_receivable_credit',
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99
+            }
+          ],
+          note: 'Some notes about this credit note',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.creditNotesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#creditNotesAll', () => {
+    const endpoint = '/accounting/credit-notes'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'credit-notes',
+        operation: 'one',
+        data: [
+          {
+            id: '123456',
+            number: 'OIT00546',
+            customer: {
+              id: '12345',
+              display_id: 'CUST00101',
+              display_name: 'Windsurf Shop',
+              company_name: 'The boring company'
+            },
+            currency: 'USD',
+            currency_rate: 0.69,
+            tax_inclusive: true,
+            sub_total: 27500,
+            total_amount: 49.99,
+            total_tax: 2500,
+            tax_code: '1234',
+            balance: 27500,
+            remaining_credit: 27500,
+            status: 'authorised',
+            reference: '123456',
+            date_issued: '2021-05-01T12:00:00.000Z',
+            date_paid: '2021-05-01T12:00:00.000Z',
+            type: 'accounts_receivable_credit',
+            line_items: [
+              {
+                id: '12345',
+                row_id: '12345',
+                code: '120-C',
+                line_number: 1,
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: 'sales_item',
+                tax_amount: 27500,
+                total_amount: 27500,
+                quantity: 1,
+                unit_price: 27500.5,
+                unit_of_measure: 'pc.',
+                discount_percentage: 0.01,
+                item: {
+                  id: '12344',
+                  code: '120-C',
+                  name: 'Model Y'
+                },
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases'
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091',
+                  code: '453'
+                },
+                row_version: '1-12345'
+              }
+            ],
+            allocations: [
+              {
+                id: '123456',
+                type: 'invoice',
+                code: 'N091',
+                amount: 49.99
+              }
+            ],
+            note: 'Some notes about this credit note',
+            row_version: '1-12345',
+            created_at: '2020-09-30T07:43:32.000Z',
+            updated_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.creditNotesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#creditNotesDelete', () => {
+    const endpoint = '/accounting/credit-notes/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'credit-notes',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.creditNotesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#creditNotesOne', () => {
+    const endpoint = '/accounting/credit-notes/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'credit-notes',
+        operation: 'one',
+        data: {
+          id: '123456',
+          number: 'OIT00546',
+          customer: {
+            id: '12345',
+            display_id: 'CUST00101',
+            display_name: 'Windsurf Shop',
+            company_name: 'The boring company'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          sub_total: 27500,
+          total_amount: 49.99,
+          total_tax: 2500,
+          tax_code: '1234',
+          balance: 27500,
+          remaining_credit: 27500,
+          status: 'authorised',
+          reference: '123456',
+          date_issued: '2021-05-01T12:00:00.000Z',
+          date_paid: '2021-05-01T12:00:00.000Z',
+          type: 'accounts_receivable_credit',
+          line_items: [
+            {
+              id: '12345',
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases'
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              code: 'N091',
+              amount: 49.99
+            }
+          ],
+          note: 'Some notes about this credit note',
+          row_version: '1-12345',
+          created_at: '2020-09-30T07:43:32.000Z',
+          updated_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.creditNotesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#creditNotesUpdate', () => {
+    const endpoint = '/accounting/credit-notes/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'credit-notes',
+        operation: 'one',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        creditNote: {
+          number: 'OIT00546',
+          customer: {
+            id: '12345',
+            display_name: 'Windsurf Shop'
+          },
+          currency: 'USD',
+          currency_rate: 0.69,
+          tax_inclusive: true,
+          sub_total: 27500,
+          total_amount: 49.99,
+          total_tax: 2500,
+          tax_code: '1234',
+          balance: 27500,
+          remaining_credit: 27500,
+          status: 'authorised',
+          reference: '123456',
+          date_issued: '2021-05-01T12:00:00.000Z',
+          date_paid: '2021-05-01T12:00:00.000Z',
+          type: 'accounts_receivable_credit',
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99
+            }
+          ],
+          note: 'Some notes about this credit note',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.creditNotesUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

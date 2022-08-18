@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 `read_only` | **boolean** |  | [optional] 
 `last_activity_at` | **Date** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
+`salutation` | **string** |  | [optional] 
+`birthday` | **Date** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -80,6 +82,8 @@ Name | Type | Description | Notes
 * [`CompanyRowType`](CompanyRowType.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
+
 
 
 

@@ -2519,6 +2519,7 @@ const apideck = new Apideck({
 
 const params = {
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',
@@ -2535,10 +2536,10 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
-    total_tip: 7,
-    total_tax: 2.75,
-    total_discount: 3,
+    total_amount: 275,
+    total_tip: 700,
+    total_tax: 275,
+    total_discount: 300,
     total_refund: 0,
     total_service_charge: 0,
     refunded: false,
@@ -2593,6 +2594,7 @@ const params = {
           },
           recipient: {
             customer_id: '12345',
+            display_name: 'Elon Musk',
             address: [Object],
             phone_number: [Object],
             email: [Object]
@@ -2672,7 +2674,7 @@ const params = {
     discounts: [
       {
         name: '10% off',
-        type: 'fixed_percentage',
+        type: 'percentage',
         amount: 27500,
         currency: 'USD',
         scope: 'order'
@@ -2684,6 +2686,7 @@ const params = {
         type: 'cash',
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
+        percentage: 10,
         currency: 'USD',
         total_amount: 27.5,
         total_tip: 7,
@@ -3020,6 +3023,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',
@@ -3036,10 +3040,10 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
-    total_tip: 7,
-    total_tax: 2.75,
-    total_discount: 3,
+    total_amount: 275,
+    total_tip: 700,
+    total_tax: 275,
+    total_discount: 300,
     total_refund: 0,
     total_service_charge: 0,
     refunded: false,
@@ -3094,6 +3098,7 @@ const params = {
           },
           recipient: {
             customer_id: '12345',
+            display_name: 'Elon Musk',
             address: [Object],
             phone_number: [Object],
             email: [Object]
@@ -3173,7 +3178,7 @@ const params = {
     discounts: [
       {
         name: '10% off',
-        type: 'fixed_percentage',
+        type: 'percentage',
         amount: 27500,
         currency: 'USD',
         scope: 'order'
@@ -3185,6 +3190,7 @@ const params = {
         type: 'cash',
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
+        percentage: 10,
         currency: 'USD',
         total_amount: 27.5,
         total_tip: 7,
@@ -3314,6 +3320,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   order: {
+    idempotency_key: 'random_string',
     order_number: '1F',
     order_date: '2022-08-12',
     closed_date: '2022-08-13',
@@ -3330,10 +3337,10 @@ const params = {
     order_type_id: '12345',
     table: '1F',
     seat: '23F',
-    total_amount: 27.5,
-    total_tip: 7,
-    total_tax: 2.75,
-    total_discount: 3,
+    total_amount: 275,
+    total_tip: 700,
+    total_tax: 275,
+    total_discount: 300,
     total_refund: 0,
     total_service_charge: 0,
     refunded: false,
@@ -3388,6 +3395,7 @@ const params = {
           },
           recipient: {
             customer_id: '12345',
+            display_name: 'Elon Musk',
             address: [Object],
             phone_number: [Object],
             email: [Object]
@@ -3467,7 +3475,7 @@ const params = {
     discounts: [
       {
         name: '10% off',
-        type: 'fixed_percentage',
+        type: 'percentage',
         amount: 27500,
         currency: 'USD',
         scope: 'order'
@@ -3479,6 +3487,7 @@ const params = {
         type: 'cash',
         note: 'An optional note associated with the tender at the time of payment.',
         amount: 27500,
+        percentage: 10,
         currency: 'USD',
         total_amount: 27.5,
         total_tip: 7,

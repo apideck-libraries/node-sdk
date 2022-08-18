@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `query` | **string** | The query to search for. May match across multiple fields. | 
+`drive_id` | **string** | ID of the drive to filter on | [optional] 
 
 
 

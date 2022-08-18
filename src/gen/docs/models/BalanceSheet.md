@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `liabilities` | [**BalanceSheetLiabilities**](BalanceSheetLiabilities.md) |  | 
 `equity` | [**BalanceSheetEquity**](BalanceSheetEquity.md) |  | 
 `id` | **string** |  | [optional] 
+`end_date` | **string** | The start date of the report | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 * [`BalanceSheetAssets`](BalanceSheetAssets.md)
 * [`BalanceSheetLiabilities`](BalanceSheetLiabilities.md)
 * [`BalanceSheetEquity`](BalanceSheetEquity.md)
+
 
 
 

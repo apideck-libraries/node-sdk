@@ -12,6 +12,11 @@
 * [Get Bill](#billsOne)
 * [Update Bill](#billsUpdate)
 * [Get Company Info](#companyInfoOne)
+* [Create Credit Note](#creditNotesAdd)
+* [List Credit Notes](#creditNotesAll)
+* [Delete Credit Note](#creditNotesDelete)
+* [Get Credit Note](#creditNotesOne)
+* [Update Credit Note](#creditNotesUpdate)
 * [Create Customer](#customersAdd)
 * [List Customers](#customersAll)
 * [Delete Customer](#customersDelete)
@@ -67,6 +72,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **passThrough** | **Passthrough** | Optional unmapped key/values that will be passed through to downstream as query parameters | (optional) 
+ **filter** | **BalanceSheetFilter** | Apply filters (beta) | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -676,6 +682,464 @@ const params = {}
 
 try {
   const { data } = await apideck.accounting.companyInfoOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="creditNotesAdd"></a>
+# Create Credit Note
+
+
+Method: **creditNotesAdd**
+
+```typescript
+accountingApi.creditNotesAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **creditNote** | [CreditNote](../models/CreditNote.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateCreditNoteResponse`](../models/CreateCreditNoteResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Credit Note created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  creditNote: {
+    number: 'OIT00546',
+    customer: {
+      id: '12345',
+      display_name: 'Windsurf Shop'
+    },
+    currency: 'USD',
+    currency_rate: 0.69,
+    tax_inclusive: true,
+    sub_total: 27500,
+    total_amount: 49.99,
+    total_tax: 2500,
+    tax_code: '1234',
+    balance: 27500,
+    remaining_credit: 27500,
+    status: 'authorised',
+    reference: '123456',
+    date_issued: '2021-05-01T12:00:00.000Z',
+    date_paid: '2021-05-01T12:00:00.000Z',
+    type: 'accounts_receivable_credit',
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        item: {
+          id: '12344'
+        },
+        tax_rate: {
+          id: '123456'
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091',
+          code: '453'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99
+      }
+    ],
+    note: 'Some notes about this credit note',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.creditNotesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="creditNotesAll"></a>
+# List Credit Notes
+
+
+Method: **creditNotesAll**
+
+```typescript
+accountingApi.creditNotesAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetCreditNotesResponse`](../models/GetCreditNotesResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Credit Notes | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.creditNotesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="creditNotesDelete"></a>
+# Delete Credit Note
+
+
+Method: **creditNotesDelete**
+
+```typescript
+accountingApi.creditNotesDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteCreditNoteResponse`](../models/DeleteCreditNoteResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Credit Note deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.creditNotesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="creditNotesOne"></a>
+# Get Credit Note
+
+
+Method: **creditNotesOne**
+
+```typescript
+accountingApi.creditNotesOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetCreditNoteResponse`](../models/GetCreditNoteResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Credit Note | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.creditNotesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="creditNotesUpdate"></a>
+# Update Credit Note
+
+
+Method: **creditNotesUpdate**
+
+```typescript
+accountingApi.creditNotesUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **creditNote** | [CreditNote](../models/CreditNote.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateCreditNoteResponse`](../models/UpdateCreditNoteResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Credit Note updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  creditNote: {
+    number: 'OIT00546',
+    customer: {
+      id: '12345',
+      display_name: 'Windsurf Shop'
+    },
+    currency: 'USD',
+    currency_rate: 0.69,
+    tax_inclusive: true,
+    sub_total: 27500,
+    total_amount: 49.99,
+    total_tax: 2500,
+    tax_code: '1234',
+    balance: 27500,
+    remaining_credit: 27500,
+    status: 'authorised',
+    reference: '123456',
+    date_issued: '2021-05-01T12:00:00.000Z',
+    date_paid: '2021-05-01T12:00:00.000Z',
+    type: 'accounts_receivable_credit',
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        item: {
+          id: '12344'
+        },
+        tax_rate: {
+          id: '123456'
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091',
+          code: '453'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99
+      }
+    ],
+    note: 'Some notes about this credit note',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.creditNotesUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

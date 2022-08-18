@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `customer_id` | **string** |  | [optional] 
+`display_name` | **string** |  | [optional] 
 `address` | [**Address**](Address.md) |  | [optional] 
 `phone_number` | [**PhoneNumber**](PhoneNumber.md) |  | [optional] 
 `email` | [**Email**](Email.md) |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)

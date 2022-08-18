@@ -48,6 +48,11 @@ describe('ConnectorApi', () => {
                 {
                   unified_property: 'owner_id'
                 }
+              ],
+              supported_list_fields: [
+                {
+                  unified_property: 'owner_id'
+                }
               ]
             }
           ]
@@ -442,6 +447,11 @@ describe('ConnectorApi', () => {
           supported_filters: ['name', 'email'],
           supported_sort_by: ['updated_at', 'created_at', 'name'],
           supported_fields: [
+            {
+              unified_property: 'owner_id'
+            }
+          ],
+          supported_list_fields: [
             {
               unified_property: 'owner_id'
             }
