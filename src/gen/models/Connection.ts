@@ -162,7 +162,7 @@ export interface Connection {
    */
   readonly resource_settings_support?: Array<string>
   /**
-   *
+   * List of settings that are required to be configured on integration before authorization can occur
    * @type {Array<string>}
    * @memberof Connection
    */

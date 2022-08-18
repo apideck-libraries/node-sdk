@@ -105,7 +105,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
+          settings_required_for_authorization: ['client_id', 'client_secret'],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -218,7 +218,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
+          settings_required_for_authorization: ['client_id', 'client_secret'],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -351,7 +351,7 @@ describe('VaultApi', () => {
             configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
-            settings_required_for_authorization: ['instance_url'],
+            settings_required_for_authorization: ['client_id', 'client_secret'],
             has_guide: true,
             created_at: 1615563533390,
             updated_at: 1616662325753
@@ -493,7 +493,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
+          settings_required_for_authorization: ['client_id', 'client_secret'],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -623,7 +623,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
+          settings_required_for_authorization: ['client_id', 'client_secret'],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -735,7 +735,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
-          settings_required_for_authorization: ['instance_url'],
+          settings_required_for_authorization: ['client_id', 'client_secret'],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
