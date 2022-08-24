@@ -1,4 +1,4 @@
-# Apideck.EmployeeSocialLinks
+# Apideck.ApplicantSocialLinks
 
 ### Description
 

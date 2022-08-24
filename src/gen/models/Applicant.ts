@@ -15,6 +15,11 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import {
+  ApplicantSocialLinks,
+  ApplicantSocialLinksFromJSON,
+  ApplicantSocialLinksToJSON
+} from './ApplicantSocialLinks'
+import {
   ApplicantWebsites,
   ApplicantWebsitesFromJSON,
   ApplicantWebsitesToJSON
@@ -82,6 +87,12 @@ export interface Applicant {
    * @type {string}
    * @memberof Applicant
    */
+  cover_letter?: string
+  /**
+   *
+   * @type {string}
+   * @memberof Applicant
+   */
   readonly job_url?: string | null
   /**
    *
@@ -127,22 +138,28 @@ export interface Applicant {
   websites?: Array<ApplicantWebsites>
   /**
    *
-   * @type {string}
+   * @type {Array<ApplicantSocialLinks>}
    * @memberof Applicant
    */
-  readonly stage_id?: string
+  social_links?: Array<ApplicantSocialLinks>
   /**
    *
    * @type {string}
    * @memberof Applicant
    */
-  readonly recruiter_id?: string
+  stage_id?: string
   /**
    *
    * @type {string}
    * @memberof Applicant
    */
-  readonly coordinator_id?: string
+  recruiter_id?: string
+  /**
+   *
+   * @type {string}
+   * @memberof Applicant
+   */
+  coordinator_id?: string
   /**
    *
    * @type {Array<string>}
@@ -280,6 +297,7 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : json['birthday'] === null
       ? null
       : new Date(json['birthday']),
+    cover_letter: !exists(json, 'cover_letter') ? undefined : json['cover_letter'],
     job_url: !exists(json, 'job_url') ? undefined : json['job_url'],
     photo_url: !exists(json, 'photo_url') ? undefined : json['photo_url'],
     headline: !exists(json, 'headline') ? undefined : json['headline'],
@@ -294,6 +312,9 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     websites: !exists(json, 'websites')
       ? undefined
       : (json['websites'] as Array<any>).map(ApplicantWebsitesFromJSON),
+    social_links: !exists(json, 'social_links')
+      ? undefined
+      : (json['social_links'] as Array<any>).map(ApplicantSocialLinksFromJSON),
     stage_id: !exists(json, 'stage_id') ? undefined : json['stage_id'],
     recruiter_id: !exists(json, 'recruiter_id') ? undefined : json['recruiter_id'],
     coordinator_id: !exists(json, 'coordinator_id') ? undefined : json['coordinator_id'],
@@ -349,6 +370,7 @@ export function ApplicantToJSON(value?: Applicant | null): any {
         : value.birthday === null
         ? null
         : new Date(value.birthday).toISOString().substr(0, 10),
+    cover_letter: value.cover_letter,
     photo_url: value.photo_url,
     headline: value.headline,
     title: value.title,
@@ -365,6 +387,13 @@ export function ApplicantToJSON(value?: Applicant | null): any {
       value.websites === undefined
         ? undefined
         : (value.websites as Array<any>).map(ApplicantWebsitesToJSON),
+    social_links:
+      value.social_links === undefined
+        ? undefined
+        : (value.social_links as Array<any>).map(ApplicantSocialLinksToJSON),
+    stage_id: value.stage_id,
+    recruiter_id: value.recruiter_id,
+    coordinator_id: value.coordinator_id,
     applications: value.applications,
     followers: value.followers,
     sources: value.sources,

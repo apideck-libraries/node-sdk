@@ -27,6 +27,7 @@ ApiResources.md
 ApiStatus.md
 ApisFilter.md
 Applicant.md
+ApplicantSocialLinks.md
 ApplicantWebsites.md
 AtsActivity.md
 AtsApi.md
@@ -108,6 +109,7 @@ CreateHrisCompanyResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateItemResponse.md
+CreateJobResponse.md
 CreateLeadResponse.md
 CreateLedgerAccountResponse.md
 CreateLocationResponse.md
@@ -160,6 +162,7 @@ DeleteFolderResponse.md
 DeleteHrisCompanyResponse.md
 DeleteInvoiceResponse.md
 DeleteItemResponse.md
+DeleteJobResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
 DeleteLocationResponse.md
@@ -196,7 +199,6 @@ EmployeePartner.md
 EmployeePayroll.md
 EmployeePayrolls.md
 EmployeeSchedules.md
-EmployeeSocialLinks.md
 EmployeeTeam.md
 EmployeesFilter.md
 Error.md
@@ -462,6 +464,7 @@ UpdateHrisCompanyResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateItemResponse.md
+UpdateJobResponse.md
 UpdateLeadResponse.md
 UpdateLedgerAccountResponse.md
 UpdateLocationResponse.md
@@ -529,6 +532,7 @@ models/ApiResources.ts
 models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
+models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
 models/AtsActivity.ts
 models/AuthType.ts
@@ -606,6 +610,7 @@ models/CreateHrisCompanyResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateItemResponse.ts
+models/CreateJobResponse.ts
 models/CreateLeadResponse.ts
 models/CreateLedgerAccountResponse.ts
 models/CreateLocationResponse.ts
@@ -654,6 +659,7 @@ models/DeleteFolderResponse.ts
 models/DeleteHrisCompanyResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteItemResponse.ts
+models/DeleteJobResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
 models/DeleteLocationResponse.ts
@@ -690,7 +696,6 @@ models/EmployeePartner.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
-models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
 models/EmployeesFilter.ts
 models/ExecuteWebhookEventRequest.ts
@@ -946,6 +951,7 @@ models/UpdateHrisCompanyResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateItemResponse.ts
+models/UpdateJobResponse.ts
 models/UpdateLeadResponse.ts
 models/UpdateLedgerAccountResponse.ts
 models/UpdateLocationResponse.ts

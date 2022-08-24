@@ -16,37 +16,37 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface EmployeeSocialLinks
+ * @interface ApplicantSocialLinks
  */
-export interface EmployeeSocialLinks {
+export interface ApplicantSocialLinks {
   /**
    *
    * @type {string}
-   * @memberof EmployeeSocialLinks
+   * @memberof ApplicantSocialLinks
    */
   url: string
   /**
    *
    * @type {string}
-   * @memberof EmployeeSocialLinks
+   * @memberof ApplicantSocialLinks
    */
   id?: string | null
   /**
    *
    * @type {string}
-   * @memberof EmployeeSocialLinks
+   * @memberof ApplicantSocialLinks
    */
   type?: string | null
 }
 
-export function EmployeeSocialLinksFromJSON(json: any): EmployeeSocialLinks {
-  return EmployeeSocialLinksFromJSONTyped(json, false)
+export function ApplicantSocialLinksFromJSON(json: any): ApplicantSocialLinks {
+  return ApplicantSocialLinksFromJSONTyped(json, false)
 }
 
-export function EmployeeSocialLinksFromJSONTyped(
+export function ApplicantSocialLinksFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): EmployeeSocialLinks {
+): ApplicantSocialLinks {
   if (json === undefined || json === null) {
     return json
   }
@@ -57,7 +57,7 @@ export function EmployeeSocialLinksFromJSONTyped(
   }
 }
 
-export function EmployeeSocialLinksToJSON(value?: EmployeeSocialLinks | null): any {
+export function ApplicantSocialLinksToJSON(value?: ApplicantSocialLinks | null): any {
   if (value === undefined) {
     return undefined
   }

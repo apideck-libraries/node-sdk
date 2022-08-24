@@ -14,6 +14,11 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import {
+  ApplicantSocialLinks,
+  ApplicantSocialLinksFromJSON,
+  ApplicantSocialLinksToJSON
+} from './ApplicantSocialLinks'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
@@ -29,11 +34,6 @@ import {
 import { EmployeeJobs, EmployeeJobsFromJSON, EmployeeJobsToJSON } from './EmployeeJobs'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
 import { EmployeePartner, EmployeePartnerFromJSON, EmployeePartnerToJSON } from './EmployeePartner'
-import {
-  EmployeeSocialLinks,
-  EmployeeSocialLinksFromJSON,
-  EmployeeSocialLinksToJSON
-} from './EmployeeSocialLinks'
 import { EmployeeTeam, EmployeeTeamFromJSON, EmployeeTeamToJSON } from './EmployeeTeam'
 import { Gender, GenderFromJSON, GenderToJSON } from './Gender'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
@@ -310,10 +310,10 @@ export interface Employee {
   custom_fields?: Array<CustomField>
   /**
    *
-   * @type {Array<EmployeeSocialLinks>}
+   * @type {Array<ApplicantSocialLinks>}
    * @memberof Employee
    */
-  social_links?: Array<EmployeeSocialLinks>
+  social_links?: Array<ApplicantSocialLinks>
   /**
    *
    * @type {string}
@@ -470,7 +470,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     social_links: !exists(json, 'social_links')
       ? undefined
-      : (json['social_links'] as Array<any>).map(EmployeeSocialLinksFromJSON),
+      : (json['social_links'] as Array<any>).map(ApplicantSocialLinksFromJSON),
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
     tax_id: !exists(json, 'tax_id') ? undefined : json['tax_id'],
     dietary_preference: !exists(json, 'dietary_preference')
@@ -562,7 +562,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     social_links:
       value.social_links === undefined
         ? undefined
-        : (value.social_links as Array<any>).map(EmployeeSocialLinksToJSON),
+        : (value.social_links as Array<any>).map(ApplicantSocialLinksToJSON),
     tax_code: value.tax_code,
     tax_id: value.tax_id,
     dietary_preference: value.dietary_preference,

@@ -286,8 +286,8 @@ export class AtsApi extends runtime.BaseAPI {
   }
 
   /**
-   * List jobs
-   * List jobs
+   * List Jobs
+   * List Jobs
    */
   async jobsAllRaw(
     requestParameters: AtsApiJobsAllRequest,
@@ -339,8 +339,8 @@ export class AtsApi extends runtime.BaseAPI {
   }
 
   /**
-   * List jobs
-   * List jobs
+   * List Jobs
+   * List Jobs
    */
   async jobsAll(
     requestParameters: AtsApiJobsAllRequest = {},
@@ -351,8 +351,8 @@ export class AtsApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get job
-   * Get job
+   * Get Job
+   * Get Job
    */
   async jobsOneRaw(
     requestParameters: AtsApiJobsOneRequest,
@@ -406,8 +406,8 @@ export class AtsApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get job
-   * Get job
+   * Get Job
+   * Get Job
    */
   async jobsOne(
     requestParameters: AtsApiJobsOneRequest,
