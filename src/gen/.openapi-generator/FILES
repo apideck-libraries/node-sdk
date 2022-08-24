@@ -332,6 +332,7 @@ InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceLineItem.md
 InvoiceResponse.md
+InvoicesSort.md
 Item.md
 Job.md
 JobSalary.md
@@ -824,6 +825,7 @@ models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceLineItem.ts
 models/InvoiceResponse.ts
+models/InvoicesSort.ts
 models/Item.ts
 models/Job.ts
 models/JobSalary.ts
