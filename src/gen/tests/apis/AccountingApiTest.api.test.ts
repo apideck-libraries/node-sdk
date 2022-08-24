@@ -2247,7 +2247,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
-          due_date: '2020-10-30',
+          due_date: '2020-09-30',
           terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
@@ -2386,7 +2386,7 @@ describe('AccountingApi', () => {
               company_name: 'The boring company'
             },
             invoice_date: '2020-09-30',
-            due_date: '2020-10-30',
+            due_date: '2020-09-30',
             terms: 'Net 30 days',
             po_number: '90000117',
             reference: '123456',
@@ -2596,7 +2596,7 @@ describe('AccountingApi', () => {
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
-          due_date: '2020-10-30',
+          due_date: '2020-09-30',
           terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
@@ -2762,7 +2762,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
-          due_date: '2020-10-30',
+          due_date: '2020-09-30',
           terms: 'Net 30 days',
           po_number: '90000117',
           reference: '123456',
