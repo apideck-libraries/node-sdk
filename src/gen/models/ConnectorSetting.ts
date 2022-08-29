@@ -56,7 +56,8 @@ export enum ConnectorSettingType {
   datetime = 'datetime',
   date = 'date',
   time = 'time',
-  number = 'number'
+  number = 'number',
+  password = 'password'
 }
 
 export function ConnectorSettingFromJSON(json: any): ConnectorSetting {
