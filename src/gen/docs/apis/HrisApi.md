@@ -1283,6 +1283,9 @@ const params = {
     food_allergies: [
       'No allergies'
     ],
+    tags: [
+      'New'
+    ],
     row_version: '1-12345',
     deleted: true
   }
@@ -1739,6 +1742,9 @@ const params = {
     dietary_preference: 'Veggie',
     food_allergies: [
       'No allergies'
+    ],
+    tags: [
+      'New'
     ],
     row_version: '1-12345',
     deleted: true

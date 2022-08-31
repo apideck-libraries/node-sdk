@@ -54,6 +54,7 @@ Name | Type | Description | Notes
 `tax_id` | **string** |  | [optional] 
 `dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
 `food_allergies` | **Array&lt;string&gt;** | Indicate the employee\'s food allergies. | [optional] 
+`tags` | **Array&lt;string&gt;** |  | [optional] 
 `row_version` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
@@ -126,6 +127,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
+
 
 
 

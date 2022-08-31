@@ -340,6 +340,12 @@ export interface Employee {
   food_allergies?: Array<string> | null
   /**
    *
+   * @type {Array<string>}
+   * @memberof Employee
+   */
+  tags?: Array<string>
+  /**
+   *
    * @type {string}
    * @memberof Employee
    */
@@ -477,6 +483,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       ? undefined
       : json['dietary_preference'],
     food_allergies: !exists(json, 'food_allergies') ? undefined : json['food_allergies'],
+    tags: !exists(json, 'tags') ? undefined : json['tags'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -567,6 +574,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     tax_id: value.tax_id,
     dietary_preference: value.dietary_preference,
     food_allergies: value.food_allergies,
+    tags: value.tags,
     row_version: value.row_version,
     deleted: value.deleted
   }
