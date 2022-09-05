@@ -46,7 +46,6 @@ BalanceSheetFilter.md
 BalanceSheetLiabilities.md
 BalanceSheetLiabilitiesAccounts.md
 BankAccount.md
-BankAccountAchDetails.md
 Benefit.md
 Bill.md
 BillLineItem.md
@@ -401,6 +400,8 @@ Pipeline.md
 PipelineStages.md
 PosApi.md
 PosApiTest.api.test.ts
+PosBankAccount.md
+PosBankAccountAchDetails.md
 PosPayment.md
 PosPaymentCardDetails.md
 PosPaymentExternalDetails.md
@@ -551,7 +552,6 @@ models/BalanceSheetFilter.ts
 models/BalanceSheetLiabilities.ts
 models/BalanceSheetLiabilitiesAccounts.ts
 models/BankAccount.ts
-models/BankAccountAchDetails.ts
 models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
@@ -892,6 +892,8 @@ models/PayrollsFilter.ts
 models/PhoneNumber.ts
 models/Pipeline.ts
 models/PipelineStages.ts
+models/PosBankAccount.ts
+models/PosBankAccountAchDetails.ts
 models/PosPayment.ts
 models/PosPaymentCardDetails.ts
 models/PosPaymentExternalDetails.ts

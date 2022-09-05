@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 `status` | **string** | Status of this payment. | [optional] 
 `cash` | [**CashDetails**](CashDetails.md) |  | [optional] 
 `card_details` | [**PosPaymentCardDetails**](PosPaymentCardDetails.md) |  | [optional] 
-`bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`bank_account` | [**PosBankAccount**](PosBankAccount.md) |  | [optional] 
 `wallet` | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 `external_details` | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
 `service_charges` | [**ServiceCharges**](ServiceCharges.md) |  | [optional] 
@@ -109,7 +109,7 @@ Name | Type | Description | Notes
 
 * [`CashDetails`](CashDetails.md)
 * [`PosPaymentCardDetails`](PosPaymentCardDetails.md)
-* [`BankAccount`](BankAccount.md)
+* [`PosBankAccount`](PosBankAccount.md)
 * [`WalletDetails`](WalletDetails.md)
 * [`PosPaymentExternalDetails`](PosPaymentExternalDetails.md)
 * [`ServiceCharges`](ServiceCharges.md)
