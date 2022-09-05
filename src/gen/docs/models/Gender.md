@@ -11,6 +11,8 @@
 
 * `other` (value: `'other'`)
 
+* `not_specified` (value: `'not_specified'`)
+
 
 ---
 

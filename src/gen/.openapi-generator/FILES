@@ -76,6 +76,7 @@ ConnectorSetting.md
 ConnectorStatus.md
 ConnectorSupportedEvents.md
 ConnectorSupportedResources.md
+ConnectorTlsSupport.md
 ConnectorUnifiedApis.md
 ConnectorsFilter.md
 Consumer.md
@@ -578,6 +579,7 @@ models/ConnectorSetting.ts
 models/ConnectorStatus.ts
 models/ConnectorSupportedEvents.ts
 models/ConnectorSupportedResources.ts
+models/ConnectorTlsSupport.ts
 models/ConnectorUnifiedApis.ts
 models/ConnectorsFilter.ts
 models/Consumer.ts
