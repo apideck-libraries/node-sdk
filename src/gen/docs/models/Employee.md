@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
+`id` | **string** |  | 
+`first_name` | **string** |  | 
+`last_name` | **string** |  | 
 `middle_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
 `preferred_name` | **string** |  | [optional] 
@@ -49,11 +49,12 @@ Name | Type | Description | Notes
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`social_links` | [**Array&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
+`social_links` | [**Array&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
 `tax_code` | **string** |  | [optional] 
 `tax_id` | **string** |  | [optional] 
 `dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
 `food_allergies` | **Array&lt;string&gt;** | Indicate the employee\'s food allergies. | [optional] 
+`tags` | **Array&lt;string&gt;** |  | [optional] 
 `row_version` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
@@ -125,7 +126,8 @@ Name | Type | Description | Notes
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
-* [`EmployeeSocialLinks`](EmployeeSocialLinks.md)
+* [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
+
 
 
 

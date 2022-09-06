@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 
 * `number` (value: `'number'`)
 
+* `password` (value: `'password'`)
+
 
 
 

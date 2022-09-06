@@ -1,4 +1,4 @@
-# Apideck.BankAccountAchDetails
+# Apideck.PosBankAccountAchDetails
 
 ### Description
 

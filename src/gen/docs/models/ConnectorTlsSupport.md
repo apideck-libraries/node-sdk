@@ -1,13 +1,12 @@
-# Apideck.EmployeeSocialLinks
+# Apideck.ConnectorTlsSupport
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`url` | **string** |  | 
-`id` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
+`description` | **string** | Description of the TLS support | [optional] 
 
 
 

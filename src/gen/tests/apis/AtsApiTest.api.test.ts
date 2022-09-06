@@ -55,6 +55,8 @@ describe('AtsApi', () => {
           middle_name: 'D.',
           initials: 'EM',
           birthday: '2000-08-12',
+          cover_letter:
+            'I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
           photo_url: 'https://unavatar.io/elon-musk',
           headline: 'PepsiCo, Inc, Central Perk',
           title: 'CEO',
@@ -109,6 +111,16 @@ describe('AtsApi', () => {
               type: 'primary'
             }
           ],
+          social_links: [
+            {
+              id: '12345',
+              url: 'https://www.twitter.com/apideck-io',
+              type: 'twitter'
+            }
+          ],
+          stage_id: '12345',
+          recruiter_id: '12345',
+          coordinator_id: '12345',
           applications: [
             'a0d636c6-43b3-4bde-8c70-85b707d992f4',
             'a98lfd96-43b3-4bde-8c70-85b707d992e6'
@@ -164,6 +176,8 @@ describe('AtsApi', () => {
             middle_name: 'D.',
             initials: 'EM',
             birthday: '2000-08-12',
+            cover_letter:
+              'I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
             job_url: 'https://democompany.recruitee.com/o/example-talent-pool',
             photo_url: 'https://unavatar.io/elon-musk',
             headline: 'PepsiCo, Inc, Central Perk',
@@ -217,6 +231,13 @@ describe('AtsApi', () => {
                 id: '12345',
                 url: 'http://example.com',
                 type: 'primary'
+              }
+            ],
+            social_links: [
+              {
+                id: '12345',
+                url: 'https://www.twitter.com/apideck-io',
+                type: 'twitter'
               }
             ],
             stage_id: '12345',
@@ -307,6 +328,8 @@ describe('AtsApi', () => {
           middle_name: 'D.',
           initials: 'EM',
           birthday: '2000-08-12',
+          cover_letter:
+            'I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
           job_url: 'https://democompany.recruitee.com/o/example-talent-pool',
           photo_url: 'https://unavatar.io/elon-musk',
           headline: 'PepsiCo, Inc, Central Perk',
@@ -360,6 +383,13 @@ describe('AtsApi', () => {
               id: '12345',
               url: 'http://example.com',
               type: 'primary'
+            }
+          ],
+          social_links: [
+            {
+              id: '12345',
+              url: 'https://www.twitter.com/apideck-io',
+              type: 'twitter'
             }
           ],
           stage_id: '12345',

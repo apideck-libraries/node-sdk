@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **passThrough** | **Passthrough** | Optional unmapped key/values that will be passed through to downstream as query parameters | (optional) 
- **filter** | **BalanceSheetFilter** | Apply filters (beta) | (optional) 
+ **filter** | **BalanceSheetFilter** | Apply filters | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -1323,7 +1323,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **CustomersFilter** | Apply filters (beta) | (optional) 
+ **filter** | **CustomersFilter** | Apply filters | (optional) 
 
 
 
@@ -1796,7 +1796,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **InvoiceItemsFilter** | Apply filters (beta) | (optional) 
+ **filter** | **InvoiceItemsFilter** | Apply filters | (optional) 
 
 
 
@@ -2291,6 +2291,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **sort** | **InvoicesSort** | Apply sorting | (optional) 
 
 
 
@@ -3504,7 +3505,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **filter** | **ProfitAndLossFilter** | Apply filters (beta) | (optional) 
+ **filter** | **ProfitAndLossFilter** | Apply filters | (optional) 
 
 
 
@@ -4180,7 +4181,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **TaxRatesFilter** | Apply filters (beta) | (optional) 
+ **filter** | **TaxRatesFilter** | Apply filters | (optional) 
 
 
 

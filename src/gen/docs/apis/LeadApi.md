@@ -186,8 +186,8 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **LeadsFilter** | Apply filters (beta) | (optional) 
- **sort** | **LeadsSort** | Apply sorting (beta) | (optional) 
+ **filter** | **LeadsFilter** | Apply filters | (optional) 
+ **sort** | **LeadsSort** | Apply sorting | (optional) 
 
 
 

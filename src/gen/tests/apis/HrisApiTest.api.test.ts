@@ -905,6 +905,7 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            tags: ['New'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -1161,6 +1162,7 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            tags: ['New'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -1416,6 +1418,7 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            tags: ['New'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -1672,6 +1675,7 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          tags: ['New'],
           row_version: '1-12345',
           deleted: true
         }
@@ -1882,6 +1886,7 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            tags: ['New'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',
@@ -2156,6 +2161,7 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          tags: ['New'],
           row_version: '1-12345',
           deleted: true,
           updated_by: '12345',
@@ -2385,6 +2391,7 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          tags: ['New'],
           row_version: '1-12345',
           deleted: true
         }
@@ -2595,6 +2602,7 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            tags: ['New'],
             row_version: '1-12345',
             deleted: true,
             updated_by: '12345',

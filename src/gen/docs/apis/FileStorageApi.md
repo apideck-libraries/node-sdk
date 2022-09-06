@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **DriveGroupsFilter** | Apply filters (beta) | (optional) 
+ **filter** | **DriveGroupsFilter** | Apply filters | (optional) 
 
 
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **DrivesFilter** | Apply filters (beta) | (optional) 
+ **filter** | **DrivesFilter** | Apply filters | (optional) 
 
 
 
@@ -763,7 +763,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **FilesFilter** | Apply filters (beta) | (optional) 
+ **filter** | **FilesFilter** | Apply filters | (optional) 
  **sort** | **FilesSort** | Apply sorting | (optional) 
 
 
