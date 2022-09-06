@@ -27,6 +27,7 @@ ApiResources.md
 ApiStatus.md
 ApisFilter.md
 Applicant.md
+ApplicantSocialLinks.md
 ApplicantWebsites.md
 AtsActivity.md
 AtsApi.md
@@ -45,7 +46,6 @@ BalanceSheetFilter.md
 BalanceSheetLiabilities.md
 BalanceSheetLiabilitiesAccounts.md
 BankAccount.md
-BankAccountAchDetails.md
 Benefit.md
 Bill.md
 BillLineItem.md
@@ -75,6 +75,7 @@ ConnectorSetting.md
 ConnectorStatus.md
 ConnectorSupportedEvents.md
 ConnectorSupportedResources.md
+ConnectorTlsSupport.md
 ConnectorUnifiedApis.md
 ConnectorsFilter.md
 Consumer.md
@@ -108,6 +109,7 @@ CreateHrisCompanyResponse.md
 CreateInvoiceItemResponse.md
 CreateInvoiceResponse.md
 CreateItemResponse.md
+CreateJobResponse.md
 CreateLeadResponse.md
 CreateLedgerAccountResponse.md
 CreateLocationResponse.md
@@ -160,6 +162,7 @@ DeleteFolderResponse.md
 DeleteHrisCompanyResponse.md
 DeleteInvoiceResponse.md
 DeleteItemResponse.md
+DeleteJobResponse.md
 DeleteLeadResponse.md
 DeleteLedgerAccountResponse.md
 DeleteLocationResponse.md
@@ -196,7 +199,6 @@ EmployeePartner.md
 EmployeePayroll.md
 EmployeePayrolls.md
 EmployeeSchedules.md
-EmployeeSocialLinks.md
 EmployeeTeam.md
 EmployeesFilter.md
 Error.md
@@ -330,6 +332,7 @@ InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceLineItem.md
 InvoiceResponse.md
+InvoicesSort.md
 Item.md
 Job.md
 JobSalary.md
@@ -397,6 +400,8 @@ Pipeline.md
 PipelineStages.md
 PosApi.md
 PosApiTest.api.test.ts
+PosBankAccount.md
+PosBankAccountAchDetails.md
 PosPayment.md
 PosPaymentCardDetails.md
 PosPaymentExternalDetails.md
@@ -462,6 +467,7 @@ UpdateHrisCompanyResponse.md
 UpdateInvoiceItemsResponse.md
 UpdateInvoiceResponse.md
 UpdateItemResponse.md
+UpdateJobResponse.md
 UpdateLeadResponse.md
 UpdateLedgerAccountResponse.md
 UpdateLocationResponse.md
@@ -529,6 +535,7 @@ models/ApiResources.ts
 models/ApiStatus.ts
 models/ApisFilter.ts
 models/Applicant.ts
+models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
 models/AtsActivity.ts
 models/AuthType.ts
@@ -545,7 +552,6 @@ models/BalanceSheetFilter.ts
 models/BalanceSheetLiabilities.ts
 models/BalanceSheetLiabilitiesAccounts.ts
 models/BankAccount.ts
-models/BankAccountAchDetails.ts
 models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
@@ -573,6 +579,7 @@ models/ConnectorSetting.ts
 models/ConnectorStatus.ts
 models/ConnectorSupportedEvents.ts
 models/ConnectorSupportedResources.ts
+models/ConnectorTlsSupport.ts
 models/ConnectorUnifiedApis.ts
 models/ConnectorsFilter.ts
 models/Consumer.ts
@@ -606,6 +613,7 @@ models/CreateHrisCompanyResponse.ts
 models/CreateInvoiceItemResponse.ts
 models/CreateInvoiceResponse.ts
 models/CreateItemResponse.ts
+models/CreateJobResponse.ts
 models/CreateLeadResponse.ts
 models/CreateLedgerAccountResponse.ts
 models/CreateLocationResponse.ts
@@ -654,6 +662,7 @@ models/DeleteFolderResponse.ts
 models/DeleteHrisCompanyResponse.ts
 models/DeleteInvoiceResponse.ts
 models/DeleteItemResponse.ts
+models/DeleteJobResponse.ts
 models/DeleteLeadResponse.ts
 models/DeleteLedgerAccountResponse.ts
 models/DeleteLocationResponse.ts
@@ -690,7 +699,6 @@ models/EmployeePartner.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
-models/EmployeeSocialLinks.ts
 models/EmployeeTeam.ts
 models/EmployeesFilter.ts
 models/ExecuteWebhookEventRequest.ts
@@ -819,6 +827,7 @@ models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceLineItem.ts
 models/InvoiceResponse.ts
+models/InvoicesSort.ts
 models/Item.ts
 models/Job.ts
 models/JobSalary.ts
@@ -883,6 +892,8 @@ models/PayrollsFilter.ts
 models/PhoneNumber.ts
 models/Pipeline.ts
 models/PipelineStages.ts
+models/PosBankAccount.ts
+models/PosBankAccountAchDetails.ts
 models/PosPayment.ts
 models/PosPaymentCardDetails.ts
 models/PosPaymentExternalDetails.ts
@@ -946,6 +957,7 @@ models/UpdateHrisCompanyResponse.ts
 models/UpdateInvoiceItemsResponse.ts
 models/UpdateInvoiceResponse.ts
 models/UpdateItemResponse.ts
+models/UpdateJobResponse.ts
 models/UpdateLeadResponse.ts
 models/UpdateLedgerAccountResponse.ts
 models/UpdateLocationResponse.ts

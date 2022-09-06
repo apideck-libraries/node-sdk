@@ -387,7 +387,11 @@ describe('ConnectorApi', () => {
               format: 'markdown',
               url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
             }
-          ]
+          ],
+          tls_support: {
+            type: 'string',
+            description: 'string'
+          }
         },
         meta: {
           items_on_page: 50,
@@ -566,7 +570,11 @@ describe('ConnectorApi', () => {
                 format: 'markdown',
                 url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
               }
-            ]
+            ],
+            tls_support: {
+              type: 'string',
+              description: 'string'
+            }
           }
         ],
         meta: {
@@ -679,7 +687,11 @@ describe('ConnectorApi', () => {
               format: 'markdown',
               url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
             }
-          ]
+          ],
+          tls_support: {
+            type: 'string',
+            description: 'string'
+          }
         },
         meta: {
           items_on_page: 50,

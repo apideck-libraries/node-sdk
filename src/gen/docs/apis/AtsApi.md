@@ -71,6 +71,7 @@ const params = {
     middle_name: 'D.',
     initials: 'EM',
     birthday: '2000-08-12',
+    cover_letter: 'I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
     photo_url: 'https://unavatar.io/elon-musk',
     headline: 'PepsiCo, Inc, Central Perk',
     title: 'CEO',
@@ -125,6 +126,16 @@ const params = {
         type: 'primary'
       }
     ],
+    social_links: [
+      {
+        id: '12345',
+        url: 'https://www.twitter.com/apideck-io',
+        type: 'twitter'
+      }
+    ],
+    stage_id: '12345',
+    recruiter_id: '12345',
+    coordinator_id: '12345',
     applications: [
       'a0d636c6-43b3-4bde-8c70-85b707d992f4',
       'a98lfd96-43b3-4bde-8c70-85b707d992e6'
@@ -182,7 +193,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of records to return | (optional) defaults to 20
- **filter** | **JobsFilter** | Apply filters (beta) | (optional) 
+ **filter** | **JobsFilter** | Apply filters | (optional) 
 
 
 
