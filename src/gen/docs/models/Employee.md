@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | 
-`first_name` | **string** |  | 
-`last_name` | **string** |  | 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
 `middle_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
 `preferred_name` | **string** |  | [optional] 
