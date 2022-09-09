@@ -25,6 +25,53 @@ export interface EmployeesFilter {
    * @memberof EmployeesFilter
    */
   company_id?: string
+  /**
+   * Email to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  email?: string
+  /**
+   * First Name to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  first_name?: string
+  /**
+   * Job title to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  title?: string
+  /**
+   * Last Name to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  last_name?: string
+  /**
+   * Manager id to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  manager_id?: string
+  /**
+   * Employment status to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  employment_status?: EmployeesFilterEmploymentStatus
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum EmployeesFilterEmploymentStatus {
+  active = 'active',
+  inactive = 'inactive',
+  terminated = 'terminated',
+  other = 'other'
 }
 
 export function EmployeesFilterFromJSON(json: any): EmployeesFilter {
@@ -39,7 +86,13 @@ export function EmployeesFilterFromJSONTyped(
     return json
   }
   return {
-    company_id: !exists(json, 'company_id') ? undefined : json['company_id']
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    email: !exists(json, 'email') ? undefined : json['email'],
+    first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
+    title: !exists(json, 'title') ? undefined : json['title'],
+    last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
+    manager_id: !exists(json, 'manager_id') ? undefined : json['manager_id'],
+    employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status']
   }
 }
 
@@ -51,6 +104,12 @@ export function EmployeesFilterToJSON(value?: EmployeesFilter | null): any {
     return null
   }
   return {
-    company_id: value.company_id
+    company_id: value.company_id,
+    email: value.email,
+    first_name: value.first_name,
+    title: value.title,
+    last_name: value.last_name,
+    manager_id: value.manager_id,
+    employment_status: value.employment_status
   }
 }
