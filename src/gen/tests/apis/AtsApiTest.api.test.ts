@@ -35,7 +35,7 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Applicants',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -165,7 +165,7 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Applicants',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -458,7 +458,7 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Jobs',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',

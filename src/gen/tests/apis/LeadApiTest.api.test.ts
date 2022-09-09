@@ -35,7 +35,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -159,7 +159,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -297,7 +297,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -462,7 +462,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

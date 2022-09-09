@@ -35,7 +35,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -128,7 +128,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '#cocoa',
@@ -237,7 +237,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -373,7 +373,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -467,7 +467,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -538,7 +538,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -625,7 +625,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -739,7 +739,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -811,7 +811,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -893,7 +893,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -992,7 +992,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1118,7 +1118,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1201,7 +1201,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1260,7 +1260,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1335,7 +1335,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1437,7 +1437,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1497,7 +1497,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1545,7 +1545,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1609,7 +1609,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1700,7 +1700,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1749,7 +1749,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1792,7 +1792,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1851,7 +1851,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1937,7 +1937,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1981,7 +1981,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2248,7 +2248,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2484,7 +2484,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2815,7 +2815,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3083,7 +3083,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3351,7 +3351,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3500,7 +3500,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -3667,7 +3667,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3861,7 +3861,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -4011,7 +4011,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -4059,7 +4059,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -4123,7 +4123,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -4214,7 +4214,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

@@ -35,7 +35,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -85,7 +85,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -165,7 +165,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -272,7 +272,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

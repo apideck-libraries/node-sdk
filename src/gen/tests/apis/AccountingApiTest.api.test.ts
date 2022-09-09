@@ -133,7 +133,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'bills',
-        operation: 'delete',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -573,7 +573,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'bills',
-        operation: 'delete',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -798,7 +798,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'credit-notes',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -895,7 +895,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'credit-notes',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '123456',
@@ -1015,7 +1015,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'credit-notes',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1162,7 +1162,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'credit-notes',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1260,7 +1260,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'customers',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1382,7 +1382,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'customers',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1522,7 +1522,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'customers',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1689,7 +1689,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'customers',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1812,7 +1812,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoice-items',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1897,7 +1897,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoice-items',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '123456',
@@ -2005,7 +2005,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'tax-rates',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2140,7 +2140,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoice-items',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2226,7 +2226,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoices',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345',
           downstream_id: '12345'
@@ -2372,7 +2372,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoices',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2542,7 +2542,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoices',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345',
           downstream_id: '12345'
@@ -2740,7 +2740,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'invoices',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345',
           downstream_id: '12345'
@@ -2887,7 +2887,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'ledger-accounts',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2967,7 +2967,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'ledger-accounts',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -3077,7 +3077,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'ledger-accounts',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3214,7 +3214,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'ledger-accounts',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -4293,7 +4293,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'tax-rates',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -4355,7 +4355,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'tax-rates',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '1234',
@@ -4432,7 +4432,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'tax-rates',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -4536,7 +4536,7 @@ describe('AccountingApi', () => {
         status: 'OK',
         service: 'xero',
         resource: 'tax-rates',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

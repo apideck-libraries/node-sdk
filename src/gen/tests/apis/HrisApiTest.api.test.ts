@@ -35,7 +35,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -133,7 +133,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -248,7 +248,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -390,7 +390,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -489,7 +489,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -533,7 +533,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -593,7 +593,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -680,7 +680,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -725,7 +725,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -1238,7 +1238,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -1490,7 +1490,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1706,7 +1706,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1942,7 +1942,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2205,7 +2205,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2422,7 +2422,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -2711,7 +2711,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',

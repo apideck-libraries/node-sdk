@@ -35,7 +35,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'DriveGroups',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -79,7 +79,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'DriveGroups',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -139,7 +139,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'DriveGroups',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -226,7 +226,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'DriveGroups',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -271,7 +271,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'Drives',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -314,7 +314,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'Drives',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -373,7 +373,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'Drives',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -459,7 +459,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'Drives',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -503,7 +503,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'files',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -580,7 +580,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'files',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -715,7 +715,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'google-drive',
         resource: 'files',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -796,7 +796,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Folders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -841,7 +841,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Folders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -885,7 +885,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Folders',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -985,7 +985,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Folders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1030,7 +1030,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'dropbox',
         resource: 'Shared Links',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1075,7 +1075,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'dropbox',
         resource: 'Shared Links',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             url: 'https://www.box.com/s/vspke7y05sb214wjokpk',
@@ -1141,7 +1141,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'dropbox',
         resource: 'Shared Links',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1234,7 +1234,7 @@ describe('FileStorageApi', () => {
         status: 'OK',
         service: 'dropbox',
         resource: 'Shared Links',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

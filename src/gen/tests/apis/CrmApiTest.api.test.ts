@@ -35,7 +35,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -162,7 +162,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -312,7 +312,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -489,7 +489,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -617,7 +617,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -765,7 +765,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -933,7 +933,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1128,7 +1128,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1277,7 +1277,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1409,7 +1409,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1558,7 +1558,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1734,7 +1734,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1867,7 +1867,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1991,7 +1991,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2129,7 +2129,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2294,7 +2294,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2419,7 +2419,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2468,7 +2468,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2533,7 +2533,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2625,7 +2625,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2675,7 +2675,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'opportunities',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2751,7 +2751,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'opportunities',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2850,7 +2850,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2976,7 +2976,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3053,7 +3053,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3107,7 +3107,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: 'default',
@@ -3175,7 +3175,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3270,7 +3270,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3325,7 +3325,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3424,7 +3424,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -3537,7 +3537,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3677,7 +3677,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

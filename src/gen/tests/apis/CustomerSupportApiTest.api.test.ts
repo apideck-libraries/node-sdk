@@ -35,7 +35,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -139,7 +139,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -259,7 +259,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -406,7 +406,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
