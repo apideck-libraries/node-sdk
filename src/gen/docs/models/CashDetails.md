@@ -7,6 +7,7 @@ Cash details for this payment
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`amount` | **any** | The amount of cash given by the customer. | [optional] 
 `charge_back_amount` | **any** | The amount of change due back to the buyer. For Square: this read-only field is calculated from the amount_money and buyer_supplied_money fields. | [optional] 
 
 

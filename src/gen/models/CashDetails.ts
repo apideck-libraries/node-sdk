@@ -20,6 +20,12 @@ import { exists } from '../runtime'
  */
 export interface CashDetails {
   /**
+   * The amount of cash given by the customer.
+   * @type {any}
+   * @memberof CashDetails
+   */
+  amount?: any | null
+  /**
    * The amount of change due back to the buyer. For Square: this read-only field is calculated from the amount_money and buyer_supplied_money fields.
    * @type {any}
    * @memberof CashDetails
@@ -36,6 +42,7 @@ export function CashDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean
     return json
   }
   return {
+    amount: !exists(json, 'amount') ? undefined : json['amount'],
     charge_back_amount: !exists(json, 'charge_back_amount') ? undefined : json['charge_back_amount']
   }
 }
@@ -48,6 +55,7 @@ export function CashDetailsToJSON(value?: CashDetails | null): any {
     return null
   }
   return {
+    amount: value.amount,
     charge_back_amount: value.charge_back_amount
   }
 }
