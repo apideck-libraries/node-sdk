@@ -333,6 +333,7 @@ describe('ConnectorApi', () => {
           website_url: 'https://www.salesforce.com',
           auth_type: 'oauth2',
           auth_only: true,
+          blind_mapped: true,
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
           oauth_scopes: [
@@ -521,6 +522,7 @@ describe('ConnectorApi', () => {
             website_url: 'https://www.salesforce.com',
             auth_type: 'oauth2',
             auth_only: true,
+            blind_mapped: true,
             oauth_grant_type: 'authorization_code',
             oauth_credentials_source: 'integration',
             oauth_scopes: [
@@ -633,6 +635,7 @@ describe('ConnectorApi', () => {
           website_url: 'https://www.salesforce.com',
           auth_type: 'oauth2',
           auth_only: true,
+          blind_mapped: true,
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
           oauth_scopes: [
