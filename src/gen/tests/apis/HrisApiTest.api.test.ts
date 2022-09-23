@@ -2841,4 +2841,288 @@ describe('HrisApi', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
+
+  describe('#timeOffRequestsAdd', () => {
+    const endpoint = '/hris/time-off-requests'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'TimeOffRequests',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        timeOffRequest: {
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacaction',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          }
+        }
+      } as any
+      const current = await hris.timeOffRequestsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsAll', () => {
+    const endpoint = '/hris/time-off-requests'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'TimeOffRequests',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            employee_id: '12345',
+            policy_id: '12345',
+            status: 'approved',
+            description: 'Enjoying some sun.',
+            start_date: '2022-04-01',
+            end_date: '2022-04-01',
+            request_date: '2022-03-21',
+            request_type: 'vacaction',
+            approval_date: '2022-03-21',
+            units: 'hours',
+            amount: 3.5,
+            notes: {
+              employee: 'Relaxing on the beach for a few hours.',
+              manager: 'Enjoy!'
+            },
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {} as any
+      const current = await hris.timeOffRequestsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsDelete', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'TimeOffRequests',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await hris.timeOffRequestsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsOne', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'TimeOffRequests',
+        operation: 'one',
+        data: {
+          id: '12345',
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacaction',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          },
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await hris.timeOffRequestsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsUpdate', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'TimeOffRequests',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example',
+        timeOffRequest: {
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacaction',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          }
+        }
+      } as any
+      const current = await hris.timeOffRequestsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
 })
