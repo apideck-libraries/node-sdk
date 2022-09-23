@@ -20,6 +20,11 @@ import {
   LinkedLedgerAccountFromJSON,
   LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
+import {
+  PaymentAllocations,
+  PaymentAllocationsFromJSON,
+  PaymentAllocationsToJSON
+} from './PaymentAllocations'
 
 /**
  *
@@ -119,10 +124,10 @@ export interface Payment {
   type?: PaymentType
   /**
    *
-   * @type {Array<object>}
+   * @type {Array<PaymentAllocations>}
    * @memberof Payment
    */
-  allocations?: Array<object>
+  allocations?: Array<PaymentAllocations>
   /**
    * Optional note to be associated with the payment.
    * @type {string}
@@ -204,7 +209,9 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     reconciled: !exists(json, 'reconciled') ? undefined : json['reconciled'],
     status: !exists(json, 'status') ? undefined : json['status'],
     type: !exists(json, 'type') ? undefined : json['type'],
-    allocations: !exists(json, 'allocations') ? undefined : json['allocations'],
+    allocations: !exists(json, 'allocations')
+      ? undefined
+      : (json['allocations'] as Array<any>).map(PaymentAllocationsFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
@@ -234,7 +241,10 @@ export function PaymentToJSON(value?: Payment | null): any {
     reconciled: value.reconciled,
     status: value.status,
     type: value.type,
-    allocations: value.allocations,
+    allocations:
+      value.allocations === undefined
+        ? undefined
+        : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
     note: value.note,
     row_version: value.row_version
   }

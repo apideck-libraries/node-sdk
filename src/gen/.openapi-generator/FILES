@@ -349,6 +349,7 @@ LeadEventType.md
 LeadsFilter.md
 LeadsSort.md
 LedgerAccount.md
+LedgerAccountCategories.md
 LedgerAccountParentAccount.md
 LedgerAccounts.md
 LinkedCustomer.md
@@ -393,6 +394,7 @@ OrderType.md
 Owner.md
 Passthrough.md
 Payment.md
+PaymentAllocations.md
 PaymentCard.md
 PaymentRequiredResponse.md
 PaymentUnit.md
@@ -850,6 +852,7 @@ models/LeadEventType.ts
 models/LeadsFilter.ts
 models/LeadsSort.ts
 models/LedgerAccount.ts
+models/LedgerAccountCategories.ts
 models/LedgerAccountParentAccount.ts
 models/LedgerAccounts.ts
 models/LinkedCustomer.ts
@@ -895,6 +898,7 @@ models/OrderType.ts
 models/Owner.ts
 models/Passthrough.ts
 models/Payment.ts
+models/PaymentAllocations.ts
 models/PaymentCard.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 `reconciled` | **boolean** | Payment has been reconciled | [optional] 
 `status` | **string** | Status of payment | [optional] 
 `type` | **string** | Type of payment | [optional] 
-`allocations` | **Array&lt;object&gt;** |  | [optional] 
+`allocations` | [**Array&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the payment. | [optional] 
 `row_version` | **string** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
@@ -84,7 +84,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`PaymentAllocations`](PaymentAllocations.md)
 
 
 

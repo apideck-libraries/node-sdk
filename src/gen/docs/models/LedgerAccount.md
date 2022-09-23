@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 `status` | **string** | The status of the account. | [optional] 
 `header` | **boolean** | Whether the account is a header or not. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
-`categories` | **Array&lt;object&gt;** | The categories of the account. | [optional] 
+`categories` | [**Array&lt;LedgerAccountCategories&gt;**](LedgerAccountCategories.md) | The categories of the account. | [optional] 
 `parent_account` | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
 `sub_account` | **boolean** | Whether the account is a sub account or not. | [optional] 
 `sub_accounts` | **Array&lt;object&gt;** | The sub accounts of the account. | [optional] 
@@ -144,7 +144,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
-
+* [`LedgerAccountCategories`](LedgerAccountCategories.md)
 * [`LedgerAccountParentAccount`](LedgerAccountParentAccount.md)
 
 
