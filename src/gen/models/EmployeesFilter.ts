@@ -61,6 +61,12 @@ export interface EmployeesFilter {
    * @memberof EmployeesFilter
    */
   employment_status?: EmployeesFilterEmploymentStatus
+  /**
+   * Employee number to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  employee_number?: string
 }
 
 /**
@@ -92,7 +98,8 @@ export function EmployeesFilterFromJSONTyped(
     title: !exists(json, 'title') ? undefined : json['title'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     manager_id: !exists(json, 'manager_id') ? undefined : json['manager_id'],
-    employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status']
+    employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status'],
+    employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number']
   }
 }
 
@@ -110,6 +117,7 @@ export function EmployeesFilterToJSON(value?: EmployeesFilter | null): any {
     title: value.title,
     last_name: value.last_name,
     manager_id: value.manager_id,
-    employment_status: value.employment_status
+    employment_status: value.employment_status,
+    employee_number: value.employee_number
   }
 }

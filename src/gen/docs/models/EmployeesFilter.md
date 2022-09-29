@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `last_name` | **string** | Last Name to filter on | [optional] 
 `manager_id` | **string** | Manager id to filter on | [optional] 
 `employment_status` | **string** | Employment status to filter on | [optional] 
+`employee_number` | **string** | Employee number to filter on | [optional] 
 
 
 
