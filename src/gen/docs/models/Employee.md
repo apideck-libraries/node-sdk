@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 `partner` | [**EmployeePartner**](EmployeePartner.md) |  | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
+`department_id` | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
 `company_id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
@@ -40,8 +41,9 @@ Name | Type | Description | Notes
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
 `timezone` | **string** |  | [optional] 
-`source` | **string** |  | [optional] 
-`source_id` | **string** |  | [optional] 
+`source` | **string** | When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from. | [optional] 
+`source_id` | **string** | Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS). | [optional] 
+`record_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
 `compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 `works_remote` | **boolean** | Indicates whether the employee works remote | [optional] 
@@ -95,6 +97,7 @@ Name | Type | Description | Notes
 * [`EmployeePartner`](EmployeePartner.md)
 
 
+
 * [`EmployeeTeam`](EmployeeTeam.md)
 
 
@@ -111,6 +114,7 @@ Name | Type | Description | Notes
 
 
 * [`Gender`](Gender.md)
+
 
 
 

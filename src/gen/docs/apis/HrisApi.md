@@ -1132,6 +1132,7 @@ const params = {
     },
     division: 'Europe',
     department: 'R&amp;D',
+    department_id: '12345',
     team: {
       id: '1234',
       name: 'Full Stack Engineers'
@@ -1172,8 +1173,9 @@ const params = {
     ],
     photo_url: 'https://unavatar.io/elon-musk',
     timezone: 'Europe/London',
-    source: 'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-    source_id: 'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+    source: 'lever',
+    source_id: '12345',
+    record_url: 'https://app.intercom.io/contacts/12345',
     jobs: [
       {
         title: 'CEO',
@@ -1592,6 +1594,7 @@ const params = {
     },
     division: 'Europe',
     department: 'R&amp;D',
+    department_id: '12345',
     team: {
       id: '1234',
       name: 'Full Stack Engineers'
@@ -1632,8 +1635,9 @@ const params = {
     ],
     photo_url: 'https://unavatar.io/elon-musk',
     timezone: 'Europe/London',
-    source: 'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-    source_id: 'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+    source: 'lever',
+    source_id: '12345',
+    record_url: 'https://app.intercom.io/contacts/12345',
     jobs: [
       {
         title: 'CEO',
