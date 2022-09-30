@@ -3161,7 +3161,8 @@ const params = {
       }
     ],
     note: 'Some notes about this payment',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    display_id: '123456'
   }
 }
 
@@ -3469,7 +3470,8 @@ const params = {
       }
     ],
     note: 'Some notes about this payment',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    display_id: '123456'
   }
 }
 

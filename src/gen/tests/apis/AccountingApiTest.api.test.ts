@@ -3337,7 +3337,8 @@ describe('AccountingApi', () => {
             }
           ],
           note: 'Some notes about this payment',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          display_id: '123456'
         }
       } as any
       const current = await accounting.paymentsAdd(params)
@@ -3404,6 +3405,9 @@ describe('AccountingApi', () => {
             ],
             note: 'Some notes about this payment',
             row_version: '1-12345',
+            display_id: '123456',
+            updated_by: '12345',
+            created_by: '12345',
             created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
           }
@@ -3532,6 +3536,9 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this payment',
           row_version: '1-12345',
+          display_id: '123456',
+          updated_by: '12345',
+          created_by: '12345',
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }
@@ -3614,7 +3621,8 @@ describe('AccountingApi', () => {
             }
           ],
           note: 'Some notes about this payment',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          display_id: '123456'
         }
       } as any
       const current = await accounting.paymentsUpdate(params)

@@ -23,6 +23,9 @@ Name | Type | Description | Notes
 `allocations` | [**Array&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the payment. | [optional] 
 `row_version` | **string** |  | [optional] 
+`display_id` | **string** | Payment id to be displayed. | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 
@@ -85,6 +88,9 @@ Name | Type | Description | Notes
 
 
 * [`PaymentAllocations`](PaymentAllocations.md)
+
+
+
 
 
 

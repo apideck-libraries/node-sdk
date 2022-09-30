@@ -141,6 +141,24 @@ export interface Payment {
    */
   row_version?: string | null
   /**
+   * Payment id to be displayed.
+   * @type {string}
+   * @memberof Payment
+   */
+  display_id?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Payment
+   */
+  readonly updated_by?: string | null
+  /**
+   *
+   * @type {string}
+   * @memberof Payment
+   */
+  readonly created_by?: string | null
+  /**
    *
    * @type {Date}
    * @memberof Payment
@@ -214,6 +232,9 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
       : (json['allocations'] as Array<any>).map(PaymentAllocationsFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
+    display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
+    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
+    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at'])
   }
@@ -246,6 +267,7 @@ export function PaymentToJSON(value?: Payment | null): any {
         ? undefined
         : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
     note: value.note,
-    row_version: value.row_version
+    row_version: value.row_version,
+    display_id: value.display_id
   }
 }
