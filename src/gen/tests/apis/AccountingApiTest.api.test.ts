@@ -814,7 +814,8 @@ describe('AccountingApi', () => {
           number: 'OIT00546',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           currency: 'USD',
           currency_rate: 0.69,
@@ -904,6 +905,7 @@ describe('AccountingApi', () => {
               id: '12345',
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
+              name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
             currency: 'USD',
@@ -1063,6 +1065,7 @@ describe('AccountingApi', () => {
             id: '12345',
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
           currency: 'USD',
@@ -1179,7 +1182,8 @@ describe('AccountingApi', () => {
           number: 'OIT00546',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           currency: 'USD',
           currency_rate: 0.69,
@@ -2244,7 +2248,8 @@ describe('AccountingApi', () => {
           number: 'OIT00546',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
@@ -2383,6 +2388,7 @@ describe('AccountingApi', () => {
               id: '12345',
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
+              name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
             invoice_date: '2020-09-30',
@@ -2593,6 +2599,7 @@ describe('AccountingApi', () => {
             id: '12345',
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
           invoice_date: '2020-09-30',
@@ -2759,7 +2766,8 @@ describe('AccountingApi', () => {
           number: 'OIT00546',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
@@ -3324,7 +3332,8 @@ describe('AccountingApi', () => {
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           reconciled: true,
           status: 'authorised',
@@ -3390,6 +3399,7 @@ describe('AccountingApi', () => {
               id: '12345',
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
+              name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
             reconciled: true,
@@ -3521,6 +3531,7 @@ describe('AccountingApi', () => {
             id: '12345',
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
           reconciled: true,
@@ -3608,7 +3619,8 @@ describe('AccountingApi', () => {
           transaction_date: '2021-05-01T12:00:00.000Z',
           customer: {
             id: '12345',
-            display_name: 'Windsurf Shop'
+            display_name: 'Windsurf Shop',
+            name: 'Windsurf Shop'
           },
           reconciled: true,
           status: 'authorised',

@@ -1,4 +1,4 @@
-# Apideck.ApiResourceCoverageSupportedFields
+# Apideck.SupportedProperty
 
 ### Description
 
@@ -6,10 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unified_property` | **string** | Name of the property in our Unified API. | [optional] 
+`child_properties` | [**Array&lt;SupportedPropertyChildProperties&gt;**](SupportedPropertyChildProperties.md) | List of child properties of the unified property. | [optional] 
 
 
 
 
+
+## Referenced Types:
+
+* [`SupportedPropertyChildProperties`](SupportedPropertyChildProperties.md)
 
 ---
 

@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 `supported_operations` | **Array&lt;string&gt;** | List of supported operations on the resource. | [optional] 
 `supported_filters` | **Array&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 `supported_sort_by` | **Array&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
-`supported_fields` | [**Array&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the detail endpoint. | [optional] 
-`supported_list_fields` | [**Array&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the list endpoint. | [optional] 
+`supported_fields` | [**Array&lt;SupportedProperty&gt;**](SupportedProperty.md) | Supported fields on the detail endpoint. | [optional] 
+`supported_list_fields` | [**Array&lt;SupportedProperty&gt;**](SupportedProperty.md) | Supported fields on the list endpoint. | [optional] 
 
 
 
@@ -25,8 +25,8 @@ Name | Type | Description | Notes
 
 
 
-* [`ApiResourceCoverageSupportedFields`](ApiResourceCoverageSupportedFields.md)
-* [`ApiResourceCoverageSupportedFields`](ApiResourceCoverageSupportedFields.md)
+* [`SupportedProperty`](SupportedProperty.md)
+* [`SupportedProperty`](SupportedProperty.md)
 
 ---
 

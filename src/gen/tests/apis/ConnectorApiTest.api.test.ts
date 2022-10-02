@@ -46,12 +46,14 @@ describe('ConnectorApi', () => {
               supported_sort_by: ['updated_at', 'created_at', 'name'],
               supported_fields: [
                 {
-                  unified_property: 'owner_id'
+                  unified_property: 'owner_id',
+                  child_properties: [Array]
                 }
               ],
               supported_list_fields: [
                 {
-                  unified_property: 'owner_id'
+                  unified_property: 'owner_id',
+                  child_properties: [Array]
                 }
               ]
             }
@@ -453,12 +455,22 @@ describe('ConnectorApi', () => {
           supported_sort_by: ['updated_at', 'created_at', 'name'],
           supported_fields: [
             {
-              unified_property: 'owner_id'
+              unified_property: 'owner_id',
+              child_properties: [
+                {
+                  unified_property: {}
+                }
+              ]
             }
           ],
           supported_list_fields: [
             {
-              unified_property: 'owner_id'
+              unified_property: 'owner_id',
+              child_properties: [
+                {
+                  unified_property: {}
+                }
+              ]
             }
           ]
         },
