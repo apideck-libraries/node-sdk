@@ -31,6 +31,7 @@ ApplicantWebsites.md
 AtsActivity.md
 AtsApi.md
 AtsApiTest.api.test.ts
+AtsEventType.md
 AuthType.md
 BadRequestResponse.md
 BalanceSheet.md
@@ -549,6 +550,7 @@ models/Applicant.ts
 models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
 models/AtsActivity.ts
+models/AtsEventType.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BalanceSheet.ts

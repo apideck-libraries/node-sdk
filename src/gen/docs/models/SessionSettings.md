@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 `isolation_mode` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to run in isolation mode, meaning it only shows the connection settings and hides the navigation items. | [optional] 
 `session_length` | **string** | The duration of time the session is valid for (maximum 1 week). | [optional] 
 `show_logs` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the logs page. Defaults to &#x60;true&#x60;. | [optional] 
-`show_suggestions` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the suggestions page. Defaults to &#x60;true&#x60;. | [optional] 
+`show_suggestions` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the suggestions page. Defaults to &#x60;false&#x60;. | [optional] 
+`show_sidebar` | **boolean** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show the sidebar. Defaults to &#x60;true&#x60;. | [optional] 
 `auto_redirect` | **boolean** | Automatically redirect to redirect uri after the connection has been configured as callable. Defaults to &#x60;false&#x60;. | [optional] 
 
 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 * [`UnifiedApiId`](UnifiedApiId.md)
+
 
 
 
