@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 `sub_total` | **number** | Sub-total amount, normally before tax. | [optional] 
 `total_tax` | **number** | Total tax amount applied to this invoice. | [optional] 
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
+`discount_percentage` | **number** | Discount percentage applied to this invoice. | [optional] 
 `total` | **number** | Total amount of invoice, including tax. | [optional] 
 `balance` | **number** | Balance of invoice due. | [optional] 
 `deposit` | **number** | Amount of deposit made to this invoice. | [optional] 
@@ -98,6 +99,7 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
 
 
 

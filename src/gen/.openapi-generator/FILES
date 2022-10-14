@@ -391,6 +391,7 @@ OrderRefunds.md
 OrderTenders.md
 OrderType.md
 Owner.md
+PaginationCoverage.md
 Passthrough.md
 Payment.md
 PaymentAllocations.md
@@ -896,6 +897,7 @@ models/OrderRefunds.ts
 models/OrderTenders.ts
 models/OrderType.ts
 models/Owner.ts
+models/PaginationCoverage.ts
 models/Passthrough.ts
 models/Payment.ts
 models/PaymentAllocations.ts

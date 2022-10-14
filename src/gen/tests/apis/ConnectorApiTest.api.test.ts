@@ -41,6 +41,11 @@ describe('ConnectorApi', () => {
               downstream_id: 'accounts',
               downstream_name: 'Accounts',
               pagination_supported: true,
+              pagination: {
+                mode: 'native',
+                paging_support: true,
+                limit_support: true
+              },
               supported_operations: ['all', 'one', 'add', 'update', 'delete'],
               supported_filters: ['name', 'email'],
               supported_sort_by: ['updated_at', 'created_at', 'name'],
@@ -450,6 +455,11 @@ describe('ConnectorApi', () => {
           downstream_name: 'Accounts',
           status: 'live',
           pagination_supported: true,
+          pagination: {
+            mode: 'native',
+            paging_support: true,
+            limit_support: true
+          },
           supported_operations: ['all', 'one', 'add', 'update', 'delete'],
           supported_filters: ['name', 'email'],
           supported_sort_by: ['updated_at', 'created_at', 'name'],

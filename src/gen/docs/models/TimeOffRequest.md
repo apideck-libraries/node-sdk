@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 
 * `declined` (value: `'declined'`)
 
-* `canceled` (value: `'canceled'`)
+* `cancelled` (value: `'cancelled'`)
 
 * `deleted` (value: `'deleted'`)
 

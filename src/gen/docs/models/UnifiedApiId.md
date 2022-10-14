@@ -49,6 +49,8 @@
 
 * `project_management` (value: `'project-management'`)
 
+* `expense_management` (value: `'expense-management'`)
+
 
 ---
 

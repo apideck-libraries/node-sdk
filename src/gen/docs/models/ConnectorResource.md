@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `downstream_name` | **string** | Name of the resource in the Connector\'s API (downstream) | [optional] 
 `status` | [**ResourceStatus**](ResourceStatus.md) |  | [optional] 
 `pagination_supported` | **boolean** | Indicates if pagination (cursor and limit parameters) is supported on the list endpoint of the resource. | [optional] 
+`pagination` | [**PaginationCoverage**](PaginationCoverage.md) |  | [optional] 
 `supported_operations` | **Array&lt;string&gt;** | List of supported operations on the resource. | [optional] 
 `supported_filters` | **Array&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 `supported_sort_by` | **Array&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 
 * [`ResourceStatus`](ResourceStatus.md)
 
+* [`PaginationCoverage`](PaginationCoverage.md)
 
 
 
