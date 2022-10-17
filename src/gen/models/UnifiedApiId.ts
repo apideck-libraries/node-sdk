@@ -33,7 +33,6 @@ export enum UnifiedApiId {
   customer_support = 'customer-support',
   time_registration = 'time-registration',
   transactional_email = 'transactional-email',
-  hcm = 'hcm',
   form = 'form',
   csp = 'csp',
   email_marketing = 'email-marketing',

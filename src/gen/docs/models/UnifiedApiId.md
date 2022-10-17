@@ -33,8 +33,6 @@
 
 * `transactional_email` (value: `'transactional-email'`)
 
-* `hcm` (value: `'hcm'`)
-
 * `form` (value: `'form'`)
 
 * `csp` (value: `'csp'`)
