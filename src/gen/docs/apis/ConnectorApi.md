@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Response Type
 
-[`GetConnectorResponse`](../models/GetConnectorResponse.md)
+**string**
 
 
 

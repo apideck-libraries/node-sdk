@@ -329,7 +329,7 @@ export class ConnectorApi extends runtime.BaseAPI {
   async connectorDocsOneRaw(
     requestParameters: ConnectorApiConnectorDocsOneRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GetConnectorResponse>> {
+  ): Promise<runtime.ApiResponse<string>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
@@ -368,9 +368,7 @@ export class ConnectorApi extends runtime.BaseAPI {
       initOverrides
     )
 
-    return new runtime.JSONApiResponse(response, jsonValue =>
-      GetConnectorResponseFromJSON(jsonValue)
-    )
+    return new runtime.TextApiResponse(response) as any
   }
 
   /**
@@ -380,7 +378,7 @@ export class ConnectorApi extends runtime.BaseAPI {
   async connectorDocsOne(
     requestParameters: ConnectorApiConnectorDocsOneRequest,
     initOverrides?: RequestInit
-  ): Promise<GetConnectorResponse> {
+  ): Promise<string> {
     const response = await this.connectorDocsOneRaw(requestParameters, initOverrides)
     return await response.value()
   }
