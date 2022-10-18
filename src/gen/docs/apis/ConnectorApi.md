@@ -352,6 +352,7 @@ Name | Type | Description  | Notes
  **id** | [**string**] | ID of the record you are acting upon. | 
  **resourceId** | [**string**] | ID of the resource you are acting upon. | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **unifiedApi** | **UnifiedApiId** | ID of the Doc | (optional) 
 
 
 

@@ -477,7 +477,10 @@ describe('ConnectorApi', () => {
             unified_apis: [
               {
                 id: 'crm',
-                oauth_scopes: [[Object]]
+                name: 'File Storage API',
+                oauth_scopes: [[Object]],
+                supported_resources: [[Object]],
+                supported_events: [[Object]]
               }
             ],
             supported_resources: [
@@ -492,8 +495,8 @@ describe('ConnectorApi', () => {
             configurable_resources: ['leads', 'companies'],
             supported_events: [
               {
-                event_type: 'string',
-                downstream_event_type: 'string',
+                event_type: 'employee.created',
+                downstream_event_type: 'person_created',
                 resource_id: 'companies'
               }
             ],
@@ -590,10 +593,27 @@ describe('ConnectorApi', () => {
           unified_apis: [
             {
               id: 'crm',
+              name: 'File Storage API',
               oauth_scopes: [
                 {
                   id: 'contacts:all',
                   label: 'Read/write on the Contacts resource'
+                }
+              ],
+              supported_resources: [
+                {
+                  id: 'companies',
+                  name: 'Companies',
+                  status: 'live',
+                  downstream_id: 'accounts',
+                  downstream_name: 'Accounts'
+                }
+              ],
+              supported_events: [
+                {
+                  event_type: 'employee.created',
+                  downstream_event_type: 'person_created',
+                  resource_id: 'companies'
                 }
               ]
             }
@@ -610,8 +630,8 @@ describe('ConnectorApi', () => {
           configurable_resources: ['leads', 'companies'],
           supported_events: [
             {
-              event_type: 'string',
-              downstream_event_type: 'string',
+              event_type: 'employee.created',
+              downstream_event_type: 'person_created',
               resource_id: 'companies'
             }
           ],

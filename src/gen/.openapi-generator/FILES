@@ -68,13 +68,12 @@ Connector.md
 ConnectorApi.md
 ConnectorApiTest.api.test.ts
 ConnectorDoc.md
+ConnectorEvent.md
 ConnectorOauthScopes.md
 ConnectorOauthScopes1.md
 ConnectorResource.md
 ConnectorSetting.md
 ConnectorStatus.md
-ConnectorSupportedEvents.md
-ConnectorSupportedResources.md
 ConnectorTlsSupport.md
 ConnectorUnifiedApis.md
 ConnectorsFilter.md
@@ -352,6 +351,7 @@ LedgerAccount.md
 LedgerAccountCategories.md
 LedgerAccountParentAccount.md
 LedgerAccounts.md
+LinkedConnectorResource.md
 LinkedCustomer.md
 LinkedFolder.md
 LinkedInvoiceItem.md
@@ -585,13 +585,12 @@ models/ConnectionMetadata.ts
 models/ConnectionState.ts
 models/Connector.ts
 models/ConnectorDoc.ts
+models/ConnectorEvent.ts
 models/ConnectorOauthScopes.ts
 models/ConnectorOauthScopes1.ts
 models/ConnectorResource.ts
 models/ConnectorSetting.ts
 models/ConnectorStatus.ts
-models/ConnectorSupportedEvents.ts
-models/ConnectorSupportedResources.ts
 models/ConnectorTlsSupport.ts
 models/ConnectorUnifiedApis.ts
 models/ConnectorsFilter.ts
@@ -858,6 +857,7 @@ models/LedgerAccount.ts
 models/LedgerAccountCategories.ts
 models/LedgerAccountParentAccount.ts
 models/LedgerAccounts.ts
+models/LinkedConnectorResource.ts
 models/LinkedCustomer.ts
 models/LinkedFolder.ts
 models/LinkedInvoiceItem.ts

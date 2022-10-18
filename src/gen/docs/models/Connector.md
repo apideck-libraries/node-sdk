@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 `settings` | [**Array&lt;ConnectorSetting&gt;**](ConnectorSetting.md) |  | [optional] 
 `service_id` | **string** | Service provider identifier | [optional] 
 `unified_apis` | [**Array&lt;ConnectorUnifiedApis&gt;**](ConnectorUnifiedApis.md) | List of Unified APIs that feature this connector. | [optional] 
-`supported_resources` | [**Array&lt;ConnectorSupportedResources&gt;**](ConnectorSupportedResources.md) | List of resources that are supported on the connector. | [optional] 
+`supported_resources` | [**Array&lt;LinkedConnectorResource&gt;**](LinkedConnectorResource.md) | List of resources that are supported on the connector. | [optional] 
 `configurable_resources` | **Array&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
-`supported_events` | [**Array&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of events that are supported on the connector. Events are delivered via Webhooks. | [optional] 
+`supported_events` | [**Array&lt;ConnectorEvent&gt;**](ConnectorEvent.md) | List of events that are supported on the connector across all Unified APIs. | [optional] 
 `docs` | [**Array&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
 `tls_support` | [**ConnectorTlsSupport**](ConnectorTlsSupport.md) |  | [optional] 
 
@@ -89,9 +89,9 @@ Name | Type | Description | Notes
 * [`ConnectorSetting`](ConnectorSetting.md)
 
 * [`ConnectorUnifiedApis`](ConnectorUnifiedApis.md)
-* [`ConnectorSupportedResources`](ConnectorSupportedResources.md)
+* [`LinkedConnectorResource`](LinkedConnectorResource.md)
 
-* [`ConnectorSupportedEvents`](ConnectorSupportedEvents.md)
+* [`ConnectorEvent`](ConnectorEvent.md)
 * [`ConnectorDoc`](ConnectorDoc.md)
 * [`ConnectorTlsSupport`](ConnectorTlsSupport.md)
 
