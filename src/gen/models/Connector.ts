@@ -199,7 +199,8 @@ export enum ConnectorAuthType {
  */
 export enum ConnectorOauthGrantType {
   authorization_code = 'authorization_code',
-  client_credentials = 'client_credentials'
+  client_credentials = 'client_credentials',
+  password = 'password'
 }
 /**
  * @export

@@ -19,7 +19,8 @@
  */
 export enum OAuthGrantType {
   authorization_code = 'authorization_code',
-  client_credentials = 'client_credentials'
+  client_credentials = 'client_credentials',
+  password = 'password'
 }
 
 export function OAuthGrantTypeFromJSON(json: any): OAuthGrantType {
