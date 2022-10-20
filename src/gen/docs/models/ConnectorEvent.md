@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `event_type` | **string** | Unify event type | [optional] 
 `downstream_event_type` | **string** | Downstream event type | [optional] 
-`resource_id` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
+`resource` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
 
 
 

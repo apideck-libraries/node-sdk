@@ -197,6 +197,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -225,6 +227,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          bill_number: '10001',
           row_version: '1-12345'
         }
       } as any
@@ -312,6 +315,8 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                location_id: '1234',
+                department_id: '1234',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -346,6 +351,7 @@ describe('AccountingApi', () => {
               nominal_code: 'N091',
               code: '453'
             },
+            bill_number: '10001',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -497,6 +503,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -531,6 +539,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          bill_number: '10001',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -638,6 +647,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -666,6 +677,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          bill_number: '10001',
           row_version: '1-12345'
         }
       } as any

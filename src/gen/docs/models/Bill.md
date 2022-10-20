@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 `notes` | **string** |  | [optional] 
 `status` | **string** | Invoice status | [optional] 
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+`bill_number` | **string** |  | [optional] 
 `updated_by` | **string** |  | [optional] 
 `created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
@@ -83,6 +84,7 @@ Name | Type | Description | Notes
 
 
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
+
 
 
 

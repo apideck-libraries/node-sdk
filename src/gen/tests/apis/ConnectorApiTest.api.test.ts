@@ -371,6 +371,7 @@ describe('ConnectorApi', () => {
             paging_support: true,
             limit_support: true
           },
+          custom_fields_supported: true,
           supported_operations: ['all', 'one', 'add', 'update', 'delete'],
           supported_filters: ['name', 'email'],
           supported_sort_by: ['updated_at', 'created_at', 'name'],
@@ -497,7 +498,7 @@ describe('ConnectorApi', () => {
               {
                 event_type: 'employee.created',
                 downstream_event_type: 'person_created',
-                resource_id: 'companies'
+                resource: 'companies'
               }
             ],
             docs: [
@@ -613,7 +614,7 @@ describe('ConnectorApi', () => {
                 {
                   event_type: 'employee.created',
                   downstream_event_type: 'person_created',
-                  resource_id: 'companies'
+                  resource: 'companies'
                 }
               ]
             }
@@ -632,7 +633,7 @@ describe('ConnectorApi', () => {
             {
               event_type: 'employee.created',
               downstream_event_type: 'person_created',
-              resource_id: 'companies'
+              resource: 'companies'
             }
           ],
           docs: [

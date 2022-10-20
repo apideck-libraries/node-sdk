@@ -225,6 +225,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -253,6 +255,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    bill_number: '10001',
     row_version: '1-12345'
   }
 }
@@ -582,6 +585,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -610,6 +615,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    bill_number: '10001',
     row_version: '1-12345'
   }
 }
