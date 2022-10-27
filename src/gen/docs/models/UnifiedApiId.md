@@ -49,6 +49,8 @@
 
 * `expense_management` (value: `'expense-management'`)
 
+* `calendar` (value: `'calendar'`)
+
 
 ---
 
