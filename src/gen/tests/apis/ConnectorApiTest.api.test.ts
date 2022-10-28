@@ -373,6 +373,7 @@ describe('ConnectorApi', () => {
           },
           custom_fields_supported: true,
           supported_operations: ['all', 'one', 'add', 'update', 'delete'],
+          downstream_unsupported_operations: ['upload'],
           supported_filters: ['name', 'email'],
           supported_sort_by: ['updated_at', 'created_at', 'name'],
           supported_fields: [
@@ -481,6 +482,7 @@ describe('ConnectorApi', () => {
                 name: 'File Storage API',
                 oauth_scopes: [[Object]],
                 supported_resources: [[Object]],
+                downstream_unsupported_resources: ['companies'],
                 supported_events: [[Object]]
               }
             ],
@@ -610,6 +612,7 @@ describe('ConnectorApi', () => {
                   downstream_name: 'Accounts'
                 }
               ],
+              downstream_unsupported_resources: ['companies'],
               supported_events: [
                 {
                   event_type: 'employee.created',
