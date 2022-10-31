@@ -23,6 +23,10 @@ Name | Type | Description | Notes
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `row_version` | **string** |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
+`updated_at` | **Date** |  | [optional] 
 
 
 
@@ -57,6 +61,10 @@ Name | Type | Description | Notes
 * [`LinkedInvoiceItem`](LinkedInvoiceItem.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedTaxRate`](LinkedTaxRate.md)
+
+
+
+
 
 
 ---

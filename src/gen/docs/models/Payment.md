@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `total_amount` | **number** | Amount of payment | 
 `transaction_date` | **Date** | Date transaction was entered - YYYY:MM::DDThh:mm:ss.sTZD | 
 `id` | **string** | Unique identifier representing the entity | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `reference` | **string** | Optional payment reference message ie: Debit remittance detail. | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 `accounts_receivable_account_id` | **string** | Unique identifier for the account to allocate payment to. | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `customer` | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+`supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 `reconciled` | **boolean** | Payment has been reconciled | [optional] 
 `status` | **string** | Status of payment | [optional] 
 `type` | **string** | Type of payment | [optional] 
@@ -75,6 +77,7 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Currency`](Currency.md)
 
 
@@ -84,6 +87,7 @@ Name | Type | Description | Notes
 
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedCustomer`](LinkedCustomer.md)
+* [`LinkedSupplier`](LinkedSupplier.md)
 
 
 

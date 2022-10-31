@@ -22,12 +22,15 @@ Name | Type | Description | Notes
 `date_issued` | **Date** | Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 `date_paid` | **Date** | Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 `type` | **string** | Type of payment | [optional] 
+`account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 `allocations` | **Array&lt;object&gt;** |  | [optional] 
 `note` | **string** | Optional note to be associated with the credit note. | [optional] 
 `row_version` | **string** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
+`created_at` | **Date** |  | [optional] 
 
 
 
@@ -79,7 +82,10 @@ Name | Type | Description | Notes
 
 
 
+* [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`InvoiceLineItem`](InvoiceLineItem.md)
+
+
 
 
 

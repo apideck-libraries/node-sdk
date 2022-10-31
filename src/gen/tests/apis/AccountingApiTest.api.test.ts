@@ -333,7 +333,11 @@ describe('AccountingApi', () => {
                   code: 'N-T',
                   name: 'GST on Purchases'
                 },
-                row_version: '1-12345'
+                row_version: '1-12345',
+                updated_by: '12345',
+                created_by: '12345',
+                created_at: '2020-09-30T07:43:32.000Z',
+                updated_at: '2020-09-30T07:43:32.000Z'
               }
             ],
             terms: 'Net 30 days',
@@ -521,7 +525,11 @@ describe('AccountingApi', () => {
                 code: 'N-T',
                 name: 'GST on Purchases'
               },
-              row_version: '1-12345'
+              row_version: '1-12345',
+              updated_by: '12345',
+              created_by: '12345',
+              created_at: '2020-09-30T07:43:32.000Z',
+              updated_at: '2020-09-30T07:43:32.000Z'
             }
           ],
           terms: 'Net 30 days',
@@ -843,6 +851,11 @@ describe('AccountingApi', () => {
           date_issued: '2021-05-01T12:00:00.000Z',
           date_paid: '2021-05-01T12:00:00.000Z',
           type: 'accounts_receivable_credit',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
           line_items: [
             {
               row_id: '12345',
@@ -857,6 +870,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -934,6 +949,12 @@ describe('AccountingApi', () => {
             date_issued: '2021-05-01T12:00:00.000Z',
             date_paid: '2021-05-01T12:00:00.000Z',
             type: 'accounts_receivable_credit',
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091',
+              code: '453'
+            },
             line_items: [
               {
                 id: '12345',
@@ -949,6 +970,8 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                location_id: '1234',
+                department_id: '1234',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -965,7 +988,11 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
-                row_version: '1-12345'
+                row_version: '1-12345',
+                updated_by: '12345',
+                created_by: '12345',
+                created_at: '2020-09-30T07:43:32.000Z',
+                updated_at: '2020-09-30T07:43:32.000Z'
               }
             ],
             allocations: [
@@ -978,8 +1005,10 @@ describe('AccountingApi', () => {
             ],
             note: 'Some notes about this credit note',
             row_version: '1-12345',
-            created_at: '2020-09-30T07:43:32.000Z',
-            updated_at: '2020-09-30T07:43:32.000Z'
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
           }
         ],
         meta: {
@@ -1094,6 +1123,12 @@ describe('AccountingApi', () => {
           date_issued: '2021-05-01T12:00:00.000Z',
           date_paid: '2021-05-01T12:00:00.000Z',
           type: 'accounts_receivable_credit',
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091',
+            code: '453'
+          },
           line_items: [
             {
               id: '12345',
@@ -1109,6 +1144,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1125,7 +1162,11 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
-              row_version: '1-12345'
+              row_version: '1-12345',
+              updated_by: '12345',
+              created_by: '12345',
+              created_at: '2020-09-30T07:43:32.000Z',
+              updated_at: '2020-09-30T07:43:32.000Z'
             }
           ],
           allocations: [
@@ -1138,8 +1179,10 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this credit note',
           row_version: '1-12345',
-          created_at: '2020-09-30T07:43:32.000Z',
-          updated_at: '2020-09-30T07:43:32.000Z'
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
 
@@ -1211,6 +1254,11 @@ describe('AccountingApi', () => {
           date_issued: '2021-05-01T12:00:00.000Z',
           date_paid: '2021-05-01T12:00:00.000Z',
           type: 'accounts_receivable_credit',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
           line_items: [
             {
               row_id: '12345',
@@ -1225,6 +1273,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -2295,6 +2345,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -2437,6 +2489,8 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                location_id: '1234',
+                department_id: '1234',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -2453,7 +2507,11 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
-                row_version: '1-12345'
+                row_version: '1-12345',
+                updated_by: '12345',
+                created_by: '12345',
+                created_at: '2020-09-30T07:43:32.000Z',
+                updated_at: '2020-09-30T07:43:32.000Z'
               }
             ],
             billing_address: {
@@ -2649,6 +2707,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2665,7 +2725,11 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
-              row_version: '1-12345'
+              row_version: '1-12345',
+              updated_by: '12345',
+              created_by: '12345',
+              created_at: '2020-09-30T07:43:32.000Z',
+              updated_at: '2020-09-30T07:43:32.000Z'
             }
           ],
           billing_address: {
@@ -2816,6 +2880,8 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              location_id: '1234',
+              department_id: '1234',
               item: {
                 id: '12344'
               },
@@ -3351,6 +3417,35 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
+          },
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -3396,6 +3491,7 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '123456',
+            downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
             total_amount: 49.99,
@@ -3417,6 +3513,36 @@ describe('AccountingApi', () => {
               display_name: 'Windsurf Shop',
               name: 'Windsurf Shop',
               company_name: 'The boring company'
+            },
+            supplier: {
+              id: '12345',
+              display_name: 'Windsurf Shop',
+              company_name: 'The boring company',
+              address: {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: 40.759211,
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                row_version: '1-12345'
+              }
             },
             reconciled: true,
             status: 'authorised',
@@ -3528,6 +3654,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '123456',
+          downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           total_amount: 49.99,
@@ -3549,6 +3676,36 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop',
             company_name: 'The boring company'
+          },
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            company_name: 'The boring company',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
           },
           reconciled: true,
           status: 'authorised',
@@ -3637,6 +3794,35 @@ describe('AccountingApi', () => {
             id: '12345',
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
+          },
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: 40.759211,
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
           },
           reconciled: true,
           status: 'authorised',
