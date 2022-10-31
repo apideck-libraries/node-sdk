@@ -458,6 +458,11 @@ describe('ConnectorApi', () => {
             auth_type: 'oauth2',
             auth_only: true,
             blind_mapped: true,
+            webhook_support_type: {
+              mode: 'native',
+              subscription_level: 'integration',
+              managed_via: 'api'
+            },
             oauth_grant_type: 'authorization_code',
             oauth_credentials_source: 'integration',
             oauth_scopes: [
@@ -575,6 +580,11 @@ describe('ConnectorApi', () => {
           auth_type: 'oauth2',
           auth_only: true,
           blind_mapped: true,
+          webhook_support_type: {
+            mode: 'native',
+            subscription_level: 'integration',
+            managed_via: 'api'
+          },
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
           oauth_scopes: [

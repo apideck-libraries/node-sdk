@@ -106,6 +106,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -219,6 +229,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -352,6 +372,16 @@ describe('VaultApi', () => {
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
             settings_required_for_authorization: ['client_id', 'client_secret'],
+            subscriptions: [
+              {
+                downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+                unify_event_types: ['crm.contact.created'],
+                downstream_event_types: ['contacts.CREATED'],
+                execute_url:
+                  'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                created_at: '2020-10-01T12:00:00.000Z'
+              }
+            ],
             has_guide: true,
             created_at: 1615563533390,
             updated_at: 1616662325753
@@ -494,6 +524,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -624,6 +664,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -736,6 +786,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753

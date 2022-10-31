@@ -51,6 +51,8 @@
 
 * `vault_connection_updated` (value: `'vault.connection.updated'`)
 
+* `vault_connection_disabled` (value: `'vault.connection.disabled'`)
+
 * `vault_connection_deleted` (value: `'vault.connection.deleted'`)
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)

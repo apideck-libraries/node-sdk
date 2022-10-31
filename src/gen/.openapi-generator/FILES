@@ -64,6 +64,7 @@ ConnectionImportData.md
 ConnectionImportDataCredentials.md
 ConnectionMetadata.md
 ConnectionState.md
+ConnectionWebhook.md
 Connector.md
 ConnectorApi.md
 ConnectorApiTest.api.test.ts
@@ -76,13 +77,13 @@ ConnectorSetting.md
 ConnectorStatus.md
 ConnectorTlsSupport.md
 ConnectorUnifiedApis.md
+ConnectorWebhookSupportType.md
 ConnectorsFilter.md
 Consumer.md
 ConsumerConnection.md
 ConsumerMetadata.md
 ConsumerRequestCountsInDateRangeResponse.md
 ConsumerRequestCountsInDateRangeResponseData.md
-ConsumerWebhook.md
 Contact.md
 ContactsFilter.md
 ContactsSort.md
@@ -518,6 +519,7 @@ WebhookEventLogService.md
 WebhookEventLogsFilter.md
 WebhookEventLogsFilterService.md
 WebhookEventType.md
+WebhookSubscription.md
 Website.md
 apis/AccountingApi.ts
 apis/AtsApi.ts
@@ -583,6 +585,7 @@ models/ConnectionImportData.ts
 models/ConnectionImportDataCredentials.ts
 models/ConnectionMetadata.ts
 models/ConnectionState.ts
+models/ConnectionWebhook.ts
 models/Connector.ts
 models/ConnectorDoc.ts
 models/ConnectorEvent.ts
@@ -593,13 +596,13 @@ models/ConnectorSetting.ts
 models/ConnectorStatus.ts
 models/ConnectorTlsSupport.ts
 models/ConnectorUnifiedApis.ts
+models/ConnectorWebhookSupportType.ts
 models/ConnectorsFilter.ts
 models/Consumer.ts
 models/ConsumerConnection.ts
 models/ConsumerMetadata.ts
 models/ConsumerRequestCountsInDateRangeResponse.ts
 models/ConsumerRequestCountsInDateRangeResponseData.ts
-models/ConsumerWebhook.ts
 models/Contact.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
@@ -1017,6 +1020,7 @@ models/WebhookEventLogService.ts
 models/WebhookEventLogsFilter.ts
 models/WebhookEventLogsFilterService.ts
 models/WebhookEventType.ts
+models/WebhookSubscription.ts
 models/Website.ts
 models/index.ts
 runtime.ts
