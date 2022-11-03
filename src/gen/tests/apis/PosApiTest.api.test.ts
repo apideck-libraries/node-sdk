@@ -2103,9 +2103,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -2642,9 +2645,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -2938,9 +2944,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -3206,9 +3215,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
