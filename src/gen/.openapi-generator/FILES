@@ -425,6 +425,9 @@ ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
 RequestCountAllocation.md
+ResolveWebhookEventRequest.md
+ResolveWebhookEventsRequest.md
+ResolveWebhookResponse.md
 ResourceStatus.md
 Schedule.md
 ScheduleWorkPattern.md
@@ -932,6 +935,9 @@ models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
 models/RequestCountAllocation.ts
+models/ResolveWebhookEventRequest.ts
+models/ResolveWebhookEventsRequest.ts
+models/ResolveWebhookResponse.ts
 models/ResourceStatus.ts
 models/Schedule.ts
 models/ScheduleWorkPattern.ts

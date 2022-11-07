@@ -112,7 +112,7 @@ describe('VaultApi', () => {
               unify_event_types: ['crm.contact.created'],
               downstream_event_types: ['contacts.CREATED'],
               execute_url:
-                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
               created_at: '2020-10-01T12:00:00.000Z'
             }
           ],
@@ -235,7 +235,7 @@ describe('VaultApi', () => {
               unify_event_types: ['crm.contact.created'],
               downstream_event_types: ['contacts.CREATED'],
               execute_url:
-                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
               created_at: '2020-10-01T12:00:00.000Z'
             }
           ],
@@ -378,7 +378,7 @@ describe('VaultApi', () => {
                 unify_event_types: ['crm.contact.created'],
                 downstream_event_types: ['contacts.CREATED'],
                 execute_url:
-                  'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                  'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
                 created_at: '2020-10-01T12:00:00.000Z'
               }
             ],
@@ -530,7 +530,7 @@ describe('VaultApi', () => {
               unify_event_types: ['crm.contact.created'],
               downstream_event_types: ['contacts.CREATED'],
               execute_url:
-                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
               created_at: '2020-10-01T12:00:00.000Z'
             }
           ],
@@ -670,7 +670,7 @@ describe('VaultApi', () => {
               unify_event_types: ['crm.contact.created'],
               downstream_event_types: ['contacts.CREATED'],
               execute_url:
-                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
               created_at: '2020-10-01T12:00:00.000Z'
             }
           ],
@@ -792,7 +792,7 @@ describe('VaultApi', () => {
               unify_event_types: ['crm.contact.created'],
               downstream_event_types: ['contacts.CREATED'],
               execute_url:
-                'https://unify.apideck.com/webhook/webhooks/{webhookToken}/x/factorialhr?l_id={lookupId}&amp;e_t={downstreamEventType}',
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
               created_at: '2020-10-01T12:00:00.000Z'
             }
           ],
