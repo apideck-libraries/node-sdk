@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 `slug` | **string** |  | [optional] 
 `title` | **string** |  | [optional] 
 `sequence` | **number** | Sequence in relation to other jobs. | [optional] 
-`visibility` | **Array&lt;string&gt;** |  | [optional] 
+`visibility` | **string** | The visibility of the job | [optional] 
 `status` | [**JobStatus**](JobStatus.md) |  | [optional] 
 `code` | **string** | The code of the job. | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 
 
 
-<a name="Array<JobVisibility>"></a>
+<a name="JobVisibility"></a>
 ## Enum: Job.visibility
 
 
