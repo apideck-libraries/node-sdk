@@ -138,6 +138,12 @@ export interface Connector {
    */
   oauth_scopes?: Array<ConnectorOauthScopes>
   /**
+   * Set to `true` when connector allows the definition of custom scopes.
+   * @type {boolean}
+   * @memberof Connector
+   */
+  readonly custom_scopes?: boolean
+  /**
    * Indicates whether Apideck Sandbox OAuth credentials are available.
    * @type {boolean}
    * @memberof Connector
@@ -251,6 +257,7 @@ export function ConnectorFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     oauth_scopes: !exists(json, 'oauth_scopes')
       ? undefined
       : (json['oauth_scopes'] as Array<any>).map(ConnectorOauthScopesFromJSON),
+    custom_scopes: !exists(json, 'custom_scopes') ? undefined : json['custom_scopes'],
     has_sandbox_credentials: !exists(json, 'has_sandbox_credentials')
       ? undefined
       : json['has_sandbox_credentials'],

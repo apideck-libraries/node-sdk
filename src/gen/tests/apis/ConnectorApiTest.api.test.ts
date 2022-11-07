@@ -472,6 +472,7 @@ describe('ConnectorApi', () => {
                 default_apis: ['crm']
               }
             ],
+            custom_scopes: true,
             has_sandbox_credentials: true,
             settings: [
               {
@@ -594,6 +595,7 @@ describe('ConnectorApi', () => {
               default_apis: ['crm']
             }
           ],
+          custom_scopes: true,
           has_sandbox_credentials: true,
           settings: [
             {

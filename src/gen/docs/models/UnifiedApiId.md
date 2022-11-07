@@ -51,6 +51,8 @@
 
 * `calendar` (value: `'calendar'`)
 
+* `procurement` (value: `'procurement'`)
+
 
 ---
 

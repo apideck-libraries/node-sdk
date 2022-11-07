@@ -41,7 +41,8 @@ export enum UnifiedApiId {
   pos = 'pos',
   project_management = 'project-management',
   expense_management = 'expense-management',
-  calendar = 'calendar'
+  calendar = 'calendar',
+  procurement = 'procurement'
 }
 
 export function UnifiedApiIdFromJSON(json: any): UnifiedApiId {
