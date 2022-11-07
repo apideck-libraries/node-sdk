@@ -2861,7 +2861,7 @@ describe('HrisApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'bamboohr',
-        resource: 'TimeOffRequests',
+        resource: 'time-off-requests',
         operation: 'add',
         data: {
           id: '12345'
@@ -2917,7 +2917,7 @@ describe('HrisApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'bamboohr',
-        resource: 'TimeOffRequests',
+        resource: 'time-off-requests',
         operation: 'all',
         data: [
           {
@@ -2989,7 +2989,7 @@ describe('HrisApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'bamboohr',
-        resource: 'TimeOffRequests',
+        resource: 'time-off-requests',
         operation: 'delete',
         data: {
           id: '12345'
@@ -3029,7 +3029,7 @@ describe('HrisApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'bamboohr',
-        resource: 'TimeOffRequests',
+        resource: 'time-off-requests',
         operation: 'one',
         data: {
           id: '12345',
@@ -3088,7 +3088,7 @@ describe('HrisApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'bamboohr',
-        resource: 'TimeOffRequests',
+        resource: 'time-off-requests',
         operation: 'update',
         data: {
           id: '12345'
