@@ -31,6 +31,12 @@ export interface TimeOffRequestsFilter {
    * @memberof TimeOffRequestsFilter
    */
   end_date?: string
+  /**
+   * Employee ID
+   * @type {string}
+   * @memberof TimeOffRequestsFilter
+   */
+  employee_id?: string
 }
 
 export function TimeOffRequestsFilterFromJSON(json: any): TimeOffRequestsFilter {
@@ -46,7 +52,8 @@ export function TimeOffRequestsFilterFromJSONTyped(
   }
   return {
     start_date: !exists(json, 'start_date') ? undefined : json['start_date'],
-    end_date: !exists(json, 'end_date') ? undefined : json['end_date']
+    end_date: !exists(json, 'end_date') ? undefined : json['end_date'],
+    employee_id: !exists(json, 'employee_id') ? undefined : json['employee_id']
   }
 }
 
@@ -59,6 +66,7 @@ export function TimeOffRequestsFilterToJSON(value?: TimeOffRequestsFilter | null
   }
   return {
     start_date: value.start_date,
-    end_date: value.end_date
+    end_date: value.end_date,
+    employee_id: value.employee_id
   }
 }

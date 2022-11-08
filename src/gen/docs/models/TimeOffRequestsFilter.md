@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `start_date` | **string** | Start date | [optional] 
 `end_date` | **string** | End date | [optional] 
+`employee_id` | **string** | Employee ID | [optional] 
 
 
 
