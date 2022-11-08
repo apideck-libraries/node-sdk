@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 ## Enum: TimeOffRequest.request_type
 
 
-* `vacaction` (value: `'vacaction'`)
+* `vacation` (value: `'vacation'`)
 
 * `sick` (value: `'sick'`)
 

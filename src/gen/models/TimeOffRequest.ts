@@ -146,7 +146,7 @@ export enum TimeOffRequestStatus {
  * @enum {string}
  */
 export enum TimeOffRequestRequestType {
-  vacaction = 'vacaction',
+  vacation = 'vacation',
   sick = 'sick',
   personal = 'personal',
   jury_duty = 'jury_duty',
