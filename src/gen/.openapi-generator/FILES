@@ -28,6 +28,7 @@ ApisFilter.md
 Applicant.md
 ApplicantSocialLinks.md
 ApplicantWebsites.md
+ApplicantsFilter.md
 AtsActivity.md
 AtsApi.md
 AtsApiTest.api.test.ts
@@ -554,6 +555,7 @@ models/ApisFilter.ts
 models/Applicant.ts
 models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
+models/ApplicantsFilter.ts
 models/AtsActivity.ts
 models/AtsEventType.ts
 models/AuthType.ts

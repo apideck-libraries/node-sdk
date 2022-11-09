@@ -16,36 +16,34 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface WebhookEventLogsFilterService
+ * @interface ApplicantsFilter
  */
-export interface WebhookEventLogsFilterService {
+export interface ApplicantsFilter {
   /**
-   *
+   * Id of the job to filter on
    * @type {string}
-   * @memberof WebhookEventLogsFilterService
+   * @memberof ApplicantsFilter
    */
-  id?: string
+  job_id?: string
 }
 
-export function WebhookEventLogsFilterServiceFromJSON(json: any): WebhookEventLogsFilterService {
-  return WebhookEventLogsFilterServiceFromJSONTyped(json, false)
+export function ApplicantsFilterFromJSON(json: any): ApplicantsFilter {
+  return ApplicantsFilterFromJSONTyped(json, false)
 }
 
-export function WebhookEventLogsFilterServiceFromJSONTyped(
+export function ApplicantsFilterFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): WebhookEventLogsFilterService {
+): ApplicantsFilter {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id']
+    job_id: !exists(json, 'job_id') ? undefined : json['job_id']
   }
 }
 
-export function WebhookEventLogsFilterServiceToJSON(
-  value?: WebhookEventLogsFilterService | null
-): any {
+export function ApplicantsFilterToJSON(value?: ApplicantsFilter | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -53,6 +51,6 @@ export function WebhookEventLogsFilterServiceToJSON(
     return null
   }
   return {
-    id: value.id
+    job_id: value.job_id
   }
 }
