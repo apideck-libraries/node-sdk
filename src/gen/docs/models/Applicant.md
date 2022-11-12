@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 `deleted` | **boolean** |  | [optional] 
 `deleted_by` | **string** |  | [optional] 
 `deleted_at` | **Date** |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
@@ -79,6 +81,8 @@ Name | Type | Description | Notes
 
 
 * [`Tags`](Tags.md)
+
+
 
 
 

@@ -267,6 +267,8 @@ describe('AtsApi', () => {
             deleted: true,
             deleted_by: '12345',
             deleted_at: '2020-09-30T07:43:32.000Z',
+            updated_by: '12345',
+            created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z'
           }
@@ -419,6 +421,8 @@ describe('AtsApi', () => {
           deleted: true,
           deleted_by: '12345',
           deleted_at: '2020-09-30T07:43:32.000Z',
+          updated_by: '12345',
+          created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
         }

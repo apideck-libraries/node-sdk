@@ -8,7 +8,27 @@ Name | Type | Description | Notes
 `start_date` | **string** | Start date | [optional] 
 `end_date` | **string** | End date | [optional] 
 `employee_id` | **string** | Employee ID | [optional] 
+`time_off_request_status` | **string** | Time off request status to filter on | [optional] 
 
+
+
+
+
+<a name="TimeOffRequestsFilterTimeOffRequestStatus"></a>
+## Enum: TimeOffRequestsFilter.time_off_request_status
+
+
+* `requested` (value: `'requested'`)
+
+* `approved` (value: `'approved'`)
+
+* `declined` (value: `'declined'`)
+
+* `cancelled` (value: `'cancelled'`)
+
+* `deleted` (value: `'deleted'`)
+
+* `other` (value: `'other'`)
 
 
 
