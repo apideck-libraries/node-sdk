@@ -455,14 +455,11 @@ describe('ConnectorApi', () => {
             logo_url:
               'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
             website_url: 'https://www.salesforce.com',
+            signup_url: 'https://www.salesforce.com/signup',
+            free_trial_available: true,
             auth_type: 'oauth2',
             auth_only: true,
             blind_mapped: true,
-            webhook_support_type: {
-              mode: 'native',
-              subscription_level: 'integration',
-              managed_via: 'api'
-            },
             oauth_grant_type: 'authorization_code',
             oauth_credentials_source: 'integration',
             oauth_scopes: [
@@ -509,6 +506,7 @@ describe('ConnectorApi', () => {
                 resource: 'companies'
               }
             ],
+            webhook_support: {},
             docs: [
               {
                 id: '12345',
@@ -578,14 +576,11 @@ describe('ConnectorApi', () => {
           logo_url:
             'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           website_url: 'https://www.salesforce.com',
+          signup_url: 'https://www.salesforce.com/signup',
+          free_trial_available: true,
           auth_type: 'oauth2',
           auth_only: true,
           blind_mapped: true,
-          webhook_support_type: {
-            mode: 'native',
-            subscription_level: 'integration',
-            managed_via: 'api'
-          },
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
           oauth_scopes: [
@@ -651,6 +646,7 @@ describe('ConnectorApi', () => {
               resource: 'companies'
             }
           ],
+          webhook_support: {},
           docs: [
             {
               id: '12345',

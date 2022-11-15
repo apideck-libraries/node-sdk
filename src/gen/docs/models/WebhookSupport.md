@@ -1,8 +1,6 @@
-# Apideck.ConnectorWebhookSupportType
+# Apideck.WebhookSupport
 
 ### Description
-
-Describes the configurations webhook support of the connector.
 
 ## Properties
 Name | Type | Description | Notes
@@ -15,8 +13,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorWebhookSupportTypeMode"></a>
-## Enum: ConnectorWebhookSupportType.mode
+<a name="WebhookSupportMode"></a>
+## Enum: WebhookSupport.mode
 
 
 * `native` (value: `'native'`)
@@ -28,8 +26,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorWebhookSupportTypeSubscriptionLevel"></a>
-## Enum: ConnectorWebhookSupportType.subscription_level
+<a name="WebhookSupportSubscriptionLevel"></a>
+## Enum: WebhookSupport.subscription_level
 
 
 * `consumer` (value: `'consumer'`)
@@ -39,8 +37,8 @@ Name | Type | Description | Notes
 
 
 
-<a name="ConnectorWebhookSupportTypeManagedVia"></a>
-## Enum: ConnectorWebhookSupportType.managed_via
+<a name="WebhookSupportManagedVia"></a>
+## Enum: WebhookSupport.managed_via
 
 
 * `manual` (value: `'manual'`)

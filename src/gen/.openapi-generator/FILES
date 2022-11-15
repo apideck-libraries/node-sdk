@@ -78,7 +78,6 @@ ConnectorSetting.md
 ConnectorStatus.md
 ConnectorTlsSupport.md
 ConnectorUnifiedApis.md
-ConnectorWebhookSupportType.md
 ConnectorsFilter.md
 Consumer.md
 ConsumerConnection.md
@@ -524,6 +523,7 @@ WebhookEventLogsFilter.md
 WebhookEventLogsFilterService.md
 WebhookEventType.md
 WebhookSubscription.md
+WebhookSupport.md
 Website.md
 apis/AccountingApi.ts
 apis/AtsApi.ts
@@ -601,7 +601,6 @@ models/ConnectorSetting.ts
 models/ConnectorStatus.ts
 models/ConnectorTlsSupport.ts
 models/ConnectorUnifiedApis.ts
-models/ConnectorWebhookSupportType.ts
 models/ConnectorsFilter.ts
 models/Consumer.ts
 models/ConsumerConnection.ts
@@ -1029,6 +1028,7 @@ models/WebhookEventLogsFilter.ts
 models/WebhookEventLogsFilterService.ts
 models/WebhookEventType.ts
 models/WebhookSubscription.ts
+models/WebhookSupport.ts
 models/Website.ts
 models/index.ts
 runtime.ts
