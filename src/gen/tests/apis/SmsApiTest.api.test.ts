@@ -103,8 +103,8 @@ describe('SmsApi', () => {
             webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
             reference: 'CUST001',
             price: {
-              per_unit: 0.01,
-              total_amount: 0.01,
+              per_unit: '0.01',
+              total_amount: '0.01',
               currency: 'USD'
             },
             error: {
@@ -222,8 +222,8 @@ describe('SmsApi', () => {
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
           price: {
-            per_unit: 0.01,
-            total_amount: 0.01,
+            per_unit: '0.01',
+            total_amount: '0.01',
             currency: 'USD'
           },
           error: {
