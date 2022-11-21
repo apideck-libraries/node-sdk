@@ -209,6 +209,7 @@ ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
+FileStorageEventType.md
 FileType.md
 FilesFilter.md
 FilesSearch.md
@@ -725,6 +726,7 @@ models/EmployeesFilter.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
+models/FileStorageEventType.ts
 models/FileType.ts
 models/FilesFilter.ts
 models/FilesSearch.ts

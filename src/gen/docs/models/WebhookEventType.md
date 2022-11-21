@@ -179,6 +179,12 @@
 
 * `hris_company_deleted` (value: `'hris.company.deleted'`)
 
+* `file_storage_file_created` (value: `'file-storage.file.created'`)
+
+* `file_storage_file_updated` (value: `'file-storage.file.updated'`)
+
+* `file_storage_file_deleted` (value: `'file-storage.file.deleted'`)
+
 
 ---
 
