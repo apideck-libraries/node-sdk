@@ -22,25 +22,25 @@ import { FormFieldOption, FormFieldOptionFromJSON, FormFieldOptionToJSON } from 
  */
 export interface FormField {
   /**
-   *
+   * The unique identifier of the form field.
    * @type {string}
    * @memberof FormField
    */
   id?: string
   /**
-   *
+   * The label of the field
    * @type {string}
    * @memberof FormField
    */
   label?: string
   /**
-   *
+   * The placeholder for the form field
    * @type {string}
    * @memberof FormField
    */
   placeholder?: string | null
   /**
-   *
+   * The description of the form field
    * @type {string}
    * @memberof FormField
    */
@@ -52,7 +52,7 @@ export interface FormField {
    */
   type?: FormFieldType
   /**
-   *
+   * Indicates if the form field is required, which means it must be filled in before the form can be submitted
    * @type {boolean}
    * @memberof FormField
    */
@@ -70,13 +70,19 @@ export interface FormField {
    */
   allow_custom_values?: boolean
   /**
-   *
+   * Indicates if the form field is displayed in a “read-only” mode.
    * @type {boolean}
    * @memberof FormField
    */
   disabled?: boolean | null
   /**
-   *
+   * Indicates if the form field is not displayed but the value that is being stored on the connection.
+   * @type {boolean}
+   * @memberof FormField
+   */
+  hidden?: boolean | null
+  /**
+   * Indicates if the form field contains sensitive data, which will display the value as a masked input.
    * @type {boolean}
    * @memberof FormField
    */
@@ -129,6 +135,7 @@ export function FormFieldFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       ? undefined
       : json['allow_custom_values'],
     disabled: !exists(json, 'disabled') ? undefined : json['disabled'],
+    hidden: !exists(json, 'hidden') ? undefined : json['hidden'],
     sensitive: !exists(json, 'sensitive') ? undefined : json['sensitive'],
     options: !exists(json, 'options')
       ? undefined
@@ -153,6 +160,7 @@ export function FormFieldToJSON(value?: FormField | null): any {
     custom_field: value.custom_field,
     allow_custom_values: value.allow_custom_values,
     disabled: value.disabled,
+    hidden: value.hidden,
     sensitive: value.sensitive,
     options:
       value.options === undefined

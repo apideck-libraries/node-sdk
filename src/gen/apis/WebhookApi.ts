@@ -131,7 +131,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create webhook
+   * Create a webhook subscription to receive events
    * Create webhook
    */
   async webhooksAddRaw(
@@ -176,7 +176,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create webhook
+   * Create a webhook subscription to receive events
    * Create webhook
    */
   async webhooksAdd(
@@ -188,7 +188,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * List webhooks
+   * List all webhook subscriptions
    * List webhooks
    */
   async webhooksAllRaw(
@@ -231,7 +231,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * List webhooks
+   * List all webhook subscriptions
    * List webhooks
    */
   async webhooksAll(
@@ -243,7 +243,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete webhook
+   * Delete a webhook subscription
    * Delete webhook
    */
   async webhooksDeleteRaw(
@@ -288,7 +288,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete webhook
+   * Delete a webhook subscription
    * Delete webhook
    */
   async webhooksDelete(
@@ -300,7 +300,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get webhook
+   * Get the webhook subscription details
    * Get webhook
    */
   async webhooksOneRaw(
@@ -343,7 +343,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get webhook
+   * Get the webhook subscription details
    * Get webhook
    */
   async webhooksOne(
@@ -355,7 +355,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update webhook
+   * Update a webhook subscription
    * Update webhook
    */
   async webhooksUpdateRaw(
@@ -410,7 +410,7 @@ export class WebhookApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update webhook
+   * Update a webhook subscription
    * Update webhook
    */
   async webhooksUpdate(

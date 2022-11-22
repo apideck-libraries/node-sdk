@@ -31,19 +31,19 @@ import { WebhookSubscription, WebhookSubscriptionFromJSON } from './WebhookSubsc
  */
 export interface Connection {
   /**
-   *
+   * The unique identifier of the connection.
    * @type {string}
    * @memberof Connection
    */
   readonly id?: string
   /**
-   *
+   * The ID of the service this connection belongs to.
    * @type {string}
    * @memberof Connection
    */
   readonly service_id?: string
   /**
-   *
+   * The name of the connection
    * @type {string}
    * @memberof Connection
    */
@@ -55,7 +55,7 @@ export interface Connection {
    */
   readonly tag_line?: string
   /**
-   *
+   * The unified API category where the connection belongs to.
    * @type {string}
    * @memberof Connection
    */
@@ -79,7 +79,7 @@ export interface Connection {
    */
   oauth_grant_type?: OAuthGrantType
   /**
-   *
+   * Status of the connection.
    * @type {string}
    * @memberof Connection
    */
@@ -91,19 +91,19 @@ export interface Connection {
    */
   enabled?: boolean
   /**
-   *
+   * The website URL of the connection
    * @type {string}
    * @memberof Connection
    */
   readonly website?: string
   /**
-   *
+   * A visual icon of the connection, that will be shown in the Vault
    * @type {string}
    * @memberof Connection
    */
   readonly icon?: string
   /**
-   *
+   * The logo of the connection, that will be shown in the Vault
    * @type {string}
    * @memberof Connection
    */
@@ -133,7 +133,7 @@ export interface Connection {
    */
   metadata?: { [key: string]: unknown } | null
   /**
-   *
+   * The settings that are wanted to create a connection.
    * @type {Array<FormField>}
    * @memberof Connection
    */
