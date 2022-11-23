@@ -502,6 +502,7 @@ describe('ConnectorApi', () => {
             supported_events: [
               {
                 event_type: 'employee.created',
+                event_source: 'native',
                 downstream_event_type: 'person_created',
                 resource: 'companies'
               }
@@ -623,6 +624,7 @@ describe('ConnectorApi', () => {
               supported_events: [
                 {
                   event_type: 'employee.created',
+                  event_source: 'native',
                   downstream_event_type: 'person_created',
                   resource: 'companies'
                 }
@@ -642,6 +644,7 @@ describe('ConnectorApi', () => {
           supported_events: [
             {
               event_type: 'employee.created',
+              event_source: 'native',
               downstream_event_type: 'person_created',
               resource: 'companies'
             }

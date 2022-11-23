@@ -26,6 +26,12 @@ export interface ConnectorEvent {
    */
   event_type?: string
   /**
+   * Unify event source
+   * @type {string}
+   * @memberof ConnectorEvent
+   */
+  event_source?: ConnectorEventEventSource
+  /**
    * Downstream event type
    * @type {string}
    * @memberof ConnectorEvent
@@ -37,6 +43,15 @@ export interface ConnectorEvent {
    * @memberof ConnectorEvent
    */
   resource?: string
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum ConnectorEventEventSource {
+  native = 'native',
+  virtual = 'virtual'
 }
 
 export function ConnectorEventFromJSON(json: any): ConnectorEvent {
@@ -52,6 +67,7 @@ export function ConnectorEventFromJSONTyped(
   }
   return {
     event_type: !exists(json, 'event_type') ? undefined : json['event_type'],
+    event_source: !exists(json, 'event_source') ? undefined : json['event_source'],
     downstream_event_type: !exists(json, 'downstream_event_type')
       ? undefined
       : json['downstream_event_type'],
@@ -68,6 +84,7 @@ export function ConnectorEventToJSON(value?: ConnectorEvent | null): any {
   }
   return {
     event_type: value.event_type,
+    event_source: value.event_source,
     downstream_event_type: value.downstream_event_type,
     resource: value.resource
   }
