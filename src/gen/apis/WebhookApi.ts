@@ -132,7 +132,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Create a webhook subscription to receive events
-   * Create webhook
+   * Create webhook subscription
    */
   async webhooksAddRaw(
     requestParameters: WebhookApiWebhooksAddRequest,
@@ -177,7 +177,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Create a webhook subscription to receive events
-   * Create webhook
+   * Create webhook subscription
    */
   async webhooksAdd(
     requestParameters: WebhookApiWebhooksAddRequest,
@@ -189,7 +189,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * List all webhook subscriptions
-   * List webhooks
+   * List webhook subscriptions
    */
   async webhooksAllRaw(
     requestParameters: WebhookApiWebhooksAllRequest,
@@ -232,7 +232,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * List all webhook subscriptions
-   * List webhooks
+   * List webhook subscriptions
    */
   async webhooksAll(
     requestParameters: WebhookApiWebhooksAllRequest = {},
@@ -244,7 +244,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Delete a webhook subscription
-   * Delete webhook
+   * Delete webhook subscription
    */
   async webhooksDeleteRaw(
     requestParameters: WebhookApiWebhooksDeleteRequest,
@@ -289,7 +289,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Delete a webhook subscription
-   * Delete webhook
+   * Delete webhook subscription
    */
   async webhooksDelete(
     requestParameters: WebhookApiWebhooksDeleteRequest,
@@ -301,7 +301,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Get the webhook subscription details
-   * Get webhook
+   * Get webhook subscription
    */
   async webhooksOneRaw(
     requestParameters: WebhookApiWebhooksOneRequest,
@@ -344,7 +344,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Get the webhook subscription details
-   * Get webhook
+   * Get webhook subscription
    */
   async webhooksOne(
     requestParameters: WebhookApiWebhooksOneRequest,
@@ -356,7 +356,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Update a webhook subscription
-   * Update webhook
+   * Update webhook subscription
    */
   async webhooksUpdateRaw(
     requestParameters: WebhookApiWebhooksUpdateRequest,
@@ -411,7 +411,7 @@ export class WebhookApi extends runtime.BaseAPI {
 
   /**
    * Update a webhook subscription
-   * Update webhook
+   * Update webhook subscription
    */
   async webhooksUpdate(
     requestParameters: WebhookApiWebhooksUpdateRequest,
