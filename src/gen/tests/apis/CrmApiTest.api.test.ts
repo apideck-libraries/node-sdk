@@ -3070,7 +3070,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               name: 'Contract Sent',
@@ -3114,7 +3116,9 @@ describe('CrmApi', () => {
             name: 'Sales Pipeline',
             currency: 'USD',
             archived: false,
+            active: false,
             display_order: 1,
+            win_probability_enabled: true,
             stages: [
               {
                 id: 'contractsent',
@@ -3221,7 +3225,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               id: 'contractsent',
@@ -3288,7 +3294,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               name: 'Contract Sent',

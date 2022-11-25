@@ -48,10 +48,22 @@ export interface Pipeline {
   archived?: boolean
   /**
    *
+   * @type {boolean}
+   * @memberof Pipeline
+   */
+  active?: boolean
+  /**
+   *
    * @type {number}
    * @memberof Pipeline
    */
   display_order?: number
+  /**
+   *
+   * @type {boolean}
+   * @memberof Pipeline
+   */
+  win_probability_enabled?: boolean
   /**
    *
    * @type {Array<PipelineStages>}
@@ -85,7 +97,11 @@ export function PipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     id: !exists(json, 'id') ? undefined : json['id'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     archived: !exists(json, 'archived') ? undefined : json['archived'],
+    active: !exists(json, 'active') ? undefined : json['active'],
     display_order: !exists(json, 'display_order') ? undefined : json['display_order'],
+    win_probability_enabled: !exists(json, 'win_probability_enabled')
+      ? undefined
+      : json['win_probability_enabled'],
     stages: !exists(json, 'stages')
       ? undefined
       : (json['stages'] as Array<any>).map(PipelineStagesFromJSON),
@@ -106,7 +122,9 @@ export function PipelineToJSON(value?: Pipeline | null): any {
     id: value.id,
     currency: CurrencyToJSON(value.currency),
     archived: value.archived,
+    active: value.active,
     display_order: value.display_order,
+    win_probability_enabled: value.win_probability_enabled,
     stages:
       value.stages === undefined
         ? undefined
