@@ -319,6 +319,7 @@ export interface FileStorageApiUploadSessionsFinishRequest {
   consumerId?: string
   appId?: string
   serviceId?: string
+  digest?: string
   body?: object
 }
 
@@ -2094,7 +2095,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Start Upload Session
+   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
    * Start Upload Session
    */
   async uploadSessionsAddRaw(
@@ -2151,7 +2152,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Start Upload Session
+   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
    * Start Upload Session
    */
   async uploadSessionsAdd(
@@ -2268,6 +2269,10 @@ export class FileStorageApi extends runtime.BaseAPI {
       headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
     }
 
+    if (requestParameters.digest !== undefined && requestParameters.digest !== null) {
+      headerParameters['digest'] = String(requestParameters.digest)
+    }
+
     if (this.configuration && this.configuration.apiKey) {
       headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
     }
@@ -2302,7 +2307,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Upload Session
+   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
    * Get Upload Session
    */
   async uploadSessionsOneRaw(
@@ -2359,7 +2364,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Upload Session
+   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
    * Get Upload Session
    */
   async uploadSessionsOne(

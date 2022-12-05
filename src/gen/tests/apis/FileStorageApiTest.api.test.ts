@@ -1351,7 +1351,8 @@ describe('FileStorageApi', () => {
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
       appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+      consumerId: 'REPLACE_WITH_CONSUMER_ID',
+      digest: 'REPLACE_WITH_DIGEST'
     }
     const apideck = new Apideck({ ...config, basePath: basePath })
 
