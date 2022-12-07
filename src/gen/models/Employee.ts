@@ -117,6 +117,12 @@ export interface Employee {
    */
   division?: string | null
   /**
+   * Unique identifier of the division this employee belongs to.
+   * @type {string}
+   * @memberof Employee
+   */
+  division_id?: string | null
+  /**
    * The department the user is currently in.
    * @type {string}
    * @memberof Employee
@@ -426,6 +432,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     marital_status: !exists(json, 'marital_status') ? undefined : json['marital_status'],
     partner: !exists(json, 'partner') ? undefined : EmployeePartnerFromJSON(json['partner']),
     division: !exists(json, 'division') ? undefined : json['division'],
+    division_id: !exists(json, 'division_id') ? undefined : json['division_id'],
     department: !exists(json, 'department') ? undefined : json['department'],
     department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
     team: !exists(json, 'team') ? undefined : EmployeeTeamFromJSON(json['team']),
@@ -526,6 +533,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     marital_status: value.marital_status,
     partner: EmployeePartnerToJSON(value.partner),
     division: value.division,
+    division_id: value.division_id,
     department: value.department,
     department_id: value.department_id,
     team: EmployeeTeamToJSON(value.team),

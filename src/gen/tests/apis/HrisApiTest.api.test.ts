@@ -749,6 +749,7 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
             team: {
@@ -1006,6 +1007,7 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
             team: {
@@ -1262,6 +1264,7 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
             team: {
@@ -1522,6 +1525,7 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
           team: {
@@ -1730,6 +1734,7 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
             team: {
@@ -2005,6 +2010,7 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
           team: {
@@ -2238,6 +2244,7 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
           team: {
@@ -2446,6 +2453,7 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
             team: {
