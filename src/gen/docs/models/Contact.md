@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`email_domain` | **string** |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `first_call_at` | **Date** |  | [optional] 
@@ -106,6 +107,7 @@ Name | Type | Description | Notes
 * [`SocialLink`](SocialLink.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
+
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
 

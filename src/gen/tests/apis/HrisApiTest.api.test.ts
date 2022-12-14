@@ -760,6 +760,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'active',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1018,6 +1019,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'active',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1275,6 +1277,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'active',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1536,6 +1539,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'active',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -1745,6 +1749,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'active',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -2021,6 +2026,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'active',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -2255,6 +2261,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'active',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -2464,6 +2471,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'active',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {

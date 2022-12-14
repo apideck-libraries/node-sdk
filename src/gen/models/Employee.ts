@@ -165,6 +165,12 @@ export interface Employee {
    */
   employment_end_date?: string | null
   /**
+   * The reason because the employment ended
+   * @type {string}
+   * @memberof Employee
+   */
+  leaving_reason?: EmployeeLeavingReason
+  /**
    * An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.
    * @type {string}
    * @memberof Employee
@@ -404,6 +410,16 @@ export interface Employee {
  * @export
  * @enum {string}
  */
+export enum EmployeeLeavingReason {
+  dismissed = 'dismissed',
+  resigned = 'resigned',
+  redundancy = 'redundancy',
+  other = 'other'
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum EmployeeEmploymentStatus {
   active = 'active',
   inactive = 'inactive',
@@ -444,6 +460,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     employment_end_date: !exists(json, 'employment_end_date')
       ? undefined
       : json['employment_end_date'],
+    leaving_reason: !exists(json, 'leaving_reason') ? undefined : json['leaving_reason'],
     employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number'],
     employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status'],
     employment_role: !exists(json, 'employment_role')
@@ -541,6 +558,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     company_name: value.company_name,
     employment_start_date: value.employment_start_date,
     employment_end_date: value.employment_end_date,
+    leaving_reason: value.leaving_reason,
     employee_number: value.employee_number,
     employment_status: value.employment_status,
     employment_role: EmployeeEmploymentRoleToJSON(value.employment_role),

@@ -1267,6 +1267,7 @@ const params = {
         type: 'primary'
       }
     ],
+    email_domain: 'gmail.com',
     custom_fields: [
       {
         id: '2389328923893298',
@@ -1640,6 +1641,7 @@ const params = {
         type: 'primary'
       }
     ],
+    email_domain: 'gmail.com',
     custom_fields: [
       {
         id: '2389328923893298',
