@@ -2095,7 +2095,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Start Upload Session
    */
   async uploadSessionsAddRaw(
@@ -2152,7 +2152,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+   * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Start Upload Session
    */
   async uploadSessionsAdd(
@@ -2164,7 +2164,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Abort Upload Session
+   * Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Abort Upload Session
    */
   async uploadSessionsDeleteRaw(
@@ -2221,7 +2221,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Abort Upload Session
+   * Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Abort Upload Session
    */
   async uploadSessionsDelete(
@@ -2233,7 +2233,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+   * Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Finish Upload Session
    */
   async uploadSessionsFinishRaw(
@@ -2295,7 +2295,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+   * Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Finish Upload Session
    */
   async uploadSessionsFinish(
@@ -2307,7 +2307,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Get Upload Session
    */
   async uploadSessionsOneRaw(
@@ -2364,7 +2364,7 @@ export class FileStorageApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+   * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
    * Get Upload Session
    */
   async uploadSessionsOne(
