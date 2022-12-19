@@ -24,6 +24,7 @@ import {
   ApplicantWebsitesFromJSON,
   ApplicantWebsitesToJSON
 } from './ApplicantWebsites'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
@@ -118,6 +119,12 @@ export interface Applicant {
    * @memberof Applicant
    */
   emails?: Array<Email>
+  /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Applicant
+   */
+  custom_fields?: Array<CustomField>
   /**
    *
    * @type {Array<PhoneNumber>}
@@ -315,6 +322,9 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     headline: !exists(json, 'headline') ? undefined : json['headline'],
     title: !exists(json, 'title') ? undefined : json['title'],
     emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
@@ -389,6 +399,10 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     headline: value.headline,
     title: value.title,
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined
