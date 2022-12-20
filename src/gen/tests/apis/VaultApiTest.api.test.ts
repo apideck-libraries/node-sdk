@@ -975,7 +975,7 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           consumer_id: 'test_consumer_id',
-          application_id: '1111',
+          application_id: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
           metadata: {
             account_name: 'SpaceX',
             user_name: 'Elon Musk',
