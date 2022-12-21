@@ -12,9 +12,21 @@ Name | Type | Description | Notes
 `events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
 `id` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 
+`disabled_reason` | **string** | Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it\'s plan. | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="WebhookDisabledReason"></a>
+## Enum: Webhook.disabled_reason
+
+
+* `retry_limit` (value: `'retry_limit'`)
+
+* `usage_limit` (value: `'usage_limit'`)
 
 
 
@@ -25,6 +37,7 @@ Name | Type | Description | Notes
 
 
 * [`WebhookEventType`](WebhookEventType.md)
+
 
 
 
