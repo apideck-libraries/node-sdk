@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | [optional] 
+`parent_id` | **string** | Parent ID | [optional] 
 `name` | **string** | Department name | [optional] 
 `code` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 

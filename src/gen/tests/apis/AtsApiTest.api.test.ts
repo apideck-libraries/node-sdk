@@ -503,6 +503,7 @@ describe('AtsApi', () => {
             requisition_id: 'abc123',
             department: {
               id: '12345',
+              parent_id: '22345',
               name: 'R&amp;D',
               code: '2',
               description: 'R&amp;D',
@@ -642,6 +643,7 @@ describe('AtsApi', () => {
           requisition_id: 'abc123',
           department: {
             id: '12345',
+            parent_id: '22345',
             name: 'R&amp;D',
             code: '2',
             description: 'R&amp;D',

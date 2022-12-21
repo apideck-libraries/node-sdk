@@ -537,6 +537,7 @@ describe('HrisApi', () => {
         data: [
           {
             id: '12345',
+            parent_id: '22345',
             name: 'R&amp;D',
             code: '2',
             description: 'R&amp;D',
@@ -636,6 +637,7 @@ describe('HrisApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          parent_id: '22345',
           name: 'R&amp;D',
           code: '2',
           description: 'R&amp;D',

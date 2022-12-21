@@ -26,6 +26,12 @@ export interface Department {
    */
   readonly id?: string
   /**
+   * Parent ID
+   * @type {string}
+   * @memberof Department
+   */
+  readonly parent_id?: string
+  /**
    * Department name
    * @type {string}
    * @memberof Department
@@ -79,6 +85,7 @@ export function DepartmentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    parent_id: !exists(json, 'parent_id') ? undefined : json['parent_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     code: !exists(json, 'code') ? undefined : json['code'],
     description: !exists(json, 'description') ? undefined : json['description'],
