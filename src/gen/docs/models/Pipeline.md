@@ -9,7 +9,9 @@ Name | Type | Description | Notes
 `id` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `archived` | **boolean** |  | [optional] 
+`active` | **boolean** |  | [optional] 
 `display_order` | **number** |  | [optional] 
+`win_probability_enabled` | **boolean** |  | [optional] 
 `stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
@@ -22,6 +24,8 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
+
 
 
 * [`PipelineStages`](PipelineStages.md)

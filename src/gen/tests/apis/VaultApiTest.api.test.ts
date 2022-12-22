@@ -106,6 +106,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -219,6 +229,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -352,6 +372,16 @@ describe('VaultApi', () => {
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
             settings_required_for_authorization: ['client_id', 'client_secret'],
+            subscriptions: [
+              {
+                downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+                unify_event_types: ['crm.contact.created'],
+                downstream_event_types: ['contacts.CREATED'],
+                execute_url:
+                  'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+                created_at: '2020-10-01T12:00:00.000Z'
+              }
+            ],
             has_guide: true,
             created_at: 1615563533390,
             updated_at: 1616662325753
@@ -494,6 +524,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -624,6 +664,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -736,6 +786,16 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
           has_guide: true,
           created_at: 1615563533390,
           updated_at: 1616662325753
@@ -915,7 +975,7 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           consumer_id: 'test_consumer_id',
-          application_id: '1111',
+          application_id: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
           metadata: {
             account_name: 'SpaceX',
             user_name: 'Elon Musk',
@@ -1008,7 +1068,7 @@ describe('VaultApi', () => {
             has_children: false,
             http_method: 'GET',
             id: '0b5f7480-5550-4f5c-a5fc-3c01ac43dd0f',
-            latency: 27.620695999999953,
+            latency: '27.620695999999953===',
             operation: {
               id: 'connectionsAll',
               name: 'Get All Connections'
@@ -1115,6 +1175,7 @@ describe('VaultApi', () => {
             session_length: '30m',
             show_logs: true,
             show_suggestions: false,
+            show_sidebar: true,
             auto_redirect: false
           },
           theme: {

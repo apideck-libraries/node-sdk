@@ -35,7 +35,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -83,7 +83,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -115,7 +115,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -162,7 +162,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -202,7 +202,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -235,7 +235,7 @@ describe('CrmApi', () => {
             video_conference_id: 'zoom:88120759396',
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -312,7 +312,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -391,7 +391,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -424,7 +424,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -489,7 +489,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'activities',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -538,7 +538,7 @@ describe('CrmApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -570,7 +570,7 @@ describe('CrmApi', () => {
           video_conference_id: 'zoom:88120759396',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -617,7 +617,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -685,7 +685,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -727,7 +727,7 @@ describe('CrmApi', () => {
           },
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -765,7 +765,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -826,7 +826,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -868,7 +868,7 @@ describe('CrmApi', () => {
             },
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -933,7 +933,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1033,7 +1033,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1075,7 +1075,7 @@ describe('CrmApi', () => {
           },
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1128,7 +1128,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1197,7 +1197,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1239,7 +1239,7 @@ describe('CrmApi', () => {
           },
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1277,7 +1277,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1336,7 +1336,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1372,9 +1372,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          email_domain: 'gmail.com',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1409,7 +1410,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1459,7 +1460,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1495,9 +1496,10 @@ describe('CrmApi', () => {
                 type: 'primary'
               }
             ],
+            email_domain: 'gmail.com',
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1558,7 +1560,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1647,7 +1649,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1683,9 +1685,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          email_domain: 'gmail.com',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1734,7 +1737,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1794,7 +1797,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1830,9 +1833,10 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          email_domain: 'gmail.com',
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1867,7 +1871,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1918,7 +1922,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1956,7 +1960,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1991,7 +1995,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2033,7 +2037,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -2071,7 +2075,7 @@ describe('CrmApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -2129,7 +2133,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2210,7 +2214,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2248,7 +2252,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2294,7 +2298,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2346,7 +2350,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2384,7 +2388,7 @@ describe('CrmApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2419,7 +2423,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2468,7 +2472,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2533,7 +2537,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2625,7 +2629,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'notes',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2675,7 +2679,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'opportunities',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2716,7 +2720,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2751,7 +2755,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'opportunities',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2785,7 +2789,7 @@ describe('CrmApi', () => {
             interaction_count: 0,
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -2850,7 +2854,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2923,7 +2927,7 @@ describe('CrmApi', () => {
           interaction_count: 0,
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2976,7 +2980,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3018,7 +3022,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -3053,7 +3057,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3070,7 +3074,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               name: 'Contract Sent',
@@ -3107,14 +3113,16 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: 'default',
             name: 'Sales Pipeline',
             currency: 'USD',
             archived: false,
+            active: false,
             display_order: 1,
+            win_probability_enabled: true,
             stages: [
               {
                 id: 'contractsent',
@@ -3175,7 +3183,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3221,7 +3229,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               id: 'contractsent',
@@ -3270,7 +3280,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'pipelines',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3288,7 +3298,9 @@ describe('CrmApi', () => {
           name: 'Sales Pipeline',
           currency: 'USD',
           archived: false,
+          active: false,
           display_order: 1,
+          win_probability_enabled: true,
           stages: [
             {
               name: 'Contract Sent',
@@ -3325,7 +3337,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3367,7 +3379,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -3424,7 +3436,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -3457,7 +3469,7 @@ describe('CrmApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -3537,7 +3549,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'users',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3609,7 +3621,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -3677,7 +3689,7 @@ describe('CrmApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3720,7 +3732,7 @@ describe('CrmApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',

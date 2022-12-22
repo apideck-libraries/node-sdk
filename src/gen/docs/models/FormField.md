@@ -5,16 +5,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`label` | **string** |  | [optional] 
-`placeholder` | **string** |  | [optional] 
-`description` | **string** |  | [optional] 
+`id` | **string** | The unique identifier of the form field. | [optional] 
+`label` | **string** | The label of the field | [optional] 
+`placeholder` | **string** | The placeholder for the form field | [optional] 
+`description` | **string** | The description of the form field | [optional] 
 `type` | **string** |  | [optional] 
-`required` | **boolean** |  | [optional] 
+`required` | **boolean** | Indicates if the form field is required, which means it must be filled in before the form can be submitted | [optional] 
 `custom_field` | **boolean** |  | [optional] 
 `allow_custom_values` | **boolean** | Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list. | [optional] 
-`disabled` | **boolean** |  | [optional] 
-`sensitive` | **boolean** |  | [optional] 
+`disabled` | **boolean** | Indicates if the form field is displayed in a “read-only” mode. | [optional] 
+`hidden` | **boolean** | Indicates if the form field is not displayed but the value that is being stored on the connection. | [optional] 
+`sensitive` | **boolean** | Indicates if the form field contains sensitive data, which will display the value as a masked input. | [optional] 
 `options` | [**Array&lt;FormFieldOption&gt;**](FormFieldOption.md) |  | [optional] 
 
 
@@ -55,6 +56,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

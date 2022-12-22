@@ -192,7 +192,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -225,6 +225,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -253,6 +255,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    bill_number: '10001',
     row_version: '1-12345'
   }
 }
@@ -549,7 +552,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -582,6 +585,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -610,6 +615,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    bill_number: '10001',
     row_version: '1-12345'
   }
 }
@@ -750,7 +756,8 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
     },
     currency: 'USD',
     currency_rate: 0.69,
@@ -766,6 +773,11 @@ const params = {
     date_issued: '2021-05-01T12:00:00.000Z',
     date_paid: '2021-05-01T12:00:00.000Z',
     type: 'accounts_receivable_credit',
+    account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
     line_items: [
       {
         row_id: '12345',
@@ -779,6 +791,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -1083,7 +1097,8 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
     },
     currency: 'USD',
     currency_rate: 0.69,
@@ -1099,6 +1114,11 @@ const params = {
     date_issued: '2021-05-01T12:00:00.000Z',
     date_paid: '2021-05-01T12:00:00.000Z',
     type: 'accounts_receivable_credit',
+    account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
     line_items: [
       {
         row_id: '12345',
@@ -1112,6 +1132,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -1229,7 +1251,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -1589,7 +1611,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -2155,7 +2177,8 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-09-30',
@@ -2170,6 +2193,7 @@ const params = {
     sub_total: 27500,
     total_tax: 2500,
     tax_code: '1234',
+    discount_percentage: 5.5,
     total: 27500,
     balance: 27500,
     deposit: 0,
@@ -2187,6 +2211,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -2215,7 +2241,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2240,7 +2266,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2537,7 +2563,8 @@ const params = {
     number: 'OIT00546',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
     },
     invoice_date: '2020-09-30',
     due_date: '2020-09-30',
@@ -2552,6 +2579,7 @@ const params = {
     sub_total: 27500,
     total_tax: 2500,
     tax_code: '1234',
+    discount_percentage: 5.5,
     total: 27500,
     balance: 27500,
     deposit: 0,
@@ -2569,6 +2597,8 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        location_id: '1234',
+        department_id: '1234',
         item: {
           id: '12344'
         },
@@ -2597,7 +2627,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2622,7 +2652,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -3148,7 +3178,37 @@ const params = {
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
+    },
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
+      }
     },
     reconciled: true,
     status: 'authorised',
@@ -3161,7 +3221,8 @@ const params = {
       }
     ],
     note: 'Some notes about this payment',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    display_id: '123456'
   }
 }
 
@@ -3456,7 +3517,37 @@ const params = {
     transaction_date: '2021-05-01T12:00:00.000Z',
     customer: {
       id: '12345',
-      display_name: 'Windsurf Shop'
+      display_name: 'Windsurf Shop',
+      name: 'Windsurf Shop'
+    },
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        row_version: '1-12345'
+      }
     },
     reconciled: true,
     status: 'authorised',
@@ -3469,7 +3560,8 @@ const params = {
       }
     ],
     note: 'Some notes about this payment',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    display_id: '123456'
   }
 }
 
@@ -3629,7 +3721,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',
@@ -3991,7 +4083,7 @@ const params = {
         state: 'CA',
         postal_code: '94104',
         country: 'US',
-        latitude: 40.759211,
+        latitude: '40.759211',
         longitude: '-73.984638',
         county: 'Santa Clara',
         contact_name: 'Elon Musk',

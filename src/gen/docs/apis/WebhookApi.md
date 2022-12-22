@@ -6,11 +6,11 @@
 ## Methods
 
 * [List Event Logs](#eventLogsAll)
-* [Create Webhook](#webhooksAdd)
-* [List Webhooks](#webhooksAll)
-* [Delete Webhook](#webhooksDelete)
-* [Get Webhook](#webhooksOne)
-* [Update Webhook](#webhooksUpdate)
+* [Create Webhook Subscription](#webhooksAdd)
+* [List Webhook Subscriptions](#webhooksAll)
+* [Delete Webhook Subscription](#webhooksDelete)
+* [Get Webhook Subscription](#webhooksOne)
+* [Update Webhook Subscription](#webhooksUpdate)
 
 <a name="eventLogsAll"></a>
 # List Event Logs
@@ -78,7 +78,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="webhooksAdd"></a>
-# Create Webhook
+# Create Webhook Subscription
 
 
 Method: **webhooksAdd**
@@ -152,7 +152,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="webhooksAll"></a>
-# List Webhooks
+# List Webhook Subscriptions
 
 
 Method: **webhooksAll**
@@ -216,7 +216,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="webhooksDelete"></a>
-# Delete Webhook
+# Delete Webhook Subscription
 
 
 Method: **webhooksDelete**
@@ -281,7 +281,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="webhooksOne"></a>
-# Get Webhook
+# Get Webhook Subscription
 
 
 Method: **webhooksOne**
@@ -346,7 +346,7 @@ try {
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="webhooksUpdate"></a>
-# Update Webhook
+# Update Webhook Subscription
 
 
 Method: **webhooksUpdate**

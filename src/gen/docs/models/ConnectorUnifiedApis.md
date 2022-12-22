@@ -6,7 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | [**UnifiedApiId**](UnifiedApiId.md) |  | [optional] 
+`name` | **string** | Name of the API. | [optional] 
 `oauth_scopes` | [**Array&lt;ConnectorOauthScopes1&gt;**](ConnectorOauthScopes1.md) |  | [optional] 
+`supported_resources` | [**Array&lt;LinkedConnectorResource&gt;**](LinkedConnectorResource.md) | List of resources that are supported on the connector. | [optional] 
+`downstream_unsupported_resources` | **Array&lt;string&gt;** | List of resources that are not supported on the downstream. | [optional] 
+`supported_events` | [**Array&lt;ConnectorEvent&gt;**](ConnectorEvent.md) | List of events that are supported on the connector for this Unified API. | [optional] 
 
 
 
@@ -14,7 +18,11 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 * [`UnifiedApiId`](UnifiedApiId.md)
+
 * [`ConnectorOauthScopes1`](ConnectorOauthScopes1.md)
+* [`LinkedConnectorResource`](LinkedConnectorResource.md)
+
+* [`ConnectorEvent`](ConnectorEvent.md)
 
 ---
 

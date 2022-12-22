@@ -1,11 +1,11 @@
-# Apideck.ApiResourceCoverageSupportedFields
+# Apideck.ApplicantsFilter
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`unified_property` | **string** | Name of the property in our Unified API. | [optional] 
+`job_id` | **string** | Id of the job to filter on | [optional] 
 
 
 

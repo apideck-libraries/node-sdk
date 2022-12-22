@@ -51,6 +51,8 @@
 
 * `vault_connection_updated` (value: `'vault.connection.updated'`)
 
+* `vault_connection_disabled` (value: `'vault.connection.disabled'`)
+
 * `vault_connection_deleted` (value: `'vault.connection.deleted'`)
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)
@@ -176,6 +178,12 @@
 * `hris_company_updated` (value: `'hris.company.updated'`)
 
 * `hris_company_deleted` (value: `'hris.company.deleted'`)
+
+* `file_storage_file_created` (value: `'file-storage.file.created'`)
+
+* `file_storage_file_updated` (value: `'file-storage.file.updated'`)
+
+* `file_storage_file_deleted` (value: `'file-storage.file.deleted'`)
 
 
 ---

@@ -35,7 +35,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -68,7 +68,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -133,7 +133,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -157,7 +157,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -248,7 +248,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -311,7 +311,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -390,7 +390,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'undefined',
         resource: 'Companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -424,7 +424,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -489,7 +489,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -533,10 +533,11 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
+            parent_id: '22345',
             name: 'R&amp;D',
             code: '2',
             description: 'R&amp;D',
@@ -593,7 +594,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -636,6 +637,7 @@ describe('HrisApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          parent_id: '22345',
           name: 'R&amp;D',
           code: '2',
           description: 'R&amp;D',
@@ -680,7 +682,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'workday',
         resource: 'Departments',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -725,7 +727,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -749,7 +751,9 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
+            department_id: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -758,6 +762,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'resigned',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -787,10 +792,9 @@ describe('HrisApi', () => {
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
             timezone: 'Europe/London',
-            source:
-              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-            source_id:
-              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            source: 'lever',
+            source_id: '12345',
+            record_url: 'https://app.intercom.io/contacts/12345',
             jobs: [
               {
                 id: '12345',
@@ -818,7 +822,7 @@ describe('HrisApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -833,8 +837,8 @@ describe('HrisApi', () => {
             ],
             compensations: [
               {
-                id: 3404301363494309004,
-                job_id: 3490439050957906679,
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
                 rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
@@ -857,7 +861,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -888,7 +892,7 @@ describe('HrisApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1006,7 +1010,9 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
+            department_id: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1015,6 +1021,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'resigned',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1044,10 +1051,9 @@ describe('HrisApi', () => {
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
             timezone: 'Europe/London',
-            source:
-              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-            source_id:
-              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            source: 'lever',
+            source_id: '12345',
+            record_url: 'https://app.intercom.io/contacts/12345',
             jobs: [
               {
                 id: '12345',
@@ -1075,7 +1081,7 @@ describe('HrisApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -1090,8 +1096,8 @@ describe('HrisApi', () => {
             ],
             compensations: [
               {
-                id: 3404301363494309004,
-                job_id: 3490439050957906679,
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
                 rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
@@ -1114,7 +1120,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1145,7 +1151,7 @@ describe('HrisApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1238,7 +1244,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -1262,7 +1268,9 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
+            department_id: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1271,6 +1279,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'resigned',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1300,10 +1309,9 @@ describe('HrisApi', () => {
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
             timezone: 'Europe/London',
-            source:
-              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-            source_id:
-              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            source: 'lever',
+            source_id: '12345',
+            record_url: 'https://app.intercom.io/contacts/12345',
             jobs: [
               {
                 id: '12345',
@@ -1331,7 +1339,7 @@ describe('HrisApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -1346,8 +1354,8 @@ describe('HrisApi', () => {
             ],
             compensations: [
               {
-                id: 3404301363494309004,
-                job_id: 3490439050957906679,
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
                 rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
@@ -1370,7 +1378,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1401,7 +1409,7 @@ describe('HrisApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1490,7 +1498,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1522,7 +1530,9 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
+          department_id: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'
@@ -1531,6 +1541,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'resigned',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -1559,10 +1570,9 @@ describe('HrisApi', () => {
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
           timezone: 'Europe/London',
-          source:
-            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-          source_id:
-            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+          source: 'lever',
+          source_id: '12345',
+          record_url: 'https://app.intercom.io/contacts/12345',
           jobs: [
             {
               title: 'CEO',
@@ -1588,7 +1598,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1603,8 +1613,8 @@ describe('HrisApi', () => {
           ],
           compensations: [
             {
-              id: 3404301363494309004,
-              job_id: 3490439050957906679,
+              id: '3404301363494309004',
+              job_id: '3490439050957906679',
               rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
@@ -1627,7 +1637,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -1658,7 +1668,7 @@ describe('HrisApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -1706,7 +1716,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1730,7 +1740,9 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
+            department_id: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1739,6 +1751,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'resigned',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -1768,10 +1781,9 @@ describe('HrisApi', () => {
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
             timezone: 'Europe/London',
-            source:
-              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-            source_id:
-              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            source: 'lever',
+            source_id: '12345',
+            record_url: 'https://app.intercom.io/contacts/12345',
             jobs: [
               {
                 id: '12345',
@@ -1799,7 +1811,7 @@ describe('HrisApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -1814,8 +1826,8 @@ describe('HrisApi', () => {
             ],
             compensations: [
               {
-                id: 3404301363494309004,
-                job_id: 3490439050957906679,
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
                 rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
@@ -1838,7 +1850,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -1869,7 +1881,7 @@ describe('HrisApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -1942,7 +1954,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2005,7 +2017,9 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
+          department_id: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'
@@ -2014,6 +2028,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'resigned',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -2043,10 +2058,9 @@ describe('HrisApi', () => {
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
           timezone: 'Europe/London',
-          source:
-            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-          source_id:
-            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+          source: 'lever',
+          source_id: '12345',
+          record_url: 'https://app.intercom.io/contacts/12345',
           jobs: [
             {
               id: '12345',
@@ -2074,7 +2088,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -2089,8 +2103,8 @@ describe('HrisApi', () => {
           ],
           compensations: [
             {
-              id: 3404301363494309004,
-              job_id: 3490439050957906679,
+              id: '3404301363494309004',
+              job_id: '3490439050957906679',
               rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
@@ -2113,7 +2127,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2144,7 +2158,7 @@ describe('HrisApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2205,7 +2219,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -2238,7 +2252,9 @@ describe('HrisApi', () => {
             deceased_on: '2000-08-12'
           },
           division: 'Europe',
+          division_id: '12345',
           department: 'R&amp;D',
+          department_id: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'
@@ -2247,6 +2263,7 @@ describe('HrisApi', () => {
           company_name: 'SpaceX',
           employment_start_date: '2021-10-26',
           employment_end_date: '2028-10-26',
+          leaving_reason: 'resigned',
           employee_number: '123456-AB',
           employment_status: 'active',
           employment_role: {
@@ -2275,10 +2292,9 @@ describe('HrisApi', () => {
           nationalities: ['US'],
           photo_url: 'https://unavatar.io/elon-musk',
           timezone: 'Europe/London',
-          source:
-            'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-          source_id:
-            'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+          source: 'lever',
+          source_id: '12345',
+          record_url: 'https://app.intercom.io/contacts/12345',
           jobs: [
             {
               title: 'CEO',
@@ -2304,7 +2320,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -2319,8 +2335,8 @@ describe('HrisApi', () => {
           ],
           compensations: [
             {
-              id: 3404301363494309004,
-              job_id: 3490439050957906679,
+              id: '3404301363494309004',
+              job_id: '3490439050957906679',
               rate: 50,
               payment_unit: 'hour',
               flsa_status: 'nonexempt',
@@ -2343,7 +2359,7 @@ describe('HrisApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -2374,7 +2390,7 @@ describe('HrisApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -2422,7 +2438,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: {
           employee: {
             id: '12345',
@@ -2446,7 +2462,9 @@ describe('HrisApi', () => {
               deceased_on: '2000-08-12'
             },
             division: 'Europe',
+            division_id: '12345',
             department: 'R&amp;D',
+            department_id: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -2455,6 +2473,7 @@ describe('HrisApi', () => {
             company_name: 'SpaceX',
             employment_start_date: '2021-10-26',
             employment_end_date: '2028-10-26',
+            leaving_reason: 'resigned',
             employee_number: '123456-AB',
             employment_status: 'active',
             employment_role: {
@@ -2484,10 +2503,9 @@ describe('HrisApi', () => {
             nationalities: ['US'],
             photo_url: 'https://unavatar.io/elon-musk',
             timezone: 'Europe/London',
-            source:
-              'When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.',
-            source_id:
-              'Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).',
+            source: 'lever',
+            source_id: '12345',
+            record_url: 'https://app.intercom.io/contacts/12345',
             jobs: [
               {
                 id: '12345',
@@ -2515,7 +2533,7 @@ describe('HrisApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -2530,8 +2548,8 @@ describe('HrisApi', () => {
             ],
             compensations: [
               {
-                id: 3404301363494309004,
-                job_id: 3490439050957906679,
+                id: '3404301363494309004',
+                job_id: '3490439050957906679',
                 rate: 50,
                 payment_unit: 'hour',
                 flsa_status: 'nonexempt',
@@ -2554,7 +2572,7 @@ describe('HrisApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -2585,7 +2603,7 @@ describe('HrisApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -2711,7 +2729,7 @@ describe('HrisApi', () => {
         status: 'OK',
         service: 'sage-hr',
         resource: 'Employees',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2837,6 +2855,290 @@ describe('HrisApi', () => {
         payrollId: 'payroll_id_example'
       } as any
       const current = await hris.payrollsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsAdd', () => {
+    const endpoint = '/hris/time-off-requests'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'time-off-requests',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        timeOffRequest: {
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacation',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          }
+        }
+      } as any
+      const current = await hris.timeOffRequestsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsAll', () => {
+    const endpoint = '/hris/time-off-requests'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'time-off-requests',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            employee_id: '12345',
+            policy_id: '12345',
+            status: 'approved',
+            description: 'Enjoying some sun.',
+            start_date: '2022-04-01',
+            end_date: '2022-04-01',
+            request_date: '2022-03-21',
+            request_type: 'vacation',
+            approval_date: '2022-03-21',
+            units: 'hours',
+            amount: 3.5,
+            notes: {
+              employee: 'Relaxing on the beach for a few hours.',
+              manager: 'Enjoy!'
+            },
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {} as any
+      const current = await hris.timeOffRequestsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsDelete', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'time-off-requests',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await hris.timeOffRequestsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsOne', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'time-off-requests',
+        operation: 'one',
+        data: {
+          id: '12345',
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacation',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          },
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await hris.timeOffRequestsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#timeOffRequestsUpdate', () => {
+    const endpoint = '/hris/time-off-requests/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'bamboohr',
+        resource: 'time-off-requests',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { hris } = apideck
+      const params = {
+        id: 'id_example',
+        timeOffRequest: {
+          employee_id: '12345',
+          policy_id: '12345',
+          status: 'approved',
+          description: 'Enjoying some sun.',
+          start_date: '2022-04-01',
+          end_date: '2022-04-01',
+          request_date: '2022-03-21',
+          request_type: 'vacation',
+          approval_date: '2022-03-21',
+          units: 'hours',
+          amount: 3.5,
+          notes: {
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!'
+          }
+        }
+      } as any
+      const current = await hris.timeOffRequestsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

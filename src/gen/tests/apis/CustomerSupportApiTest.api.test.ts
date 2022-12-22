@@ -35,7 +35,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -67,7 +67,7 @@ describe('CustomerSupportApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -139,7 +139,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -162,7 +162,7 @@ describe('CustomerSupportApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -259,7 +259,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -321,7 +321,7 @@ describe('CustomerSupportApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -406,7 +406,7 @@ describe('CustomerSupportApi', () => {
         status: 'OK',
         service: 'kustomer',
         resource: 'customers',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -439,7 +439,7 @@ describe('CustomerSupportApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
