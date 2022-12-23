@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { VirtualWebhooks, VirtualWebhooksFromJSON, VirtualWebhooksToJSON } from './VirtualWebhooks'
+
 /**
  *
  * @export
@@ -26,7 +28,7 @@ export interface WebhookSupport {
    */
   mode?: WebhookSupportMode
   /**
-   * Received events are scoped to consumer or across integration.
+   * Received events are scoped to connection or across integration.
    * @type {string}
    * @memberof WebhookSupport
    */
@@ -37,6 +39,12 @@ export interface WebhookSupport {
    * @memberof WebhookSupport
    */
   managed_via?: WebhookSupportManagedVia
+  /**
+   *
+   * @type {VirtualWebhooks}
+   * @memberof WebhookSupport
+   */
+  virtual_webhooks?: VirtualWebhooks
 }
 
 /**
@@ -53,7 +61,7 @@ export enum WebhookSupportMode {
  * @enum {string}
  */
 export enum WebhookSupportSubscriptionLevel {
-  consumer = 'consumer',
+  connection = 'connection',
   integration = 'integration'
 }
 /**
@@ -81,7 +89,10 @@ export function WebhookSupportFromJSONTyped(
     subscription_level: !exists(json, 'subscription_level')
       ? undefined
       : json['subscription_level'],
-    managed_via: !exists(json, 'managed_via') ? undefined : json['managed_via']
+    managed_via: !exists(json, 'managed_via') ? undefined : json['managed_via'],
+    virtual_webhooks: !exists(json, 'virtual_webhooks')
+      ? undefined
+      : VirtualWebhooksFromJSON(json['virtual_webhooks'])
   }
 }
 
@@ -95,6 +106,7 @@ export function WebhookSupportToJSON(value?: WebhookSupport | null): any {
   return {
     mode: value.mode,
     subscription_level: value.subscription_level,
-    managed_via: value.managed_via
+    managed_via: value.managed_via,
+    virtual_webhooks: VirtualWebhooksToJSON(value.virtual_webhooks)
   }
 }

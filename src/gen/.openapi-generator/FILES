@@ -427,6 +427,7 @@ ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
 RequestCountAllocation.md
+RequestRate.md
 ResolveWebhookEventRequest.md
 ResolveWebhookEventsRequest.md
 ResolveWebhookResponse.md
@@ -514,6 +515,7 @@ User.md
 VaultApi.md
 VaultApiTest.api.test.ts
 VaultEventType.md
+VirtualWebhooks.md
 WalletDetails.md
 Webhook.md
 WebhookApi.md
@@ -939,6 +941,7 @@ models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
 models/RequestCountAllocation.ts
+models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
 models/ResolveWebhookEventsRequest.ts
 models/ResolveWebhookResponse.ts
@@ -1022,6 +1025,7 @@ models/UpdateWebhookResponse.ts
 models/UploadSession.ts
 models/User.ts
 models/VaultEventType.ts
+models/VirtualWebhooks.ts
 models/WalletDetails.ts
 models/Webhook.ts
 models/WebhookEventLog.ts
