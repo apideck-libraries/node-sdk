@@ -1,0 +1,19 @@
+name: Sync branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-branch:
+    name: Update generator-update branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: generator-update
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: false

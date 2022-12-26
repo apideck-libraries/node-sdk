@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 `headline` | **string** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
 `title` | **string** |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `websites` | [**Array&lt;ApplicantWebsites&gt;**](ApplicantWebsites.md) |  | [optional] 
@@ -43,6 +44,8 @@ Name | Type | Description | Notes
 `deleted` | **boolean** |  | [optional] 
 `deleted_by` | **string** |  | [optional] 
 `deleted_at` | **Date** |  | [optional] 
+`updated_by` | **string** |  | [optional] 
+`created_by` | **string** |  | [optional] 
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
@@ -65,6 +68,7 @@ Name | Type | Description | Notes
 
 
 * [`Email`](Email.md)
+* [`CustomField`](CustomField.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Address`](Address.md)
 * [`ApplicantWebsites`](ApplicantWebsites.md)
@@ -79,6 +83,8 @@ Name | Type | Description | Notes
 
 
 * [`Tags`](Tags.md)
+
+
 
 
 

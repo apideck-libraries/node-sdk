@@ -7,6 +7,8 @@
 
 * `client_credentials` (value: `'client_credentials'`)
 
+* `password` (value: `'password'`)
+
 
 ---
 

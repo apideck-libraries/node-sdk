@@ -33,8 +33,6 @@
 
 * `transactional_email` (value: `'transactional-email'`)
 
-* `hcm` (value: `'hcm'`)
-
 * `form` (value: `'form'`)
 
 * `csp` (value: `'csp'`)
@@ -46,6 +44,14 @@
 * `hris` (value: `'hris'`)
 
 * `pos` (value: `'pos'`)
+
+* `project_management` (value: `'project-management'`)
+
+* `expense_management` (value: `'expense-management'`)
+
+* `calendar` (value: `'calendar'`)
+
+* `procurement` (value: `'procurement'`)
 
 
 ---

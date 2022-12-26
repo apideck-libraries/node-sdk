@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -35,7 +35,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -86,7 +86,7 @@ describe('LeadApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -124,7 +124,7 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -159,7 +159,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -201,7 +201,7 @@ describe('LeadApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -239,7 +239,7 @@ describe('LeadApi', () => {
             ],
             custom_fields: [
               {
-                id: 2389328923893298,
+                id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo'
@@ -297,7 +297,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -378,7 +378,7 @@ describe('LeadApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -416,7 +416,7 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'
@@ -462,7 +462,7 @@ describe('LeadApi', () => {
         status: 'OK',
         service: 'zoho-crm',
         resource: 'companies',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -514,7 +514,7 @@ describe('LeadApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -552,7 +552,7 @@ describe('LeadApi', () => {
           ],
           custom_fields: [
             {
-              id: 2389328923893298,
+              id: '2389328923893298',
               name: 'employee_level',
               description: 'Employee Level',
               value: 'Uses Salesforce and Marketo'

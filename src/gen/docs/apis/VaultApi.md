@@ -919,6 +919,7 @@ const params = {
       session_length: '30m',
       show_logs: true,
       show_suggestions: false,
+      show_sidebar: true,
       auto_redirect: false
     },
     theme: {

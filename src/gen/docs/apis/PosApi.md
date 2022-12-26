@@ -597,7 +597,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -905,7 +905,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1004,7 +1004,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -1323,7 +1323,7 @@ const params = {
       state: 'CA',
       postal_code: '94104',
       country: 'US',
-      latitude: 40.759211,
+      latitude: '40.759211',
       longitude: '-73.984638',
       county: 'Santa Clara',
       contact_name: 'Elon Musk',
@@ -2628,9 +2628,12 @@ const params = {
         ],
         modifiers: [
           {
+            id: '12345',
             name: 'New York Strip Steak - no cheese',
             amount: 27500,
-            currency: 'USD'
+            currency: 'USD',
+            alternate_name: 'Modifier New',
+            modifier_group_id: '123'
           }
         ]
       }
@@ -2724,7 +2727,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -3132,9 +3135,12 @@ const params = {
         ],
         modifiers: [
           {
+            id: '12345',
             name: 'New York Strip Steak - no cheese',
             amount: 27500,
-            currency: 'USD'
+            currency: 'USD',
+            alternate_name: 'Modifier New',
+            modifier_group_id: '123'
           }
         ]
       }
@@ -3228,7 +3234,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -3429,9 +3435,12 @@ const params = {
         ],
         modifiers: [
           {
+            id: '12345',
             name: 'New York Strip Steak - no cheese',
             amount: 27500,
-            currency: 'USD'
+            currency: 'USD',
+            alternate_name: 'Modifier New',
+            modifier_group_id: '123'
           }
         ]
       }
@@ -3525,7 +3534,7 @@ const params = {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -3675,7 +3684,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',
@@ -4060,7 +4069,7 @@ const params = {
           state: 'CA',
           postal_code: '94104',
           country: 'US',
-          latitude: 40.759211,
+          latitude: '40.759211',
           longitude: '-73.984638',
           county: 'Santa Clara',
           contact_name: 'Elon Musk',

@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -35,7 +35,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -85,7 +85,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -103,8 +103,8 @@ describe('SmsApi', () => {
             webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
             reference: 'CUST001',
             price: {
-              per_unit: 0.01,
-              total_amount: 0.01,
+              per_unit: '0.01',
+              total_amount: '0.01',
               currency: 'USD'
             },
             error: {
@@ -165,7 +165,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -222,8 +222,8 @@ describe('SmsApi', () => {
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
           price: {
-            per_unit: 0.01,
-            total_amount: 0.01,
+            per_unit: '0.01',
+            total_amount: '0.01',
             currency: 'USD'
           },
           error: {
@@ -272,7 +272,7 @@ describe('SmsApi', () => {
         status: 'OK',
         service: 'twilio',
         resource: 'Messages',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

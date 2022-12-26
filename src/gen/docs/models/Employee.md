@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** |  | 
-`first_name` | **string** |  | 
-`last_name` | **string** |  | 
+`first_name` | **string** |  | [optional] 
+`last_name` | **string** |  | [optional] 
 `middle_name` | **string** |  | [optional] 
 `display_name` | **string** |  | [optional] 
 `preferred_name` | **string** |  | [optional] 
@@ -17,12 +17,15 @@ Name | Type | Description | Notes
 `marital_status` | **string** |  | [optional] 
 `partner` | [**EmployeePartner**](EmployeePartner.md) |  | [optional] 
 `division` | **string** | The division the user is currently in. | [optional] 
+`division_id` | **string** | Unique identifier of the division this employee belongs to. | [optional] 
 `department` | **string** | The department the user is currently in. | [optional] 
+`department_id` | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
 `company_id` | **string** |  | [optional] 
 `company_name` | **string** |  | [optional] 
 `employment_start_date` | **string** | A Start Date is the date that the employee started working at the company | [optional] 
 `employment_end_date` | **string** | A Start Date is the date that the employee ended working at the company | [optional] 
+`leaving_reason` | **string** | The reason because the employment ended | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `employment_status` | **string** |  | [optional] 
 `employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
@@ -40,8 +43,9 @@ Name | Type | Description | Notes
 `nationalities` | **Array&lt;string&gt;** |  | [optional] 
 `photo_url` | **string** |  | [optional] 
 `timezone` | **string** |  | [optional] 
-`source` | **string** |  | [optional] 
-`source_id` | **string** |  | [optional] 
+`source` | **string** | When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from. | [optional] 
+`source_id` | **string** | Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS). | [optional] 
+`record_url` | **string** |  | [optional] 
 `jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
 `compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 `works_remote` | **boolean** | Indicates whether the employee works remote | [optional] 
@@ -62,6 +66,21 @@ Name | Type | Description | Notes
 `updated_at` | **Date** |  | [optional] 
 `created_at` | **Date** |  | [optional] 
 
+
+
+
+
+<a name="EmployeeLeavingReason"></a>
+## Enum: Employee.leaving_reason
+
+
+* `dismissed` (value: `'dismissed'`)
+
+* `resigned` (value: `'resigned'`)
+
+* `redundancy` (value: `'redundancy'`)
+
+* `other` (value: `'other'`)
 
 
 
@@ -95,7 +114,10 @@ Name | Type | Description | Notes
 * [`EmployeePartner`](EmployeePartner.md)
 
 
+
+
 * [`EmployeeTeam`](EmployeeTeam.md)
+
 
 
 
@@ -111,6 +133,7 @@ Name | Type | Description | Notes
 
 
 * [`Gender`](Gender.md)
+
 
 
 

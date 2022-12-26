@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `status` | **string** | Status to filter on | [optional] 
 `monetary_amount` | **number** | Monetary amount to filter on | [optional] 
 `win_probability` | **number** | Win probability to filter on | [optional] 
+`company_id` | **string** | Company ID to filter on | [optional] 
 
 
 

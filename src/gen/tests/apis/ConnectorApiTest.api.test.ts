@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -41,17 +41,24 @@ describe('ConnectorApi', () => {
               downstream_id: 'accounts',
               downstream_name: 'Accounts',
               pagination_supported: true,
+              pagination: {
+                mode: 'native',
+                paging_support: true,
+                limit_support: true
+              },
               supported_operations: ['all', 'one', 'add', 'update', 'delete'],
               supported_filters: ['name', 'email'],
               supported_sort_by: ['updated_at', 'created_at', 'name'],
               supported_fields: [
                 {
-                  unified_property: 'owner_id'
+                  unified_property: 'owner_id',
+                  child_properties: [Array]
                 }
               ],
               supported_list_fields: [
                 {
-                  unified_property: 'owner_id'
+                  unified_property: 'owner_id',
+                  child_properties: [Array]
                 }
               ]
             }
@@ -318,95 +325,7 @@ describe('ConnectorApi', () => {
     })
 
     it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        data: {
-          id: 'crm+salesforce',
-          name: 'Salesforce',
-          status: 'live',
-          description: 'A description',
-          icon_url:
-            'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
-          logo_url:
-            'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
-          website_url: 'https://www.salesforce.com',
-          auth_type: 'oauth2',
-          auth_only: true,
-          oauth_grant_type: 'authorization_code',
-          oauth_credentials_source: 'integration',
-          oauth_scopes: [
-            {
-              id: 'contacts:all',
-              label: 'Read/write on the Contacts resource',
-              default_apis: ['crm']
-            }
-          ],
-          has_sandbox_credentials: true,
-          settings: [
-            {
-              id: 'pipeline_id',
-              label: 'Pipeline',
-              type: 'select'
-            }
-          ],
-          service_id: 'close',
-          unified_apis: [
-            {
-              id: 'crm',
-              oauth_scopes: [
-                {
-                  id: 'contacts:all',
-                  label: 'Read/write on the Contacts resource'
-                }
-              ]
-            }
-          ],
-          supported_resources: [
-            {
-              id: 'companies',
-              name: 'Companies',
-              status: 'live',
-              downstream_id: 'accounts',
-              downstream_name: 'Accounts'
-            }
-          ],
-          configurable_resources: ['leads', 'companies'],
-          supported_events: [
-            {
-              event_type: 'string',
-              downstream_event_type: 'string',
-              resource_id: 'companies'
-            }
-          ],
-          docs: [
-            {
-              id: '12345',
-              name: 'connection',
-              audience: 'application_owner',
-              format: 'markdown',
-              url: 'https://unify.apideck.com/connector/connectors/workday/docs/consumer+connection'
-            }
-          ],
-          tls_support: {
-            type: 'string',
-            description: 'string'
-          }
-        },
-        meta: {
-          items_on_page: 50,
-          cursors: {
-            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
-            current: 'em9oby1jcm06OnBhZ2U6OjI=',
-            next: 'em9oby1jcm06OnBhZ2U6OjM='
-          }
-        },
-        links: {
-          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
-          current: 'https://unify.apideck.com/crm/companies',
-          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
-      } as any
+      const mockedResponse: Record<string, unknown> = {} as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
         Promise.resolve(new Response(JSON.stringify(mockedResponse)))
@@ -447,17 +366,34 @@ describe('ConnectorApi', () => {
           downstream_name: 'Accounts',
           status: 'live',
           pagination_supported: true,
+          pagination: {
+            mode: 'native',
+            paging_support: true,
+            limit_support: true
+          },
+          custom_fields_supported: true,
           supported_operations: ['all', 'one', 'add', 'update', 'delete'],
+          downstream_unsupported_operations: ['upload'],
           supported_filters: ['name', 'email'],
           supported_sort_by: ['updated_at', 'created_at', 'name'],
           supported_fields: [
             {
-              unified_property: 'owner_id'
+              unified_property: 'owner_id',
+              child_properties: [
+                {
+                  unified_property: {}
+                }
+              ]
             }
           ],
           supported_list_fields: [
             {
-              unified_property: 'owner_id'
+              unified_property: 'owner_id',
+              child_properties: [
+                {
+                  unified_property: {}
+                }
+              ]
             }
           ]
         },
@@ -519,8 +455,11 @@ describe('ConnectorApi', () => {
             logo_url:
               'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
             website_url: 'https://www.salesforce.com',
+            signup_url: 'https://www.salesforce.com/signup',
+            free_trial_available: true,
             auth_type: 'oauth2',
             auth_only: true,
+            blind_mapped: true,
             oauth_grant_type: 'authorization_code',
             oauth_credentials_source: 'integration',
             oauth_scopes: [
@@ -530,6 +469,7 @@ describe('ConnectorApi', () => {
                 default_apis: ['crm']
               }
             ],
+            custom_scopes: true,
             has_sandbox_credentials: true,
             settings: [
               {
@@ -542,7 +482,11 @@ describe('ConnectorApi', () => {
             unified_apis: [
               {
                 id: 'crm',
-                oauth_scopes: [[Object]]
+                name: 'File Storage API',
+                oauth_scopes: [[Object]],
+                supported_resources: [[Object]],
+                downstream_unsupported_resources: ['companies'],
+                supported_events: [[Object]]
               }
             ],
             supported_resources: [
@@ -557,11 +501,25 @@ describe('ConnectorApi', () => {
             configurable_resources: ['leads', 'companies'],
             supported_events: [
               {
-                event_type: 'string',
-                downstream_event_type: 'string',
-                resource_id: 'companies'
+                event_type: 'employee.created',
+                event_source: 'native',
+                downstream_event_type: 'person_created',
+                resource: 'companies'
               }
             ],
+            webhook_support: {
+              mode: 'native',
+              subscription_level: 'integration',
+              managed_via: 'api',
+              virtual_webhooks: {
+                request_rate: {
+                  rate: 0,
+                  size: 0,
+                  unit: 'second'
+                },
+                resources: {}
+              }
+            },
             docs: [
               {
                 id: '12345',
@@ -631,8 +589,11 @@ describe('ConnectorApi', () => {
           logo_url:
             'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
           website_url: 'https://www.salesforce.com',
+          signup_url: 'https://www.salesforce.com/signup',
+          free_trial_available: true,
           auth_type: 'oauth2',
           auth_only: true,
+          blind_mapped: true,
           oauth_grant_type: 'authorization_code',
           oauth_credentials_source: 'integration',
           oauth_scopes: [
@@ -642,6 +603,7 @@ describe('ConnectorApi', () => {
               default_apis: ['crm']
             }
           ],
+          custom_scopes: true,
           has_sandbox_credentials: true,
           settings: [
             {
@@ -654,10 +616,29 @@ describe('ConnectorApi', () => {
           unified_apis: [
             {
               id: 'crm',
+              name: 'File Storage API',
               oauth_scopes: [
                 {
                   id: 'contacts:all',
                   label: 'Read/write on the Contacts resource'
+                }
+              ],
+              supported_resources: [
+                {
+                  id: 'companies',
+                  name: 'Companies',
+                  status: 'live',
+                  downstream_id: 'accounts',
+                  downstream_name: 'Accounts'
+                }
+              ],
+              downstream_unsupported_resources: ['companies'],
+              supported_events: [
+                {
+                  event_type: 'employee.created',
+                  event_source: 'native',
+                  downstream_event_type: 'person_created',
+                  resource: 'companies'
                 }
               ]
             }
@@ -674,11 +655,25 @@ describe('ConnectorApi', () => {
           configurable_resources: ['leads', 'companies'],
           supported_events: [
             {
-              event_type: 'string',
-              downstream_event_type: 'string',
-              resource_id: 'companies'
+              event_type: 'employee.created',
+              event_source: 'native',
+              downstream_event_type: 'person_created',
+              resource: 'companies'
             }
           ],
+          webhook_support: {
+            mode: 'native',
+            subscription_level: 'integration',
+            managed_via: 'api',
+            virtual_webhooks: {
+              request_rate: {
+                rate: 0,
+                size: 0,
+                unit: 'second'
+              },
+              resources: {}
+            }
+          },
           docs: [
             {
               id: '12345',

@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -35,7 +35,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -128,7 +128,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '#cocoa',
@@ -237,7 +237,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -373,7 +373,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Items',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -467,7 +467,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -496,7 +496,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -538,7 +538,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -558,7 +558,7 @@ describe('PosApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -625,7 +625,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -684,7 +684,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -739,7 +739,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Locations',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -769,7 +769,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -811,7 +811,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -839,7 +839,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -893,7 +893,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -912,7 +912,7 @@ describe('PosApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -992,7 +992,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1050,7 +1050,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -1118,7 +1118,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Merchants',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1147,7 +1147,7 @@ describe('PosApi', () => {
             state: 'CA',
             postal_code: '94104',
             country: 'US',
-            latitude: 40.759211,
+            latitude: '40.759211',
             longitude: '-73.984638',
             county: 'Santa Clara',
             contact_name: 'Elon Musk',
@@ -1201,7 +1201,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1260,7 +1260,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1335,7 +1335,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1437,7 +1437,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'ModifierGroups',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1497,7 +1497,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1545,7 +1545,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1609,7 +1609,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1700,7 +1700,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'Modifiers',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1749,7 +1749,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -1792,7 +1792,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -1851,7 +1851,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -1937,7 +1937,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'OrderTypes',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -1981,7 +1981,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2103,9 +2103,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -2200,7 +2203,7 @@ describe('PosApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -2248,7 +2251,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -2484,7 +2487,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -2642,9 +2645,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -2749,7 +2755,7 @@ describe('PosApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -2815,7 +2821,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -2938,9 +2944,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -3035,7 +3044,7 @@ describe('PosApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -3083,7 +3092,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Orders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3206,9 +3215,12 @@ describe('PosApi', () => {
               ],
               modifiers: [
                 {
+                  id: '12345',
                   name: 'New York Strip Steak - no cheese',
                   amount: 27500,
-                  currency: 'USD'
+                  currency: 'USD',
+                  alternate_name: 'Modifier New',
+                  modifier_group_id: '123'
                 }
               ]
             }
@@ -3303,7 +3315,7 @@ describe('PosApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -3351,7 +3363,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -3425,7 +3437,7 @@ describe('PosApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -3500,7 +3512,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -3566,7 +3578,7 @@ describe('PosApi', () => {
                   state: 'CA',
                   postal_code: '94104',
                   country: 'US',
-                  latitude: 40.759211,
+                  latitude: '40.759211',
                   longitude: '-73.984638',
                   county: 'Santa Clara',
                   contact_name: 'Elon Musk',
@@ -3667,7 +3679,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -3772,7 +3784,7 @@ describe('PosApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -3861,7 +3873,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'square',
         resource: 'PosPayments',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }
@@ -3936,7 +3948,7 @@ describe('PosApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -4011,7 +4023,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -4059,7 +4071,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -4123,7 +4135,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'delete',
         data: {
           id: '12345'
         }
@@ -4214,7 +4226,7 @@ describe('PosApi', () => {
         status: 'OK',
         service: 'clover',
         resource: 'Tenders',
-        operation: 'one',
+        operation: 'update',
         data: {
           id: '12345'
         }

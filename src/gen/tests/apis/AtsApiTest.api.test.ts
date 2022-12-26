@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -35,7 +35,7 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Applicants',
-        operation: 'one',
+        operation: 'add',
         data: {
           id: '12345'
         }
@@ -67,6 +67,14 @@ describe('AtsApi', () => {
               type: 'primary'
             }
           ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           phone_numbers: [
             {
               id: '12345',
@@ -92,7 +100,7 @@ describe('AtsApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -165,7 +173,7 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Applicants',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
@@ -187,6 +195,14 @@ describe('AtsApi', () => {
                 id: '123',
                 email: 'elon@musk.com',
                 type: 'primary'
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
               }
             ],
             phone_numbers: [
@@ -214,7 +230,7 @@ describe('AtsApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -267,6 +283,8 @@ describe('AtsApi', () => {
             deleted: true,
             deleted_by: '12345',
             deleted_at: '2020-09-30T07:43:32.000Z',
+            updated_by: '12345',
+            created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z'
           }
@@ -341,6 +359,14 @@ describe('AtsApi', () => {
               type: 'primary'
             }
           ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           phone_numbers: [
             {
               id: '12345',
@@ -366,7 +392,7 @@ describe('AtsApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
@@ -419,6 +445,8 @@ describe('AtsApi', () => {
           deleted: true,
           deleted_by: '12345',
           deleted_at: '2020-09-30T07:43:32.000Z',
+          updated_by: '12345',
+          created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
         }
@@ -458,14 +486,14 @@ describe('AtsApi', () => {
         status: 'OK',
         service: 'lever',
         resource: 'Jobs',
-        operation: 'one',
+        operation: 'all',
         data: [
           {
             id: '12345',
             slug: 'ceo',
             title: 'CEO',
             sequence: 3,
-            visibility: ['public'],
+            visibility: 'internal',
             status: 'completed',
             code: '123-OC',
             language: 'EN',
@@ -475,6 +503,7 @@ describe('AtsApi', () => {
             requisition_id: 'abc123',
             department: {
               id: '12345',
+              parent_id: '22345',
               name: 'R&amp;D',
               code: '2',
               description: 'R&amp;D',
@@ -529,7 +558,7 @@ describe('AtsApi', () => {
                 state: 'CA',
                 postal_code: '94104',
                 country: 'US',
-                latitude: 40.759211,
+                latitude: '40.759211',
                 longitude: '-73.984638',
                 county: 'Santa Clara',
                 contact_name: 'Elon Musk',
@@ -604,7 +633,7 @@ describe('AtsApi', () => {
           slug: 'ceo',
           title: 'CEO',
           sequence: 3,
-          visibility: ['public'],
+          visibility: 'internal',
           status: 'completed',
           code: '123-OC',
           language: 'EN',
@@ -614,6 +643,7 @@ describe('AtsApi', () => {
           requisition_id: 'abc123',
           department: {
             id: '12345',
+            parent_id: '22345',
             name: 'R&amp;D',
             code: '2',
             description: 'R&amp;D',
@@ -668,7 +698,7 @@ describe('AtsApi', () => {
               state: 'CA',
               postal_code: '94104',
               country: 'US',
-              latitude: 40.759211,
+              latitude: '40.759211',
               longitude: '-73.984638',
               county: 'Santa Clara',
               contact_name: 'Elon Musk',
