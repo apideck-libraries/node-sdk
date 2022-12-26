@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 `supported_resources` | [**Array&lt;LinkedConnectorResource&gt;**](LinkedConnectorResource.md) | List of resources that are supported on the connector. | [optional] 
 `configurable_resources` | **Array&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
 `supported_events` | [**Array&lt;ConnectorEvent&gt;**](ConnectorEvent.md) | List of events that are supported on the connector across all Unified APIs. | [optional] 
-`webhook_support` | [**Array&lt;WebhookSupport&gt;**](WebhookSupport.md) | How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling. | [optional] 
+`webhook_support` | [**WebhookSupport**](WebhookSupport.md) |  | [optional] 
 `docs` | [**Array&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
 `tls_support` | [**ConnectorTlsSupport**](ConnectorTlsSupport.md) |  | [optional] 
 

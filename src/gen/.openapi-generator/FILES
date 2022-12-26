@@ -6,6 +6,7 @@
 ../../LICENSE
 ../../README.md
 ../../package.json
+../../test/setupJest.js
 ../../tsconfig.json
 ../Apideck.ts
 ../index.ts

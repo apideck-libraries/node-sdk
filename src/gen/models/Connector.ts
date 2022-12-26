@@ -188,11 +188,11 @@ export interface Connector {
    */
   supported_events?: Array<ConnectorEvent>
   /**
-   * How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
-   * @type {Array<WebhookSupport>}
+   *
+   * @type {WebhookSupport}
    * @memberof Connector
    */
-  webhook_support?: Array<WebhookSupport>
+  webhook_support?: WebhookSupport
   /**
    *
    * @type {Array<ConnectorDoc>}
@@ -288,7 +288,7 @@ export function ConnectorFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : (json['supported_events'] as Array<any>).map(ConnectorEventFromJSON),
     webhook_support: !exists(json, 'webhook_support')
       ? undefined
-      : (json['webhook_support'] as Array<any>).map(WebhookSupportFromJSON),
+      : WebhookSupportFromJSON(json['webhook_support']),
     docs: !exists(json, 'docs')
       ? undefined
       : (json['docs'] as Array<any>).map(ConnectorDocFromJSON),
@@ -337,10 +337,7 @@ export function ConnectorToJSON(value?: Connector | null): any {
       value.supported_events === undefined
         ? undefined
         : (value.supported_events as Array<any>).map(ConnectorEventToJSON),
-    webhook_support:
-      value.webhook_support === undefined
-        ? undefined
-        : (value.webhook_support as Array<any>).map(WebhookSupportToJSON),
+    webhook_support: WebhookSupportToJSON(value.webhook_support),
     docs: value.docs === undefined ? undefined : (value.docs as Array<any>).map(ConnectorDocToJSON),
     tls_support: ConnectorTlsSupportToJSON(value.tls_support)
   }

@@ -16,7 +16,7 @@ import { exists } from '../runtime'
 import { VirtualWebhooks, VirtualWebhooksFromJSON, VirtualWebhooksToJSON } from './VirtualWebhooks'
 
 /**
- *
+ * How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
  * @export
  * @interface WebhookSupport
  */

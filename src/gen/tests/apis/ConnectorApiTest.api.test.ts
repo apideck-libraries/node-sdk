@@ -1,9 +1,9 @@
 import fetch from 'node-fetch-commonjs'
+import { Apideck } from '../../../'
+
 const { Response } = jest.requireActual('node-fetch-commonjs')
 
 jest.mock('node-fetch-commonjs', () => jest.fn())
-
-import { Apideck } from '../../../'
 
 const basePath = 'https://example.com'
 
@@ -507,7 +507,19 @@ describe('ConnectorApi', () => {
                 resource: 'companies'
               }
             ],
-            webhook_support: {},
+            webhook_support: {
+              mode: 'native',
+              subscription_level: 'integration',
+              managed_via: 'api',
+              virtual_webhooks: {
+                request_rate: {
+                  rate: 0,
+                  size: 0,
+                  unit: 'second'
+                },
+                resources: {}
+              }
+            },
             docs: [
               {
                 id: '12345',
@@ -649,7 +661,19 @@ describe('ConnectorApi', () => {
               resource: 'companies'
             }
           ],
-          webhook_support: {},
+          webhook_support: {
+            mode: 'native',
+            subscription_level: 'integration',
+            managed_via: 'api',
+            virtual_webhooks: {
+              request_rate: {
+                rate: 0,
+                size: 0,
+                unit: 'second'
+              },
+              resources: {}
+            }
+          },
           docs: [
             {
               id: '12345',
