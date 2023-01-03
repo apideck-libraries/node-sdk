@@ -162,7 +162,7 @@ export interface InvoiceLineItem {
    * @type {Date}
    * @memberof InvoiceLineItem
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
 }
 
 /**
@@ -213,7 +213,11 @@ export function InvoiceLineItemFromJSONTyped(
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at'])
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at'])
   }
 }
 
