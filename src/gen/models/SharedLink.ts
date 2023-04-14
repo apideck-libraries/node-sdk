@@ -78,7 +78,7 @@ export interface SharedLink {
    * @type {Date}
    * @memberof SharedLink
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
    *
    * @type {Date}
@@ -115,7 +115,11 @@ export function SharedLinkFromJSONTyped(json: any, ignoreDiscriminator: boolean)
       : json['password_protected'],
     password: !exists(json, 'password') ? undefined : json['password'],
     expires_at: !exists(json, 'expires_at') ? undefined : new Date(json['expires_at']),
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }

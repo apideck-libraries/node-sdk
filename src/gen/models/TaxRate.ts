@@ -120,7 +120,7 @@ export interface TaxRate {
    * @type {Date}
    * @memberof TaxRate
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
    *
    * @type {Date}
@@ -172,7 +172,11 @@ export function TaxRateFromJSONTyped(json: any, ignoreDiscriminator: boolean): T
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }

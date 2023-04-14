@@ -74,7 +74,7 @@ export interface ConnectionWebhook {
    * @type {Date}
    * @memberof ConnectionWebhook
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
    *
    * @type {Date}
@@ -217,7 +217,11 @@ export function ConnectionWebhookFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
     disabled_reason: !exists(json, 'disabled_reason') ? undefined : json['disabled_reason'],
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
     created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
   }
 }
