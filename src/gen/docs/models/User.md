@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `last_name` | **string** | The last name of the person. | [optional] 
 `title` | **string** | The job title of the person. | [optional] 
 `division` | **string** | The division the person is currently in. Usually a collection of departments or teams or regions. | [optional] 
-`department` | **string** | The department the person is currently in. | [optional] 
+`department` | **string** | The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field. | [optional] 
 `company_name` | **string** | The name of the company. | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `description` | **string** | A description of the object. | [optional] 
