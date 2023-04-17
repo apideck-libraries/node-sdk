@@ -68,7 +68,7 @@ export interface IssueTrackingApiCollectionTagsAllRequest {
 export interface IssueTrackingApiCollectionTicketCommentsAddRequest {
   collectionId: string
   ticketId: string
-  collectionTicketComment: CollectionTicketComment
+  ticketComment: CollectionTicketComment
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -115,7 +115,7 @@ export interface IssueTrackingApiCollectionTicketCommentsUpdateRequest {
   id: string
   collectionId: string
   ticketId: string
-  collectionTicketComment: CollectionTicketComment
+  ticketComment: CollectionTicketComment
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -303,31 +303,28 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Create Comment
    * Create Comment
    */
-  async collectionTicketCommentsAddRaw(
+  async ticketCommentsAddRaw(
     requestParameters: IssueTrackingApiCollectionTicketCommentsAddRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CreateCommentResponse>> {
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketCommentsAdd.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketCommentsAdd.'
       )
     }
 
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketCommentsAdd.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketCommentsAdd.'
       )
     }
 
-    if (
-      requestParameters.collectionTicketComment === null ||
-      requestParameters.collectionTicketComment === undefined
-    ) {
+    if (requestParameters.ticketComment === null || requestParameters.ticketComment === undefined) {
       throw new runtime.RequiredError(
-        'collectionTicketComment',
-        'Required parameter requestParameters.collectionTicketComment was null or undefined when calling collectionTicketCommentsAdd.'
+        'ticketComment',
+        'Required parameter requestParameters.ticketComment was null or undefined when calling ticketCommentsAdd.'
       )
     }
 
@@ -368,7 +365,7 @@ export class IssueTrackingApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: CollectionTicketCommentToJSON(requestParameters.collectionTicketComment)
+        body: CollectionTicketCommentToJSON(requestParameters.ticketComment)
       },
       initOverrides
     )
@@ -382,11 +379,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Create Comment
    * Create Comment
    */
-  async collectionTicketCommentsAdd(
+  async ticketCommentsAdd(
     requestParameters: IssueTrackingApiCollectionTicketCommentsAddRequest,
     initOverrides?: RequestInit
   ): Promise<CreateCommentResponse> {
-    const response = await this.collectionTicketCommentsAddRaw(requestParameters, initOverrides)
+    const response = await this.ticketCommentsAddRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -394,21 +391,21 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * List Comments
    * List Comments
    */
-  async collectionTicketCommentsAllRaw(
+  async ticketCommentsAllRaw(
     requestParameters: IssueTrackingApiCollectionTicketCommentsAllRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetCommentsResponse>> {
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketCommentsAll.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketCommentsAll.'
       )
     }
 
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketCommentsAll.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketCommentsAll.'
       )
     }
 
@@ -476,11 +473,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * List Comments
    * List Comments
    */
-  async collectionTicketCommentsAll(
+  async ticketCommentsAll(
     requestParameters: IssueTrackingApiCollectionTicketCommentsAllRequest,
     initOverrides?: RequestInit
   ): Promise<GetCommentsResponse> {
-    const response = await this.collectionTicketCommentsAllRaw(requestParameters, initOverrides)
+    const response = await this.ticketCommentsAllRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -488,28 +485,28 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Delete Comment
    * Delete Comment
    */
-  async collectionTicketCommentsDeleteRaw(
+  async ticketCommentsDeleteRaw(
     requestParameters: IssueTrackingApiCollectionTicketCommentsDeleteRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<DeleteCommentResponse>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
-        'Required parameter requestParameters.id was null or undefined when calling collectionTicketCommentsDelete.'
+        'Required parameter requestParameters.id was null or undefined when calling ticketCommentsDelete.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketCommentsDelete.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketCommentsDelete.'
       )
     }
 
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketCommentsDelete.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketCommentsDelete.'
       )
     }
 
@@ -562,11 +559,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Delete Comment
    * Delete Comment
    */
-  async collectionTicketCommentsDelete(
+  async ticketCommentsDelete(
     requestParameters: IssueTrackingApiCollectionTicketCommentsDeleteRequest,
     initOverrides?: RequestInit
   ): Promise<DeleteCommentResponse> {
-    const response = await this.collectionTicketCommentsDeleteRaw(requestParameters, initOverrides)
+    const response = await this.ticketCommentsDeleteRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -574,28 +571,28 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Get Comment
    * Get Comment
    */
-  async collectionTicketCommentsOneRaw(
+  async ticketCommentsOneRaw(
     requestParameters: IssueTrackingApiCollectionTicketCommentsOneRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetCommentResponse>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
-        'Required parameter requestParameters.id was null or undefined when calling collectionTicketCommentsOne.'
+        'Required parameter requestParameters.id was null or undefined when calling ticketCommentsOne.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketCommentsOne.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketCommentsOne.'
       )
     }
 
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketCommentsOne.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketCommentsOne.'
       )
     }
 
@@ -658,11 +655,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Get Comment
    * Get Comment
    */
-  async collectionTicketCommentsOne(
+  async ticketCommentsOne(
     requestParameters: IssueTrackingApiCollectionTicketCommentsOneRequest,
     initOverrides?: RequestInit
   ): Promise<GetCommentResponse> {
-    const response = await this.collectionTicketCommentsOneRaw(requestParameters, initOverrides)
+    const response = await this.ticketCommentsOneRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -670,38 +667,35 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Update Comment
    * Update Comment
    */
-  async collectionTicketCommentsUpdateRaw(
+  async ticketCommentsUpdateRaw(
     requestParameters: IssueTrackingApiCollectionTicketCommentsUpdateRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<UpdateCommentResponse>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
-        'Required parameter requestParameters.id was null or undefined when calling collectionTicketCommentsUpdate.'
+        'Required parameter requestParameters.id was null or undefined when calling ticketCommentsUpdate.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketCommentsUpdate.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketCommentsUpdate.'
       )
     }
 
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketCommentsUpdate.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketCommentsUpdate.'
       )
     }
 
-    if (
-      requestParameters.collectionTicketComment === null ||
-      requestParameters.collectionTicketComment === undefined
-    ) {
+    if (requestParameters.ticketComment === null || requestParameters.ticketComment === undefined) {
       throw new runtime.RequiredError(
-        'collectionTicketComment',
-        'Required parameter requestParameters.collectionTicketComment was null or undefined when calling collectionTicketCommentsUpdate.'
+        'ticketComment',
+        'Required parameter requestParameters.ticketComment was null or undefined when calling ticketCommentsUpdate.'
       )
     }
 
@@ -743,7 +737,7 @@ export class IssueTrackingApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: CollectionTicketCommentToJSON(requestParameters.collectionTicketComment)
+        body: CollectionTicketCommentToJSON(requestParameters.ticketComment)
       },
       initOverrides
     )
@@ -757,11 +751,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Update Comment
    * Update Comment
    */
-  async collectionTicketCommentsUpdate(
+  async ticketCommentsUpdate(
     requestParameters: IssueTrackingApiCollectionTicketCommentsUpdateRequest,
     initOverrides?: RequestInit
   ): Promise<UpdateCommentResponse> {
-    const response = await this.collectionTicketCommentsUpdateRaw(requestParameters, initOverrides)
+    const response = await this.ticketCommentsUpdateRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -769,21 +763,21 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Create Ticket
    * Create Ticket
    */
-  async collectionTicketsAddRaw(
+  async ticketsAddRaw(
     requestParameters: IssueTrackingApiCollectionTicketsAddRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CreateTicketResponse>> {
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketsAdd.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketsAdd.'
       )
     }
 
     if (requestParameters.ticket === null || requestParameters.ticket === undefined) {
       throw new runtime.RequiredError(
         'ticket',
-        'Required parameter requestParameters.ticket was null or undefined when calling collectionTicketsAdd.'
+        'Required parameter requestParameters.ticket was null or undefined when calling ticketsAdd.'
       )
     }
 
@@ -836,11 +830,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Create Ticket
    * Create Ticket
    */
-  async collectionTicketsAdd(
+  async ticketsAdd(
     requestParameters: IssueTrackingApiCollectionTicketsAddRequest,
     initOverrides?: RequestInit
   ): Promise<CreateTicketResponse> {
-    const response = await this.collectionTicketsAddRaw(requestParameters, initOverrides)
+    const response = await this.ticketsAddRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -848,14 +842,14 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * List Tickets
    * List Tickets
    */
-  async collectionTicketsAllRaw(
+  async ticketsAllRaw(
     requestParameters: IssueTrackingApiCollectionTicketsAllRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetTicketsResponse>> {
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketsAll.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketsAll.'
       )
     }
 
@@ -923,11 +917,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * List Tickets
    * List Tickets
    */
-  async collectionTicketsAll(
+  async ticketsAll(
     requestParameters: IssueTrackingApiCollectionTicketsAllRequest,
     initOverrides?: RequestInit
   ): Promise<GetTicketsResponse> {
-    const response = await this.collectionTicketsAllRaw(requestParameters, initOverrides)
+    const response = await this.ticketsAllRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -935,21 +929,21 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Delete Ticket
    * Delete Ticket
    */
-  async collectionTicketsDeleteRaw(
+  async ticketsDeleteRaw(
     requestParameters: IssueTrackingApiCollectionTicketsDeleteRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<DeleteTicketResponse>> {
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketsDelete.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketsDelete.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketsDelete.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketsDelete.'
       )
     }
 
@@ -1001,11 +995,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Delete Ticket
    * Delete Ticket
    */
-  async collectionTicketsDelete(
+  async ticketsDelete(
     requestParameters: IssueTrackingApiCollectionTicketsDeleteRequest,
     initOverrides?: RequestInit
   ): Promise<DeleteTicketResponse> {
-    const response = await this.collectionTicketsDeleteRaw(requestParameters, initOverrides)
+    const response = await this.ticketsDeleteRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -1013,21 +1007,21 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Get Ticket
    * Get Ticket
    */
-  async collectionTicketsOneRaw(
+  async ticketsOneRaw(
     requestParameters: IssueTrackingApiCollectionTicketsOneRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetTicketResponse>> {
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketsOne.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketsOne.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketsOne.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketsOne.'
       )
     }
 
@@ -1081,11 +1075,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Get Ticket
    * Get Ticket
    */
-  async collectionTicketsOne(
+  async ticketsOne(
     requestParameters: IssueTrackingApiCollectionTicketsOneRequest,
     initOverrides?: RequestInit
   ): Promise<GetTicketResponse> {
-    const response = await this.collectionTicketsOneRaw(requestParameters, initOverrides)
+    const response = await this.ticketsOneRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -1093,28 +1087,28 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Update Ticket
    * Update Ticket
    */
-  async collectionTicketsUpdateRaw(
+  async ticketsUpdateRaw(
     requestParameters: IssueTrackingApiCollectionTicketsUpdateRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<UpdateTicketResponse>> {
     if (requestParameters.ticketId === null || requestParameters.ticketId === undefined) {
       throw new runtime.RequiredError(
         'ticketId',
-        'Required parameter requestParameters.ticketId was null or undefined when calling collectionTicketsUpdate.'
+        'Required parameter requestParameters.ticketId was null or undefined when calling ticketsUpdate.'
       )
     }
 
     if (requestParameters.collectionId === null || requestParameters.collectionId === undefined) {
       throw new runtime.RequiredError(
         'collectionId',
-        'Required parameter requestParameters.collectionId was null or undefined when calling collectionTicketsUpdate.'
+        'Required parameter requestParameters.collectionId was null or undefined when calling ticketsUpdate.'
       )
     }
 
     if (requestParameters.ticket === null || requestParameters.ticket === undefined) {
       throw new runtime.RequiredError(
         'ticket',
-        'Required parameter requestParameters.ticket was null or undefined when calling collectionTicketsUpdate.'
+        'Required parameter requestParameters.ticket was null or undefined when calling ticketsUpdate.'
       )
     }
 
@@ -1169,11 +1163,11 @@ export class IssueTrackingApi extends runtime.BaseAPI {
    * Update Ticket
    * Update Ticket
    */
-  async collectionTicketsUpdate(
+  async ticketsUpdate(
     requestParameters: IssueTrackingApiCollectionTicketsUpdateRequest,
     initOverrides?: RequestInit
   ): Promise<UpdateTicketResponse> {
-    const response = await this.collectionTicketsUpdateRaw(requestParameters, initOverrides)
+    const response = await this.ticketsUpdateRaw(requestParameters, initOverrides)
     return await response.value()
   }
 

@@ -230,7 +230,7 @@ export interface FileStorageApiFilesSearchRequest {
 
 export interface FileStorageApiFilesUpdateRequest {
   id: string
-  updateFileRequest: UpdateFileRequest
+  file: UpdateFileRequest
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -1463,13 +1463,10 @@ export class FileStorageApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.updateFileRequest === null ||
-      requestParameters.updateFileRequest === undefined
-    ) {
+    if (requestParameters.file === null || requestParameters.file === undefined) {
       throw new runtime.RequiredError(
-        'updateFileRequest',
-        'Required parameter requestParameters.updateFileRequest was null or undefined when calling filesUpdate.'
+        'file',
+        'Required parameter requestParameters.file was null or undefined when calling filesUpdate.'
       )
     }
 
@@ -1508,7 +1505,7 @@ export class FileStorageApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: UpdateFileRequestToJSON(requestParameters.updateFileRequest)
+        body: UpdateFileRequestToJSON(requestParameters.file)
       },
       initOverrides
     )

@@ -926,7 +926,7 @@ vaultApi.consumersUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateConsumerRequest** | [UpdateConsumerRequest](../models/UpdateConsumerRequest.md)|  |
+ **consumer** | [UpdateConsumerRequest](../models/UpdateConsumerRequest.md)|  |
  **consumerId** | [**string**] | ID of the consumer to return | 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
 

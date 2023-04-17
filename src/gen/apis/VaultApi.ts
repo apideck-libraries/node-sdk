@@ -135,7 +135,7 @@ export interface VaultApiConsumersOneRequest {
 
 export interface VaultApiConsumersUpdateRequest {
   consumerId: string
-  updateConsumerRequest: UpdateConsumerRequest
+  consumer: UpdateConsumerRequest
   appId?: string
 }
 
@@ -981,13 +981,10 @@ export class VaultApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.updateConsumerRequest === null ||
-      requestParameters.updateConsumerRequest === undefined
-    ) {
+    if (requestParameters.consumer === null || requestParameters.consumer === undefined) {
       throw new runtime.RequiredError(
-        'updateConsumerRequest',
-        'Required parameter requestParameters.updateConsumerRequest was null or undefined when calling consumersUpdate.'
+        'consumer',
+        'Required parameter requestParameters.consumer was null or undefined when calling consumersUpdate.'
       )
     }
 
@@ -1014,7 +1011,7 @@ export class VaultApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: UpdateConsumerRequestToJSON(requestParameters.updateConsumerRequest)
+        body: UpdateConsumerRequestToJSON(requestParameters.consumer)
       },
       initOverrides
     )

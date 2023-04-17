@@ -1114,7 +1114,7 @@ fileStorageApi.filesUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateFileRequest** | [UpdateFileRequest](../models/UpdateFileRequest.md)|  |
+ **file** | [UpdateFileRequest](../models/UpdateFileRequest.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 

@@ -6,16 +6,16 @@
 ## Methods
 
 * [List Tags](#collectionTagsAll)
-* [Create Comment](#collectionTicketCommentsAdd)
-* [List Comments](#collectionTicketCommentsAll)
-* [Delete Comment](#collectionTicketCommentsDelete)
-* [Get Comment](#collectionTicketCommentsOne)
-* [Update Comment](#collectionTicketCommentsUpdate)
-* [Create Ticket](#collectionTicketsAdd)
-* [List Tickets](#collectionTicketsAll)
-* [Delete Ticket](#collectionTicketsDelete)
-* [Get Ticket](#collectionTicketsOne)
-* [Update Ticket](#collectionTicketsUpdate)
+* [Create Comment](#ticketCommentsAdd)
+* [List Comments](#ticketCommentsAll)
+* [Delete Comment](#ticketCommentsDelete)
+* [Get Comment](#ticketCommentsOne)
+* [Update Comment](#ticketCommentsUpdate)
+* [Create Ticket](#ticketsAdd)
+* [List Tickets](#ticketsAll)
+* [Delete Ticket](#ticketsDelete)
+* [Get Ticket](#ticketsOne)
+* [Update Ticket](#ticketsUpdate)
 * [List Users](#collectionUsersAll)
 * [Get User](#collectionUsersOne)
 * [List Collections](#collectionsAll)
@@ -93,21 +93,21 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketCommentsAdd"></a>
+<a name="ticketCommentsAdd"></a>
 # Create Comment
 
 
-Method: **collectionTicketCommentsAdd**
+Method: **ticketCommentsAdd**
 
 ```typescript
-issueTrackingApi.collectionTicketCommentsAdd(body)
+issueTrackingApi.ticketCommentsAdd(body)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionTicketComment** | [CollectionTicketComment](../models/CollectionTicketComment.md)|  |
+ **ticketComment** | [CollectionTicketComment](../models/CollectionTicketComment.md)|  |
  **collectionId** | [**string**] | The collection ID | 
  **ticketId** | [**string**] | ID of the ticket you are acting upon. | 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
@@ -149,13 +149,13 @@ const apideck = new Apideck({
 const params = {
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
-  collectionTicketComment: {
+  ticketComment: {
     body: 'What internet provider do you use?'
   }
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketCommentsAdd(params)
+  const { data } = await apideck.issueTracking.ticketCommentsAdd(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -168,14 +168,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketCommentsAll"></a>
+<a name="ticketCommentsAll"></a>
 # List Comments
 
 
-Method: **collectionTicketCommentsAll**
+Method: **ticketCommentsAll**
 
 ```typescript
-issueTrackingApi.collectionTicketCommentsAll(body)
+issueTrackingApi.ticketCommentsAll(body)
 ```
 
 ### Parameters
@@ -230,7 +230,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketCommentsAll(params)
+  const { data } = await apideck.issueTracking.ticketCommentsAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -243,14 +243,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketCommentsDelete"></a>
+<a name="ticketCommentsDelete"></a>
 # Delete Comment
 
 
-Method: **collectionTicketCommentsDelete**
+Method: **ticketCommentsDelete**
 
 ```typescript
-issueTrackingApi.collectionTicketCommentsDelete(body)
+issueTrackingApi.ticketCommentsDelete(body)
 ```
 
 ### Parameters
@@ -303,7 +303,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketCommentsDelete(params)
+  const { data } = await apideck.issueTracking.ticketCommentsDelete(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -316,14 +316,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketCommentsOne"></a>
+<a name="ticketCommentsOne"></a>
 # Get Comment
 
 
-Method: **collectionTicketCommentsOne**
+Method: **ticketCommentsOne**
 
 ```typescript
-issueTrackingApi.collectionTicketCommentsOne(body)
+issueTrackingApi.ticketCommentsOne(body)
 ```
 
 ### Parameters
@@ -379,7 +379,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketCommentsOne(params)
+  const { data } = await apideck.issueTracking.ticketCommentsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -392,21 +392,21 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketCommentsUpdate"></a>
+<a name="ticketCommentsUpdate"></a>
 # Update Comment
 
 
-Method: **collectionTicketCommentsUpdate**
+Method: **ticketCommentsUpdate**
 
 ```typescript
-issueTrackingApi.collectionTicketCommentsUpdate(body)
+issueTrackingApi.ticketCommentsUpdate(body)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionTicketComment** | [CollectionTicketComment](../models/CollectionTicketComment.md)|  |
+ **ticketComment** | [CollectionTicketComment](../models/CollectionTicketComment.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **collectionId** | [**string**] | The collection ID | 
  **ticketId** | [**string**] | ID of the ticket you are acting upon. | 
@@ -450,13 +450,13 @@ const params = {
   id: 'id_example',
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
-  collectionTicketComment: {
+  ticketComment: {
     body: 'What internet provider do you use?'
   }
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketCommentsUpdate(params)
+  const { data } = await apideck.issueTracking.ticketCommentsUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -469,14 +469,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketsAdd"></a>
+<a name="ticketsAdd"></a>
 # Create Ticket
 
 
-Method: **collectionTicketsAdd**
+Method: **ticketsAdd**
 
 ```typescript
-issueTrackingApi.collectionTicketsAdd(body)
+issueTrackingApi.ticketsAdd(body)
 ```
 
 ### Parameters
@@ -523,7 +523,7 @@ const apideck = new Apideck({
 
 const params = {
   collectionId: 'collection_id_example',
-  collectionTicket: {
+  ticket: {
     parent_id: '12345',
     type: 'Technical',
     subject: 'Technical Support Request',
@@ -545,7 +545,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketsAdd(params)
+  const { data } = await apideck.issueTracking.ticketsAdd(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -558,14 +558,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketsAll"></a>
+<a name="ticketsAll"></a>
 # List Tickets
 
 
-Method: **collectionTicketsAll**
+Method: **ticketsAll**
 
 ```typescript
-issueTrackingApi.collectionTicketsAll(body)
+issueTrackingApi.ticketsAll(body)
 ```
 
 ### Parameters
@@ -619,7 +619,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketsAll(params)
+  const { data } = await apideck.issueTracking.ticketsAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -632,14 +632,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketsDelete"></a>
+<a name="ticketsDelete"></a>
 # Delete Ticket
 
 
-Method: **collectionTicketsDelete**
+Method: **ticketsDelete**
 
 ```typescript
-issueTrackingApi.collectionTicketsDelete(body)
+issueTrackingApi.ticketsDelete(body)
 ```
 
 ### Parameters
@@ -690,7 +690,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketsDelete(params)
+  const { data } = await apideck.issueTracking.ticketsDelete(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -703,14 +703,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketsOne"></a>
+<a name="ticketsOne"></a>
 # Get Ticket
 
 
-Method: **collectionTicketsOne**
+Method: **ticketsOne**
 
 ```typescript
-issueTrackingApi.collectionTicketsOne(body)
+issueTrackingApi.ticketsOne(body)
 ```
 
 ### Parameters
@@ -762,7 +762,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketsOne(params)
+  const { data } = await apideck.issueTracking.ticketsOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -775,14 +775,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="collectionTicketsUpdate"></a>
+<a name="ticketsUpdate"></a>
 # Update Ticket
 
 
-Method: **collectionTicketsUpdate**
+Method: **ticketsUpdate**
 
 ```typescript
-issueTrackingApi.collectionTicketsUpdate(body)
+issueTrackingApi.ticketsUpdate(body)
 ```
 
 ### Parameters
@@ -831,7 +831,7 @@ const apideck = new Apideck({
 const params = {
   ticketId: 'ticket_id_example',
   collectionId: 'collection_id_example',
-  collectionTicket: {
+  ticket: {
     parent_id: '12345',
     type: 'Technical',
     subject: 'Technical Support Request',
@@ -853,7 +853,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.issueTracking.collectionTicketsUpdate(params)
+  const { data } = await apideck.issueTracking.ticketsUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

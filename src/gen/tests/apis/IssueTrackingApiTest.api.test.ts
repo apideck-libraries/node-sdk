@@ -71,7 +71,7 @@ describe('IssueTrackingApi', () => {
     })
   })
 
-  describe('#collectionTicketCommentsAdd', () => {
+  describe('#ticketCommentsAdd', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments'
 
     const config = {
@@ -105,17 +105,17 @@ describe('IssueTrackingApi', () => {
       const params = {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
-        collectionTicketComment: {
+        ticketComment: {
           body: 'What internet provider do you use?'
         }
       } as any
-      const current = await issueTracking.collectionTicketCommentsAdd(params)
+      const current = await issueTracking.ticketCommentsAdd(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketCommentsAll', () => {
+  describe('#ticketCommentsAll', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments'
 
     const config = {
@@ -169,13 +169,13 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example'
       } as any
-      const current = await issueTracking.collectionTicketCommentsAll(params)
+      const current = await issueTracking.ticketCommentsAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketCommentsDelete', () => {
+  describe('#ticketCommentsDelete', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}'
 
     const config = {
@@ -211,13 +211,13 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example'
       } as any
-      const current = await issueTracking.collectionTicketCommentsDelete(params)
+      const current = await issueTracking.ticketCommentsDelete(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketCommentsOne', () => {
+  describe('#ticketCommentsOne', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}'
 
     const config = {
@@ -257,13 +257,13 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example'
       } as any
-      const current = await issueTracking.collectionTicketCommentsOne(params)
+      const current = await issueTracking.ticketCommentsOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketCommentsUpdate', () => {
+  describe('#ticketCommentsUpdate', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}'
 
     const config = {
@@ -298,17 +298,17 @@ describe('IssueTrackingApi', () => {
         id: 'id_example',
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
-        collectionTicketComment: {
+        ticketComment: {
           body: 'What internet provider do you use?'
         }
       } as any
-      const current = await issueTracking.collectionTicketCommentsUpdate(params)
+      const current = await issueTracking.ticketCommentsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketsAdd', () => {
+  describe('#ticketsAdd', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets'
 
     const config = {
@@ -341,7 +341,7 @@ describe('IssueTrackingApi', () => {
       const { issueTracking } = apideck
       const params = {
         collectionId: 'collection_id_example',
-        collectionTicket: {
+        ticket: {
           parent_id: '12345',
           type: 'Technical',
           subject: 'Technical Support Request',
@@ -361,13 +361,13 @@ describe('IssueTrackingApi', () => {
           ]
         }
       } as any
-      const current = await issueTracking.collectionTicketsAdd(params)
+      const current = await issueTracking.ticketsAdd(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketsAll', () => {
+  describe('#ticketsAll', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets'
 
     const config = {
@@ -440,13 +440,13 @@ describe('IssueTrackingApi', () => {
       const params = {
         collectionId: 'collection_id_example'
       } as any
-      const current = await issueTracking.collectionTicketsAll(params)
+      const current = await issueTracking.ticketsAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketsDelete', () => {
+  describe('#ticketsDelete', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}'
 
     const config = {
@@ -481,13 +481,13 @@ describe('IssueTrackingApi', () => {
         ticketId: 'ticket_id_example',
         collectionId: 'collection_id_example'
       } as any
-      const current = await issueTracking.collectionTicketsDelete(params)
+      const current = await issueTracking.ticketsDelete(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketsOne', () => {
+  describe('#ticketsOne', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}'
 
     const config = {
@@ -546,13 +546,13 @@ describe('IssueTrackingApi', () => {
         ticketId: 'ticket_id_example',
         collectionId: 'collection_id_example'
       } as any
-      const current = await issueTracking.collectionTicketsOne(params)
+      const current = await issueTracking.ticketsOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#collectionTicketsUpdate', () => {
+  describe('#ticketsUpdate', () => {
     const endpoint = '/issue-tracking/collections/{collection_id}/tickets/{ticket_id}'
 
     const config = {
@@ -586,7 +586,7 @@ describe('IssueTrackingApi', () => {
       const params = {
         ticketId: 'ticket_id_example',
         collectionId: 'collection_id_example',
-        collectionTicket: {
+        ticket: {
           parent_id: '12345',
           type: 'Technical',
           subject: 'Technical Support Request',
@@ -606,7 +606,7 @@ describe('IssueTrackingApi', () => {
           ]
         }
       } as any
-      const current = await issueTracking.collectionTicketsUpdate(params)
+      const current = await issueTracking.ticketsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
