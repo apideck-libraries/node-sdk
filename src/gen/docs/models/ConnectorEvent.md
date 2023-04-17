@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 `event_type` | **string** | Unify event type | [optional] 
 `event_source` | **string** | Unify event source | [optional] 
 `downstream_event_type` | **string** | Downstream event type | [optional] 
-`resource` | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
+`resources` | **Array&lt;string&gt;** |  | [optional] 
+`entity_type` | **string** | Unify entity type | [optional] 
 
 
 

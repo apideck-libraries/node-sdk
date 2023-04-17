@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | The ID of the object. | [optional] 
 `code` | **string** | Tax rate code | [optional] 
 `name` | **string** | Name of the tax rate | [optional] 
+`rate` | **number** | Rate of the tax rate | [optional] 
 
 
 

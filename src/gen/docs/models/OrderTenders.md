@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 `note` | **string** |  | [optional] 
@@ -24,9 +24,9 @@ Name | Type | Description | Notes
 `card` | [**PaymentCard**](PaymentCard.md) |  | [optional] 
 `card_status` | **string** | The status of the card. Only applicable when the tender type is card. | [optional] 
 `card_entry_method` | **string** | The entry method of the card. Only applicable when the tender type is card. | [optional] 
-`payment_id` | **string** |  | [optional] 
-`location_id` | **string** |  | [optional] 
-`transaction_id` | **string** |  | [optional] 
+`payment_id` | **string** | A unique identifier for an object. | [optional] 
+`location_id` | **string** | A unique identifier for an object. | [optional] 
+`transaction_id` | **string** | A unique identifier for an object. | [optional] 
 
 
 

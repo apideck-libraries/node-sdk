@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 
 

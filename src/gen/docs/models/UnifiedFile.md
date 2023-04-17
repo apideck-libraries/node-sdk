@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
+`id` | **string** | A unique identifier for an object. | 
 `name` | **string** | The name of the file | 
 `type` | [**FileType**](FileType.md) |  | 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 `owner` | [**Owner**](Owner.md) |  | [optional] 
 `parent_folders` | [**Array&lt;LinkedFolder&gt;**](LinkedFolder.md) | The parent folders of the file, starting from the root | [optional] 
 `parent_folders_complete` | **boolean** | Whether the list of parent folder is complete. Some connectors only return the direct parent of a file | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

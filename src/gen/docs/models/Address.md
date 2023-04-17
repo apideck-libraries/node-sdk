@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 `fax` | **string** |  | [optional] 
 `email` | **string** |  | [optional] 
 `website` | **string** |  | [optional] 
-`row_version` | **string** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 
 

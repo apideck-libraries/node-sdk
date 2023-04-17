@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 `report_tax_type` | **string** | Report Tax type to aggregate tax collected or paid for reporting purposes | [optional] 
 `original_tax_rate_id` | **string** | ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities. | [optional] 
 `status` | **string** | Tax rate status | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

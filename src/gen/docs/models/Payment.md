@@ -5,15 +5,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`id` | **string** | Unique identifier representing the entity | 
 `total_amount` | **number** | Amount of payment | 
 `transaction_date` | **Date** | Date transaction was entered - YYYY:MM::DDThh:mm:ss.sTZD | 
-`id` | **string** | Unique identifier representing the entity | [optional] 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `reference` | **string** | Optional payment reference message ie: Debit remittance detail. | [optional] 
-`payment_method` | **string** | Payment method | [optional] 
+`payment_method` | **string** | Payment method name | [optional] 
 `payment_method_reference` | **string** | Optional reference message returned by payment method on processing | [optional] 
+`payment_method_id` | **string** | Unique identifier for the payment method. | [optional] 
 `accounts_receivable_account_type` | **string** | Type of accounts receivable account. | [optional] 
 `accounts_receivable_account_id` | **string** | Unique identifier for the account to allocate payment to. | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
@@ -24,12 +25,12 @@ Name | Type | Description | Notes
 `type` | **string** | Type of payment | [optional] 
 `allocations` | [**Array&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the payment. | [optional] 
-`row_version` | **string** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `display_id` | **string** | Payment id to be displayed. | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
 
 
@@ -79,6 +80,7 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
 
 
 

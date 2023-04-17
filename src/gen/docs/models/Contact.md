@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 `gender` | **string** |  | [optional] 
 `birthday` | **string** |  | [optional] 
 `image` | **string** |  | [optional] 
-`photo_url` | **string** |  | [optional] 
+`photo_url` | **string** | The URL of the photo of a person. | [optional] 
 `lead_source` | **string** |  | [optional] 
 `fax` | **string** |  | [optional] 
 `description` | **string** |  | [optional] 

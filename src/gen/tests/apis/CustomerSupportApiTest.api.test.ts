@@ -100,14 +100,14 @@ describe('CustomerSupportApi', () => {
           tax_number: 'US123945459',
           currency: 'USD',
           bank_accounts: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           status: 'active'
@@ -195,14 +195,14 @@ describe('CustomerSupportApi', () => {
             tax_number: 'US123945459',
             currency: 'USD',
             bank_accounts: {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             },
             status: 'active',
@@ -354,14 +354,14 @@ describe('CustomerSupportApi', () => {
           tax_number: 'US123945459',
           currency: 'USD',
           bank_accounts: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           status: 'active',
@@ -472,14 +472,14 @@ describe('CustomerSupportApi', () => {
           tax_number: 'US123945459',
           currency: 'USD',
           bank_accounts: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           status: 'active'

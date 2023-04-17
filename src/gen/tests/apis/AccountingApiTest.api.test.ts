@@ -146,6 +146,7 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         bill: {
+          bill_number: '10001',
           supplier: {
             id: '12345',
             display_name: 'Windsurf Shop',
@@ -227,7 +228,6 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
-          bill_number: '10001',
           row_version: '1-12345'
         }
       } as any
@@ -262,6 +262,7 @@ describe('AccountingApi', () => {
           {
             id: '12345',
             downstream_id: '12345',
+            bill_number: '10001',
             supplier: {
               id: '12345',
               display_name: 'Windsurf Shop',
@@ -331,7 +332,8 @@ describe('AccountingApi', () => {
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
-                  name: 'GST on Purchases'
+                  name: 'GST on Purchases',
+                  rate: 10
                 },
                 row_version: '1-12345',
                 updated_by: '12345',
@@ -355,7 +357,6 @@ describe('AccountingApi', () => {
               nominal_code: 'N091',
               code: '453'
             },
-            bill_number: '10001',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -454,6 +455,7 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           downstream_id: '12345',
+          bill_number: '10001',
           supplier: {
             id: '12345',
             display_name: 'Windsurf Shop',
@@ -523,7 +525,8 @@ describe('AccountingApi', () => {
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
-                name: 'GST on Purchases'
+                name: 'GST on Purchases',
+                rate: 10
               },
               row_version: '1-12345',
               updated_by: '12345',
@@ -547,7 +550,6 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
-          bill_number: '10001',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -604,6 +606,7 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         bill: {
+          bill_number: '10001',
           supplier: {
             id: '12345',
             display_name: 'Windsurf Shop',
@@ -685,7 +688,6 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
-          bill_number: '10001',
           row_version: '1-12345'
         }
       } as any
@@ -728,7 +730,8 @@ describe('AccountingApi', () => {
           default_sales_tax: {
             id: '123456',
             code: 'N-T',
-            name: 'GST on Purchases'
+            name: 'GST on Purchases',
+            rate: 10
           },
           currency: 'USD',
           language: 'EN',
@@ -870,6 +873,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -894,6 +898,7 @@ describe('AccountingApi', () => {
             }
           ],
           note: 'Some notes about this credit note',
+          terms: 'Some terms about this credit note',
           row_version: '1-12345'
         }
       } as any
@@ -970,6 +975,7 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                discount_amount: 19.99,
                 location_id: '1234',
                 department_id: '1234',
                 item: {
@@ -980,7 +986,8 @@ describe('AccountingApi', () => {
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
-                  name: 'GST on Purchases'
+                  name: 'GST on Purchases',
+                  rate: 10
                 },
                 ledger_account: {
                   id: '123456',
@@ -1004,6 +1011,7 @@ describe('AccountingApi', () => {
               }
             ],
             note: 'Some notes about this credit note',
+            terms: 'Some terms about this credit note',
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1144,6 +1152,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -1154,7 +1163,8 @@ describe('AccountingApi', () => {
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
-                name: 'GST on Purchases'
+                name: 'GST on Purchases',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -1178,6 +1188,7 @@ describe('AccountingApi', () => {
             }
           ],
           note: 'Some notes about this credit note',
+          terms: 'Some terms about this credit note',
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1273,6 +1284,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -1297,6 +1309,7 @@ describe('AccountingApi', () => {
             }
           ],
           note: 'Some notes about this credit note',
+          terms: 'Some terms about this credit note',
           row_version: '1-12345'
         }
       } as any
@@ -1348,6 +1361,7 @@ describe('AccountingApi', () => {
           last_name: 'Musk',
           suffix: 'Jr.',
           individual: true,
+          project: false,
           addresses: [
             {
               id: '123',
@@ -1375,7 +1389,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this customer',
           phone_numbers: [
             {
               id: '12345',
@@ -1400,24 +1413,34 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
-          tax_rate: {
-            id: '123456'
-          },
-          tax_number: 'US123945459',
-          currency: 'USD',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '123456'
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          parent: {
+            id: '12345',
+            name: 'Windsurf Shop'
+          },
           status: 'active',
           row_version: '1-12345'
         }
@@ -1452,6 +1475,7 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
@@ -1461,6 +1485,7 @@ describe('AccountingApi', () => {
             last_name: 'Musk',
             suffix: 'Jr.',
             individual: true,
+            project: false,
             addresses: [
               {
                 id: '123',
@@ -1488,7 +1513,6 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             ],
-            notes: 'Some notes about this customer',
             phone_numbers: [
               {
                 id: '12345',
@@ -1513,32 +1537,44 @@ describe('AccountingApi', () => {
                 type: 'primary'
               }
             ],
-            tax_rate: {
-              id: '123456',
-              code: 'N-T',
-              name: 'GST on Purchases'
-            },
-            tax_number: 'US123945459',
-            currency: 'USD',
             bank_accounts: [
               {
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 bsb_number: '062-001',
                 branch_identifier: '001',
                 bank_code: 'BNH',
-                account_number: '123465',
-                account_name: 'SPACEX LLC',
-                account_type: 'credit_card',
                 currency: 'USD'
               }
             ],
+            notes: 'Some notes about this customer',
+            tax_rate: {
+              id: '123456',
+              code: 'N-T',
+              name: 'GST on Purchases',
+              rate: 10
+            },
+            tax_number: 'US123945459',
+            currency: 'USD',
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091',
+              code: '453'
+            },
+            parent: {
+              id: '12345',
+              name: 'Windsurf Shop'
+            },
             status: 'active',
-            row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345'
           }
         ],
         meta: {
@@ -1631,6 +1667,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
@@ -1640,6 +1677,7 @@ describe('AccountingApi', () => {
           last_name: 'Musk',
           suffix: 'Jr.',
           individual: true,
+          project: false,
           addresses: [
             {
               id: '123',
@@ -1667,7 +1705,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this customer',
           phone_numbers: [
             {
               id: '12345',
@@ -1692,32 +1729,44 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
-          tax_rate: {
-            id: '123456',
-            code: 'N-T',
-            name: 'GST on Purchases'
-          },
-          tax_number: 'US123945459',
-          currency: 'USD',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '123456',
+            code: 'N-T',
+            name: 'GST on Purchases',
+            rate: 10
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          parent: {
+            id: '12345',
+            name: 'Windsurf Shop'
+          },
           status: 'active',
-          row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345'
         }
       } as any
 
@@ -1778,6 +1827,7 @@ describe('AccountingApi', () => {
           last_name: 'Musk',
           suffix: 'Jr.',
           individual: true,
+          project: false,
           addresses: [
             {
               id: '123',
@@ -1805,7 +1855,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this customer',
           phone_numbers: [
             {
               id: '12345',
@@ -1830,24 +1879,34 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
-          tax_rate: {
-            id: '123456'
-          },
-          tax_number: 'US123945459',
-          currency: 'USD',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this customer',
+          tax_rate: {
+            id: '123456'
+          },
+          tax_number: 'US123945459',
+          currency: 'USD',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          parent: {
+            id: '12345',
+            name: 'Windsurf Shop'
+          },
           status: 'active',
           row_version: '1-12345'
         }
@@ -1898,6 +1957,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          taxable: true,
           inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
@@ -1974,6 +2034,7 @@ describe('AccountingApi', () => {
             sold: true,
             purchased: true,
             tracked: true,
+            taxable: true,
             inventory_date: '2020-10-30',
             type: 'inventory',
             sales_details: {
@@ -1983,7 +2044,8 @@ describe('AccountingApi', () => {
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
-                name: 'GST on Purchases'
+                name: 'GST on Purchases',
+                rate: 10
               }
             },
             purchase_details: {
@@ -1993,7 +2055,8 @@ describe('AccountingApi', () => {
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
-                name: 'GST on Purchases'
+                name: 'GST on Purchases',
+                rate: 10
               }
             },
             quantity: 1,
@@ -2121,6 +2184,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          taxable: true,
           inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
@@ -2130,7 +2194,8 @@ describe('AccountingApi', () => {
             tax_rate: {
               id: '123456',
               code: 'N-T',
-              name: 'GST on Purchases'
+              name: 'GST on Purchases',
+              rate: 10
             }
           },
           purchase_details: {
@@ -2140,7 +2205,8 @@ describe('AccountingApi', () => {
             tax_rate: {
               id: '123456',
               code: 'N-T',
-              name: 'GST on Purchases'
+              name: 'GST on Purchases',
+              rate: 10
             }
           },
           quantity: 1,
@@ -2227,6 +2293,7 @@ describe('AccountingApi', () => {
           sold: true,
           purchased: true,
           tracked: true,
+          taxable: true,
           inventory_date: '2020-10-30',
           type: 'inventory',
           sales_details: {
@@ -2327,6 +2394,7 @@ describe('AccountingApi', () => {
           total_tax: 2500,
           tax_code: '1234',
           discount_percentage: 5.5,
+          discount_amount: 25,
           total: 27500,
           balance: 27500,
           deposit: 0,
@@ -2345,6 +2413,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -2470,6 +2539,7 @@ describe('AccountingApi', () => {
             total_tax: 2500,
             tax_code: '1234',
             discount_percentage: 5.5,
+            discount_amount: 25,
             total: 27500,
             balance: 27500,
             deposit: 0,
@@ -2489,6 +2559,7 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                discount_amount: 19.99,
                 location_id: '1234',
                 department_id: '1234',
                 item: {
@@ -2499,7 +2570,8 @@ describe('AccountingApi', () => {
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
-                  name: 'GST on Purchases'
+                  name: 'GST on Purchases',
+                  rate: 10
                 },
                 ledger_account: {
                   id: '123456',
@@ -2688,6 +2760,7 @@ describe('AccountingApi', () => {
           total_tax: 2500,
           tax_code: '1234',
           discount_percentage: 5.5,
+          discount_amount: 25,
           total: 27500,
           balance: 27500,
           deposit: 0,
@@ -2707,6 +2780,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -2717,7 +2791,8 @@ describe('AccountingApi', () => {
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
-                name: 'GST on Purchases'
+                name: 'GST on Purchases',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -2862,6 +2937,7 @@ describe('AccountingApi', () => {
           total_tax: 2500,
           tax_code: '1234',
           discount_percentage: 5.5,
+          discount_amount: 25,
           total: 27500,
           balance: 27500,
           deposit: 0,
@@ -2880,6 +2956,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -2957,6 +3034,446 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#journalEntriesAdd', () => {
+    const endpoint = '/accounting/journal-entries'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'journal-entries',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        journalEntry: {
+          title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
+          currency_rate: 0.69,
+          currency: 'USD',
+          line_items: [
+            {
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456'
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              }
+            },
+            {
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456'
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              }
+            }
+          ],
+          memo: 'Thank you for your business and have a great day!',
+          posted_at: '2020-09-30T07:43:32.000Z',
+          journal_symbol: 'IND',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.journalEntriesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#journalEntriesAll', () => {
+    const endpoint = '/accounting/journal-entries'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'journal-entries',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
+            currency_rate: 0.69,
+            currency: 'USD',
+            line_items: [
+              {
+                id: '12345',
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                tax_amount: 27500,
+                total_amount: 27500,
+                type: 'debit',
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases',
+                  rate: 10
+                },
+                tracking_category: {
+                  id: '123456',
+                  name: 'New York'
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091',
+                  code: '453'
+                },
+                department_id: '12345',
+                location_id: '12345'
+              },
+              {
+                id: '12345',
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                tax_amount: 27500,
+                total_amount: 27500,
+                type: 'debit',
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases',
+                  rate: 10
+                },
+                tracking_category: {
+                  id: '123456',
+                  name: 'New York'
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091',
+                  code: '453'
+                },
+                department_id: '12345',
+                location_id: '12345'
+              }
+            ],
+            memo: 'Thank you for your business and have a great day!',
+            posted_at: '2020-09-30T07:43:32.000Z',
+            journal_symbol: 'IND',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.journalEntriesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#journalEntriesDelete', () => {
+    const endpoint = '/accounting/journal-entries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'journal-entries',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.journalEntriesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#journalEntriesOne', () => {
+    const endpoint = '/accounting/journal-entries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'journal-entries',
+        operation: 'one',
+        data: {
+          id: '12345',
+          title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
+          currency_rate: 0.69,
+          currency: 'USD',
+          line_items: [
+            {
+              id: '12345',
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases',
+                rate: 10
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              department_id: '12345',
+              location_id: '12345'
+            },
+            {
+              id: '12345',
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases',
+                rate: 10
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              department_id: '12345',
+              location_id: '12345'
+            }
+          ],
+          memo: 'Thank you for your business and have a great day!',
+          posted_at: '2020-09-30T07:43:32.000Z',
+          journal_symbol: 'IND',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.journalEntriesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#journalEntriesUpdate', () => {
+    const endpoint = '/accounting/journal-entries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'journal-entries',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        journalEntry: {
+          title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
+          currency_rate: 0.69,
+          currency: 'USD',
+          line_items: [
+            {
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456'
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              }
+            },
+            {
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              tax_amount: 27500,
+              total_amount: 27500,
+              type: 'debit',
+              tax_rate: {
+                id: '123456'
+              },
+              tracking_category: {
+                id: '123456',
+                name: 'New York'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              }
+            }
+          ],
+          memo: 'Thank you for your business and have a great day!',
+          posted_at: '2020-09-30T07:43:32.000Z',
+          journal_symbol: 'IND',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.journalEntriesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#ledgerAccountsAdd', () => {
     const endpoint = '/accounting/ledger-accounts'
 
@@ -3011,14 +3528,14 @@ describe('AccountingApi', () => {
           status: 'active',
           header: true,
           bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           parent_account: {
@@ -3077,21 +3594,22 @@ describe('AccountingApi', () => {
             tax_rate: {
               id: '123456',
               code: 'N-T',
-              name: 'GST on Purchases'
+              name: 'GST on Purchases',
+              rate: 10
             },
             level: 1,
             active: true,
             status: 'active',
             header: true,
             bank_account: {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             },
             categories: [
@@ -3226,21 +3744,22 @@ describe('AccountingApi', () => {
           tax_rate: {
             id: '123456',
             code: 'N-T',
-            name: 'GST on Purchases'
+            name: 'GST on Purchases',
+            rate: 10
           },
           level: 1,
           active: true,
           status: 'active',
           header: true,
           bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           categories: [
@@ -3339,14 +3858,14 @@ describe('AccountingApi', () => {
           status: 'active',
           header: true,
           bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
             iban: 'CH2989144532982975332',
             bic: 'AUDSCHGGXXX',
             bsb_number: '062-001',
             branch_identifier: '001',
             bank_code: 'BNH',
-            account_number: '123465',
-            account_name: 'SPACEX LLC',
-            account_type: 'credit_card',
             currency: 'USD'
           },
           parent_account: {
@@ -3404,6 +3923,7 @@ describe('AccountingApi', () => {
           reference: '123456',
           payment_method: 'Credit Card',
           payment_method_reference: '123456',
+          payment_method_id: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -3498,6 +4018,7 @@ describe('AccountingApi', () => {
             reference: '123456',
             payment_method: 'Credit Card',
             payment_method_reference: '123456',
+            payment_method_id: '123456',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
             account: {
@@ -3661,6 +4182,7 @@ describe('AccountingApi', () => {
           reference: '123456',
           payment_method: 'Credit Card',
           payment_method_reference: '123456',
+          payment_method_id: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -3782,6 +4304,7 @@ describe('AccountingApi', () => {
           reference: '123456',
           payment_method: 'Credit Card',
           payment_method_reference: '123456',
+          payment_method_id: '123456',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -3960,13 +4483,15 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {
         supplier: {
-          company_name: 'SpaceX',
+          display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
+          company_name: 'SpaceX',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
           last_name: 'Musk',
           suffix: 'Jr.',
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -3994,7 +4519,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this supplier',
           phone_numbers: [
             {
               id: '12345',
@@ -4021,17 +4545,18 @@ describe('AccountingApi', () => {
           ],
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this supplier',
           tax_rate: {
             id: '123456'
           },
@@ -4077,13 +4602,15 @@ describe('AccountingApi', () => {
           {
             id: '12345',
             downstream_id: '12345',
-            company_name: 'SpaceX',
+            display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
+            company_name: 'SpaceX',
             title: 'CEO',
             first_name: 'Elon',
             middle_name: 'D.',
             last_name: 'Musk',
             suffix: 'Jr.',
+            individual: true,
             addresses: [
               {
                 id: '123',
@@ -4111,7 +4638,6 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             ],
-            notes: 'Some notes about this supplier',
             phone_numbers: [
               {
                 id: '12345',
@@ -4138,21 +4664,23 @@ describe('AccountingApi', () => {
             ],
             bank_accounts: [
               {
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 bsb_number: '062-001',
                 branch_identifier: '001',
                 bank_code: 'BNH',
-                account_number: '123465',
-                account_name: 'SPACEX LLC',
-                account_type: 'credit_card',
                 currency: 'USD'
               }
             ],
+            notes: 'Some notes about this supplier',
             tax_rate: {
               id: '123456',
               code: 'N-T',
-              name: 'GST on Purchases'
+              name: 'GST on Purchases',
+              rate: 10
             },
             tax_number: 'US123945459',
             currency: 'USD',
@@ -4261,13 +4789,15 @@ describe('AccountingApi', () => {
         data: {
           id: '12345',
           downstream_id: '12345',
-          company_name: 'SpaceX',
+          display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
+          company_name: 'SpaceX',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
           last_name: 'Musk',
           suffix: 'Jr.',
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -4295,7 +4825,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this supplier',
           phone_numbers: [
             {
               id: '12345',
@@ -4322,21 +4851,23 @@ describe('AccountingApi', () => {
           ],
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this supplier',
           tax_rate: {
             id: '123456',
             code: 'N-T',
-            name: 'GST on Purchases'
+            name: 'GST on Purchases',
+            rate: 10
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -4403,13 +4934,15 @@ describe('AccountingApi', () => {
       const params = {
         id: 'id_example',
         supplier: {
-          company_name: 'SpaceX',
+          display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
+          company_name: 'SpaceX',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
           last_name: 'Musk',
           suffix: 'Jr.',
+          individual: true,
           addresses: [
             {
               id: '123',
@@ -4437,7 +4970,6 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           ],
-          notes: 'Some notes about this supplier',
           phone_numbers: [
             {
               id: '12345',
@@ -4464,17 +4996,18 @@ describe('AccountingApi', () => {
           ],
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
+          notes: 'Some notes about this supplier',
           tax_rate: {
             id: '123456'
           },

@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`employee_id` | **string** |  | 
+`employee_id` | **string** | A unique identifier for an object. | 
 `net_pay` | **number** | The employee\'s net pay. Only available when payroll has been processed | [optional] 
 `gross_pay` | **number** | The employee\'s gross pay. Only available when payroll has been processed | [optional] 
 `taxes` | [**Array&lt;Tax&gt;**](Tax.md) | An array of employer and employee taxes for the pay period. | [optional] 

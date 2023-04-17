@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** | Name of the doc. | [optional] 
 `audience` | **string** | Audience for the doc. | [optional] 
 `format` | **string** | Format of the doc. | [optional] 

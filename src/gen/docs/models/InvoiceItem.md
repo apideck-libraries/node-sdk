@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `sold` | **boolean** | Item will be available on sales transactions | [optional] 
 `purchased` | **boolean** | Item is available for purchase transactions | [optional] 
 `tracked` | **boolean** | Item is inventoried | [optional] 
+`taxable` | **boolean** | If true, transactions for this item are taxable | [optional] 
 `inventory_date` | **Date** | The date of opening balance if inventory item is tracked - YYYY-MM-DD. | [optional] 
 `type` | **string** | Item type | [optional] 
 `sales_details` | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 
@@ -22,11 +23,11 @@ Name | Type | Description | Notes
 `income_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `expense_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `active` | **boolean** |  | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 
@@ -46,6 +47,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

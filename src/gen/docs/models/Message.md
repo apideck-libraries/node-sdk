@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `from` | **string** | The phone number that initiated the message. | 
 `to` | **string** | The phone number that received the message. | 
 `body` | **string** | The message text. | 
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `subject` | **string** |  | [optional] 
 `type` | **string** | Set to sms for SMS messages and mms for MMS messages. | [optional] 
 `number_of_units` | **number** | The number of units that make up the complete message. Messages can be split up due to the constraints of the message size. | [optional] 
@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 `price` | [**Price**](Price.md) |  | [optional] 
 `error` | **Error** |  | [optional] 
 `messaging_service_id` | **string** | The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID. | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

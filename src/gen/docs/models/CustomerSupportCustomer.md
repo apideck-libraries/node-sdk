@@ -5,10 +5,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`company_name` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
+`company_name` | **string** | The name of the company. | [optional] 
+`first_name` | **string** | The first name of the person. | [optional] 
+`last_name` | **string** | The last name of the person. | [optional] 
 `individual` | **boolean** |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `notes` | **string** |  | [optional] 
@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `bank_accounts` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `status` | **string** | Customer status | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

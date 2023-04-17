@@ -13,8 +13,11 @@
 * [Get Connection](#connectionsOne)
 * [Update Connection](#connectionsUpdate)
 * [Consumer Request Counts](#consumerRequestCountsAll)
+* [Create Consumer](#consumersAdd)
 * [Get All Consumers](#consumersAll)
+* [Delete Consumer](#consumersDelete)
 * [Get Consumer](#consumersOne)
+* [Update Consumer](#consumersUpdate)
 * [Get All Consumer Request Logs](#logsAll)
 * [Create Session](#sessionsCreate)
 
@@ -642,6 +645,79 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="consumersAdd"></a>
+# Create Consumer
+
+
+Method: **consumersAdd**
+
+```typescript
+vaultApi.consumersAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer** | [Consumer](../models/Consumer.md)|  |
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`CreateConsumerResponse`](../models/CreateConsumerResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Consumer created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID'
+});
+
+const params = {
+  consumer: {
+    consumer_id: 'test_consumer_id',
+    metadata: {
+      account_name: 'SpaceX',
+      user_name: 'Elon Musk',
+      email: 'elon@musk.com',
+      image: 'https://www.spacex.com/static/images/share.jpg'
+    }
+  }
+}
+
+try {
+  const { data } = await apideck.vault.consumersAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="consumersAll"></a>
 # Get All Consumers
 
@@ -658,7 +734,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
 
 
 
@@ -694,6 +770,71 @@ const params = {}
 
 try {
   const { data } = await apideck.vault.consumersAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="consumersDelete"></a>
+# Delete Consumer
+
+
+Method: **consumersDelete**
+
+```typescript
+vaultApi.consumersDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | [**string**] | ID of the consumer to return | 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`DeleteConsumerResponse`](../models/DeleteConsumerResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Consumer deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID'
+});
+
+const params = {
+  consumerId: 'test_user_id'
+}
+
+try {
+  const { data } = await apideck.vault.consumersDelete(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -771,6 +912,80 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="consumersUpdate"></a>
+# Update Consumer
+
+
+Method: **consumersUpdate**
+
+```typescript
+vaultApi.consumersUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer** | [UpdateConsumerRequest](../models/UpdateConsumerRequest.md)|  |
+ **consumerId** | [**string**] | ID of the consumer to return | 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`UpdateConsumerResponse`](../models/UpdateConsumerResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Consumer updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID'
+});
+
+const params = {
+  consumerId: 'test_user_id',
+  consumer: {
+    metadata: {
+      account_name: 'SpaceX',
+      user_name: 'Elon Musk',
+      email: 'elon@musk.com',
+      image: 'https://www.spacex.com/static/images/share.jpg'
+    }
+  }
+}
+
+try {
+  const { data } = await apideck.vault.consumersUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="logsAll"></a>
 # Get All Consumer Request Logs
 
@@ -789,7 +1004,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **filter** | **LogsFilter** | Filter results | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
 
 
 
@@ -895,19 +1110,6 @@ const params = {
       email: 'elon@musk.com',
       image: 'https://www.spacex.com/static/images/share.jpg'
     },
-    custom_consumer_settings: {
-      feature_flag_1: true,
-      tax_rates: [
-        {
-          id: '6',
-          label: '6%'
-        },
-        {
-          id: '21',
-          label: '21%'
-        }
-      ]
-    },
     redirect_uri: 'https://mysaas.com/dashboard',
     settings: {
       unified_apis: [
@@ -920,16 +1122,34 @@ const params = {
       show_logs: true,
       show_suggestions: false,
       show_sidebar: true,
-      auto_redirect: false
+      auto_redirect: false,
+      hide_guides: false,
+      allow_actions: [
+        'delete'
+      ]
     },
     theme: {
       favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
+      logo: 'https://res.cloudinary.com/apideck/icons/intercom',
       primary_color: '#286efa',
-      privacy_url: 'https://compliance.apideck.com/privacy-policy',
       sidepanel_background_color: '#286efa',
       sidepanel_text_color: '#FFFFFF',
-      terms_url: 'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e',
-      vault_name: 'Intercom'
+      vault_name: 'Intercom',
+      privacy_url: 'https://compliance.apideck.com/privacy-policy',
+      terms_url: 'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e'
+    },
+    custom_consumer_settings: {
+      feature_flag_1: true,
+      tax_rates: [
+        {
+          id: '6',
+          label: '6%'
+        },
+        {
+          id: '21',
+          label: '21%'
+        }
+      ]
     }
   }
 }

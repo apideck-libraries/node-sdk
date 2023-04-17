@@ -7,7 +7,7 @@ Details of the branch for which the job is created.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** | Name of the branch. | [optional] 
 
 

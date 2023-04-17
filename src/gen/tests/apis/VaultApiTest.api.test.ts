@@ -41,6 +41,7 @@ describe('VaultApi', () => {
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
           state: 'authorized',
+          integration_state: 'configured',
           auth_type: 'oauth2',
           oauth_grant_type: 'authorization_code',
           status: 'live',
@@ -164,6 +165,7 @@ describe('VaultApi', () => {
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
           state: 'authorized',
+          integration_state: 'configured',
           auth_type: 'oauth2',
           oauth_grant_type: 'authorization_code',
           status: 'live',
@@ -314,6 +316,7 @@ describe('VaultApi', () => {
               'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
             unified_api: 'crm',
             state: 'authorized',
+            integration_state: 'configured',
             auth_type: 'oauth2',
             oauth_grant_type: 'authorization_code',
             status: 'live',
@@ -459,6 +462,7 @@ describe('VaultApi', () => {
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
           state: 'authorized',
+          integration_state: 'configured',
           auth_type: 'oauth2',
           oauth_grant_type: 'authorization_code',
           status: 'live',
@@ -599,6 +603,7 @@ describe('VaultApi', () => {
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
           state: 'authorized',
+          integration_state: 'configured',
           auth_type: 'oauth2',
           oauth_grant_type: 'authorization_code',
           status: 'live',
@@ -721,6 +726,7 @@ describe('VaultApi', () => {
             'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
           unified_api: 'crm',
           state: 'authorized',
+          integration_state: 'configured',
           auth_type: 'oauth2',
           oauth_grant_type: 'authorization_code',
           status: 'live',
@@ -890,6 +896,96 @@ describe('VaultApi', () => {
     })
   })
 
+  describe('#consumersAdd', () => {
+    const endpoint = '/vault/consumers'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          consumer_id: 'test_consumer_id',
+          application_id: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
+          metadata: {
+            account_name: 'SpaceX',
+            user_name: 'Elon Musk',
+            email: 'elon@musk.com',
+            image: 'https://www.spacex.com/static/images/share.jpg'
+          },
+          connections: [
+            {
+              id: '1111+test_user_id',
+              name: 'Salesforce',
+              icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+              logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+              website: 'https://www.salesforce.com',
+              tag_line:
+                'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+              service_id: 'teamleader',
+              unified_api: 'crm',
+              consumer_id: 'test_user_id',
+              auth_type: 'oauth2',
+              enabled: true,
+              settings: {
+                instance_url: 'https://eu28.salesforce.com'
+              },
+              metadata: {
+                account: {
+                  name: 'My Company',
+                  id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+                },
+                plan: 'enterprise'
+              },
+              created_at: '2020-09-19T12:18:37.071Z',
+              updated_at: '2020-09-19T12:18:37.071Z',
+              state: 'authorized'
+            }
+          ],
+          services: ['salesforce', 'stripe'],
+          aggregated_request_count: 101,
+          request_counts: {
+            unify: 100,
+            proxy: 10,
+            vault: 21
+          },
+          created: '2021-05-07T12:55:42.242Z',
+          modified: '2021-05-07T12:55:42.242Z',
+          request_count_updated: '2021-05-07T12:55:42.242Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        consumer: {
+          consumer_id: 'test_consumer_id',
+          metadata: {
+            account_name: 'SpaceX',
+            user_name: 'Elon Musk',
+            email: 'elon@musk.com',
+            image: 'https://www.spacex.com/static/images/share.jpg'
+          }
+        }
+      } as any
+      const current = await vault.consumersAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#consumersAll', () => {
     const endpoint = '/vault/consumers'
 
@@ -951,6 +1047,42 @@ describe('VaultApi', () => {
       const { vault } = apideck
       const params = {} as any
       const current = await vault.consumersAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#consumersDelete', () => {
+    const endpoint = '/vault/consumers/{consumer_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          consumer_id: 'test_consumer_id'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        consumerId: 'test_user_id'
+      } as any
+      const current = await vault.consumersDelete(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -1033,6 +1165,96 @@ describe('VaultApi', () => {
         consumerId: 'test_user_id'
       } as any
       const current = await vault.consumersOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#consumersUpdate', () => {
+    const endpoint = '/vault/consumers/{consumer_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          consumer_id: 'test_consumer_id',
+          application_id: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
+          metadata: {
+            account_name: 'SpaceX',
+            user_name: 'Elon Musk',
+            email: 'elon@musk.com',
+            image: 'https://www.spacex.com/static/images/share.jpg'
+          },
+          connections: [
+            {
+              id: '1111+test_user_id',
+              name: 'Salesforce',
+              icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+              logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+              website: 'https://www.salesforce.com',
+              tag_line:
+                'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+              service_id: 'teamleader',
+              unified_api: 'crm',
+              consumer_id: 'test_user_id',
+              auth_type: 'oauth2',
+              enabled: true,
+              settings: {
+                instance_url: 'https://eu28.salesforce.com'
+              },
+              metadata: {
+                account: {
+                  name: 'My Company',
+                  id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+                },
+                plan: 'enterprise'
+              },
+              created_at: '2020-09-19T12:18:37.071Z',
+              updated_at: '2020-09-19T12:18:37.071Z',
+              state: 'authorized'
+            }
+          ],
+          services: ['salesforce', 'stripe'],
+          aggregated_request_count: 101,
+          request_counts: {
+            unify: 100,
+            proxy: 10,
+            vault: 21
+          },
+          created: '2021-05-07T12:55:42.242Z',
+          modified: '2021-05-07T12:55:42.242Z',
+          request_count_updated: '2021-05-07T12:55:42.242Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        consumerId: 'test_user_id',
+        consumer: {
+          metadata: {
+            account_name: 'SpaceX',
+            user_name: 'Elon Musk',
+            email: 'elon@musk.com',
+            image: 'https://www.spacex.com/static/images/share.jpg'
+          }
+        }
+      } as any
+      const current = await vault.consumersUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -1153,6 +1375,30 @@ describe('VaultApi', () => {
             email: 'elon@musk.com',
             image: 'https://www.spacex.com/static/images/share.jpg'
           },
+          redirect_uri: 'https://mysaas.com/dashboard',
+          settings: {
+            unified_apis: ['crm'],
+            hide_resource_settings: false,
+            sandbox_mode: false,
+            isolation_mode: false,
+            session_length: '30m',
+            show_logs: true,
+            show_suggestions: false,
+            show_sidebar: true,
+            auto_redirect: false,
+            hide_guides: false,
+            allow_actions: ['delete']
+          },
+          theme: {
+            favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
+            logo: 'https://res.cloudinary.com/apideck/icons/intercom',
+            primary_color: '#286efa',
+            sidepanel_background_color: '#286efa',
+            sidepanel_text_color: '#FFFFFF',
+            vault_name: 'Intercom',
+            privacy_url: 'https://compliance.apideck.com/privacy-policy',
+            terms_url: 'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e'
+          },
           custom_consumer_settings: {
             feature_flag_1: true,
             tax_rates: [
@@ -1165,28 +1411,6 @@ describe('VaultApi', () => {
                 label: '21%'
               }
             ]
-          },
-          redirect_uri: 'https://mysaas.com/dashboard',
-          settings: {
-            unified_apis: ['crm'],
-            hide_resource_settings: false,
-            sandbox_mode: false,
-            isolation_mode: false,
-            session_length: '30m',
-            show_logs: true,
-            show_suggestions: false,
-            show_sidebar: true,
-            auto_redirect: false
-          },
-          theme: {
-            favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
-            primary_color: '#286efa',
-            privacy_url: 'https://compliance.apideck.com/privacy-policy',
-            sidepanel_background_color: '#286efa',
-            sidepanel_text_color: '#FFFFFF',
-            terms_url:
-              'https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e',
-            vault_name: 'Intercom'
           }
         }
       } as any

@@ -6,8 +6,10 @@ import {
   ConnectorApi,
   CrmApi,
   CustomerSupportApi,
+  EcommerceApi,
   FileStorageApi,
   HrisApi,
+  IssueTrackingApi,
   LeadApi,
   PosApi,
   SmsApi,
@@ -36,8 +38,10 @@ export class Apideck {
   readonly connector: ConnectorApi
   readonly crm: CrmApi
   readonly customerSupport: CustomerSupportApi
+  readonly ecommerce: EcommerceApi
   readonly fileStorage: FileStorageApi
   readonly hris: HrisApi
+  readonly issueTracking: IssueTrackingApi
   readonly lead: LeadApi
   readonly pos: PosApi
   readonly sms: SmsApi
@@ -67,8 +71,10 @@ export class Apideck {
     this.connector = new ConnectorApi(configuration)
     this.crm = new CrmApi(configuration)
     this.customerSupport = new CustomerSupportApi(configuration)
+    this.ecommerce = new EcommerceApi(configuration)
     this.fileStorage = new FileStorageApi(configuration)
     this.hris = new HrisApi(configuration)
+    this.issueTracking = new IssueTrackingApi(configuration)
     this.lead = new LeadApi(configuration)
     this.pos = new PosApi(configuration)
     this.sms = new SmsApi(configuration)

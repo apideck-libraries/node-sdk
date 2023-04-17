@@ -185,6 +185,12 @@
 
 * `file_storage_file_deleted` (value: `'file-storage.file.deleted'`)
 
+* `issue_tracking_ticket_created` (value: `'issue-tracking.ticket.created'`)
+
+* `issue_tracking_ticket_updated` (value: `'issue-tracking.ticket.updated'`)
+
+* `issue_tracking_ticket_deleted` (value: `'issue-tracking.ticket.deleted'`)
+
 
 ---
 

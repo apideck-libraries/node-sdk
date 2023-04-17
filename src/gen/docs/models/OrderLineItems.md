@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** |  | [optional] 
 `item` | **object** |  | [optional] 
 `total_tax` | **number** |  | [optional] 

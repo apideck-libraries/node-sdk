@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `employee_id` | **string** | ID of the employee | [optional] 
 `policy_id` | **string** | ID of the policy | [optional] 
 `status` | **string** | The status of the time off request. | [optional] 
@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 `units` | **string** | The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;. | [optional] 
 `amount` | **number** | The amount of time off requested. | [optional] 
 `notes` | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

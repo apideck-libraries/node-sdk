@@ -1,14 +1,14 @@
-# Apideck.EmployeePartner
+# Apideck.Person
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
-`middle_name` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
+`first_name` | **string** | The first name of the person. | [optional] 
+`last_name` | **string** | The last name of the person. | [optional] 
+`middle_name` | **string** | Middle name of the person. | [optional] 
 `gender` | [**Gender**](Gender.md) |  | [optional] 
 `initials` | **string** |  | [optional] 
 `birthday` | **Date** |  | [optional] 

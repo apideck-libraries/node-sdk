@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
  **filter** | **WebhookEventLogsFilter** | Filter results | (optional) 
 
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
 
 
 

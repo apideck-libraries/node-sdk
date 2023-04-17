@@ -774,7 +774,8 @@ describe('HrisApi', () => {
               name: 'Elon Musk',
               first_name: 'Elon',
               last_name: 'Musk',
-              email: 'elon@musk.com'
+              email: 'elon@musk.com',
+              employment_status: 'active'
             },
             direct_reports: [
               'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1033,7 +1034,8 @@ describe('HrisApi', () => {
               name: 'Elon Musk',
               first_name: 'Elon',
               last_name: 'Musk',
-              email: 'elon@musk.com'
+              email: 'elon@musk.com',
+              employment_status: 'active'
             },
             direct_reports: [
               'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1291,7 +1293,8 @@ describe('HrisApi', () => {
               name: 'Elon Musk',
               first_name: 'Elon',
               last_name: 'Musk',
-              email: 'elon@musk.com'
+              email: 'elon@musk.com',
+              employment_status: 'active'
             },
             direct_reports: [
               'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1552,7 +1555,8 @@ describe('HrisApi', () => {
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
-            email: 'elon@musk.com'
+            email: 'elon@musk.com',
+            employment_status: 'active'
           },
           direct_reports: [
             'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1763,7 +1767,8 @@ describe('HrisApi', () => {
               name: 'Elon Musk',
               first_name: 'Elon',
               last_name: 'Musk',
-              email: 'elon@musk.com'
+              email: 'elon@musk.com',
+              employment_status: 'active'
             },
             direct_reports: [
               'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -2040,7 +2045,8 @@ describe('HrisApi', () => {
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
-            email: 'elon@musk.com'
+            email: 'elon@musk.com',
+            employment_status: 'active'
           },
           direct_reports: [
             'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -2274,7 +2280,8 @@ describe('HrisApi', () => {
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
-            email: 'elon@musk.com'
+            email: 'elon@musk.com',
+            employment_status: 'active'
           },
           direct_reports: [
             'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -2413,297 +2420,6 @@ describe('HrisApi', () => {
         }
       } as any
       const current = await hris.employeesUpdate(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#jobsAll', () => {
-    const endpoint = '/hris/jobs/employees/{employee_id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'sage-hr',
-        resource: 'Employees',
-        operation: 'all',
-        data: {
-          employee: {
-            id: '12345',
-            first_name: 'Elon',
-            last_name: 'Musk',
-            middle_name: 'D.',
-            display_name: 'Technoking',
-            preferred_name: 'Elon Musk',
-            initials: 'EM',
-            salutation: 'Mr',
-            title: 'CEO',
-            marital_status: 'married',
-            partner: {
-              id: '12345',
-              first_name: 'Elon',
-              last_name: 'Musk',
-              middle_name: 'D.',
-              gender: 'male',
-              initials: 'EM',
-              birthday: '2000-08-12',
-              deceased_on: '2000-08-12'
-            },
-            division: 'Europe',
-            division_id: '12345',
-            department: 'R&amp;D',
-            department_id: '12345',
-            team: {
-              id: '1234',
-              name: 'Full Stack Engineers'
-            },
-            company_id: '23456',
-            company_name: 'SpaceX',
-            employment_start_date: '2021-10-26',
-            employment_end_date: '2028-10-26',
-            leaving_reason: 'resigned',
-            employee_number: '123456-AB',
-            employment_status: 'active',
-            employment_role: {
-              type: 'contractor',
-              sub_type: 'full_time'
-            },
-            manager: {
-              id: '12345',
-              name: 'Elon Musk',
-              first_name: 'Elon',
-              last_name: 'Musk',
-              email: 'elon@musk.com'
-            },
-            direct_reports: [
-              'a0d636c6-43b3-4bde-8c70-85b707d992f4',
-              'a98lfd96-43b3-4bde-8c70-85b707d992e6'
-            ],
-            social_security_number: '123456789',
-            birthday: '2000-08-12',
-            deceased_on: '2000-08-12',
-            country_of_birth: 'US',
-            description: 'A description',
-            gender: 'male',
-            pronouns: 'she,her',
-            preferred_language: 'EN',
-            languages: ['EN'],
-            nationalities: ['US'],
-            photo_url: 'https://unavatar.io/elon-musk',
-            timezone: 'Europe/London',
-            source: 'lever',
-            source_id: '12345',
-            record_url: 'https://app.intercom.io/contacts/12345',
-            jobs: [
-              {
-                id: '12345',
-                employee_id: '12345',
-                title: 'CEO',
-                role: 'Sales',
-                start_date: '2020-08-12',
-                end_date: '2020-08-12',
-                compensation_rate: 72000,
-                currency: 'USD',
-                payment_unit: 'year',
-                hired_at: '2020-08-12',
-                is_primary: true,
-                location: {
-                  id: '123',
-                  type: 'primary',
-                  string: '25 Spring Street, Blackburn, VIC 3130',
-                  name: 'HQ US',
-                  line1: 'Main street',
-                  line2: 'apt #',
-                  line3: 'Suite #',
-                  line4: 'delivery instructions',
-                  street_number: '25',
-                  city: 'San Francisco',
-                  state: 'CA',
-                  postal_code: '94104',
-                  country: 'US',
-                  latitude: '40.759211',
-                  longitude: '-73.984638',
-                  county: 'Santa Clara',
-                  contact_name: 'Elon Musk',
-                  salutation: 'Mr',
-                  phone_number: '111-111-1111',
-                  fax: '122-111-1111',
-                  email: 'elon@musk.com',
-                  website: 'https://elonmusk.com',
-                  row_version: '1-12345'
-                }
-              }
-            ],
-            compensations: [
-              {
-                id: '3404301363494309004',
-                job_id: '3490439050957906679',
-                rate: 50,
-                payment_unit: 'hour',
-                flsa_status: 'nonexempt',
-                effective_date: '2021-06-11'
-              }
-            ],
-            works_remote: true,
-            addresses: [
-              {
-                id: '123',
-                type: 'primary',
-                string: '25 Spring Street, Blackburn, VIC 3130',
-                name: 'HQ US',
-                line1: 'Main street',
-                line2: 'apt #',
-                line3: 'Suite #',
-                line4: 'delivery instructions',
-                street_number: '25',
-                city: 'San Francisco',
-                state: 'CA',
-                postal_code: '94104',
-                country: 'US',
-                latitude: '40.759211',
-                longitude: '-73.984638',
-                county: 'Santa Clara',
-                contact_name: 'Elon Musk',
-                salutation: 'Mr',
-                phone_number: '111-111-1111',
-                fax: '122-111-1111',
-                email: 'elon@musk.com',
-                website: 'https://elonmusk.com',
-                row_version: '1-12345'
-              }
-            ],
-            phone_numbers: [
-              {
-                id: '12345',
-                country_code: '1',
-                area_code: '323',
-                number: '111-111-1111',
-                extension: '105',
-                type: 'primary'
-              }
-            ],
-            emails: [
-              {
-                id: '123',
-                email: 'elon@musk.com',
-                type: 'primary'
-              }
-            ],
-            custom_fields: [
-              {
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: 'Uses Salesforce and Marketo'
-              }
-            ],
-            social_links: [
-              {
-                id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
-                type: 'twitter'
-              }
-            ],
-            tax_code: '1111',
-            tax_id: '234-32-0000',
-            dietary_preference: 'Veggie',
-            food_allergies: ['No allergies'],
-            tags: ['New'],
-            row_version: '1-12345',
-            deleted: true,
-            updated_by: '12345',
-            created_by: '12345',
-            updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
-          },
-          jobs: [
-            {
-              id: '12345',
-              employee_id: 'string',
-              title: 'CEO',
-              start_date: '2020-08-12',
-              end_date: '2020-08-12',
-              employment_status: 'active',
-              department: 'Brussels Office',
-              location: {
-                name: 'HQ US'
-              }
-            }
-          ]
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { hris } = apideck
-      const params = {
-        employeeId: 'employee_id_example'
-      } as any
-      const current = await hris.jobsAll(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  describe('#jobsOne', () => {
-    const endpoint = '/hris/jobs/employees/{employee_id}/jobs/{job_id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'sage-hr',
-        resource: 'Employees',
-        operation: 'one',
-        data: {
-          id: '12345',
-          employee_id: 'string',
-          title: 'CEO',
-          start_date: '2020-08-12',
-          end_date: '2020-08-12',
-          employment_status: 'active',
-          department: 'Brussels Office',
-          location: {
-            name: 'HQ US'
-          }
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { hris } = apideck
-      const params = {
-        jobId: 'job_id_example',
-        employeeId: 'employee_id_example'
-      } as any
-      const current = await hris.jobsOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

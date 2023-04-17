@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 `status` | [**Status**](Status.md) |  | 
 `delivery_url` | **string** | The delivery url of the webhook endpoint. | 
 `events` | [**Array&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
-`description` | **string** |  | [optional] 
+`description` | **string** | A description of the object. | [optional] 
 
 
 

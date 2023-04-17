@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `parent_folder_id` | **string** | The parent folder to create the new file within. | 
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** | The name of the folder. | [optional] 
 
 

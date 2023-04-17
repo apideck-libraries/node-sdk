@@ -1,11 +1,11 @@
-# Apideck.Passthrough
+# Apideck.EcommerceOrdersFilter
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`example_downstream_property` | **string** | All passthrough query parameters are passed along to the connector as is (?pass_through[search]=leads becomes ?search=leads) | [optional] 
+`email` | **string** | Customer email address to filter on | [optional] 
 
 
 

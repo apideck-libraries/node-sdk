@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `amount` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 

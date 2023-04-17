@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `manager_id` | **string** | Manager id to filter on | [optional] 
 `employment_status` | **string** | Employment status to filter on | [optional] 
 `employee_number` | **string** | Employee number to filter on | [optional] 
+`department_id` | **string** | ID of the department to filter on | [optional] 
 
 
 
