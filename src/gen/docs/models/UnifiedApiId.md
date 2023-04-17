@@ -3,55 +3,57 @@
 ## Enum
 
 
-* `vault` (value: `'vault'`)
+* `accounting` (value: `'accounting'`)
 
-* `lead` (value: `'lead'`)
+* `ats` (value: `'ats'`)
+
+* `calendar` (value: `'calendar'`)
 
 * `crm` (value: `'crm'`)
 
-* `accounting` (value: `'accounting'`)
+* `csp` (value: `'csp'`)
+
+* `customer_support` (value: `'customer-support'`)
+
+* `ecommerce` (value: `'ecommerce'`)
+
+* `email` (value: `'email'`)
+
+* `email_marketing` (value: `'email-marketing'`)
+
+* `expense_management` (value: `'expense-management'`)
 
 * `file_storage` (value: `'file-storage'`)
 
-* `spreadsheet` (value: `'spreadsheet'`)
+* `form` (value: `'form'`)
 
-* `email` (value: `'email'`)
+* `hris` (value: `'hris'`)
+
+* `lead` (value: `'lead'`)
+
+* `payroll` (value: `'payroll'`)
+
+* `pos` (value: `'pos'`)
+
+* `procurement` (value: `'procurement'`)
+
+* `project_management` (value: `'project-management'`)
 
 * `script` (value: `'script'`)
 
 * `sms` (value: `'sms'`)
 
+* `spreadsheet` (value: `'spreadsheet'`)
+
 * `team_messaging` (value: `'team-messaging'`)
 
-* `ecommerce` (value: `'ecommerce'`)
-
-* `payroll` (value: `'payroll'`)
-
-* `customer_support` (value: `'customer-support'`)
+* `issue_tracking` (value: `'issue-tracking'`)
 
 * `time_registration` (value: `'time-registration'`)
 
 * `transactional_email` (value: `'transactional-email'`)
 
-* `form` (value: `'form'`)
-
-* `csp` (value: `'csp'`)
-
-* `email_marketing` (value: `'email-marketing'`)
-
-* `ats` (value: `'ats'`)
-
-* `hris` (value: `'hris'`)
-
-* `pos` (value: `'pos'`)
-
-* `project_management` (value: `'project-management'`)
-
-* `expense_management` (value: `'expense-management'`)
-
-* `calendar` (value: `'calendar'`)
-
-* `procurement` (value: `'procurement'`)
+* `vault` (value: `'vault'`)
 
 
 ---

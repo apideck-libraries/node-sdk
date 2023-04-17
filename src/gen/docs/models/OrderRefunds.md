@@ -5,14 +5,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`location_id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
+`location_id` | **string** | A unique identifier for an object. | [optional] 
 `amount` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `reason` | **string** |  | [optional] 
 `status` | **string** |  | [optional] 
-`tender_id` | **string** |  | [optional] 
-`transaction_id` | **string** |  | [optional] 
+`tender_id` | **string** | A unique identifier for an object. | [optional] 
+`transaction_id` | **string** | A unique identifier for an object. | [optional] 
 
 
 

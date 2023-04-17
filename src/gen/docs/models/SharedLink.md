@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 `password_protected` | **boolean** | Indicated if the shared link is password protected. | [optional] 
 `password` | **string** | Optional password for the shared link. | [optional] 
 `expires_at` | **Date** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

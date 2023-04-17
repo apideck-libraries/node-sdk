@@ -1980,7 +1980,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'add',
         data: {
           id: '12345'
@@ -2020,6 +2020,7 @@ describe('PosApi', () => {
           refunded: false,
           customers: [
             {
+              id: '12345',
               first_name: 'Elon',
               middle_name: 'D.',
               last_name: 'Musk',
@@ -2250,7 +2251,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'all',
         data: [
           {
@@ -2281,6 +2282,7 @@ describe('PosApi', () => {
             refunded: false,
             customers: [
               {
+                id: '12345',
                 first_name: 'Elon',
                 middle_name: 'D.',
                 last_name: 'Musk',
@@ -2486,7 +2488,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'delete',
         data: {
           id: '12345'
@@ -2526,7 +2528,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'one',
         data: {
           id: '12345',
@@ -2556,6 +2558,7 @@ describe('PosApi', () => {
           refunded: false,
           customers: [
             {
+              id: '12345',
               first_name: 'Elon',
               middle_name: 'D.',
               last_name: 'Musk',
@@ -2820,7 +2823,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'add',
         data: {
           id: '12345'
@@ -2861,6 +2864,7 @@ describe('PosApi', () => {
           refunded: false,
           customers: [
             {
+              id: '12345',
               first_name: 'Elon',
               middle_name: 'D.',
               last_name: 'Musk',
@@ -3091,7 +3095,7 @@ describe('PosApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'clover',
-        resource: 'Orders',
+        resource: 'orders',
         operation: 'update',
         data: {
           id: '12345'
@@ -3132,6 +3136,7 @@ describe('PosApi', () => {
           refunded: false,
           customers: [
             {
+              id: '12345',
               first_name: 'Elon',
               middle_name: 'D.',
               last_name: 'Musk',

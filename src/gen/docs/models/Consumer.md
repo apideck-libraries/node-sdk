@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`consumer_id` | **string** |  | [optional] 
-`application_id` | **string** |  | [optional] 
+`consumer_id` | **string** | Unique consumer identifier. You can freely choose a consumer ID yourself. Most of the time, this is an ID of your internal data model that represents a user or account in your system (for example account:12345). If the consumer doesn\'t exist yet, Vault will upsert a consumer based on your ID. | 
+`application_id` | **string** | ID of your Apideck Application | [optional] 
 `metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
 `connections` | [**Array&lt;ConsumerConnection&gt;**](ConsumerConnection.md) |  | [optional] 
 `services` | **Array&lt;string&gt;** |  | [optional] 

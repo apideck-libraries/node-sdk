@@ -652,14 +652,14 @@ describe('CrmApi', () => {
           last_name: 'Musk',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
@@ -793,14 +793,14 @@ describe('CrmApi', () => {
             parent_id: '22345',
             bank_accounts: [
               {
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 bsb_number: '062-001',
                 branch_identifier: '001',
                 bank_code: 'BNH',
-                account_number: '123465',
-                account_name: 'SPACEX LLC',
-                account_type: 'credit_card',
                 currency: 'USD'
               }
             ],
@@ -1000,14 +1000,14 @@ describe('CrmApi', () => {
           parent_id: '22345',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
@@ -1164,14 +1164,14 @@ describe('CrmApi', () => {
           last_name: 'Musk',
           bank_accounts: [
             {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
-              account_number: '123465',
-              account_name: 'SPACEX LLC',
-              account_type: 'credit_card',
               currency: 'USD'
             }
           ],
@@ -1276,7 +1276,7 @@ describe('CrmApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'contacts',
         operation: 'add',
         data: {
           id: '12345'
@@ -1409,7 +1409,7 @@ describe('CrmApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'contacts',
         operation: 'all',
         data: [
           {
@@ -1559,7 +1559,7 @@ describe('CrmApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'contacts',
         operation: 'delete',
         data: {
           id: '12345'
@@ -1736,7 +1736,7 @@ describe('CrmApi', () => {
         status_code: 200,
         status: 'OK',
         service: 'zoho-crm',
-        resource: 'companies',
+        resource: 'contacts',
         operation: 'update',
         data: {
           id: '12345'
@@ -2711,6 +2711,7 @@ describe('CrmApi', () => {
           lead_id: '12345',
           lead_source: 'Website',
           contact_id: '12345',
+          contact_ids: ['12345'],
           company_id: '12345',
           company_name: 'Copper',
           owner_id: '12345',
@@ -2779,6 +2780,7 @@ describe('CrmApi', () => {
             lead_id: '12345',
             lead_source: 'Website',
             contact_id: '12345',
+            contact_ids: ['12345'],
             company_id: '12345',
             company_name: 'Copper',
             owner_id: '12345',
@@ -2917,6 +2919,7 @@ describe('CrmApi', () => {
           lead_id: '12345',
           lead_source: 'Website',
           contact_id: '12345',
+          contact_ids: ['12345'],
           company_id: '12345',
           company_name: 'Copper',
           owner_id: '12345',
@@ -3013,6 +3016,7 @@ describe('CrmApi', () => {
           lead_id: '12345',
           lead_source: 'Website',
           contact_id: '12345',
+          contact_ids: ['12345'],
           company_id: '12345',
           company_name: 'Copper',
           owner_id: '12345',

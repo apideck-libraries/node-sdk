@@ -504,7 +504,8 @@ describe('ConnectorApi', () => {
                 event_type: 'employee.created',
                 event_source: 'native',
                 downstream_event_type: 'person_created',
-                resource: 'companies'
+                resources: ['companies'],
+                entity_type: 'employee'
               }
             ],
             webhook_support: {
@@ -638,7 +639,8 @@ describe('ConnectorApi', () => {
                   event_type: 'employee.created',
                   event_source: 'native',
                   downstream_event_type: 'person_created',
-                  resource: 'companies'
+                  resources: [Array],
+                  entity_type: 'employee'
                 }
               ]
             }
@@ -658,7 +660,8 @@ describe('ConnectorApi', () => {
               event_type: 'employee.created',
               event_source: 'native',
               downstream_event_type: 'person_created',
-              resource: 'companies'
+              resources: ['companies'],
+              entity_type: 'employee'
             }
           ],
           webhook_support: {

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | ID of the connector. | [optional] 
 `name` | **string** | Name of the connector. | [optional] 
 `status` | [**ConnectorStatus**](ConnectorStatus.md) |  | [optional] 
-`description` | **string** |  | [optional] 
+`description` | **string** | A description of the object. | [optional] 
 `icon_url` | **string** | Link to a small square icon for the connector. | [optional] 
 `logo_url` | **string** | Link to the full logo for the connector. | [optional] 
 `website_url` | **string** | Link to the connector\'s website. | [optional] 

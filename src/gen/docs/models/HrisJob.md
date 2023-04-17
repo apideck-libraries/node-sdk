@@ -5,30 +5,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `employee_id` | **string** | Id of the employee | [optional] 
-`title` | **string** |  | [optional] 
+`title` | **string** | The job title of the person. | [optional] 
 `start_date` | **Date** |  | [optional] 
 `end_date` | **Date** |  | [optional] 
-`employment_status` | **string** |  | [optional] 
+`employment_status` | [**EmploymentStatus**](EmploymentStatus.md) |  | [optional] 
 `department` | **string** | Department name | [optional] 
+`is_primary` | **boolean** | Indicates whether this the employee\'s primary job. | [optional] 
 `location` | [**HrisJobLocation**](HrisJobLocation.md) |  | [optional] 
 
-
-
-
-
-<a name="HrisJobEmploymentStatus"></a>
-## Enum: HrisJob.employment_status
-
-
-* `active` (value: `'active'`)
-
-* `inactive` (value: `'inactive'`)
-
-* `terminated` (value: `'terminated'`)
-
-* `other` (value: `'other'`)
 
 
 
@@ -39,6 +25,7 @@ Name | Type | Description | Notes
 
 
 
+* [`EmploymentStatus`](EmploymentStatus.md)
 
 
 * [`HrisJobLocation`](HrisJobLocation.md)

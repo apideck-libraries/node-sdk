@@ -6,7 +6,7 @@
  */
 export interface UnifiedId {
   /**
-   *
+   * The unique identifier of the resource
    * @type {string}
    * @memberof UnifiedId
    */

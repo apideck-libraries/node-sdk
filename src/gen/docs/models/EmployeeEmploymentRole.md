@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`type` | **string** |  | [optional] 
-`sub_type` | **string** |  | [optional] 
+`type` | **string** | The type of employment relationship the employee has with the organization. | [optional] 
+`sub_type` | **string** | The work schedule of the employee. | [optional] 
 
 
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 * `temp` (value: `'temp'`)
 
-* `intership` (value: `'intership'`)
+* `internship` (value: `'internship'`)
 
 * `other` (value: `'other'`)
 

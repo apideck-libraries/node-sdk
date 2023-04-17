@@ -367,6 +367,8 @@
 
 * `BTC` (value: `'BTC'`)
 
+* `ETH` (value: `'ETH'`)
+
 
 ---
 

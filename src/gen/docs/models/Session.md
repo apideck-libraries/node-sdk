@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `consumer_metadata` | [**ConsumerMetadata**](ConsumerMetadata.md) |  | [optional] 
-`custom_consumer_settings` | **{ [key: string]: object; }** | Custom consumer settings that are passed as part of the session. | [optional] 
-`redirect_uri` | **string** |  | [optional] 
+`redirect_uri` | **string** | The URL to redirect the user to after the session has been configured. | [optional] 
 `settings` | [**SessionSettings**](SessionSettings.md) |  | [optional] 
 `theme` | [**SessionTheme**](SessionTheme.md) |  | [optional] 
+`custom_consumer_settings` | **{ [key: string]: object; }** | Custom consumer settings that are passed as part of the session. | [optional] 
 
 
 
@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 ## Referenced Types:
 * [`ConsumerMetadata`](ConsumerMetadata.md)
 
-
 * [`SessionSettings`](SessionSettings.md)
 * [`SessionTheme`](SessionTheme.md)
+
 
 ---
 

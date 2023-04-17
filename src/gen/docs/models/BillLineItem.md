@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `row_id` | **string** | Row ID | [optional] 
 `code` | **string** | User defined item code | [optional] 
 `line_number` | **number** | Line number in the invoice | [optional] 
@@ -22,11 +22,11 @@ Name | Type | Description | Notes
 `item` | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
 
 

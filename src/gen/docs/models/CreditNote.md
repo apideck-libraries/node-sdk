@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`id` | **string** | Unique identifier representing the entity | 
 `total_amount` | **number** | Amount of transaction | 
-`id` | **string** | Unique identifier representing the entity | [optional] 
 `number` | **string** | Credit note number. | [optional] 
 `customer` | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 `balance` | **number** | The balance reflecting any payments made against the transaction. | [optional] 
 `remaining_credit` | **number** | Indicates the total credit amount still available to apply towards the payment. | [optional] 
-`status` | **string** | Status of payment | [optional] 
+`status` | **string** | Status of credit notes | [optional] 
 `reference` | **string** | Optional reference message ie: Debit remittance detail. | [optional] 
 `date_issued` | **Date** | Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 `date_paid` | **Date** | Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
@@ -26,11 +26,12 @@ Name | Type | Description | Notes
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 `allocations` | **Array&lt;object&gt;** |  | [optional] 
 `note` | **string** | Optional note to be associated with the credit note. | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`terms` | **string** | Optional terms to be associated with the credit note. | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 
@@ -84,6 +85,7 @@ Name | Type | Description | Notes
 
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`InvoiceLineItem`](InvoiceLineItem.md)
+
 
 
 

@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `display_id` | **string** | The human readable display ID used when displaying the account | [optional] 
 `nominal_code` | **string** | The nominal code of the ledger account. | [optional] 
 `code` | **string** | The code assigned to the account. | [optional] 
@@ -30,11 +30,11 @@ Name | Type | Description | Notes
 `sub_account` | **boolean** | Whether the account is a sub account or not. | [optional] 
 `sub_accounts` | **Array&lt;object&gt;** | The sub accounts of the account. | [optional] 
 `last_reconciliation_date` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

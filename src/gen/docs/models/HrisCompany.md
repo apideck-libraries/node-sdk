@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `legal_name` | **string** |  | 
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `display_name` | **string** |  | [optional] 
 `subdomain` | **string** |  | [optional] 
 `status` | **string** |  | [optional] 
@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `debtor_id` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 

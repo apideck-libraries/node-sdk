@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`product_id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
+`product_id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** |  | [optional] 
 `type` | **string** |  | [optional] 
 `amount` | **number** |  | [optional] 

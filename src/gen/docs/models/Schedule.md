@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | 
+`id` | **string** | A unique identifier for an object. | 
 `start_date` | **string** | The start date, inclusive, of the schedule period. | 
 `end_date` | **string** | The end date, inclusive, of the schedule period. | 
 `work_pattern` | [**ScheduleWorkPattern**](ScheduleWorkPattern.md) |  | 

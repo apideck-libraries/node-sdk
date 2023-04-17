@@ -23,8 +23,6 @@
 * [Delete Employee](#employeesDelete)
 * [Get Employee](#employeesOne)
 * [Update Employee](#employeesUpdate)
-* [List Jobs](#jobsAll)
-* [One Job](#jobsOne)
 * [List Payroll](#payrollsAll)
 * [Get Payroll](#payrollsOne)
 * [Create Time Off Request](#timeOffRequestsAdd)
@@ -179,7 +177,8 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -316,6 +315,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -587,7 +587,8 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -724,6 +725,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -869,6 +871,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **filter** | **PayrollsFilter** | Apply filters | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -939,6 +942,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -1009,6 +1013,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -1153,7 +1158,8 @@ const params = {
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',
-      email: 'elon@musk.com'
+      email: 'elon@musk.com',
+      employment_status: 'active'
     },
     direct_reports: [
       'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1333,8 +1339,10 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
  **filter** | **EmployeesFilter** | Apply filters | (optional) 
+ **sort** | **EmployeesSort** | Apply sorting | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -1471,6 +1479,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -1617,7 +1626,8 @@ const params = {
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',
-      email: 'elon@musk.com'
+      email: 'elon@musk.com',
+      employment_status: 'active'
     },
     direct_reports: [
       'a0d636c6-43b3-4bde-8c70-85b707d992f4',
@@ -1778,146 +1788,6 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="jobsAll"></a>
-# List Jobs
-
-
-Method: **jobsAll**
-
-```typescript
-hrisApi.jobsAll(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **employeeId** | [**string**] | ID of the employee you are acting upon. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`GetHrisJobsResponse`](../models/GetHrisJobsResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Jobs | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  employeeId: 'employee_id_example'
-}
-
-try {
-  const { data } = await apideck.hris.jobsAll(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="jobsOne"></a>
-# One Job
-
-
-Method: **jobsOne**
-
-```typescript
-hrisApi.jobsOne(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobId** | [**string**] | ID of the job you are acting upon. | 
- **employeeId** | [**string**] | ID of the employee you are acting upon. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`GetHrisJobResponse`](../models/GetHrisJobResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**200** | Job | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID'
-});
-
-const params = {
-  jobId: 'job_id_example',
-  employeeId: 'employee_id_example'
-}
-
-try {
-  const { data } = await apideck.hris.jobsOne(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
 <a name="payrollsAll"></a>
 # List Payroll
 
@@ -1937,6 +1807,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **filter** | **PayrollsFilter** | Apply filters | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -2004,6 +1875,7 @@ Name | Type | Description  | Notes
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -2158,8 +2030,9 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
- **limit** | [**number**] | Number of records to return | (optional) defaults to 20
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
  **filter** | **TimeOffRequestsFilter** | Apply filters | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 
@@ -2296,6 +2169,7 @@ Name | Type | Description  | Notes
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
 
 

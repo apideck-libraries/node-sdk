@@ -5,31 +5,33 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
-`company_name` | **string** |  | [optional] 
-`display_name` | **string** | Display name of supplier. | [optional] 
-`title` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`middle_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
+`display_id` | **string** | Display ID | [optional] 
+`display_name` | **string** | Display name | [optional] 
+`company_name` | **string** | The name of the company. | [optional] 
+`title` | **string** | The job title of the person. | [optional] 
+`first_name` | **string** | The first name of the person. | [optional] 
+`middle_name` | **string** | Middle name of the person. | [optional] 
+`last_name` | **string** | The last name of the person. | [optional] 
 `suffix` | **string** |  | [optional] 
+`individual` | **boolean** | Is this an individual or business supplier | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
-`notes` | **string** |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `bank_accounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
+`notes` | **string** | Some notes about this supplier | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tax_number` | **string** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
-`status` | **string** | Customer status | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
-`row_version` | **string** |  | [optional] 
+`status` | **string** | Supplier status | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 
 
@@ -62,12 +64,14 @@ Name | Type | Description | Notes
 
 
 
-* [`Address`](Address.md)
 
+
+* [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`Website`](Website.md)
 * [`BankAccount`](BankAccount.md)
+
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 
 * [`Currency`](Currency.md)

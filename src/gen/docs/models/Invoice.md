@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
+`id` | **string** | A unique identifier for an object. | [optional] 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `type` | **string** | Invoice type | [optional] 
 `number` | **string** | Invoice number. | [optional] 
@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 `total_tax` | **number** | Total tax amount applied to this invoice. | [optional] 
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 `discount_percentage` | **number** | Discount percentage applied to this invoice. | [optional] 
+`discount_amount` | **number** | Discount amount applied to this invoice. | [optional] 
 `total` | **number** | Total amount of invoice, including tax. | [optional] 
 `balance` | **number** | Balance of invoice due. | [optional] 
 `deposit` | **number** | Amount of deposit made to this invoice. | [optional] 
@@ -33,11 +34,11 @@ Name | Type | Description | Notes
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
 `template_id` | **string** | Optional invoice template | [optional] 
 `source_document_url` | **string** | URL link to a source document - shown as \'Go to [appName]\' in the downstream app. Currently only supported for Xero. | [optional] 
-`row_version` | **string** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **Date** |  | [optional] 
-`created_at` | **Date** |  | [optional] 
+`row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
+`updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
 
@@ -99,6 +100,7 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
 
 
 
