@@ -106,6 +106,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
+          validation_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -230,6 +231,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
+          validation_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -374,6 +376,7 @@ describe('VaultApi', () => {
             configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
+            validation_support: true,
             settings_required_for_authorization: ['client_id', 'client_secret'],
             subscriptions: [
               {
@@ -527,6 +530,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
+          validation_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -668,6 +672,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
+          validation_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -791,6 +796,7 @@ describe('VaultApi', () => {
           configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
+          validation_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {

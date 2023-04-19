@@ -11,6 +11,8 @@
 
 * `authorized` (value: `'authorized'`)
 
+* `invalid` (value: `'invalid'`)
+
 
 ---
 
