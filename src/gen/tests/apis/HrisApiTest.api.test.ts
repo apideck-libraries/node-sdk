@@ -754,6 +754,7 @@ describe('HrisApi', () => {
             division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
+            department_name: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1014,6 +1015,7 @@ describe('HrisApi', () => {
             division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
+            department_name: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1273,6 +1275,7 @@ describe('HrisApi', () => {
             division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
+            department_name: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -1536,6 +1539,7 @@ describe('HrisApi', () => {
           division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
+          department_name: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'
@@ -1747,6 +1751,7 @@ describe('HrisApi', () => {
             division_id: '12345',
             department: 'R&amp;D',
             department_id: '12345',
+            department_name: '12345',
             team: {
               id: '1234',
               name: 'Full Stack Engineers'
@@ -2025,6 +2030,7 @@ describe('HrisApi', () => {
           division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
+          department_name: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'
@@ -2261,6 +2267,7 @@ describe('HrisApi', () => {
           division_id: '12345',
           department: 'R&amp;D',
           department_id: '12345',
+          department_name: '12345',
           team: {
             id: '1234',
             name: 'Full Stack Engineers'

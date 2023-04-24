@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 `disabled` | **boolean** | Indicates if the form field is displayed in a “read-only” mode. | [optional] 
 `hidden` | **boolean** | Indicates if the form field is not displayed but the value that is being stored on the connection. | [optional] 
 `sensitive` | **boolean** | Indicates if the form field contains sensitive data, which will display the value as a masked input. | [optional] 
+`prefix` | **string** | Prefix to display in front of the form field. | [optional] 
+`suffix` | **string** | Suffix to display next to the form field. | [optional] 
 `options` | [**Array&lt;FormFieldOption&gt;**](FormFieldOption.md) |  | [optional] 
 
 
@@ -56,6 +58,8 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
+
 
 
 

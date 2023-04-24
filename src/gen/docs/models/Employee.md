@@ -18,8 +18,9 @@ Name | Type | Description | Notes
 `partner` | [**Person**](Person.md) |  | [optional] 
 `division` | **string** | The division the person is currently in. Usually a collection of departments or teams or regions. | [optional] 
 `division_id` | **string** | Unique identifier of the division this employee belongs to. | [optional] 
-`department` | **string** | The department the person is currently in. | [optional] 
+`department` | **string** | The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field. | [optional] 
 `department_id` | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
+`department_name` | **string** | Name of the department this employee belongs to. | [optional] 
 `team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
 `company_id` | **string** | The unique identifier of the company. | [optional] 
 `company_name` | **string** | The name of the company. | [optional] 
@@ -97,6 +98,7 @@ Name | Type | Description | Notes
 
 
 * [`Person`](Person.md)
+
 
 
 
