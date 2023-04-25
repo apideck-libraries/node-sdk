@@ -43,7 +43,8 @@ export enum UnifiedApiId {
   issue_tracking = 'issue-tracking',
   time_registration = 'time-registration',
   transactional_email = 'transactional-email',
-  vault = 'vault'
+  vault = 'vault',
+  data_warehouse = 'data-warehouse'
 }
 
 export function UnifiedApiIdFromJSON(json: any): UnifiedApiId {
