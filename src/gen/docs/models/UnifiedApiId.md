@@ -55,6 +55,8 @@
 
 * `vault` (value: `'vault'`)
 
+* `data_warehouse` (value: `'data-warehouse'`)
+
 
 ---
 
