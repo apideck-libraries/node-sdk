@@ -119,6 +119,8 @@ const params = {
       '12345',
       '67890'
     ],
+    is_revenue: false,
+    use_default_tax_rates: false,
     absent_at_location_ids: [
       '12345',
       '67890'
@@ -463,6 +465,8 @@ const params = {
       '12345',
       '67890'
     ],
+    is_revenue: false,
+    use_default_tax_rates: false,
     absent_at_location_ids: [
       '12345',
       '67890'

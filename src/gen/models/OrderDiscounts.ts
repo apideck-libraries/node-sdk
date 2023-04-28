@@ -22,6 +22,12 @@ import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
  */
 export interface OrderDiscounts {
   /**
+   *
+   * @type {string}
+   * @memberof OrderDiscounts
+   */
+  type: OrderDiscountsType
+  /**
    * A unique identifier for an object.
    * @type {string}
    * @memberof OrderDiscounts
@@ -39,12 +45,6 @@ export interface OrderDiscounts {
    * @memberof OrderDiscounts
    */
   name?: string
-  /**
-   *
-   * @type {string}
-   * @memberof OrderDiscounts
-   */
-  type?: OrderDiscountsType
   /**
    *
    * @type {number}
@@ -94,10 +94,10 @@ export function OrderDiscountsFromJSONTyped(
     return json
   }
   return {
+    type: json['type'],
     id: !exists(json, 'id') ? undefined : json['id'],
     product_id: !exists(json, 'product_id') ? undefined : json['product_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    type: !exists(json, 'type') ? undefined : json['type'],
     amount: !exists(json, 'amount') ? undefined : json['amount'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     scope: !exists(json, 'scope') ? undefined : json['scope']
@@ -112,8 +112,8 @@ export function OrderDiscountsToJSON(value?: OrderDiscounts | null): any {
     return null
   }
   return {
-    name: value.name,
     type: value.type,
+    name: value.name,
     amount: value.amount,
     currency: CurrencyToJSON(value.currency),
     scope: value.scope

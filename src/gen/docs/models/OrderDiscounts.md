@@ -5,10 +5,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`type` | **string** |  | 
 `id` | **string** | A unique identifier for an object. | [optional] 
 `product_id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** |  | [optional] 
-`type` | **string** |  | [optional] 
 `amount` | **number** |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `scope` | **string** |  | [optional] 

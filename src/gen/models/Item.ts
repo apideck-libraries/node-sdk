@@ -88,6 +88,18 @@ export interface Item {
    */
   tax_ids?: Array<string>
   /**
+   * True if this item should be counted as revenue. For example, gift cards and donations would not be counted as revenue.
+   * @type {boolean}
+   * @memberof Item
+   */
+  is_revenue?: boolean
+  /**
+   *
+   * @type {boolean}
+   * @memberof Item
+   */
+  use_default_tax_rates?: boolean
+  /**
    * A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated.
    * @type {Array<string>}
    * @memberof Item
@@ -238,6 +250,10 @@ export function ItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): Item
       : CurrencyFromJSON(json['price_currency']),
     cost: !exists(json, 'cost') ? undefined : json['cost'],
     tax_ids: !exists(json, 'tax_ids') ? undefined : json['tax_ids'],
+    is_revenue: !exists(json, 'is_revenue') ? undefined : json['is_revenue'],
+    use_default_tax_rates: !exists(json, 'use_default_tax_rates')
+      ? undefined
+      : json['use_default_tax_rates'],
     absent_at_location_ids: !exists(json, 'absent_at_location_ids')
       ? undefined
       : json['absent_at_location_ids'],
@@ -288,6 +304,8 @@ export function ItemToJSON(value?: Item | null): any {
     price_currency: CurrencyToJSON(value.price_currency),
     cost: value.cost,
     tax_ids: value.tax_ids,
+    is_revenue: value.is_revenue,
+    use_default_tax_rates: value.use_default_tax_rates,
     absent_at_location_ids: value.absent_at_location_ids,
     present_at_all_locations: value.present_at_all_locations,
     available_for_pickup: value.available_for_pickup,
