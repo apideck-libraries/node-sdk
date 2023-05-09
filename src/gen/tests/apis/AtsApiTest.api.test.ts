@@ -316,6 +316,46 @@ describe('AtsApi', () => {
     })
   })
 
+  describe('#applicantsDelete', () => {
+    const endpoint = '/ats/applicants/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'lever',
+        resource: 'Applicants',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { ats } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await ats.applicantsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#applicantsOne', () => {
     const endpoint = '/ats/applicants/{id}'
 
@@ -461,6 +501,145 @@ describe('AtsApi', () => {
         id: 'id_example'
       } as any
       const current = await ats.applicantsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#applicantsUpdate', () => {
+    const endpoint = '/ats/applicants/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'lever',
+        resource: 'Applicants',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { ats } = apideck
+      const params = {
+        id: 'id_example',
+        applicant: {
+          position_id: '123',
+          name: 'Elon Musk',
+          first_name: 'Elon',
+          last_name: 'Musk',
+          middle_name: 'D.',
+          initials: 'EM',
+          birthday: '2000-08-12',
+          cover_letter:
+            'I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
+          photo_url: 'https://unavatar.io/elon-musk',
+          headline: 'PepsiCo, Inc, Central Perk',
+          title: 'CEO',
+          emails: [
+            {
+              id: '123',
+              email: 'elon@musk.com',
+              type: 'primary'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          phone_numbers: [
+            {
+              id: '12345',
+              country_code: '1',
+              area_code: '323',
+              number: '111-111-1111',
+              extension: '105',
+              type: 'primary'
+            }
+          ],
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              row_version: '1-12345'
+            }
+          ],
+          websites: [
+            {
+              id: '12345',
+              url: 'http://example.com',
+              type: 'primary'
+            }
+          ],
+          social_links: [
+            {
+              id: '12345',
+              url: 'https://www.twitter.com/apideck-io',
+              type: 'twitter'
+            }
+          ],
+          stage_id: '12345',
+          recruiter_id: '12345',
+          coordinator_id: '12345',
+          applications: [
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+          ],
+          followers: [
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6'
+          ],
+          sources: ['Job site'],
+          confidential: false,
+          anonymized: true,
+          tags: ['New'],
+          archived: false,
+          owner_id: '54321',
+          record_url: 'https://app.intercom.io/contacts/12345',
+          deleted: true
+        }
+      } as any
+      const current = await ats.applicantsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

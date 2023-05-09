@@ -166,6 +166,7 @@ CustomerSupportCustomer.md
 CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
+DeleteApplicantResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
 DeleteCompanyResponse.md
@@ -547,6 +548,7 @@ UnifiedFile.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
+UpdateApplicantResponse.md
 UpdateBillResponse.md
 UpdateCommentResponse.md
 UpdateCompanyResponse.md
@@ -777,6 +779,7 @@ models/CustomerSupportCustomer.ts
 models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
+models/DeleteApplicantResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
 models/DeleteCompanyResponse.ts
@@ -1144,6 +1147,7 @@ models/UnifiedFile.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
+models/UpdateApplicantResponse.ts
 models/UpdateBillResponse.ts
 models/UpdateCommentResponse.ts
 models/UpdateCompanyResponse.ts
