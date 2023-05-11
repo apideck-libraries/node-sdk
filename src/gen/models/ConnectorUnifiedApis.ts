@@ -45,6 +45,12 @@ export interface ConnectorUnifiedApis {
    */
   name?: string
   /**
+   * Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API
+   * @type {boolean}
+   * @memberof ConnectorUnifiedApis
+   */
+  readonly auth_only?: boolean
+  /**
    *
    * @type {Array<ConnectorOauthScopes1>}
    * @memberof ConnectorUnifiedApis
@@ -84,6 +90,7 @@ export function ConnectorUnifiedApisFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : UnifiedApiIdFromJSON(json['id']),
     name: !exists(json, 'name') ? undefined : json['name'],
+    auth_only: !exists(json, 'auth_only') ? undefined : json['auth_only'],
     oauth_scopes: !exists(json, 'oauth_scopes')
       ? undefined
       : (json['oauth_scopes'] as Array<any>).map(ConnectorOauthScopes1FromJSON),

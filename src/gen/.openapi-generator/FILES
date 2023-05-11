@@ -477,6 +477,7 @@ PaymentAllocations.md
 PaymentCard.md
 PaymentRequiredResponse.md
 PaymentUnit.md
+PaymentsFilter.md
 Payroll.md
 PayrollTotals.md
 PayrollsFilter.md
@@ -1080,6 +1081,7 @@ models/PaymentAllocations.ts
 models/PaymentCard.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
+models/PaymentsFilter.ts
 models/Payroll.ts
 models/PayrollTotals.ts
 models/PayrollsFilter.ts

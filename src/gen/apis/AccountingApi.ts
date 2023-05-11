@@ -118,6 +118,7 @@ import {
   LedgerAccountToJSON,
   PassThroughQuery,
   Payment,
+  PaymentsFilter,
   PaymentToJSON,
   ProfitAndLossFilter,
   Supplier,
@@ -500,6 +501,7 @@ export interface AccountingApiPaymentsAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: PaymentsFilter
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -3414,6 +3416,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     if (requestParameters.passThrough !== undefined) {

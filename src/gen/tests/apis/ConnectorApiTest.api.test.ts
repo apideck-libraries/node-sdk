@@ -483,6 +483,7 @@ describe('ConnectorApi', () => {
               {
                 id: 'crm',
                 name: 'File Storage API',
+                auth_only: true,
                 oauth_scopes: [[Object]],
                 supported_resources: [[Object]],
                 downstream_unsupported_resources: ['companies'],
@@ -618,6 +619,7 @@ describe('ConnectorApi', () => {
             {
               id: 'crm',
               name: 'File Storage API',
+              auth_only: true,
               oauth_scopes: [
                 {
                   id: 'contacts:all',
