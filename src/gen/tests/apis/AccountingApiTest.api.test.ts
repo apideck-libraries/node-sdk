@@ -198,18 +198,19 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
                 id: '12344'
               },
+              tax_rate: {
+                id: '123456'
+              },
               ledger_account: {
                 id: '123456',
                 nominal_code: 'N091',
                 code: '453'
-              },
-              tax_rate: {
-                id: '123456'
               },
               row_version: '1-12345'
             }
@@ -316,6 +317,7 @@ describe('AccountingApi', () => {
                 unit_price: 27500.5,
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
+                discount_amount: 19.99,
                 location_id: '1234',
                 department_id: '1234',
                 item: {
@@ -323,17 +325,17 @@ describe('AccountingApi', () => {
                   code: '120-C',
                   name: 'Model Y'
                 },
-                ledger_account: {
-                  id: '123456',
-                  name: 'Bank account',
-                  nominal_code: 'N091',
-                  code: '453'
-                },
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
                   name: 'GST on Purchases',
                   rate: 10
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091',
+                  code: '453'
                 },
                 row_version: '1-12345',
                 updated_by: '12345',
@@ -509,6 +511,7 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
@@ -516,17 +519,17 @@ describe('AccountingApi', () => {
                 code: '120-C',
                 name: 'Model Y'
               },
-              ledger_account: {
-                id: '123456',
-                name: 'Bank account',
-                nominal_code: 'N091',
-                code: '453'
-              },
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
                 name: 'GST on Purchases',
                 rate: 10
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091',
+                code: '453'
               },
               row_version: '1-12345',
               updated_by: '12345',
@@ -658,18 +661,19 @@ describe('AccountingApi', () => {
               unit_price: 27500.5,
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
+              discount_amount: 19.99,
               location_id: '1234',
               department_id: '1234',
               item: {
                 id: '12344'
               },
+              tax_rate: {
+                id: '123456'
+              },
               ledger_account: {
                 id: '123456',
                 nominal_code: 'N091',
                 code: '453'
-              },
-              tax_rate: {
-                id: '123456'
               },
               row_version: '1-12345'
             }

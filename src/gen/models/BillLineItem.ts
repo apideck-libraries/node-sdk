@@ -98,11 +98,17 @@ export interface BillLineItem {
    */
   unit_of_measure?: string | null
   /**
-   * Discount percentage
+   * Discount percentage applied to the line item when supported downstream.
    * @type {number}
    * @memberof BillLineItem
    */
   discount_percentage?: number | null
+  /**
+   * Discount amount applied to the line item when supported downstream.
+   * @type {number}
+   * @memberof BillLineItem
+   */
+  discount_amount?: number | null
   /**
    * Location id
    * @type {string}
@@ -123,16 +129,16 @@ export interface BillLineItem {
   item?: LinkedInvoiceItem
   /**
    *
-   * @type {LinkedLedgerAccount}
-   * @memberof BillLineItem
-   */
-  ledger_account?: LinkedLedgerAccount | null
-  /**
-   *
    * @type {LinkedTaxRate}
    * @memberof BillLineItem
    */
   tax_rate?: LinkedTaxRate
+  /**
+   *
+   * @type {LinkedLedgerAccount}
+   * @memberof BillLineItem
+   */
+  ledger_account?: LinkedLedgerAccount | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -197,13 +203,14 @@ export function BillLineItemFromJSONTyped(json: any, ignoreDiscriminator: boolea
     discount_percentage: !exists(json, 'discount_percentage')
       ? undefined
       : json['discount_percentage'],
+    discount_amount: !exists(json, 'discount_amount') ? undefined : json['discount_amount'],
     location_id: !exists(json, 'location_id') ? undefined : json['location_id'],
     department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
     item: !exists(json, 'item') ? undefined : LinkedInvoiceItemFromJSON(json['item']),
+    tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     ledger_account: !exists(json, 'ledger_account')
       ? undefined
       : LinkedLedgerAccountFromJSON(json['ledger_account']),
-    tax_rate: !exists(json, 'tax_rate') ? undefined : LinkedTaxRateFromJSON(json['tax_rate']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -235,11 +242,12 @@ export function BillLineItemToJSON(value?: BillLineItem | null): any {
     unit_price: value.unit_price,
     unit_of_measure: value.unit_of_measure,
     discount_percentage: value.discount_percentage,
+    discount_amount: value.discount_amount,
     location_id: value.location_id,
     department_id: value.department_id,
     item: LinkedInvoiceItemToJSON(value.item),
-    ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
     tax_rate: LinkedTaxRateToJSON(value.tax_rate),
+    ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
     row_version: value.row_version
   }
 }
