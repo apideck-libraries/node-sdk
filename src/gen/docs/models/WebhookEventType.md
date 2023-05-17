@@ -191,6 +191,12 @@
 
 * `issue_tracking_ticket_deleted` (value: `'issue-tracking.ticket.deleted'`)
 
+* `ats_application_created` (value: `'ats.application.created'`)
+
+* `ats_application_updated` (value: `'ats.application.updated'`)
+
+* `ats_application_deleted` (value: `'ats.application.deleted'`)
+
 
 ---
 

@@ -172,6 +172,12 @@ export interface Applicant {
    * @type {Array<string>}
    * @memberof Applicant
    */
+  application_ids?: Array<string> | null
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof Applicant
+   */
   applications?: Array<string> | null
   /**
    *
@@ -340,6 +346,7 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     stage_id: !exists(json, 'stage_id') ? undefined : json['stage_id'],
     recruiter_id: !exists(json, 'recruiter_id') ? undefined : json['recruiter_id'],
     coordinator_id: !exists(json, 'coordinator_id') ? undefined : json['coordinator_id'],
+    application_ids: !exists(json, 'application_ids') ? undefined : json['application_ids'],
     applications: !exists(json, 'applications') ? undefined : json['applications'],
     followers: !exists(json, 'followers') ? undefined : json['followers'],
     sources: !exists(json, 'sources') ? undefined : json['sources'],
@@ -426,6 +433,7 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     stage_id: value.stage_id,
     recruiter_id: value.recruiter_id,
     coordinator_id: value.coordinator_id,
+    application_ids: value.application_ids,
     applications: value.applications,
     followers: value.followers,
     sources: value.sources,

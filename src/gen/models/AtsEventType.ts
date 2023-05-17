@@ -23,7 +23,10 @@ export enum AtsEventType {
   job_deleted = 'ats.job.deleted',
   applicant_created = 'ats.applicant.created',
   applicant_updated = 'ats.applicant.updated',
-  applicant_deleted = 'ats.applicant.deleted'
+  applicant_deleted = 'ats.applicant.deleted',
+  application_created = 'ats.application.created',
+  application_updated = 'ats.application.updated',
+  application_deleted = 'ats.application.deleted'
 }
 
 export function AtsEventTypeFromJSON(json: any): AtsEventType {

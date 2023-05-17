@@ -32,6 +32,8 @@ Applicant.md
 ApplicantSocialLinks.md
 ApplicantWebsites.md
 ApplicantsFilter.md
+Application.md
+ApplicationStage.md
 Assignee.md
 AtsActivity.md
 AtsApi.md
@@ -101,6 +103,7 @@ ContactsSort.md
 CopyFolderRequest.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
+CreateApplicationResponse.md
 CreateBillResponse.md
 CreateCommentResponse.md
 CreateCompanyResponse.md
@@ -167,6 +170,7 @@ CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
 DeleteApplicantResponse.md
+DeleteApplicationResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
 DeleteCompanyResponse.md
@@ -273,6 +277,8 @@ GetApiResponse.md
 GetApisResponse.md
 GetApplicantResponse.md
 GetApplicantsResponse.md
+GetApplicationResponse.md
+GetApplicationsResponse.md
 GetBalanceSheetResponse.md
 GetBillResponse.md
 GetBillsResponse.md
@@ -550,6 +556,7 @@ UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
 UpdateApplicantResponse.md
+UpdateApplicationResponse.md
 UpdateBillResponse.md
 UpdateCommentResponse.md
 UpdateCompanyResponse.md
@@ -654,6 +661,8 @@ models/Applicant.ts
 models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
 models/ApplicantsFilter.ts
+models/Application.ts
+models/ApplicationStage.ts
 models/Assignee.ts
 models/AtsActivity.ts
 models/AtsEventType.ts
@@ -719,6 +728,7 @@ models/ContactsSort.ts
 models/CopyFolderRequest.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
+models/CreateApplicationResponse.ts
 models/CreateBillResponse.ts
 models/CreateCommentResponse.ts
 models/CreateCompanyResponse.ts
@@ -781,6 +791,7 @@ models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
+models/DeleteApplicationResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
 models/DeleteCompanyResponse.ts
@@ -882,6 +893,8 @@ models/GetApiResponse.ts
 models/GetApisResponse.ts
 models/GetApplicantResponse.ts
 models/GetApplicantsResponse.ts
+models/GetApplicationResponse.ts
+models/GetApplicationsResponse.ts
 models/GetBalanceSheetResponse.ts
 models/GetBillResponse.ts
 models/GetBillsResponse.ts
@@ -1150,6 +1163,7 @@ models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
 models/UpdateApplicantResponse.ts
+models/UpdateApplicationResponse.ts
 models/UpdateBillResponse.ts
 models/UpdateCommentResponse.ts
 models/UpdateCompanyResponse.ts

@@ -111,7 +111,10 @@ export enum WebhookEventType {
   file_storage_file_deleted = 'file-storage.file.deleted',
   issue_tracking_ticket_created = 'issue-tracking.ticket.created',
   issue_tracking_ticket_updated = 'issue-tracking.ticket.updated',
-  issue_tracking_ticket_deleted = 'issue-tracking.ticket.deleted'
+  issue_tracking_ticket_deleted = 'issue-tracking.ticket.deleted',
+  ats_application_created = 'ats.application.created',
+  ats_application_updated = 'ats.application.updated',
+  ats_application_deleted = 'ats.application.deleted'
 }
 
 export function WebhookEventTypeFromJSON(json: any): WebhookEventType {

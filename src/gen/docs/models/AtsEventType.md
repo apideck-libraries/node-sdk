@@ -15,6 +15,12 @@
 
 * `applicant_deleted` (value: `'ats.applicant.deleted'`)
 
+* `application_created` (value: `'ats.application.created'`)
+
+* `application_updated` (value: `'ats.application.updated'`)
+
+* `application_deleted` (value: `'ats.application.deleted'`)
+
 
 ---
 

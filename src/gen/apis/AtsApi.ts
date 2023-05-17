@@ -15,21 +15,33 @@
 import {
   Applicant,
   ApplicantToJSON,
+  Application,
+  ApplicationToJSON,
   CreateApplicantResponse,
   CreateApplicantResponseFromJSON,
+  CreateApplicationResponse,
+  CreateApplicationResponseFromJSON,
   DeleteApplicantResponse,
   DeleteApplicantResponseFromJSON,
+  DeleteApplicationResponse,
+  DeleteApplicationResponseFromJSON,
   GetApplicantResponse,
   GetApplicantResponseFromJSON,
   GetApplicantsResponse,
   GetApplicantsResponseFromJSON,
+  GetApplicationResponse,
+  GetApplicationResponseFromJSON,
+  GetApplicationsResponse,
+  GetApplicationsResponseFromJSON,
   GetJobResponse,
   GetJobResponseFromJSON,
   GetJobsResponse,
   GetJobsResponseFromJSON,
   JobsFilter,
   UpdateApplicantResponse,
-  UpdateApplicantResponseFromJSON
+  UpdateApplicantResponseFromJSON,
+  UpdateApplicationResponse,
+  UpdateApplicationResponseFromJSON
 } from '../models'
 import * as runtime from '../runtime'
 
@@ -72,6 +84,48 @@ export interface AtsApiApplicantsOneRequest {
 export interface AtsApiApplicantsUpdateRequest {
   id: string
   applicant: Applicant
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AtsApiApplicationsAddRequest {
+  application: Application
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+}
+
+export interface AtsApiApplicationsAllRequest {
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  cursor?: string | null
+  limit?: number
+}
+
+export interface AtsApiApplicationsDeleteRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AtsApiApplicationsOneRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AtsApiApplicationsUpdateRequest {
+  id: string
+  application: Application
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -463,6 +517,359 @@ export class AtsApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<UpdateApplicantResponse> {
     const response = await this.applicantsUpdateRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Create Application
+   * Create Application
+   */
+  async applicationsAddRaw(
+    requestParameters: AtsApiApplicationsAddRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateApplicationResponse>> {
+    if (requestParameters.application === null || requestParameters.application === undefined) {
+      throw new runtime.RequiredError(
+        'application',
+        'Required parameter requestParameters.application was null or undefined when calling applicationsAdd.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ats/applications`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ApplicationToJSON(requestParameters.application)
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      CreateApplicationResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Create Application
+   * Create Application
+   */
+  async applicationsAdd(
+    requestParameters: AtsApiApplicationsAddRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateApplicationResponse> {
+    const response = await this.applicationsAddRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * List Applications
+   * List Applications
+   */
+  async applicationsAllRaw(
+    requestParameters: AtsApiApplicationsAllRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GetApplicationsResponse>> {
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    if (requestParameters.cursor !== undefined) {
+      queryParameters['cursor'] = requestParameters.cursor
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ats/applications`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetApplicationsResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * List Applications
+   * List Applications
+   */
+  async applicationsAll(
+    requestParameters: AtsApiApplicationsAllRequest = {},
+    initOverrides?: RequestInit
+  ): Promise<GetApplicationsResponse> {
+    const response = await this.applicationsAllRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Delete Application
+   * Delete Application
+   */
+  async applicationsDeleteRaw(
+    requestParameters: AtsApiApplicationsDeleteRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeleteApplicationResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling applicationsDelete.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ats/applications/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      DeleteApplicationResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Delete Application
+   * Delete Application
+   */
+  async applicationsDelete(
+    requestParameters: AtsApiApplicationsDeleteRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeleteApplicationResponse> {
+    const response = await this.applicationsDeleteRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Get Application
+   * Get Application
+   */
+  async applicationsOneRaw(
+    requestParameters: AtsApiApplicationsOneRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GetApplicationResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling applicationsOne.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ats/applications/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetApplicationResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Get Application
+   * Get Application
+   */
+  async applicationsOne(
+    requestParameters: AtsApiApplicationsOneRequest,
+    initOverrides?: RequestInit
+  ): Promise<GetApplicationResponse> {
+    const response = await this.applicationsOneRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Update Application
+   * Update Application
+   */
+  async applicationsUpdateRaw(
+    requestParameters: AtsApiApplicationsUpdateRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<UpdateApplicationResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling applicationsUpdate.'
+      )
+    }
+
+    if (requestParameters.application === null || requestParameters.application === undefined) {
+      throw new runtime.RequiredError(
+        'application',
+        'Required parameter requestParameters.application was null or undefined when calling applicationsUpdate.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ats/applications/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ApplicationToJSON(requestParameters.application)
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      UpdateApplicationResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Update Application
+   * Update Application
+   */
+  async applicationsUpdate(
+    requestParameters: AtsApiApplicationsUpdateRequest,
+    initOverrides?: RequestInit
+  ): Promise<UpdateApplicationResponse> {
+    const response = await this.applicationsUpdateRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
