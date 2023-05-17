@@ -18,15 +18,16 @@
  * @enum {string}
  */
 export enum AtsEventType {
-  job_created = 'ats.job.created',
-  job_updated = 'ats.job.updated',
-  job_deleted = 'ats.job.deleted',
-  applicant_created = 'ats.applicant.created',
-  applicant_updated = 'ats.applicant.updated',
-  applicant_deleted = 'ats.applicant.deleted',
-  application_created = 'ats.application.created',
-  application_updated = 'ats.application.updated',
-  application_deleted = 'ats.application.deleted'
+  Star = '*',
+  ats_job_created = 'ats.job.created',
+  ats_job_updated = 'ats.job.updated',
+  ats_job_deleted = 'ats.job.deleted',
+  ats_applicant_created = 'ats.applicant.created',
+  ats_applicant_updated = 'ats.applicant.updated',
+  ats_applicant_deleted = 'ats.applicant.deleted',
+  ats_application_created = 'ats.application.created',
+  ats_application_updated = 'ats.application.updated',
+  ats_application_deleted = 'ats.application.deleted'
 }
 
 export function AtsEventTypeFromJSON(json: any): AtsEventType {
