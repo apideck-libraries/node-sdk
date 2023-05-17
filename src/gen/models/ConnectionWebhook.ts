@@ -181,6 +181,7 @@ export enum ConnectionWebhookEvents {
   hris_employee_created = 'hris.employee.created',
   hris_employee_updated = 'hris.employee.updated',
   hris_employee_deleted = 'hris.employee.deleted',
+  hris_employee_terminated = 'hris.employee.terminated',
   hris_company_created = 'hris.company.created',
   hris_company_updated = 'hris.company.updated',
   hris_company_deleted = 'hris.company.deleted',
