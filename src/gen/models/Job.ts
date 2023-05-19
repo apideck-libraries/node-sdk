@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Branch, BranchFromJSON, BranchToJSON } from './Branch'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Department, DepartmentFromJSON, DepartmentToJSON } from './Department'
 import { JobSalary, JobSalaryFromJSON, JobSalaryToJSON } from './JobSalary'
 import { JobStatus, JobStatusFromJSON, JobStatusToJSON } from './JobStatus'
@@ -86,6 +87,12 @@ export interface Job {
    * @memberof Job
    */
   experience?: string
+  /**
+   * Specifies the location for the job posting.
+   * @type {string}
+   * @memberof Job
+   */
+  location?: string | null
   /**
    * Specifies whether the posting is for a remote job.
    * @type {boolean}
@@ -208,6 +215,12 @@ export interface Job {
   addresses?: Array<Address>
   /**
    *
+   * @type {Array<CustomField>}
+   * @memberof Job
+   */
+  custom_fields?: Array<CustomField>
+  /**
+   *
    * @type {string}
    * @memberof Job
    */
@@ -300,6 +313,7 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
     language: !exists(json, 'language') ? undefined : json['language'],
     employment_terms: !exists(json, 'employment_terms') ? undefined : json['employment_terms'],
     experience: !exists(json, 'experience') ? undefined : json['experience'],
+    location: !exists(json, 'location') ? undefined : json['location'],
     remote: !exists(json, 'remote') ? undefined : json['remote'],
     requisition_id: !exists(json, 'requisition_id') ? undefined : json['requisition_id'],
     department: !exists(json, 'department') ? undefined : DepartmentFromJSON(json['department']),
@@ -328,6 +342,9 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
     addresses: !exists(json, 'addresses')
       ? undefined
       : (json['addresses'] as Array<any>).map(AddressFromJSON),
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
@@ -360,6 +377,7 @@ export function JobToJSON(value?: Job | null): any {
     language: value.language,
     employment_terms: value.employment_terms,
     experience: value.experience,
+    location: value.location,
     remote: value.remote,
     requisition_id: value.requisition_id,
     department: DepartmentToJSON(value.department),
@@ -388,6 +406,10 @@ export function JobToJSON(value?: Job | null): any {
       value.addresses === undefined
         ? undefined
         : (value.addresses as Array<any>).map(AddressToJSON),
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     record_url: value.record_url,
     deleted: value.deleted,
     owner_id: value.owner_id

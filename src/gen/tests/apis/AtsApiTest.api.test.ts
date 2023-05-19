@@ -946,6 +946,7 @@ describe('AtsApi', () => {
             language: 'EN',
             employment_terms: 'full-time',
             experience: 'Director/ Vice President',
+            location: 'San Francisco',
             remote: true,
             requisition_id: 'abc123',
             department: {
@@ -1017,6 +1018,14 @@ describe('AtsApi', () => {
                 row_version: '1-12345'
               }
             ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             record_url: 'https://app.intercom.io/contacts/12345',
             deleted: true,
             owner_id: '54321',
@@ -1086,6 +1095,7 @@ describe('AtsApi', () => {
           language: 'EN',
           employment_terms: 'full-time',
           experience: 'Director/ Vice President',
+          location: 'San Francisco',
           remote: true,
           requisition_id: 'abc123',
           department: {
@@ -1155,6 +1165,14 @@ describe('AtsApi', () => {
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
               row_version: '1-12345'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
             }
           ],
           record_url: 'https://app.intercom.io/contacts/12345',
