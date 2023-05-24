@@ -121,10 +121,6 @@ Read the full documentation of the ConnectorApi [here](./src/gen/docs/apis/Conne
 
 Read the full documentation of the CrmApi [here](./src/gen/docs/apis/CrmApi.md).
 
-### CustomerSupportApi
-
-Read the full documentation of the CustomerSupportApi [here](./src/gen/docs/apis/CustomerSupportApi.md).
-
 ### EcommerceApi
 
 Read the full documentation of the EcommerceApi [here](./src/gen/docs/apis/EcommerceApi.md).

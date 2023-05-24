@@ -112,7 +112,6 @@ CreateConsumerResponse.md
 CreateContactResponse.md
 CreateCreditNoteResponse.md
 CreateCustomerResponse.md
-CreateCustomerSupportCustomerResponse.md
 CreateDepartmentResponse.md
 CreateDriveGroupResponse.md
 CreateDriveResponse.md
@@ -163,9 +162,6 @@ CrmApiTest.api.test.ts
 CrmEventType.md
 Currency.md
 CustomField.md
-CustomerSupportApi.md
-CustomerSupportApiTest.api.test.ts
-CustomerSupportCustomer.md
 CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
@@ -178,7 +174,6 @@ DeleteConsumerResponse.md
 DeleteContactResponse.md
 DeleteCreditNoteResponse.md
 DeleteCustomerResponse.md
-DeleteCustomerSupportCustomerResponse.md
 DeleteDepartmentResponse.md
 DeleteDriveGroupResponse.md
 DeleteDriveResponse.md
@@ -305,8 +300,6 @@ GetContactsResponse.md
 GetCreditNoteResponse.md
 GetCreditNotesResponse.md
 GetCustomerResponse.md
-GetCustomerSupportCustomerResponse.md
-GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
 GetDepartmentsResponse.md
@@ -566,7 +559,6 @@ UpdateConsumerResponse.md
 UpdateContactResponse.md
 UpdateCreditNoteResponse.md
 UpdateCustomerResponse.md
-UpdateCustomerSupportCustomerResponse.md
 UpdateDepartmentResponse.md
 UpdateDriveGroupResponse.md
 UpdateDriveResponse.md
@@ -631,7 +623,6 @@ apis/AccountingApi.ts
 apis/AtsApi.ts
 apis/ConnectorApi.ts
 apis/CrmApi.ts
-apis/CustomerSupportApi.ts
 apis/EcommerceApi.ts
 apis/FileStorageApi.ts
 apis/HrisApi.ts
@@ -737,7 +728,6 @@ models/CreateConsumerResponse.ts
 models/CreateContactResponse.ts
 models/CreateCreditNoteResponse.ts
 models/CreateCustomerResponse.ts
-models/CreateCustomerSupportCustomerResponse.ts
 models/CreateDepartmentResponse.ts
 models/CreateDriveGroupResponse.ts
 models/CreateDriveResponse.ts
@@ -786,7 +776,6 @@ models/CreditNote.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
-models/CustomerSupportCustomer.ts
 models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
@@ -799,7 +788,6 @@ models/DeleteConsumerResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCreditNoteResponse.ts
 models/DeleteCustomerResponse.ts
-models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteDepartmentResponse.ts
 models/DeleteDriveGroupResponse.ts
 models/DeleteDriveResponse.ts
@@ -921,8 +909,6 @@ models/GetContactsResponse.ts
 models/GetCreditNoteResponse.ts
 models/GetCreditNotesResponse.ts
 models/GetCustomerResponse.ts
-models/GetCustomerSupportCustomerResponse.ts
-models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
 models/GetDepartmentsResponse.ts
@@ -1173,7 +1159,6 @@ models/UpdateConsumerResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCreditNoteResponse.ts
 models/UpdateCustomerResponse.ts
-models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
 models/UpdateDriveGroupResponse.ts
 models/UpdateDriveResponse.ts

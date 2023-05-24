@@ -32,7 +32,7 @@ import {
 } from '../models'
 import * as runtime from '../runtime'
 
-export interface EcommerceApiCustomersAll2Request {
+export interface EcommerceApiCustomersAllRequest {
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -43,7 +43,7 @@ export interface EcommerceApiCustomersAll2Request {
   fields?: string | null
 }
 
-export interface EcommerceApiCustomersOne2Request {
+export interface EcommerceApiCustomersOneRequest {
   id: string
   consumerId?: string
   appId?: string
@@ -107,8 +107,8 @@ export class EcommerceApi extends runtime.BaseAPI {
    * List Customers
    * List Customers
    */
-  async customersAll2Raw(
-    requestParameters: EcommerceApiCustomersAll2Request,
+  async customersAllRaw(
+    requestParameters: EcommerceApiCustomersAllRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetEcommerceCustomersResponse>> {
     const queryParameters: any = {}
@@ -170,11 +170,11 @@ export class EcommerceApi extends runtime.BaseAPI {
    * List Customers
    * List Customers
    */
-  async customersAll2(
-    requestParameters: EcommerceApiCustomersAll2Request = {},
+  async customersAll(
+    requestParameters: EcommerceApiCustomersAllRequest = {},
     initOverrides?: RequestInit
   ): Promise<GetEcommerceCustomersResponse> {
-    const response = await this.customersAll2Raw(requestParameters, initOverrides)
+    const response = await this.customersAllRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
@@ -182,14 +182,14 @@ export class EcommerceApi extends runtime.BaseAPI {
    * Get Customer
    * Get Customer
    */
-  async customersOne2Raw(
-    requestParameters: EcommerceApiCustomersOne2Request,
+  async customersOneRaw(
+    requestParameters: EcommerceApiCustomersOneRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GetEcommerceCustomerResponse>> {
     if (requestParameters.id === null || requestParameters.id === undefined) {
       throw new runtime.RequiredError(
         'id',
-        'Required parameter requestParameters.id was null or undefined when calling customersOne2.'
+        'Required parameter requestParameters.id was null or undefined when calling customersOne.'
       )
     }
 
@@ -243,11 +243,11 @@ export class EcommerceApi extends runtime.BaseAPI {
    * Get Customer
    * Get Customer
    */
-  async customersOne2(
-    requestParameters: EcommerceApiCustomersOne2Request,
+  async customersOne(
+    requestParameters: EcommerceApiCustomersOneRequest,
     initOverrides?: RequestInit
   ): Promise<GetEcommerceCustomerResponse> {
-    const response = await this.customersOne2Raw(requestParameters, initOverrides)
+    const response = await this.customersOneRaw(requestParameters, initOverrides)
     return await response.value()
   }
 

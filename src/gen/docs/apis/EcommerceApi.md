@@ -5,22 +5,22 @@
 
 ## Methods
 
-* [List Customers](#customersAll2)
-* [Get Customer](#customersOne2)
+* [List Customers](#customersAll)
+* [Get Customer](#customersOne)
 * [List Orders](#ordersAll)
 * [Get Order](#ordersOne)
 * [List Products](#productsAll)
 * [Get Product](#productsOne)
 * [Get Store](#storesOne)
 
-<a name="customersAll2"></a>
+<a name="customersAll"></a>
 # List Customers
 
 
-Method: **customersAll2**
+Method: **customersAll**
 
 ```typescript
-ecommerceApi.customersAll2(body)
+ecommerceApi.customersAll(body)
 ```
 
 ### Parameters
@@ -70,7 +70,7 @@ const apideck = new Apideck({
 const params = {}
 
 try {
-  const { data } = await apideck.ecommerce.customersAll2(params)
+  const { data } = await apideck.ecommerce.customersAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -83,14 +83,14 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
-<a name="customersOne2"></a>
+<a name="customersOne"></a>
 # Get Customer
 
 
-Method: **customersOne2**
+Method: **customersOne**
 
 ```typescript
-ecommerceApi.customersOne2(body)
+ecommerceApi.customersOne(body)
 ```
 
 ### Parameters
@@ -140,7 +140,7 @@ const params = {
 }
 
 try {
-  const { data } = await apideck.ecommerce.customersOne2(params)
+  const { data } = await apideck.ecommerce.customersOne(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
