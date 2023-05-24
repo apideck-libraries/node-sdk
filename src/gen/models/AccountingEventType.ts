@@ -42,7 +42,10 @@ export enum AccountingEventType {
   accounting_payment_deleted = 'accounting.payment.deleted',
   accounting_supplier_created = 'accounting.supplier.created',
   accounting_supplier_updated = 'accounting.supplier.updated',
-  accounting_supplier_deleted = 'accounting.supplier.deleted'
+  accounting_supplier_deleted = 'accounting.supplier.deleted',
+  accounting_purchase_order_created = 'accounting.purchase-order.created',
+  accounting_purchase_order_updated = 'accounting.purchase-order.updated',
+  accounting_purchase_order_deleted = 'accounting.purchase-order.deleted'
 }
 
 export function AccountingEventTypeFromJSON(json: any): AccountingEventType {

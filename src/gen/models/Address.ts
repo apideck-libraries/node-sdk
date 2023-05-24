@@ -152,6 +152,12 @@ export interface Address {
    */
   website?: string | null
   /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  notes?: string | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof Address
@@ -204,6 +210,7 @@ export function AddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
     fax: !exists(json, 'fax') ? undefined : json['fax'],
     email: !exists(json, 'email') ? undefined : json['email'],
     website: !exists(json, 'website') ? undefined : json['website'],
+    notes: !exists(json, 'notes') ? undefined : json['notes'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version']
   }
 }
@@ -238,6 +245,7 @@ export function AddressToJSON(value?: Address | null): any {
     fax: value.fax,
     email: value.email,
     website: value.website,
+    notes: value.notes,
     row_version: value.row_version
   }
 }

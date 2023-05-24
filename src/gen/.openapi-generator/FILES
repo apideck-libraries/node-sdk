@@ -143,6 +143,7 @@ CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreatePosPaymentResponse.md
 CreateProductResponse.md
+CreatePurchaseOrderResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateSharedLinkResponse.md
@@ -202,6 +203,7 @@ DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeletePosPaymentResponse.md
 DeleteProductResponse.md
+DeletePurchaseOrderResponse.md
 DeleteSharedLinkResponse.md
 DeleteSupplierResponse.md
 DeleteTaxRateResponse.md
@@ -368,6 +370,8 @@ GetPosPaymentsResponse.md
 GetProductResponse.md
 GetProductsResponse.md
 GetProfitAndLossResponse.md
+GetPurchaseOrderResponse.md
+GetPurchaseOrdersResponse.md
 GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetStoreResponse.md
@@ -502,6 +506,7 @@ ProfitAndLossNetOperatingIncome.md
 ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
+PurchaseOrder.md
 RequestCountAllocation.md
 RequestRate.md
 ResolveWebhookEventRequest.md
@@ -590,6 +595,7 @@ UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdatePosPaymentResponse.md
 UpdateProductResponse.md
+UpdatePurchaseOrderResponse.md
 UpdateSharedLinkResponse.md
 UpdateSupplierResponse.md
 UpdateTaxRateResponse.md
@@ -759,6 +765,7 @@ models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreatePosPaymentResponse.ts
 models/CreateProductResponse.ts
+models/CreatePurchaseOrderResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateSharedLinkResponse.ts
@@ -816,6 +823,7 @@ models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeletePosPaymentResponse.ts
 models/DeleteProductResponse.ts
+models/DeletePurchaseOrderResponse.ts
 models/DeleteSharedLinkResponse.ts
 models/DeleteSupplierResponse.ts
 models/DeleteTaxRateResponse.ts
@@ -977,6 +985,8 @@ models/GetPosPaymentsResponse.ts
 models/GetProductResponse.ts
 models/GetProductsResponse.ts
 models/GetProfitAndLossResponse.ts
+models/GetPurchaseOrderResponse.ts
+models/GetPurchaseOrdersResponse.ts
 models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetStoreResponse.ts
@@ -1104,6 +1114,7 @@ models/ProfitAndLossNetOperatingIncome.ts
 models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
+models/PurchaseOrder.ts
 models/RequestCountAllocation.ts
 models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
@@ -1190,6 +1201,7 @@ models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdatePosPaymentResponse.ts
 models/UpdateProductResponse.ts
+models/UpdatePurchaseOrderResponse.ts
 models/UpdateSharedLinkResponse.ts
 models/UpdateSupplierResponse.ts
 models/UpdateTaxRateResponse.ts

@@ -95,6 +95,7 @@ describe('LeadApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -210,6 +211,7 @@ describe('LeadApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               }
             ],
@@ -387,6 +389,7 @@ describe('LeadApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -523,6 +526,7 @@ describe('LeadApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],

@@ -143,6 +143,7 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     all_day_event: false,
@@ -510,6 +511,7 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     all_day_event: false,
@@ -685,6 +687,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1075,6 +1078,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1245,6 +1249,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1621,6 +1626,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1777,6 +1783,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -2144,6 +2151,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -3466,6 +3474,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -3804,6 +3813,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],

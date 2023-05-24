@@ -35,6 +35,8 @@ import {
   CreateLedgerAccountResponseFromJSON,
   CreatePaymentResponse,
   CreatePaymentResponseFromJSON,
+  CreatePurchaseOrderResponse,
+  CreatePurchaseOrderResponseFromJSON,
   CreateSupplierResponse,
   CreateSupplierResponseFromJSON,
   CreateTaxRateResponse,
@@ -56,6 +58,8 @@ import {
   DeleteLedgerAccountResponseFromJSON,
   DeletePaymentResponse,
   DeletePaymentResponseFromJSON,
+  DeletePurchaseOrderResponse,
+  DeletePurchaseOrderResponseFromJSON,
   DeleteSupplierResponse,
   DeleteSupplierResponseFromJSON,
   DeleteTaxRateResponse,
@@ -98,6 +102,10 @@ import {
   GetPaymentsResponseFromJSON,
   GetProfitAndLossResponse,
   GetProfitAndLossResponseFromJSON,
+  GetPurchaseOrderResponse,
+  GetPurchaseOrderResponseFromJSON,
+  GetPurchaseOrdersResponse,
+  GetPurchaseOrdersResponseFromJSON,
   GetSupplierResponse,
   GetSupplierResponseFromJSON,
   GetSuppliersResponse,
@@ -121,6 +129,8 @@ import {
   PaymentsFilter,
   PaymentToJSON,
   ProfitAndLossFilter,
+  PurchaseOrder,
+  PurchaseOrderToJSON,
   Supplier,
   SuppliersFilter,
   SupplierToJSON,
@@ -143,6 +153,8 @@ import {
   UpdateLedgerAccountResponseFromJSON,
   UpdatePaymentResponse,
   UpdatePaymentResponseFromJSON,
+  UpdatePurchaseOrderResponse,
+  UpdatePurchaseOrderResponseFromJSON,
   UpdateSupplierResponse,
   UpdateSupplierResponseFromJSON,
   UpdateTaxRateResponse,
@@ -540,6 +552,48 @@ export interface AccountingApiProfitAndLossOneRequest {
   filter?: ProfitAndLossFilter
   passThrough?: PassThroughQuery
   fields?: string | null
+}
+
+export interface AccountingApiPurchaseOrdersAddRequest {
+  purchaseOrder: PurchaseOrder
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+}
+
+export interface AccountingApiPurchaseOrdersAllRequest {
+  raw?: boolean
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  cursor?: string | null
+  limit?: number
+}
+
+export interface AccountingApiPurchaseOrdersDeleteRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AccountingApiPurchaseOrdersOneRequest {
+  id: string
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
+}
+
+export interface AccountingApiPurchaseOrdersUpdateRequest {
+  id: string
+  purchaseOrder: PurchaseOrder
+  consumerId?: string
+  appId?: string
+  serviceId?: string
+  raw?: boolean
 }
 
 export interface AccountingApiSuppliersAddRequest {
@@ -3762,6 +3816,359 @@ export class AccountingApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<GetProfitAndLossResponse> {
     const response = await this.profitAndLossOneRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Create Purchase Order
+   * Create Purchase Order
+   */
+  async purchaseOrdersAddRaw(
+    requestParameters: AccountingApiPurchaseOrdersAddRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreatePurchaseOrderResponse>> {
+    if (requestParameters.purchaseOrder === null || requestParameters.purchaseOrder === undefined) {
+      throw new runtime.RequiredError(
+        'purchaseOrder',
+        'Required parameter requestParameters.purchaseOrder was null or undefined when calling purchaseOrdersAdd.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/accounting/purchase-orders`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: PurchaseOrderToJSON(requestParameters.purchaseOrder)
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      CreatePurchaseOrderResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Create Purchase Order
+   * Create Purchase Order
+   */
+  async purchaseOrdersAdd(
+    requestParameters: AccountingApiPurchaseOrdersAddRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreatePurchaseOrderResponse> {
+    const response = await this.purchaseOrdersAddRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * List Purchase Orders
+   * List Purchase Orders
+   */
+  async purchaseOrdersAllRaw(
+    requestParameters: AccountingApiPurchaseOrdersAllRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GetPurchaseOrdersResponse>> {
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    if (requestParameters.cursor !== undefined) {
+      queryParameters['cursor'] = requestParameters.cursor
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/accounting/purchase-orders`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetPurchaseOrdersResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * List Purchase Orders
+   * List Purchase Orders
+   */
+  async purchaseOrdersAll(
+    requestParameters: AccountingApiPurchaseOrdersAllRequest = {},
+    initOverrides?: RequestInit
+  ): Promise<GetPurchaseOrdersResponse> {
+    const response = await this.purchaseOrdersAllRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Delete Purchase Order
+   * Delete Purchase Order
+   */
+  async purchaseOrdersDeleteRaw(
+    requestParameters: AccountingApiPurchaseOrdersDeleteRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeletePurchaseOrderResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling purchaseOrdersDelete.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/accounting/purchase-orders/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      DeletePurchaseOrderResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Delete Purchase Order
+   * Delete Purchase Order
+   */
+  async purchaseOrdersDelete(
+    requestParameters: AccountingApiPurchaseOrdersDeleteRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeletePurchaseOrderResponse> {
+    const response = await this.purchaseOrdersDeleteRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Get Purchase Order
+   * Get Purchase Order
+   */
+  async purchaseOrdersOneRaw(
+    requestParameters: AccountingApiPurchaseOrdersOneRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GetPurchaseOrderResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling purchaseOrdersOne.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/accounting/purchase-orders/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetPurchaseOrderResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Get Purchase Order
+   * Get Purchase Order
+   */
+  async purchaseOrdersOne(
+    requestParameters: AccountingApiPurchaseOrdersOneRequest,
+    initOverrides?: RequestInit
+  ): Promise<GetPurchaseOrderResponse> {
+    const response = await this.purchaseOrdersOneRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * Update Purchase Order
+   * Update Purchase Order
+   */
+  async purchaseOrdersUpdateRaw(
+    requestParameters: AccountingApiPurchaseOrdersUpdateRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<UpdatePurchaseOrderResponse>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling purchaseOrdersUpdate.'
+      )
+    }
+
+    if (requestParameters.purchaseOrder === null || requestParameters.purchaseOrder === undefined) {
+      throw new runtime.RequiredError(
+        'purchaseOrder',
+        'Required parameter requestParameters.purchaseOrder was null or undefined when calling purchaseOrdersUpdate.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    if (requestParameters.raw !== undefined) {
+      queryParameters['raw'] = requestParameters.raw
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    headerParameters['Content-Type'] = 'application/json'
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
+      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/accounting/purchase-orders/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: PurchaseOrderToJSON(requestParameters.purchaseOrder)
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      UpdatePurchaseOrderResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * Update Purchase Order
+   * Update Purchase Order
+   */
+  async purchaseOrdersUpdate(
+    requestParameters: AccountingApiPurchaseOrdersUpdateRequest,
+    initOverrides?: RequestInit
+  ): Promise<UpdatePurchaseOrderResponse> {
+    const response = await this.purchaseOrdersUpdateRaw(requestParameters, initOverrides)
     return await response.value()
   }
 

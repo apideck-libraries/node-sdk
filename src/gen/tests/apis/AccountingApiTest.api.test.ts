@@ -173,6 +173,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -291,6 +292,7 @@ describe('AccountingApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               }
             },
@@ -485,6 +487,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -636,6 +639,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -765,6 +769,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -1390,6 +1395,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -1514,6 +1520,7 @@ describe('AccountingApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               }
             ],
@@ -1706,6 +1713,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -1856,6 +1864,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -2457,6 +2466,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           shipping_address: {
@@ -2482,6 +2492,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           template_id: '123456',
@@ -2613,6 +2624,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             },
             shipping_address: {
@@ -2638,6 +2650,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             },
             template_id: '123456',
@@ -2834,6 +2847,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           shipping_address: {
@@ -2859,6 +2873,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           template_id: '123456',
@@ -3000,6 +3015,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           shipping_address: {
@@ -3025,6 +3041,7 @@ describe('AccountingApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           template_id: '123456',
@@ -3967,6 +3984,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -4066,6 +4084,7 @@ describe('AccountingApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               }
             },
@@ -4230,6 +4249,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -4348,6 +4368,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           },
@@ -4454,6 +4475,682 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#purchaseOrdersAdd', () => {
+    const endpoint = '/accounting/purchase-orders'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'PurchaseOrders',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        purchaseOrder: {
+          po_number: '90000117',
+          reference: '123456',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          status: 'open',
+          issued_date: '2020-09-30',
+          delivery_date: '2020-09-30',
+          expected_arrival_date: '2020-09-30',
+          currency: 'USD',
+          currency_rate: 0.69,
+          sub_total: 27500,
+          total_tax: 2500,
+          total: 27500,
+          tax_inclusive: true,
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              discount_amount: 19.99,
+              location_id: '1234',
+              department_id: '1234',
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          shipping_address: {
+            id: '123',
+            type: 'primary',
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            street_number: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postal_code: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contact_name: 'Elon Musk',
+            salutation: 'Mr',
+            phone_number: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            row_version: '1-12345'
+          },
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          template_id: '123456',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.purchaseOrdersAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#purchaseOrdersAll', () => {
+    const endpoint = '/accounting/purchase-orders'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'PurchaseOrders',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            downstream_id: '12345',
+            po_number: '90000117',
+            reference: '123456',
+            supplier: {
+              id: '12345',
+              display_name: 'Windsurf Shop',
+              company_name: 'The boring company',
+              address: {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                row_version: '1-12345'
+              }
+            },
+            status: 'open',
+            issued_date: '2020-09-30',
+            delivery_date: '2020-09-30',
+            expected_arrival_date: '2020-09-30',
+            currency: 'USD',
+            currency_rate: 0.69,
+            sub_total: 27500,
+            total_tax: 2500,
+            total: 27500,
+            tax_inclusive: true,
+            line_items: [
+              {
+                id: '12345',
+                row_id: '12345',
+                code: '120-C',
+                line_number: 1,
+                description:
+                  'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: 'sales_item',
+                tax_amount: 27500,
+                total_amount: 27500,
+                quantity: 1,
+                unit_price: 27500.5,
+                unit_of_measure: 'pc.',
+                discount_percentage: 0.01,
+                discount_amount: 19.99,
+                location_id: '1234',
+                department_id: '1234',
+                item: {
+                  id: '12344',
+                  code: '120-C',
+                  name: 'Model Y'
+                },
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases',
+                  rate: 10
+                },
+                ledger_account: {
+                  id: '123456',
+                  name: 'Bank account',
+                  nominal_code: 'N091',
+                  code: '453'
+                },
+                row_version: '1-12345',
+                updated_by: '12345',
+                created_by: '12345',
+                created_at: '2020-09-30T07:43:32.000Z',
+                updated_at: '2020-09-30T07:43:32.000Z'
+              }
+            ],
+            shipping_address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            },
+            ledger_account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091',
+              code: '453'
+            },
+            template_id: '123456',
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.purchaseOrdersAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#purchaseOrdersDelete', () => {
+    const endpoint = '/accounting/purchase-orders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'PurchaseOrders',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.purchaseOrdersDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#purchaseOrdersOne', () => {
+    const endpoint = '/accounting/purchase-orders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'PurchaseOrders',
+        operation: 'one',
+        data: {
+          id: '12345',
+          downstream_id: '12345',
+          po_number: '90000117',
+          reference: '123456',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            company_name: 'The boring company',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          status: 'open',
+          issued_date: '2020-09-30',
+          delivery_date: '2020-09-30',
+          expected_arrival_date: '2020-09-30',
+          currency: 'USD',
+          currency_rate: 0.69,
+          sub_total: 27500,
+          total_tax: 2500,
+          total: 27500,
+          tax_inclusive: true,
+          line_items: [
+            {
+              id: '12345',
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              discount_amount: 19.99,
+              location_id: '1234',
+              department_id: '1234',
+              item: {
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
+              },
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases',
+                rate: 10
+              },
+              ledger_account: {
+                id: '123456',
+                name: 'Bank account',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345',
+              updated_by: '12345',
+              created_by: '12345',
+              created_at: '2020-09-30T07:43:32.000Z',
+              updated_at: '2020-09-30T07:43:32.000Z'
+            }
+          ],
+          shipping_address: {
+            id: '123',
+            type: 'primary',
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            street_number: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postal_code: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contact_name: 'Elon Musk',
+            salutation: 'Mr',
+            phone_number: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            row_version: '1-12345'
+          },
+          ledger_account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          template_id: '123456',
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.purchaseOrdersOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#purchaseOrdersUpdate', () => {
+    const endpoint = '/accounting/purchase-orders/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'PurchaseOrders',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        purchaseOrder: {
+          po_number: '90000117',
+          reference: '123456',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          status: 'open',
+          issued_date: '2020-09-30',
+          delivery_date: '2020-09-30',
+          expected_arrival_date: '2020-09-30',
+          currency: 'USD',
+          currency_rate: 0.69,
+          sub_total: 27500,
+          total_tax: 2500,
+          total: 27500,
+          tax_inclusive: true,
+          line_items: [
+            {
+              row_id: '12345',
+              code: '120-C',
+              line_number: 1,
+              description:
+                'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+              type: 'sales_item',
+              tax_amount: 27500,
+              total_amount: 27500,
+              quantity: 1,
+              unit_price: 27500.5,
+              unit_of_measure: 'pc.',
+              discount_percentage: 0.01,
+              discount_amount: 19.99,
+              location_id: '1234',
+              department_id: '1234',
+              item: {
+                id: '12344'
+              },
+              tax_rate: {
+                id: '123456'
+              },
+              ledger_account: {
+                id: '123456',
+                nominal_code: 'N091',
+                code: '453'
+              },
+              row_version: '1-12345'
+            }
+          ],
+          shipping_address: {
+            id: '123',
+            type: 'primary',
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            street_number: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postal_code: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contact_name: 'Elon Musk',
+            salutation: 'Mr',
+            phone_number: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            row_version: '1-12345'
+          },
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          template_id: '123456',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.purchaseOrdersUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#suppliersAdd', () => {
     const endpoint = '/accounting/suppliers'
 
@@ -4520,6 +5217,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -4639,6 +5337,7 @@ describe('AccountingApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               }
             ],
@@ -4826,6 +5525,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],
@@ -4971,6 +5671,7 @@ describe('AccountingApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             }
           ],

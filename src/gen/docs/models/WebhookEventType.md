@@ -119,6 +119,12 @@
 
 * `accounting_supplier_deleted` (value: `'accounting.supplier.deleted'`)
 
+* `accounting_purchase_order_created` (value: `'accounting.purchase-order.created'`)
+
+* `accounting_purchase_order_updated` (value: `'accounting.purchase-order.updated'`)
+
+* `accounting_purchase_order_deleted` (value: `'accounting.purchase-order.deleted'`)
+
 * `pos_order_created` (value: `'pos.order.created'`)
 
 * `pos_order_updated` (value: `'pos.order.updated'`)
