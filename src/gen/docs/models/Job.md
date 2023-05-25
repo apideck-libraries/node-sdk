@@ -32,12 +32,13 @@ Name | Type | Description | Notes
 `salary` | [**JobSalary**](JobSalary.md) |  | [optional] 
 `url` | **string** | URL of the job description | [optional] 
 `job_portal_url` | **string** | URL of the job portal | [optional] 
+`record_url` | **string** |  | [optional] 
+`links` | [**Array&lt;JobLinks&gt;**](JobLinks.md) |  | [optional] 
 `confidential` | **boolean** |  | [optional] 
 `available_to_employees` | **boolean** | Specifies whether an employee of the organization can apply for the job. | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`record_url` | **string** |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `owner_id` | **string** |  | [optional] 
 `published_at` | **Date** |  | [optional] 
@@ -117,11 +118,12 @@ Name | Type | Description | Notes
 
 
 
+* [`JobLinks`](JobLinks.md)
+
 
 * [`Tags`](Tags.md)
 * [`Address`](Address.md)
 * [`CustomField`](CustomField.md)
-
 
 
 

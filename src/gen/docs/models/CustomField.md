@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** |  | 
 `name` | **string** | Name of the custom field. | [optional] 
 `description` | **string** | More information about the custom field | [optional] 
-`value` | **string \| number \| boolean \| Array&lt;string&gt;** |  | [optional] 
+`value` | **string \| number \| boolean \| object \| Array&lt;string&gt;** |  | [optional] 
 
 
 

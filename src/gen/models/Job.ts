@@ -17,6 +17,7 @@ import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Branch, BranchFromJSON, BranchToJSON } from './Branch'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Department, DepartmentFromJSON, DepartmentToJSON } from './Department'
+import { JobLinks, JobLinksFromJSON, JobLinksToJSON } from './JobLinks'
 import { JobSalary, JobSalaryFromJSON, JobSalaryToJSON } from './JobSalary'
 import { JobStatus, JobStatusFromJSON, JobStatusToJSON } from './JobStatus'
 import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
@@ -191,6 +192,18 @@ export interface Job {
   job_portal_url?: string | null
   /**
    *
+   * @type {string}
+   * @memberof Job
+   */
+  record_url?: string | null
+  /**
+   *
+   * @type {Array<JobLinks>}
+   * @memberof Job
+   */
+  links?: Array<JobLinks>
+  /**
+   *
    * @type {boolean}
    * @memberof Job
    */
@@ -219,12 +232,6 @@ export interface Job {
    * @memberof Job
    */
   custom_fields?: Array<CustomField>
-  /**
-   *
-   * @type {string}
-   * @memberof Job
-   */
-  record_url?: string | null
   /**
    *
    * @type {boolean}
@@ -334,6 +341,8 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
     salary: !exists(json, 'salary') ? undefined : JobSalaryFromJSON(json['salary']),
     url: !exists(json, 'url') ? undefined : json['url'],
     job_portal_url: !exists(json, 'job_portal_url') ? undefined : json['job_portal_url'],
+    record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
+    links: !exists(json, 'links') ? undefined : (json['links'] as Array<any>).map(JobLinksFromJSON),
     confidential: !exists(json, 'confidential') ? undefined : json['confidential'],
     available_to_employees: !exists(json, 'available_to_employees')
       ? undefined
@@ -345,7 +354,6 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
     custom_fields: !exists(json, 'custom_fields')
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
-    record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
     published_at: !exists(json, 'published_at') ? undefined : new Date(json['published_at']),
@@ -399,6 +407,8 @@ export function JobToJSON(value?: Job | null): any {
     salary: JobSalaryToJSON(value.salary),
     url: value.url,
     job_portal_url: value.job_portal_url,
+    record_url: value.record_url,
+    links: value.links === undefined ? undefined : (value.links as Array<any>).map(JobLinksToJSON),
     confidential: value.confidential,
     available_to_employees: value.available_to_employees,
     tags: TagsToJSON(value.tags),
@@ -410,7 +420,6 @@ export function JobToJSON(value?: Job | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    record_url: value.record_url,
     deleted: value.deleted,
     owner_id: value.owner_id
   }

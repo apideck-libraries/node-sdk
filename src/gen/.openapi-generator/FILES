@@ -413,6 +413,7 @@ IssueTrackingEventType.md
 IssuesFilter.md
 Item.md
 Job.md
+JobLinks.md
 JobSalary.md
 JobStatus.md
 JobsFilter.md
@@ -1024,6 +1025,7 @@ models/IssueTrackingEventType.ts
 models/IssuesFilter.ts
 models/Item.ts
 models/Job.ts
+models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
 models/JobsFilter.ts

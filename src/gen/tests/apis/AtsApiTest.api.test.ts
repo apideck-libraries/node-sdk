@@ -992,6 +992,13 @@ describe('AtsApi', () => {
             },
             url: 'string',
             job_portal_url: 'string',
+            record_url: 'https://app.intercom.io/contacts/12345',
+            links: [
+              {
+                type: 'job_portal',
+                url: 'https://app.intercom.io/contacts/12345'
+              }
+            ],
             confidential: false,
             available_to_employees: false,
             tags: ['New'],
@@ -1031,7 +1038,6 @@ describe('AtsApi', () => {
                 value: 'Uses Salesforce and Marketo'
               }
             ],
-            record_url: 'https://app.intercom.io/contacts/12345',
             deleted: true,
             owner_id: '54321',
             published_at: '2020-09-30T07:43:32.000Z',
@@ -1142,6 +1148,13 @@ describe('AtsApi', () => {
           },
           url: 'string',
           job_portal_url: 'string',
+          record_url: 'https://app.intercom.io/contacts/12345',
+          links: [
+            {
+              type: 'job_portal',
+              url: 'https://app.intercom.io/contacts/12345'
+            }
+          ],
           confidential: false,
           available_to_employees: false,
           tags: ['New'],
@@ -1181,7 +1194,6 @@ describe('AtsApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          record_url: 'https://app.intercom.io/contacts/12345',
           deleted: true,
           owner_id: '54321',
           published_at: '2020-09-30T07:43:32.000Z',
