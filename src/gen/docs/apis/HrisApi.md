@@ -1303,6 +1303,10 @@ const params = {
     food_allergies: [
       'No allergies'
     ],
+    probation_period: {
+      start_date: '2021-10-01',
+      end_date: '2021-11-28'
+    },
     tags: [
       'New'
     ],
@@ -1774,6 +1778,10 @@ const params = {
     food_allergies: [
       'No allergies'
     ],
+    probation_period: {
+      start_date: '2021-10-01',
+      end_date: '2021-11-28'
+    },
     tags: [
       'New'
     ],

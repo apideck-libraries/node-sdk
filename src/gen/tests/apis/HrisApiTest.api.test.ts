@@ -917,6 +917,10 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            probation_period: {
+              start_date: '2021-10-01',
+              end_date: '2021-11-28'
+            },
             tags: ['New'],
             row_version: '1-12345',
             deleted: true,
@@ -1180,6 +1184,10 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            probation_period: {
+              start_date: '2021-10-01',
+              end_date: '2021-11-28'
+            },
             tags: ['New'],
             row_version: '1-12345',
             deleted: true,
@@ -1442,6 +1450,10 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            probation_period: {
+              start_date: '2021-10-01',
+              end_date: '2021-11-28'
+            },
             tags: ['New'],
             row_version: '1-12345',
             deleted: true,
@@ -1705,6 +1717,10 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          probation_period: {
+            start_date: '2021-10-01',
+            end_date: '2021-11-28'
+          },
           tags: ['New'],
           row_version: '1-12345',
           deleted: true
@@ -1922,6 +1938,10 @@ describe('HrisApi', () => {
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
             food_allergies: ['No allergies'],
+            probation_period: {
+              start_date: '2021-10-01',
+              end_date: '2021-11-28'
+            },
             tags: ['New'],
             row_version: '1-12345',
             deleted: true,
@@ -2203,6 +2223,10 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          probation_period: {
+            start_date: '2021-10-01',
+            end_date: '2021-11-28'
+          },
           tags: ['New'],
           row_version: '1-12345',
           deleted: true,
@@ -2439,6 +2463,10 @@ describe('HrisApi', () => {
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
           food_allergies: ['No allergies'],
+          probation_period: {
+            start_date: '2021-10-01',
+            end_date: '2021-11-28'
+          },
           tags: ['New'],
           row_version: '1-12345',
           deleted: true

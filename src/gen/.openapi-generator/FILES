@@ -497,6 +497,7 @@ PosPayment.md
 PosPaymentCardDetails.md
 PosPaymentExternalDetails.md
 Price.md
+ProbationPeriod.md
 ProfitAndLoss.md
 ProfitAndLossExpenses.md
 ProfitAndLossFilter.md
@@ -1106,6 +1107,7 @@ models/PosPayment.ts
 models/PosPaymentCardDetails.ts
 models/PosPaymentExternalDetails.ts
 models/Price.ts
+models/ProbationPeriod.ts
 models/ProfitAndLoss.ts
 models/ProfitAndLossExpenses.ts
 models/ProfitAndLossFilter.ts
