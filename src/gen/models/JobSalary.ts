@@ -39,6 +39,12 @@ export interface JobSalary {
    * @memberof JobSalary
    */
   currency?: Currency | null
+  /**
+   *
+   * @type {string}
+   * @memberof JobSalary
+   */
+  interval?: string | null
 }
 
 export function JobSalaryFromJSON(json: any): JobSalary {
@@ -52,7 +58,8 @@ export function JobSalaryFromJSONTyped(json: any, ignoreDiscriminator: boolean):
   return {
     min: !exists(json, 'min') ? undefined : json['min'],
     max: !exists(json, 'max') ? undefined : json['max'],
-    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency'])
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    interval: !exists(json, 'interval') ? undefined : json['interval']
   }
 }
 
@@ -66,6 +73,7 @@ export function JobSalaryToJSON(value?: JobSalary | null): any {
   return {
     min: value.min,
     max: value.max,
-    currency: CurrencyToJSON(value.currency)
+    currency: CurrencyToJSON(value.currency),
+    interval: value.interval
   }
 }

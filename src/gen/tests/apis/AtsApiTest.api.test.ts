@@ -988,7 +988,8 @@ describe('AtsApi', () => {
             salary: {
               min: 8000,
               max: 10000,
-              currency: 'USD'
+              currency: 'USD',
+              interval: 'year'
             },
             url: 'string',
             job_portal_url: 'string',
@@ -1144,7 +1145,8 @@ describe('AtsApi', () => {
           salary: {
             min: 8000,
             max: 10000,
-            currency: 'USD'
+            currency: 'USD',
+            interval: 'year'
           },
           url: 'string',
           job_portal_url: 'string',
