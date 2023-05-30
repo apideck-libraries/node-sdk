@@ -126,10 +126,10 @@ export interface Job {
   recruiters?: Array<string> | null
   /**
    *
-   * @type {Array<object>}
+   * @type {Array<string>}
    * @memberof Job
    */
-  hiring_managers?: Array<object>
+  hiring_managers?: Array<string>
   /**
    *
    * @type {Array<string>}
@@ -281,6 +281,7 @@ export interface Job {
  * @enum {string}
  */
 export enum JobVisibility {
+  draft = 'draft',
   public = 'public',
   internal = 'internal'
 }

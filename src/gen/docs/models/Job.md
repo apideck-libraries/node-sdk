@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 `department` | [**Department**](Department.md) |  | [optional] 
 `branch` | [**Branch**](Branch.md) |  | [optional] 
 `recruiters` | **Array&lt;string&gt;** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
-`hiring_managers` | **Array&lt;object&gt;** |  | [optional] 
+`hiring_managers` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
 `description` | **string** | A description of the object. | [optional] 
 `description_html` | **string** | The job description in HTML format | [optional] 
@@ -54,6 +54,8 @@ Name | Type | Description | Notes
 <a name="JobVisibility"></a>
 ## Enum: Job.visibility
 
+
+* `draft` (value: `'draft'`)
 
 * `public` (value: `'public'`)
 
