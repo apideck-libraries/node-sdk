@@ -14,7 +14,6 @@
 .openapi-generator-ignore
 AccountingApi.md
 AccountingApiTest.api.test.ts
-AccountingCustomer.md
 AccountingEventType.md
 ActivitiesFilter.md
 Activity.md
@@ -32,6 +31,8 @@ Applicant.md
 ApplicantSocialLinks.md
 ApplicantWebsites.md
 ApplicantsFilter.md
+Application.md
+ApplicationStage.md
 Assignee.md
 AtsActivity.md
 AtsApi.md
@@ -101,6 +102,7 @@ ContactsSort.md
 CopyFolderRequest.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
+CreateApplicationResponse.md
 CreateBillResponse.md
 CreateCommentResponse.md
 CreateCompanyResponse.md
@@ -109,7 +111,6 @@ CreateConsumerResponse.md
 CreateContactResponse.md
 CreateCreditNoteResponse.md
 CreateCustomerResponse.md
-CreateCustomerSupportCustomerResponse.md
 CreateDepartmentResponse.md
 CreateDriveGroupResponse.md
 CreateDriveResponse.md
@@ -141,6 +142,7 @@ CreatePaymentResponse.md
 CreatePipelineResponse.md
 CreatePosPaymentResponse.md
 CreateProductResponse.md
+CreatePurchaseOrderResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateSharedLinkResponse.md
@@ -160,12 +162,12 @@ CrmApiTest.api.test.ts
 CrmEventType.md
 Currency.md
 CustomField.md
-CustomerSupportApi.md
-CustomerSupportApiTest.api.test.ts
-CustomerSupportCustomer.md
+Customer.md
 CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
+DeleteApplicantResponse.md
+DeleteApplicationResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
 DeleteCompanyResponse.md
@@ -173,7 +175,6 @@ DeleteConsumerResponse.md
 DeleteContactResponse.md
 DeleteCreditNoteResponse.md
 DeleteCustomerResponse.md
-DeleteCustomerSupportCustomerResponse.md
 DeleteDepartmentResponse.md
 DeleteDriveGroupResponse.md
 DeleteDriveResponse.md
@@ -202,6 +203,7 @@ DeletePaymentResponse.md
 DeletePipelineResponse.md
 DeletePosPaymentResponse.md
 DeleteProductResponse.md
+DeletePurchaseOrderResponse.md
 DeleteSharedLinkResponse.md
 DeleteSupplierResponse.md
 DeleteTaxRateResponse.md
@@ -272,6 +274,8 @@ GetApiResponse.md
 GetApisResponse.md
 GetApplicantResponse.md
 GetApplicantsResponse.md
+GetApplicationResponse.md
+GetApplicationsResponse.md
 GetBalanceSheetResponse.md
 GetBillResponse.md
 GetBillsResponse.md
@@ -298,8 +302,6 @@ GetContactsResponse.md
 GetCreditNoteResponse.md
 GetCreditNotesResponse.md
 GetCustomerResponse.md
-GetCustomerSupportCustomerResponse.md
-GetCustomerSupportCustomersResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
 GetDepartmentsResponse.md
@@ -368,6 +370,8 @@ GetPosPaymentsResponse.md
 GetProductResponse.md
 GetProductsResponse.md
 GetProfitAndLossResponse.md
+GetPurchaseOrderResponse.md
+GetPurchaseOrdersResponse.md
 GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetStoreResponse.md
@@ -409,6 +413,7 @@ IssueTrackingEventType.md
 IssuesFilter.md
 Item.md
 Job.md
+JobLinks.md
 JobSalary.md
 JobStatus.md
 JobsFilter.md
@@ -476,6 +481,7 @@ PaymentAllocations.md
 PaymentCard.md
 PaymentRequiredResponse.md
 PaymentUnit.md
+PaymentsFilter.md
 Payroll.md
 PayrollTotals.md
 PayrollsFilter.md
@@ -491,6 +497,7 @@ PosPayment.md
 PosPaymentCardDetails.md
 PosPaymentExternalDetails.md
 Price.md
+ProbationPeriod.md
 ProfitAndLoss.md
 ProfitAndLossExpenses.md
 ProfitAndLossFilter.md
@@ -501,6 +508,7 @@ ProfitAndLossNetOperatingIncome.md
 ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
+PurchaseOrder.md
 RequestCountAllocation.md
 RequestRate.md
 ResolveWebhookEventRequest.md
@@ -547,6 +555,8 @@ UnifiedFile.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
+UpdateApplicantResponse.md
+UpdateApplicationResponse.md
 UpdateBillResponse.md
 UpdateCommentResponse.md
 UpdateCompanyResponse.md
@@ -556,7 +566,6 @@ UpdateConsumerResponse.md
 UpdateContactResponse.md
 UpdateCreditNoteResponse.md
 UpdateCustomerResponse.md
-UpdateCustomerSupportCustomerResponse.md
 UpdateDepartmentResponse.md
 UpdateDriveGroupResponse.md
 UpdateDriveResponse.md
@@ -588,6 +597,7 @@ UpdatePaymentResponse.md
 UpdatePipelineResponse.md
 UpdatePosPaymentResponse.md
 UpdateProductResponse.md
+UpdatePurchaseOrderResponse.md
 UpdateSharedLinkResponse.md
 UpdateSupplierResponse.md
 UpdateTaxRateResponse.md
@@ -621,7 +631,6 @@ apis/AccountingApi.ts
 apis/AtsApi.ts
 apis/ConnectorApi.ts
 apis/CrmApi.ts
-apis/CustomerSupportApi.ts
 apis/EcommerceApi.ts
 apis/FileStorageApi.ts
 apis/HrisApi.ts
@@ -633,7 +642,6 @@ apis/VaultApi.ts
 apis/WebhookApi.ts
 apis/index.ts
 index.ts
-models/AccountingCustomer.ts
 models/AccountingEventType.ts
 models/ActivitiesFilter.ts
 models/Activity.ts
@@ -651,6 +659,8 @@ models/Applicant.ts
 models/ApplicantSocialLinks.ts
 models/ApplicantWebsites.ts
 models/ApplicantsFilter.ts
+models/Application.ts
+models/ApplicationStage.ts
 models/Assignee.ts
 models/AtsActivity.ts
 models/AtsEventType.ts
@@ -716,6 +726,7 @@ models/ContactsSort.ts
 models/CopyFolderRequest.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
+models/CreateApplicationResponse.ts
 models/CreateBillResponse.ts
 models/CreateCommentResponse.ts
 models/CreateCompanyResponse.ts
@@ -724,7 +735,6 @@ models/CreateConsumerResponse.ts
 models/CreateContactResponse.ts
 models/CreateCreditNoteResponse.ts
 models/CreateCustomerResponse.ts
-models/CreateCustomerSupportCustomerResponse.ts
 models/CreateDepartmentResponse.ts
 models/CreateDriveGroupResponse.ts
 models/CreateDriveResponse.ts
@@ -756,6 +766,7 @@ models/CreatePaymentResponse.ts
 models/CreatePipelineResponse.ts
 models/CreatePosPaymentResponse.ts
 models/CreateProductResponse.ts
+models/CreatePurchaseOrderResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateSharedLinkResponse.ts
@@ -773,10 +784,12 @@ models/CreditNote.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
-models/CustomerSupportCustomer.ts
+models/Customer.ts
 models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
+models/DeleteApplicantResponse.ts
+models/DeleteApplicationResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
 models/DeleteCompanyResponse.ts
@@ -784,7 +797,6 @@ models/DeleteConsumerResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCreditNoteResponse.ts
 models/DeleteCustomerResponse.ts
-models/DeleteCustomerSupportCustomerResponse.ts
 models/DeleteDepartmentResponse.ts
 models/DeleteDriveGroupResponse.ts
 models/DeleteDriveResponse.ts
@@ -813,6 +825,7 @@ models/DeletePaymentResponse.ts
 models/DeletePipelineResponse.ts
 models/DeletePosPaymentResponse.ts
 models/DeleteProductResponse.ts
+models/DeletePurchaseOrderResponse.ts
 models/DeleteSharedLinkResponse.ts
 models/DeleteSupplierResponse.ts
 models/DeleteTaxRateResponse.ts
@@ -878,6 +891,8 @@ models/GetApiResponse.ts
 models/GetApisResponse.ts
 models/GetApplicantResponse.ts
 models/GetApplicantsResponse.ts
+models/GetApplicationResponse.ts
+models/GetApplicationsResponse.ts
 models/GetBalanceSheetResponse.ts
 models/GetBillResponse.ts
 models/GetBillsResponse.ts
@@ -904,8 +919,6 @@ models/GetContactsResponse.ts
 models/GetCreditNoteResponse.ts
 models/GetCreditNotesResponse.ts
 models/GetCustomerResponse.ts
-models/GetCustomerSupportCustomerResponse.ts
-models/GetCustomerSupportCustomersResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
 models/GetDepartmentsResponse.ts
@@ -974,6 +987,8 @@ models/GetPosPaymentsResponse.ts
 models/GetProductResponse.ts
 models/GetProductsResponse.ts
 models/GetProfitAndLossResponse.ts
+models/GetPurchaseOrderResponse.ts
+models/GetPurchaseOrdersResponse.ts
 models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetStoreResponse.ts
@@ -1011,6 +1026,7 @@ models/IssueTrackingEventType.ts
 models/IssuesFilter.ts
 models/Item.ts
 models/Job.ts
+models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
 models/JobsFilter.ts
@@ -1077,6 +1093,7 @@ models/PaymentAllocations.ts
 models/PaymentCard.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
+models/PaymentsFilter.ts
 models/Payroll.ts
 models/PayrollTotals.ts
 models/PayrollsFilter.ts
@@ -1090,6 +1107,7 @@ models/PosPayment.ts
 models/PosPaymentCardDetails.ts
 models/PosPaymentExternalDetails.ts
 models/Price.ts
+models/ProbationPeriod.ts
 models/ProfitAndLoss.ts
 models/ProfitAndLossExpenses.ts
 models/ProfitAndLossFilter.ts
@@ -1100,6 +1118,7 @@ models/ProfitAndLossNetOperatingIncome.ts
 models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
+models/PurchaseOrder.ts
 models/RequestCountAllocation.ts
 models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
@@ -1144,6 +1163,8 @@ models/UnifiedFile.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
+models/UpdateApplicantResponse.ts
+models/UpdateApplicationResponse.ts
 models/UpdateBillResponse.ts
 models/UpdateCommentResponse.ts
 models/UpdateCompanyResponse.ts
@@ -1153,7 +1174,6 @@ models/UpdateConsumerResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCreditNoteResponse.ts
 models/UpdateCustomerResponse.ts
-models/UpdateCustomerSupportCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
 models/UpdateDriveGroupResponse.ts
 models/UpdateDriveResponse.ts
@@ -1185,6 +1205,7 @@ models/UpdatePaymentResponse.ts
 models/UpdatePipelineResponse.ts
 models/UpdatePosPaymentResponse.ts
 models/UpdateProductResponse.ts
+models/UpdatePurchaseOrderResponse.ts
 models/UpdateSharedLinkResponse.ts
 models/UpdateSupplierResponse.ts
 models/UpdateTaxRateResponse.ts

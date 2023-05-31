@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**AccountingCustomer**](AccountingCustomer.md) |  | 
+`data` | [**Customer**](Customer.md) |  | 
 
 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`AccountingCustomer`](AccountingCustomer.md)
+* [`Customer`](Customer.md)
 
 ---
 

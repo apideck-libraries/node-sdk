@@ -15,7 +15,7 @@ const methodResponse = {
 }
 
 describe('EcommerceApi', () => {
-  describe('#customersAll2', () => {
+  describe('#customersAll', () => {
     const endpoint = '/ecommerce/customers'
 
     const config = {
@@ -106,13 +106,13 @@ describe('EcommerceApi', () => {
 
       const { ecommerce } = apideck
       const params = {} as any
-      const current = await ecommerce.customersAll2(params)
+      const current = await ecommerce.customersAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
 
-  describe('#customersOne2', () => {
+  describe('#customersOne', () => {
     const endpoint = '/ecommerce/customers/{id}'
 
     const config = {
@@ -190,7 +190,7 @@ describe('EcommerceApi', () => {
       const params = {
         id: 'id_example'
       } as any
-      const current = await ecommerce.customersOne2(params)
+      const current = await ecommerce.customersOne(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

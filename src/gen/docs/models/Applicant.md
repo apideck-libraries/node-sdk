@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 `stage_id` | **string** |  | [optional] 
 `recruiter_id` | **string** |  | [optional] 
 `coordinator_id` | **string** |  | [optional] 
+`application_ids` | **Array&lt;string&gt;** |  | [optional] 
 `applications` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
 `sources` | **Array&lt;string&gt;** |  | [optional] 
@@ -73,6 +74,7 @@ Name | Type | Description | Notes
 * [`Address`](Address.md)
 * [`ApplicantWebsites`](ApplicantWebsites.md)
 * [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
+
 
 
 

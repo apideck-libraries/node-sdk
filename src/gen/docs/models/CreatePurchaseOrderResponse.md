@@ -1,4 +1,4 @@
-# Apideck.CreateCustomerSupportCustomerResponse
+# Apideck.CreatePurchaseOrderResponse
 
 ### Description
 

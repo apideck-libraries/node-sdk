@@ -8,6 +8,7 @@ The supplier this entity is linked to.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | The ID of the supplier this entity is linked to. | 
+`display_id` | **string** | The display ID of the supplier. | [optional] 
 `display_name` | **string** | The display name of the supplier. | [optional] 
 `company_name` | **string** | The company name of the supplier. | [optional] 
 `address` | [**Address**](Address.md) |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

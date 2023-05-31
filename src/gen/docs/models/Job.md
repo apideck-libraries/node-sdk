@@ -15,12 +15,13 @@ Name | Type | Description | Notes
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `employment_terms` | **string** |  | [optional] 
 `experience` | **string** | Level of experience required for the job role. | [optional] 
+`location` | **string** | Specifies the location for the job posting. | [optional] 
 `remote` | **boolean** | Specifies whether the posting is for a remote job. | [optional] 
 `requisition_id` | **string** | A job\'s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company\'s internal processes. | [optional] 
 `department` | [**Department**](Department.md) |  | [optional] 
 `branch` | [**Branch**](Branch.md) |  | [optional] 
 `recruiters` | **Array&lt;string&gt;** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
-`hiring_managers` | **Array&lt;object&gt;** |  | [optional] 
+`hiring_managers` | **Array&lt;string&gt;** |  | [optional] 
 `followers` | **Array&lt;string&gt;** |  | [optional] 
 `description` | **string** | A description of the object. | [optional] 
 `description_html` | **string** | The job description in HTML format | [optional] 
@@ -31,11 +32,13 @@ Name | Type | Description | Notes
 `salary` | [**JobSalary**](JobSalary.md) |  | [optional] 
 `url` | **string** | URL of the job description | [optional] 
 `job_portal_url` | **string** | URL of the job portal | [optional] 
+`record_url` | **string** |  | [optional] 
+`links` | [**Array&lt;JobLinks&gt;**](JobLinks.md) |  | [optional] 
 `confidential` | **boolean** |  | [optional] 
 `available_to_employees` | **boolean** | Specifies whether an employee of the organization can apply for the job. | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
-`record_url` | **string** |  | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `owner_id` | **string** |  | [optional] 
 `published_at` | **Date** |  | [optional] 
@@ -51,6 +54,8 @@ Name | Type | Description | Notes
 <a name="JobVisibility"></a>
 ## Enum: Job.visibility
 
+
+* `draft` (value: `'draft'`)
 
 * `public` (value: `'public'`)
 
@@ -99,6 +104,7 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Department`](Department.md)
 * [`Branch`](Branch.md)
 
@@ -114,10 +120,12 @@ Name | Type | Description | Notes
 
 
 
+* [`JobLinks`](JobLinks.md)
+
 
 * [`Tags`](Tags.md)
 * [`Address`](Address.md)
-
+* [`CustomField`](CustomField.md)
 
 
 

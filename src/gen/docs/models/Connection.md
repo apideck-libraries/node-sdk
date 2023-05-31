@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `website` | **string** | The website URL of the connection | [optional] 
 `icon` | **string** | A visual icon of the connection, that will be shown in the Vault | [optional] 
 `logo` | **string** | The logo of the connection, that will be shown in the Vault | [optional] 
-`authorize_url` | **string** | The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector\'s UI. Before you can use this URI, you must add &#x60;redirect_uri&#x60; as a query parameter. Your users will be redirected to this &#x60;redirect_uri&#x60; after they granted access to your app in the connector\'s UI. | [optional] 
+`authorize_url` | **string** | The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector\'s UI. Before you can use this URI, you must add &#x60;redirect_uri&#x60; as a query parameter to the &#x60;authorize_url&#x60;. Be sure to URL encode the &#x60;redirect_uri&#x60; part. Your users will be redirected to this &#x60;redirect_uri&#x60; after they granted access to your app in the connector\'s UI. | [optional] 
 `revoke_url` | **string** | The OAuth revoke URI. Redirect your users to this URI to revoke this connection. Before you can use this URI, you must add &#x60;redirect_uri&#x60; as a query parameter. Your users will be redirected to this &#x60;redirect_uri&#x60; after they granted access to your app in the connector\'s UI. | [optional] 
 `settings` | **{ [key: string]: object; }** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
 `metadata` | **{ [key: string]: object; }** | Attach your own consumer specific metadata | [optional] 

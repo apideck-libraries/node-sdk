@@ -59,6 +59,8 @@ describe('PosApi', () => {
           price_currency: 'USD',
           cost: 2,
           tax_ids: ['12345', '67890'],
+          is_revenue: false,
+          use_default_tax_rates: false,
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
           available_for_pickup: false,
@@ -142,6 +144,8 @@ describe('PosApi', () => {
             price_currency: 'USD',
             cost: 2,
             tax_ids: ['12345', '67890'],
+            is_revenue: false,
+            use_default_tax_rates: false,
             absent_at_location_ids: ['12345', '67890'],
             present_at_all_locations: false,
             available_for_pickup: false,
@@ -290,6 +294,8 @@ describe('PosApi', () => {
           price_currency: 'USD',
           cost: 2,
           tax_ids: ['12345', '67890'],
+          is_revenue: false,
+          use_default_tax_rates: false,
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
           available_for_pickup: false,
@@ -398,6 +404,8 @@ describe('PosApi', () => {
           price_currency: 'USD',
           cost: 2,
           tax_ids: ['12345', '67890'],
+          is_revenue: false,
+          use_default_tax_rates: false,
           absent_at_location_ids: ['12345', '67890'],
           present_at_all_locations: false,
           available_for_pickup: false,
@@ -505,6 +513,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           status: 'active',
@@ -567,6 +576,7 @@ describe('PosApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             },
             status: 'active',
@@ -693,6 +703,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           status: 'active',
@@ -778,6 +789,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           status: 'active',
@@ -848,6 +860,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           owner_id: '12345',
@@ -921,6 +934,7 @@ describe('PosApi', () => {
               fax: '122-111-1111',
               email: 'elon@musk.com',
               website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
               row_version: '1-12345'
             },
             owner_id: '12345',
@@ -1059,6 +1073,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           owner_id: '12345',
@@ -1156,6 +1171,7 @@ describe('PosApi', () => {
             fax: '122-111-1111',
             email: 'elon@musk.com',
             website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
           owner_id: '12345',
@@ -2213,6 +2229,7 @@ describe('PosApi', () => {
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
                   website: 'https://elonmusk.com',
+                  notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 },
                 reference_id: 'card-001',
@@ -2767,6 +2784,7 @@ describe('PosApi', () => {
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
                   website: 'https://elonmusk.com',
+                  notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 },
                 reference_id: 'card-001',
@@ -3057,6 +3075,7 @@ describe('PosApi', () => {
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
                   website: 'https://elonmusk.com',
+                  notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 },
                 reference_id: 'card-001',
@@ -3329,6 +3348,7 @@ describe('PosApi', () => {
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
                   website: 'https://elonmusk.com',
+                  notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 },
                 reference_id: 'card-001',
@@ -3451,6 +3471,7 @@ describe('PosApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               },
               reference_id: 'card-001',
@@ -3592,6 +3613,7 @@ describe('PosApi', () => {
                   fax: '122-111-1111',
                   email: 'elon@musk.com',
                   website: 'https://elonmusk.com',
+                  notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 },
                 reference_id: 'card-001',
@@ -3798,6 +3820,7 @@ describe('PosApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               },
               reference_id: 'card-001',
@@ -3962,6 +3985,7 @@ describe('PosApi', () => {
                 fax: '122-111-1111',
                 email: 'elon@musk.com',
                 website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
                 row_version: '1-12345'
               },
               reference_id: 'card-001',

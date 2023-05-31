@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 `price_currency` | [**Currency**](Currency.md) |  | [optional] 
 `cost` | **number** |  | [optional] 
 `tax_ids` | **Array&lt;string&gt;** | A list of Tax IDs for the product. | [optional] 
+`is_revenue` | **boolean** | True if this item should be counted as revenue. For example, gift cards and donations would not be counted as revenue. | [optional] 
+`use_default_tax_rates` | **boolean** |  | [optional] 
 `absent_at_location_ids` | **Array&lt;string&gt;** | A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated. | [optional] 
 `present_at_all_locations` | **boolean** |  | [optional] 
 `available_for_pickup` | **boolean** |  | [optional] 
@@ -75,6 +77,8 @@ Name | Type | Description | Notes
 
 
 * [`Currency`](Currency.md)
+
+
 
 
 

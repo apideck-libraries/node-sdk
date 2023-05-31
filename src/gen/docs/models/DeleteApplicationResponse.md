@@ -1,4 +1,4 @@
-# Apideck.DeleteCustomerSupportCustomerResponse
+# Apideck.DeleteApplicationResponse
 
 ### Description
 

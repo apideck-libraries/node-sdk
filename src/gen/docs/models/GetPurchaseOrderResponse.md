@@ -1,4 +1,4 @@
-# Apideck.GetCustomerSupportCustomerResponse
+# Apideck.GetPurchaseOrderResponse
 
 ### Description
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**CustomerSupportCustomer**](CustomerSupportCustomer.md) |  | 
+`data` | [**PurchaseOrder**](PurchaseOrder.md) |  | 
 
 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`CustomerSupportCustomer`](CustomerSupportCustomer.md)
+* [`PurchaseOrder`](PurchaseOrder.md)
 
 ---
 

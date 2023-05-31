@@ -151,6 +151,12 @@ Name | Type | Description | Notes
 
 * `accounting_supplier_deleted` (value: `'accounting.supplier.deleted'`)
 
+* `accounting_purchase_order_created` (value: `'accounting.purchase-order.created'`)
+
+* `accounting_purchase_order_updated` (value: `'accounting.purchase-order.updated'`)
+
+* `accounting_purchase_order_deleted` (value: `'accounting.purchase-order.deleted'`)
+
 * `pos_order_created` (value: `'pos.order.created'`)
 
 * `pos_order_updated` (value: `'pos.order.updated'`)
@@ -205,6 +211,8 @@ Name | Type | Description | Notes
 
 * `hris_employee_deleted` (value: `'hris.employee.deleted'`)
 
+* `hris_employee_terminated` (value: `'hris.employee.terminated'`)
+
 * `hris_company_created` (value: `'hris.company.created'`)
 
 * `hris_company_updated` (value: `'hris.company.updated'`)
@@ -222,6 +230,12 @@ Name | Type | Description | Notes
 * `issue_tracking_ticket_updated` (value: `'issue-tracking.ticket.updated'`)
 
 * `issue_tracking_ticket_deleted` (value: `'issue-tracking.ticket.deleted'`)
+
+* `ats_application_created` (value: `'ats.application.created'`)
+
+* `ats_application_updated` (value: `'ats.application.updated'`)
+
+* `ats_application_deleted` (value: `'ats.application.deleted'`)
 
 
 

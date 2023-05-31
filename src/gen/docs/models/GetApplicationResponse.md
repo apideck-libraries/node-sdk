@@ -1,4 +1,4 @@
-# Apideck.GetCustomerSupportCustomersResponse
+# Apideck.GetApplicationResponse
 
 ### Description
 
@@ -10,9 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Array&lt;CustomerSupportCustomer&gt;**](CustomerSupportCustomer.md) |  | 
-`meta` | [**Meta**](Meta.md) |  | [optional] 
-`links` | [**Links**](Links.md) |  | [optional] 
+`data` | [**Application**](Application.md) |  | 
 
 
 
@@ -24,9 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`CustomerSupportCustomer`](CustomerSupportCustomer.md)
-* [`Meta`](Meta.md)
-* [`Links`](Links.md)
+* [`Application`](Application.md)
 
 ---
 

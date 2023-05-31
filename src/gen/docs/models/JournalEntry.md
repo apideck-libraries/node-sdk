@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 `memo` | **string** | Reference for the journal entry. | [optional] 
 `posted_at` | **Date** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 
 `journal_symbol` | **string** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
+`tax_type` | **string** | The specific category of tax associated with a transaction like sales or purchase | [optional] 
+`tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -29,6 +31,8 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`JournalEntryLineItem`](JournalEntryLineItem.md)
+
+
 
 
 

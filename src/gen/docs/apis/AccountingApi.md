@@ -48,6 +48,11 @@
 * [Get Payment](#paymentsOne)
 * [Update Payment](#paymentsUpdate)
 * [Get Profit And Loss](#profitAndLossOne)
+* [Create Purchase Order](#purchaseOrdersAdd)
+* [List Purchase Orders](#purchaseOrdersAll)
+* [Delete Purchase Order](#purchaseOrdersDelete)
+* [Get Purchase Order](#purchaseOrdersOne)
+* [Update Purchase Order](#purchaseOrdersUpdate)
 * [Create Supplier](#suppliersAdd)
 * [List Suppliers](#suppliersAll)
 * [Delete Supplier](#suppliersDelete)
@@ -207,6 +212,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     },
@@ -231,18 +237,22 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        discount_amount: 19.99,
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
+        },
+        tax_rate: {
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
           nominal_code: 'N091',
           code: '453'
-        },
-        tax_rate: {
-          id: '123456'
         },
         row_version: '1-12345'
       }
@@ -261,6 +271,22 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    discount_percentage: 5.5,
     row_version: '1-12345'
   }
 }
@@ -571,6 +597,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     },
@@ -595,18 +622,22 @@ const params = {
         unit_price: 27500.5,
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
+        discount_amount: 19.99,
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
+        },
+        tax_rate: {
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
           nominal_code: 'N091',
           code: '453'
-        },
-        tax_rate: {
-          id: '123456'
         },
         row_version: '1-12345'
       }
@@ -625,6 +656,22 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    discount_percentage: 5.5,
     row_version: '1-12345'
   }
 }
@@ -805,10 +852,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -1151,10 +1201,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -1205,7 +1258,7 @@ accountingApi.customersAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [AccountingCustomer](../models/AccountingCustomer.md)|  |
+ **customer** | [Customer](../models/Customer.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -1278,6 +1331,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1320,7 +1374,8 @@ const params = {
     ],
     notes: 'Some notes about this customer',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -1334,6 +1389,8 @@ const params = {
       name: 'Windsurf Shop'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -1576,7 +1633,7 @@ accountingApi.customersUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [AccountingCustomer](../models/AccountingCustomer.md)|  |
+ **customer** | [Customer](../models/Customer.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -1651,6 +1708,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1693,7 +1751,8 @@ const params = {
     ],
     notes: 'Some notes about this customer',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -1707,6 +1766,8 @@ const params = {
       name: 'Windsurf Shop'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -1792,7 +1853,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     purchase_details: {
@@ -1800,7 +1862,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     quantity: 1,
@@ -2118,7 +2181,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     purchase_details: {
@@ -2126,7 +2190,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     quantity: 1,
@@ -2261,10 +2326,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -2297,6 +2365,7 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     shipping_address: {
@@ -2322,10 +2391,26 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
     row_version: '1-12345'
   }
 }
@@ -2652,10 +2737,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -2688,6 +2776,7 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     shipping_address: {
@@ -2713,10 +2802,26 @@ const params = {
       fax: '122-111-1111',
       email: 'elon@musk.com',
       website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
       row_version: '1-12345'
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
     row_version: '1-12345'
   }
 }
@@ -2795,10 +2900,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -2813,10 +2920,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -2832,6 +2941,8 @@ const params = {
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
+    tax_type: 'sales',
+    tax_code: '1234',
     row_version: '1-12345'
   }
 }
@@ -3121,10 +3232,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -3139,10 +3252,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -3158,6 +3273,8 @@ const params = {
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
+    tax_type: 'sales',
+    tax_code: '1234',
     row_version: '1-12345'
   }
 }
@@ -3243,7 +3360,8 @@ const params = {
     currency: 'USD',
     tax_type: 'NONE',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     level: 1,
     active: true,
@@ -3563,7 +3681,8 @@ const params = {
     currency: 'USD',
     tax_type: 'NONE',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     level: 1,
     active: true,
@@ -3704,6 +3823,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     },
@@ -3757,6 +3877,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
  **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **filter** | **PaymentsFilter** | Apply filters | (optional) 
  **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters | (optional) 
  **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
 
@@ -4047,6 +4168,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     },
@@ -4149,6 +4271,604 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="purchaseOrdersAdd"></a>
+# Create Purchase Order
+
+
+Method: **purchaseOrdersAdd**
+
+```typescript
+accountingApi.purchaseOrdersAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **purchaseOrder** | [PurchaseOrder](../models/PurchaseOrder.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreatePurchaseOrderResponse`](../models/CreatePurchaseOrderResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | PurchaseOrders | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  purchaseOrder: {
+    po_number: '90000117',
+    reference: '123456',
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
+        row_version: '1-12345'
+      }
+    },
+    status: 'open',
+    issued_date: '2020-09-30',
+    delivery_date: '2020-09-30',
+    expected_arrival_date: '2020-09-30',
+    currency: 'USD',
+    currency_rate: 0.69,
+    sub_total: 27500,
+    total_tax: 2500,
+    total: 27500,
+    tax_inclusive: true,
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        discount_amount: 19.99,
+        location_id: '1234',
+        department_id: '1234',
+        item: {
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
+        },
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091',
+          code: '453'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    shipping_address: {
+      id: '123',
+      type: 'primary',
+      string: '25 Spring Street, Blackburn, VIC 3130',
+      name: 'HQ US',
+      line1: 'Main street',
+      line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
+      street_number: '25',
+      city: 'San Francisco',
+      state: 'CA',
+      postal_code: '94104',
+      country: 'US',
+      latitude: '40.759211',
+      longitude: '-73.984638',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
+      phone_number: '111-111-1111',
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
+      row_version: '1-12345'
+    },
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
+    template_id: '123456',
+    discount_percentage: 5.5,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    accounting_by_row: false,
+    due_date: '2020-10-30',
+    payment_method: 'cash',
+    tax_code: '1234',
+    channel: 'email',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.purchaseOrdersAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="purchaseOrdersAll"></a>
+# List Purchase Orders
+
+
+Method: **purchaseOrdersAll**
+
+```typescript
+accountingApi.purchaseOrdersAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetPurchaseOrdersResponse`](../models/GetPurchaseOrdersResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | PurchaseOrders | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.purchaseOrdersAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="purchaseOrdersDelete"></a>
+# Delete Purchase Order
+
+
+Method: **purchaseOrdersDelete**
+
+```typescript
+accountingApi.purchaseOrdersDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeletePurchaseOrderResponse`](../models/DeletePurchaseOrderResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | PurchaseOrders | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.purchaseOrdersDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="purchaseOrdersOne"></a>
+# Get Purchase Order
+
+
+Method: **purchaseOrdersOne**
+
+```typescript
+accountingApi.purchaseOrdersOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetPurchaseOrderResponse`](../models/GetPurchaseOrderResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | PurchaseOrders | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.purchaseOrdersOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="purchaseOrdersUpdate"></a>
+# Update Purchase Order
+
+
+Method: **purchaseOrdersUpdate**
+
+```typescript
+accountingApi.purchaseOrdersUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **purchaseOrder** | [PurchaseOrder](../models/PurchaseOrder.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdatePurchaseOrderResponse`](../models/UpdatePurchaseOrderResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | PurchaseOrders | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  purchaseOrder: {
+    po_number: '90000117',
+    reference: '123456',
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
+        row_version: '1-12345'
+      }
+    },
+    status: 'open',
+    issued_date: '2020-09-30',
+    delivery_date: '2020-09-30',
+    expected_arrival_date: '2020-09-30',
+    currency: 'USD',
+    currency_rate: 0.69,
+    sub_total: 27500,
+    total_tax: 2500,
+    total: 27500,
+    tax_inclusive: true,
+    line_items: [
+      {
+        row_id: '12345',
+        code: '120-C',
+        line_number: 1,
+        description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+        type: 'sales_item',
+        tax_amount: 27500,
+        total_amount: 27500,
+        quantity: 1,
+        unit_price: 27500.5,
+        unit_of_measure: 'pc.',
+        discount_percentage: 0.01,
+        discount_amount: 19.99,
+        location_id: '1234',
+        department_id: '1234',
+        item: {
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
+        },
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        ledger_account: {
+          id: '123456',
+          nominal_code: 'N091',
+          code: '453'
+        },
+        row_version: '1-12345'
+      }
+    ],
+    shipping_address: {
+      id: '123',
+      type: 'primary',
+      string: '25 Spring Street, Blackburn, VIC 3130',
+      name: 'HQ US',
+      line1: 'Main street',
+      line2: 'apt #',
+      line3: 'Suite #',
+      line4: 'delivery instructions',
+      street_number: '25',
+      city: 'San Francisco',
+      state: 'CA',
+      postal_code: '94104',
+      country: 'US',
+      latitude: '40.759211',
+      longitude: '-73.984638',
+      county: 'Santa Clara',
+      contact_name: 'Elon Musk',
+      salutation: 'Mr',
+      phone_number: '111-111-1111',
+      fax: '122-111-1111',
+      email: 'elon@musk.com',
+      website: 'https://elonmusk.com',
+      notes: 'Address notes or delivery instructions.',
+      row_version: '1-12345'
+    },
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
+    template_id: '123456',
+    discount_percentage: 5.5,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    accounting_by_row: false,
+    due_date: '2020-10-30',
+    payment_method: 'cash',
+    tax_code: '1234',
+    channel: 'email',
+    row_version: '1-12345'
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.purchaseOrdersUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="suppliersAdd"></a>
 # Create Supplier
 
@@ -4235,6 +4955,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -4277,7 +4998,8 @@ const params = {
     ],
     notes: 'Some notes about this supplier',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -4287,6 +5009,8 @@ const params = {
       code: '453'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -4603,6 +5327,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -4645,7 +5370,8 @@ const params = {
     ],
     notes: 'Some notes about this supplier',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -4655,6 +5381,8 @@ const params = {
       code: '453'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }

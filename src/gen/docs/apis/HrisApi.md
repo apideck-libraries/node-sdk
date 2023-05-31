@@ -113,6 +113,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -450,6 +451,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1219,6 +1221,7 @@ const params = {
           fax: '122-111-1111',
           email: 'elon@musk.com',
           website: 'https://elonmusk.com',
+          notes: 'Address notes or delivery instructions.',
           row_version: '1-12345'
         }
       }
@@ -1258,6 +1261,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1299,6 +1303,10 @@ const params = {
     food_allergies: [
       'No allergies'
     ],
+    probation_period: {
+      start_date: '2021-10-01',
+      end_date: '2021-11-28'
+    },
     tags: [
       'New'
     ],
@@ -1688,6 +1696,7 @@ const params = {
           fax: '122-111-1111',
           email: 'elon@musk.com',
           website: 'https://elonmusk.com',
+          notes: 'Address notes or delivery instructions.',
           row_version: '1-12345'
         }
       }
@@ -1727,6 +1736,7 @@ const params = {
         fax: '122-111-1111',
         email: 'elon@musk.com',
         website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
         row_version: '1-12345'
       }
     ],
@@ -1768,6 +1778,10 @@ const params = {
     food_allergies: [
       'No allergies'
     ],
+    probation_period: {
+      start_date: '2021-10-01',
+      end_date: '2021-11-28'
+    },
     tags: [
       'New'
     ],
