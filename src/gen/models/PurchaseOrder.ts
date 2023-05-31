@@ -14,6 +14,7 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import {
@@ -144,6 +145,48 @@ export interface PurchaseOrder {
    */
   template_id?: string | null
   /**
+   * Discount percentage applied to this transaction.
+   * @type {number}
+   * @memberof PurchaseOrder
+   */
+  discount_percentage?: number | null
+  /**
+   *
+   * @type {BankAccount}
+   * @memberof PurchaseOrder
+   */
+  bank_account?: BankAccount
+  /**
+   * Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
+   * @type {boolean}
+   * @memberof PurchaseOrder
+   */
+  accounting_by_row?: boolean | null
+  /**
+   * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+   * @type {Date}
+   * @memberof PurchaseOrder
+   */
+  due_date?: Date
+  /**
+   * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+   * @type {string}
+   * @memberof PurchaseOrder
+   */
+  payment_method?: string | null
+  /**
+   * Applicable tax id/code override if tax is not supplied on a line item basis.
+   * @type {string}
+   * @memberof PurchaseOrder
+   */
+  tax_code?: string | null
+  /**
+   * The channel through which the transaction is processed.
+   * @type {string}
+   * @memberof PurchaseOrder
+   */
+  channel?: string | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof PurchaseOrder
@@ -234,6 +277,17 @@ export function PurchaseOrderFromJSONTyped(json: any, ignoreDiscriminator: boole
       ? undefined
       : LinkedLedgerAccountFromJSON(json['ledger_account']),
     template_id: !exists(json, 'template_id') ? undefined : json['template_id'],
+    discount_percentage: !exists(json, 'discount_percentage')
+      ? undefined
+      : json['discount_percentage'],
+    bank_account: !exists(json, 'bank_account')
+      ? undefined
+      : BankAccountFromJSON(json['bank_account']),
+    accounting_by_row: !exists(json, 'accounting_by_row') ? undefined : json['accounting_by_row'],
+    due_date: !exists(json, 'due_date') ? undefined : new Date(json['due_date']),
+    payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
+    tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
+    channel: !exists(json, 'channel') ? undefined : json['channel'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -289,6 +343,16 @@ export function PurchaseOrderToJSON(value?: PurchaseOrder | null): any {
     shipping_address: AddressToJSON(value.shipping_address),
     ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
     template_id: value.template_id,
+    discount_percentage: value.discount_percentage,
+    bank_account: BankAccountToJSON(value.bank_account),
+    accounting_by_row: value.accounting_by_row,
+    due_date:
+      value.due_date === undefined
+        ? undefined
+        : new Date(value.due_date).toISOString().substr(0, 10),
+    payment_method: value.payment_method,
+    tax_code: value.tax_code,
+    channel: value.channel,
     row_version: value.row_version
   }
 }

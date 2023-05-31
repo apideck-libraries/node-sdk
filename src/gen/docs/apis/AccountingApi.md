@@ -241,10 +241,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -268,6 +271,22 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    discount_percentage: 5.5,
     row_version: '1-12345'
   }
 }
@@ -607,10 +626,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -634,6 +656,22 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    discount_percentage: 5.5,
     row_version: '1-12345'
   }
 }
@@ -814,10 +852,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -1160,10 +1201,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -1214,7 +1258,7 @@ accountingApi.customersAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [AccountingCustomer](../models/AccountingCustomer.md)|  |
+ **customer** | [Customer](../models/Customer.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -1330,7 +1374,8 @@ const params = {
     ],
     notes: 'Some notes about this customer',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -1344,6 +1389,8 @@ const params = {
       name: 'Windsurf Shop'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -1586,7 +1633,7 @@ accountingApi.customersUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [AccountingCustomer](../models/AccountingCustomer.md)|  |
+ **customer** | [Customer](../models/Customer.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -1704,7 +1751,8 @@ const params = {
     ],
     notes: 'Some notes about this customer',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -1718,6 +1766,8 @@ const params = {
       name: 'Windsurf Shop'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -1803,7 +1853,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     purchase_details: {
@@ -1811,7 +1862,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     quantity: 1,
@@ -2129,7 +2181,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     purchase_details: {
@@ -2137,7 +2190,8 @@ const params = {
       unit_of_measure: 'pc.',
       tax_inclusive: true,
       tax_rate: {
-        id: '123456'
+        id: '123456',
+        rate: 10
       }
     },
     quantity: 1,
@@ -2272,10 +2326,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -2339,6 +2396,21 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
     row_version: '1-12345'
   }
 }
@@ -2665,10 +2737,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -2732,6 +2807,21 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_method: 'cash',
+    channel: 'email',
+    language: 'EN',
+    accounting_by_row: false,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
     row_version: '1-12345'
   }
 }
@@ -2810,10 +2900,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -2828,10 +2920,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -2847,6 +2941,8 @@ const params = {
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
+    tax_type: 'sales',
+    tax_code: '1234',
     row_version: '1-12345'
   }
 }
@@ -3136,10 +3232,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -3154,10 +3252,12 @@ const params = {
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
         tax_amount: 27500,
+        sub_total: 27500,
         total_amount: 27500,
         type: 'debit',
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         tracking_category: {
           id: '123456',
@@ -3173,6 +3273,8 @@ const params = {
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
+    tax_type: 'sales',
+    tax_code: '1234',
     row_version: '1-12345'
   }
 }
@@ -3258,7 +3360,8 @@ const params = {
     currency: 'USD',
     tax_type: 'NONE',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     level: 1,
     active: true,
@@ -3578,7 +3681,8 @@ const params = {
     currency: 'USD',
     tax_type: 'NONE',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     level: 1,
     active: true,
@@ -4279,10 +4383,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -4324,6 +4431,23 @@ const params = {
       code: '453'
     },
     template_id: '123456',
+    discount_percentage: 5.5,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    accounting_by_row: false,
+    due_date: '2020-10-30',
+    payment_method: 'cash',
+    tax_code: '1234',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -4662,10 +4786,13 @@ const params = {
         location_id: '1234',
         department_id: '1234',
         item: {
-          id: '12344'
+          id: '12344',
+          code: '120-C',
+          name: 'Model Y'
         },
         tax_rate: {
-          id: '123456'
+          id: '123456',
+          rate: 10
         },
         ledger_account: {
           id: '123456',
@@ -4707,6 +4834,23 @@ const params = {
       code: '453'
     },
     template_id: '123456',
+    discount_percentage: 5.5,
+    bank_account: {
+      account_number: '123465',
+      account_name: 'SPACEX LLC',
+      account_type: 'credit_card',
+      iban: 'CH2989144532982975332',
+      bic: 'AUDSCHGGXXX',
+      bsb_number: '062-001',
+      branch_identifier: '001',
+      bank_code: 'BNH',
+      currency: 'USD'
+    },
+    accounting_by_row: false,
+    due_date: '2020-10-30',
+    payment_method: 'cash',
+    tax_code: '1234',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -4854,7 +4998,8 @@ const params = {
     ],
     notes: 'Some notes about this supplier',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -4864,6 +5009,8 @@ const params = {
       code: '453'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }
@@ -5223,7 +5370,8 @@ const params = {
     ],
     notes: 'Some notes about this supplier',
     tax_rate: {
-      id: '123456'
+      id: '123456',
+      rate: 10
     },
     tax_number: 'US123945459',
     currency: 'USD',
@@ -5233,6 +5381,8 @@ const params = {
       code: '453'
     },
     status: 'active',
+    payment_method: 'cash',
+    channel: 'email',
     row_version: '1-12345'
   }
 }

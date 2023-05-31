@@ -28,6 +28,12 @@ export interface LinkedSupplier {
    */
   id: string
   /**
+   * The display ID of the supplier.
+   * @type {string}
+   * @memberof LinkedSupplier
+   */
+  readonly display_id?: string | null
+  /**
    * The display name of the supplier.
    * @type {string}
    * @memberof LinkedSupplier
@@ -60,6 +66,7 @@ export function LinkedSupplierFromJSONTyped(
   }
   return {
     id: json['id'],
+    display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     address: !exists(json, 'address') ? undefined : AddressFromJSON(json['address'])

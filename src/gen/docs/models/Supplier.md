@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `status` | **string** | Supplier status | [optional] 
+`payment_method` | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
+`channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -76,6 +78,8 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
+
+
 
 
 

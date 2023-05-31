@@ -13,11 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import {
-  AccountingCustomer,
-  AccountingCustomerFromJSON,
-  AccountingCustomerToJSON
-} from './AccountingCustomer'
+import { Customer, CustomerFromJSON, CustomerToJSON } from './Customer'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 
@@ -59,10 +55,10 @@ export interface GetCustomersResponse {
   operation: string
   /**
    *
-   * @type {Array<AccountingCustomer>}
+   * @type {Array<Customer>}
    * @memberof GetCustomersResponse
    */
-  data: Array<AccountingCustomer>
+  data: Array<Customer>
   /**
    *
    * @type {Meta}
@@ -94,7 +90,7 @@ export function GetCustomersResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: (json['data'] as Array<any>).map(AccountingCustomerFromJSON),
+    data: (json['data'] as Array<any>).map(CustomerFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -113,7 +109,7 @@ export function GetCustomersResponseToJSON(value?: GetCustomersResponse | null):
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: (value.data as Array<any>).map(AccountingCustomerToJSON),
+    data: (value.data as Array<any>).map(CustomerToJSON),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

@@ -42,7 +42,7 @@ export interface LinkedTaxRate {
    * @type {number}
    * @memberof LinkedTaxRate
    */
-  readonly rate?: number | null
+  rate?: number | null
 }
 
 export function LinkedTaxRateFromJSON(json: any): LinkedTaxRate {
@@ -69,6 +69,7 @@ export function LinkedTaxRateToJSON(value?: LinkedTaxRate | null): any {
     return null
   }
   return {
-    id: value.id
+    id: value.id,
+    rate: value.rate
   }
 }

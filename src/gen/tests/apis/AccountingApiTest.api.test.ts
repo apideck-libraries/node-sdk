@@ -203,10 +203,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -230,6 +233,22 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          discount_percentage: 5.5,
           row_version: '1-12345'
         }
       } as any
@@ -267,6 +286,7 @@ describe('AccountingApi', () => {
             bill_number: '10001',
             supplier: {
               id: '12345',
+              display_id: 'SUPP00101',
               display_name: 'Windsurf Shop',
               company_name: 'The boring company',
               address: {
@@ -361,6 +381,22 @@ describe('AccountingApi', () => {
               nominal_code: 'N091',
               code: '453'
             },
+            payment_method: 'cash',
+            channel: 'email',
+            language: 'EN',
+            accounting_by_row: false,
+            bank_account: {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
+            },
+            discount_percentage: 5.5,
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -462,6 +498,7 @@ describe('AccountingApi', () => {
           bill_number: '10001',
           supplier: {
             id: '12345',
+            display_id: 'SUPP00101',
             display_name: 'Windsurf Shop',
             company_name: 'The boring company',
             address: {
@@ -556,6 +593,22 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          discount_percentage: 5.5,
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -669,10 +722,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -696,6 +752,22 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          discount_percentage: 5.5,
           row_version: '1-12345'
         }
       } as any
@@ -886,10 +958,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -1297,10 +1372,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -1438,7 +1516,8 @@ describe('AccountingApi', () => {
           ],
           notes: 'Some notes about this customer',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -1452,6 +1531,8 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any
@@ -1581,6 +1662,8 @@ describe('AccountingApi', () => {
               name: 'Windsurf Shop'
             },
             status: 'active',
+            payment_method: 'cash',
+            channel: 'email',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1774,6 +1857,8 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1907,7 +1992,8 @@ describe('AccountingApi', () => {
           ],
           notes: 'Some notes about this customer',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -1921,6 +2007,8 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any
@@ -1978,7 +2066,8 @@ describe('AccountingApi', () => {
             unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456'
+              id: '123456',
+              rate: 10
             }
           },
           purchase_details: {
@@ -1986,7 +2075,8 @@ describe('AccountingApi', () => {
             unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456'
+              id: '123456',
+              rate: 10
             }
           },
           quantity: 1,
@@ -2314,7 +2404,8 @@ describe('AccountingApi', () => {
             unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456'
+              id: '123456',
+              rate: 10
             }
           },
           purchase_details: {
@@ -2322,7 +2413,8 @@ describe('AccountingApi', () => {
             unit_of_measure: 'pc.',
             tax_inclusive: true,
             tax_rate: {
-              id: '123456'
+              id: '123456',
+              rate: 10
             }
           },
           quantity: 1,
@@ -2430,10 +2522,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -2497,6 +2592,21 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
           row_version: '1-12345'
         }
       } as any
@@ -2655,6 +2765,21 @@ describe('AccountingApi', () => {
             },
             template_id: '123456',
             source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+            payment_method: 'cash',
+            channel: 'email',
+            language: 'EN',
+            accounting_by_row: false,
+            bank_account: {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
+            },
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -2878,6 +3003,21 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -2979,10 +3119,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -3046,6 +3189,21 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_method: 'cash',
+          channel: 'email',
+          language: 'EN',
+          accounting_by_row: false,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
           row_version: '1-12345'
         }
       } as any
@@ -3096,10 +3254,12 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               tracking_category: {
                 id: '123456',
@@ -3115,10 +3275,12 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               tracking_category: {
                 id: '123456',
@@ -3134,6 +3296,8 @@ describe('AccountingApi', () => {
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
+          tax_type: 'sales',
+          tax_code: '1234',
           row_version: '1-12345'
         }
       } as any
@@ -3176,6 +3340,7 @@ describe('AccountingApi', () => {
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
                 tax_amount: 27500,
+                sub_total: 27500,
                 total_amount: 27500,
                 type: 'debit',
                 tax_rate: {
@@ -3202,6 +3367,7 @@ describe('AccountingApi', () => {
                 description:
                   'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
                 tax_amount: 27500,
+                sub_total: 27500,
                 total_amount: 27500,
                 type: 'debit',
                 tax_rate: {
@@ -3227,6 +3393,8 @@ describe('AccountingApi', () => {
             memo: 'Thank you for your business and have a great day!',
             posted_at: '2020-09-30T07:43:32.000Z',
             journal_symbol: 'IND',
+            tax_type: 'sales',
+            tax_code: '1234',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -3333,6 +3501,7 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
@@ -3359,6 +3528,7 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
@@ -3384,6 +3554,8 @@ describe('AccountingApi', () => {
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
+          tax_type: 'sales',
+          tax_code: '1234',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -3448,10 +3620,12 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               tracking_category: {
                 id: '123456',
@@ -3467,10 +3641,12 @@ describe('AccountingApi', () => {
               description:
                 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
               tax_amount: 27500,
+              sub_total: 27500,
               total_amount: 27500,
               type: 'debit',
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               tracking_category: {
                 id: '123456',
@@ -3486,6 +3662,8 @@ describe('AccountingApi', () => {
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
+          tax_type: 'sales',
+          tax_code: '1234',
           row_version: '1-12345'
         }
       } as any
@@ -3542,7 +3720,8 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'NONE',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           level: 1,
           active: true,
@@ -3872,7 +4051,8 @@ describe('AccountingApi', () => {
           currency: 'USD',
           tax_type: 'NONE',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           level: 1,
           active: true,
@@ -4059,6 +4239,7 @@ describe('AccountingApi', () => {
             },
             supplier: {
               id: '12345',
+              display_id: 'SUPP00101',
               display_name: 'Windsurf Shop',
               company_name: 'The boring company',
               address: {
@@ -4224,6 +4405,7 @@ describe('AccountingApi', () => {
           },
           supplier: {
             id: '12345',
+            display_id: 'SUPP00101',
             display_name: 'Windsurf Shop',
             company_name: 'The boring company',
             address: {
@@ -4568,10 +4750,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -4613,6 +4798,23 @@ describe('AccountingApi', () => {
             code: '453'
           },
           template_id: '123456',
+          discount_percentage: 5.5,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          accounting_by_row: false,
+          due_date: '2020-10-30',
+          payment_method: 'cash',
+          tax_code: '1234',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any
@@ -4651,6 +4853,7 @@ describe('AccountingApi', () => {
             reference: '123456',
             supplier: {
               id: '12345',
+              display_id: 'SUPP00101',
               display_name: 'Windsurf Shop',
               company_name: 'The boring company',
               address: {
@@ -4765,6 +4968,23 @@ describe('AccountingApi', () => {
               code: '453'
             },
             template_id: '123456',
+            discount_percentage: 5.5,
+            bank_account: {
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
+            },
+            accounting_by_row: false,
+            due_date: '2020-10-30',
+            payment_method: 'cash',
+            tax_code: '1234',
+            channel: 'email',
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -4867,6 +5087,7 @@ describe('AccountingApi', () => {
           reference: '123456',
           supplier: {
             id: '12345',
+            display_id: 'SUPP00101',
             display_name: 'Windsurf Shop',
             company_name: 'The boring company',
             address: {
@@ -4981,6 +5202,23 @@ describe('AccountingApi', () => {
             code: '453'
           },
           template_id: '123456',
+          discount_percentage: 5.5,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          accounting_by_row: false,
+          due_date: '2020-10-30',
+          payment_method: 'cash',
+          tax_code: '1234',
+          channel: 'email',
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -5097,10 +5335,13 @@ describe('AccountingApi', () => {
               location_id: '1234',
               department_id: '1234',
               item: {
-                id: '12344'
+                id: '12344',
+                code: '120-C',
+                name: 'Model Y'
               },
               tax_rate: {
-                id: '123456'
+                id: '123456',
+                rate: 10
               },
               ledger_account: {
                 id: '123456',
@@ -5142,6 +5383,23 @@ describe('AccountingApi', () => {
             code: '453'
           },
           template_id: '123456',
+          discount_percentage: 5.5,
+          bank_account: {
+            account_number: '123465',
+            account_name: 'SPACEX LLC',
+            account_type: 'credit_card',
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            bsb_number: '062-001',
+            branch_identifier: '001',
+            bank_code: 'BNH',
+            currency: 'USD'
+          },
+          accounting_by_row: false,
+          due_date: '2020-10-30',
+          payment_method: 'cash',
+          tax_code: '1234',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any
@@ -5260,7 +5518,8 @@ describe('AccountingApi', () => {
           ],
           notes: 'Some notes about this supplier',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -5270,6 +5529,8 @@ describe('AccountingApi', () => {
             code: '453'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any
@@ -5394,6 +5655,8 @@ describe('AccountingApi', () => {
               code: '453'
             },
             status: 'active',
+            payment_method: 'cash',
+            channel: 'email',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -5582,6 +5845,8 @@ describe('AccountingApi', () => {
             code: '453'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -5714,7 +5979,8 @@ describe('AccountingApi', () => {
           ],
           notes: 'Some notes about this supplier',
           tax_rate: {
-            id: '123456'
+            id: '123456',
+            rate: 10
           },
           tax_number: 'US123945459',
           currency: 'USD',
@@ -5724,6 +5990,8 @@ describe('AccountingApi', () => {
             code: '453'
           },
           status: 'active',
+          payment_method: 'cash',
+          channel: 'email',
           row_version: '1-12345'
         }
       } as any

@@ -1,6 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export * from './AccountingCustomer'
 export * from './AccountingEventType'
 export * from './ActivitiesFilter'
 export * from './Activity'
@@ -142,6 +141,7 @@ export * from './CreateWebhookResponse'
 export * from './CreditNote'
 export * from './CrmEventType'
 export * from './Currency'
+export * from './Customer'
 export * from './CustomersFilter'
 export * from './CustomField'
 export * from './Deduction'

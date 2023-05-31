@@ -14,7 +14,6 @@
 .openapi-generator-ignore
 AccountingApi.md
 AccountingApiTest.api.test.ts
-AccountingCustomer.md
 AccountingEventType.md
 ActivitiesFilter.md
 Activity.md
@@ -163,6 +162,7 @@ CrmApiTest.api.test.ts
 CrmEventType.md
 Currency.md
 CustomField.md
+Customer.md
 CustomersFilter.md
 Deduction.md
 DeleteActivityResponse.md
@@ -642,7 +642,6 @@ apis/VaultApi.ts
 apis/WebhookApi.ts
 apis/index.ts
 index.ts
-models/AccountingCustomer.ts
 models/AccountingEventType.ts
 models/ActivitiesFilter.ts
 models/Activity.ts
@@ -785,6 +784,7 @@ models/CreditNote.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
+models/Customer.ts
 models/CustomersFilter.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts

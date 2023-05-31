@@ -32,7 +32,7 @@ export interface Address {
    */
   type?: AddressType
   /**
-   *
+   * The address string. Some APIs don't provide structured address data.
    * @type {string}
    * @memberof Address
    */

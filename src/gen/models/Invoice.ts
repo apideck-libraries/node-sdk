@@ -14,6 +14,7 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
@@ -199,6 +200,36 @@ export interface Invoice {
    */
   source_document_url?: string | null
   /**
+   * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+   * @type {string}
+   * @memberof Invoice
+   */
+  payment_method?: string | null
+  /**
+   * The channel through which the transaction is processed.
+   * @type {string}
+   * @memberof Invoice
+   */
+  channel?: string | null
+  /**
+   * language code according to ISO 639-1. For the United States - EN
+   * @type {string}
+   * @memberof Invoice
+   */
+  language?: string | null
+  /**
+   * Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
+   * @type {boolean}
+   * @memberof Invoice
+   */
+  accounting_by_row?: boolean | null
+  /**
+   *
+   * @type {BankAccount}
+   * @memberof Invoice
+   */
+  bank_account?: BankAccount
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof Invoice
@@ -313,6 +344,13 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     source_document_url: !exists(json, 'source_document_url')
       ? undefined
       : json['source_document_url'],
+    payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
+    channel: !exists(json, 'channel') ? undefined : json['channel'],
+    language: !exists(json, 'language') ? undefined : json['language'],
+    accounting_by_row: !exists(json, 'accounting_by_row') ? undefined : json['accounting_by_row'],
+    bank_account: !exists(json, 'bank_account')
+      ? undefined
+      : BankAccountFromJSON(json['bank_account']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -373,6 +411,11 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     shipping_address: AddressToJSON(value.shipping_address),
     template_id: value.template_id,
     source_document_url: value.source_document_url,
+    payment_method: value.payment_method,
+    channel: value.channel,
+    language: value.language,
+    accounting_by_row: value.accounting_by_row,
+    bank_account: BankAccountToJSON(value.bank_account),
     row_version: value.row_version
   }
 }

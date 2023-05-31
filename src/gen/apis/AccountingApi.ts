@@ -13,8 +13,6 @@
  */
 
 import {
-  AccountingCustomer,
-  AccountingCustomerToJSON,
   BalanceSheetFilter,
   Bill,
   BillsSort,
@@ -43,7 +41,9 @@ import {
   CreateTaxRateResponseFromJSON,
   CreditNote,
   CreditNoteToJSON,
+  Customer,
   CustomersFilter,
+  CustomerToJSON,
   DeleteBillResponse,
   DeleteBillResponseFromJSON,
   DeleteCreditNoteResponse,
@@ -271,7 +271,7 @@ export interface AccountingApiCreditNotesUpdateRequest {
 }
 
 export interface AccountingApiCustomersAddRequest {
-  customer: AccountingCustomer
+  customer: Customer
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -309,7 +309,7 @@ export interface AccountingApiCustomersOneRequest {
 
 export interface AccountingApiCustomersUpdateRequest {
   id: string
-  customer: AccountingCustomer
+  customer: Customer
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -1593,7 +1593,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingCustomerToJSON(requestParameters.customer)
+        body: CustomerToJSON(requestParameters.customer)
       },
       initOverrides
     )
@@ -1893,7 +1893,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingCustomerToJSON(requestParameters.customer)
+        body: CustomerToJSON(requestParameters.customer)
       },
       initOverrides
     )

@@ -30,13 +30,13 @@ export interface LinkedInvoiceItem {
    * @type {string}
    * @memberof LinkedInvoiceItem
    */
-  readonly code?: string | null
+  code?: string | null
   /**
    * User defined item name
    * @type {string}
    * @memberof LinkedInvoiceItem
    */
-  readonly name?: string | null
+  name?: string | null
 }
 
 export function LinkedInvoiceItemFromJSON(json: any): LinkedInvoiceItem {
@@ -65,6 +65,8 @@ export function LinkedInvoiceItemToJSON(value?: LinkedInvoiceItem | null): any {
     return null
   }
   return {
-    id: value.id
+    id: value.id,
+    code: value.code,
+    name: value.name
   }
 }

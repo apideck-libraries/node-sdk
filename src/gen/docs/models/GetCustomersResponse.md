@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**Array&lt;AccountingCustomer&gt;**](AccountingCustomer.md) |  | 
+`data` | [**Array&lt;Customer&gt;**](Customer.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 
 
-* [`AccountingCustomer`](AccountingCustomer.md)
+* [`Customer`](Customer.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
 
