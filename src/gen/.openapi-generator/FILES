@@ -416,7 +416,6 @@ Job.md
 JobLinks.md
 JobSalary.md
 JobStatus.md
-JobsFilter.md
 JournalEntry.md
 JournalEntryLineItem.md
 Lead.md
@@ -1029,7 +1028,6 @@ models/Job.ts
 models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
-models/JobsFilter.ts
 models/JournalEntry.ts
 models/JournalEntryLineItem.ts
 models/Lead.ts
