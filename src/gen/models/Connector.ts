@@ -98,6 +98,12 @@ export interface Connector {
    */
   signup_url?: string
   /**
+   * Link to the connector's partner program signup page.
+   * @type {string}
+   * @memberof Connector
+   */
+  partner_signup_url?: string
+  /**
    * Set to `true` when the connector offers a free trial. Use `signup_url` to sign up for a free trial
    * @type {boolean}
    * @memberof Connector
@@ -253,6 +259,9 @@ export function ConnectorFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     logo_url: !exists(json, 'logo_url') ? undefined : json['logo_url'],
     website_url: !exists(json, 'website_url') ? undefined : json['website_url'],
     signup_url: !exists(json, 'signup_url') ? undefined : json['signup_url'],
+    partner_signup_url: !exists(json, 'partner_signup_url')
+      ? undefined
+      : json['partner_signup_url'],
     free_trial_available: !exists(json, 'free_trial_available')
       ? undefined
       : json['free_trial_available'],
@@ -313,6 +322,7 @@ export function ConnectorToJSON(value?: Connector | null): any {
     logo_url: value.logo_url,
     website_url: value.website_url,
     signup_url: value.signup_url,
+    partner_signup_url: value.partner_signup_url,
     free_trial_available: value.free_trial_available,
     oauth_scopes:
       value.oauth_scopes === undefined
