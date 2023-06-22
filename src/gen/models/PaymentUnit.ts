@@ -22,7 +22,8 @@ export enum PaymentUnit {
   week = 'week',
   month = 'month',
   year = 'year',
-  paycheck = 'paycheck'
+  paycheck = 'paycheck',
+  other = 'other'
 }
 
 export function PaymentUnitFromJSON(json: any): PaymentUnit {

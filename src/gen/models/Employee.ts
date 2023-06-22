@@ -19,19 +19,14 @@ import {
   ApplicantSocialLinksFromJSON,
   ApplicantSocialLinksToJSON
 } from './ApplicantSocialLinks'
+import { Compensation, CompensationFromJSON, CompensationToJSON } from './Compensation'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
-import {
-  EmployeeCompensations,
-  EmployeeCompensationsFromJSON,
-  EmployeeCompensationsToJSON
-} from './EmployeeCompensations'
 import {
   EmployeeEmploymentRole,
   EmployeeEmploymentRoleFromJSON,
   EmployeeEmploymentRoleToJSON
 } from './EmployeeEmploymentRole'
-import { EmployeeJobs, EmployeeJobsFromJSON, EmployeeJobsToJSON } from './EmployeeJobs'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
 import { EmployeeTeam, EmployeeTeamFromJSON, EmployeeTeamToJSON } from './EmployeeTeam'
 import {
@@ -40,6 +35,7 @@ import {
   EmploymentStatusToJSON
 } from './EmploymentStatus'
 import { Gender, GenderFromJSON, GenderToJSON } from './Gender'
+import { Job, JobFromJSON, JobToJSON } from './Job'
 import { Person, PersonFromJSON, PersonToJSON } from './Person'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 import { ProbationPeriod, ProbationPeriodFromJSON, ProbationPeriodToJSON } from './ProbationPeriod'
@@ -304,16 +300,16 @@ export interface Employee {
   record_url?: string | null
   /**
    *
-   * @type {Array<EmployeeJobs>}
+   * @type {Array<Job>}
    * @memberof Employee
    */
-  jobs?: Array<EmployeeJobs>
+  jobs?: Array<Job>
   /**
    *
-   * @type {Array<EmployeeCompensations>}
+   * @type {Array<Compensation>}
    * @memberof Employee
    */
-  compensations?: Array<EmployeeCompensations>
+  compensations?: Array<Compensation>
   /**
    * Indicates if the employee works from a remote location.
    * @type {boolean}
@@ -506,12 +502,10 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     source: !exists(json, 'source') ? undefined : json['source'],
     source_id: !exists(json, 'source_id') ? undefined : json['source_id'],
     record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
-    jobs: !exists(json, 'jobs')
-      ? undefined
-      : (json['jobs'] as Array<any>).map(EmployeeJobsFromJSON),
+    jobs: !exists(json, 'jobs') ? undefined : (json['jobs'] as Array<any>).map(JobFromJSON),
     compensations: !exists(json, 'compensations')
       ? undefined
-      : (json['compensations'] as Array<any>).map(EmployeeCompensationsFromJSON),
+      : (json['compensations'] as Array<any>).map(CompensationFromJSON),
     works_remote: !exists(json, 'works_remote') ? undefined : json['works_remote'],
     addresses: !exists(json, 'addresses')
       ? undefined
@@ -608,11 +602,11 @@ export function EmployeeToJSON(value?: Employee | null): any {
     source: value.source,
     source_id: value.source_id,
     record_url: value.record_url,
-    jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(EmployeeJobsToJSON),
+    jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(JobToJSON),
     compensations:
       value.compensations === undefined
         ? undefined
-        : (value.compensations as Array<any>).map(EmployeeCompensationsToJSON),
+        : (value.compensations as Array<any>).map(CompensationToJSON),
     works_remote: value.works_remote,
     addresses:
       value.addresses === undefined

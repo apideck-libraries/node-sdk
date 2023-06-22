@@ -14,13 +14,8 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
-import { Branch, BranchFromJSON, BranchToJSON } from './Branch'
-import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
-import { Department, DepartmentFromJSON, DepartmentToJSON } from './Department'
-import { JobLinks, JobLinksFromJSON, JobLinksToJSON } from './JobLinks'
-import { JobSalary, JobSalaryFromJSON, JobSalaryToJSON } from './JobSalary'
-import { JobStatus, JobStatusFromJSON, JobStatusToJSON } from './JobStatus'
-import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { PaymentUnit, PaymentUnitFromJSON, PaymentUnitToJSON } from './PaymentUnit'
 
 /**
  *
@@ -35,11 +30,11 @@ export interface Job {
    */
   readonly id?: string
   /**
-   *
+   * A unique identifier for an object.
    * @type {string}
    * @memberof Job
    */
-  slug?: string | null
+  readonly employee_id?: string
   /**
    * The job title of the person.
    * @type {string}
@@ -47,259 +42,59 @@ export interface Job {
    */
   title?: string | null
   /**
-   * Sequence in relation to other jobs.
+   * The position and responsibilities of the person within the organization.
+   * @type {string}
+   * @memberof Job
+   */
+  role?: string | null
+  /**
+   * The date on which the employee starts working in their current job role.
+   * @type {Date}
+   * @memberof Job
+   */
+  start_date?: Date | null
+  /**
+   * The date on which the employee leaves or is expected to leave their current job role.
+   * @type {Date}
+   * @memberof Job
+   */
+  end_date?: Date | null
+  /**
+   * The rate of pay for the employee in their current job role.
    * @type {number}
    * @memberof Job
    */
-  sequence?: number
-  /**
-   * The visibility of the job
-   * @type {string}
-   * @memberof Job
-   */
-  visibility?: JobVisibility
+  compensation_rate?: number
   /**
    *
-   * @type {JobStatus}
+   * @type {Currency}
    * @memberof Job
    */
-  status?: JobStatus
-  /**
-   * The code of the job.
-   * @type {string}
-   * @memberof Job
-   */
-  code?: string
-  /**
-   * language code according to ISO 639-1. For the United States - EN
-   * @type {string}
-   * @memberof Job
-   */
-  language?: string | null
+  currency?: Currency | null
   /**
    *
-   * @type {string}
+   * @type {PaymentUnit}
    * @memberof Job
    */
-  employment_terms?: JobEmploymentTerms
+  payment_unit?: PaymentUnit
   /**
-   * Level of experience required for the job role.
-   * @type {string}
-   * @memberof Job
-   */
-  experience?: string
-  /**
-   * Specifies the location for the job posting.
-   * @type {string}
-   * @memberof Job
-   */
-  location?: string | null
-  /**
-   * Specifies whether the posting is for a remote job.
-   * @type {boolean}
-   * @memberof Job
-   */
-  remote?: boolean | null
-  /**
-   * A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.
-   * @type {string}
-   * @memberof Job
-   */
-  requisition_id?: string
-  /**
-   *
-   * @type {Department}
-   * @memberof Job
-   */
-  department?: Department
-  /**
-   *
-   * @type {Branch}
-   * @memberof Job
-   */
-  branch?: Branch
-  /**
-   * The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant
-   * @type {Array<string>}
-   * @memberof Job
-   */
-  recruiters?: Array<string> | null
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof Job
-   */
-  hiring_managers?: Array<string>
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof Job
-   */
-  followers?: Array<string> | null
-  /**
-   * A description of the object.
-   * @type {string}
-   * @memberof Job
-   */
-  description?: string | null
-  /**
-   * The job description in HTML format
-   * @type {string}
-   * @memberof Job
-   */
-  description_html?: string | null
-  /**
-   *
-   * @type {Array<object>}
-   * @memberof Job
-   */
-  blocks?: Array<object>
-  /**
-   *
-   * @type {string}
-   * @memberof Job
-   */
-  closing?: string | null
-  /**
-   * The closing section of the job description in HTML format
-   * @type {string}
-   * @memberof Job
-   */
-  closing_html?: string | null
-  /**
-   *
+   * The date on which the employee was hired by the organization
    * @type {Date}
    * @memberof Job
    */
-  closing_date?: Date | null
+  hired_at?: Date | null
   /**
-   *
-   * @type {JobSalary}
-   * @memberof Job
-   */
-  salary?: JobSalary
-  /**
-   * URL of the job description
-   * @type {string}
-   * @memberof Job
-   */
-  url?: string | null
-  /**
-   * URL of the job portal
-   * @type {string}
-   * @memberof Job
-   */
-  job_portal_url?: string | null
-  /**
-   *
-   * @type {string}
-   * @memberof Job
-   */
-  record_url?: string | null
-  /**
-   *
-   * @type {Array<JobLinks>}
-   * @memberof Job
-   */
-  links?: Array<JobLinks>
-  /**
-   *
+   * Indicates whether this the employee's primary job.
    * @type {boolean}
    * @memberof Job
    */
-  confidential?: boolean
-  /**
-   * Specifies whether an employee of the organization can apply for the job.
-   * @type {boolean}
-   * @memberof Job
-   */
-  available_to_employees?: boolean
+  is_primary?: boolean | null
   /**
    *
-   * @type {Tags}
+   * @type {Address}
    * @memberof Job
    */
-  tags?: Tags
-  /**
-   *
-   * @type {Array<Address>}
-   * @memberof Job
-   */
-  addresses?: Array<Address>
-  /**
-   *
-   * @type {Array<CustomField>}
-   * @memberof Job
-   */
-  custom_fields?: Array<CustomField>
-  /**
-   *
-   * @type {boolean}
-   * @memberof Job
-   */
-  deleted?: boolean | null
-  /**
-   *
-   * @type {string}
-   * @memberof Job
-   */
-  owner_id?: string
-  /**
-   *
-   * @type {Date}
-   * @memberof Job
-   */
-  readonly published_at?: Date
-  /**
-   * The user who last updated the object.
-   * @type {string}
-   * @memberof Job
-   */
-  readonly updated_by?: string | null
-  /**
-   * The user who created the object.
-   * @type {string}
-   * @memberof Job
-   */
-  readonly created_by?: string | null
-  /**
-   * The date and time when the object was last updated.
-   * @type {Date}
-   * @memberof Job
-   */
-  readonly updated_at?: Date | null
-  /**
-   * The date and time when the object was created.
-   * @type {Date}
-   * @memberof Job
-   */
-  readonly created_at?: Date
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum JobVisibility {
-  draft = 'draft',
-  public = 'public',
-  internal = 'internal'
-}
-/**
- * @export
- * @enum {string}
- */
-export enum JobEmploymentTerms {
-  full_time = 'full-time',
-  part_time = 'part-time',
-  internship = 'internship',
-  contractor = 'contractor',
-  employee = 'employee',
-  freelance = 'freelance',
-  temp = 'temp',
-  seasonal = 'seasonal',
-  volunteer = 'volunteer',
-  other = 'other'
+  location?: Address
 }
 
 export function JobFromJSON(json: any): Job {
@@ -312,60 +107,31 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    slug: !exists(json, 'slug') ? undefined : json['slug'],
+    employee_id: !exists(json, 'employee_id') ? undefined : json['employee_id'],
     title: !exists(json, 'title') ? undefined : json['title'],
-    sequence: !exists(json, 'sequence') ? undefined : json['sequence'],
-    visibility: !exists(json, 'visibility') ? undefined : json['visibility'],
-    status: !exists(json, 'status') ? undefined : JobStatusFromJSON(json['status']),
-    code: !exists(json, 'code') ? undefined : json['code'],
-    language: !exists(json, 'language') ? undefined : json['language'],
-    employment_terms: !exists(json, 'employment_terms') ? undefined : json['employment_terms'],
-    experience: !exists(json, 'experience') ? undefined : json['experience'],
-    location: !exists(json, 'location') ? undefined : json['location'],
-    remote: !exists(json, 'remote') ? undefined : json['remote'],
-    requisition_id: !exists(json, 'requisition_id') ? undefined : json['requisition_id'],
-    department: !exists(json, 'department') ? undefined : DepartmentFromJSON(json['department']),
-    branch: !exists(json, 'branch') ? undefined : BranchFromJSON(json['branch']),
-    recruiters: !exists(json, 'recruiters') ? undefined : json['recruiters'],
-    hiring_managers: !exists(json, 'hiring_managers') ? undefined : json['hiring_managers'],
-    followers: !exists(json, 'followers') ? undefined : json['followers'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    description_html: !exists(json, 'description_html') ? undefined : json['description_html'],
-    blocks: !exists(json, 'blocks') ? undefined : json['blocks'],
-    closing: !exists(json, 'closing') ? undefined : json['closing'],
-    closing_html: !exists(json, 'closing_html') ? undefined : json['closing_html'],
-    closing_date: !exists(json, 'closing_date')
+    role: !exists(json, 'role') ? undefined : json['role'],
+    start_date: !exists(json, 'start_date')
       ? undefined
-      : json['closing_date'] === null
+      : json['start_date'] === null
       ? null
-      : new Date(json['closing_date']),
-    salary: !exists(json, 'salary') ? undefined : JobSalaryFromJSON(json['salary']),
-    url: !exists(json, 'url') ? undefined : json['url'],
-    job_portal_url: !exists(json, 'job_portal_url') ? undefined : json['job_portal_url'],
-    record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
-    links: !exists(json, 'links') ? undefined : (json['links'] as Array<any>).map(JobLinksFromJSON),
-    confidential: !exists(json, 'confidential') ? undefined : json['confidential'],
-    available_to_employees: !exists(json, 'available_to_employees')
+      : new Date(json['start_date']),
+    end_date: !exists(json, 'end_date')
       ? undefined
-      : json['available_to_employees'],
-    tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
-    addresses: !exists(json, 'addresses')
-      ? undefined
-      : (json['addresses'] as Array<any>).map(AddressFromJSON),
-    custom_fields: !exists(json, 'custom_fields')
-      ? undefined
-      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
-    deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
-    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    published_at: !exists(json, 'published_at') ? undefined : new Date(json['published_at']),
-    updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
-    created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updated_at: !exists(json, 'updated_at')
-      ? undefined
-      : json['updated_at'] === null
+      : json['end_date'] === null
       ? null
-      : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+      : new Date(json['end_date']),
+    compensation_rate: !exists(json, 'compensation_rate') ? undefined : json['compensation_rate'],
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    payment_unit: !exists(json, 'payment_unit')
+      ? undefined
+      : PaymentUnitFromJSON(json['payment_unit']),
+    hired_at: !exists(json, 'hired_at')
+      ? undefined
+      : json['hired_at'] === null
+      ? null
+      : new Date(json['hired_at']),
+    is_primary: !exists(json, 'is_primary') ? undefined : json['is_primary'],
+    location: !exists(json, 'location') ? undefined : AddressFromJSON(json['location'])
   }
 }
 
@@ -377,51 +143,30 @@ export function JobToJSON(value?: Job | null): any {
     return null
   }
   return {
-    slug: value.slug,
     title: value.title,
-    sequence: value.sequence,
-    visibility: value.visibility,
-    status: JobStatusToJSON(value.status),
-    code: value.code,
-    language: value.language,
-    employment_terms: value.employment_terms,
-    experience: value.experience,
-    location: value.location,
-    remote: value.remote,
-    requisition_id: value.requisition_id,
-    department: DepartmentToJSON(value.department),
-    branch: BranchToJSON(value.branch),
-    recruiters: value.recruiters,
-    hiring_managers: value.hiring_managers,
-    followers: value.followers,
-    description: value.description,
-    description_html: value.description_html,
-    blocks: value.blocks,
-    closing: value.closing,
-    closing_html: value.closing_html,
-    closing_date:
-      value.closing_date === undefined
+    role: value.role,
+    start_date:
+      value.start_date === undefined
         ? undefined
-        : value.closing_date === null
+        : value.start_date === null
         ? null
-        : new Date(value.closing_date).toISOString().substr(0, 10),
-    salary: JobSalaryToJSON(value.salary),
-    url: value.url,
-    job_portal_url: value.job_portal_url,
-    record_url: value.record_url,
-    links: value.links === undefined ? undefined : (value.links as Array<any>).map(JobLinksToJSON),
-    confidential: value.confidential,
-    available_to_employees: value.available_to_employees,
-    tags: TagsToJSON(value.tags),
-    addresses:
-      value.addresses === undefined
+        : new Date(value.start_date).toISOString().substr(0, 10),
+    end_date:
+      value.end_date === undefined
         ? undefined
-        : (value.addresses as Array<any>).map(AddressToJSON),
-    custom_fields:
-      value.custom_fields === undefined
+        : value.end_date === null
+        ? null
+        : new Date(value.end_date).toISOString().substr(0, 10),
+    compensation_rate: value.compensation_rate,
+    currency: CurrencyToJSON(value.currency),
+    payment_unit: PaymentUnitToJSON(value.payment_unit),
+    hired_at:
+      value.hired_at === undefined
         ? undefined
-        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    deleted: value.deleted,
-    owner_id: value.owner_id
+        : value.hired_at === null
+        ? null
+        : new Date(value.hired_at).toISOString().substr(0, 10),
+    is_primary: value.is_primary,
+    location: AddressToJSON(value.location)
   }
 }

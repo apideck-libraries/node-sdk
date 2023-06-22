@@ -13,9 +13,8 @@
  */
 
 import { exists } from '../runtime'
-import { Benefit, BenefitFromJSON, BenefitToJSON } from './Benefit'
-import { Deduction, DeductionFromJSON, DeductionToJSON } from './Deduction'
-import { Tax, TaxFromJSON, TaxToJSON } from './Tax'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { PaymentUnit, PaymentUnitFromJSON, PaymentUnitToJSON } from './PaymentUnit'
 
 /**
  *
@@ -28,37 +27,54 @@ export interface Compensation {
    * @type {string}
    * @memberof Compensation
    */
-  readonly employee_id: string
+  readonly id?: string
   /**
-   * The employee's net pay. Only available when payroll has been processed
+   * The ID of the job to which the compensation belongs.
+   * @type {string}
+   * @memberof Compensation
+   */
+  readonly job_id?: string
+  /**
+   * The amount paid per payment unit.
    * @type {number}
    * @memberof Compensation
    */
-  net_pay?: number
+  rate?: number
   /**
-   * The employee's gross pay. Only available when payroll has been processed
-   * @type {number}
+   *
+   * @type {PaymentUnit}
    * @memberof Compensation
    */
-  gross_pay?: number
+  payment_unit?: PaymentUnit
   /**
-   * An array of employer and employee taxes for the pay period.
-   * @type {Array<Tax>}
+   *
+   * @type {Currency}
    * @memberof Compensation
    */
-  taxes?: Array<Tax>
+  currency?: Currency | null
   /**
-   * An array of employee deductions for the pay period.
-   * @type {Array<Deduction>}
+   * The FLSA status for this compensation.
+   * @type {string}
    * @memberof Compensation
    */
-  deductions?: Array<Deduction>
+  flsa_status?: CompensationFlsaStatus
   /**
-   * An array of employee benefits for the pay period.
-   * @type {Array<Benefit>}
+   * The date on which a change to an employee's compensation takes effect.
+   * @type {string}
    * @memberof Compensation
    */
-  benefits?: Array<Benefit>
+  effective_date?: string
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CompensationFlsaStatus {
+  exempt = 'exempt',
+  salaried_nonexempt = 'salaried-nonexempt',
+  nonexempt = 'nonexempt',
+  owner = 'owner'
 }
 
 export function CompensationFromJSON(json: any): Compensation {
@@ -70,16 +86,15 @@ export function CompensationFromJSONTyped(json: any, ignoreDiscriminator: boolea
     return json
   }
   return {
-    employee_id: json['employee_id'],
-    net_pay: !exists(json, 'net_pay') ? undefined : json['net_pay'],
-    gross_pay: !exists(json, 'gross_pay') ? undefined : json['gross_pay'],
-    taxes: !exists(json, 'taxes') ? undefined : (json['taxes'] as Array<any>).map(TaxFromJSON),
-    deductions: !exists(json, 'deductions')
+    id: !exists(json, 'id') ? undefined : json['id'],
+    job_id: !exists(json, 'job_id') ? undefined : json['job_id'],
+    rate: !exists(json, 'rate') ? undefined : json['rate'],
+    payment_unit: !exists(json, 'payment_unit')
       ? undefined
-      : (json['deductions'] as Array<any>).map(DeductionFromJSON),
-    benefits: !exists(json, 'benefits')
-      ? undefined
-      : (json['benefits'] as Array<any>).map(BenefitFromJSON)
+      : PaymentUnitFromJSON(json['payment_unit']),
+    currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    flsa_status: !exists(json, 'flsa_status') ? undefined : json['flsa_status'],
+    effective_date: !exists(json, 'effective_date') ? undefined : json['effective_date']
   }
 }
 
@@ -91,14 +106,10 @@ export function CompensationToJSON(value?: Compensation | null): any {
     return null
   }
   return {
-    net_pay: value.net_pay,
-    gross_pay: value.gross_pay,
-    taxes: value.taxes === undefined ? undefined : (value.taxes as Array<any>).map(TaxToJSON),
-    deductions:
-      value.deductions === undefined
-        ? undefined
-        : (value.deductions as Array<any>).map(DeductionToJSON),
-    benefits:
-      value.benefits === undefined ? undefined : (value.benefits as Array<any>).map(BenefitToJSON)
+    rate: value.rate,
+    payment_unit: PaymentUnitToJSON(value.payment_unit),
+    currency: CurrencyToJSON(value.currency),
+    flsa_status: value.flsa_status,
+    effective_date: value.effective_date
   }
 }
