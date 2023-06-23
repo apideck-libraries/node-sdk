@@ -123,6 +123,7 @@ export enum ConnectionWebhookEvents {
   vault_connection_disabled = 'vault.connection.disabled',
   vault_connection_deleted = 'vault.connection.deleted',
   vault_connection_callable = 'vault.connection.callable',
+  vault_connection_revoked = 'vault.connection.revoked',
   vault_connection_token_refresh_failed = 'vault.connection.token_refresh.failed',
   ats_job_created = 'ats.job.created',
   ats_job_updated = 'ats.job.updated',
