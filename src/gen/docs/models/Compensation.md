@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `flsa_status` | **string** | The FLSA status for this compensation. | [optional] 
 `effective_date` | **string** | The date on which a change to an employee\'s compensation takes effect. | [optional] 
+`payment_frequency` | **string** | Frequency of employee compensation. | [optional] 
 
 
 
@@ -32,12 +33,30 @@ Name | Type | Description | Notes
 
 
 
+<a name="CompensationPaymentFrequency"></a>
+## Enum: Compensation.payment_frequency
+
+
+* `weekly` (value: `'weekly'`)
+
+* `biweekly` (value: `'biweekly'`)
+
+* `monthly` (value: `'monthly'`)
+
+* `pro_rata` (value: `'pro-rata'`)
+
+* `other` (value: `'other'`)
+
+
+
+
 ## Referenced Types:
 
 
 
 * [`PaymentUnit`](PaymentUnit.md)
 * [`Currency`](Currency.md)
+
 
 
 
