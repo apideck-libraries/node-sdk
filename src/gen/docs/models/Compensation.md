@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 
 * `owner` (value: `'owner'`)
 
+* `other` (value: `'other'`)
+
 
 
 

@@ -80,7 +80,8 @@ export enum CompensationFlsaStatus {
   exempt = 'exempt',
   salaried_nonexempt = 'salaried-nonexempt',
   nonexempt = 'nonexempt',
-  owner = 'owner'
+  owner = 'owner',
+  other = 'other'
 }
 /**
  * @export
