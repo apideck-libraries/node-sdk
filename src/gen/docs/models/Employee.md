@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
+`bank_accounts` | [**Array&lt;EmployeeBankAccounts&gt;**](EmployeeBankAccounts.md) |  | [optional] 
 `tax_code` | **string** |  | [optional] 
 `tax_id` | **string** |  | [optional] 
 `dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
@@ -138,6 +139,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
+* [`EmployeeBankAccounts`](EmployeeBankAccounts.md)
 
 
 

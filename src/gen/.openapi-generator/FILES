@@ -239,6 +239,7 @@ EcommerceProductVariants.md
 EcommerceStore.md
 Email.md
 Employee.md
+EmployeeBankAccounts.md
 EmployeeEmploymentRole.md
 EmployeeManager.md
 EmployeePayroll.md
@@ -856,6 +857,7 @@ models/EcommerceProductVariants.ts
 models/EcommerceStore.ts
 models/Email.ts
 models/Employee.ts
+models/EmployeeBankAccounts.ts
 models/EmployeeEmploymentRole.ts
 models/EmployeeManager.ts
 models/EmployeePayroll.ts
