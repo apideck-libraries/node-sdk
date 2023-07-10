@@ -21,7 +21,8 @@ Name | Type | Description | Notes
 `department` | **string** | The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field. | [optional] 
 `department_id` | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 `department_name` | **string** | Name of the department this employee belongs to. | [optional] 
-`team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
+`team` | [**Team**](Team.md) |  | [optional] 
+`teams` | [**Array&lt;Team&gt;**](Team.md) |  | [optional] 
 `company_id` | **string** | The unique identifier of the company. | [optional] 
 `company_name` | **string** | The name of the company. | [optional] 
 `employment_start_date` | **string** | A Start Date is the date that the employee started working at the company | [optional] 
@@ -105,7 +106,8 @@ Name | Type | Description | Notes
 
 
 
-* [`EmployeeTeam`](EmployeeTeam.md)
+* [`Team`](Team.md)
+* [`Team`](Team.md)
 
 
 

@@ -33,7 +33,6 @@ import {
   EmployeeEmploymentRoleToJSON
 } from './EmployeeEmploymentRole'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
-import { EmployeeTeam, EmployeeTeamFromJSON, EmployeeTeamToJSON } from './EmployeeTeam'
 import {
   EmploymentStatus,
   EmploymentStatusFromJSON,
@@ -44,6 +43,7 @@ import { Job, JobFromJSON, JobToJSON } from './Job'
 import { Person, PersonFromJSON, PersonToJSON } from './Person'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 import { ProbationPeriod, ProbationPeriodFromJSON, ProbationPeriodToJSON } from './ProbationPeriod'
+import { Team, TeamFromJSON, TeamToJSON } from './Team'
 
 /**
  *
@@ -149,10 +149,16 @@ export interface Employee {
   department_name?: string | null
   /**
    *
-   * @type {EmployeeTeam}
+   * @type {Team}
    * @memberof Employee
    */
-  team?: EmployeeTeam | null
+  team?: Team | null
+  /**
+   *
+   * @type {Array<Team>}
+   * @memberof Employee
+   */
+  teams?: Array<Team>
   /**
    * The unique identifier of the company.
    * @type {string}
@@ -467,7 +473,8 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     department: !exists(json, 'department') ? undefined : json['department'],
     department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
     department_name: !exists(json, 'department_name') ? undefined : json['department_name'],
-    team: !exists(json, 'team') ? undefined : EmployeeTeamFromJSON(json['team']),
+    team: !exists(json, 'team') ? undefined : TeamFromJSON(json['team']),
+    teams: !exists(json, 'teams') ? undefined : (json['teams'] as Array<any>).map(TeamFromJSON),
     company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     employment_start_date: !exists(json, 'employment_start_date')
@@ -580,7 +587,8 @@ export function EmployeeToJSON(value?: Employee | null): any {
     department: value.department,
     department_id: value.department_id,
     department_name: value.department_name,
-    team: EmployeeTeamToJSON(value.team),
+    team: TeamToJSON(value.team),
+    teams: value.teams === undefined ? undefined : (value.teams as Array<any>).map(TeamToJSON),
     company_id: value.company_id,
     company_name: value.company_name,
     employment_start_date: value.employment_start_date,
