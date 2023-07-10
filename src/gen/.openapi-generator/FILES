@@ -245,6 +245,7 @@ EmployeeManager.md
 EmployeePayroll.md
 EmployeePayrolls.md
 EmployeeSchedules.md
+EmployeeTeam.md
 EmployeesFilter.md
 EmployeesSort.md
 EmploymentStatus.md
@@ -536,7 +537,6 @@ Tags.md
 Tax.md
 TaxRate.md
 TaxRatesFilter.md
-Team.md
 Tender.md
 Ticket.md
 TicketsSort.md
@@ -863,6 +863,7 @@ models/EmployeeManager.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
+models/EmployeeTeam.ts
 models/EmployeesFilter.ts
 models/EmployeesSort.ts
 models/EmploymentStatus.ts
@@ -1142,7 +1143,6 @@ models/Tags.ts
 models/Tax.ts
 models/TaxRate.ts
 models/TaxRatesFilter.ts
-models/Team.ts
 models/Tender.ts
 models/Ticket.ts
 models/TicketsSort.ts

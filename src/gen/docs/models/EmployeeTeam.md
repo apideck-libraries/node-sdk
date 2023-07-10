@@ -1,4 +1,4 @@
-# Apideck.Team
+# Apideck.EmployeeTeam
 
 ### Description
 

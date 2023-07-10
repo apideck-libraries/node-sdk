@@ -16,28 +16,28 @@ import { exists } from '../runtime'
 /**
  * The team the person is currently in.
  * @export
- * @interface Team
+ * @interface EmployeeTeam
  */
-export interface Team {
+export interface EmployeeTeam {
   /**
    * The unique identifier of the team.
    * @type {string}
-   * @memberof Team
+   * @memberof EmployeeTeam
    */
   id?: string | null
   /**
    * The name of the team.
    * @type {string}
-   * @memberof Team
+   * @memberof EmployeeTeam
    */
   name?: string | null
 }
 
-export function TeamFromJSON(json: any): Team {
-  return TeamFromJSONTyped(json, false)
+export function EmployeeTeamFromJSON(json: any): EmployeeTeam {
+  return EmployeeTeamFromJSONTyped(json, false)
 }
 
-export function TeamFromJSONTyped(json: any, ignoreDiscriminator: boolean): Team {
+export function EmployeeTeamFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmployeeTeam {
   if (json === undefined || json === null) {
     return json
   }
@@ -47,7 +47,7 @@ export function TeamFromJSONTyped(json: any, ignoreDiscriminator: boolean): Team
   }
 }
 
-export function TeamToJSON(value?: Team | null): any {
+export function EmployeeTeamToJSON(value?: EmployeeTeam | null): any {
   if (value === undefined) {
     return undefined
   }

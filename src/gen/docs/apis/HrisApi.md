@@ -1150,12 +1150,6 @@ const params = {
       id: '1234',
       name: 'Full Stack Engineers'
     },
-    teams: [
-      {
-        id: '1234',
-        name: 'Full Stack Engineers'
-      }
-    ],
     company_id: '23456',
     company_name: 'SpaceX',
     employment_start_date: '2021-10-26',
@@ -1648,12 +1642,6 @@ const params = {
       id: '1234',
       name: 'Full Stack Engineers'
     },
-    teams: [
-      {
-        id: '1234',
-        name: 'Full Stack Engineers'
-      }
-    ],
     company_id: '23456',
     company_name: 'SpaceX',
     employment_start_date: '2021-10-26',
