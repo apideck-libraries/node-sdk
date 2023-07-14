@@ -47,14 +47,15 @@ Name | Type | Description | Notes
 `source` | **string** | When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from. | [optional] 
 `source_id` | **string** | Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS). | [optional] 
 `record_url` | **string** |  | [optional] 
-`jobs` | [**Array&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
-`compensations` | [**Array&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
+`jobs` | [**Array&lt;Job&gt;**](Job.md) |  | [optional] 
+`compensations` | [**Array&lt;Compensation&gt;**](Compensation.md) |  | [optional] 
 `works_remote` | **boolean** | Indicates if the employee works from a remote location. | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `social_links` | [**Array&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
+`bank_accounts` | [**Array&lt;EmployeeBankAccounts&gt;**](EmployeeBankAccounts.md) |  | [optional] 
 `tax_code` | **string** |  | [optional] 
 `tax_id` | **string** |  | [optional] 
 `dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
@@ -130,14 +131,15 @@ Name | Type | Description | Notes
 
 
 
-* [`EmployeeJobs`](EmployeeJobs.md)
-* [`EmployeeCompensations`](EmployeeCompensations.md)
+* [`Job`](Job.md)
+* [`Compensation`](Compensation.md)
 
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
+* [`EmployeeBankAccounts`](EmployeeBankAccounts.md)
 
 
 

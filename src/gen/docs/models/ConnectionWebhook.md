@@ -89,6 +89,8 @@ Name | Type | Description | Notes
 
 * `vault_connection_callable` (value: `'vault.connection.callable'`)
 
+* `vault_connection_revoked` (value: `'vault.connection.revoked'`)
+
 * `vault_connection_token_refresh_failed` (value: `'vault.connection.token_refresh.failed'`)
 
 * `ats_job_created` (value: `'ats.job.created'`)

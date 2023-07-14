@@ -29,8 +29,8 @@ Name | Type | Description | Notes
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
-`updated_at` | **string** |  | [optional] 
-`created_at` | **string** |  | [optional] 
+`updated_at` | **string** | Date updated in ISO 8601 format | [optional] 
+`created_at` | **string** | Date created in ISO 8601 format | [optional] 
 
 
 

@@ -527,6 +527,15 @@ describe('FileStorageApi', () => {
               }
             ],
             parent_folders_complete: true,
+            permissions: {
+              download: true
+            },
+            exportable: true,
+            export_formats: [
+              'application/pdf',
+              'application/vnd.oasis.opendocument.presentation',
+              'text/plain'
+            ],
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -674,6 +683,15 @@ describe('FileStorageApi', () => {
             }
           ],
           parent_folders_complete: true,
+          permissions: {
+            download: true
+          },
+          exportable: true,
+          export_formats: [
+            'application/pdf',
+            'application/vnd.oasis.opendocument.presentation',
+            'text/plain'
+          ],
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -739,6 +757,15 @@ describe('FileStorageApi', () => {
               }
             ],
             parent_folders_complete: true,
+            permissions: {
+              download: true
+            },
+            exportable: true,
+            export_formats: [
+              'application/pdf',
+              'application/vnd.oasis.opendocument.presentation',
+              'text/plain'
+            ],
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1434,6 +1461,15 @@ describe('FileStorageApi', () => {
             }
           ],
           parent_folders_complete: true,
+          permissions: {
+            download: true
+          },
+          exportable: true,
+          export_formats: [
+            'application/pdf',
+            'application/vnd.oasis.opendocument.presentation',
+            'text/plain'
+          ],
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',

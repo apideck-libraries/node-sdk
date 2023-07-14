@@ -913,6 +913,21 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            bank_accounts: [
+              {
+                bank_name: 'Monzo',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routing_number: '012345678',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                currency: 'USD'
+              }
+            ],
             tax_code: '1111',
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
@@ -1178,6 +1193,21 @@ describe('HrisApi', () => {
                 id: '12345',
                 url: 'https://www.twitter.com/apideck-io',
                 type: 'twitter'
+              }
+            ],
+            bank_accounts: [
+              {
+                bank_name: 'Monzo',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routing_number: '012345678',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                currency: 'USD'
               }
             ],
             tax_code: '1111',
@@ -1446,6 +1476,21 @@ describe('HrisApi', () => {
                 type: 'twitter'
               }
             ],
+            bank_accounts: [
+              {
+                bank_name: 'Monzo',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routing_number: '012345678',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                currency: 'USD'
+              }
+            ],
             tax_code: '1111',
             tax_id: '234-32-0000',
             dietary_preference: 'Veggie',
@@ -1578,6 +1623,7 @@ describe('HrisApi', () => {
             sub_type: 'full_time'
           },
           manager: {
+            id: '12345',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -1711,6 +1757,21 @@ describe('HrisApi', () => {
               id: '12345',
               url: 'https://www.twitter.com/apideck-io',
               type: 'twitter'
+            }
+          ],
+          bank_accounts: [
+            {
+              bank_name: 'Monzo',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
             }
           ],
           tax_code: '1111',
@@ -1932,6 +1993,21 @@ describe('HrisApi', () => {
                 id: '12345',
                 url: 'https://www.twitter.com/apideck-io',
                 type: 'twitter'
+              }
+            ],
+            bank_accounts: [
+              {
+                bank_name: 'Monzo',
+                account_number: '123465',
+                account_name: 'SPACEX LLC',
+                account_type: 'credit_card',
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routing_number: '012345678',
+                bsb_number: '062-001',
+                branch_identifier: '001',
+                bank_code: 'BNH',
+                currency: 'USD'
               }
             ],
             tax_code: '1111',
@@ -2219,6 +2295,21 @@ describe('HrisApi', () => {
               type: 'twitter'
             }
           ],
+          bank_accounts: [
+            {
+              bank_name: 'Monzo',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
+            }
+          ],
           tax_code: '1111',
           tax_id: '234-32-0000',
           dietary_preference: 'Veggie',
@@ -2324,6 +2415,7 @@ describe('HrisApi', () => {
             sub_type: 'full_time'
           },
           manager: {
+            id: '12345',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -2457,6 +2549,21 @@ describe('HrisApi', () => {
               id: '12345',
               url: 'https://www.twitter.com/apideck-io',
               type: 'twitter'
+            }
+          ],
+          bank_accounts: [
+            {
+              bank_name: 'Monzo',
+              account_number: '123465',
+              account_name: 'SPACEX LLC',
+              account_type: 'credit_card',
+              iban: 'CH2989144532982975332',
+              bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
+              bsb_number: '062-001',
+              branch_identifier: '001',
+              bank_code: 'BNH',
+              currency: 'USD'
             }
           ],
           tax_code: '1111',

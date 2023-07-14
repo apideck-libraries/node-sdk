@@ -239,9 +239,8 @@ EcommerceProductVariants.md
 EcommerceStore.md
 Email.md
 Employee.md
-EmployeeCompensations.md
+EmployeeBankAccounts.md
 EmployeeEmploymentRole.md
-EmployeeJobs.md
 EmployeeManager.md
 EmployeePayroll.md
 EmployeePayrolls.md
@@ -416,7 +415,6 @@ Job.md
 JobLinks.md
 JobSalary.md
 JobStatus.md
-JobsFilter.md
 JournalEntry.md
 JournalEntryLineItem.md
 Lead.md
@@ -552,6 +550,7 @@ UnauthorizedResponse.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
 UnifiedFile.md
+UnifiedFilePermissions.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
@@ -859,9 +858,8 @@ models/EcommerceProductVariants.ts
 models/EcommerceStore.ts
 models/Email.ts
 models/Employee.ts
-models/EmployeeCompensations.ts
+models/EmployeeBankAccounts.ts
 models/EmployeeEmploymentRole.ts
-models/EmployeeJobs.ts
 models/EmployeeManager.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
@@ -1029,7 +1027,6 @@ models/Job.ts
 models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
-models/JobsFilter.ts
 models/JournalEntry.ts
 models/JournalEntryLineItem.ts
 models/Lead.ts
@@ -1160,6 +1157,7 @@ models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts
 models/UnifiedFile.ts
+models/UnifiedFilePermissions.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts

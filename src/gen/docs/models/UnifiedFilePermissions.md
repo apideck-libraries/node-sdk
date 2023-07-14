@@ -1,11 +1,13 @@
-# Apideck.JobsFilter
+# Apideck.UnifiedFilePermissions
 
 ### Description
+
+Permissions the current user has on this file.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`job_id` | **string** | Id of the job to filter on | [optional] 
+`download` | **boolean** | Whether the current user can download this file. | [optional] 
 
 
 

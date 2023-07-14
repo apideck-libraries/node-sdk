@@ -656,11 +656,13 @@ describe('CrmApi', () => {
           last_name: 'Musk',
           bank_accounts: [
             {
+              bank_name: 'Monzo',
               account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
@@ -798,11 +800,13 @@ describe('CrmApi', () => {
             parent_id: '22345',
             bank_accounts: [
               {
+                bank_name: 'Monzo',
                 account_number: '123465',
                 account_name: 'SPACEX LLC',
                 account_type: 'credit_card',
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
+                routing_number: '012345678',
                 bsb_number: '062-001',
                 branch_identifier: '001',
                 bank_code: 'BNH',
@@ -1006,11 +1010,13 @@ describe('CrmApi', () => {
           parent_id: '22345',
           bank_accounts: [
             {
+              bank_name: 'Monzo',
               account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
@@ -1171,11 +1177,13 @@ describe('CrmApi', () => {
           last_name: 'Musk',
           bank_accounts: [
             {
+              bank_name: 'Monzo',
               account_number: '123465',
               account_name: 'SPACEX LLC',
               account_type: 'credit_card',
               iban: 'CH2989144532982975332',
               bic: 'AUDSCHGGXXX',
+              routing_number: '012345678',
               bsb_number: '062-001',
               branch_identifier: '001',
               bank_code: 'BNH',
