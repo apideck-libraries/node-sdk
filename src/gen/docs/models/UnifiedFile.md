@@ -16,7 +16,10 @@ Name | Type | Description | Notes
 `size` | **number** | The size of the file in bytes | [optional] 
 `owner` | [**Owner**](Owner.md) |  | [optional] 
 `parent_folders` | [**Array&lt;LinkedFolder&gt;**](LinkedFolder.md) | The parent folders of the file, starting from the root | [optional] 
-`parent_folders_complete` | **boolean** | Whether the list of parent folder is complete. Some connectors only return the direct parent of a file | [optional] 
+`parent_folders_complete` | **boolean** | Whether the list of parent folders is complete. Some connectors only return the direct parent of a file | [optional] 
+`permissions` | [**UnifiedFilePermissions**](UnifiedFilePermissions.md) |  | [optional] 
+`exportable` | **boolean** | Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper. | [optional] 
+`export_formats` | **Array&lt;string&gt;** | The available file formats when exporting this file. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -38,6 +41,9 @@ Name | Type | Description | Notes
 
 * [`Owner`](Owner.md)
 * [`LinkedFolder`](LinkedFolder.md)
+
+* [`UnifiedFilePermissions`](UnifiedFilePermissions.md)
+
 
 
 

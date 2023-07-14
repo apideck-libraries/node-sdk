@@ -550,6 +550,7 @@ UnauthorizedResponse.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
 UnifiedFile.md
+UnifiedFilePermissions.md
 UnifiedId.md
 UnprocessableResponse.md
 UpdateActivityResponse.md
@@ -1156,6 +1157,7 @@ models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts
 models/UnifiedFile.ts
+models/UnifiedFilePermissions.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
 models/UpdateActivityResponse.ts
