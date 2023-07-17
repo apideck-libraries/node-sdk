@@ -250,7 +250,8 @@ export enum LedgerAccountType {
   credit_card = 'credit_card',
   current_liability = 'current_liability',
   non_current_liability = 'non_current_liability',
-  other_liability = 'other_liability'
+  other_liability = 'other_liability',
+  other = 'other'
 }
 /**
  * @export
