@@ -14,36 +14,33 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
-import {
-  ApplicantSocialLinks,
-  ApplicantSocialLinksFromJSON,
-  ApplicantSocialLinksToJSON
-} from './ApplicantSocialLinks'
-import { Compensation, CompensationFromJSON, CompensationToJSON } from './Compensation'
+import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
-  EmployeeBankAccounts,
-  EmployeeBankAccountsFromJSON,
-  EmployeeBankAccountsToJSON
-} from './EmployeeBankAccounts'
+  EmployeeCompensation,
+  EmployeeCompensationFromJSON,
+  EmployeeCompensationToJSON
+} from './EmployeeCompensation'
 import {
   EmployeeEmploymentRole,
   EmployeeEmploymentRoleFromJSON,
   EmployeeEmploymentRoleToJSON
 } from './EmployeeEmploymentRole'
+import { EmployeeJob, EmployeeJobFromJSON, EmployeeJobToJSON } from './EmployeeJob'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
-import { EmployeeTeam, EmployeeTeamFromJSON, EmployeeTeamToJSON } from './EmployeeTeam'
 import {
   EmploymentStatus,
   EmploymentStatusFromJSON,
   EmploymentStatusToJSON
 } from './EmploymentStatus'
 import { Gender, GenderFromJSON, GenderToJSON } from './Gender'
-import { Job, JobFromJSON, JobToJSON } from './Job'
 import { Person, PersonFromJSON, PersonToJSON } from './Person'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 import { ProbationPeriod, ProbationPeriodFromJSON, ProbationPeriodToJSON } from './ProbationPeriod'
+import { SocialLink, SocialLinkFromJSON, SocialLinkToJSON } from './SocialLink'
+import { Tags, TagsFromJSON, TagsToJSON } from './Tags'
+import { Team, TeamFromJSON, TeamToJSON } from './Team'
 
 /**
  *
@@ -149,10 +146,10 @@ export interface Employee {
   department_name?: string | null
   /**
    *
-   * @type {EmployeeTeam}
+   * @type {Team}
    * @memberof Employee
    */
-  team?: EmployeeTeam | null
+  team?: Team | null
   /**
    * The unique identifier of the company.
    * @type {string}
@@ -305,16 +302,16 @@ export interface Employee {
   record_url?: string | null
   /**
    *
-   * @type {Array<Job>}
+   * @type {Array<EmployeeJob>}
    * @memberof Employee
    */
-  jobs?: Array<Job>
+  jobs?: Array<EmployeeJob>
   /**
    *
-   * @type {Array<Compensation>}
+   * @type {Array<EmployeeCompensation>}
    * @memberof Employee
    */
-  compensations?: Array<Compensation>
+  compensations?: Array<EmployeeCompensation>
   /**
    * Indicates if the employee works from a remote location.
    * @type {boolean}
@@ -347,16 +344,16 @@ export interface Employee {
   custom_fields?: Array<CustomField>
   /**
    *
-   * @type {Array<ApplicantSocialLinks>}
+   * @type {Array<SocialLink>}
    * @memberof Employee
    */
-  social_links?: Array<ApplicantSocialLinks>
+  social_links?: Array<SocialLink>
   /**
    *
-   * @type {Array<EmployeeBankAccounts>}
+   * @type {Array<BankAccount>}
    * @memberof Employee
    */
-  bank_accounts?: Array<EmployeeBankAccounts>
+  bank_accounts?: Array<BankAccount>
   /**
    *
    * @type {string}
@@ -389,10 +386,10 @@ export interface Employee {
   probation_period?: ProbationPeriod
   /**
    *
-   * @type {Array<string>}
+   * @type {Tags}
    * @memberof Employee
    */
-  tags?: Array<string>
+  tags?: Tags
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -467,7 +464,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     department: !exists(json, 'department') ? undefined : json['department'],
     department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
     department_name: !exists(json, 'department_name') ? undefined : json['department_name'],
-    team: !exists(json, 'team') ? undefined : EmployeeTeamFromJSON(json['team']),
+    team: !exists(json, 'team') ? undefined : TeamFromJSON(json['team']),
     company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     employment_start_date: !exists(json, 'employment_start_date')
@@ -513,10 +510,10 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     source: !exists(json, 'source') ? undefined : json['source'],
     source_id: !exists(json, 'source_id') ? undefined : json['source_id'],
     record_url: !exists(json, 'record_url') ? undefined : json['record_url'],
-    jobs: !exists(json, 'jobs') ? undefined : (json['jobs'] as Array<any>).map(JobFromJSON),
+    jobs: !exists(json, 'jobs') ? undefined : (json['jobs'] as Array<any>).map(EmployeeJobFromJSON),
     compensations: !exists(json, 'compensations')
       ? undefined
-      : (json['compensations'] as Array<any>).map(CompensationFromJSON),
+      : (json['compensations'] as Array<any>).map(EmployeeCompensationFromJSON),
     works_remote: !exists(json, 'works_remote') ? undefined : json['works_remote'],
     addresses: !exists(json, 'addresses')
       ? undefined
@@ -530,10 +527,10 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     social_links: !exists(json, 'social_links')
       ? undefined
-      : (json['social_links'] as Array<any>).map(ApplicantSocialLinksFromJSON),
+      : (json['social_links'] as Array<any>).map(SocialLinkFromJSON),
     bank_accounts: !exists(json, 'bank_accounts')
       ? undefined
-      : (json['bank_accounts'] as Array<any>).map(EmployeeBankAccountsFromJSON),
+      : (json['bank_accounts'] as Array<any>).map(BankAccountFromJSON),
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
     tax_id: !exists(json, 'tax_id') ? undefined : json['tax_id'],
     dietary_preference: !exists(json, 'dietary_preference')
@@ -543,7 +540,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     probation_period: !exists(json, 'probation_period')
       ? undefined
       : ProbationPeriodFromJSON(json['probation_period']),
-    tags: !exists(json, 'tags') ? undefined : json['tags'],
+    tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -580,7 +577,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     department: value.department,
     department_id: value.department_id,
     department_name: value.department_name,
-    team: EmployeeTeamToJSON(value.team),
+    team: TeamToJSON(value.team),
     company_id: value.company_id,
     company_name: value.company_name,
     employment_start_date: value.employment_start_date,
@@ -616,11 +613,11 @@ export function EmployeeToJSON(value?: Employee | null): any {
     source: value.source,
     source_id: value.source_id,
     record_url: value.record_url,
-    jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(JobToJSON),
+    jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(EmployeeJobToJSON),
     compensations:
       value.compensations === undefined
         ? undefined
-        : (value.compensations as Array<any>).map(CompensationToJSON),
+        : (value.compensations as Array<any>).map(EmployeeCompensationToJSON),
     works_remote: value.works_remote,
     addresses:
       value.addresses === undefined
@@ -638,17 +635,17 @@ export function EmployeeToJSON(value?: Employee | null): any {
     social_links:
       value.social_links === undefined
         ? undefined
-        : (value.social_links as Array<any>).map(ApplicantSocialLinksToJSON),
+        : (value.social_links as Array<any>).map(SocialLinkToJSON),
     bank_accounts:
       value.bank_accounts === undefined
         ? undefined
-        : (value.bank_accounts as Array<any>).map(EmployeeBankAccountsToJSON),
+        : (value.bank_accounts as Array<any>).map(BankAccountToJSON),
     tax_code: value.tax_code,
     tax_id: value.tax_id,
     dietary_preference: value.dietary_preference,
     food_allergies: value.food_allergies,
     probation_period: ProbationPeriodToJSON(value.probation_period),
-    tags: value.tags,
+    tags: TagsToJSON(value.tags),
     row_version: value.row_version,
     deleted: value.deleted
   }

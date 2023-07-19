@@ -239,13 +239,13 @@ EcommerceProductVariants.md
 EcommerceStore.md
 Email.md
 Employee.md
-EmployeeBankAccounts.md
+EmployeeCompensation.md
 EmployeeEmploymentRole.md
+EmployeeJob.md
 EmployeeManager.md
 EmployeePayroll.md
 EmployeePayrolls.md
 EmployeeSchedules.md
-EmployeeTeam.md
 EmployeesFilter.md
 EmployeesSort.md
 EmploymentStatus.md
@@ -477,6 +477,7 @@ PassThroughQuery.md
 Payment.md
 PaymentAllocations.md
 PaymentCard.md
+PaymentFrequency.md
 PaymentRequiredResponse.md
 PaymentUnit.md
 PaymentsFilter.md
@@ -537,6 +538,7 @@ Tags.md
 Tax.md
 TaxRate.md
 TaxRatesFilter.md
+Team.md
 Tender.md
 Ticket.md
 TicketsSort.md
@@ -617,6 +619,7 @@ WalletDetails.md
 Webhook.md
 WebhookApi.md
 WebhookApiTest.api.test.ts
+WebhookEvent.md
 WebhookEventLog.md
 WebhookEventLogAttempts.md
 WebhookEventLogService.md
@@ -858,13 +861,13 @@ models/EcommerceProductVariants.ts
 models/EcommerceStore.ts
 models/Email.ts
 models/Employee.ts
-models/EmployeeBankAccounts.ts
+models/EmployeeCompensation.ts
 models/EmployeeEmploymentRole.ts
+models/EmployeeJob.ts
 models/EmployeeManager.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
-models/EmployeeTeam.ts
 models/EmployeesFilter.ts
 models/EmployeesSort.ts
 models/EmploymentStatus.ts
@@ -1088,6 +1091,7 @@ models/PassThroughQuery.ts
 models/Payment.ts
 models/PaymentAllocations.ts
 models/PaymentCard.ts
+models/PaymentFrequency.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
 models/PaymentsFilter.ts
@@ -1144,6 +1148,7 @@ models/Tags.ts
 models/Tax.ts
 models/TaxRate.ts
 models/TaxRatesFilter.ts
+models/Team.ts
 models/Tender.ts
 models/Ticket.ts
 models/TicketsSort.ts
@@ -1220,6 +1225,7 @@ models/VaultEventType.ts
 models/VirtualWebhooks.ts
 models/WalletDetails.ts
 models/Webhook.ts
+models/WebhookEvent.ts
 models/WebhookEventLog.ts
 models/WebhookEventLogAttempts.ts
 models/WebhookEventLogService.ts
