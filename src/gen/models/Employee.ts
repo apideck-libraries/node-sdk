@@ -208,7 +208,7 @@ export interface Employee {
    */
   manager?: EmployeeManager
   /**
-   * The direct reports refer to the individuals who report directly to a person in the organizational hierarchy.
+   * Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.
    * @type {Array<string>}
    * @memberof Employee
    */

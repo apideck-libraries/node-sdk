@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 `employment_status` | [**EmploymentStatus**](EmploymentStatus.md) |  | [optional] 
 `employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
 `manager` | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
-`direct_reports` | **Array&lt;string&gt;** | The direct reports refer to the individuals who report directly to a person in the organizational hierarchy. | [optional] 
+`direct_reports` | **Array&lt;string&gt;** | Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee. | [optional] 
 `social_security_number` | **string** | A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions. | [optional] 
 `birthday` | **Date** | The date of birth of the person. | [optional] 
 `deceased_on` | **Date** | The date the person deceased. | [optional] 
