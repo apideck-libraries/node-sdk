@@ -640,6 +640,38 @@ describe('FileStorageApi', () => {
     })
   })
 
+  describe('#filesExport', () => {
+    const endpoint = '/file-storage/files/{id}/export'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {} as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { fileStorage } = apideck
+      const params = {
+        id: 'id_example',
+        format: 'pdf'
+      } as any
+      const current = await fileStorage.filesExport(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#filesOne', () => {
     const endpoint = '/file-storage/files/{id}'
 

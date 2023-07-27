@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 `department` | **string** | The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field. | [optional] 
 `department_id` | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 `department_name` | **string** | Name of the department this employee belongs to. | [optional] 
-`team` | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
+`team` | [**Team**](Team.md) |  | [optional] 
 `company_id` | **string** | The unique identifier of the company. | [optional] 
 `company_name` | **string** | The name of the company. | [optional] 
 `employment_start_date` | **string** | A Start Date is the date that the employee started working at the company | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 `employment_status` | [**EmploymentStatus**](EmploymentStatus.md) |  | [optional] 
 `employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
 `manager` | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
-`direct_reports` | **Array&lt;string&gt;** | The direct reports refer to the individuals who report directly to a person in the organizational hierarchy. | [optional] 
+`direct_reports` | **Array&lt;string&gt;** | Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee. | [optional] 
 `social_security_number` | **string** | A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions. | [optional] 
 `birthday` | **Date** | The date of birth of the person. | [optional] 
 `deceased_on` | **Date** | The date the person deceased. | [optional] 
@@ -47,21 +47,21 @@ Name | Type | Description | Notes
 `source` | **string** | When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from. | [optional] 
 `source_id` | **string** | Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS). | [optional] 
 `record_url` | **string** |  | [optional] 
-`jobs` | [**Array&lt;Job&gt;**](Job.md) |  | [optional] 
-`compensations` | [**Array&lt;Compensation&gt;**](Compensation.md) |  | [optional] 
+`jobs` | [**Array&lt;EmployeeJob&gt;**](EmployeeJob.md) |  | [optional] 
+`compensations` | [**Array&lt;EmployeeCompensation&gt;**](EmployeeCompensation.md) |  | [optional] 
 `works_remote` | **boolean** | Indicates if the employee works from a remote location. | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`social_links` | [**Array&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
-`bank_accounts` | [**Array&lt;EmployeeBankAccounts&gt;**](EmployeeBankAccounts.md) |  | [optional] 
+`social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
+`bank_accounts` | [**Array&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
 `tax_code` | **string** |  | [optional] 
 `tax_id` | **string** |  | [optional] 
 `dietary_preference` | **string** | Indicate the employee\'s dietary preference. | [optional] 
 `food_allergies` | **Array&lt;string&gt;** | Indicate the employee\'s food allergies. | [optional] 
 `probation_period` | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
-`tags` | **Array&lt;string&gt;** |  | [optional] 
+`tags` | [**Tags**](Tags.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -105,7 +105,7 @@ Name | Type | Description | Notes
 
 
 
-* [`EmployeeTeam`](EmployeeTeam.md)
+* [`Team`](Team.md)
 
 
 
@@ -131,21 +131,21 @@ Name | Type | Description | Notes
 
 
 
-* [`Job`](Job.md)
-* [`Compensation`](Compensation.md)
+* [`EmployeeJob`](EmployeeJob.md)
+* [`EmployeeCompensation`](EmployeeCompensation.md)
 
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
-* [`ApplicantSocialLinks`](ApplicantSocialLinks.md)
-* [`EmployeeBankAccounts`](EmployeeBankAccounts.md)
+* [`SocialLink`](SocialLink.md)
+* [`BankAccount`](BankAccount.md)
 
 
 
 
 * [`ProbationPeriod`](ProbationPeriod.md)
-
+* [`Tags`](Tags.md)
 
 
 
