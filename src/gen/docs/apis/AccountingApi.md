@@ -2421,6 +2421,11 @@ const params = {
       bank_code: 'BNH',
       currency: 'USD'
     },
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
     row_version: '1-12345'
   }
 }
@@ -2833,6 +2838,11 @@ const params = {
       branch_identifier: '001',
       bank_code: 'BNH',
       currency: 'USD'
+    },
+    ledger_account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
     },
     row_version: '1-12345'
   }

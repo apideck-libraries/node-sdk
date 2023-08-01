@@ -18,6 +18,11 @@ import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccou
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
+import {
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
+} from './LinkedLedgerAccount'
 
 /**
  *
@@ -230,6 +235,12 @@ export interface Invoice {
    */
   bank_account?: BankAccount
   /**
+   *
+   * @type {LinkedLedgerAccount}
+   * @memberof Invoice
+   */
+  ledger_account?: LinkedLedgerAccount | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof Invoice
@@ -351,6 +362,9 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     bank_account: !exists(json, 'bank_account')
       ? undefined
       : BankAccountFromJSON(json['bank_account']),
+    ledger_account: !exists(json, 'ledger_account')
+      ? undefined
+      : LinkedLedgerAccountFromJSON(json['ledger_account']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -416,6 +430,7 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     language: value.language,
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
+    ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
     row_version: value.row_version
   }
 }
