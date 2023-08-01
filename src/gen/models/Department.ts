@@ -30,7 +30,7 @@ export interface Department {
    * @type {string}
    * @memberof Department
    */
-  readonly parent_id?: string
+  readonly parent_id?: string | null
   /**
    * Department name
    * @type {string}

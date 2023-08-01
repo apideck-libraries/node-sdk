@@ -24,13 +24,13 @@ export interface Deduction {
    * @type {string}
    * @memberof Deduction
    */
-  name?: string
+  name?: string | null
   /**
    * The amount deducted.
    * @type {number}
    * @memberof Deduction
    */
-  amount?: number
+  amount?: number | null
 }
 
 export function DeductionFromJSON(json: any): Deduction {

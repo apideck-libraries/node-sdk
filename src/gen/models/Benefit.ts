@@ -24,19 +24,19 @@ export interface Benefit {
    * @type {string}
    * @memberof Benefit
    */
-  name?: string
+  name?: string | null
   /**
    * The amount deducted for benefit.
    * @type {number}
    * @memberof Benefit
    */
-  employee_deduction?: number
+  employee_deduction?: number | null
   /**
    * The amount of employer contribution.
    * @type {number}
    * @memberof Benefit
    */
-  employer_contribution?: number
+  employer_contribution?: number | null
 }
 
 export function BenefitFromJSON(json: any): Benefit {

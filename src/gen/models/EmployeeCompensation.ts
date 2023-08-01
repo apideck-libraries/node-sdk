@@ -38,13 +38,13 @@ export interface EmployeeCompensation {
    * @type {string}
    * @memberof EmployeeCompensation
    */
-  readonly job_id?: string
+  readonly job_id?: string | null
   /**
    * The amount paid per payment unit.
    * @type {number}
    * @memberof EmployeeCompensation
    */
-  rate?: number
+  rate?: number | null
   /**
    *
    * @type {PaymentUnit}
@@ -68,7 +68,7 @@ export interface EmployeeCompensation {
    * @type {string}
    * @memberof EmployeeCompensation
    */
-  effective_date?: string
+  effective_date?: string | null
   /**
    *
    * @type {PaymentFrequency}

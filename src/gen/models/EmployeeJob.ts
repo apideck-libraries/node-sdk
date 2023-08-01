@@ -64,7 +64,7 @@ export interface EmployeeJob {
    * @type {number}
    * @memberof EmployeeJob
    */
-  compensation_rate?: number
+  compensation_rate?: number | null
   /**
    *
    * @type {Currency}

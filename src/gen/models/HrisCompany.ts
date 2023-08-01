@@ -29,7 +29,7 @@ export interface HrisCompany {
    * @type {string}
    * @memberof HrisCompany
    */
-  legal_name: string
+  legal_name: string | null
   /**
    * A unique identifier for an object.
    * @type {string}
@@ -41,13 +41,13 @@ export interface HrisCompany {
    * @type {string}
    * @memberof HrisCompany
    */
-  display_name?: string
+  display_name?: string | null
   /**
    *
    * @type {string}
    * @memberof HrisCompany
    */
-  subdomain?: string
+  subdomain?: string | null
   /**
    *
    * @type {string}
@@ -89,7 +89,7 @@ export interface HrisCompany {
    * @type {string}
    * @memberof HrisCompany
    */
-  debtor_id?: string
+  debtor_id?: string | null
   /**
    *
    * @type {boolean}

@@ -33,7 +33,7 @@ export interface HrisJobs {
    * @type {Array<HrisJob>}
    * @memberof HrisJobs
    */
-  jobs?: Array<HrisJob>
+  jobs?: Array<HrisJob> | null
 }
 
 export function HrisJobsFromJSON(json: any): HrisJobs {
@@ -46,7 +46,11 @@ export function HrisJobsFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
   }
   return {
     employee: !exists(json, 'employee') ? undefined : EmployeeFromJSON(json['employee']),
-    jobs: !exists(json, 'jobs') ? undefined : (json['jobs'] as Array<any>).map(HrisJobFromJSON)
+    jobs: !exists(json, 'jobs')
+      ? undefined
+      : json['jobs'] === null
+      ? null
+      : (json['jobs'] as Array<any>).map(HrisJobFromJSON)
   }
 }
 
@@ -59,6 +63,11 @@ export function HrisJobsToJSON(value?: HrisJobs | null): any {
   }
   return {
     employee: EmployeeToJSON(value.employee),
-    jobs: value.jobs === undefined ? undefined : (value.jobs as Array<any>).map(HrisJobToJSON)
+    jobs:
+      value.jobs === undefined
+        ? undefined
+        : value.jobs === null
+        ? null
+        : (value.jobs as Array<any>).map(HrisJobToJSON)
   }
 }

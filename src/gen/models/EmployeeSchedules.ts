@@ -33,7 +33,7 @@ export interface EmployeeSchedules {
    * @type {Array<Schedule>}
    * @memberof EmployeeSchedules
    */
-  schedules?: Array<Schedule>
+  schedules?: Array<Schedule> | null
 }
 
 export function EmployeeSchedulesFromJSON(json: any): EmployeeSchedules {
@@ -51,6 +51,8 @@ export function EmployeeSchedulesFromJSONTyped(
     employee: !exists(json, 'employee') ? undefined : EmployeeFromJSON(json['employee']),
     schedules: !exists(json, 'schedules')
       ? undefined
+      : json['schedules'] === null
+      ? null
       : (json['schedules'] as Array<any>).map(ScheduleFromJSON)
   }
 }
@@ -67,6 +69,8 @@ export function EmployeeSchedulesToJSON(value?: EmployeeSchedules | null): any {
     schedules:
       value.schedules === undefined
         ? undefined
+        : value.schedules === null
+        ? null
         : (value.schedules as Array<any>).map(ScheduleToJSON)
   }
 }

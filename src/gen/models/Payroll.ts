@@ -33,25 +33,25 @@ export interface Payroll {
    * @type {boolean}
    * @memberof Payroll
    */
-  processed: boolean
+  processed: boolean | null
   /**
    * The date on which employees will be paid for the payroll.
    * @type {string}
    * @memberof Payroll
    */
-  check_date: string
+  check_date: string | null
   /**
    * The start date, inclusive, of the pay period.
    * @type {string}
    * @memberof Payroll
    */
-  start_date: string
+  start_date: string | null
   /**
    * The end date, inclusive, of the pay period.
    * @type {string}
    * @memberof Payroll
    */
-  end_date: string
+  end_date: string | null
   /**
    * The unique identifier of the company.
    * @type {string}

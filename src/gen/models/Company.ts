@@ -161,7 +161,7 @@ export interface Company {
    * @type {string}
    * @memberof Company
    */
-  readonly parent_id?: string
+  readonly parent_id?: string | null
   /**
    *
    * @type {Array<BankAccount>}

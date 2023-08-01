@@ -37,7 +37,7 @@ export interface HrisJob {
    * @type {string}
    * @memberof HrisJob
    */
-  employee_id?: string
+  employee_id?: string | null
   /**
    * The job title of the person.
    * @type {string}

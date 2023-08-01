@@ -24,19 +24,19 @@ export interface Tax {
    * @type {string}
    * @memberof Tax
    */
-  name?: string
+  name?: string | null
   /**
    * Paid by employer.
    * @type {boolean}
    * @memberof Tax
    */
-  employer?: boolean
+  employer?: boolean | null
   /**
    * The amount of the tax.
    * @type {number}
    * @memberof Tax
    */
-  amount?: number
+  amount?: number | null
 }
 
 export function TaxFromJSON(json: any): Tax {
