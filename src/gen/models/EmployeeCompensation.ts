@@ -50,7 +50,7 @@ export interface EmployeeCompensation {
    * @type {PaymentUnit}
    * @memberof EmployeeCompensation
    */
-  payment_unit?: PaymentUnit
+  payment_unit?: PaymentUnit | null
   /**
    *
    * @type {Currency}

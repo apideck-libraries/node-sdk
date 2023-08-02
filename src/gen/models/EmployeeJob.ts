@@ -76,7 +76,7 @@ export interface EmployeeJob {
    * @type {PaymentUnit}
    * @memberof EmployeeJob
    */
-  payment_unit?: PaymentUnit
+  payment_unit?: PaymentUnit | null
   /**
    * The date on which the employee was hired by the organization
    * @type {Date}
