@@ -23,6 +23,11 @@ import {
   LinkedLedgerAccountFromJSON,
   LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
+import {
+  LinkedTrackingCategory,
+  LinkedTrackingCategoryFromJSON,
+  LinkedTrackingCategoryToJSON
+} from './LinkedTrackingCategory'
 
 /**
  *
@@ -134,6 +139,12 @@ export interface InvoiceItem {
   expense_account?: LinkedLedgerAccount | null
   /**
    *
+   * @type {LinkedTrackingCategory}
+   * @memberof InvoiceItem
+   */
+  tracking_category?: LinkedTrackingCategory | null
+  /**
+   *
    * @type {boolean}
    * @memberof InvoiceItem
    */
@@ -220,6 +231,9 @@ export function InvoiceItemFromJSONTyped(json: any, ignoreDiscriminator: boolean
     expense_account: !exists(json, 'expense_account')
       ? undefined
       : LinkedLedgerAccountFromJSON(json['expense_account']),
+    tracking_category: !exists(json, 'tracking_category')
+      ? undefined
+      : LinkedTrackingCategoryFromJSON(json['tracking_category']),
     active: !exists(json, 'active') ? undefined : json['active'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -262,6 +276,7 @@ export function InvoiceItemToJSON(value?: InvoiceItem | null): any {
     asset_account: LinkedLedgerAccountToJSON(value.asset_account),
     income_account: LinkedLedgerAccountToJSON(value.income_account),
     expense_account: LinkedLedgerAccountToJSON(value.expense_account),
+    tracking_category: LinkedTrackingCategoryToJSON(value.tracking_category),
     active: value.active,
     row_version: value.row_version
   }

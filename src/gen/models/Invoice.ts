@@ -23,6 +23,11 @@ import {
   LinkedLedgerAccountFromJSON,
   LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
+import {
+  LinkedTrackingCategory,
+  LinkedTrackingCategoryFromJSON,
+  LinkedTrackingCategoryToJSON
+} from './LinkedTrackingCategory'
 
 /**
  *
@@ -174,6 +179,12 @@ export interface Invoice {
    * @memberof Invoice
    */
   customer_memo?: string | null
+  /**
+   *
+   * @type {LinkedTrackingCategory}
+   * @memberof Invoice
+   */
+  tracking_category?: LinkedTrackingCategory | null
   /**
    *
    * @type {Array<InvoiceLineItem>}
@@ -342,6 +353,9 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     balance: !exists(json, 'balance') ? undefined : json['balance'],
     deposit: !exists(json, 'deposit') ? undefined : json['deposit'],
     customer_memo: !exists(json, 'customer_memo') ? undefined : json['customer_memo'],
+    tracking_category: !exists(json, 'tracking_category')
+      ? undefined
+      : LinkedTrackingCategoryFromJSON(json['tracking_category']),
     line_items: !exists(json, 'line_items')
       ? undefined
       : (json['line_items'] as Array<any>).map(InvoiceLineItemFromJSON),
@@ -417,6 +431,7 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     balance: value.balance,
     deposit: value.deposit,
     customer_memo: value.customer_memo,
+    tracking_category: LinkedTrackingCategoryToJSON(value.tracking_category),
     line_items:
       value.line_items === undefined
         ? undefined
