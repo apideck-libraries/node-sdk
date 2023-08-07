@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 `balance` | **number** | Balance of invoice due. | [optional] 
 `deposit` | **number** | Amount of deposit made to this invoice. | [optional] 
 `customer_memo` | **string** | Customer memo | [optional] 
+`tracking_category` | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
@@ -39,6 +40,7 @@ Name | Type | Description | Notes
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `accounting_by_row` | **boolean** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
+`ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -116,6 +118,7 @@ Name | Type | Description | Notes
 
 
 
+* [`LinkedTrackingCategory`](LinkedTrackingCategory.md)
 * [`InvoiceLineItem`](InvoiceLineItem.md)
 * [`Address`](Address.md)
 * [`Address`](Address.md)
@@ -126,6 +129,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
+* [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 
 
 

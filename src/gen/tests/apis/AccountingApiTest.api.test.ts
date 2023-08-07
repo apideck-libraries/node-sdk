@@ -2112,6 +2112,10 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           active: true,
           row_version: '1-12345'
         }
@@ -2197,6 +2201,10 @@ describe('AccountingApi', () => {
               name: 'Bank account',
               nominal_code: 'N091',
               code: '453'
+            },
+            tracking_category: {
+              id: '123456',
+              name: 'New York'
             },
             active: true,
             row_version: '1-12345',
@@ -2348,6 +2356,10 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           active: true,
           row_version: '1-12345',
           updated_by: '12345',
@@ -2450,6 +2462,10 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           active: true,
           row_version: '1-12345'
         }
@@ -2520,6 +2536,10 @@ describe('AccountingApi', () => {
           balance: 27500,
           deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           line_items: [
             {
               row_id: '12345',
@@ -2625,6 +2645,11 @@ describe('AccountingApi', () => {
             bank_code: 'BNH',
             currency: 'USD'
           },
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
           row_version: '1-12345'
         }
       } as any
@@ -2687,6 +2712,10 @@ describe('AccountingApi', () => {
             balance: 27500,
             deposit: 0,
             customer_memo: 'Thank you for your business and have a great day!',
+            tracking_category: {
+              id: '123456',
+              name: 'New York'
+            },
             line_items: [
               {
                 id: '12345',
@@ -2799,6 +2828,12 @@ describe('AccountingApi', () => {
               branch_identifier: '001',
               bank_code: 'BNH',
               currency: 'USD'
+            },
+            ledger_account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091',
+              code: '453'
             },
             row_version: '1-12345',
             updated_by: '12345',
@@ -2927,6 +2962,10 @@ describe('AccountingApi', () => {
           balance: 27500,
           deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           line_items: [
             {
               id: '12345',
@@ -3040,6 +3079,12 @@ describe('AccountingApi', () => {
             bank_code: 'BNH',
             currency: 'USD'
           },
+          ledger_account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091',
+            code: '453'
+          },
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -3123,6 +3168,10 @@ describe('AccountingApi', () => {
           balance: 27500,
           deposit: 0,
           customer_memo: 'Thank you for your business and have a great day!',
+          tracking_category: {
+            id: '123456',
+            name: 'New York'
+          },
           line_items: [
             {
               row_id: '12345',
@@ -3227,6 +3276,11 @@ describe('AccountingApi', () => {
             branch_identifier: '001',
             bank_code: 'BNH',
             currency: 'USD'
+          },
+          ledger_account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
           },
           row_version: '1-12345'
         }
