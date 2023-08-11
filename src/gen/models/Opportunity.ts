@@ -190,7 +190,7 @@ export interface Opportunity {
    * @type {Tags}
    * @memberof Opportunity
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    * The number of interactions with the opportunity.
    * @type {number}

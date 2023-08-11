@@ -72,7 +72,7 @@ export interface SharedLink {
    * @type {Date}
    * @memberof SharedLink
    */
-  readonly expires_at?: Date
+  readonly expires_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -84,7 +84,7 @@ export interface SharedLink {
    * @type {Date}
    * @memberof SharedLink
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -114,13 +114,21 @@ export function SharedLinkFromJSONTyped(json: any, ignoreDiscriminator: boolean)
       ? undefined
       : json['password_protected'],
     password: !exists(json, 'password') ? undefined : json['password'],
-    expires_at: !exists(json, 'expires_at') ? undefined : new Date(json['expires_at']),
+    expires_at: !exists(json, 'expires_at')
+      ? undefined
+      : json['expires_at'] === null
+      ? null
+      : new Date(json['expires_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

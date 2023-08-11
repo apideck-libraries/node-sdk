@@ -36,13 +36,13 @@ export interface TimeOffRequest {
    * @type {string}
    * @memberof TimeOffRequest
    */
-  employee_id?: string
+  employee_id?: string | null
   /**
    * ID of the policy
    * @type {string}
    * @memberof TimeOffRequest
    */
-  policy_id?: string
+  policy_id?: string | null
   /**
    * The status of the time off request.
    * @type {string}
@@ -54,25 +54,25 @@ export interface TimeOffRequest {
    * @type {string}
    * @memberof TimeOffRequest
    */
-  description?: string
+  description?: string | null
   /**
    * The start date of the time off request.
    * @type {string}
    * @memberof TimeOffRequest
    */
-  start_date?: string
+  start_date?: string | null
   /**
    * The end date of the time off request.
    * @type {string}
    * @memberof TimeOffRequest
    */
-  end_date?: string
+  end_date?: string | null
   /**
    * The date the request was made.
    * @type {string}
    * @memberof TimeOffRequest
    */
-  request_date?: string
+  request_date?: string | null
   /**
    * The type of request
    * @type {string}
@@ -84,7 +84,7 @@ export interface TimeOffRequest {
    * @type {string}
    * @memberof TimeOffRequest
    */
-  approval_date?: string
+  approval_date?: string | null
   /**
    * The unit of time off requested. Possible values include: `hours`, `days`, or `other`.
    * @type {string}
@@ -96,7 +96,7 @@ export interface TimeOffRequest {
    * @type {number}
    * @memberof TimeOffRequest
    */
-  amount?: number
+  amount?: number | null
   /**
    *
    * @type {TimeOffRequestNotes}
@@ -126,7 +126,7 @@ export interface TimeOffRequest {
    * @type {Date}
    * @memberof TimeOffRequest
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -196,7 +196,11 @@ export function TimeOffRequestFromJSONTyped(
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

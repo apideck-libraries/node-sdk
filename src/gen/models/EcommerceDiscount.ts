@@ -24,19 +24,19 @@ export interface EcommerceDiscount {
    * @type {string}
    * @memberof EcommerceDiscount
    */
-  code?: string
+  code?: string | null
   /**
    * The fixed amount of the discount.
    * @type {string}
    * @memberof EcommerceDiscount
    */
-  amount?: string
+  amount?: string | null
   /**
    * The percentage of the discount.
    * @type {string}
    * @memberof EcommerceDiscount
    */
-  percentage?: string
+  percentage?: string | null
 }
 
 export function EcommerceDiscountFromJSON(json: any): EcommerceDiscount {

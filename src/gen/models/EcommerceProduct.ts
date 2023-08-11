@@ -51,13 +51,13 @@ export interface EcommerceProduct {
    * @type {string}
    * @memberof EcommerceProduct
    */
-  name?: string
+  name?: string | null
   /**
    * A detailed description of the product.
    * @type {string}
    * @memberof EcommerceProduct
    */
-  description?: string
+  description?: string | null
   /**
    * The current status of the product (active or archived).
    * @type {string}
@@ -69,37 +69,37 @@ export interface EcommerceProduct {
    * @type {string}
    * @memberof EcommerceProduct
    */
-  price?: string
+  price?: string | null
   /**
    * The stock keeping unit of the product.
    * @type {string}
    * @memberof EcommerceProduct
    */
-  sku?: string
+  sku?: string | null
   /**
    * The quantity of the product in stock.
    * @type {string}
    * @memberof EcommerceProduct
    */
-  inventory_quantity?: string
+  inventory_quantity?: string | null
   /**
    * An array of image URLs for the product.
    * @type {Array<EcommerceProductImages>}
    * @memberof EcommerceProduct
    */
-  images?: Array<EcommerceProductImages>
+  images?: Array<EcommerceProductImages> | null
   /**
    * The weight of the product.
    * @type {string}
    * @memberof EcommerceProduct
    */
-  weight?: string
+  weight?: string | null
   /**
    * The unit of measurement for the weight of the product.
    * @type {string}
    * @memberof EcommerceProduct
    */
-  weight_unit?: string
+  weight_unit?: string | null
   /**
    * An array of options for the product.
    * @type {Array<EcommerceProductOptions>}
@@ -129,7 +129,7 @@ export interface EcommerceProduct {
    * @type {Date}
    * @memberof EcommerceProduct
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -170,6 +170,8 @@ export function EcommerceProductFromJSONTyped(
       : json['inventory_quantity'],
     images: !exists(json, 'images')
       ? undefined
+      : json['images'] === null
+      ? null
       : (json['images'] as Array<any>).map(EcommerceProductImagesFromJSON),
     weight: !exists(json, 'weight') ? undefined : json['weight'],
     weight_unit: !exists(json, 'weight_unit') ? undefined : json['weight_unit'],
@@ -183,7 +185,11 @@ export function EcommerceProductFromJSONTyped(
     categories: !exists(json, 'categories')
       ? undefined
       : (json['categories'] as Array<any>).map(EcommerceProductCategoriesFromJSON),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
@@ -209,6 +215,8 @@ export function EcommerceProductToJSON(value?: EcommerceProduct | null): any {
     images:
       value.images === undefined
         ? undefined
+        : value.images === null
+        ? null
         : (value.images as Array<any>).map(EcommerceProductImagesToJSON),
     weight: value.weight,
     weight_unit: value.weight_unit,

@@ -36,13 +36,13 @@ export interface LinkedEcommerceOrder {
    * @type {string}
    * @memberof LinkedEcommerceOrder
    */
-  total?: string
+  total?: string | null
   /**
    *
    * @type {EcommerceOrderStatus}
    * @memberof LinkedEcommerceOrder
    */
-  status?: EcommerceOrderStatus
+  status?: EcommerceOrderStatus | null
 }
 
 export function LinkedEcommerceOrderFromJSON(json: any): LinkedEcommerceOrder {

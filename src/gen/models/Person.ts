@@ -26,7 +26,7 @@ export interface Person {
    * @type {string}
    * @memberof Person
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * The first name of the person.
    * @type {string}
@@ -52,19 +52,19 @@ export interface Person {
    */
   gender?: Gender | null
   /**
-   *
+   * Initials of the person
    * @type {string}
    * @memberof Person
    */
   initials?: string | null
   /**
-   *
+   * Date of birth
    * @type {Date}
    * @memberof Person
    */
   birthday?: Date | null
   /**
-   *
+   * Date of death
    * @type {Date}
    * @memberof Person
    */

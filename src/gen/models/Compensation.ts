@@ -28,7 +28,7 @@ export interface Compensation {
    * @type {string}
    * @memberof Compensation
    */
-  readonly employee_id: string
+  readonly employee_id: string | null
   /**
    * The employee's net pay. Only available when payroll has been processed
    * @type {number}

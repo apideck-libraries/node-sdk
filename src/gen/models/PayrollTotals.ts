@@ -48,7 +48,7 @@ export interface PayrollTotals {
    * @type {number}
    * @memberof PayrollTotals
    */
-  gross_pay?: number
+  gross_pay?: number | null
   /**
    * The total amount of employer paid taxes for the payroll.
    * @type {number}

@@ -57,7 +57,7 @@ export interface Pipeline {
    * @type {number}
    * @memberof Pipeline
    */
-  display_order?: number
+  display_order?: number | null
   /**
    *
    * @type {boolean}
@@ -81,7 +81,7 @@ export interface Pipeline {
    * @type {Date}
    * @memberof Pipeline
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function PipelineFromJSON(json: any): Pipeline {
@@ -110,7 +110,11 @@ export function PipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

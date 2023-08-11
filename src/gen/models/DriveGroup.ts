@@ -36,7 +36,7 @@ export interface DriveGroup {
    * @type {string}
    * @memberof DriveGroup
    */
-  display_name?: string
+  display_name?: string | null
   /**
    * A description of the object.
    * @type {string}
@@ -66,7 +66,7 @@ export interface DriveGroup {
    * @type {Date}
    * @memberof DriveGroup
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function DriveGroupFromJSON(json: any): DriveGroup {
@@ -89,7 +89,11 @@ export function DriveGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean)
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

@@ -215,7 +215,7 @@ export interface Company {
    * @type {Tags}
    * @memberof Company
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    *
    * @type {boolean}

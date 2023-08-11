@@ -24,13 +24,13 @@ export interface EcommerceProductImages1 {
    * @type {string}
    * @memberof EcommerceProductImages1
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * The URL of an image of the variant.
    * @type {string}
    * @memberof EcommerceProductImages1
    */
-  url?: string
+  url?: string | null
 }
 
 export function EcommerceProductImages1FromJSON(json: any): EcommerceProductImages1 {

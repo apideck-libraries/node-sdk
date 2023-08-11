@@ -48,7 +48,7 @@ export interface AtsActivity {
    * @type {Date}
    * @memberof AtsActivity
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function AtsActivityFromJSON(json: any): AtsActivity {
@@ -68,7 +68,11 @@ export function AtsActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

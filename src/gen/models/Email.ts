@@ -20,19 +20,19 @@ import { exists } from '../runtime'
  */
 export interface Email {
   /**
-   *
+   * Email address
    * @type {string}
    * @memberof Email
    */
-  email: string
+  email: string | null
   /**
-   *
+   * Unique identifier for the email address
    * @type {string}
    * @memberof Email
    */
-  id?: string
+  id?: string | null
   /**
-   *
+   * Email type
    * @type {string}
    * @memberof Email
    */

@@ -182,7 +182,7 @@ export interface Payment {
    * @type {Date}
    * @memberof Payment
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -257,7 +257,11 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null

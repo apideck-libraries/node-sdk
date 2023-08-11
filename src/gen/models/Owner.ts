@@ -30,13 +30,13 @@ export interface Owner {
    * @type {string}
    * @memberof Owner
    */
-  readonly email?: string
+  readonly email?: string | null
   /**
    * Name of the owner
    * @type {string}
    * @memberof Owner
    */
-  readonly name?: string
+  readonly name?: string | null
 }
 
 export function OwnerFromJSON(json: any): Owner {

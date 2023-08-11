@@ -45,19 +45,19 @@ export interface Folder {
    * @type {string}
    * @memberof Folder
    */
-  description?: string
+  description?: string | null
   /**
    * The full path of the folder (includes the folder name)
    * @type {string}
    * @memberof Folder
    */
-  readonly path?: string
+  readonly path?: string | null
   /**
    * The size of the folder in bytes
    * @type {number}
    * @memberof Folder
    */
-  readonly size?: number
+  readonly size?: number | null
   /**
    *
    * @type {Owner}
@@ -93,7 +93,7 @@ export interface Folder {
    * @type {Date}
    * @memberof Folder
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function FolderFromJSON(json: any): Folder {
@@ -122,7 +122,11 @@ export function FolderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fo
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

@@ -146,7 +146,7 @@ export interface Message {
    * @type {Date}
    * @memberof Message
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -224,7 +224,11 @@ export function MessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): M
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

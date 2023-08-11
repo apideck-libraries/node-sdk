@@ -24,13 +24,13 @@ export interface TimeOffRequestNotes {
    * @type {string}
    * @memberof TimeOffRequestNotes
    */
-  employee?: string
+  employee?: string | null
   /**
    *
    * @type {string}
    * @memberof TimeOffRequestNotes
    */
-  manager?: string
+  manager?: string | null
 }
 
 export function TimeOffRequestNotesFromJSON(json: any): TimeOffRequestNotes {

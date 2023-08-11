@@ -32,7 +32,7 @@ export interface Contact {
    * @type {string}
    * @memberof Contact
    */
-  name: string
+  name: string | null
   /**
    *
    * @type {string}
@@ -224,7 +224,7 @@ export interface Contact {
    * @type {Tags}
    * @memberof Contact
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    *
    * @type {Date}
@@ -248,13 +248,13 @@ export interface Contact {
    * @type {Date}
    * @memberof Contact
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
    *
    * @type {Date}
    * @memberof Contact
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -344,8 +344,16 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       : json['last_activity_at'] === null
       ? null
       : new Date(json['last_activity_at']),
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

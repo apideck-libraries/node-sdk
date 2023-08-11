@@ -24,19 +24,19 @@ export interface EcommerceProductOptions1 {
    * @type {string}
    * @memberof EcommerceProductOptions1
    */
-  id?: string
+  id?: string | null
   /**
    * The name of the option for the variant.
    * @type {string}
    * @memberof EcommerceProductOptions1
    */
-  name?: string
+  name?: string | null
   /**
    * The value of the option for the variant.
    * @type {string}
    * @memberof EcommerceProductOptions1
    */
-  value?: string
+  value?: string | null
 }
 
 export function EcommerceProductOptions1FromJSON(json: any): EcommerceProductOptions1 {

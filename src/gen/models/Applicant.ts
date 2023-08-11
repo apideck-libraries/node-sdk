@@ -214,7 +214,7 @@ export interface Applicant {
    * @type {Tags}
    * @memberof Applicant
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    *
    * @type {boolean}
@@ -226,13 +226,13 @@ export interface Applicant {
    * @type {Date}
    * @memberof Applicant
    */
-  readonly last_interaction_at?: Date
+  readonly last_interaction_at?: Date | null
   /**
    *
    * @type {string}
    * @memberof Applicant
    */
-  owner_id?: string
+  owner_id?: string | null
   /**
    *
    * @type {string}
@@ -298,7 +298,7 @@ export interface Applicant {
    * @type {Date}
    * @memberof Applicant
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function ApplicantFromJSON(json: any): Applicant {
@@ -357,6 +357,8 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     archived: !exists(json, 'archived') ? undefined : json['archived'],
     last_interaction_at: !exists(json, 'last_interaction_at')
       ? undefined
+      : json['last_interaction_at'] === null
+      ? null
       : new Date(json['last_interaction_at']),
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
     sourced_by: !exists(json, 'sourced_by') ? undefined : json['sourced_by'],
@@ -381,7 +383,11 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

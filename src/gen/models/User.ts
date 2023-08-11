@@ -136,13 +136,13 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  readonly updated_at?: string
+  readonly updated_at?: string | null
   /**
    *
    * @type {string}
    * @memberof User
    */
-  readonly created_at?: string
+  readonly created_at?: string | null
 }
 
 export function UserFromJSON(json: any): User {

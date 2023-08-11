@@ -30,43 +30,43 @@ export interface EcommerceCustomerAddresses {
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * First line of the street address of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  line1?: string
+  line1?: string | null
   /**
    * Second line of the street address of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  line2?: string
+  line2?: string | null
   /**
    * City of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  city?: string
+  city?: string | null
   /**
    * State of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  state?: string
+  state?: string | null
   /**
    * Postal code of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  postal_code?: string
+  postal_code?: string | null
   /**
    * Country of the customer
    * @type {string}
    * @memberof EcommerceCustomerAddresses
    */
-  country?: string
+  country?: string | null
 }
 
 /**

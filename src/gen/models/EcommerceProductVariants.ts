@@ -35,43 +35,43 @@ export interface EcommerceProductVariants {
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  id?: string
+  id?: string | null
   /**
    * The name for the variant, used for displaying to customers.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  name?: string
+  name?: string | null
   /**
    * The price of the variant.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  price?: string
+  price?: string | null
   /**
    * The stock keeping unit of the variant.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  sku?: string
+  sku?: string | null
   /**
    * The quantity of the variant in stock.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  inventory_quantity?: string
+  inventory_quantity?: string | null
   /**
    * The weight of the variant.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  weight?: string
+  weight?: string | null
   /**
    * The unit of measurement for the weight of the variant.
    * @type {string}
    * @memberof EcommerceProductVariants
    */
-  weight_unit?: string
+  weight_unit?: string | null
   /**
    *
    * @type {Array<EcommerceProductOptions1>}

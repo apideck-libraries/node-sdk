@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 `last_name` | **string** | The last name of the person. | [optional] 
 `middle_name` | **string** | Middle name of the person. | [optional] 
 `gender` | [**Gender**](Gender.md) |  | [optional] 
-`initials` | **string** |  | [optional] 
-`birthday` | **Date** |  | [optional] 
-`deceased_on` | **Date** |  | [optional] 
+`initials` | **string** | Initials of the person | [optional] 
+`birthday` | **Date** | Date of birth | [optional] 
+`deceased_on` | **Date** | Date of death | [optional] 
 
 
 

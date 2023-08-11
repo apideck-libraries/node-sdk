@@ -44,25 +44,25 @@ export interface EcommerceCustomer {
    * @type {string}
    * @memberof EcommerceCustomer
    */
-  name?: string
+  name?: string | null
   /**
    * First name of the customer
    * @type {string}
    * @memberof EcommerceCustomer
    */
-  first_name?: string
+  first_name?: string | null
   /**
    * Last name of the customer
    * @type {string}
    * @memberof EcommerceCustomer
    */
-  last_name?: string
+  last_name?: string | null
   /**
    * Company name of the customer
    * @type {string}
    * @memberof EcommerceCustomer
    */
-  company_name?: string
+  company_name?: string | null
   /**
    * The current status of the customer
    * @type {string}
@@ -80,13 +80,13 @@ export interface EcommerceCustomer {
    * @type {Array<Email>}
    * @memberof EcommerceCustomer
    */
-  emails?: Array<Email>
+  emails?: Array<Email> | null
   /**
    * An array of phone numbers for the customer.
    * @type {Array<PhoneNumber>}
    * @memberof EcommerceCustomer
    */
-  phone_numbers?: Array<PhoneNumber>
+  phone_numbers?: Array<PhoneNumber> | null
   /**
    * An array of addresses for the customer.
    * @type {Array<EcommerceCustomerAddresses>}
@@ -104,7 +104,7 @@ export interface EcommerceCustomer {
    * @type {Date}
    * @memberof EcommerceCustomer
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -141,9 +141,15 @@ export function EcommerceCustomerFromJSONTyped(
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
     status: !exists(json, 'status') ? undefined : json['status'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
-    emails: !exists(json, 'emails') ? undefined : (json['emails'] as Array<any>).map(EmailFromJSON),
+    emails: !exists(json, 'emails')
+      ? undefined
+      : json['emails'] === null
+      ? null
+      : (json['emails'] as Array<any>).map(EmailFromJSON),
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
+      : json['phone_numbers'] === null
+      ? null
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
     addresses: !exists(json, 'addresses')
       ? undefined
@@ -151,7 +157,11 @@ export function EcommerceCustomerFromJSONTyped(
     orders: !exists(json, 'orders')
       ? undefined
       : (json['orders'] as Array<any>).map(LinkedEcommerceOrderFromJSON),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
@@ -174,10 +184,17 @@ export function EcommerceCustomerToJSON(value?: EcommerceCustomer | null): any {
     company_name: value.company_name,
     status: value.status,
     currency: CurrencyToJSON(value.currency),
-    emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
+    emails:
+      value.emails === undefined
+        ? undefined
+        : value.emails === null
+        ? null
+        : (value.emails as Array<any>).map(EmailToJSON),
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined
+        : value.phone_numbers === null
+        ? null
         : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
     addresses:
       value.addresses === undefined

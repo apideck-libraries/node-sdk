@@ -162,7 +162,7 @@ export interface BillLineItem {
    * @type {Date}
    * @memberof BillLineItem
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -214,7 +214,11 @@ export function BillLineItemFromJSONTyped(json: any, ignoreDiscriminator: boolea
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null

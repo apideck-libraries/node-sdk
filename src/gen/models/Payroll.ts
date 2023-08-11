@@ -27,7 +27,7 @@ export interface Payroll {
    * @type {string}
    * @memberof Payroll
    */
-  readonly id: string
+  readonly id: string | null
   /**
    * Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
    * @type {boolean}

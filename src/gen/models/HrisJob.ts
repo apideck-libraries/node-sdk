@@ -31,7 +31,7 @@ export interface HrisJob {
    * @type {string}
    * @memberof HrisJob
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * Id of the employee
    * @type {string}

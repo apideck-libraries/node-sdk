@@ -28,13 +28,13 @@ export interface EmployeeJob {
    * @type {string}
    * @memberof EmployeeJob
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * A unique identifier for an object.
    * @type {string}
    * @memberof EmployeeJob
    */
-  readonly employee_id?: string
+  readonly employee_id?: string | null
   /**
    * The job title of the person.
    * @type {string}

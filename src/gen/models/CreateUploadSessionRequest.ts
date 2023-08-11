@@ -36,7 +36,7 @@ export interface CreateUploadSessionRequest {
    * @type {number}
    * @memberof CreateUploadSessionRequest
    */
-  size: number
+  size: number | null
   /**
    * ID of the drive to upload to.
    * @type {string}

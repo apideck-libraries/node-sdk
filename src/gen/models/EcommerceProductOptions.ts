@@ -24,13 +24,13 @@ export interface EcommerceProductOptions {
    * @type {string}
    * @memberof EcommerceProductOptions
    */
-  id?: string
+  id?: string | null
   /**
    * The name of the option for the product.
    * @type {string}
    * @memberof EcommerceProductOptions
    */
-  name?: string
+  name?: string | null
   /**
    *
    * @type {Array<string>}

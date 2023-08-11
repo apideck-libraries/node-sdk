@@ -30,7 +30,7 @@ export interface LinkedFolder {
    * @type {string}
    * @memberof LinkedFolder
    */
-  name?: string
+  name?: string | null
 }
 
 export function LinkedFolderFromJSON(json: any): LinkedFolder {

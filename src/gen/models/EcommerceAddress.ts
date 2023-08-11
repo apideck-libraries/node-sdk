@@ -24,43 +24,43 @@ export interface EcommerceAddress {
    * @type {string}
    * @memberof EcommerceAddress
    */
-  line1?: string
+  line1?: string | null
   /**
    * Address line 2 of the billing address.
    * @type {string}
    * @memberof EcommerceAddress
    */
-  line2?: string
+  line2?: string | null
   /**
    * Company name of the customer
    * @type {string}
    * @memberof EcommerceAddress
    */
-  company_name?: string
+  company_name?: string | null
   /**
    * City of the billing address.
    * @type {string}
    * @memberof EcommerceAddress
    */
-  city?: string
+  city?: string | null
   /**
    * State/province of the billing address.
    * @type {string}
    * @memberof EcommerceAddress
    */
-  state?: string
+  state?: string | null
   /**
    * Postal/ZIP code of the billing address.
    * @type {string}
    * @memberof EcommerceAddress
    */
-  postal_code?: string
+  postal_code?: string | null
   /**
    * Country of the billing address.
    * @type {string}
    * @memberof EcommerceAddress
    */
-  country?: string
+  country?: string | null
 }
 
 export function EcommerceAddressFromJSON(json: any): EcommerceAddress {

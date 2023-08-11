@@ -30,49 +30,49 @@ export interface EcommerceOrderLineItem {
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  name: string
+  name: string | null
   /**
    * The quantity of the product or variant associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  quantity: string
+  quantity: string | null
   /**
    * The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  total_amount: string
+  total_amount: string | null
   /**
    * A unique identifier for an object.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * A unique identifier for the product associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  product_id?: string
+  product_id?: string | null
   /**
    * A unique identifier for the variant of the product associated with the line item, if applicable.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  variant_id?: string
+  variant_id?: string | null
   /**
    * The SKU of the product or variant associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  sku?: string
+  sku?: string | null
   /**
    * The description of the product or variant associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  description?: string
+  description?: string | null
   /**
    *
    * @type {Array<object>}
@@ -84,19 +84,19 @@ export interface EcommerceOrderLineItem {
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  unit_price?: string
+  unit_price?: string | null
   /**
    * The tax rate applied to the product or variant associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  tax_rate?: string
+  tax_rate?: string | null
   /**
    * The total tax amount applied to the product or variant associated with the line item.
    * @type {string}
    * @memberof EcommerceOrderLineItem
    */
-  tax_amount?: string
+  tax_amount?: string | null
   /**
    *
    * @type {Array<EcommerceDiscount>}

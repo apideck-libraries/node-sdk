@@ -21,23 +21,23 @@ import { exists } from '../runtime'
  */
 export interface CustomField {
   /**
-   *
+   * Unique identifier for the custom field.
    * @type {string}
    * @memberof CustomField
    */
-  id: string
+  id: string | null
   /**
    * Name of the custom field.
    * @type {string}
    * @memberof CustomField
    */
-  name?: string
+  name?: string | null
   /**
    * More information about the custom field
    * @type {string}
    * @memberof CustomField
    */
-  description?: string
+  description?: string | null
   /**
    *
    * @type {string | number | boolean | object | Array<string>}

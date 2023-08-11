@@ -30,25 +30,25 @@ export interface EcommerceStore {
    * @type {string}
    * @memberof EcommerceStore
    */
-  name?: string
+  name?: string | null
   /**
    * The store's website URL
    * @type {string}
    * @memberof EcommerceStore
    */
-  store_url?: string
+  store_url?: string | null
   /**
    * The store's admin login URL
    * @type {string}
    * @memberof EcommerceStore
    */
-  admin_url?: string
+  admin_url?: string | null
   /**
    * The date and time when the object was created.
    * @type {Date}
    * @memberof EcommerceStore
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -73,7 +73,11 @@ export function EcommerceStoreFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     store_url: !exists(json, 'store_url') ? undefined : json['store_url'],
     admin_url: !exists(json, 'admin_url') ? undefined : json['admin_url'],
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null

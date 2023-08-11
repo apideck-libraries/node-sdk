@@ -216,7 +216,7 @@ export interface Customer {
    * @type {Date}
    * @memberof Customer
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -287,7 +287,11 @@ export function CustomerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version']
   }
 }

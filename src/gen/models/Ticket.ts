@@ -87,7 +87,7 @@ export interface Ticket {
    * @type {Date}
    * @memberof Ticket
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
   /**
    * The user who created the object.
    * @type {string}
@@ -150,7 +150,11 @@ export function TicketFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ti
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at']),
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     due_date: !exists(json, 'due_date')
       ? undefined

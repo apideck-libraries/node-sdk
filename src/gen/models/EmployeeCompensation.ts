@@ -32,7 +32,7 @@ export interface EmployeeCompensation {
    * @type {string}
    * @memberof EmployeeCompensation
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * The ID of the job to which the compensation belongs.
    * @type {string}

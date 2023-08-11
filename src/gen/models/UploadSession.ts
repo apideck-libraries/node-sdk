@@ -54,7 +54,7 @@ export interface UploadSession {
    * @type {Date}
    * @memberof UploadSession
    */
-  readonly expires_at?: Date
+  readonly expires_at?: Date | null
 }
 
 export function UploadSessionFromJSON(json: any): UploadSession {
@@ -75,7 +75,11 @@ export function UploadSessionFromJSONTyped(json: any, ignoreDiscriminator: boole
     uploaded_byte_range: !exists(json, 'uploaded_byte_range')
       ? undefined
       : json['uploaded_byte_range'],
-    expires_at: !exists(json, 'expires_at') ? undefined : new Date(json['expires_at'])
+    expires_at: !exists(json, 'expires_at')
+      ? undefined
+      : json['expires_at'] === null
+      ? null
+      : new Date(json['expires_at'])
   }
 }
 

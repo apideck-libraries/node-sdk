@@ -51,7 +51,7 @@ export interface Lead {
    * @type {string}
    * @memberof Lead
    */
-  owner_id?: string
+  owner_id?: string | null
   /**
    *
    * @type {string}
@@ -171,7 +171,7 @@ export interface Lead {
    * @type {Tags}
    * @memberof Lead
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    * Date updated in ISO 8601 format
    * @type {string}

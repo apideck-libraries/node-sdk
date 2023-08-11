@@ -219,7 +219,7 @@ export interface Job {
    * @type {Tags}
    * @memberof Job
    */
-  tags?: Tags
+  tags?: Tags | null
   /**
    *
    * @type {Array<Address>}
@@ -243,13 +243,13 @@ export interface Job {
    * @type {string}
    * @memberof Job
    */
-  owner_id?: string
+  owner_id?: string | null
   /**
    *
    * @type {Date}
    * @memberof Job
    */
-  readonly published_at?: Date
+  readonly published_at?: Date | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -273,7 +273,7 @@ export interface Job {
    * @type {Date}
    * @memberof Job
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -357,7 +357,11 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
-    published_at: !exists(json, 'published_at') ? undefined : new Date(json['published_at']),
+    published_at: !exists(json, 'published_at')
+      ? undefined
+      : json['published_at'] === null
+      ? null
+      : new Date(json['published_at']),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -365,7 +369,11 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

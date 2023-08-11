@@ -24,13 +24,13 @@ export interface EcommerceProductCategories {
    * @type {string}
    * @memberof EcommerceProductCategories
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
    * The name of the category.
    * @type {string}
    * @memberof EcommerceProductCategories
    */
-  name?: string
+  name?: string | null
 }
 
 export function EcommerceProductCategoriesFromJSON(json: any): EcommerceProductCategories {

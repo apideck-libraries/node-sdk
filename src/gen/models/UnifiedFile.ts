@@ -57,7 +57,7 @@ export interface UnifiedFile {
    * @type {string}
    * @memberof UnifiedFile
    */
-  description?: string
+  description?: string | null
   /**
    * The full path of the file or folder (includes the file name)
    * @type {string}
@@ -69,7 +69,7 @@ export interface UnifiedFile {
    * @type {string}
    * @memberof UnifiedFile
    */
-  mime_type?: string
+  mime_type?: string | null
   /**
    * Whether the current user can download this file
    * @type {boolean}
@@ -81,7 +81,7 @@ export interface UnifiedFile {
    * @type {number}
    * @memberof UnifiedFile
    */
-  size?: number
+  size?: number | null
   /**
    *
    * @type {Owner}
@@ -141,7 +141,7 @@ export interface UnifiedFile {
    * @type {Date}
    * @memberof UnifiedFile
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function UnifiedFileFromJSON(json: any): UnifiedFile {
@@ -181,7 +181,11 @@ export function UnifiedFileFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : json['updated_at'] === null
       ? null
       : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 
