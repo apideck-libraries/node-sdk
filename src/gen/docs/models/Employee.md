@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 `probation_period` | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
-`deleted` | **boolean** |  | [optional] 
+`deleted` | **boolean** | Flag to indicate if the object is deleted. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 

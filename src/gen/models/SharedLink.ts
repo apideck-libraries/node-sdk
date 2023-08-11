@@ -30,19 +30,19 @@ export interface SharedLink {
    * @type {string}
    * @memberof SharedLink
    */
-  target_id: string
+  target_id: string | null
   /**
    * The URL that can be used to view the file.
    * @type {string}
    * @memberof SharedLink
    */
-  readonly url?: string
+  readonly url?: string | null
   /**
    * The URL that can be used to download the file.
    * @type {string}
    * @memberof SharedLink
    */
-  download_url?: string
+  download_url?: string | null
   /**
    *
    * @type {SharedLinkTarget}
@@ -60,7 +60,7 @@ export interface SharedLink {
    * @type {boolean}
    * @memberof SharedLink
    */
-  readonly password_protected?: boolean
+  readonly password_protected?: boolean | null
   /**
    * Optional password for the shared link.
    * @type {string}

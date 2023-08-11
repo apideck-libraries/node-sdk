@@ -20,83 +20,83 @@ import { exists } from '../runtime'
  */
 export interface Note {
   /**
-   *
+   * The unique identifier of the note
    * @type {string}
    * @memberof Note
    */
   readonly id?: string
   /**
-   *
+   * The title of the note
    * @type {string}
    * @memberof Note
    */
-  title?: string
+  title?: string | null
   /**
-   *
+   * The content of the note.
    * @type {string}
    * @memberof Note
    */
-  content?: string
+  content?: string | null
   /**
-   *
+   * The user that owns the note.
    * @type {string}
    * @memberof Note
    */
-  owner_id?: string
+  owner_id?: string | null
   /**
-   *
+   * The contact that is related to the note.
    * @type {string}
    * @memberof Note
    */
   contact_id?: string | null
   /**
-   *
+   * The company that is related to the note.
    * @type {string}
    * @memberof Note
    */
   company_id?: string | null
   /**
-   *
+   * The opportunity that is related to the note.
    * @type {string}
    * @memberof Note
    */
   opportunity_id?: string | null
   /**
-   *
+   * The lead that is related to the note.
    * @type {string}
    * @memberof Note
    */
   lead_id?: string | null
   /**
-   *
+   * Whether the Note is active or not.
    * @type {boolean}
    * @memberof Note
    */
   active?: boolean | null
   /**
-   *
+   * The user that last updated the note.
    * @type {string}
    * @memberof Note
    */
   readonly updated_by?: string | null
   /**
-   *
+   * The user that created the note.
    * @type {string}
    * @memberof Note
    */
   readonly created_by?: string | null
   /**
-   *
+   * The timestamp when the note was last updated
    * @type {string}
    * @memberof Note
    */
-  readonly updated_at?: string
+  readonly updated_at?: string | null
   /**
-   *
+   * The timestamp when the note was created
    * @type {string}
    * @memberof Note
    */
-  readonly created_at?: string
+  readonly created_at?: string | null
 }
 
 export function NoteFromJSON(json: any): Note {

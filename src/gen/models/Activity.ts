@@ -28,13 +28,13 @@ import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomFie
  */
 export interface Activity {
   /**
-   *
+   * The type of the activity
    * @type {string}
    * @memberof Activity
    */
   type: ActivityType
   /**
-   *
+   * The unique identifier of the activity
    * @type {string}
    * @memberof Activity
    */
@@ -46,121 +46,121 @@ export interface Activity {
    */
   readonly downstream_id?: string | null
   /**
-   *
+   * The date and time of the activity
    * @type {string}
    * @memberof Activity
    */
   activity_datetime?: string | null
   /**
-   *
+   * The duration of the activity in seconds
    * @type {number}
    * @memberof Activity
    */
   duration_seconds?: number | null
   /**
-   *
+   * The user related to the activity
    * @type {string}
    * @memberof Activity
    */
   user_id?: string | null
   /**
-   *
+   * The account related to the activity
    * @type {string}
    * @memberof Activity
    */
   account_id?: string | null
   /**
-   *
+   * The contact related to the activity
    * @type {string}
    * @memberof Activity
    */
   contact_id?: string | null
   /**
-   *
+   * The company related to the activity
    * @type {string}
    * @memberof Activity
    */
   company_id?: string | null
   /**
-   *
+   * The opportunity related to the activity
    * @type {string}
    * @memberof Activity
    */
   opportunity_id?: string | null
   /**
-   *
+   * The lead related to the activity
    * @type {string}
    * @memberof Activity
    */
   lead_id?: string | null
   /**
-   *
+   * The owner of the activity
    * @type {string}
    * @memberof Activity
    */
   owner_id?: string | null
   /**
-   *
+   * The campaign related to the activity
    * @type {string}
    * @memberof Activity
    */
   campaign_id?: string | null
   /**
-   *
+   * The case related to the activity
    * @type {string}
    * @memberof Activity
    */
   case_id?: string | null
   /**
-   *
+   * The asset related to the activity
    * @type {string}
    * @memberof Activity
    */
   asset_id?: string | null
   /**
-   *
+   * The contract related to the activity
    * @type {string}
    * @memberof Activity
    */
   contract_id?: string | null
   /**
-   *
+   * The product related to the activity
    * @type {string}
    * @memberof Activity
    */
   product_id?: string | null
   /**
-   *
+   * The solution related to the activity
    * @type {string}
    * @memberof Activity
    */
   solution_id?: string | null
   /**
-   *
+   * The custom object related to the activity
    * @type {string}
    * @memberof Activity
    */
   custom_object_id?: string | null
   /**
-   *
+   * The title of the activity
    * @type {string}
    * @memberof Activity
    */
   title?: string | null
   /**
-   *
+   * A description of the activity
    * @type {string}
    * @memberof Activity
    */
   description?: string | null
   /**
-   *
+   * An internal note about the activity
    * @type {string}
    * @memberof Activity
    */
   note?: string | null
   /**
-   *
+   * The location of the activity
    * @type {string}
    * @memberof Activity
    */
@@ -172,53 +172,53 @@ export interface Activity {
    */
   location_address?: Address
   /**
-   *
+   * Whether the Activity is an all day event or not
    * @type {boolean}
    * @memberof Activity
    */
-  all_day_event?: boolean
+  all_day_event?: boolean | null
   /**
-   *
+   * Whether the Activity is private or not
    * @type {boolean}
    * @memberof Activity
    */
-  _private?: boolean
+  _private?: boolean | null
   /**
-   *
+   * Whether the Activity is a group event or not
    * @type {boolean}
    * @memberof Activity
    */
-  group_event?: boolean
+  group_event?: boolean | null
   /**
-   *
+   * The sub type of the group event
    * @type {string}
    * @memberof Activity
    */
   event_sub_type?: string | null
   /**
-   *
+   * The type of the group event
    * @type {string}
    * @memberof Activity
    */
   group_event_type?: string | null
   /**
-   *
+   * Whether the activity is a child of another activity or not
    * @type {boolean}
    * @memberof Activity
    */
-  child?: boolean
+  child?: boolean | null
   /**
-   *
+   * Whether the activity is archived or not
    * @type {boolean}
    * @memberof Activity
    */
-  archived?: boolean
+  archived?: boolean | null
   /**
-   *
+   * Whether the activity is deleted or not
    * @type {boolean}
    * @memberof Activity
    */
-  deleted?: boolean
+  deleted?: boolean | null
   /**
    *
    * @type {string}
@@ -230,69 +230,69 @@ export interface Activity {
    * @type {boolean}
    * @memberof Activity
    */
-  done?: boolean
+  done?: boolean | null
   /**
-   *
+   * The start date and time of the activity
    * @type {string}
    * @memberof Activity
    */
   start_datetime?: string | null
   /**
-   *
+   * The end date and time of the activity
    * @type {string}
    * @memberof Activity
    */
   end_datetime?: string | null
   /**
-   *
+   * The duration of the activity in minutes
    * @type {number}
    * @memberof Activity
    */
   readonly duration_minutes?: number | null
   /**
-   *
+   * The date of the activity
    * @type {string}
    * @memberof Activity
    */
   activity_date?: string | null
   /**
-   *
+   * The end date of the activity
    * @type {string}
    * @memberof Activity
    */
   end_date?: string | null
   /**
-   *
+   * Whether the activity is recurrent or not
    * @type {boolean}
    * @memberof Activity
    */
   recurrent?: boolean
   /**
-   *
+   * The date and time of the reminder
    * @type {string}
    * @memberof Activity
    */
   reminder_datetime?: string | null
   /**
-   *
+   * Whether the reminder is set or not
    * @type {boolean}
    * @memberof Activity
    */
   reminder_set?: boolean | null
   /**
-   *
+   * The URL of the video conference
    * @type {string}
    * @memberof Activity
    */
-  video_conference_url?: string
+  video_conference_url?: string | null
   /**
-   *
+   * The ID of the video conference
    * @type {string}
    * @memberof Activity
    */
-  video_conference_id?: string
+  video_conference_id?: string | null
   /**
-   *
+   * Custom fields of the activity
    * @type {Array<CustomField>}
    * @memberof Activity
    */
@@ -304,29 +304,29 @@ export interface Activity {
    */
   attendees?: Array<ActivityAttendee>
   /**
-   *
+   * The user who last updated the activity
    * @type {string}
    * @memberof Activity
    */
   readonly updated_by?: string | null
   /**
-   *
+   * The user who created the activity
    * @type {string}
    * @memberof Activity
    */
   readonly created_by?: string | null
   /**
-   *
+   * The date and time when the activity was last updated
    * @type {string}
    * @memberof Activity
    */
-  readonly updated_at?: string
+  readonly updated_at?: string | null
   /**
-   *
+   * The date and time when the activity was created
    * @type {string}
    * @memberof Activity
    */
-  readonly created_at?: string
+  readonly created_at?: string | null
 }
 
 /**

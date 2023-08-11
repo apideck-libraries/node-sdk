@@ -39,13 +39,13 @@ export interface UnifiedFile {
    * @type {string}
    * @memberof UnifiedFile
    */
-  name: string
+  name: string | null
   /**
    *
    * @type {FileType}
    * @memberof UnifiedFile
    */
-  type: FileType
+  type: FileType | null
   /**
    * The third-party API ID of original entity
    * @type {string}
@@ -63,7 +63,7 @@ export interface UnifiedFile {
    * @type {string}
    * @memberof UnifiedFile
    */
-  path?: string
+  path?: string | null
   /**
    * The MIME type of the file.
    * @type {string}
@@ -117,7 +117,7 @@ export interface UnifiedFile {
    * @type {Array<string>}
    * @memberof UnifiedFile
    */
-  export_formats?: Array<string>
+  export_formats?: Array<string> | null
   /**
    * The user who last updated the object.
    * @type {string}

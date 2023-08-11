@@ -30,7 +30,7 @@ export interface CollectionTicketComment {
    * @type {string}
    * @memberof CollectionTicketComment
    */
-  body?: string
+  body?: string | null
   /**
    * The user who created the object.
    * @type {string}

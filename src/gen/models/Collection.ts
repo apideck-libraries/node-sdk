@@ -30,25 +30,25 @@ export interface Collection {
    * @type {string}
    * @memberof Collection
    */
-  parent_id?: string
+  parent_id?: string | null
   /**
    * The collections's type
    * @type {string}
    * @memberof Collection
    */
-  type?: string
+  type?: string | null
   /**
    * Name of the collection
    * @type {string}
    * @memberof Collection
    */
-  name?: string
+  name?: string | null
   /**
    * Description of the collection
    * @type {string}
    * @memberof Collection
    */
-  description?: string
+  description?: string | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}

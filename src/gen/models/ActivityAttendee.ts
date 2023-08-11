@@ -20,89 +20,89 @@ import { exists } from '../runtime'
  */
 export interface ActivityAttendee {
   /**
-   *
+   * Unique identifier for the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
-   *
+   * Full name of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
-  name?: string
+  name?: string | null
   /**
-   *
+   * First name of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   first_name?: string | null
   /**
-   *
+   * Middle name of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   middle_name?: string | null
   /**
-   *
+   * Last name of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   last_name?: string | null
   /**
-   *
+   * Prefix of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   prefix?: string | null
   /**
-   *
+   * Suffix of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   suffix?: string | null
   /**
-   *
+   * Email address of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   email_address?: string | null
   /**
-   *
+   * Whether the attendee is the organizer of the activity
    * @type {boolean}
    * @memberof ActivityAttendee
    */
   is_organizer?: boolean | null
   /**
-   *
+   * Status of the attendee
    * @type {string}
    * @memberof ActivityAttendee
    */
   status?: ActivityAttendeeStatus
   /**
-   *
+   * The identifier for a related user
    * @type {string}
    * @memberof ActivityAttendee
    */
-  readonly user_id?: string
+  readonly user_id?: string | null
   /**
-   *
+   * The identifier for a related contact
    * @type {string}
    * @memberof ActivityAttendee
    */
-  readonly contact_id?: string
+  readonly contact_id?: string | null
   /**
-   *
+   * The last time the attendee was updated (ISO 8601)
    * @type {Date}
    * @memberof ActivityAttendee
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
-   *
+   * The time the attendee was created (ISO 8601)
    * @type {Date}
    * @memberof ActivityAttendee
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 /**
@@ -139,8 +139,16 @@ export function ActivityAttendeeFromJSONTyped(
     status: !exists(json, 'status') ? undefined : json['status'],
     user_id: !exists(json, 'user_id') ? undefined : json['user_id'],
     contact_id: !exists(json, 'contact_id') ? undefined : json['contact_id'],
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

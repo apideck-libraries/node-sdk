@@ -20,37 +20,37 @@ import { exists } from '../runtime'
  */
 export interface PhoneNumber {
   /**
-   *
+   * The phone number
    * @type {string}
    * @memberof PhoneNumber
    */
   number: string
   /**
-   *
+   * Unique identifier of the phone number
    * @type {string}
    * @memberof PhoneNumber
    */
   id?: string | null
   /**
-   *
+   * The country code of the phone number, e.g. +1
    * @type {string}
    * @memberof PhoneNumber
    */
   country_code?: string | null
   /**
-   *
+   * The area code of the phone number, e.g. 323
    * @type {string}
    * @memberof PhoneNumber
    */
   area_code?: string | null
   /**
-   *
+   * The extension of the phone number
    * @type {string}
    * @memberof PhoneNumber
    */
   extension?: string | null
   /**
-   *
+   * The type of phone number
    * @type {string}
    * @memberof PhoneNumber
    */

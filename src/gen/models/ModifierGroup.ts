@@ -68,7 +68,7 @@ export interface ModifierGroup {
    */
   modifiers?: Array<object>
   /**
-   *
+   * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof ModifierGroup
    */

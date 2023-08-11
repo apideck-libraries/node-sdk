@@ -30,7 +30,7 @@ export interface Assignee {
    * @type {string}
    * @memberof Assignee
    */
-  readonly username?: string
+  readonly username?: string | null
 }
 
 export function AssigneeFromJSON(json: any): Assignee {

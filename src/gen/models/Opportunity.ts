@@ -256,13 +256,13 @@ export interface Opportunity {
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly updated_at?: Date
+  readonly updated_at?: Date | null
   /**
    * The date and time when the opportunity was created.
    * @type {Date}
    * @memberof Opportunity
    */
-  readonly created_at?: Date
+  readonly created_at?: Date | null
 }
 
 export function OpportunityFromJSON(json: any): Opportunity {
@@ -334,8 +334,16 @@ export function OpportunityFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : new Date(json['date_lead_created']),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
-    updated_at: !exists(json, 'updated_at') ? undefined : new Date(json['updated_at']),
-    created_at: !exists(json, 'created_at') ? undefined : new Date(json['created_at'])
+    updated_at: !exists(json, 'updated_at')
+      ? undefined
+      : json['updated_at'] === null
+      ? null
+      : new Date(json['updated_at']),
+    created_at: !exists(json, 'created_at')
+      ? undefined
+      : json['created_at'] === null
+      ? null
+      : new Date(json['created_at'])
   }
 }
 

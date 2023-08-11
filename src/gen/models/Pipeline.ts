@@ -23,13 +23,13 @@ import { PipelineStages, PipelineStagesFromJSON, PipelineStagesToJSON } from './
  */
 export interface Pipeline {
   /**
-   *
+   * The name of the Pipeline.
    * @type {string}
    * @memberof Pipeline
    */
   name: string
   /**
-   *
+   * The unique identifier of the Pipeline.
    * @type {string}
    * @memberof Pipeline
    */
@@ -41,31 +41,31 @@ export interface Pipeline {
    */
   currency?: Currency | null
   /**
-   *
+   * Whether the Pipeline is archived or not.
    * @type {boolean}
    * @memberof Pipeline
    */
   archived?: boolean
   /**
-   *
+   * Whether the Pipeline is active or not.
    * @type {boolean}
    * @memberof Pipeline
    */
   active?: boolean
   /**
-   *
+   * The order in which the Pipeline is displayed in the UI.
    * @type {number}
    * @memberof Pipeline
    */
   display_order?: number | null
   /**
-   *
+   * Whether the Pipeline has win probability enabled or not.
    * @type {boolean}
    * @memberof Pipeline
    */
   win_probability_enabled?: boolean
   /**
-   *
+   * The Pipeline Stages.
    * @type {Array<PipelineStages>}
    * @memberof Pipeline
    */

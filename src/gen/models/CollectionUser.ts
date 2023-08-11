@@ -24,27 +24,27 @@ export interface CollectionUser {
    * @type {string}
    * @memberof CollectionUser
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
-   *
+   * Full name of the user
    * @type {string}
    * @memberof CollectionUser
    */
-  name?: string
+  name?: string | null
   /**
-   *
+   * First name of the user
    * @type {string}
    * @memberof CollectionUser
    */
   first_name?: string | null
   /**
-   *
+   * Last name of the user
    * @type {string}
    * @memberof CollectionUser
    */
   last_name?: string | null
   /**
-   *
+   * Email address of the user
    * @type {string}
    * @memberof CollectionUser
    */

@@ -24,13 +24,13 @@ export interface CollectionTag {
    * @type {string}
    * @memberof CollectionTag
    */
-  id: string
+  id: string | null
   /**
-   *
+   * The name of the tag.
    * @type {string}
    * @memberof CollectionTag
    */
-  readonly name?: string
+  readonly name?: string | null
 }
 
 export function CollectionTagFromJSON(json: any): CollectionTag {

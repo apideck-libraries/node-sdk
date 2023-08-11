@@ -24,13 +24,13 @@ export interface CompanyRowType {
    * @type {string}
    * @memberof CompanyRowType
    */
-  id?: string
+  id?: string | null
   /**
    *
    * @type {string}
    * @memberof CompanyRowType
    */
-  name?: string
+  name?: string | null
 }
 
 export function CompanyRowTypeFromJSON(json: any): CompanyRowType {

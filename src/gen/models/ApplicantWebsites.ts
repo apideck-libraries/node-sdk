@@ -20,19 +20,19 @@ import { exists } from '../runtime'
  */
 export interface ApplicantWebsites {
   /**
-   *
+   * The website URL
    * @type {string}
    * @memberof ApplicantWebsites
    */
   url: string
   /**
-   *
+   * Unique identifier for the website
    * @type {string}
    * @memberof ApplicantWebsites
    */
   id?: string | null
   /**
-   *
+   * The type of website
    * @type {string}
    * @memberof ApplicantWebsites
    */

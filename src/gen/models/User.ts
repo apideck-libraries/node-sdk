@@ -30,19 +30,19 @@ export interface User {
    */
   emails: Array<Email>
   /**
-   *
+   * The unique identifier for the user
    * @type {string}
    * @memberof User
    */
   readonly id?: string
   /**
-   *
+   * The parent user id
    * @type {string}
    * @memberof User
    */
   parent_id?: string | null
   /**
-   *
+   * The username of the user
    * @type {string}
    * @memberof User
    */
@@ -96,7 +96,7 @@ export interface User {
    */
   description?: string | null
   /**
-   *
+   * The URL of the user's avatar
    * @type {string}
    * @memberof User
    */
@@ -108,17 +108,17 @@ export interface User {
    */
   language?: string | null
   /**
-   *
+   * The status of the user
    * @type {string}
    * @memberof User
    */
   status?: string | null
   /**
-   *
+   * The password of the user
    * @type {string}
    * @memberof User
    */
-  password?: string
+  password?: string | null
   /**
    *
    * @type {Array<Address>}
@@ -132,13 +132,13 @@ export interface User {
    */
   phone_numbers?: Array<PhoneNumber>
   /**
-   *
+   * The date and time when the user was last updated.
    * @type {string}
    * @memberof User
    */
   readonly updated_at?: string | null
   /**
-   *
+   * The date and time when the user was created.
    * @type {string}
    * @memberof User
    */

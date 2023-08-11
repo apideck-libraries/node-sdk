@@ -20,19 +20,19 @@ import { exists } from '../runtime'
  */
 export interface SocialLink {
   /**
-   *
+   * URL of the social link, e.g. https://www.twitter.com/apideck
    * @type {string}
    * @memberof SocialLink
    */
   url: string
   /**
-   *
+   * Unique identifier of the social link
    * @type {string}
    * @memberof SocialLink
    */
   id?: string | null
   /**
-   *
+   * Type of the social link, e.g. twitter
    * @type {string}
    * @memberof SocialLink
    */

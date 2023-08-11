@@ -32,13 +32,13 @@ export interface SharedLinkTarget {
    * @type {string}
    * @memberof SharedLinkTarget
    */
-  name?: string
+  name?: string | null
   /**
    *
    * @type {FileType}
    * @memberof SharedLinkTarget
    */
-  type?: FileType
+  type?: FileType | null
 }
 
 export function SharedLinkTargetFromJSON(json: any): SharedLinkTarget {

@@ -220,7 +220,7 @@ export interface Applicant {
    * @type {boolean}
    * @memberof Applicant
    */
-  archived?: boolean
+  archived?: boolean | null
   /**
    *
    * @type {Date}
@@ -258,7 +258,7 @@ export interface Applicant {
    */
   readonly rejected_at?: Date | null
   /**
-   *
+   * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof Applicant
    */

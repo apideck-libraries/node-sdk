@@ -46,13 +46,13 @@ export interface BankAccount {
    */
   account_type?: BankAccountAccountType
   /**
-   *
+   * The International Bank Account Number (IBAN).
    * @type {string}
    * @memberof BankAccount
    */
   iban?: string | null
   /**
-   *
+   * The Bank Identifier Code (BIC).
    * @type {string}
    * @memberof BankAccount
    */

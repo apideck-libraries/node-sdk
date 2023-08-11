@@ -178,7 +178,7 @@ export interface Item {
    */
   readonly version?: string | null
   /**
-   *
+   * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof Item
    */

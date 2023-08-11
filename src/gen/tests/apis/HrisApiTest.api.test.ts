@@ -909,7 +909,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1191,7 +1191,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1472,7 +1472,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1754,7 +1754,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],
@@ -1990,7 +1990,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -2290,7 +2290,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],
@@ -2545,7 +2545,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],

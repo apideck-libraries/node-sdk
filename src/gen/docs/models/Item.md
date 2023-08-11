@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 `available` | **boolean** |  | [optional] 
 `hidden` | **boolean** |  | [optional] 
 `version` | **string** | The user who last updated the object. | [optional] 
-`deleted` | **boolean** |  | [optional] 
+`deleted` | **boolean** | Flag to indicate if the object is deleted. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 

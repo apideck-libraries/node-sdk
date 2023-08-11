@@ -33,31 +33,31 @@ export interface Ticket {
    * @type {string}
    * @memberof Ticket
    */
-  parent_id?: string
+  parent_id?: string | null
   /**
    * The ticket's collection ID
    * @type {string}
    * @memberof Ticket
    */
-  readonly collection_id?: string
+  readonly collection_id?: string | null
   /**
    * The ticket's type
    * @type {string}
    * @memberof Ticket
    */
-  type?: string
+  type?: string | null
   /**
    * Subject of the ticket
    * @type {string}
    * @memberof Ticket
    */
-  subject?: string
+  subject?: string | null
   /**
    * The ticket's description. HTML version of description is mapped if supported by the third-party platform
    * @type {string}
    * @memberof Ticket
    */
-  description?: string
+  description?: string | null
   /**
    * The current status of the ticket. Possible values include: open, in_progress, closed, or - in cases where there is no clear mapping - the original value passed through.
    * @type {string}

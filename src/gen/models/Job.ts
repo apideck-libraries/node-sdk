@@ -233,7 +233,7 @@ export interface Job {
    */
   custom_fields?: Array<CustomField>
   /**
-   *
+   * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof Job
    */

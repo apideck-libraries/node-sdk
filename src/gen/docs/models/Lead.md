@@ -5,23 +5,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`name` | **string** |  | 
-`company_name` | **string** |  | 
-`id` | **string** |  | [optional] 
-`owner_id` | **string** |  | [optional] 
-`company_id` | **string** |  | [optional] 
-`contact_id` | **string** |  | [optional] 
-`lead_source` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
-`description` | **string** |  | [optional] 
-`prefix` | **string** |  | [optional] 
-`title` | **string** |  | [optional] 
+`name` | **string** | Full name of the lead. | 
+`company_name` | **string** | The name of the company the lead is associated with. | 
+`id` | **string** | Unique identifier for the contact. | [optional] 
+`owner_id` | **string** | The owner of the lead. | [optional] 
+`company_id` | **string** | The company the lead is associated with. | [optional] 
+`lead_id` | **string** | The identifier of the lead. | [optional] 
+`lead_source` | **string** | The source of the lead. | [optional] 
+`first_name` | **string** | The first name of the lead. | [optional] 
+`last_name` | **string** | The last name of the lead. | [optional] 
+`description` | **string** | The description of the lead. | [optional] 
+`prefix` | **string** | The prefix of the lead. | [optional] 
+`title` | **string** | The job title of the lead. | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `status` | **string** |  | [optional] 
-`monetary_amount` | **number** |  | [optional] 
+`monetary_amount` | **number** | The monetary amount of the lead. | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`fax` | **string** |  | [optional] 
+`fax` | **string** | The fax number of the lead. | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `social_links` | [**Array&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 

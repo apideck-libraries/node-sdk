@@ -397,7 +397,7 @@ export interface Employee {
    */
   row_version?: string | null
   /**
-   *
+   * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof Employee
    */

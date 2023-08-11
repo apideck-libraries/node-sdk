@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`url` | **string** |  | 
-`id` | **string** |  | [optional] 
-`type` | **string** |  | [optional] 
+`url` | **string** | URL of the social link, e.g. https://www.twitter.com/apideck | 
+`id` | **string** | Unique identifier of the social link | [optional] 
+`type` | **string** | Type of the social link, e.g. twitter | [optional] 
 
 
 

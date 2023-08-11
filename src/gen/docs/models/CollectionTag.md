@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | 
-`name` | **string** |  | [optional] 
+`name` | **string** | The name of the tag. | [optional] 
 
 
 

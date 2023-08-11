@@ -20,35 +20,35 @@ import { exists } from '../runtime'
  */
 export interface PipelineStages {
   /**
-   *
+   * The unique identifier of the Pipeline Stage.
    * @type {string}
    * @memberof PipelineStages
    */
-  readonly id?: string
+  readonly id?: string | null
   /**
-   *
+   * The name of the Pipeline Stage.
    * @type {string}
    * @memberof PipelineStages
    */
-  name?: string
+  name?: string | null
   /**
-   *
+   * The value of the Pipeline Stage.
    * @type {string}
    * @memberof PipelineStages
    */
-  value?: string
+  value?: string | null
   /**
    * The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].
    * @type {number}
    * @memberof PipelineStages
    */
-  win_probability?: number
+  win_probability?: number | null
   /**
-   *
+   * The order in which the Pipeline Stage is displayed in the UI.
    * @type {number}
    * @memberof PipelineStages
    */
-  display_order?: number
+  display_order?: number | null
 }
 
 export function PipelineStagesFromJSON(json: any): PipelineStages {

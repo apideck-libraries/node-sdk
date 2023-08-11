@@ -28,85 +28,85 @@ import { Website, WebsiteFromJSON, WebsiteToJSON } from './Website'
  */
 export interface Contact {
   /**
-   *
+   * Full name of the contact.
    * @type {string}
    * @memberof Contact
    */
   name: string | null
   /**
-   *
+   * Unique identifier for the contact.
    * @type {string}
    * @memberof Contact
    */
   readonly id?: string
   /**
-   *
+   * The owner of the contact.
    * @type {string}
    * @memberof Contact
    */
   owner_id?: string | null
   /**
-   *
+   * The type of the contact.
    * @type {string}
    * @memberof Contact
    */
   type?: ContactType
   /**
-   *
+   * The company the contact is associated with.
    * @type {string}
    * @memberof Contact
    */
   company_id?: string | null
   /**
-   *
+   * The name of the company the contact is associated with.
    * @type {string}
    * @memberof Contact
    */
   company_name?: string | null
   /**
-   *
+   * The lead the contact is associated with.
    * @type {string}
    * @memberof Contact
    */
   lead_id?: string | null
   /**
-   *
+   * The first name of the contact.
    * @type {string}
    * @memberof Contact
    */
   first_name?: string | null
   /**
-   *
+   * The middle name of the contact.
    * @type {string}
    * @memberof Contact
    */
   middle_name?: string | null
   /**
-   *
+   * The last name of the contact.
    * @type {string}
    * @memberof Contact
    */
   last_name?: string | null
   /**
-   *
+   * The prefix of the contact.
    * @type {string}
    * @memberof Contact
    */
   prefix?: string | null
   /**
-   *
+   * The suffix of the contact.
    * @type {string}
    * @memberof Contact
    */
   suffix?: string | null
   /**
-   *
+   * The job title of the contact.
    * @type {string}
    * @memberof Contact
    */
   title?: string | null
   /**
-   *
+   * The department of the contact.
    * @type {string}
    * @memberof Contact
    */
@@ -118,13 +118,13 @@ export interface Contact {
    */
   language?: string | null
   /**
-   *
+   * The gender of the contact.
    * @type {string}
    * @memberof Contact
    */
   gender?: ContactGender
   /**
-   *
+   * The birthday of the contact.
    * @type {string}
    * @memberof Contact
    */
@@ -142,37 +142,37 @@ export interface Contact {
    */
   photo_url?: string | null
   /**
-   *
+   * The lead source of the contact.
    * @type {string}
    * @memberof Contact
    */
   lead_source?: string | null
   /**
-   *
+   * The fax number of the contact.
    * @type {string}
    * @memberof Contact
    */
   fax?: string | null
   /**
-   *
+   * The description of the contact.
    * @type {string}
    * @memberof Contact
    */
   description?: string | null
   /**
-   *
+   * The current balance of the contact.
    * @type {number}
    * @memberof Contact
    */
   current_balance?: number | null
   /**
-   *
+   * The status of the contact.
    * @type {string}
    * @memberof Contact
    */
   status?: string | null
   /**
-   *
+   * The active status of the contact.
    * @type {boolean}
    * @memberof Contact
    */
@@ -226,31 +226,31 @@ export interface Contact {
    */
   tags?: Tags | null
   /**
-   *
+   * The first call date of the contact.
    * @type {Date}
    * @memberof Contact
    */
   readonly first_call_at?: Date | null
   /**
-   *
+   * The first email date of the contact.
    * @type {Date}
    * @memberof Contact
    */
   readonly first_email_at?: Date | null
   /**
-   *
+   * The last activity date of the contact.
    * @type {Date}
    * @memberof Contact
    */
   readonly last_activity_at?: Date | null
   /**
-   *
+   * The last update date of the contact.
    * @type {Date}
    * @memberof Contact
    */
   readonly updated_at?: Date | null
   /**
-   *
+   * The creation date of the contact.
    * @type {Date}
    * @memberof Contact
    */

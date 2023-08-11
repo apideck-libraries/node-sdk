@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`url` | **string** |  | 
-`id` | **string** |  | [optional] 
-`type` | **string** |  | [optional] 
+`url` | **string** | The website URL | 
+`id` | **string** | Unique identifier for the website | [optional] 
+`type` | **string** | The type of website | [optional] 
 
 
 
