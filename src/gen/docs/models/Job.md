@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 `tags` | [**Tags**](Tags.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`deleted` | **boolean** |  | [optional] 
+`deleted` | **boolean** | Flag to indicate if the object is deleted. | [optional] 
 `owner_id` | **string** |  | [optional] 
 `published_at` | **Date** |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 

@@ -909,7 +909,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1191,7 +1191,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1472,7 +1472,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -1623,7 +1623,6 @@ describe('HrisApi', () => {
             sub_type: 'full_time'
           },
           manager: {
-            id: '12345',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -1755,7 +1754,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],
@@ -1991,7 +1990,7 @@ describe('HrisApi', () => {
             social_links: [
               {
                 id: '12345',
-                url: 'https://www.twitter.com/apideck-io',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter'
               }
             ],
@@ -2291,7 +2290,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],
@@ -2415,7 +2414,6 @@ describe('HrisApi', () => {
             sub_type: 'full_time'
           },
           manager: {
-            id: '12345',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -2547,7 +2545,7 @@ describe('HrisApi', () => {
           social_links: [
             {
               id: '12345',
-              url: 'https://www.twitter.com/apideck-io',
+              url: 'https://www.twitter.com/apideck',
               type: 'twitter'
             }
           ],

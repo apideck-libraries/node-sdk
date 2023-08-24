@@ -816,10 +816,31 @@ describe('AccountingApi', () => {
           automated_sales_tax: true,
           sales_tax_enabled: true,
           default_sales_tax: {
-            id: '123456',
-            code: 'N-T',
+            id: '1234',
             name: 'GST on Purchases',
-            rate: 10
+            code: 'ABN',
+            description: 'Reduced rate GST Purchases',
+            effective_tax_rate: 10,
+            total_tax_rate: 10,
+            tax_payable_account_id: '123456',
+            tax_remitted_account_id: '123456',
+            components: [
+              {
+                id: '10',
+                name: 'GST',
+                rate: 10,
+                compound: true
+              }
+            ],
+            type: 'NONE',
+            report_tax_type: 'NONE',
+            original_tax_rate_id: '12345',
+            status: 'active',
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
           },
           currency: 'USD',
           language: 'EN',

@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`email` | **string** |  | 
-`id` | **string** |  | [optional] 
-`type` | **string** |  | [optional] 
+`email` | **string** | Email address | 
+`id` | **string** | Unique identifier for the email address | [optional] 
+`type` | **string** | Email type | [optional] 
 
 
 

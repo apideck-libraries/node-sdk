@@ -68,7 +68,7 @@ const params = {
     company_name: 'Spacex',
     owner_id: '54321',
     company_id: '2',
-    contact_id: '2',
+    lead_id: '2',
     lead_source: 'Cold Call',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -118,7 +118,7 @@ const params = {
     social_links: [
       {
         id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
+        url: 'https://www.twitter.com/apideck',
         type: 'twitter'
       }
     ],
@@ -436,7 +436,7 @@ const params = {
     company_name: 'Spacex',
     owner_id: '54321',
     company_id: '2',
-    contact_id: '2',
+    lead_id: '2',
     lead_source: 'Cold Call',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -486,7 +486,7 @@ const params = {
     social_links: [
       {
         id: '12345',
-        url: 'https://www.twitter.com/apideck-io',
+        url: 'https://www.twitter.com/apideck',
         type: 'twitter'
       }
     ],

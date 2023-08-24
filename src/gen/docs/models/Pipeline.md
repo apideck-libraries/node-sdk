@@ -5,14 +5,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`name` | **string** |  | 
-`id` | **string** |  | [optional] 
+`name` | **string** | The name of the Pipeline. | 
+`id` | **string** | The unique identifier of the Pipeline. | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
-`archived` | **boolean** |  | [optional] 
-`active` | **boolean** |  | [optional] 
-`display_order` | **number** |  | [optional] 
-`win_probability_enabled` | **boolean** |  | [optional] 
-`stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
+`archived` | **boolean** | Whether the Pipeline is archived or not. | [optional] 
+`active` | **boolean** | Whether the Pipeline is active or not. | [optional] 
+`display_order` | **number** | The order in which the Pipeline is displayed in the UI. | [optional] 
+`win_probability_enabled` | **boolean** | Whether the Pipeline has win probability enabled or not. | [optional] 
+`stages` | [**Array&lt;PipelineStages&gt;**](PipelineStages.md) | The Pipeline Stages. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 

@@ -5,19 +5,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** |  | [optional] 
-`title` | **string** |  | [optional] 
-`content` | **string** |  | [optional] 
-`owner_id` | **string** |  | [optional] 
-`contact_id` | **string** |  | [optional] 
-`company_id` | **string** |  | [optional] 
-`opportunity_id` | **string** |  | [optional] 
-`lead_id` | **string** |  | [optional] 
-`active` | **boolean** |  | [optional] 
-`updated_by` | **string** |  | [optional] 
-`created_by` | **string** |  | [optional] 
-`updated_at` | **string** |  | [optional] 
-`created_at` | **string** |  | [optional] 
+`id` | **string** | The unique identifier of the note | [optional] 
+`title` | **string** | The title of the note | [optional] 
+`content` | **string** | The content of the note. | [optional] 
+`owner_id` | **string** | The user that owns the note. | [optional] 
+`contact_id` | **string** | The contact that is related to the note. | [optional] 
+`company_id` | **string** | The company that is related to the note. | [optional] 
+`opportunity_id` | **string** | The opportunity that is related to the note. | [optional] 
+`lead_id` | **string** | The lead that is related to the note. | [optional] 
+`active` | **boolean** | Whether the Note is active or not. | [optional] 
+`updated_by` | **string** | The user that last updated the note. | [optional] 
+`created_by` | **string** | The user that created the note. | [optional] 
+`updated_at` | **string** | The timestamp when the note was last updated | [optional] 
+`created_at` | **string** | The timestamp when the note was created | [optional] 
 
 
 

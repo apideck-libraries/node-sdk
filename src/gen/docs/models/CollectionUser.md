@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | [optional] 
-`name` | **string** |  | [optional] 
-`first_name` | **string** |  | [optional] 
-`last_name` | **string** |  | [optional] 
-`email` | **string** |  | [optional] 
+`name` | **string** | Full name of the user | [optional] 
+`first_name` | **string** | First name of the user | [optional] 
+`last_name` | **string** | Last name of the user | [optional] 
+`email` | **string** | Email address of the user | [optional] 
 `photo_url` | **string** | The URL of the photo of a person. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
