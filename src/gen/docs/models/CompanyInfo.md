@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `sales_tax_number` | **string** |  | [optional] 
 `automated_sales_tax` | **boolean** | Whether sales tax is calculated automatically for the company | [optional] 
 `sales_tax_enabled` | **boolean** | Whether sales tax is enabled for the company | [optional] 
-`default_sales_tax` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+`default_sales_tax` | [**TaxRate**](TaxRate.md) |  | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `fiscal_year_start_month` | **string** | The start month of fiscal year. | [optional] 
@@ -82,7 +82,7 @@ Name | Type | Description | Notes
 
 
 
-* [`LinkedTaxRate`](LinkedTaxRate.md)
+* [`TaxRate`](TaxRate.md)
 * [`Currency`](Currency.md)
 
 
