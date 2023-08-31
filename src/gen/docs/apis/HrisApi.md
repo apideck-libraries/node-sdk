@@ -1162,6 +1162,7 @@ const params = {
       sub_type: 'full_time'
     },
     manager: {
+      id: '12345',
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',
@@ -1653,6 +1654,7 @@ const params = {
       sub_type: 'full_time'
     },
     manager: {
+      id: '12345',
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',

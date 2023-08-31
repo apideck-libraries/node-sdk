@@ -30,7 +30,7 @@ export interface EmployeeManager {
    * @type {string}
    * @memberof EmployeeManager
    */
-  readonly id?: string | null
+  id?: string | null
   /**
    * The name of the manager, often a combination of their first and last names.
    * @type {string}
@@ -94,6 +94,7 @@ export function EmployeeManagerToJSON(value?: EmployeeManager | null): any {
     return null
   }
   return {
+    id: value.id,
     name: value.name,
     first_name: value.first_name,
     last_name: value.last_name,
