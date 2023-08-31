@@ -187,6 +187,12 @@ export interface PurchaseOrder {
    */
   channel?: string | null
   /**
+   * Message for the supplier. This text appears on the Purchase Order.
+   * @type {string}
+   * @memberof PurchaseOrder
+   */
+  memo?: string | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof PurchaseOrder
@@ -288,6 +294,7 @@ export function PurchaseOrderFromJSONTyped(json: any, ignoreDiscriminator: boole
     payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
     channel: !exists(json, 'channel') ? undefined : json['channel'],
+    memo: !exists(json, 'memo') ? undefined : json['memo'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -357,6 +364,7 @@ export function PurchaseOrderToJSON(value?: PurchaseOrder | null): any {
     payment_method: value.payment_method,
     tax_code: value.tax_code,
     channel: value.channel,
+    memo: value.memo,
     row_version: value.row_version
   }
 }

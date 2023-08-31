@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 `payment_method` | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
+`memo` | **string** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -82,6 +83,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
+
 
 
 
