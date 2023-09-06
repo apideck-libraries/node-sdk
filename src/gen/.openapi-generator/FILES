@@ -242,6 +242,7 @@ Employee.md
 EmployeeCompensation.md
 EmployeeEmploymentRole.md
 EmployeeJob.md
+EmployeeList.md
 EmployeeManager.md
 EmployeePayroll.md
 EmployeePayrolls.md
@@ -864,6 +865,7 @@ models/Employee.ts
 models/EmployeeCompensation.ts
 models/EmployeeEmploymentRole.ts
 models/EmployeeJob.ts
+models/EmployeeList.ts
 models/EmployeeManager.ts
 models/EmployeePayroll.ts
 models/EmployeePayrolls.ts

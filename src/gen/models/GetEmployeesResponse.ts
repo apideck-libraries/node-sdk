@@ -13,7 +13,7 @@
  */
 
 import { exists } from '../runtime'
-import { Employee, EmployeeFromJSON, EmployeeToJSON } from './Employee'
+import { EmployeeList, EmployeeListFromJSON, EmployeeListToJSON } from './EmployeeList'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 
@@ -55,10 +55,10 @@ export interface GetEmployeesResponse {
   operation: string
   /**
    *
-   * @type {Array<Employee>}
+   * @type {Array<EmployeeList>}
    * @memberof GetEmployeesResponse
    */
-  data: Array<Employee>
+  data: Array<EmployeeList>
   /**
    *
    * @type {Meta}
@@ -90,7 +90,7 @@ export function GetEmployeesResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: (json['data'] as Array<any>).map(EmployeeFromJSON),
+    data: (json['data'] as Array<any>).map(EmployeeListFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -109,7 +109,7 @@ export function GetEmployeesResponseToJSON(value?: GetEmployeesResponse | null):
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: (value.data as Array<any>).map(EmployeeToJSON),
+    data: (value.data as Array<any>).map(EmployeeListToJSON),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }
