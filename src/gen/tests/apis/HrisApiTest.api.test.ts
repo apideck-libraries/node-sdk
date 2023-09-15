@@ -53,6 +53,7 @@ describe('HrisApi', () => {
           subdomain: 'company',
           status: 'active',
           company_number: '123456-AB',
+          currency: 'USD',
           addresses: [
             {
               id: '123',
@@ -143,6 +144,7 @@ describe('HrisApi', () => {
             subdomain: 'company',
             status: 'active',
             company_number: '123456-AB',
+            currency: 'USD',
             addresses: [
               {
                 id: '123',
@@ -298,6 +300,7 @@ describe('HrisApi', () => {
           subdomain: 'company',
           status: 'active',
           company_number: '123456-AB',
+          currency: 'USD',
           addresses: [
             {
               id: '123',
@@ -412,6 +415,7 @@ describe('HrisApi', () => {
           subdomain: 'company',
           status: 'active',
           company_number: '123456-AB',
+          currency: 'USD',
           addresses: [
             {
               id: '123',

@@ -89,6 +89,7 @@ const params = {
     subdomain: 'company',
     status: 'active',
     company_number: '123456-AB',
+    currency: 'USD',
     addresses: [
       {
         id: '123',
@@ -428,6 +429,7 @@ const params = {
     subdomain: 'company',
     status: 'active',
     company_number: '123456-AB',
+    currency: 'USD',
     addresses: [
       {
         id: '123',
