@@ -42,7 +42,7 @@ export interface Bill {
    */
   readonly downstream_id?: string | null
   /**
-   *
+   * Reference to supplier bill number
    * @type {string}
    * @memberof Bill
    */
