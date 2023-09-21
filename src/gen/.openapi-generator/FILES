@@ -245,7 +245,6 @@ EmployeeJob.md
 EmployeeList.md
 EmployeeManager.md
 EmployeePayroll.md
-EmployeePayrolls.md
 EmployeeSchedules.md
 EmployeesFilter.md
 EmployeesSort.md
@@ -868,7 +867,6 @@ models/EmployeeJob.ts
 models/EmployeeList.ts
 models/EmployeeManager.ts
 models/EmployeePayroll.ts
-models/EmployeePayrolls.ts
 models/EmployeeSchedules.ts
 models/EmployeesFilter.ts
 models/EmployeesSort.ts

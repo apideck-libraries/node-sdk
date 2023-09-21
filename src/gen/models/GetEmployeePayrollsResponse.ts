@@ -12,11 +12,7 @@
  * Do not edit the class manually.
  */
 
-import {
-  EmployeePayrolls,
-  EmployeePayrollsFromJSON,
-  EmployeePayrollsToJSON
-} from './EmployeePayrolls'
+import { EmployeePayroll, EmployeePayrollFromJSON, EmployeePayrollToJSON } from './EmployeePayroll'
 
 /**
  *
@@ -56,10 +52,10 @@ export interface GetEmployeePayrollsResponse {
   operation: string
   /**
    *
-   * @type {EmployeePayrolls}
+   * @type {Array<EmployeePayroll>}
    * @memberof GetEmployeePayrollsResponse
    */
-  data: EmployeePayrolls
+  data: Array<EmployeePayroll>
 }
 
 export function GetEmployeePayrollsResponseFromJSON(json: any): GetEmployeePayrollsResponse {
@@ -79,7 +75,7 @@ export function GetEmployeePayrollsResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: EmployeePayrollsFromJSON(json['data'])
+    data: (json['data'] as Array<any>).map(EmployeePayrollFromJSON)
   }
 }
 
@@ -96,6 +92,6 @@ export function GetEmployeePayrollsResponseToJSON(value?: GetEmployeePayrollsRes
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: EmployeePayrollsToJSON(value.data)
+    data: (value.data as Array<any>).map(EmployeePayrollToJSON)
   }
 }

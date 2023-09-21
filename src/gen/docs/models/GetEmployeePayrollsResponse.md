@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `service` | **string** | Apideck ID of service provider | 
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
-`data` | [**EmployeePayrolls**](EmployeePayrolls.md) |  | 
+`data` | [**Array&lt;EmployeePayroll&gt;**](EmployeePayroll.md) |  | 
 
 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 
 
-* [`EmployeePayrolls`](EmployeePayrolls.md)
+* [`EmployeePayroll`](EmployeePayroll.md)
 
 ---
 
