@@ -1163,6 +1163,7 @@ const params = {
       type: 'contractor',
       sub_type: 'full_time'
     },
+    ethnicity: 'African American',
     manager: {
       id: '12345',
       name: 'Elon Musk',
@@ -1655,6 +1656,7 @@ const params = {
       type: 'contractor',
       sub_type: 'full_time'
     },
+    ethnicity: 'African American',
     manager: {
       id: '12345',
       name: 'Elon Musk',

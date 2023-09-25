@@ -199,6 +199,12 @@ export interface Employee {
    */
   employment_role?: EmployeeEmploymentRole
   /**
+   * The ethnicity of the employee
+   * @type {string}
+   * @memberof Employee
+   */
+  ethnicity?: string | null
+  /**
    *
    * @type {EmployeeManager}
    * @memberof Employee
@@ -481,6 +487,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     employment_role: !exists(json, 'employment_role')
       ? undefined
       : EmployeeEmploymentRoleFromJSON(json['employment_role']),
+    ethnicity: !exists(json, 'ethnicity') ? undefined : json['ethnicity'],
     manager: !exists(json, 'manager') ? undefined : EmployeeManagerFromJSON(json['manager']),
     direct_reports: !exists(json, 'direct_reports') ? undefined : json['direct_reports'],
     social_security_number: !exists(json, 'social_security_number')
@@ -596,6 +603,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     employee_number: value.employee_number,
     employment_status: EmploymentStatusToJSON(value.employment_status),
     employment_role: EmployeeEmploymentRoleToJSON(value.employment_role),
+    ethnicity: value.ethnicity,
     manager: EmployeeManagerToJSON(value.manager),
     direct_reports: value.direct_reports,
     social_security_number: value.social_security_number,

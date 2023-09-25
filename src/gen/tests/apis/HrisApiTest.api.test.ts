@@ -934,6 +934,7 @@ describe('HrisApi', () => {
               type: 'contractor',
               sub_type: 'full_time'
             },
+            ethnicity: 'African American',
             manager: {
               id: '12345',
               name: 'Elon Musk',
@@ -1219,6 +1220,7 @@ describe('HrisApi', () => {
             type: 'contractor',
             sub_type: 'full_time'
           },
+          ethnicity: 'African American',
           manager: {
             id: '12345',
             name: 'Elon Musk',
@@ -1549,6 +1551,7 @@ describe('HrisApi', () => {
             type: 'contractor',
             sub_type: 'full_time'
           },
+          ethnicity: 'African American',
           manager: {
             id: '12345',
             name: 'Elon Musk',
@@ -1807,6 +1810,7 @@ describe('HrisApi', () => {
             type: 'contractor',
             sub_type: 'full_time'
           },
+          ethnicity: 'African American',
           manager: {
             id: '12345',
             name: 'Elon Musk',
