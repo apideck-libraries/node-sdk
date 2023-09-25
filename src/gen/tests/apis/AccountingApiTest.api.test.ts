@@ -4924,6 +4924,7 @@ describe('AccountingApi', () => {
           payment_method: 'cash',
           tax_code: '1234',
           channel: 'email',
+          memo: 'Thank you for the partnership and have a great day!',
           row_version: '1-12345'
         }
       } as any
@@ -5096,6 +5097,7 @@ describe('AccountingApi', () => {
             payment_method: 'cash',
             tax_code: '1234',
             channel: 'email',
+            memo: 'Thank you for the partnership and have a great day!',
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -5332,6 +5334,7 @@ describe('AccountingApi', () => {
           payment_method: 'cash',
           tax_code: '1234',
           channel: 'email',
+          memo: 'Thank you for the partnership and have a great day!',
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -5515,6 +5518,7 @@ describe('AccountingApi', () => {
           payment_method: 'cash',
           tax_code: '1234',
           channel: 'email',
+          memo: 'Thank you for the partnership and have a great day!',
           row_version: '1-12345'
         }
       } as any

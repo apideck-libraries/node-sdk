@@ -89,6 +89,7 @@ const params = {
     subdomain: 'company',
     status: 'active',
     company_number: '123456-AB',
+    currency: 'USD',
     addresses: [
       {
         id: '123',
@@ -428,6 +429,7 @@ const params = {
     subdomain: 'company',
     status: 'active',
     company_number: '123456-AB',
+    currency: 'USD',
     addresses: [
       {
         id: '123',
@@ -1161,7 +1163,9 @@ const params = {
       type: 'contractor',
       sub_type: 'full_time'
     },
+    ethnicity: 'African American',
     manager: {
+      id: '12345',
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',
@@ -1652,7 +1656,9 @@ const params = {
       type: 'contractor',
       sub_type: 'full_time'
     },
+    ethnicity: 'African American',
     manager: {
+      id: '12345',
       name: 'Elon Musk',
       first_name: 'Elon',
       last_name: 'Musk',

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `subdomain` | **string** |  | [optional] 
 `status` | **string** |  | [optional] 
 `company_number` | **string** | An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company. | [optional] 
+`currency` | [**Currency**](Currency.md) |  | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
@@ -48,6 +49,7 @@ Name | Type | Description | Notes
 
 
 
+* [`Currency`](Currency.md)
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
 * [`Email`](Email.md)

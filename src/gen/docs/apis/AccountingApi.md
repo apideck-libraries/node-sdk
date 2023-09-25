@@ -4492,6 +4492,7 @@ const params = {
     payment_method: 'cash',
     tax_code: '1234',
     channel: 'email',
+    memo: 'Thank you for the partnership and have a great day!',
     row_version: '1-12345'
   }
 }
@@ -4898,6 +4899,7 @@ const params = {
     payment_method: 'cash',
     tax_code: '1234',
     channel: 'email',
+    memo: 'Thank you for the partnership and have a great day!',
     row_version: '1-12345'
   }
 }
