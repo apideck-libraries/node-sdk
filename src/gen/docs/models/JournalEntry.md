@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `journal_symbol` | **string** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
 `tax_type` | **string** | The specific category of tax associated with a transaction like sales or purchase | [optional] 
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
+`number` | **string** | Journal entry number. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`JournalEntryLineItem`](JournalEntryLineItem.md)
+
 
 
 

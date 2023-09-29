@@ -87,6 +87,12 @@ export interface JournalEntry {
    */
   tax_code?: string | null
   /**
+   * Journal entry number.
+   * @type {string}
+   * @memberof JournalEntry
+   */
+  number?: string | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof JournalEntry
@@ -139,6 +145,7 @@ export function JournalEntryFromJSONTyped(json: any, ignoreDiscriminator: boolea
     journal_symbol: !exists(json, 'journal_symbol') ? undefined : json['journal_symbol'],
     tax_type: !exists(json, 'tax_type') ? undefined : json['tax_type'],
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
+    number: !exists(json, 'number') ? undefined : json['number'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -175,6 +182,7 @@ export function JournalEntryToJSON(value?: JournalEntry | null): any {
     journal_symbol: value.journal_symbol,
     tax_type: value.tax_type,
     tax_code: value.tax_code,
+    number: value.number,
     row_version: value.row_version
   }
 }
