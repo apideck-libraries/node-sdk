@@ -3397,6 +3397,7 @@ describe('AccountingApi', () => {
           journal_symbol: 'IND',
           tax_type: 'sales',
           tax_code: '1234',
+          number: 'OIT00546',
           row_version: '1-12345'
         }
       } as any
@@ -3494,6 +3495,7 @@ describe('AccountingApi', () => {
             journal_symbol: 'IND',
             tax_type: 'sales',
             tax_code: '1234',
+            number: 'OIT00546',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -3655,6 +3657,7 @@ describe('AccountingApi', () => {
           journal_symbol: 'IND',
           tax_type: 'sales',
           tax_code: '1234',
+          number: 'OIT00546',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -3763,6 +3766,7 @@ describe('AccountingApi', () => {
           journal_symbol: 'IND',
           tax_type: 'sales',
           tax_code: '1234',
+          number: 'OIT00546',
           row_version: '1-12345'
         }
       } as any

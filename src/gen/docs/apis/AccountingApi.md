@@ -2981,6 +2981,7 @@ const params = {
     journal_symbol: 'IND',
     tax_type: 'sales',
     tax_code: '1234',
+    number: 'OIT00546',
     row_version: '1-12345'
   }
 }
@@ -3313,6 +3314,7 @@ const params = {
     journal_symbol: 'IND',
     tax_type: 'sales',
     tax_code: '1234',
+    number: 'OIT00546',
     row_version: '1-12345'
   }
 }
