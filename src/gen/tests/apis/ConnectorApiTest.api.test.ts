@@ -334,7 +334,7 @@ describe('ConnectorApi', () => {
       const { connector } = apideck
       const params = {
         id: 'id_example',
-        docId: 'doc_id_example'
+        docId: 'application_owner+oauth_credentials'
       } as any
       const current = await connector.connectorDocsOne(params)
 
@@ -523,6 +523,9 @@ describe('ConnectorApi', () => {
                 resources: {}
               }
             },
+            schema_support: {
+              supported: true
+            },
             docs: [
               {
                 id: '12345',
@@ -680,6 +683,9 @@ describe('ConnectorApi', () => {
               },
               resources: {}
             }
+          },
+          schema_support: {
+            supported: true
           },
           docs: [
             {

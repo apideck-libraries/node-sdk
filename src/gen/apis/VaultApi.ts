@@ -37,6 +37,8 @@ import {
   GetConsumerResponseFromJSON,
   GetConsumersResponse,
   GetConsumersResponseFromJSON,
+  GetCustomFieldsResponse,
+  GetCustomFieldsResponseFromJSON,
   GetLogsResponse,
   GetLogsResponseFromJSON,
   LogsFilter,
@@ -136,6 +138,14 @@ export interface VaultApiConsumersOneRequest {
 export interface VaultApiConsumersUpdateRequest {
   consumerId: string
   consumer: UpdateConsumerRequest
+  appId?: string
+}
+
+export interface VaultApiCustomFieldsAllRequest {
+  unifiedApi: string
+  serviceId: string
+  resource: string
+  consumerId?: string
   appId?: string
 }
 
@@ -1030,6 +1040,81 @@ export class VaultApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<UpdateConsumerResponse> {
     const response = await this.consumersUpdateRaw(requestParameters, initOverrides)
+    return await response.value()
+  }
+
+  /**
+   * This endpoint returns an custom fields on a connection resource.
+   * Get resource custom fields
+   */
+  async customFieldsAllRaw(
+    requestParameters: VaultApiCustomFieldsAllRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GetCustomFieldsResponse>> {
+    if (requestParameters.unifiedApi === null || requestParameters.unifiedApi === undefined) {
+      throw new runtime.RequiredError(
+        'unifiedApi',
+        'Required parameter requestParameters.unifiedApi was null or undefined when calling customFieldsAll.'
+      )
+    }
+
+    if (requestParameters.serviceId === null || requestParameters.serviceId === undefined) {
+      throw new runtime.RequiredError(
+        'serviceId',
+        'Required parameter requestParameters.serviceId was null or undefined when calling customFieldsAll.'
+      )
+    }
+
+    if (requestParameters.resource === null || requestParameters.resource === undefined) {
+      throw new runtime.RequiredError(
+        'resource',
+        'Required parameter requestParameters.resource was null or undefined when calling customFieldsAll.'
+      )
+    }
+
+    const queryParameters: any = {}
+
+    const headerParameters: runtime.HTTPHeaders = {}
+
+    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
+      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
+    }
+
+    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
+      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/vault/connections/{unified_api}/{service_id}/{resource}/custom-fields`
+          .replace(`{${'unified_api'}}`, encodeURIComponent(String(requestParameters.unifiedApi)))
+          .replace(`{${'service_id'}}`, encodeURIComponent(String(requestParameters.serviceId)))
+          .replace(`{${'resource'}}`, encodeURIComponent(String(requestParameters.resource))),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters
+      },
+      initOverrides
+    )
+
+    return new runtime.JSONApiResponse(response, jsonValue =>
+      GetCustomFieldsResponseFromJSON(jsonValue)
+    )
+  }
+
+  /**
+   * This endpoint returns an custom fields on a connection resource.
+   * Get resource custom fields
+   */
+  async customFieldsAll(
+    requestParameters: VaultApiCustomFieldsAllRequest,
+    initOverrides?: RequestInit
+  ): Promise<GetCustomFieldsResponse> {
+    const response = await this.customFieldsAllRaw(requestParameters, initOverrides)
     return await response.value()
   }
 

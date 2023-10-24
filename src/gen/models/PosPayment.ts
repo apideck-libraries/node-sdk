@@ -210,6 +210,12 @@ export interface PosPayment {
    */
   service_charges?: ServiceCharges
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof PosPayment
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof PosPayment
@@ -311,6 +317,7 @@ export function PosPaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     service_charges: !exists(json, 'service_charges')
       ? undefined
       : ServiceChargesFromJSON(json['service_charges']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -361,6 +368,7 @@ export function PosPaymentToJSON(value?: PosPayment | null): any {
     bank_account: PosBankAccountToJSON(value.bank_account),
     wallet: WalletDetailsToJSON(value.wallet),
     external_details: PosPaymentExternalDetailsToJSON(value.external_details),
-    service_charges: ServiceChargesToJSON(value.service_charges)
+    service_charges: ServiceChargesToJSON(value.service_charges),
+    custom_mappings: value.custom_mappings
   }
 }

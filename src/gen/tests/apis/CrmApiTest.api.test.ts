@@ -134,7 +134,8 @@ describe('CrmApi', () => {
               is_organizer: true,
               status: 'accepted'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.activitiesAdd(params)
@@ -261,6 +262,7 @@ describe('CrmApi', () => {
                 created_at: '2017-08-12T20:43:21.291Z'
               }
             ],
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -451,6 +453,7 @@ describe('CrmApi', () => {
               created_at: '2017-08-12T20:43:21.291Z'
             }
           ],
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -592,7 +595,8 @@ describe('CrmApi', () => {
               is_organizer: true,
               status: 'accepted'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.activitiesUpdate(params)
@@ -743,7 +747,8 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12'
+          birthday: '2000-08-12',
+          custom_mappings: {}
         }
       } as any
       const current = await crm.companiesAdd(params)
@@ -890,6 +895,7 @@ describe('CrmApi', () => {
             deleted: false,
             salutation: 'Mr',
             birthday: '2000-08-12',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1100,6 +1106,7 @@ describe('CrmApi', () => {
           deleted: false,
           salutation: 'Mr',
           birthday: '2000-08-12',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1264,7 +1271,8 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12'
+          birthday: '2000-08-12',
+          custom_mappings: {}
         }
       } as any
       const current = await crm.companiesUpdate(params)
@@ -1398,7 +1406,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.contactsAdd(params)
@@ -1527,6 +1536,7 @@ describe('CrmApi', () => {
             first_call_at: '2020-09-30T07:43:32.000Z',
             first_email_at: '2020-09-30T07:43:32.000Z',
             last_activity_at: '2020-09-30T07:43:32.000Z',
+            custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
             created_at: '2017-08-12T20:43:21.291Z'
           }
@@ -1717,6 +1727,7 @@ describe('CrmApi', () => {
           first_call_at: '2020-09-30T07:43:32.000Z',
           first_email_at: '2020-09-30T07:43:32.000Z',
           last_activity_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
           created_at: '2017-08-12T20:43:21.291Z'
         }
@@ -1862,7 +1873,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.contactsUpdate(params)
@@ -1987,7 +1999,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.leadsAdd(params)
@@ -2104,6 +2117,7 @@ describe('CrmApi', () => {
               }
             ],
             tags: ['New'],
+            custom_mappings: {},
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z'
           }
@@ -2282,6 +2296,7 @@ describe('CrmApi', () => {
             }
           ],
           tags: ['New'],
+          custom_mappings: {},
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
         }
@@ -2418,7 +2433,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.leadsUpdate(params)
@@ -2467,7 +2483,8 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true
+          active: true,
+          custom_mappings: {}
         }
       } as any
       const current = await crm.notesAdd(params)
@@ -2508,6 +2525,7 @@ describe('CrmApi', () => {
             opportunity_id: '12345',
             lead_id: '12345',
             active: true,
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -2612,6 +2630,7 @@ describe('CrmApi', () => {
           opportunity_id: '12345',
           lead_id: '12345',
           active: true,
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -2674,7 +2693,8 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true
+          active: true,
+          custom_mappings: {}
         }
       } as any
       const current = await crm.notesUpdate(params)
@@ -2751,7 +2771,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {}
         }
       } as any
       const current = await crm.opportunitiesAdd(params)
@@ -2827,6 +2848,7 @@ describe('CrmApi', () => {
             date_stage_changed: '2020-09-30T00:00:00.000Z',
             date_last_contacted: '2020-09-30T00:00:00.000Z',
             date_lead_created: '2020-09-30T00:00:00.000Z',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -2966,6 +2988,7 @@ describe('CrmApi', () => {
           date_stage_changed: '2020-09-30T00:00:00.000Z',
           date_last_contacted: '2020-09-30T00:00:00.000Z',
           date_lead_created: '2020-09-30T00:00:00.000Z',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -3056,7 +3079,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {}
         }
       } as any
       const current = await crm.opportunitiesUpdate(params)
@@ -3436,7 +3460,8 @@ describe('CrmApi', () => {
               email: 'elon@musk.com',
               type: 'primary'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.usersAdd(params)
@@ -3528,6 +3553,7 @@ describe('CrmApi', () => {
                 type: 'primary'
               }
             ],
+            custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
             created_at: '2017-08-12T20:43:21.291Z'
           }
@@ -3681,6 +3707,7 @@ describe('CrmApi', () => {
               type: 'primary'
             }
           ],
+          custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
           created_at: '2017-08-12T20:43:21.291Z'
         }
@@ -3792,7 +3819,8 @@ describe('CrmApi', () => {
               email: 'elon@musk.com',
               type: 'primary'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await crm.usersUpdate(params)

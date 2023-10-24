@@ -93,6 +93,12 @@ export interface JournalEntry {
    */
   number?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof JournalEntry
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof JournalEntry
@@ -146,6 +152,7 @@ export function JournalEntryFromJSONTyped(json: any, ignoreDiscriminator: boolea
     tax_type: !exists(json, 'tax_type') ? undefined : json['tax_type'],
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
     number: !exists(json, 'number') ? undefined : json['number'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -183,6 +190,7 @@ export function JournalEntryToJSON(value?: JournalEntry | null): any {
     tax_type: value.tax_type,
     tax_code: value.tax_code,
     number: value.number,
+    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

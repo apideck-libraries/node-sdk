@@ -56,6 +56,12 @@ export interface CollectionUser {
    */
   photo_url?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof CollectionUser
+   */
+  custom_mappings?: object | null
+  /**
    * The date and time when the object was last updated.
    * @type {Date}
    * @memberof CollectionUser
@@ -87,6 +93,7 @@ export function CollectionUserFromJSONTyped(
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     email: !exists(json, 'email') ? undefined : json['email'],
     photo_url: !exists(json, 'photo_url') ? undefined : json['photo_url'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
@@ -112,6 +119,7 @@ export function CollectionUserToJSON(value?: CollectionUser | null): any {
     first_name: value.first_name,
     last_name: value.last_name,
     email: value.email,
-    photo_url: value.photo_url
+    photo_url: value.photo_url,
+    custom_mappings: value.custom_mappings
   }
 }

@@ -32,6 +32,12 @@ export interface CollectionTicketComment {
    */
   body?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof CollectionTicketComment
+   */
+  custom_mappings?: object | null
+  /**
    * The user who created the object.
    * @type {string}
    * @memberof CollectionTicketComment
@@ -65,6 +71,7 @@ export function CollectionTicketCommentFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     body: !exists(json, 'body') ? undefined : json['body'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
       ? undefined
@@ -87,6 +94,7 @@ export function CollectionTicketCommentToJSON(value?: CollectionTicketComment | 
     return null
   }
   return {
-    body: value.body
+    body: value.body,
+    custom_mappings: value.custom_mappings
   }
 }

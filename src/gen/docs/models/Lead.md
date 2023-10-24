@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_at` | **string** | Date updated in ISO 8601 format | [optional] 
 `created_at` | **string** | Date created in ISO 8601 format | [optional] 
 
@@ -61,6 +62,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
 
 
 

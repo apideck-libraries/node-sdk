@@ -20,6 +20,7 @@ import {
   ConnectionConfigurationToJSON
 } from './ConnectionConfiguration'
 import { ConnectionState, ConnectionStateFromJSON, ConnectionStateToJSON } from './ConnectionState'
+import { CustomMapping, CustomMappingFromJSON, CustomMappingToJSON } from './CustomMapping'
 import { FormField, FormFieldFromJSON } from './FormField'
 import {
   IntegrationState,
@@ -180,6 +181,12 @@ export interface Connection {
    */
   readonly validation_support?: boolean
   /**
+   *
+   * @type {boolean}
+   * @memberof Connection
+   */
+  readonly schema_support?: boolean
+  /**
    * List of settings that are required to be configured on integration before authorization can occur
    * @type {Array<string>}
    * @memberof Connection
@@ -203,6 +210,12 @@ export interface Connection {
    * @memberof Connection
    */
   readonly created_at?: number
+  /**
+   * List of custom mappings configured for this connection
+   * @type {Array<CustomMapping>}
+   * @memberof Connection
+   */
+  custom_mappings?: Array<CustomMapping>
   /**
    *
    * @type {number}
@@ -270,6 +283,7 @@ export function ConnectionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     validation_support: !exists(json, 'validation_support')
       ? undefined
       : json['validation_support'],
+    schema_support: !exists(json, 'schema_support') ? undefined : json['schema_support'],
     settings_required_for_authorization: !exists(json, 'settings_required_for_authorization')
       ? undefined
       : json['settings_required_for_authorization'],
@@ -278,6 +292,9 @@ export function ConnectionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
       : (json['subscriptions'] as Array<any>).map(WebhookSubscriptionFromJSON),
     has_guide: !exists(json, 'has_guide') ? undefined : json['has_guide'],
     created_at: !exists(json, 'created_at') ? undefined : json['created_at'],
+    custom_mappings: !exists(json, 'custom_mappings')
+      ? undefined
+      : (json['custom_mappings'] as Array<any>).map(CustomMappingFromJSON),
     updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at']
   }
 }
@@ -300,6 +317,10 @@ export function ConnectionToJSON(value?: Connection | null): any {
     configuration:
       value._configuration === undefined
         ? undefined
-        : (value._configuration as Array<any>).map(ConnectionConfigurationToJSON)
+        : (value._configuration as Array<any>).map(ConnectionConfigurationToJSON),
+    custom_mappings:
+      value.custom_mappings === undefined
+        ? undefined
+        : (value.custom_mappings as Array<any>).map(CustomMappingToJSON)
   }
 }

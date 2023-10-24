@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `last_name` | **string** | Last name of the user | [optional] 
 `email` | **string** | Email address of the user | [optional] 
 `photo_url` | **string** | The URL of the photo of a person. | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 

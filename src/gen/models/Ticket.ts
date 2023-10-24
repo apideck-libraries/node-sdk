@@ -112,6 +112,12 @@ export interface Ticket {
    * @memberof Ticket
    */
   tags?: Array<CollectionTag>
+  /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Ticket
+   */
+  custom_mappings?: object | null
 }
 
 /**
@@ -168,7 +174,8 @@ export function TicketFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ti
       : new Date(json['completed_at']),
     tags: !exists(json, 'tags')
       ? undefined
-      : (json['tags'] as Array<any>).map(CollectionTagFromJSON)
+      : (json['tags'] as Array<any>).map(CollectionTagFromJSON),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
 
@@ -196,6 +203,8 @@ export function TicketToJSON(value?: Ticket | null): any {
         : value.due_date === null
         ? null
         : new Date(value.due_date).toISOString(),
-    tags: value.tags === undefined ? undefined : (value.tags as Array<any>).map(CollectionTagToJSON)
+    tags:
+      value.tags === undefined ? undefined : (value.tags as Array<any>).map(CollectionTagToJSON),
+    custom_mappings: value.custom_mappings
   }
 }

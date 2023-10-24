@@ -256,6 +256,12 @@ export interface Order {
    */
   readonly voided_at?: Date
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Order
+   */
+  custom_mappings?: object | null
+  /**
    *
    * @type {string}
    * @memberof Order
@@ -400,6 +406,7 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
     source: !exists(json, 'source') ? undefined : json['source'],
     voided: !exists(json, 'voided') ? undefined : json['voided'],
     voided_at: !exists(json, 'voided_at') ? undefined : new Date(json['voided_at']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     version: !exists(json, 'version') ? undefined : json['version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -489,6 +496,7 @@ export function OrderToJSON(value?: Order | null): any {
         ? undefined
         : (value.tenders as Array<any>).map(OrderTendersToJSON),
     voided: value.voided,
+    custom_mappings: value.custom_mappings,
     version: value.version
   }
 }

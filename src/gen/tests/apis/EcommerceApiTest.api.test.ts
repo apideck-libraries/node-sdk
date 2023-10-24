@@ -81,6 +81,7 @@ describe('EcommerceApi', () => {
                 status: 'active'
               }
             ],
+            custom_mappings: {},
             created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
           }
@@ -177,6 +178,7 @@ describe('EcommerceApi', () => {
               status: 'active'
             }
           ],
+          custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }
@@ -307,6 +309,7 @@ describe('EcommerceApi', () => {
               }
             ],
             note: 'Special instructions for delivery',
+            custom_mappings: {},
             created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
           }
@@ -460,6 +463,7 @@ describe('EcommerceApi', () => {
             }
           ],
           note: 'Special instructions for delivery',
+          custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }
@@ -545,6 +549,7 @@ describe('EcommerceApi', () => {
                 name: 'Laptops'
               }
             ],
+            custom_mappings: {},
             created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
           }
@@ -652,6 +657,7 @@ describe('EcommerceApi', () => {
               name: 'Laptops'
             }
           ],
+          custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }
@@ -697,6 +703,7 @@ describe('EcommerceApi', () => {
           name: 'My Store',
           store_url: 'https://mybrand.com/shop',
           admin_url: 'https://mybrand.com/admin',
+          custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
         }

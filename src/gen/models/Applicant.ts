@@ -258,6 +258,12 @@ export interface Applicant {
    */
   readonly rejected_at?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Applicant
+   */
+  custom_mappings?: object | null
+  /**
    * Flag to indicate if the object is deleted.
    * @type {boolean}
    * @memberof Applicant
@@ -369,6 +375,7 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : json['rejected_at'] === null
       ? null
       : new Date(json['rejected_at']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     deleted_by: !exists(json, 'deleted_by') ? undefined : json['deleted_by'],
     deleted_at: !exists(json, 'deleted_at')
@@ -449,6 +456,7 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     archived: value.archived,
     owner_id: value.owner_id,
     record_url: value.record_url,
+    custom_mappings: value.custom_mappings,
     deleted: value.deleted
   }
 }

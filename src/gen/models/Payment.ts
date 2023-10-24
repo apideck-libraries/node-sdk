@@ -166,6 +166,12 @@ export interface Payment {
    */
   display_id?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Payment
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Payment
@@ -255,6 +261,7 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     note: !exists(json, 'note') ? undefined : json['note'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     created_at: !exists(json, 'created_at')
@@ -300,6 +307,7 @@ export function PaymentToJSON(value?: Payment | null): any {
         : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
     note: value.note,
     row_version: value.row_version,
-    display_id: value.display_id
+    display_id: value.display_id,
+    custom_mappings: value.custom_mappings
   }
 }

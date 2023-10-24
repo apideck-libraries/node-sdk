@@ -50,6 +50,12 @@ export interface Collection {
    */
   description?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Collection
+   */
+  custom_mappings?: object | null
+  /**
    * The date and time when the object was last updated.
    * @type {Date}
    * @memberof Collection
@@ -77,6 +83,7 @@ export function CollectionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     type: !exists(json, 'type') ? undefined : json['type'],
     name: !exists(json, 'name') ? undefined : json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
@@ -101,6 +108,7 @@ export function CollectionToJSON(value?: Collection | null): any {
     parent_id: value.parent_id,
     type: value.type,
     name: value.name,
-    description: value.description
+    description: value.description,
+    custom_mappings: value.custom_mappings
   }
 }

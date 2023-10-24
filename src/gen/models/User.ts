@@ -132,6 +132,12 @@ export interface User {
    */
   phone_numbers?: Array<PhoneNumber>
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof User
+   */
+  custom_mappings?: object | null
+  /**
    * The date and time when the user was last updated.
    * @type {string}
    * @memberof User
@@ -176,6 +182,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
     phone_numbers: !exists(json, 'phone_numbers')
       ? undefined
       : (json['phone_numbers'] as Array<any>).map(PhoneNumberFromJSON),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
     created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
@@ -211,6 +218,7 @@ export function UserToJSON(value?: User | null): any {
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined
-        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON)
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
+    custom_mappings: value.custom_mappings
   }
 }

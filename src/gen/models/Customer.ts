@@ -194,6 +194,12 @@ export interface Customer {
    */
   channel?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Customer
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Customer
@@ -280,6 +286,7 @@ export function CustomerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     status: !exists(json, 'status') ? undefined : json['status'],
     payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
     channel: !exists(json, 'channel') ? undefined : json['channel'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -338,6 +345,7 @@ export function CustomerToJSON(value?: Customer | null): any {
     status: value.status,
     payment_method: value.payment_method,
     channel: value.channel,
+    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

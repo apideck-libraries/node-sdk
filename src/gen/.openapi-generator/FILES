@@ -110,6 +110,8 @@ CreateConnectionResponse.md
 CreateConsumerResponse.md
 CreateContactResponse.md
 CreateCreditNoteResponse.md
+CreateCustomMappingRequest.md
+CreateCustomMappingResponse.md
 CreateCustomerResponse.md
 CreateDepartmentResponse.md
 CreateDriveGroupResponse.md
@@ -162,6 +164,8 @@ CrmApiTest.api.test.ts
 CrmEventType.md
 Currency.md
 CustomField.md
+CustomFieldFinder.md
+CustomMapping.md
 Customer.md
 CustomersFilter.md
 Deduction.md
@@ -290,7 +294,10 @@ GetCompanyInfoResponse.md
 GetCompanyResponse.md
 GetConnectionResponse.md
 GetConnectionsResponse.md
+GetConnectorResourceExampleResponse.md
+GetConnectorResourceExampleResponseData.md
 GetConnectorResourceResponse.md
+GetConnectorResourceSchemaResponse.md
 GetConnectorResponse.md
 GetConnectorsResponse.md
 GetConsumerResponse.md
@@ -300,6 +307,8 @@ GetContactResponse.md
 GetContactsResponse.md
 GetCreditNoteResponse.md
 GetCreditNotesResponse.md
+GetCustomFieldsResponse.md
+GetCustomMappingResponse.md
 GetCustomerResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
@@ -371,6 +380,8 @@ GetProductsResponse.md
 GetProfitAndLossResponse.md
 GetPurchaseOrderResponse.md
 GetPurchaseOrdersResponse.md
+GetResourceExampleResponse.md
+GetResourceSchemaResponse.md
 GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetStoreResponse.md
@@ -513,10 +524,12 @@ RequestRate.md
 ResolveWebhookEventRequest.md
 ResolveWebhookEventsRequest.md
 ResolveWebhookResponse.md
+ResourceExample.md
 ResourceStatus.md
 Schedule.md
 ScheduleWorkPattern.md
 ScheduleWorkPatternOddWeeks.md
+SchemaSupport.md
 ServiceCharge.md
 ServiceCharges.md
 Session.md
@@ -566,6 +579,8 @@ UpdateConsumerRequest.md
 UpdateConsumerResponse.md
 UpdateContactResponse.md
 UpdateCreditNoteResponse.md
+UpdateCustomMappingRequest.md
+UpdateCustomMappingResponse.md
 UpdateCustomerResponse.md
 UpdateDepartmentResponse.md
 UpdateDriveGroupResponse.md
@@ -736,6 +751,8 @@ models/CreateConnectionResponse.ts
 models/CreateConsumerResponse.ts
 models/CreateContactResponse.ts
 models/CreateCreditNoteResponse.ts
+models/CreateCustomMappingRequest.ts
+models/CreateCustomMappingResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateDepartmentResponse.ts
 models/CreateDriveGroupResponse.ts
@@ -786,6 +803,8 @@ models/CreditNote.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
+models/CustomFieldFinder.ts
+models/CustomMapping.ts
 models/Customer.ts
 models/CustomersFilter.ts
 models/Deduction.ts
@@ -909,7 +928,10 @@ models/GetCompanyInfoResponse.ts
 models/GetCompanyResponse.ts
 models/GetConnectionResponse.ts
 models/GetConnectionsResponse.ts
+models/GetConnectorResourceExampleResponse.ts
+models/GetConnectorResourceExampleResponseData.ts
 models/GetConnectorResourceResponse.ts
+models/GetConnectorResourceSchemaResponse.ts
 models/GetConnectorResponse.ts
 models/GetConnectorsResponse.ts
 models/GetConsumerResponse.ts
@@ -919,6 +941,8 @@ models/GetContactResponse.ts
 models/GetContactsResponse.ts
 models/GetCreditNoteResponse.ts
 models/GetCreditNotesResponse.ts
+models/GetCustomFieldsResponse.ts
+models/GetCustomMappingResponse.ts
 models/GetCustomerResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
@@ -990,6 +1014,8 @@ models/GetProductsResponse.ts
 models/GetProfitAndLossResponse.ts
 models/GetPurchaseOrderResponse.ts
 models/GetPurchaseOrdersResponse.ts
+models/GetResourceExampleResponse.ts
+models/GetResourceSchemaResponse.ts
 models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetStoreResponse.ts
@@ -1125,10 +1151,12 @@ models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
 models/ResolveWebhookEventsRequest.ts
 models/ResolveWebhookResponse.ts
+models/ResourceExample.ts
 models/ResourceStatus.ts
 models/Schedule.ts
 models/ScheduleWorkPattern.ts
 models/ScheduleWorkPatternOddWeeks.ts
+models/SchemaSupport.ts
 models/ServiceCharge.ts
 models/ServiceCharges.ts
 models/Session.ts
@@ -1176,6 +1204,8 @@ models/UpdateConsumerRequest.ts
 models/UpdateConsumerResponse.ts
 models/UpdateContactResponse.ts
 models/UpdateCreditNoteResponse.ts
+models/UpdateCustomMappingRequest.ts
+models/UpdateCustomMappingResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
 models/UpdateDriveGroupResponse.ts

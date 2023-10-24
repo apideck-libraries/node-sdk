@@ -78,6 +78,12 @@ export interface Merchant {
    */
   currency?: Currency | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Merchant
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Merchant
@@ -133,6 +139,7 @@ export function MerchantFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
       : (json['service_charges'] as Array<any>).map(ServiceChargeFromJSON),
     language: !exists(json, 'language') ? undefined : json['language'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -166,6 +173,7 @@ export function MerchantToJSON(value?: Merchant | null): any {
         ? undefined
         : (value.service_charges as Array<any>).map(ServiceChargeToJSON),
     language: value.language,
-    currency: CurrencyToJSON(value.currency)
+    currency: CurrencyToJSON(value.currency),
+    custom_mappings: value.custom_mappings
   }
 }

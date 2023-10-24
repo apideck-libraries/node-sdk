@@ -31,6 +31,12 @@ export interface CollectionTag {
    * @memberof CollectionTag
    */
   readonly name?: string | null
+  /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof CollectionTag
+   */
+  custom_mappings?: object | null
 }
 
 export function CollectionTagFromJSON(json: any): CollectionTag {
@@ -43,7 +49,8 @@ export function CollectionTagFromJSONTyped(json: any, ignoreDiscriminator: boole
   }
   return {
     id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name']
+    name: !exists(json, 'name') ? undefined : json['name'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
 
@@ -55,6 +62,7 @@ export function CollectionTagToJSON(value?: CollectionTag | null): any {
     return null
   }
   return {
-    id: value.id
+    id: value.id,
+    custom_mappings: value.custom_mappings
   }
 }

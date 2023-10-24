@@ -76,6 +76,12 @@ export interface Payroll {
    * @memberof Payroll
    */
   compensations?: Array<Compensation>
+  /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Payroll
+   */
+  custom_mappings?: object | null
 }
 
 export function PayrollFromJSON(json: any): Payroll {
@@ -97,7 +103,8 @@ export function PayrollFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     totals: !exists(json, 'totals') ? undefined : json['totals'],
     compensations: !exists(json, 'compensations')
       ? undefined
-      : (json['compensations'] as Array<any>).map(CompensationFromJSON)
+      : (json['compensations'] as Array<any>).map(CompensationFromJSON),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
 
@@ -119,6 +126,7 @@ export function PayrollToJSON(value?: Payroll | null): any {
     compensations:
       value.compensations === undefined
         ? undefined
-        : (value.compensations as Array<any>).map(CompensationToJSON)
+        : (value.compensations as Array<any>).map(CompensationToJSON),
+    custom_mappings: value.custom_mappings
   }
 }

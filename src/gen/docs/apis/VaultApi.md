@@ -18,6 +18,7 @@
 * [Delete Consumer](#consumersDelete)
 * [Get Consumer](#consumersOne)
 * [Update Consumer](#consumersUpdate)
+* [Get Resource Custom Fields](#customFieldsAll)
 * [Get All Consumer Request Logs](#logsAll)
 * [Create Session](#sessionsCreate)
 
@@ -37,7 +38,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unifiedApi** | [**string**] | Unified API | 
  **serviceId** | [**string**] | Service ID of the resource to return | 
- **resource** | [**string**] | Resource Name | 
+ **resource** | [**string**] | Name of the resource (plural) | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
 
@@ -109,7 +110,7 @@ Name | Type | Description  | Notes
  **connection** | [Connection](../models/Connection.md)| Fields that need to be updated on the resource |
  **serviceId** | [**string**] | Service ID of the resource to return | 
  **unifiedApi** | [**string**] | Unified API | 
- **resource** | [**string**] | Resource Name | 
+ **resource** | [**string**] | Name of the resource (plural) | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
 
@@ -171,6 +172,11 @@ const params = {
             value: 'GC5000 series'
           }
         ]
+      }
+    ],
+    custom_mappings: [
+      {
+        value: '$.root.training.first_aid'
       }
     ]
   }
@@ -557,6 +563,11 @@ const params = {
             value: 'GC5000 series'
           }
         ]
+      }
+    ],
+    custom_mappings: [
+      {
+        value: '$.root.training.first_aid'
       }
     ]
   }
@@ -974,6 +985,77 @@ const params = {
 
 try {
   const { data } = await apideck.vault.consumersUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="customFieldsAll"></a>
+# Get Resource Custom Fields
+
+
+Method: **customFieldsAll**
+
+```typescript
+vaultApi.customFieldsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | [**string**] | Unified API | 
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **resource** | [**string**] | Name of the resource (plural) | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetCustomFieldsResponse`](../models/GetCustomFieldsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Custom mapping | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  unifiedApi: 'crm',
+  serviceId: 'pipedrive',
+  resource: 'leads'
+}
+
+try {
+  const { data } = await apideck.vault.customFieldsAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

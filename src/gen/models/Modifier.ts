@@ -70,6 +70,12 @@ export interface Modifier {
    */
   available?: boolean | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Modifier
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Modifier
@@ -112,6 +118,7 @@ export function ModifierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     price_amount: !exists(json, 'price_amount') ? undefined : json['price_amount'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     available: !exists(json, 'available') ? undefined : json['available'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -141,6 +148,7 @@ export function ModifierToJSON(value?: Modifier | null): any {
     alternate_name: value.alternate_name,
     price_amount: value.price_amount,
     currency: CurrencyToJSON(value.currency),
-    available: value.available
+    available: value.available,
+    custom_mappings: value.custom_mappings
   }
 }

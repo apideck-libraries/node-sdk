@@ -119,6 +119,12 @@ export interface UnifiedFile {
    */
   export_formats?: Array<string> | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof UnifiedFile
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof UnifiedFile
@@ -174,6 +180,7 @@ export function UnifiedFileFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : UnifiedFilePermissionsFromJSON(json['permissions']),
     exportable: !exists(json, 'exportable') ? undefined : json['exportable'],
     export_formats: !exists(json, 'export_formats') ? undefined : json['export_formats'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -212,6 +219,7 @@ export function UnifiedFileToJSON(value?: UnifiedFile | null): any {
     parent_folders_complete: value.parent_folders_complete,
     permissions: UnifiedFilePermissionsToJSON(value.permissions),
     exportable: value.exportable,
-    export_formats: value.export_formats
+    export_formats: value.export_formats,
+    custom_mappings: value.custom_mappings
   }
 }

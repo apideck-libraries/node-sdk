@@ -104,6 +104,12 @@ export interface TimeOffRequest {
    */
   notes?: TimeOffRequestNotes
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof TimeOffRequest
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof TimeOffRequest
@@ -189,6 +195,7 @@ export function TimeOffRequestFromJSONTyped(
     units: !exists(json, 'units') ? undefined : json['units'],
     amount: !exists(json, 'amount') ? undefined : json['amount'],
     notes: !exists(json, 'notes') ? undefined : TimeOffRequestNotesFromJSON(json['notes']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -223,6 +230,7 @@ export function TimeOffRequestToJSON(value?: TimeOffRequest | null): any {
     approval_date: value.approval_date,
     units: value.units,
     amount: value.amount,
-    notes: TimeOffRequestNotesToJSON(value.notes)
+    notes: TimeOffRequestNotesToJSON(value.notes),
+    custom_mappings: value.custom_mappings
   }
 }

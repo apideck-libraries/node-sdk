@@ -26,6 +26,12 @@ export interface AtsActivity {
    */
   readonly id?: string
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof AtsActivity
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof AtsActivity
@@ -61,6 +67,7 @@ export function AtsActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -83,5 +90,7 @@ export function AtsActivityToJSON(value?: AtsActivity | null): any {
   if (value === null) {
     return null
   }
-  return {}
+  return {
+    custom_mappings: value.custom_mappings
+  }
 }

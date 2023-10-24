@@ -162,6 +162,12 @@ export interface EcommerceOrder {
    */
   note?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof EcommerceOrder
+   */
+  custom_mappings?: object | null
+  /**
    * The date and time when the object was created.
    * @type {Date}
    * @memberof EcommerceOrder
@@ -247,6 +253,7 @@ export function EcommerceOrderFromJSONTyped(
       ? undefined
       : (json['line_items'] as Array<any>).map(EcommerceOrderLineItemFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     created_at: !exists(json, 'created_at')
       ? undefined
       : json['created_at'] === null
@@ -294,6 +301,7 @@ export function EcommerceOrderToJSON(value?: EcommerceOrder | null): any {
       value.line_items === undefined
         ? undefined
         : (value.line_items as Array<any>).map(EcommerceOrderLineItemToJSON),
-    note: value.note
+    note: value.note,
+    custom_mappings: value.custom_mappings
   }
 }

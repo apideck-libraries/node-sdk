@@ -98,6 +98,12 @@ export interface HrisCompany {
    */
   debtor_id?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof HrisCompany
+   */
+  custom_mappings?: object | null
+  /**
    *
    * @type {boolean}
    * @memberof HrisCompany
@@ -167,6 +173,7 @@ export function HrisCompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean
       ? undefined
       : (json['websites'] as Array<any>).map(WebsiteFromJSON),
     debtor_id: !exists(json, 'debtor_id') ? undefined : json['debtor_id'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -208,6 +215,7 @@ export function HrisCompanyToJSON(value?: HrisCompany | null): any {
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
     websites:
       value.websites === undefined ? undefined : (value.websites as Array<any>).map(WebsiteToJSON),
-    debtor_id: value.debtor_id
+    debtor_id: value.debtor_id,
+    custom_mappings: value.custom_mappings
   }
 }

@@ -247,6 +247,12 @@ export interface Company {
    */
   birthday?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Company
+   */
+  custom_mappings?: object | null
+  /**
    * Updated by user ID
    * @type {string}
    * @memberof Company
@@ -339,6 +345,7 @@ export function CompanyFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       : json['birthday'] === null
       ? null
       : new Date(json['birthday']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -413,6 +420,7 @@ export function CompanyToJSON(value?: Company | null): any {
         ? undefined
         : value.birthday === null
         ? null
-        : new Date(value.birthday).toISOString().substr(0, 10)
+        : new Date(value.birthday).toISOString().substr(0, 10),
+    custom_mappings: value.custom_mappings
   }
 }

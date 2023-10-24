@@ -38,6 +38,12 @@ export interface Drive {
    */
   description?: string | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Drive
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Drive
@@ -75,6 +81,7 @@ export function DriveFromJSONTyped(json: any, ignoreDiscriminator: boolean): Dri
     id: json['id'],
     name: json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -99,6 +106,7 @@ export function DriveToJSON(value?: Drive | null): any {
   }
   return {
     name: value.name,
-    description: value.description
+    description: value.description,
+    custom_mappings: value.custom_mappings
   }
 }

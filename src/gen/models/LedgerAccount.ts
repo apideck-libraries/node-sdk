@@ -181,6 +181,12 @@ export interface LedgerAccount {
    */
   last_reconciliation_date?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof LedgerAccount
+   */
+  custom_mappings?: object | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof LedgerAccount
@@ -310,6 +316,7 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
       : json['last_reconciliation_date'] === null
       ? null
       : new Date(json['last_reconciliation_date']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -362,6 +369,7 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
         : value.last_reconciliation_date === null
         ? null
         : new Date(value.last_reconciliation_date).toISOString().substr(0, 10),
+    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

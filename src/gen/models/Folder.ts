@@ -71,6 +71,12 @@ export interface Folder {
    */
   readonly parent_folders_complete?: boolean
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Folder
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Folder
@@ -115,6 +121,7 @@ export function FolderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fo
     parent_folders_complete: !exists(json, 'parent_folders_complete')
       ? undefined
       : json['parent_folders_complete'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -141,6 +148,7 @@ export function FolderToJSON(value?: Folder | null): any {
     name: value.name,
     parent_folders: (value.parent_folders as Array<any>).map(LinkedFolderToJSON),
     description: value.description,
-    owner: OwnerToJSON(value.owner)
+    owner: OwnerToJSON(value.owner),
+    custom_mappings: value.custom_mappings
   }
 }

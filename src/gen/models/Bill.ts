@@ -233,6 +233,12 @@ export interface Bill {
    * @memberof Bill
    */
   row_version?: string | null
+  /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Bill
+   */
+  custom_mappings?: object | null
 }
 
 /**
@@ -312,7 +318,8 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
       : json['created_at'] === null
       ? null
       : new Date(json['created_at']),
-    row_version: !exists(json, 'row_version') ? undefined : json['row_version']
+    row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
 
@@ -365,6 +372,7 @@ export function BillToJSON(value?: Bill | null): any {
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
     discount_percentage: value.discount_percentage,
-    row_version: value.row_version
+    row_version: value.row_version,
+    custom_mappings: value.custom_mappings
   }
 }

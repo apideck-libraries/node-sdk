@@ -150,6 +150,12 @@ export interface InvoiceItem {
    */
   active?: boolean | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof InvoiceItem
+   */
+  custom_mappings?: object | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof InvoiceItem
@@ -235,6 +241,7 @@ export function InvoiceItemFromJSONTyped(json: any, ignoreDiscriminator: boolean
       ? undefined
       : LinkedTrackingCategoryFromJSON(json['tracking_category']),
     active: !exists(json, 'active') ? undefined : json['active'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -282,6 +289,7 @@ export function InvoiceItemToJSON(value?: InvoiceItem | null): any {
     expense_account: LinkedLedgerAccountToJSON(value.expense_account),
     tracking_category: LinkedTrackingCategoryToJSON(value.tracking_category),
     active: value.active,
+    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

@@ -240,6 +240,12 @@ export interface Opportunity {
    */
   readonly date_lead_created?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Opportunity
+   */
+  custom_mappings?: object | null
+  /**
    * The unique identifier of the user who last updated the opportunity.
    * @type {string}
    * @memberof Opportunity
@@ -332,6 +338,7 @@ export function OpportunityFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : json['date_lead_created'] === null
       ? null
       : new Date(json['date_lead_created']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -395,6 +402,7 @@ export function OpportunityToJSON(value?: Opportunity | null): any {
         ? undefined
         : value.stage_last_changed_at === null
         ? null
-        : new Date(value.stage_last_changed_at).toISOString()
+        : new Date(value.stage_last_changed_at).toISOString(),
+    custom_mappings: value.custom_mappings
   }
 }

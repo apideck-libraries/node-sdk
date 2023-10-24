@@ -251,6 +251,12 @@ export interface Job {
    */
   readonly published_at?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Job
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Job
@@ -362,6 +368,7 @@ export function JobFromJSONTyped(json: any, ignoreDiscriminator: boolean): Job {
       : json['published_at'] === null
       ? null
       : new Date(json['published_at']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -430,6 +437,7 @@ export function JobToJSON(value?: Job | null): any {
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     deleted: value.deleted,
-    owner_id: value.owner_id
+    owner_id: value.owner_id,
+    custom_mappings: value.custom_mappings
   }
 }

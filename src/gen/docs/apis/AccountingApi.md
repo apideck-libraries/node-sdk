@@ -289,7 +289,8 @@ const params = {
       currency: 'USD'
     },
     discount_percentage: 5.5,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    custom_mappings: {}
   }
 }
 
@@ -676,7 +677,8 @@ const params = {
       currency: 'USD'
     },
     discount_percentage: 5.5,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    custom_mappings: {}
   }
 }
 
@@ -869,6 +871,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -881,6 +884,7 @@ const params = {
     ],
     note: 'Some notes about this credit note',
     terms: 'Some terms about this credit note',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1218,6 +1222,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -1230,6 +1235,7 @@ const params = {
     ],
     note: 'Some notes about this credit note',
     terms: 'Some terms about this credit note',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1397,6 +1403,7 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1776,6 +1783,7 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1896,6 +1904,7 @@ const params = {
       name: 'New York'
     },
     active: true,
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -2228,6 +2237,7 @@ const params = {
       name: 'New York'
     },
     active: true,
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -2359,6 +2369,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -2438,6 +2449,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -2781,6 +2793,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -2860,6 +2873,7 @@ const params = {
       nominal_code: 'N091',
       code: '453'
     },
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -3052,6 +3066,7 @@ const params = {
     tax_type: 'sales',
     tax_code: '1234',
     number: 'OIT00546',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -3455,6 +3470,7 @@ const params = {
     tax_type: 'sales',
     tax_code: '1234',
     number: 'OIT00546',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -3567,6 +3583,7 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -3890,6 +3907,7 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -4023,7 +4041,8 @@ const params = {
     ],
     note: 'Some notes about this payment',
     row_version: '1-12345',
-    display_id: '123456'
+    display_id: '123456',
+    custom_mappings: {}
   }
 }
 
@@ -4368,7 +4387,8 @@ const params = {
     ],
     note: 'Some notes about this payment',
     row_version: '1-12345',
-    display_id: '123456'
+    display_id: '123456',
+    custom_mappings: {}
   }
 }
 
@@ -4580,6 +4600,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -4635,6 +4656,7 @@ const params = {
     tax_code: '1234',
     channel: 'email',
     memo: 'Thank you for the partnership and have a great day!',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -4987,6 +5009,7 @@ const params = {
           nominal_code: 'N091',
           code: '453'
         },
+        custom_mappings: {},
         row_version: '1-12345'
       }
     ],
@@ -5042,6 +5065,7 @@ const params = {
     tax_code: '1234',
     channel: 'email',
     memo: 'Thank you for the partnership and have a great day!',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -5204,6 +5228,7 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -5578,6 +5603,7 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -5669,6 +5695,7 @@ const params = {
     report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -5972,6 +5999,7 @@ const params = {
     report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }

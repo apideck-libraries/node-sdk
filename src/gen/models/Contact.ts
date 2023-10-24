@@ -244,6 +244,12 @@ export interface Contact {
    */
   readonly last_activity_at?: Date | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Contact
+   */
+  custom_mappings?: object | null
+  /**
    * The last update date of the contact.
    * @type {Date}
    * @memberof Contact
@@ -344,6 +350,7 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       : json['last_activity_at'] === null
       ? null
       : new Date(json['last_activity_at']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_at: !exists(json, 'updated_at')
       ? undefined
       : json['updated_at'] === null
@@ -409,6 +416,7 @@ export function ContactToJSON(value?: Contact | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags)
+    tags: TagsToJSON(value.tags),
+    custom_mappings: value.custom_mappings
   }
 }

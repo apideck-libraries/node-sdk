@@ -173,6 +173,12 @@ export interface Lead {
    */
   tags?: Tags | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Lead
+   */
+  custom_mappings?: object | null
+  /**
    * Date updated in ISO 8601 format
    * @type {string}
    * @memberof Lead
@@ -229,6 +235,7 @@ export function LeadFromJSONTyped(json: any, ignoreDiscriminator: boolean): Lead
       ? undefined
       : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     tags: !exists(json, 'tags') ? undefined : TagsFromJSON(json['tags']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
     created_at: !exists(json, 'created_at') ? undefined : json['created_at']
   }
@@ -277,6 +284,7 @@ export function LeadToJSON(value?: Lead | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags)
+    tags: TagsToJSON(value.tags),
+    custom_mappings: value.custom_mappings
   }
 }

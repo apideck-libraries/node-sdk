@@ -56,6 +56,12 @@ export interface Application {
    */
   stage?: ApplicationStage
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Application
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Application
@@ -107,6 +113,7 @@ export function ApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean
     id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
     stage: !exists(json, 'stage') ? undefined : ApplicationStageFromJSON(json['stage']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -133,6 +140,7 @@ export function ApplicationToJSON(value?: Application | null): any {
     applicant_id: value.applicant_id,
     job_id: value.job_id,
     status: value.status,
-    stage: ApplicationStageToJSON(value.stage)
+    stage: ApplicationStageToJSON(value.stage),
+    custom_mappings: value.custom_mappings
   }
 }

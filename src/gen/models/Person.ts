@@ -69,6 +69,12 @@ export interface Person {
    * @memberof Person
    */
   deceased_on?: Date | null
+  /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Person
+   */
+  custom_mappings?: object | null
 }
 
 export function PersonFromJSON(json: any): Person {
@@ -95,7 +101,8 @@ export function PersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): Pe
       ? undefined
       : json['deceased_on'] === null
       ? null
-      : new Date(json['deceased_on'])
+      : new Date(json['deceased_on']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
 
@@ -123,6 +130,7 @@ export function PersonToJSON(value?: Person | null): any {
         ? undefined
         : value.deceased_on === null
         ? null
-        : new Date(value.deceased_on).toISOString().substr(0, 10)
+        : new Date(value.deceased_on).toISOString().substr(0, 10),
+    custom_mappings: value.custom_mappings
   }
 }

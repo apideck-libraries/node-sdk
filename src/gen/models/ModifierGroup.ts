@@ -74,6 +74,12 @@ export interface ModifierGroup {
    */
   deleted?: boolean | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof ModifierGroup
+   */
+  custom_mappings?: object | null
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof ModifierGroup
@@ -134,6 +140,7 @@ export function ModifierGroupFromJSONTyped(json: any, ignoreDiscriminator: boole
       : json['present_at_all_locations'],
     modifiers: !exists(json, 'modifiers') ? undefined : json['modifiers'],
     deleted: !exists(json, 'deleted') ? undefined : json['deleted'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -166,6 +173,7 @@ export function ModifierGroupToJSON(value?: ModifierGroup | null): any {
     present_at_all_locations: value.present_at_all_locations,
     modifiers: value.modifiers,
     deleted: value.deleted,
+    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

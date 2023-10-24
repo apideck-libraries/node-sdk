@@ -65,6 +65,12 @@ export interface Location {
    */
   currency?: Currency | null
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Location
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Location
@@ -116,6 +122,7 @@ export function LocationFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     status: !exists(json, 'status') ? undefined : json['status'],
     merchant_id: !exists(json, 'merchant_id') ? undefined : json['merchant_id'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -144,6 +151,7 @@ export function LocationToJSON(value?: Location | null): any {
     address: AddressToJSON(value.address),
     status: value.status,
     merchant_id: value.merchant_id,
-    currency: CurrencyToJSON(value.currency)
+    currency: CurrencyToJSON(value.currency),
+    custom_mappings: value.custom_mappings
   }
 }

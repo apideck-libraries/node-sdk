@@ -68,6 +68,12 @@ export interface Tender {
    */
   allows_tipping?: boolean
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Tender
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Tender
@@ -110,6 +116,7 @@ export function TenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Te
     editable: !exists(json, 'editable') ? undefined : json['editable'],
     opens_cash_drawer: !exists(json, 'opens_cash_drawer') ? undefined : json['opens_cash_drawer'],
     allows_tipping: !exists(json, 'allows_tipping') ? undefined : json['allows_tipping'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -139,6 +146,7 @@ export function TenderToJSON(value?: Tender | null): any {
     hidden: value.hidden,
     editable: value.editable,
     opens_cash_drawer: value.opens_cash_drawer,
-    allows_tipping: value.allows_tipping
+    allows_tipping: value.allows_tipping,
+    custom_mappings: value.custom_mappings
   }
 }

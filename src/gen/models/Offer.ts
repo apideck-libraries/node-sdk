@@ -32,6 +32,12 @@ export interface Offer {
    */
   application_id?: string
   /**
+   * When custom mappings are configured on the resource, the result is included here.
+   * @type {object}
+   * @memberof Offer
+   */
+  custom_mappings?: object | null
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Offer
@@ -68,6 +74,7 @@ export function OfferFromJSONTyped(json: any, ignoreDiscriminator: boolean): Off
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     application_id: !exists(json, 'application_id') ? undefined : json['application_id'],
+    custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -91,6 +98,7 @@ export function OfferToJSON(value?: Offer | null): any {
     return null
   }
   return {
-    application_id: value.application_id
+    application_id: value.application_id,
+    custom_mappings: value.custom_mappings
   }
 }
