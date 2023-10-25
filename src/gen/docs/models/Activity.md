@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 `video_conference_id` | **string** | The ID of the video conference | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) | Custom fields of the activity | [optional] 
 `attendees` | [**Array&lt;ActivityAttendee&gt;**](ActivityAttendee.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_by` | **string** | The user who last updated the activity | [optional] 
 `created_by` | **string** | The user who created the activity | [optional] 
 `updated_at` | **string** | The date and time when the activity was last updated | [optional] 
@@ -143,6 +144,7 @@ Name | Type | Description | Notes
 
 * [`CustomField`](CustomField.md)
 * [`ActivityAttendee`](ActivityAttendee.md)
+
 
 
 

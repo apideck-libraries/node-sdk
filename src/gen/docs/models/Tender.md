@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `editable` | **boolean** |  | [optional] 
 `opens_cash_drawer` | **boolean** | If this tender opens the cash drawer | [optional] 
 `allows_tipping` | **boolean** | Allow tipping on payment from tender | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 

@@ -29,10 +29,12 @@ Name | Type | Description | Notes
 `resource_schema_support` | **Array&lt;string&gt;** |  | [optional] 
 `resource_settings_support` | **Array&lt;string&gt;** |  | [optional] 
 `validation_support` | **boolean** |  | [optional] 
+`schema_support` | **boolean** |  | [optional] 
 `settings_required_for_authorization` | **Array&lt;string&gt;** | List of settings that are required to be configured on integration before authorization can occur | [optional] 
 `subscriptions` | [**Array&lt;WebhookSubscription&gt;**](WebhookSubscription.md) |  | [optional] 
 `has_guide` | **boolean** | Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection). | [optional] 
 `created_at` | **number** |  | [optional] 
+`custom_mappings` | [**Array&lt;CustomMapping&gt;**](CustomMapping.md) | List of custom mappings configured for this connection | [optional] 
 `updated_at` | **number** |  | [optional] 
 
 
@@ -78,9 +80,11 @@ Name | Type | Description | Notes
 
 
 
+
 * [`WebhookSubscription`](WebhookSubscription.md)
 
 
+* [`CustomMapping`](CustomMapping.md)
 
 
 ---

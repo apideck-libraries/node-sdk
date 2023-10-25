@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 `due_date` | **Date** | Due date of the ticket | [optional] 
 `completed_at` | **Date** | When the ticket was completed | [optional] 
 `tags` | [**Array&lt;CollectionTag&gt;**](CollectionTag.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 
 
@@ -56,6 +57,7 @@ Name | Type | Description | Notes
 
 
 * [`CollectionTag`](CollectionTag.md)
+
 
 ---
 

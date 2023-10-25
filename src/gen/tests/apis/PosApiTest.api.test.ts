@@ -101,6 +101,7 @@ describe('PosApi', () => {
           ],
           available: true,
           hidden: true,
+          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -187,6 +188,7 @@ describe('PosApi', () => {
             available: true,
             hidden: true,
             version: '12345',
+            custom_mappings: {},
             deleted: true,
             updated_by: '12345',
             created_by: '12345',
@@ -337,6 +339,7 @@ describe('PosApi', () => {
           available: true,
           hidden: true,
           version: '12345',
+          custom_mappings: {},
           deleted: true,
           updated_by: '12345',
           created_by: '12345',
@@ -446,6 +449,7 @@ describe('PosApi', () => {
           ],
           available: true,
           hidden: true,
+          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -518,7 +522,8 @@ describe('PosApi', () => {
           },
           status: 'active',
           merchant_id: '12345',
-          currency: 'USD'
+          currency: 'USD',
+          custom_mappings: {}
         }
       } as any
       const current = await pos.locationsAdd(params)
@@ -582,6 +587,7 @@ describe('PosApi', () => {
             status: 'active',
             merchant_id: '12345',
             currency: 'USD',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -709,6 +715,7 @@ describe('PosApi', () => {
           status: 'active',
           merchant_id: '12345',
           currency: 'USD',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -794,7 +801,8 @@ describe('PosApi', () => {
           },
           status: 'active',
           merchant_id: '12345',
-          currency: 'USD'
+          currency: 'USD',
+          custom_mappings: {}
         }
       } as any
       const current = await pos.locationsUpdate(params)
@@ -877,7 +885,8 @@ describe('PosApi', () => {
             }
           ],
           language: 'EN',
-          currency: 'USD'
+          currency: 'USD',
+          custom_mappings: {}
         }
       } as any
       const current = await pos.merchantsAdd(params)
@@ -953,6 +962,7 @@ describe('PosApi', () => {
             ],
             language: 'EN',
             currency: 'USD',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1092,6 +1102,7 @@ describe('PosApi', () => {
           ],
           language: 'EN',
           currency: 'USD',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1188,7 +1199,8 @@ describe('PosApi', () => {
             }
           ],
           language: 'EN',
-          currency: 'USD'
+          currency: 'USD',
+          custom_mappings: {}
         }
       } as any
       const current = await pos.merchantsUpdate(params)
@@ -1247,6 +1259,7 @@ describe('PosApi', () => {
             }
           ],
           deleted: true,
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -1297,6 +1310,7 @@ describe('PosApi', () => {
               }
             ],
             deleted: true,
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1411,6 +1425,7 @@ describe('PosApi', () => {
             }
           ],
           deleted: true,
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1484,6 +1499,7 @@ describe('PosApi', () => {
             }
           ],
           deleted: true,
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -1532,7 +1548,8 @@ describe('PosApi', () => {
           price_amount: 10,
           currency: 'USD',
           modifier_group_id: '123',
-          available: true
+          available: true,
+          custom_mappings: {}
         }
       } as any
       const current = await pos.modifiersAdd(params)
@@ -1572,6 +1589,7 @@ describe('PosApi', () => {
             currency: 'USD',
             modifier_group_id: '123',
             available: true,
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1675,6 +1693,7 @@ describe('PosApi', () => {
           currency: 'USD',
           modifier_group_id: '123',
           available: true,
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1736,7 +1755,8 @@ describe('PosApi', () => {
           price_amount: 10,
           currency: 'USD',
           modifier_group_id: '123',
-          available: true
+          available: true,
+          custom_mappings: {}
         }
       } as any
       const current = await pos.modifiersUpdate(params)
@@ -2240,6 +2260,7 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
+          custom_mappings: {},
           version: '230320320320'
         }
       } as any
@@ -2452,6 +2473,7 @@ describe('PosApi', () => {
             source: 'api',
             voided: false,
             voided_at: '2020-09-30T07:43:32.000Z',
+            custom_mappings: {},
             version: '230320320320',
             updated_by: '12345',
             created_by: '12345',
@@ -2800,6 +2822,7 @@ describe('PosApi', () => {
           source: 'api',
           voided: false,
           voided_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {},
           version: '230320320320',
           updated_by: '12345',
           created_by: '12345',
@@ -3086,6 +3109,7 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
+          custom_mappings: {},
           version: '230320320320'
         }
       } as any
@@ -3359,6 +3383,7 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
+          custom_mappings: {},
           version: '230320320320'
         }
       } as any
@@ -3509,7 +3534,8 @@ describe('PosApi', () => {
               active: true,
               type: 'auto_gratuity'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await pos.paymentsAdd(params)
@@ -3653,6 +3679,7 @@ describe('PosApi', () => {
                 type: 'auto_gratuity'
               }
             ],
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -3860,6 +3887,7 @@ describe('PosApi', () => {
               type: 'auto_gratuity'
             }
           ],
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -4023,7 +4051,8 @@ describe('PosApi', () => {
               active: true,
               type: 'auto_gratuity'
             }
-          ]
+          ],
+          custom_mappings: {}
         }
       } as any
       const current = await pos.paymentsUpdate(params)
@@ -4071,7 +4100,8 @@ describe('PosApi', () => {
           hidden: true,
           editable: true,
           opens_cash_drawer: true,
-          allows_tipping: true
+          allows_tipping: true,
+          custom_mappings: {}
         }
       } as any
       const current = await pos.tendersAdd(params)
@@ -4111,6 +4141,7 @@ describe('PosApi', () => {
             editable: true,
             opens_cash_drawer: true,
             allows_tipping: true,
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -4214,6 +4245,7 @@ describe('PosApi', () => {
           editable: true,
           opens_cash_drawer: true,
           allows_tipping: true,
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -4275,7 +4307,8 @@ describe('PosApi', () => {
           hidden: true,
           editable: true,
           opens_cash_drawer: true,
-          allows_tipping: true
+          allows_tipping: true,
+          custom_mappings: {}
         }
       } as any
       const current = await pos.tendersUpdate(params)

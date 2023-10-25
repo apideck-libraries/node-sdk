@@ -56,7 +56,8 @@ describe('SmsApi', () => {
           scheduled_at: '2020-09-30T07:43:32.000Z',
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
-          messaging_service_id: '123456'
+          messaging_service_id: '123456',
+          custom_mappings: {}
         }
       } as any
       const current = await sms.messagesAdd(params)
@@ -112,6 +113,7 @@ describe('SmsApi', () => {
               message: 'Something went wrong'
             },
             messaging_service_id: '123456',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -231,6 +233,7 @@ describe('SmsApi', () => {
             message: 'Something went wrong'
           },
           messaging_service_id: '123456',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -294,7 +297,8 @@ describe('SmsApi', () => {
           scheduled_at: '2020-09-30T07:43:32.000Z',
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
-          messaging_service_id: '123456'
+          messaging_service_id: '123456',
+          custom_mappings: {}
         }
       } as any
       const current = await sms.messagesUpdate(params)

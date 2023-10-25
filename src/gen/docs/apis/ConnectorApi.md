@@ -318,7 +318,7 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
-  docId: 'doc_id_example'
+  docId: 'application_owner+oauth_credentials'
 }
 
 try {

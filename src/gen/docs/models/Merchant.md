@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 `service_charges` | [**Array&lt;ServiceCharge&gt;**](ServiceCharge.md) |  | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -46,6 +47,7 @@ Name | Type | Description | Notes
 * [`ServiceCharge`](ServiceCharge.md)
 
 * [`Currency`](Currency.md)
+
 
 
 

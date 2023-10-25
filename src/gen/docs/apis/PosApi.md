@@ -170,6 +170,7 @@ const params = {
     ],
     available: true,
     hidden: true,
+    custom_mappings: {},
     deleted: true
   }
 }
@@ -516,6 +517,7 @@ const params = {
     ],
     available: true,
     hidden: true,
+    custom_mappings: {},
     deleted: true
   }
 }
@@ -617,7 +619,8 @@ const params = {
     },
     status: 'active',
     merchant_id: '12345',
-    currency: 'USD'
+    currency: 'USD',
+    custom_mappings: {}
   }
 }
 
@@ -928,7 +931,8 @@ const params = {
     },
     status: 'active',
     merchant_id: '12345',
-    currency: 'USD'
+    currency: 'USD',
+    custom_mappings: {}
   }
 }
 
@@ -1040,7 +1044,8 @@ const params = {
       }
     ],
     language: 'EN',
-    currency: 'USD'
+    currency: 'USD',
+    custom_mappings: {}
   }
 }
 
@@ -1362,7 +1367,8 @@ const params = {
       }
     ],
     language: 'EN',
-    currency: 'USD'
+    currency: 'USD',
+    custom_mappings: {}
   }
 }
 
@@ -1450,6 +1456,7 @@ const params = {
       }
     ],
     deleted: true,
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1748,6 +1755,7 @@ const params = {
       }
     ],
     deleted: true,
+    custom_mappings: {},
     row_version: '1-12345'
   }
 }
@@ -1825,7 +1833,8 @@ const params = {
     price_amount: 10,
     currency: 'USD',
     modifier_group_id: '123',
-    available: true
+    available: true,
+    custom_mappings: {}
   }
 }
 
@@ -2114,7 +2123,8 @@ const params = {
     price_amount: 10,
     currency: 'USD',
     modifier_group_id: '123',
-    available: true
+    available: true,
+    custom_mappings: {}
   }
 }
 
@@ -2768,6 +2778,7 @@ const params = {
       }
     ],
     voided: false,
+    custom_mappings: {},
     version: '230320320320'
   }
 }
@@ -3280,6 +3291,7 @@ const params = {
       }
     ],
     voided: false,
+    custom_mappings: {},
     version: '230320320320'
   }
 }
@@ -3582,6 +3594,7 @@ const params = {
       }
     ],
     voided: false,
+    custom_mappings: {},
     version: '230320320320'
   }
 }
@@ -3760,7 +3773,8 @@ const params = {
         active: true,
         type: 'auto_gratuity'
       }
-    ]
+    ],
+    custom_mappings: {}
   }
 }
 
@@ -4148,7 +4162,8 @@ const params = {
         active: true,
         type: 'auto_gratuity'
       }
-    ]
+    ],
+    custom_mappings: {}
   }
 }
 
@@ -4225,7 +4240,8 @@ const params = {
     hidden: true,
     editable: true,
     opens_cash_drawer: true,
-    allows_tipping: true
+    allows_tipping: true,
+    custom_mappings: {}
   }
 }
 
@@ -4512,7 +4528,8 @@ const params = {
     hidden: true,
     editable: true,
     opens_cash_drawer: true,
-    allows_tipping: true
+    allows_tipping: true,
+    custom_mappings: {}
   }
 }
 

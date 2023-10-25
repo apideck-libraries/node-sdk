@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 `password` | **string** | The password of the user | [optional] 
 `addresses` | [**Array&lt;Address&gt;**](Address.md) |  | [optional] 
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_at` | **string** | The date and time when the user was last updated. | [optional] 
 `created_at` | **string** | The date and time when the user was created. | [optional] 
 
@@ -49,6 +50,7 @@ Name | Type | Description | Notes
 
 * [`Address`](Address.md)
 * [`PhoneNumber`](PhoneNumber.md)
+
 
 
 

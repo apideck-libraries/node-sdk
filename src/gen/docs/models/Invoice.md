@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 `accounting_by_row` | **boolean** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -130,6 +131,7 @@ Name | Type | Description | Notes
 
 * [`BankAccount`](BankAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
+
 
 
 

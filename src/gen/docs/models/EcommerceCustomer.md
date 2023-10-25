@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 `phone_numbers` | [**Array&lt;PhoneNumber&gt;**](PhoneNumber.md) | An array of phone numbers for the customer. | [optional] 
 `addresses` | [**Array&lt;EcommerceCustomerAddresses&gt;**](EcommerceCustomerAddresses.md) | An array of addresses for the customer. | [optional] 
 `orders` | [**Array&lt;LinkedEcommerceOrder&gt;**](LinkedEcommerceOrder.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
@@ -46,6 +47,7 @@ Name | Type | Description | Notes
 * [`PhoneNumber`](PhoneNumber.md)
 * [`EcommerceCustomerAddresses`](EcommerceCustomerAddresses.md)
 * [`LinkedEcommerceOrder`](LinkedEcommerceOrder.md)
+
 
 
 

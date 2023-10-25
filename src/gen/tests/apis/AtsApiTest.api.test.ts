@@ -149,6 +149,7 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
+          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -290,6 +291,7 @@ describe('AtsApi', () => {
               'https://recruitee-main.s3.eu-central-1.amazonaws.com/candidates/36615291/pdf_cv_38swhu4w42k1.pdf?response-content-disposition=inline&amp;response-content-type=application%2Fpdf&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQYHB7CA5RLR4Y3ON%2F20220514%2Feu-central-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220514T235654Z&amp;X-Amz-Expires=36000&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=72c0621f5976db75b54de487eb821a8e73480d7f2a6a4a9713ab997944b0561f',
             record_url: 'https://app.intercom.io/contacts/12345',
             rejected_at: '2020-09-30T07:43:32.000Z',
+            custom_mappings: {},
             deleted: true,
             deleted_by: '12345',
             deleted_at: '2020-09-30T07:43:32.000Z',
@@ -497,6 +499,7 @@ describe('AtsApi', () => {
             'https://recruitee-main.s3.eu-central-1.amazonaws.com/candidates/36615291/pdf_cv_38swhu4w42k1.pdf?response-content-disposition=inline&amp;response-content-type=application%2Fpdf&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQYHB7CA5RLR4Y3ON%2F20220514%2Feu-central-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220514T235654Z&amp;X-Amz-Expires=36000&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=72c0621f5976db75b54de487eb821a8e73480d7f2a6a4a9713ab997944b0561f',
           record_url: 'https://app.intercom.io/contacts/12345',
           rejected_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {},
           deleted: true,
           deleted_by: '12345',
           deleted_at: '2020-09-30T07:43:32.000Z',
@@ -656,6 +659,7 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
+          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -704,7 +708,8 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          }
+          },
+          custom_mappings: {}
         }
       } as any
       const current = await ats.applicationsAdd(params)
@@ -744,6 +749,7 @@ describe('AtsApi', () => {
               id: '12345',
               name: '12345'
             },
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -847,6 +853,7 @@ describe('AtsApi', () => {
             id: '12345',
             name: '12345'
           },
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -908,7 +915,8 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          }
+          },
+          custom_mappings: {}
         }
       } as any
       const current = await ats.applicationsUpdate(params)
@@ -959,6 +967,7 @@ describe('AtsApi', () => {
               name: 'R&amp;D',
               code: '2',
               description: 'R&amp;D',
+              custom_mappings: {},
               updated_by: '12345',
               created_by: '12345',
               updated_at: '2020-09-30T07:43:32.000Z',
@@ -1042,6 +1051,7 @@ describe('AtsApi', () => {
             deleted: true,
             owner_id: '54321',
             published_at: '2020-09-30T07:43:32.000Z',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1116,6 +1126,7 @@ describe('AtsApi', () => {
             name: 'R&amp;D',
             code: '2',
             description: 'R&amp;D',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1199,6 +1210,7 @@ describe('AtsApi', () => {
           deleted: true,
           owner_id: '54321',
           published_at: '2020-09-30T07:43:32.000Z',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',

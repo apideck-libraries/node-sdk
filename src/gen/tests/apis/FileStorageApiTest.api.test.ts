@@ -50,7 +50,8 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description'
+          description: 'A description',
+          custom_mappings: {}
         }
       } as any
       const current = await fileStorage.driveGroupsAdd(params)
@@ -86,6 +87,7 @@ describe('FileStorageApi', () => {
             name: 'accounting',
             display_name: 'accounting',
             description: 'A description',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -185,6 +187,7 @@ describe('FileStorageApi', () => {
           name: 'accounting',
           display_name: 'accounting',
           description: 'A description',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -242,7 +245,8 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description'
+          description: 'A description',
+          custom_mappings: {}
         }
       } as any
       const current = await fileStorage.driveGroupsUpdate(params)
@@ -285,7 +289,8 @@ describe('FileStorageApi', () => {
       const params = {
         drive: {
           name: 'Project Resources',
-          description: 'A description'
+          description: 'A description',
+          custom_mappings: {}
         }
       } as any
       const current = await fileStorage.drivesAdd(params)
@@ -320,6 +325,7 @@ describe('FileStorageApi', () => {
             id: '12345',
             name: 'Project Resources',
             description: 'A description',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -418,6 +424,7 @@ describe('FileStorageApi', () => {
           id: '12345',
           name: 'Project Resources',
           description: 'A description',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -474,7 +481,8 @@ describe('FileStorageApi', () => {
         id: 'id_example',
         drive: {
           name: 'Project Resources',
-          description: 'A description'
+          description: 'A description',
+          custom_mappings: {}
         }
       } as any
       const current = await fileStorage.drivesUpdate(params)
@@ -536,6 +544,7 @@ describe('FileStorageApi', () => {
               'application/vnd.oasis.opendocument.presentation',
               'text/plain'
             ],
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -724,6 +733,7 @@ describe('FileStorageApi', () => {
             'application/vnd.oasis.opendocument.presentation',
             'text/plain'
           ],
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -798,6 +808,7 @@ describe('FileStorageApi', () => {
               'application/vnd.oasis.opendocument.presentation',
               'text/plain'
             ],
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1048,6 +1059,7 @@ describe('FileStorageApi', () => {
             }
           ],
           parent_folders_complete: true,
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -1502,6 +1514,7 @@ describe('FileStorageApi', () => {
             'application/vnd.oasis.opendocument.presentation',
             'text/plain'
           ],
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',

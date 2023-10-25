@@ -142,7 +142,8 @@ const params = {
         type: 'primary'
       }
     ],
-    debtor_id: '12345'
+    debtor_id: '12345',
+    custom_mappings: {}
   }
 }
 
@@ -482,7 +483,8 @@ const params = {
         type: 'primary'
       }
     ],
-    debtor_id: '12345'
+    debtor_id: '12345',
+    custom_mappings: {}
   }
 }
 
@@ -555,7 +557,8 @@ const params = {
   department: {
     name: 'R&amp;D',
     code: '2',
-    description: 'R&amp;D'
+    description: 'R&amp;D',
+    custom_mappings: {}
   }
 }
 
@@ -839,7 +842,8 @@ const params = {
   department: {
     name: 'R&amp;D',
     code: '2',
-    description: 'R&amp;D'
+    description: 'R&amp;D',
+    custom_mappings: {}
   }
 }
 
@@ -1141,7 +1145,8 @@ const params = {
       gender: 'male',
       initials: 'EM',
       birthday: '2000-08-12',
-      deceased_on: '2000-08-12'
+      deceased_on: '2000-08-12',
+      custom_mappings: {}
     },
     division: 'Europe',
     division_id: '12345',
@@ -1333,6 +1338,7 @@ const params = {
     tags: [
       'New'
     ],
+    custom_mappings: {},
     row_version: '1-12345',
     deleted: true
   }
@@ -1634,7 +1640,8 @@ const params = {
       gender: 'male',
       initials: 'EM',
       birthday: '2000-08-12',
-      deceased_on: '2000-08-12'
+      deceased_on: '2000-08-12',
+      custom_mappings: {}
     },
     division: 'Europe',
     division_id: '12345',
@@ -1826,6 +1833,7 @@ const params = {
     tags: [
       'New'
     ],
+    custom_mappings: {},
     row_version: '1-12345',
     deleted: true
   }
@@ -2051,7 +2059,8 @@ const params = {
     notes: {
       employee: 'Relaxing on the beach for a few hours.',
       manager: 'Enjoy!'
-    }
+    },
+    custom_mappings: {}
   }
 }
 
@@ -2348,7 +2357,8 @@ const params = {
     notes: {
       employee: 'Relaxing on the beach for a few hours.',
       manager: 'Enjoy!'
-    }
+    },
+    custom_mappings: {}
   }
 }
 

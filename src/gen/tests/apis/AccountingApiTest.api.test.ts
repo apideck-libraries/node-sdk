@@ -94,6 +94,7 @@ describe('AccountingApi', () => {
               }
             ]
           },
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -251,7 +252,8 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          custom_mappings: {}
         }
       } as any
       const current = await accounting.billsAdd(params)
@@ -405,7 +407,8 @@ describe('AccountingApi', () => {
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
-            row_version: '1-12345'
+            row_version: '1-12345',
+            custom_mappings: {}
           }
         ],
         meta: {
@@ -619,7 +622,8 @@ describe('AccountingApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          custom_mappings: {}
         }
       } as any
 
@@ -776,7 +780,8 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          custom_mappings: {}
         }
       } as any
       const current = await accounting.billsUpdate(params)
@@ -836,6 +841,7 @@ describe('AccountingApi', () => {
             report_tax_type: 'NONE',
             original_tax_rate_id: '12345',
             status: 'active',
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -891,6 +897,7 @@ describe('AccountingApi', () => {
               type: 'primary'
             }
           ],
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1000,6 +1007,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -1012,6 +1020,7 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this credit note',
           terms: 'Some terms about this credit note',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -1108,6 +1117,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -1125,6 +1135,7 @@ describe('AccountingApi', () => {
             ],
             note: 'Some notes about this credit note',
             terms: 'Some terms about this credit note',
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1285,6 +1296,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -1302,6 +1314,7 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this credit note',
           terms: 'Some terms about this credit note',
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1414,6 +1427,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -1426,6 +1440,7 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this credit note',
           terms: 'Some terms about this credit note',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -1564,6 +1579,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -1697,6 +1713,7 @@ describe('AccountingApi', () => {
             status: 'active',
             payment_method: 'cash',
             channel: 'email',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -1894,6 +1911,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -2046,6 +2064,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -2138,6 +2157,7 @@ describe('AccountingApi', () => {
             name: 'New York'
           },
           active: true,
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -2228,6 +2248,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             },
             active: true,
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -2382,6 +2403,7 @@ describe('AccountingApi', () => {
             name: 'New York'
           },
           active: true,
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -2488,6 +2510,7 @@ describe('AccountingApi', () => {
             name: 'New York'
           },
           active: true,
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -2592,6 +2615,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -2671,6 +2695,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -2772,6 +2797,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -2856,6 +2882,7 @@ describe('AccountingApi', () => {
               nominal_code: 'N091',
               code: '453'
             },
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -3022,6 +3049,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -3106,6 +3134,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -3224,6 +3253,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -3303,6 +3333,7 @@ describe('AccountingApi', () => {
             nominal_code: 'N091',
             code: '453'
           },
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -3468,6 +3499,7 @@ describe('AccountingApi', () => {
           tax_type: 'sales',
           tax_code: '1234',
           number: 'OIT00546',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -3594,6 +3626,7 @@ describe('AccountingApi', () => {
             tax_type: 'sales',
             tax_code: '1234',
             number: 'OIT00546',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -3834,6 +3867,7 @@ describe('AccountingApi', () => {
           tax_type: 'sales',
           tax_code: '1234',
           number: 'OIT00546',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -4013,6 +4047,7 @@ describe('AccountingApi', () => {
           tax_type: 'sales',
           tax_code: '1234',
           number: 'OIT00546',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -4096,6 +4131,7 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -4184,6 +4220,7 @@ describe('AccountingApi', () => {
               }
             ],
             last_reconciliation_date: '2020-09-30',
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -4336,6 +4373,7 @@ describe('AccountingApi', () => {
             }
           ],
           last_reconciliation_date: '2020-09-30',
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -4433,6 +4471,7 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -4537,7 +4576,8 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this payment',
           row_version: '1-12345',
-          display_id: '123456'
+          display_id: '123456',
+          custom_mappings: {}
         }
       } as any
       const current = await accounting.paymentsAdd(params)
@@ -4640,6 +4680,7 @@ describe('AccountingApi', () => {
             note: 'Some notes about this payment',
             row_version: '1-12345',
             display_id: '123456',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             created_at: '2020-09-30T07:43:32.000Z',
@@ -4806,6 +4847,7 @@ describe('AccountingApi', () => {
           note: 'Some notes about this payment',
           row_version: '1-12345',
           display_id: '123456',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           created_at: '2020-09-30T07:43:32.000Z',
@@ -4923,7 +4965,8 @@ describe('AccountingApi', () => {
           ],
           note: 'Some notes about this payment',
           row_version: '1-12345',
-          display_id: '123456'
+          display_id: '123456',
+          custom_mappings: {}
         }
       } as any
       const current = await accounting.paymentsUpdate(params)
@@ -4998,7 +5041,8 @@ describe('AccountingApi', () => {
           },
           gross_profit: {
             total: 200000
-          }
+          },
+          custom_mappings: {}
         }
       } as any
 
@@ -5120,6 +5164,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -5175,6 +5220,7 @@ describe('AccountingApi', () => {
           tax_code: '1234',
           channel: 'email',
           memo: 'Thank you for the partnership and have a great day!',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -5288,6 +5334,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -5348,6 +5395,7 @@ describe('AccountingApi', () => {
             tax_code: '1234',
             channel: 'email',
             memo: 'Thank you for the partnership and have a great day!',
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -5525,6 +5573,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -5585,6 +5634,7 @@ describe('AccountingApi', () => {
           tax_code: '1234',
           channel: 'email',
           memo: 'Thank you for the partnership and have a great day!',
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -5714,6 +5764,7 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_mappings: {},
               row_version: '1-12345'
             }
           ],
@@ -5769,6 +5820,7 @@ describe('AccountingApi', () => {
           tax_code: '1234',
           channel: 'email',
           memo: 'Thank you for the partnership and have a great day!',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -5902,6 +5954,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -6030,6 +6083,7 @@ describe('AccountingApi', () => {
             status: 'active',
             payment_method: 'cash',
             channel: 'email',
+            custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -6222,6 +6276,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -6369,6 +6424,7 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -6431,6 +6487,7 @@ describe('AccountingApi', () => {
           report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any
@@ -6483,6 +6540,7 @@ describe('AccountingApi', () => {
             report_tax_type: 'NONE',
             original_tax_rate_id: '12345',
             status: 'active',
+            custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -6599,6 +6657,7 @@ describe('AccountingApi', () => {
           report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
+          custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -6675,6 +6734,7 @@ describe('AccountingApi', () => {
           report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
+          custom_mappings: {},
           row_version: '1-12345'
         }
       } as any

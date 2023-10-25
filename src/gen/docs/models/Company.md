@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 `deleted` | **boolean** | Whether the company is deleted or not | [optional] 
 `salutation` | **string** | A formal salutation for the person. For example, \'Mr\', \'Mrs\' | [optional] 
 `birthday` | **Date** | The date of birth of the person. | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_by` | **string** | Updated by user ID | [optional] 
 `created_by` | **string** | Created by user ID | [optional] 
 `updated_at` | **Date** | Last updated date | [optional] 
@@ -82,6 +83,7 @@ Name | Type | Description | Notes
 * [`CompanyRowType`](CompanyRowType.md)
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
 
 
 

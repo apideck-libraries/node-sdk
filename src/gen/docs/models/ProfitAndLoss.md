@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 `net_income` | [**ProfitAndLossNetIncome**](ProfitAndLossNetIncome.md) |  | [optional] 
 `net_operating_income` | [**ProfitAndLossNetOperatingIncome**](ProfitAndLossNetOperatingIncome.md) |  | [optional] 
 `gross_profit` | [**ProfitAndLossGrossProfit**](ProfitAndLossGrossProfit.md) |  | [optional] 
+`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 
 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 * [`ProfitAndLossNetIncome`](ProfitAndLossNetIncome.md)
 * [`ProfitAndLossNetOperatingIncome`](ProfitAndLossNetOperatingIncome.md)
 * [`ProfitAndLossGrossProfit`](ProfitAndLossGrossProfit.md)
+
 
 ---
 

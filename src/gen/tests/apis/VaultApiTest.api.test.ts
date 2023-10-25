@@ -107,6 +107,7 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           validation_support: true,
+          schema_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -120,6 +121,18 @@ describe('VaultApi', () => {
           ],
           has_guide: true,
           created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
           updated_at: 1616662325753
         }
       } as any
@@ -232,6 +245,7 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           validation_support: true,
+          schema_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -245,6 +259,18 @@ describe('VaultApi', () => {
           ],
           has_guide: true,
           created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
           updated_at: 1616662325753
         }
       } as any
@@ -281,6 +307,11 @@ describe('VaultApi', () => {
                   value: 'GC5000 series'
                 }
               ]
+            }
+          ],
+          custom_mappings: [
+            {
+              value: '$.root.training.first_aid'
             }
           ]
         }
@@ -377,6 +408,7 @@ describe('VaultApi', () => {
             resource_schema_support: ['leads'],
             resource_settings_support: ['leads'],
             validation_support: true,
+            schema_support: true,
             settings_required_for_authorization: ['client_id', 'client_secret'],
             subscriptions: [
               {
@@ -390,6 +422,18 @@ describe('VaultApi', () => {
             ],
             has_guide: true,
             created_at: 1615563533390,
+            custom_mappings: [
+              {
+                id: 'hris+employees+first_aid_training',
+                label: 'First Aid Training',
+                description: 'First Aid Training completed after 2019-01-01',
+                value: '$.root.training.first_aid',
+                key: 'first_aid_training',
+                required: false,
+                custom_field: true,
+                consumer_id: 'test_user_id'
+              }
+            ],
             updated_at: 1616662325753
           }
         ]
@@ -531,6 +575,7 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           validation_support: true,
+          schema_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -544,6 +589,18 @@ describe('VaultApi', () => {
           ],
           has_guide: true,
           created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
           updated_at: 1616662325753
         }
       } as any
@@ -673,6 +730,7 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           validation_support: true,
+          schema_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -686,6 +744,18 @@ describe('VaultApi', () => {
           ],
           has_guide: true,
           created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
           updated_at: 1616662325753
         }
       } as any
@@ -797,6 +867,7 @@ describe('VaultApi', () => {
           resource_schema_support: ['leads'],
           resource_settings_support: ['leads'],
           validation_support: true,
+          schema_support: true,
           settings_required_for_authorization: ['client_id', 'client_secret'],
           subscriptions: [
             {
@@ -810,6 +881,18 @@ describe('VaultApi', () => {
           ],
           has_guide: true,
           created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
           updated_at: 1616662325753
         }
       } as any
@@ -845,6 +928,11 @@ describe('VaultApi', () => {
                   value: 'GC5000 series'
                 }
               ]
+            }
+          ],
+          custom_mappings: [
+            {
+              value: '$.root.training.first_aid'
             }
           ]
         }
@@ -1261,6 +1349,51 @@ describe('VaultApi', () => {
         }
       } as any
       const current = await vault.consumersUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customFieldsAll', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/custom-fields'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: [
+          {
+            id: '123456',
+            name: 'SSN',
+            description: 'Employee Level',
+            value: '495172776',
+            finder: 'string'
+          }
+        ]
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        unifiedApi: 'crm',
+        serviceId: 'pipedrive',
+        resource: 'leads'
+      } as any
+      const current = await vault.customFieldsAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
