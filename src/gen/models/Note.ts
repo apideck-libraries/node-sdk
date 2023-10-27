@@ -78,7 +78,7 @@ export interface Note {
    * @type {object}
    * @memberof Note
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user that last updated the note.
    * @type {string}
@@ -146,7 +146,6 @@ export function NoteToJSON(value?: Note | null): any {
     company_id: value.company_id,
     opportunity_id: value.opportunity_id,
     lead_id: value.lead_id,
-    active: value.active,
-    custom_mappings: value.custom_mappings
+    active: value.active
   }
 }

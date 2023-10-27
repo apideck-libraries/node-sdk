@@ -36,7 +36,7 @@ export interface Offer {
    * @type {object}
    * @memberof Offer
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -98,7 +98,6 @@ export function OfferToJSON(value?: Offer | null): any {
     return null
   }
   return {
-    application_id: value.application_id,
-    custom_mappings: value.custom_mappings
+    application_id: value.application_id
   }
 }

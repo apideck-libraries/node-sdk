@@ -72,7 +72,7 @@ export interface Tender {
    * @type {object}
    * @memberof Tender
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -146,7 +146,6 @@ export function TenderToJSON(value?: Tender | null): any {
     hidden: value.hidden,
     editable: value.editable,
     opens_cash_drawer: value.opens_cash_drawer,
-    allows_tipping: value.allows_tipping,
-    custom_mappings: value.custom_mappings
+    allows_tipping: value.allows_tipping
   }
 }

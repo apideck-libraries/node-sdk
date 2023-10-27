@@ -60,7 +60,7 @@ export interface Application {
    * @type {object}
    * @memberof Application
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -140,7 +140,6 @@ export function ApplicationToJSON(value?: Application | null): any {
     applicant_id: value.applicant_id,
     job_id: value.job_id,
     status: value.status,
-    stage: ApplicationStageToJSON(value.stage),
-    custom_mappings: value.custom_mappings
+    stage: ApplicationStageToJSON(value.stage)
   }
 }

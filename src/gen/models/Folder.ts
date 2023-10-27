@@ -75,7 +75,7 @@ export interface Folder {
    * @type {object}
    * @memberof Folder
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -148,7 +148,6 @@ export function FolderToJSON(value?: Folder | null): any {
     name: value.name,
     parent_folders: (value.parent_folders as Array<any>).map(LinkedFolderToJSON),
     description: value.description,
-    owner: OwnerToJSON(value.owner),
-    custom_mappings: value.custom_mappings
+    owner: OwnerToJSON(value.owner)
   }
 }

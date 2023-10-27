@@ -82,7 +82,7 @@ export interface BalanceSheet {
    * @type {object}
    * @memberof BalanceSheet
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -154,7 +154,6 @@ export function BalanceSheetToJSON(value?: BalanceSheet | null): any {
     assets: BalanceSheetAssetsToJSON(value.assets),
     liabilities: BalanceSheetLiabilitiesToJSON(value.liabilities),
     equity: BalanceSheetEquityToJSON(value.equity),
-    end_date: value.end_date,
-    custom_mappings: value.custom_mappings
+    end_date: value.end_date
   }
 }

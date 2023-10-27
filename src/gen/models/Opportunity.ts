@@ -244,7 +244,7 @@ export interface Opportunity {
    * @type {object}
    * @memberof Opportunity
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The unique identifier of the user who last updated the opportunity.
    * @type {string}
@@ -402,7 +402,6 @@ export function OpportunityToJSON(value?: Opportunity | null): any {
         ? undefined
         : value.stage_last_changed_at === null
         ? null
-        : new Date(value.stage_last_changed_at).toISOString(),
-    custom_mappings: value.custom_mappings
+        : new Date(value.stage_last_changed_at).toISOString()
   }
 }

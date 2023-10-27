@@ -60,7 +60,7 @@ export interface CollectionUser {
    * @type {object}
    * @memberof CollectionUser
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -119,7 +119,6 @@ export function CollectionUserToJSON(value?: CollectionUser | null): any {
     first_name: value.first_name,
     last_name: value.last_name,
     email: value.email,
-    photo_url: value.photo_url,
-    custom_mappings: value.custom_mappings
+    photo_url: value.photo_url
   }
 }

@@ -106,8 +106,7 @@ describe('HrisApi', () => {
               type: 'primary'
             }
           ],
-          debtor_id: '12345',
-          custom_mappings: {}
+          debtor_id: '12345'
         }
       } as any
       const current = await hris.companiesAdd(params)
@@ -471,8 +470,7 @@ describe('HrisApi', () => {
               type: 'primary'
             }
           ],
-          debtor_id: '12345',
-          custom_mappings: {}
+          debtor_id: '12345'
         }
       } as any
       const current = await hris.companiesUpdate(params)
@@ -516,8 +514,7 @@ describe('HrisApi', () => {
         department: {
           name: 'R&amp;D',
           code: '2',
-          description: 'R&amp;D',
-          custom_mappings: {}
+          description: 'R&amp;D'
         }
       } as any
       const current = await hris.departmentsAdd(params)
@@ -713,8 +710,7 @@ describe('HrisApi', () => {
         department: {
           name: 'R&amp;D',
           code: '2',
-          description: 'R&amp;D',
-          custom_mappings: {}
+          description: 'R&amp;D'
         }
       } as any
       const current = await hris.departmentsUpdate(params)
@@ -1208,8 +1204,7 @@ describe('HrisApi', () => {
             gender: 'male',
             initials: 'EM',
             birthday: '2000-08-12',
-            deceased_on: '2000-08-12',
-            custom_mappings: {}
+            deceased_on: '2000-08-12'
           },
           division: 'Europe',
           division_id: '12345',
@@ -1393,7 +1388,6 @@ describe('HrisApi', () => {
             end_date: '2021-11-28'
           },
           tags: ['New'],
-          custom_mappings: {},
           row_version: '1-12345',
           deleted: true
         }
@@ -2009,8 +2003,7 @@ describe('HrisApi', () => {
             gender: 'male',
             initials: 'EM',
             birthday: '2000-08-12',
-            deceased_on: '2000-08-12',
-            custom_mappings: {}
+            deceased_on: '2000-08-12'
           },
           division: 'Europe',
           division_id: '12345',
@@ -2194,7 +2187,6 @@ describe('HrisApi', () => {
             end_date: '2021-11-28'
           },
           tags: ['New'],
-          custom_mappings: {},
           row_version: '1-12345',
           deleted: true
         }
@@ -2405,8 +2397,7 @@ describe('HrisApi', () => {
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
-          },
-          custom_mappings: {}
+          }
         }
       } as any
       const current = await hris.timeOffRequestsAdd(params)
@@ -2636,8 +2627,7 @@ describe('HrisApi', () => {
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
-          },
-          custom_mappings: {}
+          }
         }
       } as any
       const current = await hris.timeOffRequestsUpdate(params)

@@ -54,7 +54,7 @@ export interface Department {
    * @type {object}
    * @memberof Department
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -121,7 +121,6 @@ export function DepartmentToJSON(value?: Department | null): any {
   return {
     name: value.name,
     code: value.code,
-    description: value.description,
-    custom_mappings: value.custom_mappings
+    description: value.description
   }
 }

@@ -48,7 +48,7 @@ export interface DriveGroup {
    * @type {object}
    * @memberof DriveGroup
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -114,7 +114,6 @@ export function DriveGroupToJSON(value?: DriveGroup | null): any {
   return {
     name: value.name,
     display_name: value.display_name,
-    description: value.description,
-    custom_mappings: value.custom_mappings
+    description: value.description
   }
 }

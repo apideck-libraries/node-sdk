@@ -102,7 +102,7 @@ export interface TaxRate {
    * @type {object}
    * @memberof TaxRate
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -213,7 +213,6 @@ export function TaxRateToJSON(value?: TaxRate | null): any {
     report_tax_type: value.report_tax_type,
     original_tax_rate_id: value.original_tax_rate_id,
     status: value.status,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

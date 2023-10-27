@@ -182,7 +182,7 @@ export interface Item {
    * @type {object}
    * @memberof Item
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * Flag to indicate if the object is deleted.
    * @type {boolean}
@@ -329,7 +329,6 @@ export function ItemToJSON(value?: Item | null): any {
     modifier_groups: value.modifier_groups,
     available: value.available,
     hidden: value.hidden,
-    custom_mappings: value.custom_mappings,
     deleted: value.deleted
   }
 }

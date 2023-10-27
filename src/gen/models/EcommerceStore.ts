@@ -48,7 +48,7 @@ export interface EcommerceStore {
    * @type {object}
    * @memberof EcommerceStore
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the object was created.
    * @type {Date}
@@ -103,7 +103,6 @@ export function EcommerceStoreToJSON(value?: EcommerceStore | null): any {
   return {
     name: value.name,
     store_url: value.store_url,
-    admin_url: value.admin_url,
-    custom_mappings: value.custom_mappings
+    admin_url: value.admin_url
   }
 }

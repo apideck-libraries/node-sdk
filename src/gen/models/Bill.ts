@@ -238,7 +238,7 @@ export interface Bill {
    * @type {object}
    * @memberof Bill
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 /**
@@ -372,7 +372,6 @@ export function BillToJSON(value?: Bill | null): any {
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
     discount_percentage: value.discount_percentage,
-    row_version: value.row_version,
-    custom_mappings: value.custom_mappings
+    row_version: value.row_version
   }
 }

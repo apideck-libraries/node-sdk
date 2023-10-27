@@ -126,7 +126,7 @@ export interface CompanyInfo {
    * @type {object}
    * @memberof CompanyInfo
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -272,7 +272,6 @@ export function CompanyInfoToJSON(value?: CompanyInfo | null): any {
         ? undefined
         : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

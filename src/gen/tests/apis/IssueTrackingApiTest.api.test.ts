@@ -107,8 +107,7 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
         ticketComment: {
-          body: 'What internet provider do you use?',
-          custom_mappings: {}
+          body: 'What internet provider do you use?'
         }
       } as any
       const current = await issueTracking.ticketCommentsAdd(params)
@@ -303,8 +302,7 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
         ticketComment: {
-          body: 'What internet provider do you use?',
-          custom_mappings: {}
+          body: 'What internet provider do you use?'
         }
       } as any
       const current = await issueTracking.ticketCommentsUpdate(params)
@@ -361,11 +359,9 @@ describe('IssueTrackingApi', () => {
           due_date: '2020-09-30T07:43:32.000Z',
           tags: [
             {
-              id: '12345',
-              custom_mappings: {}
+              id: '12345'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await issueTracking.ticketsAdd(params)
@@ -612,11 +608,9 @@ describe('IssueTrackingApi', () => {
           due_date: '2020-09-30T07:43:32.000Z',
           tags: [
             {
-              id: '12345',
-              custom_mappings: {}
+              id: '12345'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await issueTracking.ticketsUpdate(params)

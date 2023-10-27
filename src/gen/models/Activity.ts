@@ -308,7 +308,7 @@ export interface Activity {
    * @type {object}
    * @memberof Activity
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the activity
    * @type {string}
@@ -488,7 +488,6 @@ export function ActivityToJSON(value?: Activity | null): any {
     attendees:
       value.attendees === undefined
         ? undefined
-        : (value.attendees as Array<any>).map(ActivityAttendeeToJSON),
-    custom_mappings: value.custom_mappings
+        : (value.attendees as Array<any>).map(ActivityAttendeeToJSON)
   }
 }

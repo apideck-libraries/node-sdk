@@ -177,7 +177,7 @@ export interface Lead {
    * @type {object}
    * @memberof Lead
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * Date updated in ISO 8601 format
    * @type {string}
@@ -284,7 +284,6 @@ export function LeadToJSON(value?: Lead | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags),
-    custom_mappings: value.custom_mappings
+    tags: TagsToJSON(value.tags)
   }
 }

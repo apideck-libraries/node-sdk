@@ -102,7 +102,7 @@ export interface HrisCompany {
    * @type {object}
    * @memberof HrisCompany
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    *
    * @type {boolean}
@@ -215,7 +215,6 @@ export function HrisCompanyToJSON(value?: HrisCompany | null): any {
     emails: value.emails === undefined ? undefined : (value.emails as Array<any>).map(EmailToJSON),
     websites:
       value.websites === undefined ? undefined : (value.websites as Array<any>).map(WebsiteToJSON),
-    debtor_id: value.debtor_id,
-    custom_mappings: value.custom_mappings
+    debtor_id: value.debtor_id
   }
 }

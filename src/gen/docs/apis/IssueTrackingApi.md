@@ -151,8 +151,7 @@ const params = {
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
   ticketComment: {
-    body: 'What internet provider do you use?',
-    custom_mappings: {}
+    body: 'What internet provider do you use?'
   }
 }
 
@@ -454,8 +453,7 @@ const params = {
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
   ticketComment: {
-    body: 'What internet provider do you use?',
-    custom_mappings: {}
+    body: 'What internet provider do you use?'
   }
 }
 
@@ -542,11 +540,9 @@ const params = {
     due_date: '2020-09-30T07:43:32.000Z',
     tags: [
       {
-        id: '12345',
-        custom_mappings: {}
+        id: '12345'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -853,11 +849,9 @@ const params = {
     due_date: '2020-09-30T07:43:32.000Z',
     tags: [
       {
-        id: '12345',
-        custom_mappings: {}
+        id: '12345'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 

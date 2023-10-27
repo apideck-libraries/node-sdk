@@ -197,7 +197,7 @@ export interface PurchaseOrder {
    * @type {object}
    * @memberof PurchaseOrder
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -372,7 +372,6 @@ export function PurchaseOrderToJSON(value?: PurchaseOrder | null): any {
     tax_code: value.tax_code,
     channel: value.channel,
     memo: value.memo,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

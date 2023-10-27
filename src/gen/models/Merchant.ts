@@ -82,7 +82,7 @@ export interface Merchant {
    * @type {object}
    * @memberof Merchant
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -173,7 +173,6 @@ export function MerchantToJSON(value?: Merchant | null): any {
         ? undefined
         : (value.service_charges as Array<any>).map(ServiceChargeToJSON),
     language: value.language,
-    currency: CurrencyToJSON(value.currency),
-    custom_mappings: value.custom_mappings
+    currency: CurrencyToJSON(value.currency)
   }
 }

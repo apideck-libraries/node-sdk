@@ -251,7 +251,7 @@ export interface Company {
    * @type {object}
    * @memberof Company
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * Updated by user ID
    * @type {string}
@@ -420,7 +420,6 @@ export function CompanyToJSON(value?: Company | null): any {
         ? undefined
         : value.birthday === null
         ? null
-        : new Date(value.birthday).toISOString().substr(0, 10),
-    custom_mappings: value.custom_mappings
+        : new Date(value.birthday).toISOString().substr(0, 10)
   }
 }

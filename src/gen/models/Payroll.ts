@@ -81,7 +81,7 @@ export interface Payroll {
    * @type {object}
    * @memberof Payroll
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 export function PayrollFromJSON(json: any): Payroll {
@@ -126,7 +126,6 @@ export function PayrollToJSON(value?: Payroll | null): any {
     compensations:
       value.compensations === undefined
         ? undefined
-        : (value.compensations as Array<any>).map(CompensationToJSON),
-    custom_mappings: value.custom_mappings
+        : (value.compensations as Array<any>).map(CompensationToJSON)
   }
 }

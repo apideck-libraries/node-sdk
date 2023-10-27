@@ -85,7 +85,7 @@ export interface HrisJob {
    * @type {object}
    * @memberof HrisJob
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 export function HrisJobFromJSON(json: any): HrisJob {
@@ -145,7 +145,6 @@ export function HrisJobToJSON(value?: HrisJob | null): any {
     employment_status: EmploymentStatusToJSON(value.employment_status),
     department: value.department,
     is_primary: value.is_primary,
-    location: HrisJobLocationToJSON(value.location),
-    custom_mappings: value.custom_mappings
+    location: HrisJobLocationToJSON(value.location)
   }
 }

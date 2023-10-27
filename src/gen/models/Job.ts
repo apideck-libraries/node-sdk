@@ -255,7 +255,7 @@ export interface Job {
    * @type {object}
    * @memberof Job
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -437,7 +437,6 @@ export function JobToJSON(value?: Job | null): any {
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     deleted: value.deleted,
-    owner_id: value.owner_id,
-    custom_mappings: value.custom_mappings
+    owner_id: value.owner_id
   }
 }

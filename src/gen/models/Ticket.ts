@@ -117,7 +117,7 @@ export interface Ticket {
    * @type {object}
    * @memberof Ticket
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 /**
@@ -203,8 +203,6 @@ export function TicketToJSON(value?: Ticket | null): any {
         : value.due_date === null
         ? null
         : new Date(value.due_date).toISOString(),
-    tags:
-      value.tags === undefined ? undefined : (value.tags as Array<any>).map(CollectionTagToJSON),
-    custom_mappings: value.custom_mappings
+    tags: value.tags === undefined ? undefined : (value.tags as Array<any>).map(CollectionTagToJSON)
   }
 }

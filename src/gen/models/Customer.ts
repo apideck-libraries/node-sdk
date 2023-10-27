@@ -198,7 +198,7 @@ export interface Customer {
    * @type {object}
    * @memberof Customer
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -345,7 +345,6 @@ export function CustomerToJSON(value?: Customer | null): any {
     status: value.status,
     payment_method: value.payment_method,
     channel: value.channel,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

@@ -30,7 +30,7 @@ export interface AtsActivity {
    * @type {object}
    * @memberof AtsActivity
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -90,7 +90,5 @@ export function AtsActivityToJSON(value?: AtsActivity | null): any {
   if (value === null) {
     return null
   }
-  return {
-    custom_mappings: value.custom_mappings
-  }
+  return {}
 }

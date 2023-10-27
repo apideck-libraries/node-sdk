@@ -50,8 +50,7 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description',
-          custom_mappings: {}
+          description: 'A description'
         }
       } as any
       const current = await fileStorage.driveGroupsAdd(params)
@@ -245,8 +244,7 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description',
-          custom_mappings: {}
+          description: 'A description'
         }
       } as any
       const current = await fileStorage.driveGroupsUpdate(params)
@@ -289,8 +287,7 @@ describe('FileStorageApi', () => {
       const params = {
         drive: {
           name: 'Project Resources',
-          description: 'A description',
-          custom_mappings: {}
+          description: 'A description'
         }
       } as any
       const current = await fileStorage.drivesAdd(params)
@@ -481,8 +478,7 @@ describe('FileStorageApi', () => {
         id: 'id_example',
         drive: {
           name: 'Project Resources',
-          description: 'A description',
-          custom_mappings: {}
+          description: 'A description'
         }
       } as any
       const current = await fileStorage.drivesUpdate(params)

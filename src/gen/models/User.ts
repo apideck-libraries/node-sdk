@@ -136,7 +136,7 @@ export interface User {
    * @type {object}
    * @memberof User
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the user was last updated.
    * @type {string}
@@ -218,7 +218,6 @@ export function UserToJSON(value?: User | null): any {
     phone_numbers:
       value.phone_numbers === undefined
         ? undefined
-        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON),
-    custom_mappings: value.custom_mappings
+        : (value.phone_numbers as Array<any>).map(PhoneNumberToJSON)
   }
 }

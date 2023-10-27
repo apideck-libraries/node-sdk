@@ -116,7 +116,7 @@ export interface ProfitAndLoss {
    * @type {object}
    * @memberof ProfitAndLoss
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 export function ProfitAndLossFromJSON(json: any): ProfitAndLoss {
@@ -166,7 +166,6 @@ export function ProfitAndLossToJSON(value?: ProfitAndLoss | null): any {
     customer_id: value.customer_id,
     net_income: ProfitAndLossNetIncomeToJSON(value.net_income),
     net_operating_income: ProfitAndLossNetOperatingIncomeToJSON(value.net_operating_income),
-    gross_profit: ProfitAndLossGrossProfitToJSON(value.gross_profit),
-    custom_mappings: value.custom_mappings
+    gross_profit: ProfitAndLossGrossProfitToJSON(value.gross_profit)
   }
 }

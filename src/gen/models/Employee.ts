@@ -401,7 +401,7 @@ export interface Employee {
    * @type {object}
    * @memberof Employee
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -678,7 +678,6 @@ export function EmployeeToJSON(value?: Employee | null): any {
     food_allergies: value.food_allergies,
     probation_period: ProbationPeriodToJSON(value.probation_period),
     tags: TagsToJSON(value.tags),
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version,
     deleted: value.deleted
   }

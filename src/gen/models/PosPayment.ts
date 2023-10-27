@@ -214,7 +214,7 @@ export interface PosPayment {
    * @type {object}
    * @memberof PosPayment
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -368,7 +368,6 @@ export function PosPaymentToJSON(value?: PosPayment | null): any {
     bank_account: PosBankAccountToJSON(value.bank_account),
     wallet: WalletDetailsToJSON(value.wallet),
     external_details: PosPaymentExternalDetailsToJSON(value.external_details),
-    service_charges: ServiceChargesToJSON(value.service_charges),
-    custom_mappings: value.custom_mappings
+    service_charges: ServiceChargesToJSON(value.service_charges)
   }
 }

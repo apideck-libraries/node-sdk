@@ -170,7 +170,7 @@ export interface Payment {
    * @type {object}
    * @memberof Payment
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -307,7 +307,6 @@ export function PaymentToJSON(value?: Payment | null): any {
         : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
     note: value.note,
     row_version: value.row_version,
-    display_id: value.display_id,
-    custom_mappings: value.custom_mappings
+    display_id: value.display_id
   }
 }

@@ -69,7 +69,7 @@ export interface Location {
    * @type {object}
    * @memberof Location
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -151,7 +151,6 @@ export function LocationToJSON(value?: Location | null): any {
     address: AddressToJSON(value.address),
     status: value.status,
     merchant_id: value.merchant_id,
-    currency: CurrencyToJSON(value.currency),
-    custom_mappings: value.custom_mappings
+    currency: CurrencyToJSON(value.currency)
   }
 }

@@ -36,7 +36,7 @@ export interface CollectionTag {
    * @type {object}
    * @memberof CollectionTag
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 export function CollectionTagFromJSON(json: any): CollectionTag {
@@ -62,7 +62,6 @@ export function CollectionTagToJSON(value?: CollectionTag | null): any {
     return null
   }
   return {
-    id: value.id,
-    custom_mappings: value.custom_mappings
+    id: value.id
   }
 }

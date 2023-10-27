@@ -128,7 +128,7 @@ export interface Message {
    * @type {object}
    * @memberof Message
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -258,7 +258,6 @@ export function MessageToJSON(value?: Message | null): any {
     reference: value.reference,
     price: PriceToJSON(value.price),
     error: value.error,
-    messaging_service_id: value.messaging_service_id,
-    custom_mappings: value.custom_mappings
+    messaging_service_id: value.messaging_service_id
   }
 }

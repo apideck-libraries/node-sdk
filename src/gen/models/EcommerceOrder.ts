@@ -166,7 +166,7 @@ export interface EcommerceOrder {
    * @type {object}
    * @memberof EcommerceOrder
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the object was created.
    * @type {Date}
@@ -301,7 +301,6 @@ export function EcommerceOrderToJSON(value?: EcommerceOrder | null): any {
       value.line_items === undefined
         ? undefined
         : (value.line_items as Array<any>).map(EcommerceOrderLineItemToJSON),
-    note: value.note,
-    custom_mappings: value.custom_mappings
+    note: value.note
   }
 }

@@ -54,7 +54,7 @@ export interface Collection {
    * @type {object}
    * @memberof Collection
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the object was last updated.
    * @type {Date}
@@ -108,7 +108,6 @@ export function CollectionToJSON(value?: Collection | null): any {
     parent_id: value.parent_id,
     type: value.type,
     name: value.name,
-    description: value.description,
-    custom_mappings: value.custom_mappings
+    description: value.description
   }
 }

@@ -131,8 +131,7 @@ describe('LeadApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await lead.leadsAdd(params)
@@ -565,8 +564,7 @@ describe('LeadApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await lead.leadsUpdate(params)

@@ -165,7 +165,7 @@ export interface CreditNote {
    * @type {object}
    * @memberof CreditNote
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -310,7 +310,6 @@ export function CreditNoteToJSON(value?: CreditNote | null): any {
     allocations: value.allocations,
     note: value.note,
     terms: value.terms,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

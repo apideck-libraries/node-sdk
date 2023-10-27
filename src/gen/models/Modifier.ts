@@ -74,7 +74,7 @@ export interface Modifier {
    * @type {object}
    * @memberof Modifier
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -148,7 +148,6 @@ export function ModifierToJSON(value?: Modifier | null): any {
     alternate_name: value.alternate_name,
     price_amount: value.price_amount,
     currency: CurrencyToJSON(value.currency),
-    available: value.available,
-    custom_mappings: value.custom_mappings
+    available: value.available
   }
 }

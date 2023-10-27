@@ -92,8 +92,7 @@ const params = {
   driveGroup: {
     name: 'accounting',
     display_name: 'accounting',
-    description: 'A description',
-    custom_mappings: {}
+    description: 'A description'
   }
 }
 
@@ -378,8 +377,7 @@ const params = {
   driveGroup: {
     name: 'accounting',
     display_name: 'accounting',
-    description: 'A description',
-    custom_mappings: {}
+    description: 'A description'
   }
 }
 
@@ -451,8 +449,7 @@ const apideck = new Apideck({
 const params = {
   drive: {
     name: 'Project Resources',
-    description: 'A description',
-    custom_mappings: {}
+    description: 'A description'
   }
 }
 
@@ -735,8 +732,7 @@ const params = {
   id: 'id_example',
   drive: {
     name: 'Project Resources',
-    description: 'A description',
-    custom_mappings: {}
+    description: 'A description'
   }
 }
 

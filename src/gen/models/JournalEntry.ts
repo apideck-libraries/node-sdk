@@ -97,7 +97,7 @@ export interface JournalEntry {
    * @type {object}
    * @memberof JournalEntry
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -190,7 +190,6 @@ export function JournalEntryToJSON(value?: JournalEntry | null): any {
     tax_type: value.tax_type,
     tax_code: value.tax_code,
     number: value.number,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

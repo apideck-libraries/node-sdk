@@ -248,7 +248,7 @@ export interface Contact {
    * @type {object}
    * @memberof Contact
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The last update date of the contact.
    * @type {Date}
@@ -416,7 +416,6 @@ export function ContactToJSON(value?: Contact | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags),
-    custom_mappings: value.custom_mappings
+    tags: TagsToJSON(value.tags)
   }
 }

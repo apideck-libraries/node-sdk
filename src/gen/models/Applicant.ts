@@ -262,7 +262,7 @@ export interface Applicant {
    * @type {object}
    * @memberof Applicant
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * Flag to indicate if the object is deleted.
    * @type {boolean}
@@ -456,7 +456,6 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     archived: value.archived,
     owner_id: value.owner_id,
     record_url: value.record_url,
-    custom_mappings: value.custom_mappings,
     deleted: value.deleted
   }
 }

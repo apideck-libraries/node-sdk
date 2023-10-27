@@ -74,7 +74,7 @@ export interface Person {
    * @type {object}
    * @memberof Person
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
 }
 
 export function PersonFromJSON(json: any): Person {
@@ -130,7 +130,6 @@ export function PersonToJSON(value?: Person | null): any {
         ? undefined
         : value.deceased_on === null
         ? null
-        : new Date(value.deceased_on).toISOString().substr(0, 10),
-    custom_mappings: value.custom_mappings
+        : new Date(value.deceased_on).toISOString().substr(0, 10)
   }
 }

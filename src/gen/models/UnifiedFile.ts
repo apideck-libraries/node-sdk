@@ -123,7 +123,7 @@ export interface UnifiedFile {
    * @type {object}
    * @memberof UnifiedFile
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who last updated the object.
    * @type {string}
@@ -219,7 +219,6 @@ export function UnifiedFileToJSON(value?: UnifiedFile | null): any {
     parent_folders_complete: value.parent_folders_complete,
     permissions: UnifiedFilePermissionsToJSON(value.permissions),
     exportable: value.exportable,
-    export_formats: value.export_formats,
-    custom_mappings: value.custom_mappings
+    export_formats: value.export_formats
   }
 }

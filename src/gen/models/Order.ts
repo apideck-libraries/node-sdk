@@ -260,7 +260,7 @@ export interface Order {
    * @type {object}
    * @memberof Order
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    *
    * @type {string}
@@ -496,7 +496,6 @@ export function OrderToJSON(value?: Order | null): any {
         ? undefined
         : (value.tenders as Array<any>).map(OrderTendersToJSON),
     voided: value.voided,
-    custom_mappings: value.custom_mappings,
     version: value.version
   }
 }

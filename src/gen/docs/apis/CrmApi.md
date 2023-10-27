@@ -185,8 +185,7 @@ const params = {
         is_organizer: true,
         status: 'accepted'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -555,8 +554,7 @@ const params = {
         is_organizer: true,
         status: 'accepted'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -737,8 +735,7 @@ const params = {
     ],
     read_only: false,
     salutation: 'Mr',
-    birthday: '2000-08-12',
-    custom_mappings: {}
+    birthday: '2000-08-12'
   }
 }
 
@@ -1132,8 +1129,7 @@ const params = {
     ],
     read_only: false,
     salutation: 'Mr',
-    birthday: '2000-08-12',
-    custom_mappings: {}
+    birthday: '2000-08-12'
   }
 }
 
@@ -1298,8 +1294,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -1677,8 +1672,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -1834,8 +1828,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -2204,8 +2197,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -2283,8 +2275,7 @@ const params = {
     company_id: '12345',
     opportunity_id: '12345',
     lead_id: '12345',
-    active: true,
-    custom_mappings: {}
+    active: true
   }
 }
 
@@ -2573,8 +2564,7 @@ const params = {
     company_id: '12345',
     opportunity_id: '12345',
     lead_id: '12345',
-    active: true,
-    custom_mappings: {}
+    active: true
   }
 }
 
@@ -2683,8 +2673,7 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stage_last_changed_at: '2020-09-30T07:43:32.000Z',
-    custom_mappings: {}
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
   }
 }
 
@@ -3006,8 +2995,7 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stage_last_changed_at: '2020-09-30T07:43:32.000Z',
-    custom_mappings: {}
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
   }
 }
 
@@ -3517,8 +3505,7 @@ const params = {
         email: 'elon@musk.com',
         type: 'primary'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -3858,8 +3845,7 @@ const params = {
         email: 'elon@musk.com',
         type: 'primary'
       }
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 

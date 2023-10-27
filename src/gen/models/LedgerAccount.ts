@@ -185,7 +185,7 @@ export interface LedgerAccount {
    * @type {object}
    * @memberof LedgerAccount
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -369,7 +369,6 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
         : value.last_reconciliation_date === null
         ? null
         : new Date(value.last_reconciliation_date).toISOString().substr(0, 10),
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

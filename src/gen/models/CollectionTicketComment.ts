@@ -36,7 +36,7 @@ export interface CollectionTicketComment {
    * @type {object}
    * @memberof CollectionTicketComment
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The user who created the object.
    * @type {string}
@@ -94,7 +94,6 @@ export function CollectionTicketCommentToJSON(value?: CollectionTicketComment | 
     return null
   }
   return {
-    body: value.body,
-    custom_mappings: value.custom_mappings
+    body: value.body
   }
 }

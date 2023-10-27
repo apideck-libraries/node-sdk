@@ -129,7 +129,7 @@ export interface EcommerceProduct {
    * @type {object}
    * @memberof EcommerceProduct
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * The date and time when the object was created.
    * @type {Date}
@@ -239,7 +239,6 @@ export function EcommerceProductToJSON(value?: EcommerceProduct | null): any {
     categories:
       value.categories === undefined
         ? undefined
-        : (value.categories as Array<any>).map(EcommerceProductCategoriesToJSON),
-    custom_mappings: value.custom_mappings
+        : (value.categories as Array<any>).map(EcommerceProductCategoriesToJSON)
   }
 }

@@ -154,7 +154,7 @@ export interface InvoiceItem {
    * @type {object}
    * @memberof InvoiceItem
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -289,7 +289,6 @@ export function InvoiceItemToJSON(value?: InvoiceItem | null): any {
     expense_account: LinkedLedgerAccountToJSON(value.expense_account),
     tracking_category: LinkedTrackingCategoryToJSON(value.tracking_category),
     active: value.active,
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }

@@ -256,7 +256,7 @@ export interface Invoice {
    * @type {object}
    * @memberof Invoice
    */
-  custom_mappings?: object | null
+  readonly custom_mappings?: object | null
   /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
@@ -457,7 +457,6 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
     ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
-    custom_mappings: value.custom_mappings,
     row_version: value.row_version
   }
 }
