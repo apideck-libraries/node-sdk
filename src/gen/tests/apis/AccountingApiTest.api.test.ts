@@ -1113,7 +1113,6 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
-                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -1292,7 +1291,6 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
-              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -2785,7 +2783,6 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
-                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -3037,7 +3034,6 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
-              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -5312,7 +5308,6 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
-                custom_mappings: {},
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -5551,7 +5546,6 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
-              custom_mappings: {},
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
