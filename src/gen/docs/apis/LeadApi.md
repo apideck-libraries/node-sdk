@@ -149,8 +149,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 
@@ -518,8 +517,7 @@ const params = {
     ],
     tags: [
       'New'
-    ],
-    custom_mappings: {}
+    ]
   }
 }
 

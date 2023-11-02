@@ -134,8 +134,7 @@ describe('CrmApi', () => {
               is_organizer: true,
               status: 'accepted'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await crm.activitiesAdd(params)
@@ -595,8 +594,7 @@ describe('CrmApi', () => {
               is_organizer: true,
               status: 'accepted'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await crm.activitiesUpdate(params)
@@ -747,8 +745,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12',
-          custom_mappings: {}
+          birthday: '2000-08-12'
         }
       } as any
       const current = await crm.companiesAdd(params)
@@ -1271,8 +1268,7 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12',
-          custom_mappings: {}
+          birthday: '2000-08-12'
         }
       } as any
       const current = await crm.companiesUpdate(params)
@@ -1406,8 +1402,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await crm.contactsAdd(params)
@@ -1873,8 +1868,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await crm.contactsUpdate(params)
@@ -1999,8 +1993,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await crm.leadsAdd(params)
@@ -2433,8 +2426,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New'],
-          custom_mappings: {}
+          tags: ['New']
         }
       } as any
       const current = await crm.leadsUpdate(params)
@@ -2483,8 +2475,7 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true,
-          custom_mappings: {}
+          active: true
         }
       } as any
       const current = await crm.notesAdd(params)
@@ -2693,8 +2684,7 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true,
-          custom_mappings: {}
+          active: true
         }
       } as any
       const current = await crm.notesUpdate(params)
@@ -2771,8 +2761,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
-          custom_mappings: {}
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
       const current = await crm.opportunitiesAdd(params)
@@ -3079,8 +3068,7 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
-          custom_mappings: {}
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
         }
       } as any
       const current = await crm.opportunitiesUpdate(params)
@@ -3460,8 +3448,7 @@ describe('CrmApi', () => {
               email: 'elon@musk.com',
               type: 'primary'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await crm.usersAdd(params)
@@ -3819,8 +3806,7 @@ describe('CrmApi', () => {
               email: 'elon@musk.com',
               type: 'primary'
             }
-          ],
-          custom_mappings: {}
+          ]
         }
       } as any
       const current = await crm.usersUpdate(params)

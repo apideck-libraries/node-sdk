@@ -175,7 +175,6 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    custom_mappings: {},
     deleted: true
   }
 }
@@ -563,7 +562,6 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    custom_mappings: {},
     deleted: true
   }
 }
@@ -641,8 +639,7 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    },
-    custom_mappings: {}
+    }
   }
 }
 
@@ -928,8 +925,7 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    },
-    custom_mappings: {}
+    }
   }
 }
 

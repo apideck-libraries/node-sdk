@@ -149,7 +149,6 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
-          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -659,7 +658,6 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
-          custom_mappings: {},
           deleted: true
         }
       } as any
@@ -708,8 +706,7 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          },
-          custom_mappings: {}
+          }
         }
       } as any
       const current = await ats.applicationsAdd(params)
@@ -915,8 +912,7 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          },
-          custom_mappings: {}
+          }
         }
       } as any
       const current = await ats.applicationsUpdate(params)
