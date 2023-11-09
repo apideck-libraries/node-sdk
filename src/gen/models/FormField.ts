@@ -82,6 +82,12 @@ export interface FormField {
    */
   hidden?: boolean | null
   /**
+   * When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility.
+   * @type {boolean}
+   * @memberof FormField
+   */
+  deprecated?: boolean | null
+  /**
    * Indicates if the form field contains sensitive data, which will display the value as a masked input.
    * @type {boolean}
    * @memberof FormField
@@ -148,6 +154,7 @@ export function FormFieldFromJSONTyped(json: any, ignoreDiscriminator: boolean):
       : json['allow_custom_values'],
     disabled: !exists(json, 'disabled') ? undefined : json['disabled'],
     hidden: !exists(json, 'hidden') ? undefined : json['hidden'],
+    deprecated: !exists(json, 'deprecated') ? undefined : json['deprecated'],
     sensitive: !exists(json, 'sensitive') ? undefined : json['sensitive'],
     prefix: !exists(json, 'prefix') ? undefined : json['prefix'],
     suffix: !exists(json, 'suffix') ? undefined : json['suffix'],
@@ -175,6 +182,7 @@ export function FormFieldToJSON(value?: FormField | null): any {
     allow_custom_values: value.allow_custom_values,
     disabled: value.disabled,
     hidden: value.hidden,
+    deprecated: value.deprecated,
     sensitive: value.sensitive,
     prefix: value.prefix,
     suffix: value.suffix,
