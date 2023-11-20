@@ -18,19 +18,19 @@ import { SortDirection, SortDirectionFromJSON, SortDirectionToJSON } from './Sor
 /**
  *
  * @export
- * @interface InvoicesSort
+ * @interface CreditNotesSort
  */
-export interface InvoicesSort {
+export interface CreditNotesSort {
   /**
-   * The field on which to sort the Invoices
+   * The field on which to sort the Customers
    * @type {string}
-   * @memberof InvoicesSort
+   * @memberof CreditNotesSort
    */
-  by?: InvoicesSortBy
+  by?: CreditNotesSortBy
   /**
    *
    * @type {SortDirection}
-   * @memberof InvoicesSort
+   * @memberof CreditNotesSort
    */
   direction?: SortDirection
 }
@@ -39,16 +39,19 @@ export interface InvoicesSort {
  * @export
  * @enum {string}
  */
-export enum InvoicesSortBy {
+export enum CreditNotesSortBy {
   created_at = 'created_at',
   updated_at = 'updated_at'
 }
 
-export function InvoicesSortFromJSON(json: any): InvoicesSort {
-  return InvoicesSortFromJSONTyped(json, false)
+export function CreditNotesSortFromJSON(json: any): CreditNotesSort {
+  return CreditNotesSortFromJSONTyped(json, false)
 }
 
-export function InvoicesSortFromJSONTyped(json: any, ignoreDiscriminator: boolean): InvoicesSort {
+export function CreditNotesSortFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreditNotesSort {
   if (json === undefined || json === null) {
     return json
   }
@@ -58,7 +61,7 @@ export function InvoicesSortFromJSONTyped(json: any, ignoreDiscriminator: boolea
   }
 }
 
-export function InvoicesSortToJSON(value?: InvoicesSort | null): any {
+export function CreditNotesSortToJSON(value?: CreditNotesSort | null): any {
   if (value === undefined) {
     return undefined
   }

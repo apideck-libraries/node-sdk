@@ -18,19 +18,19 @@ import { SortDirection, SortDirectionFromJSON, SortDirectionToJSON } from './Sor
 /**
  *
  * @export
- * @interface InvoicesSort
+ * @interface LedgerAccountsSort
  */
-export interface InvoicesSort {
+export interface LedgerAccountsSort {
   /**
-   * The field on which to sort the Invoices
+   * The field on which to sort the Ledger Accounts
    * @type {string}
-   * @memberof InvoicesSort
+   * @memberof LedgerAccountsSort
    */
-  by?: InvoicesSortBy
+  by?: LedgerAccountsSortBy
   /**
    *
    * @type {SortDirection}
-   * @memberof InvoicesSort
+   * @memberof LedgerAccountsSort
    */
   direction?: SortDirection
 }
@@ -39,16 +39,19 @@ export interface InvoicesSort {
  * @export
  * @enum {string}
  */
-export enum InvoicesSortBy {
+export enum LedgerAccountsSortBy {
   created_at = 'created_at',
   updated_at = 'updated_at'
 }
 
-export function InvoicesSortFromJSON(json: any): InvoicesSort {
-  return InvoicesSortFromJSONTyped(json, false)
+export function LedgerAccountsSortFromJSON(json: any): LedgerAccountsSort {
+  return LedgerAccountsSortFromJSONTyped(json, false)
 }
 
-export function InvoicesSortFromJSONTyped(json: any, ignoreDiscriminator: boolean): InvoicesSort {
+export function LedgerAccountsSortFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LedgerAccountsSort {
   if (json === undefined || json === null) {
     return json
   }
@@ -58,7 +61,7 @@ export function InvoicesSortFromJSONTyped(json: any, ignoreDiscriminator: boolea
   }
 }
 
-export function InvoicesSortToJSON(value?: InvoicesSort | null): any {
+export function LedgerAccountsSortToJSON(value?: LedgerAccountsSort | null): any {
   if (value === undefined) {
     return undefined
   }

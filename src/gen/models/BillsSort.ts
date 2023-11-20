@@ -40,7 +40,8 @@ export interface BillsSort {
  * @enum {string}
  */
 export enum BillsSortBy {
-  updated_at = 'updated_at'
+  updated_at = 'updated_at',
+  created_at = 'created_at'
 }
 
 export function BillsSortFromJSON(json: any): BillsSort {

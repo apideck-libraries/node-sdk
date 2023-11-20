@@ -1,19 +1,19 @@
-# Apideck.InvoicesSort
+# Apideck.SuppliersSort
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Invoices | [optional] 
+`by` | **string** | The field on which to sort the Suppliers | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 
 
 
 
-<a name="InvoicesSortBy"></a>
-## Enum: InvoicesSort.by
+<a name="SuppliersSortBy"></a>
+## Enum: SuppliersSort.by
 
 
 * `created_at` (value: `'created_at'`)

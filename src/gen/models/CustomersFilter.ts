@@ -55,6 +55,12 @@ export interface CustomersFilter {
    * @memberof CustomersFilter
    */
   status?: CustomersFilterStatus
+  /**
+   *
+   * @type {Date}
+   * @memberof CustomersFilter
+   */
+  updated_since?: Date
 }
 
 /**
@@ -85,7 +91,8 @@ export function CustomersFilterFromJSONTyped(
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     email: !exists(json, 'email') ? undefined : json['email'],
-    status: !exists(json, 'status') ? undefined : json['status']
+    status: !exists(json, 'status') ? undefined : json['status'],
+    updated_since: !exists(json, 'updated_since') ? undefined : new Date(json['updated_since'])
   }
 }
 
@@ -102,6 +109,8 @@ export function CustomersFilterToJSON(value?: CustomersFilter | null): any {
     first_name: value.first_name,
     last_name: value.last_name,
     email: value.email,
-    status: value.status
+    status: value.status,
+    updated_since:
+      value.updated_since === undefined ? undefined : new Date(value.updated_since).toISOString()
   }
 }

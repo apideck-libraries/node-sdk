@@ -15,6 +15,7 @@
 import {
   BalanceSheetFilter,
   Bill,
+  BillsFilter,
   BillsSort,
   BillToJSON,
   CreateBillResponse,
@@ -40,9 +41,12 @@ import {
   CreateTaxRateResponse,
   CreateTaxRateResponseFromJSON,
   CreditNote,
+  CreditNotesFilter,
+  CreditNotesSort,
   CreditNoteToJSON,
   Customer,
   CustomersFilter,
+  CustomersSort,
   CustomerToJSON,
   DeleteBillResponse,
   DeleteBillResponseFromJSON,
@@ -118,11 +122,14 @@ import {
   InvoiceItem,
   InvoiceItemsFilter,
   InvoiceItemToJSON,
+  InvoicesFilter,
   InvoicesSort,
   InvoiceToJSON,
   JournalEntry,
   JournalEntryToJSON,
   LedgerAccount,
+  LedgerAccountsFilter,
+  LedgerAccountsSort,
   LedgerAccountToJSON,
   PassThroughQuery,
   Payment,
@@ -130,9 +137,12 @@ import {
   PaymentToJSON,
   ProfitAndLossFilter,
   PurchaseOrder,
+  PurchaseOrdersFilter,
+  PurchaseOrdersSort,
   PurchaseOrderToJSON,
   Supplier,
   SuppliersFilter,
+  SuppliersSort,
   SupplierToJSON,
   TaxRate,
   TaxRatesFilter,
@@ -186,6 +196,7 @@ export interface AccountingApiBillsAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: BillsFilter
   sort?: BillsSort
   passThrough?: PassThroughQuery
   fields?: string | null
@@ -240,6 +251,8 @@ export interface AccountingApiCreditNotesAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: CreditNotesFilter
+  sort?: CreditNotesSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -286,6 +299,7 @@ export interface AccountingApiCustomersAllRequest {
   cursor?: string | null
   limit?: number
   filter?: CustomersFilter
+  sort?: CustomersSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -377,6 +391,7 @@ export interface AccountingApiInvoicesAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: InvoicesFilter
   sort?: InvoicesSort
   passThrough?: PassThroughQuery
   fields?: string | null
@@ -468,6 +483,8 @@ export interface AccountingApiLedgerAccountsAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: LedgerAccountsFilter
+  sort?: LedgerAccountsSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -570,6 +587,8 @@ export interface AccountingApiPurchaseOrdersAllRequest {
   cursor?: string | null
   passThrough?: PassThroughQuery
   limit?: number
+  filter?: PurchaseOrdersFilter
+  sort?: PurchaseOrdersSort
 }
 
 export interface AccountingApiPurchaseOrdersDeleteRequest {
@@ -613,6 +632,7 @@ export interface AccountingApiSuppliersAllRequest {
   cursor?: string | null
   limit?: number
   filter?: SuppliersFilter
+  sort?: SuppliersSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -847,6 +867,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     if (requestParameters.sort !== undefined) {
@@ -1273,6 +1297,14 @@ export class AccountingApi extends runtime.BaseAPI {
       queryParameters['limit'] = requestParameters.limit
     }
 
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
+    }
+
     if (requestParameters.passThrough !== undefined) {
       queryParameters['pass_through'] = requestParameters.passThrough
     }
@@ -1640,6 +1672,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.filter !== undefined) {
       queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
     }
 
     if (requestParameters.passThrough !== undefined) {
@@ -2376,6 +2412,10 @@ export class AccountingApi extends runtime.BaseAPI {
       queryParameters['limit'] = requestParameters.limit
     }
 
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
+    }
+
     if (requestParameters.sort !== undefined) {
       queryParameters['sort'] = requestParameters.sort
     }
@@ -3106,6 +3146,14 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
     }
 
     if (requestParameters.passThrough !== undefined) {
@@ -3915,6 +3963,14 @@ export class AccountingApi extends runtime.BaseAPI {
       queryParameters['limit'] = requestParameters.limit
     }
 
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
+    }
+
     const headerParameters: runtime.HTTPHeaders = {}
 
     if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
@@ -4270,6 +4326,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.filter !== undefined) {
       queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
     }
 
     if (requestParameters.passThrough !== undefined) {

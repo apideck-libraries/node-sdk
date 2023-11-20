@@ -1,19 +1,19 @@
-# Apideck.InvoicesSort
+# Apideck.CreditNotesSort
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Invoices | [optional] 
+`by` | **string** | The field on which to sort the Customers | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 
 
 
 
-<a name="InvoicesSortBy"></a>
-## Enum: InvoicesSort.by
+<a name="CreditNotesSortBy"></a>
+## Enum: CreditNotesSort.by
 
 
 * `created_at` (value: `'created_at'`)

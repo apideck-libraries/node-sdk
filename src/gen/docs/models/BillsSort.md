@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 
 * `updated_at` (value: `'updated_at'`)
 
+* `created_at` (value: `'created_at'`)
+
 
 
 

@@ -1,22 +1,20 @@
-# Apideck.InvoicesSort
+# Apideck.PurchaseOrdersSort
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Invoices | [optional] 
+`by` | **string** | The field on which to sort the Purchase Orders | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 
 
 
 
-<a name="InvoicesSortBy"></a>
-## Enum: InvoicesSort.by
+<a name="PurchaseOrdersSortBy"></a>
+## Enum: PurchaseOrdersSort.by
 
-
-* `created_at` (value: `'created_at'`)
 
 * `updated_at` (value: `'updated_at'`)
 

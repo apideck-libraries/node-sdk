@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `first_name` | **string** | First name of supplier to search for | [optional] 
 `last_name` | **string** | Last name of supplier to search for | [optional] 
 `email` | **string** | Email of supplier to search for | [optional] 
+`updated_since` | **Date** |  | [optional] 
 
 
 

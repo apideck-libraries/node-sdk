@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `last_name` | **string** | Last name of customer to search for | [optional] 
 `email` | **string** | Email of customer to search for | [optional] 
 `status` | **string** | Status of customer to filter on | [optional] 
+`updated_since` | **Date** |  | [optional] 
 
 
 
