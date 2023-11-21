@@ -18,19 +18,19 @@ import { SortDirection, SortDirectionFromJSON, SortDirectionToJSON } from './Sor
 /**
  *
  * @export
- * @interface PurchaseOrdersSort
+ * @interface PaymentsSort
  */
-export interface PurchaseOrdersSort {
+export interface PaymentsSort {
   /**
-   * The field on which to sort the Purchase Orders
+   * The field on which to sort the Payments
    * @type {string}
-   * @memberof PurchaseOrdersSort
+   * @memberof PaymentsSort
    */
-  by?: PurchaseOrdersSortBy
+  by?: PaymentsSortBy
   /**
    *
    * @type {SortDirection}
-   * @memberof PurchaseOrdersSort
+   * @memberof PaymentsSort
    */
   direction?: SortDirection
 }
@@ -39,19 +39,16 @@ export interface PurchaseOrdersSort {
  * @export
  * @enum {string}
  */
-export enum PurchaseOrdersSortBy {
+export enum PaymentsSortBy {
   updated_at = 'updated_at',
   created_at = 'created_at'
 }
 
-export function PurchaseOrdersSortFromJSON(json: any): PurchaseOrdersSort {
-  return PurchaseOrdersSortFromJSONTyped(json, false)
+export function PaymentsSortFromJSON(json: any): PaymentsSort {
+  return PaymentsSortFromJSONTyped(json, false)
 }
 
-export function PurchaseOrdersSortFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PurchaseOrdersSort {
+export function PaymentsSortFromJSONTyped(json: any, ignoreDiscriminator: boolean): PaymentsSort {
   if (json === undefined || json === null) {
     return json
   }
@@ -61,7 +58,7 @@ export function PurchaseOrdersSortFromJSONTyped(
   }
 }
 
-export function PurchaseOrdersSortToJSON(value?: PurchaseOrdersSort | null): any {
+export function PaymentsSortToJSON(value?: PaymentsSort | null): any {
   if (value === undefined) {
     return undefined
   }

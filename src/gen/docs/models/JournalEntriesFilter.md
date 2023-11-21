@@ -1,4 +1,4 @@
-# Apideck.PaymentsFilter
+# Apideck.JournalEntriesFilter
 
 ### Description
 

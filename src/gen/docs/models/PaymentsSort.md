@@ -1,19 +1,19 @@
-# Apideck.PurchaseOrdersSort
+# Apideck.PaymentsSort
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`by` | **string** | The field on which to sort the Purchase Orders | [optional] 
+`by` | **string** | The field on which to sort the Payments | [optional] 
 `direction` | [**SortDirection**](SortDirection.md) |  | [optional] 
 
 
 
 
 
-<a name="PurchaseOrdersSortBy"></a>
-## Enum: PurchaseOrdersSort.by
+<a name="PaymentsSortBy"></a>
+## Enum: PaymentsSort.by
 
 
 * `updated_at` (value: `'updated_at'`)

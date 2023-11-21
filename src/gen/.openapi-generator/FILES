@@ -431,6 +431,8 @@ Job.md
 JobLinks.md
 JobSalary.md
 JobStatus.md
+JournalEntriesFilter.md
+JournalEntriesSort.md
 JournalEntry.md
 JournalEntryLineItem.md
 Lead.md
@@ -499,6 +501,7 @@ PaymentFrequency.md
 PaymentRequiredResponse.md
 PaymentUnit.md
 PaymentsFilter.md
+PaymentsSort.md
 Payroll.md
 PayrollTotals.md
 PayrollsFilter.md
@@ -1071,6 +1074,8 @@ models/Job.ts
 models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
+models/JournalEntriesFilter.ts
+models/JournalEntriesSort.ts
 models/JournalEntry.ts
 models/JournalEntryLineItem.ts
 models/Lead.ts
@@ -1138,6 +1143,7 @@ models/PaymentFrequency.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
 models/PaymentsFilter.ts
+models/PaymentsSort.ts
 models/Payroll.ts
 models/PayrollTotals.ts
 models/PayrollsFilter.ts

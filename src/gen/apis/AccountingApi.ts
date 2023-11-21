@@ -125,6 +125,8 @@ import {
   InvoicesFilter,
   InvoicesSort,
   InvoiceToJSON,
+  JournalEntriesFilter,
+  JournalEntriesSort,
   JournalEntry,
   JournalEntryToJSON,
   LedgerAccount,
@@ -134,6 +136,7 @@ import {
   PassThroughQuery,
   Payment,
   PaymentsFilter,
+  PaymentsSort,
   PaymentToJSON,
   ProfitAndLossFilter,
   PurchaseOrder,
@@ -438,6 +441,8 @@ export interface AccountingApiJournalEntriesAllRequest {
   serviceId?: string
   cursor?: string | null
   limit?: number
+  filter?: JournalEntriesFilter
+  sort?: JournalEntriesSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -531,6 +536,7 @@ export interface AccountingApiPaymentsAllRequest {
   cursor?: string | null
   limit?: number
   filter?: PaymentsFilter
+  sort?: PaymentsSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -2783,6 +2789,14 @@ export class AccountingApi extends runtime.BaseAPI {
       queryParameters['limit'] = requestParameters.limit
     }
 
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
+    }
+
     if (requestParameters.passThrough !== undefined) {
       queryParameters['pass_through'] = requestParameters.passThrough
     }
@@ -3523,6 +3537,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.filter !== undefined) {
       queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
     }
 
     if (requestParameters.passThrough !== undefined) {

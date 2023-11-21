@@ -16,25 +16,25 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface PaymentsFilter
+ * @interface JournalEntriesFilter
  */
-export interface PaymentsFilter {
+export interface JournalEntriesFilter {
   /**
    *
    * @type {Date}
-   * @memberof PaymentsFilter
+   * @memberof JournalEntriesFilter
    */
   updated_since?: Date
 }
 
-export function PaymentsFilterFromJSON(json: any): PaymentsFilter {
-  return PaymentsFilterFromJSONTyped(json, false)
+export function JournalEntriesFilterFromJSON(json: any): JournalEntriesFilter {
+  return JournalEntriesFilterFromJSONTyped(json, false)
 }
 
-export function PaymentsFilterFromJSONTyped(
+export function JournalEntriesFilterFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): PaymentsFilter {
+): JournalEntriesFilter {
   if (json === undefined || json === null) {
     return json
   }
@@ -43,7 +43,7 @@ export function PaymentsFilterFromJSONTyped(
   }
 }
 
-export function PaymentsFilterToJSON(value?: PaymentsFilter | null): any {
+export function JournalEntriesFilterToJSON(value?: JournalEntriesFilter | null): any {
   if (value === undefined) {
     return undefined
   }
