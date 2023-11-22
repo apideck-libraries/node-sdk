@@ -20,7 +20,7 @@ import { exists } from '../runtime'
  */
 export interface CopyFolderRequest {
   /**
-   * The parent folder to create the new file within.
+   * The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
    * @type {string}
    * @memberof CopyFolderRequest
    */
