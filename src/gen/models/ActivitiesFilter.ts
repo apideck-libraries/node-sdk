@@ -20,6 +20,24 @@ import { exists } from '../runtime'
  */
 export interface ActivitiesFilter {
   /**
+   * Company ID to filter on
+   * @type {string}
+   * @memberof ActivitiesFilter
+   */
+  company_id?: string
+  /**
+   * Owner ID to filter on
+   * @type {string}
+   * @memberof ActivitiesFilter
+   */
+  owner_id?: string
+  /**
+   * Primary contact ID to filter on
+   * @type {string}
+   * @memberof ActivitiesFilter
+   */
+  contact_id?: string
+  /**
    *
    * @type {Date}
    * @memberof ActivitiesFilter
@@ -39,6 +57,9 @@ export function ActivitiesFilterFromJSONTyped(
     return json
   }
   return {
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
+    owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    contact_id: !exists(json, 'contact_id') ? undefined : json['contact_id'],
     updated_since: !exists(json, 'updated_since') ? undefined : new Date(json['updated_since'])
   }
 }
@@ -51,6 +72,9 @@ export function ActivitiesFilterToJSON(value?: ActivitiesFilter | null): any {
     return null
   }
   return {
+    company_id: value.company_id,
+    owner_id: value.owner_id,
+    contact_id: value.contact_id,
     updated_since:
       value.updated_since === undefined ? undefined : new Date(value.updated_since).toISOString()
   }

@@ -14,6 +14,7 @@
 
 import {
   ActivitiesFilter,
+  ActivitiesSort,
   Activity,
   ActivityToJSON,
   CompaniesFilter,
@@ -138,6 +139,7 @@ export interface CrmApiActivitiesAllRequest {
   cursor?: string | null
   limit?: number
   filter?: ActivitiesFilter
+  sort?: ActivitiesSort
   passThrough?: PassThroughQuery
   fields?: string | null
 }
@@ -588,6 +590,10 @@ export class CrmApi extends runtime.BaseAPI {
 
     if (requestParameters.filter !== undefined) {
       queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort
     }
 
     if (requestParameters.passThrough !== undefined) {

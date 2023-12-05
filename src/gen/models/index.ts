@@ -2,6 +2,7 @@
 /* eslint-disable */
 export * from './AccountingEventType'
 export * from './ActivitiesFilter'
+export * from './ActivitiesSort'
 export * from './Activity'
 export * from './ActivityAttendee'
 export * from './Address'

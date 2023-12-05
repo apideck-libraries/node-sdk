@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 `monetary_amount` | **number** | Monetary amount to filter on | [optional] 
 `win_probability` | **number** | Win probability to filter on | [optional] 
 `company_id` | **string** | Company ID to filter on | [optional] 
+`owner_id` | **string** | Owner ID to filter on | [optional] 
+`primary_contact_id` | **string** | Primary contact ID to filter on | [optional] 
 
 
 

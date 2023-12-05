@@ -16,6 +16,7 @@ AccountingApi.md
 AccountingApiTest.api.test.ts
 AccountingEventType.md
 ActivitiesFilter.md
+ActivitiesSort.md
 Activity.md
 ActivityAttendee.md
 Address.md
@@ -674,6 +675,7 @@ apis/index.ts
 index.ts
 models/AccountingEventType.ts
 models/ActivitiesFilter.ts
+models/ActivitiesSort.ts
 models/Activity.ts
 models/ActivityAttendee.ts
 models/Address.ts
