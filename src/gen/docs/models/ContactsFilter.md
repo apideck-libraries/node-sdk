@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `first_name` | **string** | First name of the contact to filter on | [optional] 
 `last_name` | **string** | Last name of the contact to filter on | [optional] 
 `email` | **string** | Email of the contact to filter on | [optional] 
+`phone_number` | **string** | Phone number of the contact to filter on | [optional] 
 `company_id` | **string** | Unique identifier for the associated company of the contact to filter on | [optional] 
 
 

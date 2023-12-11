@@ -44,6 +44,12 @@ export interface ContactsFilter {
    */
   email?: string
   /**
+   * Phone number of the contact to filter on
+   * @type {string}
+   * @memberof ContactsFilter
+   */
+  phone_number?: string
+  /**
    * Unique identifier for the associated company of the contact to filter on
    * @type {string}
    * @memberof ContactsFilter
@@ -67,6 +73,7 @@ export function ContactsFilterFromJSONTyped(
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     email: !exists(json, 'email') ? undefined : json['email'],
+    phone_number: !exists(json, 'phone_number') ? undefined : json['phone_number'],
     company_id: !exists(json, 'company_id') ? undefined : json['company_id']
   }
 }
@@ -83,6 +90,7 @@ export function ContactsFilterToJSON(value?: ContactsFilter | null): any {
     first_name: value.first_name,
     last_name: value.last_name,
     email: value.email,
+    phone_number: value.phone_number,
     company_id: value.company_id
   }
 }
