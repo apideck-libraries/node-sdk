@@ -16,6 +16,7 @@ AccountingApi.md
 AccountingApiTest.api.test.ts
 AccountingEventType.md
 ActivitiesFilter.md
+ActivitiesSort.md
 Activity.md
 ActivityAttendee.md
 Address.md
@@ -55,6 +56,7 @@ BankAccount.md
 Benefit.md
 Bill.md
 BillLineItem.md
+BillsFilter.md
 BillsSort.md
 Branch.md
 CashDetails.md
@@ -159,6 +161,8 @@ CreateUserResponse.md
 CreateWebhookRequest.md
 CreateWebhookResponse.md
 CreditNote.md
+CreditNotesFilter.md
+CreditNotesSort.md
 CrmApi.md
 CrmApiTest.api.test.ts
 CrmEventType.md
@@ -168,6 +172,7 @@ CustomFieldFinder.md
 CustomMapping.md
 Customer.md
 CustomersFilter.md
+CustomersSort.md
 Deduction.md
 DeleteActivityResponse.md
 DeleteApplicantResponse.md
@@ -416,6 +421,7 @@ InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceLineItem.md
 InvoiceResponse.md
+InvoicesFilter.md
 InvoicesSort.md
 IssueTrackingApi.md
 IssueTrackingApiTest.api.test.ts
@@ -426,6 +432,8 @@ Job.md
 JobLinks.md
 JobSalary.md
 JobStatus.md
+JournalEntriesFilter.md
+JournalEntriesSort.md
 JournalEntry.md
 JournalEntryLineItem.md
 Lead.md
@@ -438,6 +446,8 @@ LedgerAccount.md
 LedgerAccountCategories.md
 LedgerAccountParentAccount.md
 LedgerAccounts.md
+LedgerAccountsFilter.md
+LedgerAccountsSort.md
 LinkedConnectorResource.md
 LinkedCustomer.md
 LinkedEcommerceCustomer.md
@@ -492,6 +502,7 @@ PaymentFrequency.md
 PaymentRequiredResponse.md
 PaymentUnit.md
 PaymentsFilter.md
+PaymentsSort.md
 Payroll.md
 PayrollTotals.md
 PayrollsFilter.md
@@ -519,6 +530,8 @@ ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
 PurchaseOrder.md
+PurchaseOrdersFilter.md
+PurchaseOrdersSort.md
 RequestCountAllocation.md
 RequestRate.md
 ResolveWebhookEventRequest.md
@@ -545,6 +558,7 @@ SortDirection.md
 Status.md
 Supplier.md
 SuppliersFilter.md
+SuppliersSort.md
 SupportedProperty.md
 SupportedPropertyChildProperties.md
 Tags.md
@@ -661,6 +675,7 @@ apis/index.ts
 index.ts
 models/AccountingEventType.ts
 models/ActivitiesFilter.ts
+models/ActivitiesSort.ts
 models/Activity.ts
 models/ActivityAttendee.ts
 models/Address.ts
@@ -698,6 +713,7 @@ models/BankAccount.ts
 models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
+models/BillsFilter.ts
 models/BillsSort.ts
 models/Branch.ts
 models/CashDetails.ts
@@ -800,6 +816,8 @@ models/CreateUserResponse.ts
 models/CreateWebhookRequest.ts
 models/CreateWebhookResponse.ts
 models/CreditNote.ts
+models/CreditNotesFilter.ts
+models/CreditNotesSort.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
@@ -807,6 +825,7 @@ models/CustomFieldFinder.ts
 models/CustomMapping.ts
 models/Customer.ts
 models/CustomersFilter.ts
+models/CustomersSort.ts
 models/Deduction.ts
 models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
@@ -1048,6 +1067,7 @@ models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceLineItem.ts
 models/InvoiceResponse.ts
+models/InvoicesFilter.ts
 models/InvoicesSort.ts
 models/IssueTrackingEventType.ts
 models/IssuesFilter.ts
@@ -1056,6 +1076,8 @@ models/Job.ts
 models/JobLinks.ts
 models/JobSalary.ts
 models/JobStatus.ts
+models/JournalEntriesFilter.ts
+models/JournalEntriesSort.ts
 models/JournalEntry.ts
 models/JournalEntryLineItem.ts
 models/Lead.ts
@@ -1066,6 +1088,8 @@ models/LedgerAccount.ts
 models/LedgerAccountCategories.ts
 models/LedgerAccountParentAccount.ts
 models/LedgerAccounts.ts
+models/LedgerAccountsFilter.ts
+models/LedgerAccountsSort.ts
 models/LinkedConnectorResource.ts
 models/LinkedCustomer.ts
 models/LinkedEcommerceCustomer.ts
@@ -1121,6 +1145,7 @@ models/PaymentFrequency.ts
 models/PaymentRequiredResponse.ts
 models/PaymentUnit.ts
 models/PaymentsFilter.ts
+models/PaymentsSort.ts
 models/Payroll.ts
 models/PayrollTotals.ts
 models/PayrollsFilter.ts
@@ -1146,6 +1171,8 @@ models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
 models/PurchaseOrder.ts
+models/PurchaseOrdersFilter.ts
+models/PurchaseOrdersSort.ts
 models/RequestCountAllocation.ts
 models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
@@ -1170,6 +1197,7 @@ models/SortDirection.ts
 models/Status.ts
 models/Supplier.ts
 models/SuppliersFilter.ts
+models/SuppliersSort.ts
 models/SupportedProperty.ts
 models/SupportedPropertyChildProperties.ts
 models/Tags.ts

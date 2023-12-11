@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 ## Enum: InvoicesSort.by
 
 
+* `created_at` (value: `'created_at'`)
+
 * `updated_at` (value: `'updated_at'`)
 
 

@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`invoice_number` | **string** | Invoice number for payments to filter on | [optional] 
+`updated_since` | **Date** |  | [optional] 
 
 
 
