@@ -175,11 +175,11 @@ export interface Employee {
    */
   employment_end_date?: string | null
   /**
-   *
-   * @type {string | Null}
+   * The reason because the employment ended.
+   * @type {string}
    * @memberof Employee
    */
-  leaving_reason?: string | Null | null
+  leaving_reason?: EmployeeLeavingReason
   /**
    * An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.
    * @type {string}
@@ -440,6 +440,17 @@ export interface Employee {
   readonly created_at?: Date | null
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum EmployeeLeavingReason {
+  dismissed = 'dismissed',
+  resigned = 'resigned',
+  redundancy = 'redundancy',
+  other = 'other'
+}
+
 export function EmployeeFromJSON(json: any): Employee {
   return EmployeeFromJSONTyped(json, false)
 }
@@ -474,9 +485,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     employment_end_date: !exists(json, 'employment_end_date')
       ? undefined
       : json['employment_end_date'],
-    leaving_reason: !exists(json, 'leaving_reason')
-      ? undefined
-      : string | NullFromJSON(json['leaving_reason']),
+    leaving_reason: !exists(json, 'leaving_reason') ? undefined : json['leaving_reason'],
     employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number'],
     employment_status: !exists(json, 'employment_status')
       ? undefined
@@ -597,7 +606,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     company_name: value.company_name,
     employment_start_date: value.employment_start_date,
     employment_end_date: value.employment_end_date,
-    leaving_reason: string | NullToJSON(value.leaving_reason),
+    leaving_reason: value.leaving_reason,
     employee_number: value.employee_number,
     employment_status: EmploymentStatusToJSON(value.employment_status),
     employment_role: EmployeeEmploymentRoleToJSON(value.employment_role),

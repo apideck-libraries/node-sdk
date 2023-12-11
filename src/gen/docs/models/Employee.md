@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 `company_name` | **string** | The name of the company. | [optional] 
 `employment_start_date` | **string** | A Start Date is the date that the employee started working at the company | [optional] 
 `employment_end_date` | **string** | An End Date is the date that the employee ended working at the company | [optional] 
-`leaving_reason` | **string \| Null** |  | [optional] 
+`leaving_reason` | **string** | The reason because the employment ended. | [optional] 
 `employee_number` | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 `employment_status` | [**EmploymentStatus**](EmploymentStatus.md) |  | [optional] 
 `employment_role` | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
@@ -75,6 +75,21 @@ Name | Type | Description | Notes
 
 
 
+<a name="EmployeeLeavingReason"></a>
+## Enum: Employee.leaving_reason
+
+
+* `dismissed` (value: `'dismissed'`)
+
+* `resigned` (value: `'resigned'`)
+
+* `redundancy` (value: `'redundancy'`)
+
+* `other` (value: `'other'`)
+
+
+
+
 ## Referenced Types:
 
 
@@ -93,6 +108,8 @@ Name | Type | Description | Notes
 
 
 * [`Team`](Team.md)
+
+
 
 
 
