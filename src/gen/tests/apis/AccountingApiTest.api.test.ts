@@ -3361,6 +3361,7 @@ describe('AccountingApi', () => {
           title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
           currency_rate: 0.69,
           currency: 'USD',
+          company_id: '12345',
           line_items: [
             {
               description:
@@ -3517,6 +3518,7 @@ describe('AccountingApi', () => {
             title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
             currency_rate: 0.69,
             currency: 'USD',
+            company_id: '12345',
             line_items: [
               {
                 id: '12345',
@@ -3708,6 +3710,7 @@ describe('AccountingApi', () => {
           title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
           currency_rate: 0.69,
           currency: 'USD',
+          company_id: '12345',
           line_items: [
             {
               id: '12345',
@@ -3908,6 +3911,7 @@ describe('AccountingApi', () => {
           title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
           currency_rate: 0.69,
           currency: 'USD',
+          company_id: '12345',
           line_items: [
             {
               description:

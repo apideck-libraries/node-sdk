@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `unified_property` | **string** | Name of the property in our Unified API. | [optional] 
-`child_properties` | [**Array&lt;SupportedPropertyChildProperties&gt;**](SupportedPropertyChildProperties.md) | List of child properties of the unified property. | [optional] 
+`child_properties` | [**Array&lt;SupportedProperty&gt;**](SupportedProperty.md) | List of child properties of the unified property. | [optional] 
 
 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 
-* [`SupportedPropertyChildProperties`](SupportedPropertyChildProperties.md)
+* [`SupportedProperty`](SupportedProperty.md)
 
 ---
 

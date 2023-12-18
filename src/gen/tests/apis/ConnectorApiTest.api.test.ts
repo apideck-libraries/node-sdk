@@ -379,21 +379,13 @@ describe('ConnectorApi', () => {
           supported_fields: [
             {
               unified_property: 'owner_id',
-              child_properties: [
-                {
-                  unified_property: {}
-                }
-              ]
+              child_properties: [{}]
             }
           ],
           supported_list_fields: [
             {
               unified_property: 'owner_id',
-              child_properties: [
-                {
-                  unified_property: {}
-                }
-              ]
+              child_properties: [{}]
             }
           ]
         },
