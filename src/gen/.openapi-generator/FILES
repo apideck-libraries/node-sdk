@@ -560,7 +560,6 @@ Supplier.md
 SuppliersFilter.md
 SuppliersSort.md
 SupportedProperty.md
-SupportedPropertyChildProperties.md
 Tags.md
 Tax.md
 TaxRate.md
@@ -1199,7 +1198,6 @@ models/Supplier.ts
 models/SuppliersFilter.ts
 models/SuppliersSort.ts
 models/SupportedProperty.ts
-models/SupportedPropertyChildProperties.ts
 models/Tags.ts
 models/Tax.ts
 models/TaxRate.ts
