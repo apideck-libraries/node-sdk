@@ -24,7 +24,7 @@ export interface LinkedCustomer {
    * @type {string}
    * @memberof LinkedCustomer
    */
-  id: string
+  id?: string
   /**
    * The display ID of the customer.
    * @type {string}
@@ -63,7 +63,7 @@ export function LinkedCustomerFromJSONTyped(
     return json
   }
   return {
-    id: json['id'],
+    id: !exists(json, 'id') ? undefined : json['id'],
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
     name: !exists(json, 'name') ? undefined : json['name'],
