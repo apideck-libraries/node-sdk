@@ -22,7 +22,8 @@ export enum EcommerceOrderStatus {
   completed = 'completed',
   cancelled = 'cancelled',
   archived = 'archived',
-  unknown = 'unknown'
+  unknown = 'unknown',
+  other = 'other'
 }
 
 export function EcommerceOrderStatusFromJSON(json: any): EcommerceOrderStatus {
