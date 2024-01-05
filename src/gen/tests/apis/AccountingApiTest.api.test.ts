@@ -5804,6 +5804,117 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#subsidiariesAll', () => {
+    const endpoint = '/accounting/subsidiaries'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            parent_id: '12345',
+            name: 'SpaceX',
+            status: 'active',
+            custom_mappings: {},
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.subsidiariesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#subsidiariesOne', () => {
+    const endpoint = '/accounting/subsidiaries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'one',
+        data: {
+          id: '12345',
+          parent_id: '12345',
+          name: 'SpaceX',
+          status: 'active',
+          custom_mappings: {},
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.subsidiariesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#suppliersAdd', () => {
     const endpoint = '/accounting/suppliers'
 

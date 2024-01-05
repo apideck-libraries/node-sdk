@@ -391,6 +391,8 @@ GetSharedLinkResponse.md
 GetSharedLinksResponse.md
 GetStoreResponse.md
 GetStoresResponse.md
+GetSubsidiariesResponse.md
+GetSubsidiaryResponse.md
 GetSupplierResponse.md
 GetSuppliersResponse.md
 GetTaxRateResponse.md
@@ -556,6 +558,7 @@ SmsApiTest.api.test.ts
 SocialLink.md
 SortDirection.md
 Status.md
+Subsidiary.md
 Supplier.md
 SuppliersFilter.md
 SuppliersSort.md
@@ -1038,6 +1041,8 @@ models/GetSharedLinkResponse.ts
 models/GetSharedLinksResponse.ts
 models/GetStoreResponse.ts
 models/GetStoresResponse.ts
+models/GetSubsidiariesResponse.ts
+models/GetSubsidiaryResponse.ts
 models/GetSupplierResponse.ts
 models/GetSuppliersResponse.ts
 models/GetTaxRateResponse.ts
@@ -1194,6 +1199,7 @@ models/SimpleFormFieldOption.ts
 models/SocialLink.ts
 models/SortDirection.ts
 models/Status.ts
+models/Subsidiary.ts
 models/Supplier.ts
 models/SuppliersFilter.ts
 models/SuppliersSort.ts
