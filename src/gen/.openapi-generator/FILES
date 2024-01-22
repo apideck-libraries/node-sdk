@@ -150,6 +150,7 @@ CreatePurchaseOrderResponse.md
 CreateSessionResponse.md
 CreateSessionResponseData.md
 CreateSharedLinkResponse.md
+CreateSubsidiaryResponse.md
 CreateSupplierResponse.md
 CreateTaxRateResponse.md
 CreateTenderResponse.md
@@ -214,6 +215,7 @@ DeletePosPaymentResponse.md
 DeleteProductResponse.md
 DeletePurchaseOrderResponse.md
 DeleteSharedLinkResponse.md
+DeleteSubsidiaryResponse.md
 DeleteSupplierResponse.md
 DeleteTaxRateResponse.md
 DeleteTenderResponse.md
@@ -631,6 +633,7 @@ UpdatePosPaymentResponse.md
 UpdateProductResponse.md
 UpdatePurchaseOrderResponse.md
 UpdateSharedLinkResponse.md
+UpdateSubsidiaryResponse.md
 UpdateSupplierResponse.md
 UpdateTaxRateResponse.md
 UpdateTenderResponse.md
@@ -807,6 +810,7 @@ models/CreatePurchaseOrderResponse.ts
 models/CreateSessionResponse.ts
 models/CreateSessionResponseData.ts
 models/CreateSharedLinkResponse.ts
+models/CreateSubsidiaryResponse.ts
 models/CreateSupplierResponse.ts
 models/CreateTaxRateResponse.ts
 models/CreateTenderResponse.ts
@@ -869,6 +873,7 @@ models/DeletePosPaymentResponse.ts
 models/DeleteProductResponse.ts
 models/DeletePurchaseOrderResponse.ts
 models/DeleteSharedLinkResponse.ts
+models/DeleteSubsidiaryResponse.ts
 models/DeleteSupplierResponse.ts
 models/DeleteTaxRateResponse.ts
 models/DeleteTenderResponse.ts
@@ -1272,6 +1277,7 @@ models/UpdatePosPaymentResponse.ts
 models/UpdateProductResponse.ts
 models/UpdatePurchaseOrderResponse.ts
 models/UpdateSharedLinkResponse.ts
+models/UpdateSubsidiaryResponse.ts
 models/UpdateSupplierResponse.ts
 models/UpdateTaxRateResponse.ts
 models/UpdateTenderResponse.ts
