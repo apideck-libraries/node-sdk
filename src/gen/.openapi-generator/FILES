@@ -14,7 +14,11 @@
 .openapi-generator-ignore
 AccountingApi.md
 AccountingApiTest.api.test.ts
+AccountingDepartment.md
+AccountingDepartmentsFilter.md
 AccountingEventType.md
+AccountingLocation.md
+AccountingLocationsFilter.md
 ActivitiesFilter.md
 ActivitiesSort.md
 Activity.md
@@ -102,6 +106,8 @@ Contact.md
 ContactsFilter.md
 ContactsSort.md
 CopyFolderRequest.md
+CreateAccountingDepartmentResponse.md
+CreateAccountingLocationResponse.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
 CreateApplicationResponse.md
@@ -175,6 +181,8 @@ Customer.md
 CustomersFilter.md
 CustomersSort.md
 Deduction.md
+DeleteAccountingDepartmentResponse.md
+DeleteAccountingLocationResponse.md
 DeleteActivityResponse.md
 DeleteApplicantResponse.md
 DeleteApplicationResponse.md
@@ -276,6 +284,10 @@ FormField.md
 FormFieldOption.md
 FormFieldOptionGroup.md
 Gender.md
+GetAccountingDepartmentResponse.md
+GetAccountingDepartmentsResponse.md
+GetAccountingLocationResponse.md
+GetAccountingLocationsResponse.md
 GetActivitiesResponse.md
 GetActivityResponse.md
 GetApiResourceCoverageResponse.md
@@ -561,6 +573,7 @@ SocialLink.md
 SortDirection.md
 Status.md
 Subsidiary.md
+SubsidiaryReference.md
 Supplier.md
 SuppliersFilter.md
 SuppliersSort.md
@@ -586,6 +599,8 @@ UnifiedFile.md
 UnifiedFilePermissions.md
 UnifiedId.md
 UnprocessableResponse.md
+UpdateAccountingDepartmentResponse.md
+UpdateAccountingLocationResponse.md
 UpdateActivityResponse.md
 UpdateApplicantResponse.md
 UpdateApplicationResponse.md
@@ -678,7 +693,11 @@ apis/VaultApi.ts
 apis/WebhookApi.ts
 apis/index.ts
 index.ts
+models/AccountingDepartment.ts
+models/AccountingDepartmentsFilter.ts
 models/AccountingEventType.ts
+models/AccountingLocation.ts
+models/AccountingLocationsFilter.ts
 models/ActivitiesFilter.ts
 models/ActivitiesSort.ts
 models/Activity.ts
@@ -762,6 +781,8 @@ models/Contact.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
 models/CopyFolderRequest.ts
+models/CreateAccountingDepartmentResponse.ts
+models/CreateAccountingLocationResponse.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
 models/CreateApplicationResponse.ts
@@ -833,6 +854,8 @@ models/Customer.ts
 models/CustomersFilter.ts
 models/CustomersSort.ts
 models/Deduction.ts
+models/DeleteAccountingDepartmentResponse.ts
+models/DeleteAccountingLocationResponse.ts
 models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
 models/DeleteApplicationResponse.ts
@@ -929,6 +952,10 @@ models/FormField.ts
 models/FormFieldOption.ts
 models/FormFieldOptionGroup.ts
 models/Gender.ts
+models/GetAccountingDepartmentResponse.ts
+models/GetAccountingDepartmentsResponse.ts
+models/GetAccountingLocationResponse.ts
+models/GetAccountingLocationsResponse.ts
 models/GetActivitiesResponse.ts
 models/GetActivityResponse.ts
 models/GetApiResourceCoverageResponse.ts
@@ -1205,6 +1232,7 @@ models/SocialLink.ts
 models/SortDirection.ts
 models/Status.ts
 models/Subsidiary.ts
+models/SubsidiaryReference.ts
 models/Supplier.ts
 models/SuppliersFilter.ts
 models/SuppliersSort.ts
@@ -1230,6 +1258,8 @@ models/UnifiedFile.ts
 models/UnifiedFilePermissions.ts
 models/UnifiedId.ts
 models/UnprocessableResponse.ts
+models/UpdateAccountingDepartmentResponse.ts
+models/UpdateAccountingLocationResponse.ts
 models/UpdateActivityResponse.ts
 models/UpdateApplicantResponse.ts
 models/UpdateApplicationResponse.ts
