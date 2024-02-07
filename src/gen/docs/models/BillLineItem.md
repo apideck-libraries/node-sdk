@@ -37,9 +37,11 @@ Name | Type | Description | Notes
 ## Enum: BillLineItem.type
 
 
-* `item` (value: `'expense_item'`)
+* `expense_item` (value: `'expense_item'`)
 
-* `account` (value: `'expense_account'`)
+* `expense_account` (value: `'expense_account'`)
+
+* `other` (value: `'other'`)
 
 
 

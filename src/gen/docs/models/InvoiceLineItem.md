@@ -45,6 +45,8 @@ Name | Type | Description | Notes
 
 * `sub_total` (value: `'sub_total'`)
 
+* `other` (value: `'other'`)
+
 
 
 

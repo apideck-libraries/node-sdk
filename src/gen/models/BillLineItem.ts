@@ -176,8 +176,9 @@ export interface BillLineItem {
  * @enum {string}
  */
 export enum BillLineItemType {
-  item = 'expense_item',
-  account = 'expense_account'
+  expense_item = 'expense_item',
+  expense_account = 'expense_account',
+  other = 'other'
 }
 
 export function BillLineItemFromJSON(json: any): BillLineItem {

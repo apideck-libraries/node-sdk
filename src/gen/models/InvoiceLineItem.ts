@@ -179,7 +179,8 @@ export enum InvoiceLineItemType {
   sales_item = 'sales_item',
   discount = 'discount',
   info = 'info',
-  sub_total = 'sub_total'
+  sub_total = 'sub_total',
+  other = 'other'
 }
 
 export function InvoiceLineItemFromJSON(json: any): InvoiceLineItem {
