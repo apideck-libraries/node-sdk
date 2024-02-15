@@ -178,6 +178,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -319,6 +320,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
             tax_inclusive: true,
@@ -534,6 +536,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -705,6 +708,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -955,6 +959,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1058,6 +1063,7 @@ describe('AccountingApi', () => {
               name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
+            company_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
             tax_inclusive: true,
@@ -1236,6 +1242,7 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1371,6 +1378,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1478,6 +1486,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -1608,6 +1617,7 @@ describe('AccountingApi', () => {
             display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
+            company_id: '12345',
             title: 'CEO',
             first_name: 'Elon',
             middle_name: 'D.',
@@ -1806,6 +1816,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -1962,6 +1973,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -2813,6 +2825,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -2989,6 +3002,7 @@ describe('AccountingApi', () => {
               name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
+            company_id: '12345',
             invoice_date: '2020-09-30',
             due_date: '2020-09-30',
             terms: 'Net 30 days',
@@ -3240,6 +3254,7 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -3447,6 +3462,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -5190,6 +5206,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -5291,6 +5308,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             reconciled: true,
             status: 'authorised',
             type: 'accounts_receivable',
@@ -5458,6 +5476,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -5578,6 +5597,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -5747,6 +5767,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -5911,6 +5932,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             status: 'open',
             issued_date: '2020-09-30',
             delivery_date: '2020-09-30',
@@ -6149,6 +6171,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -6343,6 +6366,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -6726,6 +6750,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -6851,6 +6876,7 @@ describe('AccountingApi', () => {
             display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
+            company_id: '12345',
             title: 'CEO',
             first_name: 'Elon',
             middle_name: 'D.',
@@ -7044,6 +7070,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -7195,6 +7222,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',

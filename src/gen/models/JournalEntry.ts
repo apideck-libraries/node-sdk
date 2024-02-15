@@ -51,7 +51,7 @@ export interface JournalEntry {
    */
   currency?: Currency | null
   /**
-   * The company or subsidiary the journal entry belongs to
+   * The company or subsidiary id the transaction belongs to
    * @type {string}
    * @memberof JournalEntry
    */

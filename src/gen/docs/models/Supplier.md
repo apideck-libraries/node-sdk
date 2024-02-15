@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `display_id` | **string** | Display ID | [optional] 
 `display_name` | **string** | Display name | [optional] 
 `company_name` | **string** | The name of the company. | [optional] 
+`company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `title` | **string** | The job title of the person. | [optional] 
 `first_name` | **string** | The first name of the person. | [optional] 
 `middle_name` | **string** | Middle name of the person. | [optional] 
@@ -58,6 +59,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

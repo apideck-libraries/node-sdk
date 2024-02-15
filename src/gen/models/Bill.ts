@@ -54,6 +54,12 @@ export interface Bill {
    */
   supplier?: LinkedSupplier | null
   /**
+   * The company or subsidiary id the transaction belongs to
+   * @type {string}
+   * @memberof Bill
+   */
+  company_id?: string | null
+  /**
    *
    * @type {Currency}
    * @memberof Bill
@@ -269,6 +275,7 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
     downstream_id: !exists(json, 'downstream_id') ? undefined : json['downstream_id'],
     bill_number: !exists(json, 'bill_number') ? undefined : json['bill_number'],
     supplier: !exists(json, 'supplier') ? undefined : LinkedSupplierFromJSON(json['supplier']),
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     currency_rate: !exists(json, 'currency_rate') ? undefined : json['currency_rate'],
     tax_inclusive: !exists(json, 'tax_inclusive') ? undefined : json['tax_inclusive'],
@@ -333,6 +340,7 @@ export function BillToJSON(value?: Bill | null): any {
   return {
     bill_number: value.bill_number,
     supplier: LinkedSupplierToJSON(value.supplier),
+    company_id: value.company_id,
     currency: CurrencyToJSON(value.currency),
     currency_rate: value.currency_rate,
     tax_inclusive: value.tax_inclusive,

@@ -53,6 +53,12 @@ export interface CreditNote {
    */
   customer?: LinkedCustomer | null
   /**
+   * The company or subsidiary id the transaction belongs to
+   * @type {string}
+   * @memberof CreditNote
+   */
+  company_id?: string | null
+  /**
    *
    * @type {Currency}
    * @memberof CreditNote
@@ -231,6 +237,7 @@ export function CreditNoteFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     total_amount: json['total_amount'],
     number: !exists(json, 'number') ? undefined : json['number'],
     customer: !exists(json, 'customer') ? undefined : LinkedCustomerFromJSON(json['customer']),
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     currency_rate: !exists(json, 'currency_rate') ? undefined : json['currency_rate'],
     tax_inclusive: !exists(json, 'tax_inclusive') ? undefined : json['tax_inclusive'],
@@ -283,6 +290,7 @@ export function CreditNoteToJSON(value?: CreditNote | null): any {
     total_amount: value.total_amount,
     number: value.number,
     customer: LinkedCustomerToJSON(value.customer),
+    company_id: value.company_id,
     currency: CurrencyToJSON(value.currency),
     currency_rate: value.currency_rate,
     tax_inclusive: value.tax_inclusive,

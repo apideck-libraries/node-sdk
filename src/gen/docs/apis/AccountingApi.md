@@ -231,6 +231,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     currency: 'USD',
     currency_rate: 0.69,
     tax_inclusive: true,
@@ -619,6 +620,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     currency: 'USD',
     currency_rate: 0.69,
     tax_inclusive: true,
@@ -836,6 +838,7 @@ const params = {
       display_name: 'Windsurf Shop',
       name: 'Windsurf Shop'
     },
+    company_id: '12345',
     currency: 'USD',
     currency_rate: 0.69,
     tax_inclusive: true,
@@ -1187,6 +1190,7 @@ const params = {
       display_name: 'Windsurf Shop',
       name: 'Windsurf Shop'
     },
+    company_id: '12345',
     currency: 'USD',
     currency_rate: 0.69,
     tax_inclusive: true,
@@ -1322,6 +1326,7 @@ const params = {
     display_id: 'EMP00101',
     display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
+    company_id: '12345',
     title: 'CEO',
     first_name: 'Elon',
     middle_name: 'D.',
@@ -1702,6 +1707,7 @@ const params = {
     display_id: 'EMP00101',
     display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
+    company_id: '12345',
     title: 'CEO',
     first_name: 'Elon',
     middle_name: 'D.',
@@ -2694,6 +2700,7 @@ const params = {
       display_name: 'Windsurf Shop',
       name: 'Windsurf Shop'
     },
+    company_id: '12345',
     invoice_date: '2020-09-30',
     due_date: '2020-09-30',
     terms: 'Net 30 days',
@@ -3117,6 +3124,7 @@ const params = {
       display_name: 'Windsurf Shop',
       name: 'Windsurf Shop'
     },
+    company_id: '12345',
     invoice_date: '2020-09-30',
     due_date: '2020-09-30',
     terms: 'Net 30 days',
@@ -4833,6 +4841,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     reconciled: true,
     status: 'authorised',
     type: 'accounts_receivable',
@@ -5179,6 +5188,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     reconciled: true,
     status: 'authorised',
     type: 'accounts_receivable',
@@ -5363,6 +5373,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     status: 'open',
     issued_date: '2020-09-30',
     delivery_date: '2020-09-30',
@@ -5772,6 +5783,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    company_id: '12345',
     status: 'open',
     issued_date: '2020-09-30',
     delivery_date: '2020-09-30',
@@ -6299,6 +6311,7 @@ const params = {
     display_id: 'EMP00101',
     display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
+    company_id: '12345',
     title: 'CEO',
     first_name: 'Elon',
     middle_name: 'D.',
@@ -6674,6 +6687,7 @@ const params = {
     display_id: 'EMP00101',
     display_name: 'Windsurf Shop',
     company_name: 'SpaceX',
+    company_id: '12345',
     title: 'CEO',
     first_name: 'Elon',
     middle_name: 'D.',

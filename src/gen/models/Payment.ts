@@ -124,6 +124,12 @@ export interface Payment {
    */
   supplier?: LinkedSupplier | null
   /**
+   * The company or subsidiary id the transaction belongs to
+   * @type {string}
+   * @memberof Payment
+   */
+  company_id?: string | null
+  /**
    * Payment has been reconciled
    * @type {boolean}
    * @memberof Payment
@@ -252,6 +258,7 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     account: !exists(json, 'account') ? undefined : LinkedLedgerAccountFromJSON(json['account']),
     customer: !exists(json, 'customer') ? undefined : LinkedCustomerFromJSON(json['customer']),
     supplier: !exists(json, 'supplier') ? undefined : LinkedSupplierFromJSON(json['supplier']),
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     reconciled: !exists(json, 'reconciled') ? undefined : json['reconciled'],
     status: !exists(json, 'status') ? undefined : json['status'],
     type: !exists(json, 'type') ? undefined : json['type'],
@@ -298,6 +305,7 @@ export function PaymentToJSON(value?: Payment | null): any {
     account: LinkedLedgerAccountToJSON(value.account),
     customer: LinkedCustomerToJSON(value.customer),
     supplier: LinkedSupplierToJSON(value.supplier),
+    company_id: value.company_id,
     reconciled: value.reconciled,
     status: value.status,
     type: value.type,

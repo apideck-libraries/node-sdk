@@ -66,6 +66,12 @@ export interface Invoice {
    */
   customer?: LinkedCustomer | null
   /**
+   * The company or subsidiary id the transaction belongs to
+   * @type {string}
+   * @memberof Invoice
+   */
+  company_id?: string | null
+  /**
    * Date invoice was issued - YYYY-MM-DD.
    * @type {Date}
    * @memberof Invoice
@@ -330,6 +336,7 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     type: !exists(json, 'type') ? undefined : json['type'],
     number: !exists(json, 'number') ? undefined : json['number'],
     customer: !exists(json, 'customer') ? undefined : LinkedCustomerFromJSON(json['customer']),
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     invoice_date: !exists(json, 'invoice_date')
       ? undefined
       : json['invoice_date'] === null
@@ -413,6 +420,7 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     type: value.type,
     number: value.number,
     customer: LinkedCustomerToJSON(value.customer),
+    company_id: value.company_id,
     invoice_date:
       value.invoice_date === undefined
         ? undefined

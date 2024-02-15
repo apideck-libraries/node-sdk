@@ -63,6 +63,12 @@ export interface Supplier {
    */
   company_name?: string | null
   /**
+   * The company or subsidiary id the transaction belongs to
+   * @type {string}
+   * @memberof Supplier
+   */
+  company_id?: string | null
+  /**
    * The job title of the person.
    * @type {string}
    * @memberof Supplier
@@ -240,6 +246,7 @@ export function SupplierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
     company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     title: !exists(json, 'title') ? undefined : json['title'],
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     middle_name: !exists(json, 'middle_name') ? undefined : json['middle_name'],
@@ -295,6 +302,7 @@ export function SupplierToJSON(value?: Supplier | null): any {
     display_id: value.display_id,
     display_name: value.display_name,
     company_name: value.company_name,
+    company_id: value.company_id,
     title: value.title,
     first_name: value.first_name,
     middle_name: value.middle_name,
