@@ -1833,7 +1833,7 @@ accountingApi.departmentsAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountingDepartment** | [AccountingDepartment](../models/AccountingDepartment.md)|  |
+ **department** | [AccountingDepartment](../models/AccountingDepartment.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -2121,7 +2121,7 @@ accountingApi.departmentsUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountingDepartment** | [AccountingDepartment](../models/AccountingDepartment.md)|  |
+ **department** | [AccountingDepartment](../models/AccountingDepartment.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -4325,7 +4325,7 @@ accountingApi.locationsAdd(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountingLocation** | [AccountingLocation](../models/AccountingLocation.md)|  |
+ **location** | [AccountingLocation](../models/AccountingLocation.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
@@ -4642,7 +4642,7 @@ accountingApi.locationsUpdate(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountingLocation** | [AccountingLocation](../models/AccountingLocation.md)|  |
+ **location** | [AccountingLocation](../models/AccountingLocation.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 

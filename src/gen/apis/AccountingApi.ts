@@ -372,7 +372,7 @@ export interface AccountingApiCustomersUpdateRequest {
 }
 
 export interface AccountingApiDepartmentsAddRequest {
-  accountingDepartment: AccountingDepartment
+  department: AccountingDepartment
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -409,7 +409,7 @@ export interface AccountingApiDepartmentsOneRequest {
 
 export interface AccountingApiDepartmentsUpdateRequest {
   id: string
-  accountingDepartment: AccountingDepartment
+  department: AccountingDepartment
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -604,7 +604,7 @@ export interface AccountingApiLedgerAccountsUpdateRequest {
 }
 
 export interface AccountingApiLocationsAddRequest {
-  accountingLocation: AccountingLocation
+  location: AccountingLocation
   raw?: boolean
   consumerId?: string
   appId?: string
@@ -641,7 +641,7 @@ export interface AccountingApiLocationsOneRequest {
 
 export interface AccountingApiLocationsUpdateRequest {
   id: string
-  accountingLocation: AccountingLocation
+  location: AccountingLocation
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -2138,13 +2138,10 @@ export class AccountingApi extends runtime.BaseAPI {
     requestParameters: AccountingApiDepartmentsAddRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CreateAccountingDepartmentResponse>> {
-    if (
-      requestParameters.accountingDepartment === null ||
-      requestParameters.accountingDepartment === undefined
-    ) {
+    if (requestParameters.department === null || requestParameters.department === undefined) {
       throw new runtime.RequiredError(
-        'accountingDepartment',
-        'Required parameter requestParameters.accountingDepartment was null or undefined when calling departmentsAdd.'
+        'department',
+        'Required parameter requestParameters.department was null or undefined when calling departmentsAdd.'
       )
     }
 
@@ -2180,7 +2177,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingDepartmentToJSON(requestParameters.accountingDepartment)
+        body: AccountingDepartmentToJSON(requestParameters.department)
       },
       initOverrides
     )
@@ -2434,13 +2431,10 @@ export class AccountingApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.accountingDepartment === null ||
-      requestParameters.accountingDepartment === undefined
-    ) {
+    if (requestParameters.department === null || requestParameters.department === undefined) {
       throw new runtime.RequiredError(
-        'accountingDepartment',
-        'Required parameter requestParameters.accountingDepartment was null or undefined when calling departmentsUpdate.'
+        'department',
+        'Required parameter requestParameters.department was null or undefined when calling departmentsUpdate.'
       )
     }
 
@@ -2479,7 +2473,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingDepartmentToJSON(requestParameters.accountingDepartment)
+        body: AccountingDepartmentToJSON(requestParameters.department)
       },
       initOverrides
     )
@@ -3995,13 +3989,10 @@ export class AccountingApi extends runtime.BaseAPI {
     requestParameters: AccountingApiLocationsAddRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CreateAccountingLocationResponse>> {
-    if (
-      requestParameters.accountingLocation === null ||
-      requestParameters.accountingLocation === undefined
-    ) {
+    if (requestParameters.location === null || requestParameters.location === undefined) {
       throw new runtime.RequiredError(
-        'accountingLocation',
-        'Required parameter requestParameters.accountingLocation was null or undefined when calling locationsAdd.'
+        'location',
+        'Required parameter requestParameters.location was null or undefined when calling locationsAdd.'
       )
     }
 
@@ -4037,7 +4028,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingLocationToJSON(requestParameters.accountingLocation)
+        body: AccountingLocationToJSON(requestParameters.location)
       },
       initOverrides
     )
@@ -4291,13 +4282,10 @@ export class AccountingApi extends runtime.BaseAPI {
       )
     }
 
-    if (
-      requestParameters.accountingLocation === null ||
-      requestParameters.accountingLocation === undefined
-    ) {
+    if (requestParameters.location === null || requestParameters.location === undefined) {
       throw new runtime.RequiredError(
-        'accountingLocation',
-        'Required parameter requestParameters.accountingLocation was null or undefined when calling locationsUpdate.'
+        'location',
+        'Required parameter requestParameters.location was null or undefined when calling locationsUpdate.'
       )
     }
 
@@ -4336,7 +4324,7 @@ export class AccountingApi extends runtime.BaseAPI {
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
-        body: AccountingLocationToJSON(requestParameters.accountingLocation)
+        body: AccountingLocationToJSON(requestParameters.location)
       },
       initOverrides
     )
