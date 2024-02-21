@@ -13,6 +13,8 @@
 
 * `unknown` (value: `'unknown'`)
 
+* `other` (value: `'other'`)
+
 
 ---
 

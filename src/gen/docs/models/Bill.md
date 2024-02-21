@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `bill_number` | **string** | Reference to supplier bill number | [optional] 
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+`company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `tax_inclusive` | **boolean** | Amounts are including tax | [optional] 
@@ -73,6 +74,7 @@ Name | Type | Description | Notes
 
 
 * [`LinkedSupplier`](LinkedSupplier.md)
+
 * [`Currency`](Currency.md)
 
 

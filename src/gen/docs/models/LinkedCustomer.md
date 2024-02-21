@@ -7,7 +7,7 @@ The customer this entity is linked to.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** | The ID of the customer this entity is linked to. | 
+`id` | **string** | The ID of the customer this entity is linked to. | [optional] 
 `display_id` | **string** | The display ID of the customer. | [optional] 
 `display_name` | **string** | The display name of the customer. | [optional] 
 `name` | **string** | The name of the customer. Deprecated, use display_name instead. | [optional] 

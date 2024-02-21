@@ -178,6 +178,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -319,6 +320,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
             tax_inclusive: true,
@@ -534,6 +536,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -705,6 +708,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -955,6 +959,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1058,6 +1063,7 @@ describe('AccountingApi', () => {
               name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
+            company_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
             tax_inclusive: true,
@@ -1236,6 +1242,7 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1371,6 +1378,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
           tax_inclusive: true,
@@ -1478,6 +1486,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -1608,6 +1617,7 @@ describe('AccountingApi', () => {
             display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
+            company_id: '12345',
             title: 'CEO',
             first_name: 'Elon',
             middle_name: 'D.',
@@ -1806,6 +1816,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -1962,6 +1973,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -2059,6 +2071,270 @@ describe('AccountingApi', () => {
         }
       } as any
       const current = await accounting.customersUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#departmentsAdd', () => {
+    const endpoint = '/accounting/departments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'departments',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        department: {
+          parent_id: '12345',
+          name: 'Sales',
+          status: 'active',
+          subsidiaries: [
+            {
+              name: 'SpaceX'
+            }
+          ],
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.departmentsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#departmentsAll', () => {
+    const endpoint = '/accounting/departments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            parent_id: '12345',
+            name: 'Sales',
+            status: 'active',
+            subsidiaries: [
+              {
+                id: '12345',
+                name: 'SpaceX'
+              }
+            ],
+            custom_mappings: {},
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.departmentsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#departmentsDelete', () => {
+    const endpoint = '/accounting/departments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'departments',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.departmentsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#departmentsOne', () => {
+    const endpoint = '/accounting/departments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'one',
+        data: {
+          id: '12345',
+          parent_id: '12345',
+          name: 'Sales',
+          status: 'active',
+          subsidiaries: [
+            {
+              id: '12345',
+              name: 'SpaceX'
+            }
+          ],
+          custom_mappings: {},
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.departmentsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#departmentsUpdate', () => {
+    const endpoint = '/accounting/departments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'departments',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        department: {
+          parent_id: '12345',
+          name: 'Sales',
+          status: 'active',
+          subsidiaries: [
+            {
+              name: 'SpaceX'
+            }
+          ],
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.departmentsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -2549,6 +2825,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -2725,6 +3002,7 @@ describe('AccountingApi', () => {
               name: 'Windsurf Shop',
               company_name: 'The boring company'
             },
+            company_id: '12345',
             invoice_date: '2020-09-30',
             due_date: '2020-09-30',
             terms: 'Net 30 days',
@@ -2976,6 +3254,7 @@ describe('AccountingApi', () => {
             name: 'Windsurf Shop',
             company_name: 'The boring company'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -3183,6 +3462,7 @@ describe('AccountingApi', () => {
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop'
           },
+          company_id: '12345',
           invoice_date: '2020-09-30',
           due_date: '2020-09-30',
           terms: 'Net 30 days',
@@ -4463,6 +4743,386 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#locationsAdd', () => {
+    const endpoint = '/accounting/locations'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'locations',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        location: {
+          parent_id: '12345',
+          company_name: 'SpaceX',
+          display_name: '11 UT - South Jordan',
+          status: 'active',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          ],
+          subsidiaries: [
+            {
+              name: 'SpaceX'
+            }
+          ],
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.locationsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#locationsAll', () => {
+    const endpoint = '/accounting/locations'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            parent_id: '12345',
+            company_name: 'SpaceX',
+            display_name: '11 UT - South Jordan',
+            status: 'active',
+            addresses: [
+              {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                row_version: '1-12345'
+              }
+            ],
+            subsidiaries: [
+              {
+                id: '12345',
+                name: 'SpaceX'
+              }
+            ],
+            custom_mappings: {},
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.locationsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#locationsDelete', () => {
+    const endpoint = '/accounting/locations/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'locations',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.locationsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#locationsOne', () => {
+    const endpoint = '/accounting/locations/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'one',
+        data: {
+          id: '12345',
+          parent_id: '12345',
+          company_name: 'SpaceX',
+          display_name: '11 UT - South Jordan',
+          status: 'active',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          ],
+          subsidiaries: [
+            {
+              id: '12345',
+              name: 'SpaceX'
+            }
+          ],
+          custom_mappings: {},
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.locationsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#locationsUpdate', () => {
+    const endpoint = '/accounting/locations/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'locations',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        location: {
+          parent_id: '12345',
+          company_name: 'SpaceX',
+          display_name: '11 UT - South Jordan',
+          status: 'active',
+          addresses: [
+            {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          ],
+          subsidiaries: [
+            {
+              name: 'SpaceX'
+            }
+          ],
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.locationsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#paymentsAdd', () => {
     const endpoint = '/accounting/payments'
 
@@ -4546,6 +5206,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -4647,6 +5308,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             reconciled: true,
             status: 'authorised',
             type: 'accounts_receivable',
@@ -4814,6 +5476,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -4934,6 +5597,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           reconciled: true,
           status: 'authorised',
           type: 'accounts_receivable',
@@ -5103,6 +5767,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -5267,6 +5932,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            company_id: '12345',
             status: 'open',
             issued_date: '2020-09-30',
             delivery_date: '2020-09-30',
@@ -5505,6 +6171,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -5699,6 +6366,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
           delivery_date: '2020-09-30',
@@ -5804,6 +6472,248 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#subsidiariesAdd', () => {
+    const endpoint = '/accounting/subsidiaries'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'subsidiaries',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        subsidiary: {
+          parent_id: '12345',
+          name: 'SpaceX',
+          status: 'active',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.subsidiariesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#subsidiariesAll', () => {
+    const endpoint = '/accounting/subsidiaries'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            parent_id: '12345',
+            name: 'SpaceX',
+            status: 'active',
+            custom_mappings: {},
+            row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.subsidiariesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#subsidiariesDelete', () => {
+    const endpoint = '/accounting/subsidiaries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'subsidiaries',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.subsidiariesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#subsidiariesOne', () => {
+    const endpoint = '/accounting/subsidiaries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'subsidiaries',
+        operation: 'one',
+        data: {
+          id: '12345',
+          parent_id: '12345',
+          name: 'SpaceX',
+          status: 'active',
+          custom_mappings: {},
+          row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.subsidiariesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#subsidiariesUpdate', () => {
+    const endpoint = '/accounting/subsidiaries/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'subsidiaries',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        subsidiary: {
+          parent_id: '12345',
+          name: 'SpaceX',
+          status: 'active',
+          row_version: '1-12345'
+        }
+      } as any
+      const current = await accounting.subsidiariesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#suppliersAdd', () => {
     const endpoint = '/accounting/suppliers'
 
@@ -5840,6 +6750,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -5965,6 +6876,7 @@ describe('AccountingApi', () => {
             display_id: 'EMP00101',
             display_name: 'Windsurf Shop',
             company_name: 'SpaceX',
+            company_id: '12345',
             title: 'CEO',
             first_name: 'Elon',
             middle_name: 'D.',
@@ -6158,6 +7070,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',
@@ -6309,6 +7222,7 @@ describe('AccountingApi', () => {
           display_id: 'EMP00101',
           display_name: 'Windsurf Shop',
           company_name: 'SpaceX',
+          company_id: '12345',
           title: 'CEO',
           first_name: 'Elon',
           middle_name: 'D.',

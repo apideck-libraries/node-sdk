@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. | [optional] 
 `reference` | **string** | Optional purchase order reference. | [optional] 
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+`company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `status` | **string** |  | [optional] 
 `issued_date` | **Date** | Date purchase order was issued - YYYY-MM-DD. | [optional] 
 `delivery_date` | **Date** | The date on which the purchase order is to be delivered - YYYY-MM-DD. | [optional] 
@@ -68,6 +69,7 @@ Name | Type | Description | Notes
 
 
 * [`LinkedSupplier`](LinkedSupplier.md)
+
 
 
 
