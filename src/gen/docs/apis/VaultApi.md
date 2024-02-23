@@ -11,6 +11,7 @@
 * [Deletes A Connection](#connectionsDelete)
 * [Import Connection](#connectionsImport)
 * [Get Connection](#connectionsOne)
+* [Authorize Access Token](#connectionsToken)
 * [Update Connection](#connectionsUpdate)
 * [Consumer Request Counts](#consumerRequestCountsAll)
 * [Create Consumer](#consumersAdd)
@@ -474,6 +475,77 @@ const params = {
 
 try {
   const { data } = await apideck.vault.connectionsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="connectionsToken"></a>
+# Authorize Access Token
+
+
+Method: **connectionsToken**
+
+```typescript
+vaultApi.connectionsToken(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **object**|  |
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **unifiedApi** | [**string**] | Unified API | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetConnectionResponse`](../models/GetConnectionResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Connection | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  serviceId: 'pipedrive',
+  unifiedApi: 'crm',
+  connectionsToken: {}
+}
+
+try {
+  const { data } = await apideck.vault.connectionsToken(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
