@@ -775,6 +775,144 @@ describe('VaultApi', () => {
     })
   })
 
+  describe('#connectionsToken', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/token'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          service_id: 'salesforce',
+          name: 'Salesforce',
+          tag_line:
+            'CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.',
+          unified_api: 'crm',
+          state: 'authorized',
+          integration_state: 'configured',
+          auth_type: 'oauth2',
+          oauth_grant_type: 'authorization_code',
+          status: 'live',
+          enabled: true,
+          website: 'https://www.salesforce.com',
+          icon: 'https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png',
+          logo: 'https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg',
+          authorize_url:
+            'https://unify.apideck.com/vault/authorize/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          revoke_url:
+            'https://unify.apideck.com/vault/revoke/salesforce/&lt;application-id&gt;?state=&lt;state&gt;',
+          settings: {
+            instance_url: 'https://eu28.salesforce.com',
+            api_key: '12345xxxxxx'
+          },
+          metadata: {
+            account: {
+              name: 'My Company',
+              id: 'c01458a5-7276-41ce-bc19-639906b0450a'
+            },
+            plan: 'enterprise'
+          },
+          form_fields: [
+            {
+              id: 'instance_url',
+              label: 'Instance url',
+              value: 'https://eu28.salesforce.com',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: false
+            },
+            {
+              id: 'api_key',
+              label: 'API Key',
+              value: '123455677',
+              placeholder: '',
+              mask: false,
+              type: 'text',
+              required: true,
+              disabled: false,
+              custom_field: false,
+              sensitive: true
+            }
+          ],
+          configuration: [
+            {
+              resource: 'leads',
+              defaults: [
+                {
+                  target: 'custom_fields',
+                  id: 'ProductInterest',
+                  options: [Array],
+                  value: 'GC5000 series'
+                }
+              ]
+            }
+          ],
+          configurable_resources: ['opportunities', 'companies', 'contacts', 'leads'],
+          resource_schema_support: ['leads'],
+          resource_settings_support: ['leads'],
+          validation_support: true,
+          schema_support: true,
+          settings_required_for_authorization: ['client_id', 'client_secret'],
+          subscriptions: [
+            {
+              downstream_id: '5f5f5f5f5f5f5f5f5f5f5f5f',
+              unify_event_types: ['crm.contact.created'],
+              downstream_event_types: ['contacts.CREATED'],
+              execute_url:
+                'https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}',
+              created_at: '2020-10-01T12:00:00.000Z'
+            }
+          ],
+          has_guide: true,
+          created_at: 1615563533390,
+          custom_mappings: [
+            {
+              id: 'hris+employees+first_aid_training',
+              label: 'First Aid Training',
+              description: 'First Aid Training completed after 2019-01-01',
+              value: '$.root.training.first_aid',
+              key: 'first_aid_training',
+              required: false,
+              custom_field: true,
+              consumer_id: 'test_user_id'
+            }
+          ],
+          updated_at: 1616662325753
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        serviceId: 'pipedrive',
+        unifiedApi: 'crm',
+        connectionsToken: {}
+      } as any
+      const current = await vault.connectionsToken(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#connectionsUpdate', () => {
     const endpoint = '/vault/connections/{unified_api}/{service_id}'
 
