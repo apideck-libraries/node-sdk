@@ -155,6 +155,7 @@ export interface VaultApiCustomFieldsAllRequest {
   resource: string
   consumerId?: string
   appId?: string
+  resourceId?: string
 }
 
 export interface VaultApiLogsAllRequest {
@@ -1151,6 +1152,10 @@ export class VaultApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {}
+
+    if (requestParameters.resourceId !== undefined) {
+      queryParameters['resource_id'] = requestParameters.resourceId
+    }
 
     const headerParameters: runtime.HTTPHeaders = {}
 
