@@ -980,6 +980,7 @@ describe('HrisApi', () => {
                 payment_unit: 'year',
                 hired_at: '2020-08-12',
                 is_primary: true,
+                is_manager: true,
                 location: {
                   id: '123',
                   type: 'primary',
@@ -1265,6 +1266,7 @@ describe('HrisApi', () => {
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
+              is_manager: true,
               location: {
                 id: '123',
                 type: 'primary',
@@ -1503,6 +1505,7 @@ describe('HrisApi', () => {
                 payment_unit: 'year',
                 hired_at: '2020-08-12',
                 is_primary: true,
+                is_manager: true,
                 location: {
                   id: '123',
                   type: 'primary',
@@ -1806,6 +1809,7 @@ describe('HrisApi', () => {
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
+              is_manager: true,
               location: {
                 id: '123',
                 type: 'primary',
@@ -2064,6 +2068,7 @@ describe('HrisApi', () => {
               payment_unit: 'year',
               hired_at: '2020-08-12',
               is_primary: true,
+              is_manager: true,
               location: {
                 id: '123',
                 type: 'primary',

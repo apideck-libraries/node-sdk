@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 `payment_unit` | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 
 `hired_at` | **Date** | The date on which the employee was hired by the organization | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job. | [optional] 
+`is_manager` | **boolean** | Indicates whether this the employee has a manager role. | [optional] 
 `location` | [**Address**](Address.md) |  | [optional] 
 
 
@@ -32,6 +33,7 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`PaymentUnit`](PaymentUnit.md)
+
 
 
 * [`Address`](Address.md)
