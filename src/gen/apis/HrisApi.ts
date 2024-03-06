@@ -33,6 +33,7 @@ import {
   DepartmentToJSON,
   Employee,
   EmployeesFilter,
+  EmployeesOneFilter,
   EmployeesSort,
   EmployeeToJSON,
   GetDepartmentResponse,
@@ -236,6 +237,7 @@ export interface HrisApiEmployeesOneRequest {
   serviceId?: string
   raw?: boolean
   fields?: string | null
+  filter?: EmployeesOneFilter
 }
 
 export interface HrisApiEmployeesUpdateRequest {
@@ -1527,6 +1529,10 @@ export class HrisApi extends runtime.BaseAPI {
 
     if (requestParameters.fields !== undefined) {
       queryParameters['fields'] = requestParameters.fields
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     const headerParameters: runtime.HTTPHeaders = {}
