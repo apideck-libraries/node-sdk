@@ -1010,6 +1010,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],
@@ -1074,6 +1082,14 @@ describe('AccountingApi', () => {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345'
         }
       } as any
@@ -1171,6 +1187,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_fields: [[Object]],
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -1241,6 +1258,14 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             },
             custom_mappings: {},
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -1402,6 +1427,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -1472,6 +1505,14 @@ describe('AccountingApi', () => {
             row_version: '1-12345'
           },
           custom_mappings: {},
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -1585,6 +1626,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],
@@ -1649,6 +1698,14 @@ describe('AccountingApi', () => {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           },
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345'
         }
       } as any
@@ -3088,6 +3145,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],
@@ -3277,6 +3342,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_fields: [[Object]],
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -3537,6 +3603,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -3749,6 +3823,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],
@@ -6085,6 +6167,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],
@@ -6254,6 +6344,7 @@ describe('AccountingApi', () => {
                   nominal_code: 'N091',
                   code: '453'
                 },
+                custom_fields: [[Object]],
                 row_version: '1-12345',
                 updated_by: '12345',
                 created_by: '12345',
@@ -6493,6 +6584,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345',
               updated_by: '12345',
               created_by: '12345',
@@ -6684,6 +6783,14 @@ describe('AccountingApi', () => {
                 nominal_code: 'N091',
                 code: '453'
               },
+              custom_fields: [
+                {
+                  id: '2389328923893298',
+                  name: 'employee_level',
+                  description: 'Employee Level',
+                  value: 'Uses Salesforce and Marketo'
+                }
+              ],
               row_version: '1-12345'
             }
           ],

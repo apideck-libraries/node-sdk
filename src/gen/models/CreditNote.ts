@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
@@ -186,6 +187,12 @@ export interface CreditNote {
    */
   readonly custom_mappings?: object | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof CreditNote
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof CreditNote
@@ -282,6 +289,9 @@ export function CreditNoteFromJSONTyped(json: any, ignoreDiscriminator: boolean)
       ? undefined
       : AddressFromJSON(json['shipping_address']),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -339,6 +349,10 @@ export function CreditNoteToJSON(value?: CreditNote | null): any {
     terms: value.terms,
     billing_address: AddressToJSON(value.billing_address),
     shipping_address: AddressToJSON(value.shipping_address),
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version
   }
 }
