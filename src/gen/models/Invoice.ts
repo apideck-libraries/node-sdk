@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
@@ -264,6 +265,12 @@ export interface Invoice {
    */
   readonly custom_mappings?: object | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Invoice
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof Invoice
@@ -393,6 +400,9 @@ export function InvoiceFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
       ? undefined
       : LinkedLedgerAccountFromJSON(json['ledger_account']),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -465,6 +475,10 @@ export function InvoiceToJSON(value?: Invoice | null): any {
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
     ledger_account: LinkedLedgerAccountToJSON(value.ledger_account),
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version
   }
 }

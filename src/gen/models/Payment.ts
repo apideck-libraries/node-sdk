@@ -14,6 +14,7 @@
 
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
   LinkedLedgerAccount,
@@ -160,6 +161,18 @@ export interface Payment {
    */
   note?: string | null
   /**
+   * Payment number.
+   * @type {string}
+   * @memberof Payment
+   */
+  number?: string | null
+  /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Payment
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof Payment
@@ -266,6 +279,10 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
       ? undefined
       : (json['allocations'] as Array<any>).map(PaymentAllocationsFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
@@ -314,6 +331,11 @@ export function PaymentToJSON(value?: Payment | null): any {
         ? undefined
         : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
     note: value.note,
+    number: value.number,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version,
     display_id: value.display_id
   }
