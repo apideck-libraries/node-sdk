@@ -29,7 +29,6 @@ import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './Lin
  * @interface LedgerAccount
  */
 export interface LedgerAccount {
-  [key: string]: unknown | any
   /**
    * A unique identifier for an object.
    * @type {string}
@@ -278,7 +277,6 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
     return json
   }
   return {
-    ...json,
     id: !exists(json, 'id') ? undefined : json['id'],
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     nominal_code: !exists(json, 'nominal_code') ? undefined : json['nominal_code'],
@@ -341,7 +339,6 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
     return null
   }
   return {
-    ...value,
     display_id: value.display_id,
     nominal_code: value.nominal_code,
     code: value.code,

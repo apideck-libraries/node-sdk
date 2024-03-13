@@ -19,7 +19,6 @@ import { exists } from '../runtime'
  * @interface EmployeeList
  */
 export interface EmployeeList {
-  [key: string]: unknown | any
   /**
    * A unique identifier for an object.
    * @type {string}
@@ -61,7 +60,6 @@ export function EmployeeListFromJSONTyped(json: any, ignoreDiscriminator: boolea
     return json
   }
   return {
-    ...json,
     id: !exists(json, 'id') ? undefined : json['id'],
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
@@ -86,7 +84,6 @@ export function EmployeeListToJSON(value?: EmployeeList | null): any {
     return null
   }
   return {
-    ...value,
     first_name: value.first_name,
     last_name: value.last_name
   }
