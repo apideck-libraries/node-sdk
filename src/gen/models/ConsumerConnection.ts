@@ -14,6 +14,7 @@
 
 import { exists } from '../runtime'
 import { AuthType, AuthTypeFromJSON, AuthTypeToJSON } from './AuthType'
+import { ConnectionState, ConnectionStateFromJSON, ConnectionStateToJSON } from './ConnectionState'
 
 /**
  *
@@ -113,22 +114,10 @@ export interface ConsumerConnection {
   updated_at?: string | null
   /**
    *
-   * @type {string}
+   * @type {ConnectionState}
    * @memberof ConsumerConnection
    */
-  state?: ConsumerConnectionState
-}
-
-/**
- * @export
- * @enum {string}
- */
-export enum ConsumerConnectionState {
-  available = 'available',
-  callable = 'callable',
-  added = 'added',
-  configured = 'configured',
-  authorized = 'authorized'
+  state?: ConnectionState
 }
 
 export function ConsumerConnectionFromJSON(json: any): ConsumerConnection {
@@ -158,7 +147,7 @@ export function ConsumerConnectionFromJSONTyped(
     metadata: !exists(json, 'metadata') ? undefined : json['metadata'],
     created_at: !exists(json, 'created_at') ? undefined : json['created_at'],
     updated_at: !exists(json, 'updated_at') ? undefined : json['updated_at'],
-    state: !exists(json, 'state') ? undefined : json['state']
+    state: !exists(json, 'state') ? undefined : ConnectionStateFromJSON(json['state'])
   }
 }
 
@@ -182,6 +171,6 @@ export function ConsumerConnectionToJSON(value?: ConsumerConnection | null): any
     metadata: value.metadata,
     created_at: value.created_at,
     updated_at: value.updated_at,
-    state: value.state
+    state: ConnectionStateToJSON(value.state)
   }
 }
