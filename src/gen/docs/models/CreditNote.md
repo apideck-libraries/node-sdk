@@ -28,7 +28,10 @@ Name | Type | Description | Notes
 `allocations` | **Array&lt;object&gt;** |  | [optional] 
 `note` | **string** | Optional note to be associated with the credit note. | [optional] 
 `terms` | **string** | Optional terms to be associated with the credit note. | [optional] 
+`billing_address` | [**Address**](Address.md) |  | [optional] 
+`shipping_address` | [**Address**](Address.md) |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -91,7 +94,10 @@ Name | Type | Description | Notes
 
 
 
+* [`Address`](Address.md)
+* [`Address`](Address.md)
 
+* [`CustomField`](CustomField.md)
 
 
 

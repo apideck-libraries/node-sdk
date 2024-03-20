@@ -20,25 +20,8 @@ Name | Type | Description | Notes
 `metadata` | **{ [key: string]: object; }** | Attach your own consumer specific metadata | [optional] 
 `created_at` | **string** |  | [optional] 
 `updated_at` | **string** |  | [optional] 
-`state` | **string** |  | [optional] 
+`state` | [**ConnectionState**](ConnectionState.md) |  | [optional] 
 
-
-
-
-
-<a name="ConsumerConnectionState"></a>
-## Enum: ConsumerConnection.state
-
-
-* `available` (value: `'available'`)
-
-* `callable` (value: `'callable'`)
-
-* `added` (value: `'added'`)
-
-* `configured` (value: `'configured'`)
-
-* `authorized` (value: `'authorized'`)
 
 
 
@@ -59,7 +42,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`ConnectionState`](ConnectionState.md)
 
 ---
 

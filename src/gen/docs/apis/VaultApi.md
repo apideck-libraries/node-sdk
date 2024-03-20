@@ -1088,6 +1088,7 @@ Name | Type | Description  | Notes
  **resource** | [**string**] | Name of the resource (plural) | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **resourceId** | [**string**] | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | (optional) 
 
 
 
