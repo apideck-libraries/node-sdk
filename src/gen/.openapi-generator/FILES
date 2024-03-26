@@ -43,6 +43,9 @@ AtsActivity.md
 AtsApi.md
 AtsApiTest.api.test.ts
 AtsEventType.md
+Attachment.md
+AttachmentReference.md
+AttachmentReferenceType.md
 AuthType.md
 BadRequestResponse.md
 BalanceSheet.md
@@ -111,6 +114,8 @@ CreateAccountingLocationResponse.md
 CreateActivityResponse.md
 CreateApplicantResponse.md
 CreateApplicationResponse.md
+CreateAttachmentRequest.md
+CreateAttachmentResponse.md
 CreateBillResponse.md
 CreateCommentResponse.md
 CreateCompanyResponse.md
@@ -186,6 +191,7 @@ DeleteAccountingLocationResponse.md
 DeleteActivityResponse.md
 DeleteApplicantResponse.md
 DeleteApplicationResponse.md
+DeleteAttachmentResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
 DeleteCompanyResponse.md
@@ -299,6 +305,8 @@ GetApplicantResponse.md
 GetApplicantsResponse.md
 GetApplicationResponse.md
 GetApplicationsResponse.md
+GetAttachmentResponse.md
+GetAttachmentsResponse.md
 GetBalanceSheetResponse.md
 GetBillResponse.md
 GetBillsResponse.md
@@ -721,6 +729,9 @@ models/ApplicationStage.ts
 models/Assignee.ts
 models/AtsActivity.ts
 models/AtsEventType.ts
+models/Attachment.ts
+models/AttachmentReference.ts
+models/AttachmentReferenceType.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
 models/BalanceSheet.ts
@@ -787,6 +798,8 @@ models/CreateAccountingLocationResponse.ts
 models/CreateActivityResponse.ts
 models/CreateApplicantResponse.ts
 models/CreateApplicationResponse.ts
+models/CreateAttachmentRequest.ts
+models/CreateAttachmentResponse.ts
 models/CreateBillResponse.ts
 models/CreateCommentResponse.ts
 models/CreateCompanyResponse.ts
@@ -860,6 +873,7 @@ models/DeleteAccountingLocationResponse.ts
 models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
 models/DeleteApplicationResponse.ts
+models/DeleteAttachmentResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
 models/DeleteCompanyResponse.ts
@@ -968,6 +982,8 @@ models/GetApplicantResponse.ts
 models/GetApplicantsResponse.ts
 models/GetApplicationResponse.ts
 models/GetApplicationsResponse.ts
+models/GetAttachmentResponse.ts
+models/GetAttachmentsResponse.ts
 models/GetBalanceSheetResponse.ts
 models/GetBillResponse.ts
 models/GetBillsResponse.ts
