@@ -212,49 +212,6 @@ describe('AccountingApi', () => {
     })
   })
 
-  describe('#attachmentsUpload', () => {
-    const endpoint = '/accounting/attachments/{reference_type}/{reference_id}'
-
-    const config = {
-      apiKey: 'REPLACE_WITH_API_KEY',
-      appId: 'REPLACE_WITH_APP_ID',
-      consumerId: 'REPLACE_WITH_CONSUMER_ID',
-      metadata: 'REPLACE_WITH_METADATA'
-    }
-    const apideck = new Apideck({ ...config, basePath: basePath })
-
-    afterEach(() => {
-      jest.clearAllMocks()
-    })
-
-    it('should call Apideck with expected params', async () => {
-      const mockedResponse: Record<string, unknown> = {
-        status_code: 200,
-        status: 'OK',
-        service: 'google-drive',
-        resource: 'files',
-        operation: 'add',
-        data: {
-          id: '12345'
-        }
-      } as any
-
-      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
-        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
-      )
-
-      const { accounting } = apideck
-      const params = {
-        referenceType: 'invoice',
-        referenceId: '123456',
-        attachmentsUpload: 'string'
-      } as any
-      const current = await accounting.attachmentsUpload(params)
-
-      expect(fetch).toHaveBeenCalledTimes(1)
-    })
-  })
-
   describe('#balanceSheetOne', () => {
     const endpoint = '/accounting/balance-sheet'
 

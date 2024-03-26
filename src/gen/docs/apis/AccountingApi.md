@@ -9,7 +9,6 @@
 * [Delete Attachment](#attachmentsDelete)
 * [Download Attachment](#attachmentsDownload)
 * [Get Attachment](#attachmentsOne)
-* [Upload Attachment](#attachmentsUpload)
 * [Get BalanceSheet](#balanceSheetOne)
 * [Create Bill](#billsAdd)
 * [List Bills](#billsAll)
@@ -366,81 +365,6 @@ const params = {
 
 try {
   const { data } = await apideck.accounting.attachmentsOne(params)
-  console.log('API called successfully', data)
-} catch (error) {
-  console.error(error)
-  return error.json()
-}
-
-
-```
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
-
-<a name="attachmentsUpload"></a>
-# Upload Attachment
-
-
-Method: **attachmentsUpload**
-
-```typescript
-accountingApi.attachmentsUpload(body)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Blob**|  |
- **referenceType** | **AttachmentReferenceType** | The reference type of the document. | 
- **referenceId** | [**string**] | The reference id of the object to retrieve. | 
- **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **xApideckMetadata** | **CreateAttachmentRequest** | Metadata to attach to the attachment file | (optional) 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
-
-
-
-### Response Type
-
-[`CreateAttachmentResponse`](../models/CreateAttachmentResponse.md)
-
-
-
-### HTTP response details
-| Status code | Description |
-|-------------|-------------|
-**201** | Attachments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
-
-
-## Example Usage
-
-```typescript
-import { Apideck } from '@apideck/node';
-
-const apideck = new Apideck({
-  apiKey: 'REPLACE_WITH_API_KEY',
-  appId: 'REPLACE_WITH_APP_ID',
-  consumerId: 'REPLACE_WITH_CONSUMER_ID',
-  metadata: 'REPLACE_WITH_METADATA'
-});
-
-const params = {
-  referenceType: 'invoice',
-  referenceId: '123456',
-  attachmentsUpload: 'string'
-}
-
-try {
-  const { data } = await apideck.accounting.attachmentsUpload(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

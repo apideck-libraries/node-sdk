@@ -29,9 +29,6 @@ import {
   CreateAccountingDepartmentResponseFromJSON,
   CreateAccountingLocationResponse,
   CreateAccountingLocationResponseFromJSON,
-  CreateAttachmentRequest,
-  CreateAttachmentResponse,
-  CreateAttachmentResponseFromJSON,
   CreateBillResponse,
   CreateBillResponseFromJSON,
   CreateCreditNoteResponse,
@@ -264,17 +261,6 @@ export interface AccountingApiAttachmentsOneRequest {
   serviceId?: string
   raw?: boolean
   fields?: string | null
-}
-
-export interface AccountingApiAttachmentsUploadRequest {
-  referenceType: AttachmentReferenceType
-  referenceId: string
-  raw?: boolean
-  xApideckMetadata?: CreateAttachmentRequest
-  consumerId?: string
-  appId?: string
-  serviceId?: string
-  body?: Blob
 }
 
 export interface AccountingApiBalanceSheetOneRequest {
@@ -1305,97 +1291,6 @@ export class AccountingApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<GetAttachmentResponse> {
     const response = await this.attachmentsOneRaw(requestParameters, initOverrides)
-    return await response.value()
-  }
-
-  /**
-   * Upload attachment
-   * Upload attachment
-   */
-  async attachmentsUploadRaw(
-    requestParameters: AccountingApiAttachmentsUploadRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CreateAttachmentResponse>> {
-    if (requestParameters.referenceType === null || requestParameters.referenceType === undefined) {
-      throw new runtime.RequiredError(
-        'referenceType',
-        'Required parameter requestParameters.referenceType was null or undefined when calling attachmentsUpload.'
-      )
-    }
-
-    if (requestParameters.referenceId === null || requestParameters.referenceId === undefined) {
-      throw new runtime.RequiredError(
-        'referenceId',
-        'Required parameter requestParameters.referenceId was null or undefined when calling attachmentsUpload.'
-      )
-    }
-
-    const queryParameters: any = {}
-
-    if (requestParameters.raw !== undefined) {
-      queryParameters['raw'] = requestParameters.raw
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {}
-
-    headerParameters['Content-Type'] = 'application/json'
-
-    if (
-      requestParameters.xApideckMetadata !== undefined &&
-      requestParameters.xApideckMetadata !== null
-    ) {
-      headerParameters['x-apideck-metadata'] = String(requestParameters.xApideckMetadata)
-    }
-
-    if (requestParameters.consumerId !== undefined && requestParameters.consumerId !== null) {
-      headerParameters['x-apideck-consumer-id'] = String(requestParameters.consumerId)
-    }
-
-    if (requestParameters.appId !== undefined && requestParameters.appId !== null) {
-      headerParameters['x-apideck-app-id'] = String(requestParameters.appId)
-    }
-
-    if (requestParameters.serviceId !== undefined && requestParameters.serviceId !== null) {
-      headerParameters['x-apideck-service-id'] = String(requestParameters.serviceId)
-    }
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['Authorization'] = this.configuration.apiKey('Authorization') // apiKey authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/accounting/attachments/{reference_type}/{reference_id}`
-          .replace(
-            `{${'reference_type'}}`,
-            encodeURIComponent(String(requestParameters.referenceType))
-          )
-          .replace(
-            `{${'reference_id'}}`,
-            encodeURIComponent(String(requestParameters.referenceId))
-          ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: requestParameters.body as any
-      },
-      initOverrides
-    )
-
-    return new runtime.JSONApiResponse(response, jsonValue =>
-      CreateAttachmentResponseFromJSON(jsonValue)
-    )
-  }
-
-  /**
-   * Upload attachment
-   * Upload attachment
-   */
-  async attachmentsUpload(
-    requestParameters: AccountingApiAttachmentsUploadRequest,
-    initOverrides?: RequestInit
-  ): Promise<CreateAttachmentResponse> {
-    const response = await this.attachmentsUploadRaw(requestParameters, initOverrides)
     return await response.value()
   }
 
