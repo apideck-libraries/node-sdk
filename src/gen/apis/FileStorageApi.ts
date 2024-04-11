@@ -238,6 +238,7 @@ export interface FileStorageApiFilesSearchRequest {
   fields?: string | null
   cursor?: string | null
   limit?: number
+  filter?: FilesFilter
 }
 
 export interface FileStorageApiFilesUpdateRequest {
@@ -1503,6 +1504,10 @@ export class FileStorageApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     const headerParameters: runtime.HTTPHeaders = {}
