@@ -517,6 +517,7 @@ OrderPickupDetailsRecipient.md
 OrderRefunds.md
 OrderTenders.md
 OrderType.md
+OrdersSort.md
 Owner.md
 PaginationCoverage.md
 PassThroughQuery.md
@@ -1189,6 +1190,7 @@ models/OrderPickupDetailsRecipient.ts
 models/OrderRefunds.ts
 models/OrderTenders.ts
 models/OrderType.ts
+models/OrdersSort.ts
 models/Owner.ts
 models/PaginationCoverage.ts
 models/PassThroughQuery.ts
