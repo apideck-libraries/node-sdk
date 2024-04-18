@@ -39,6 +39,7 @@ describe('AccountingApi', () => {
         data: [
           {
             id: '12345',
+            display_id: 'sample ID',
             name: 'sample.jpg',
             mime_type: 'image/jpeg',
             size: 1810673,
@@ -181,6 +182,7 @@ describe('AccountingApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          display_id: 'sample ID',
           name: 'sample.jpg',
           mime_type: 'image/jpeg',
           size: 1810673,

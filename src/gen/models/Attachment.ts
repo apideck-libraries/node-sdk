@@ -32,6 +32,12 @@ export interface Attachment {
    */
   readonly id?: string
   /**
+   * The display id of the file
+   * @type {string}
+   * @memberof Attachment
+   */
+  display_id?: string | null
+  /**
    * The name of the file
    * @type {string}
    * @memberof Attachment
@@ -97,6 +103,7 @@ export function AttachmentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
+    display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     mime_type: !exists(json, 'mime_type') ? undefined : json['mime_type'],
     size: !exists(json, 'size') ? undefined : json['size'],
@@ -127,6 +134,7 @@ export function AttachmentToJSON(value?: Attachment | null): any {
     return null
   }
   return {
+    display_id: value.display_id,
     name: value.name,
     mime_type: value.mime_type,
     size: value.size,
