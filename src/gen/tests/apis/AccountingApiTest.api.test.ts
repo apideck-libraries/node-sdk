@@ -236,68 +236,39 @@ describe('AccountingApi', () => {
         resource: 'BalanceSheets',
         operation: 'one',
         data: {
-          id: '12345',
-          report_name: 'BalanceSheet',
-          start_date: '2017-01-01',
-          end_date: '2017-01-01',
-          assets: {
-            total: 200000,
-            current_assets: {
-              total: 100000,
-              accounts: [
-                {
-                  id: '1',
-                  name: 'Accounts Receivable (A/R)',
-                  value: 10000
-                },
-                {
-                  id: '2',
-                  name: 'Accounts Payable (A/P)',
-                  value: 10000
-                }
-              ]
-            },
-            fixed_assets: {
-              total: 100000,
-              accounts: [
-                {
-                  id: '1',
-                  name: 'Accounts Receivable (A/R)',
-                  value: 10000
-                },
-                {
-                  id: '2',
-                  name: 'Accounts Payable (A/P)',
-                  value: 10000
-                }
-              ]
+          reports: [
+            {
+              id: '12345',
+              report_name: 'BalanceSheet',
+              start_date: '2017-01-01',
+              end_date: '2017-01-01',
+              currency: 'USD',
+              assets: {
+                account_id: '123456',
+                name: 'Current assets',
+                value: 0,
+                items: [{}]
+              },
+              liabilities: {
+                account_id: '123456',
+                name: 'Current assets',
+                value: 0,
+                items: [{}]
+              },
+              equity: {
+                account_id: '123456',
+                name: 'Current assets',
+                value: 0,
+                items: [{}]
+              },
+              net_assets: 1000,
+              custom_mappings: {},
+              updated_by: '12345',
+              created_by: '12345',
+              updated_at: '2020-09-30T07:43:32.000Z',
+              created_at: '2020-09-30T07:43:32.000Z'
             }
-          },
-          liabilities: {
-            total: 200000,
-            accounts: [
-              {
-                id: '1',
-                name: 'Accounts Payable (A/P)',
-                value: 10000
-              }
-            ]
-          },
-          equity: {
-            total: 200000,
-            items: [
-              {
-                id: '1',
-                name: 'Retained Earnings',
-                value: 10000
-              }
-            ]
-          },
-          custom_mappings: {},
-          updated_by: '12345',
-          created_by: '12345',
-          updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          ]
         }
       } as any
 

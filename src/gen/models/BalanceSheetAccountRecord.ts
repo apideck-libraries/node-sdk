@@ -16,52 +16,48 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface BalanceSheetLiabilitiesAccounts
+ * @interface BalanceSheetAccountRecord
  */
-export interface BalanceSheetLiabilitiesAccounts {
+export interface BalanceSheetAccountRecord {
   /**
-   * A unique identifier for an object.
+   * The unique identifier for the account.
    * @type {string}
-   * @memberof BalanceSheetLiabilitiesAccounts
+   * @memberof BalanceSheetAccountRecord
    */
-  readonly id?: string
+  readonly account_id?: string
   /**
-   * The name of the liability account
+   * Name of the report item
    * @type {string}
-   * @memberof BalanceSheetLiabilitiesAccounts
+   * @memberof BalanceSheetAccountRecord
    */
   name?: string
   /**
-   * The value of the liability
+   * The value of the account.
    * @type {number}
-   * @memberof BalanceSheetLiabilitiesAccounts
+   * @memberof BalanceSheetAccountRecord
    */
   value?: number
 }
 
-export function BalanceSheetLiabilitiesAccountsFromJSON(
-  json: any
-): BalanceSheetLiabilitiesAccounts {
-  return BalanceSheetLiabilitiesAccountsFromJSONTyped(json, false)
+export function BalanceSheetAccountRecordFromJSON(json: any): BalanceSheetAccountRecord {
+  return BalanceSheetAccountRecordFromJSONTyped(json, false)
 }
 
-export function BalanceSheetLiabilitiesAccountsFromJSONTyped(
+export function BalanceSheetAccountRecordFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): BalanceSheetLiabilitiesAccounts {
+): BalanceSheetAccountRecord {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    account_id: !exists(json, 'account_id') ? undefined : json['account_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     value: !exists(json, 'value') ? undefined : json['value']
   }
 }
 
-export function BalanceSheetLiabilitiesAccountsToJSON(
-  value?: BalanceSheetLiabilitiesAccounts | null
-): any {
+export function BalanceSheetAccountRecordToJSON(value?: BalanceSheetAccountRecord | null): any {
   if (value === undefined) {
     return undefined
   }
