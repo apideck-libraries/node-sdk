@@ -1402,7 +1402,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          opportunity_ids: ['string']
         }
       } as any
       const current = await crm.contactsAdd(params)
@@ -1533,7 +1534,8 @@ describe('CrmApi', () => {
             last_activity_at: '2020-09-30T07:43:32.000Z',
             custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
-            created_at: '2017-08-12T20:43:21.291Z'
+            created_at: '2017-08-12T20:43:21.291Z',
+            opportunity_ids: ['string']
           }
         ],
         meta: {
@@ -1724,7 +1726,8 @@ describe('CrmApi', () => {
           last_activity_at: '2020-09-30T07:43:32.000Z',
           custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
-          created_at: '2017-08-12T20:43:21.291Z'
+          created_at: '2017-08-12T20:43:21.291Z',
+          opportunity_ids: ['string']
         }
       } as any
 
@@ -1868,7 +1871,8 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          opportunity_ids: ['string']
         }
       } as any
       const current = await crm.contactsUpdate(params)

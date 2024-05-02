@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_at` | **Date** | The last update date of the contact. | [optional] 
 `created_at` | **Date** | The creation date of the contact. | [optional] 
+`opportunity_ids` | **Array&lt;string&gt;** | The opportunity ids of the contact. | [optional] 
 
 
 
@@ -111,6 +112,7 @@ Name | Type | Description | Notes
 
 * [`CustomField`](CustomField.md)
 * [`Tags`](Tags.md)
+
 
 
 

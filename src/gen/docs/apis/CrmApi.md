@@ -1295,6 +1295,9 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    opportunity_ids: [
+      'string'
     ]
   }
 }
@@ -1673,6 +1676,9 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    opportunity_ids: [
+      'string'
     ]
   }
 }

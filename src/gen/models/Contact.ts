@@ -261,6 +261,12 @@ export interface Contact {
    * @memberof Contact
    */
   readonly created_at?: Date | null
+  /**
+   * The opportunity ids of the contact.
+   * @type {Array<string>}
+   * @memberof Contact
+   */
+  opportunity_ids?: Array<string>
 }
 
 /**
@@ -360,7 +366,8 @@ export function ContactFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
       ? undefined
       : json['created_at'] === null
       ? null
-      : new Date(json['created_at'])
+      : new Date(json['created_at']),
+    opportunity_ids: !exists(json, 'opportunity_ids') ? undefined : json['opportunity_ids']
   }
 }
 
@@ -416,6 +423,7 @@ export function ContactToJSON(value?: Contact | null): any {
       value.custom_fields === undefined
         ? undefined
         : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
-    tags: TagsToJSON(value.tags)
+    tags: TagsToJSON(value.tags),
+    opportunity_ids: value.opportunity_ids
   }
 }
