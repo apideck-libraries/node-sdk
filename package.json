@@ -1,6 +1,6 @@
 {
   "name": "@apideck/node",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Apideck Node.js SDK",
   "keywords": [
     "apideck",
