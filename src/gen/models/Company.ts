@@ -35,7 +35,7 @@ export interface Company {
    * @type {string}
    * @memberof Company
    */
-  name: string
+  name: string | null
   /**
    * Unique identifier for the company
    * @type {string}
