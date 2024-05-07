@@ -31,6 +31,12 @@ export interface EcommerceOrdersFilter {
    * @memberof EcommerceOrdersFilter
    */
   customer_id?: string
+  /**
+   * Minimum date the order was last modified
+   * @type {string}
+   * @memberof EcommerceOrdersFilter
+   */
+  updated_since?: string
 }
 
 export function EcommerceOrdersFilterFromJSON(json: any): EcommerceOrdersFilter {
@@ -46,7 +52,8 @@ export function EcommerceOrdersFilterFromJSONTyped(
   }
   return {
     email: !exists(json, 'email') ? undefined : json['email'],
-    customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id']
+    customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
+    updated_since: !exists(json, 'updated_since') ? undefined : json['updated_since']
   }
 }
 
@@ -59,6 +66,7 @@ export function EcommerceOrdersFilterToJSON(value?: EcommerceOrdersFilter | null
   }
   return {
     email: value.email,
-    customer_id: value.customer_id
+    customer_id: value.customer_id,
+    updated_since: value.updated_since
   }
 }
