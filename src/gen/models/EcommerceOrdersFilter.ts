@@ -37,6 +37,12 @@ export interface EcommerceOrdersFilter {
    * @memberof EcommerceOrdersFilter
    */
   updated_since?: string
+  /**
+   * Minimum date the order was created
+   * @type {string}
+   * @memberof EcommerceOrdersFilter
+   */
+  created_since?: string
 }
 
 export function EcommerceOrdersFilterFromJSON(json: any): EcommerceOrdersFilter {
@@ -53,7 +59,8 @@ export function EcommerceOrdersFilterFromJSONTyped(
   return {
     email: !exists(json, 'email') ? undefined : json['email'],
     customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
-    updated_since: !exists(json, 'updated_since') ? undefined : json['updated_since']
+    updated_since: !exists(json, 'updated_since') ? undefined : json['updated_since'],
+    created_since: !exists(json, 'created_since') ? undefined : json['created_since']
   }
 }
 
@@ -67,6 +74,7 @@ export function EcommerceOrdersFilterToJSON(value?: EcommerceOrdersFilter | null
   return {
     email: value.email,
     customer_id: value.customer_id,
-    updated_since: value.updated_since
+    updated_since: value.updated_since,
+    created_since: value.created_since
   }
 }
