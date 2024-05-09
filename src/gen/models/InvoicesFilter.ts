@@ -25,6 +25,12 @@ export interface InvoicesFilter {
    * @memberof InvoicesFilter
    */
   updated_since?: Date
+  /**
+   *
+   * @type {Date}
+   * @memberof InvoicesFilter
+   */
+  created_since?: Date
 }
 
 export function InvoicesFilterFromJSON(json: any): InvoicesFilter {
@@ -39,7 +45,8 @@ export function InvoicesFilterFromJSONTyped(
     return json
   }
   return {
-    updated_since: !exists(json, 'updated_since') ? undefined : new Date(json['updated_since'])
+    updated_since: !exists(json, 'updated_since') ? undefined : new Date(json['updated_since']),
+    created_since: !exists(json, 'created_since') ? undefined : new Date(json['created_since'])
   }
 }
 
@@ -52,6 +59,8 @@ export function InvoicesFilterToJSON(value?: InvoicesFilter | null): any {
   }
   return {
     updated_since:
-      value.updated_since === undefined ? undefined : new Date(value.updated_since).toISOString()
+      value.updated_since === undefined ? undefined : new Date(value.updated_since).toISOString(),
+    created_since:
+      value.created_since === undefined ? undefined : new Date(value.created_since).toISOString()
   }
 }
