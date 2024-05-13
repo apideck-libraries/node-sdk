@@ -2888,9 +2888,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.4.668:
-  version "1.4.762"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.762.tgz#c29c9d47cf7cc128a9c364baa28adbadde95a47c"
-  integrity sha512-rrFvGweLxPwwSwJOjIopy3Vr+J3cIPtZzuc74bmlvmBIgQO3VYJDvVrlj94iKZ3ukXUH64Ex31hSfRTLqvjYJQ==
+  version "1.4.763"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.763.tgz#64f2041ed496fd6fc710b9be806fe91da9334f91"
+  integrity sha512-k4J8NrtJ9QrvHLRo8Q18OncqBCB7tIUyqxRcJnlonQ0ioHKYB988GcDFF3ZePmnb8eHEopDs/wPHR/iGAFgoUQ==
 
 emittery@^0.13.1:
   version "0.13.1"
@@ -5771,9 +5771,9 @@ npm-run-path@^5.1.0:
     path-key "^4.0.0"
 
 nwsapi@^2.2.0:
-  version "2.2.9"
-  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.9.tgz#7f3303218372db2e9f27c27766bcfc59ae7e61c6"
-  integrity sha512-2f3F0SEEer8bBu0dsNCFF50N0cTThV1nWFYcEYFZttdW0lDAoybv9cQoK7X7/68Z89S7FoRrVjP1LPX4XRf9vg==
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.10.tgz#0b77a68e21a0b483db70b11fad055906e867cda8"
+  integrity sha512-QK0sRs7MKv0tKe1+5uZIQk/C8XGza4DAnztJG8iD+TpJIORARrCxczA738awHrZoHeTjSSoHqao2teO0dC/gFQ==
 
 oauth-sign@~0.9.0:
   version "0.9.0"
