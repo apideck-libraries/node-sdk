@@ -49,6 +49,12 @@ export interface LinkedCustomer {
    * @memberof LinkedCustomer
    */
   readonly company_name?: string | null
+  /**
+   * The email address of the customer.
+   * @type {string}
+   * @memberof LinkedCustomer
+   */
+  email?: string
 }
 
 export function LinkedCustomerFromJSON(json: any): LinkedCustomer {
@@ -67,7 +73,8 @@ export function LinkedCustomerFromJSONTyped(
     display_id: !exists(json, 'display_id') ? undefined : json['display_id'],
     display_name: !exists(json, 'display_name') ? undefined : json['display_name'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    company_name: !exists(json, 'company_name') ? undefined : json['company_name']
+    company_name: !exists(json, 'company_name') ? undefined : json['company_name'],
+    email: !exists(json, 'email') ? undefined : json['email']
   }
 }
 
@@ -81,6 +88,7 @@ export function LinkedCustomerToJSON(value?: LinkedCustomer | null): any {
   return {
     id: value.id,
     display_name: value.display_name,
-    name: value.name
+    name: value.name,
+    email: value.email
   }
 }

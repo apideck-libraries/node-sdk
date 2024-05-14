@@ -1134,7 +1134,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     company_id: '12345',
     currency: 'USD',
@@ -1554,7 +1555,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     company_id: '12345',
     currency: 'USD',
@@ -3132,7 +3134,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     company_id: '12345',
     invoice_date: '2020-09-30',
@@ -3572,7 +3575,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     company_id: '12345',
     invoice_date: '2020-09-30',
@@ -3821,7 +3825,8 @@ const params = {
         customer: {
           id: '12345',
           display_name: 'Windsurf Shop',
-          name: 'Windsurf Shop'
+          name: 'Windsurf Shop',
+          email: 'boring@boring.com'
         },
         supplier: {
           id: '12345',
@@ -3876,7 +3881,8 @@ const params = {
         customer: {
           id: '12345',
           display_name: 'Windsurf Shop',
-          name: 'Windsurf Shop'
+          name: 'Windsurf Shop',
+          email: 'boring@boring.com'
         },
         supplier: {
           id: '12345',
@@ -4227,7 +4233,8 @@ const params = {
         customer: {
           id: '12345',
           display_name: 'Windsurf Shop',
-          name: 'Windsurf Shop'
+          name: 'Windsurf Shop',
+          email: 'boring@boring.com'
         },
         supplier: {
           id: '12345',
@@ -4282,7 +4289,8 @@ const params = {
         customer: {
           id: '12345',
           display_name: 'Windsurf Shop',
-          name: 'Windsurf Shop'
+          name: 'Windsurf Shop',
+          email: 'boring@boring.com'
         },
         supplier: {
           id: '12345',
@@ -5275,7 +5283,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     supplier: {
       id: '12345',
@@ -5631,7 +5640,8 @@ const params = {
     customer: {
       id: '12345',
       display_name: 'Windsurf Shop',
-      name: 'Windsurf Shop'
+      name: 'Windsurf Shop',
+      email: 'boring@boring.com'
     },
     supplier: {
       id: '12345',

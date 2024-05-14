@@ -1127,7 +1127,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           currency: 'USD',
@@ -1299,7 +1300,8 @@ describe('AccountingApi', () => {
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
               name: 'Windsurf Shop',
-              company_name: 'The boring company'
+              company_name: 'The boring company',
+              email: 'boring@boring.com'
             },
             company_id: '12345',
             currency: 'USD',
@@ -1539,7 +1541,8 @@ describe('AccountingApi', () => {
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop',
-            company_name: 'The boring company'
+            company_name: 'The boring company',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           currency: 'USD',
@@ -1743,7 +1746,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           currency: 'USD',
@@ -3258,7 +3262,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           invoice_date: '2020-09-30',
@@ -3451,7 +3456,8 @@ describe('AccountingApi', () => {
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
               name: 'Windsurf Shop',
-              company_name: 'The boring company'
+              company_name: 'The boring company',
+              email: 'boring@boring.com'
             },
             company_id: '12345',
             invoice_date: '2020-09-30',
@@ -3712,7 +3718,8 @@ describe('AccountingApi', () => {
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop',
-            company_name: 'The boring company'
+            company_name: 'The boring company',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           invoice_date: '2020-09-30',
@@ -3936,7 +3943,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           company_id: '12345',
           invoice_date: '2020-09-30',
@@ -4158,7 +4166,8 @@ describe('AccountingApi', () => {
               customer: {
                 id: '12345',
                 display_name: 'Windsurf Shop',
-                name: 'Windsurf Shop'
+                name: 'Windsurf Shop',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -4214,7 +4223,8 @@ describe('AccountingApi', () => {
               customer: {
                 id: '12345',
                 display_name: 'Windsurf Shop',
-                name: 'Windsurf Shop'
+                name: 'Windsurf Shop',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -4321,7 +4331,8 @@ describe('AccountingApi', () => {
                   display_id: 'CUST00101',
                   display_name: 'Windsurf Shop',
                   name: 'Windsurf Shop',
-                  company_name: 'The boring company'
+                  company_name: 'The boring company',
+                  email: 'boring@boring.com'
                 },
                 supplier: {
                   id: '12345',
@@ -4362,7 +4373,8 @@ describe('AccountingApi', () => {
                   display_id: 'CUST00101',
                   display_name: 'Windsurf Shop',
                   name: 'Windsurf Shop',
-                  company_name: 'The boring company'
+                  company_name: 'The boring company',
+                  email: 'boring@boring.com'
                 },
                 supplier: {
                   id: '12345',
@@ -4513,7 +4525,8 @@ describe('AccountingApi', () => {
                 display_id: 'CUST00101',
                 display_name: 'Windsurf Shop',
                 name: 'Windsurf Shop',
-                company_name: 'The boring company'
+                company_name: 'The boring company',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -4579,7 +4592,8 @@ describe('AccountingApi', () => {
                 display_id: 'CUST00101',
                 display_name: 'Windsurf Shop',
                 name: 'Windsurf Shop',
-                company_name: 'The boring company'
+                company_name: 'The boring company',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -4708,7 +4722,8 @@ describe('AccountingApi', () => {
               customer: {
                 id: '12345',
                 display_name: 'Windsurf Shop',
-                name: 'Windsurf Shop'
+                name: 'Windsurf Shop',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -4764,7 +4779,8 @@ describe('AccountingApi', () => {
               customer: {
                 id: '12345',
                 display_name: 'Windsurf Shop',
-                name: 'Windsurf Shop'
+                name: 'Windsurf Shop',
+                email: 'boring@boring.com'
               },
               supplier: {
                 id: '12345',
@@ -5666,7 +5682,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           supplier: {
             id: '12345',
@@ -5775,7 +5792,8 @@ describe('AccountingApi', () => {
               display_id: 'CUST00101',
               display_name: 'Windsurf Shop',
               name: 'Windsurf Shop',
-              company_name: 'The boring company'
+              company_name: 'The boring company',
+              email: 'boring@boring.com'
             },
             supplier: {
               id: '12345',
@@ -5952,7 +5970,8 @@ describe('AccountingApi', () => {
             display_id: 'CUST00101',
             display_name: 'Windsurf Shop',
             name: 'Windsurf Shop',
-            company_name: 'The boring company'
+            company_name: 'The boring company',
+            email: 'boring@boring.com'
           },
           supplier: {
             id: '12345',
@@ -6084,7 +6103,8 @@ describe('AccountingApi', () => {
           customer: {
             id: '12345',
             display_name: 'Windsurf Shop',
-            name: 'Windsurf Shop'
+            name: 'Windsurf Shop',
+            email: 'boring@boring.com'
           },
           supplier: {
             id: '12345',
