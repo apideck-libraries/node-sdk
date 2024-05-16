@@ -42,12 +42,6 @@ export interface Applicant {
    */
   readonly id?: string
   /**
-   * The PositionId the applicant applied for.
-   * @type {string}
-   * @memberof Applicant
-   */
-  position_id?: string
-  /**
    * The name of an applicant.
    * @type {string}
    * @memberof Applicant
@@ -317,7 +311,6 @@ export function ApplicantFromJSONTyped(json: any, ignoreDiscriminator: boolean):
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    position_id: !exists(json, 'position_id') ? undefined : json['position_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
@@ -406,7 +399,6 @@ export function ApplicantToJSON(value?: Applicant | null): any {
     return null
   }
   return {
-    position_id: value.position_id,
     name: value.name,
     first_name: value.first_name,
     last_name: value.last_name,

@@ -48,7 +48,6 @@ describe('AtsApi', () => {
       const { ats } = apideck
       const params = {
         applicant: {
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -182,7 +181,6 @@ describe('AtsApi', () => {
         data: [
           {
             id: '12345',
-            position_id: '123',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -390,7 +388,6 @@ describe('AtsApi', () => {
         operation: 'one',
         data: {
           id: '12345',
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -557,7 +554,6 @@ describe('AtsApi', () => {
       const params = {
         id: 'id_example',
         applicant: {
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
