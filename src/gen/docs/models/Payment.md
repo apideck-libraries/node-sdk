@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 `reconciled` | **boolean** | Payment has been reconciled | [optional] 
 `status` | **string** | Status of payment | [optional] 
 `type` | **string** | Type of payment | [optional] 
-`allocations` | [**Array&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
+`allocations` | [**Array&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the payment. | [optional] 
 `number` | **string** | Payment number. | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
@@ -98,7 +98,7 @@ Name | Type | Description | Notes
 
 
 
-* [`PaymentAllocations`](PaymentAllocations.md)
+* [`Allocation`](Allocation.md)
 
 
 * [`CustomField`](CustomField.md)

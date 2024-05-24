@@ -1202,7 +1202,8 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: 49.99,
+        allocation_id: '123456'
       }
     ],
     note: 'Some notes about this credit note',
@@ -1623,7 +1624,8 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: 49.99,
+        allocation_id: '123456'
       }
     ],
     note: 'Some notes about this credit note',
@@ -5324,7 +5326,8 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: 49.99,
+        allocation_id: '123456'
       }
     ],
     note: 'Some notes about this payment',
@@ -5681,7 +5684,8 @@ const params = {
       {
         id: '123456',
         type: 'invoice',
-        amount: 49.99
+        amount: 49.99,
+        allocation_id: '123456'
       }
     ],
     note: 'Some notes about this payment',

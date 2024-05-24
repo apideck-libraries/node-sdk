@@ -14,6 +14,7 @@
 
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
+import { Allocation, AllocationFromJSON, AllocationToJSON } from './Allocation'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
@@ -152,10 +153,10 @@ export interface CreditNote {
   line_items?: Array<InvoiceLineItem>
   /**
    *
-   * @type {Array<object>}
+   * @type {Array<Allocation>}
    * @memberof CreditNote
    */
-  allocations?: Array<object>
+  allocations?: Array<Allocation>
   /**
    * Optional note to be associated with the credit note.
    * @type {string}
@@ -279,7 +280,9 @@ export function CreditNoteFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     line_items: !exists(json, 'line_items')
       ? undefined
       : (json['line_items'] as Array<any>).map(InvoiceLineItemFromJSON),
-    allocations: !exists(json, 'allocations') ? undefined : json['allocations'],
+    allocations: !exists(json, 'allocations')
+      ? undefined
+      : (json['allocations'] as Array<any>).map(AllocationFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
     terms: !exists(json, 'terms') ? undefined : json['terms'],
     billing_address: !exists(json, 'billing_address')
@@ -344,7 +347,10 @@ export function CreditNoteToJSON(value?: CreditNote | null): any {
       value.line_items === undefined
         ? undefined
         : (value.line_items as Array<any>).map(InvoiceLineItemToJSON),
-    allocations: value.allocations,
+    allocations:
+      value.allocations === undefined
+        ? undefined
+        : (value.allocations as Array<any>).map(AllocationToJSON),
     note: value.note,
     terms: value.terms,
     billing_address: AddressToJSON(value.billing_address),

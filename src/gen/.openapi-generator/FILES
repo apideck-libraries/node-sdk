@@ -24,6 +24,7 @@ ActivitiesSort.md
 Activity.md
 ActivityAttendee.md
 Address.md
+Allocation.md
 Api.md
 ApiResource.md
 ApiResourceCoverage.md
@@ -516,7 +517,6 @@ Owner.md
 PaginationCoverage.md
 PassThroughQuery.md
 Payment.md
-PaymentAllocations.md
 PaymentCard.md
 PaymentFrequency.md
 PaymentRequiredResponse.md
@@ -707,6 +707,7 @@ models/ActivitiesSort.ts
 models/Activity.ts
 models/ActivityAttendee.ts
 models/Address.ts
+models/Allocation.ts
 models/Api.ts
 models/ApiResource.ts
 models/ApiResourceCoverage.ts
@@ -1183,7 +1184,6 @@ models/Owner.ts
 models/PaginationCoverage.ts
 models/PassThroughQuery.ts
 models/Payment.ts
-models/PaymentAllocations.ts
 models/PaymentCard.ts
 models/PaymentFrequency.ts
 models/PaymentRequiredResponse.ts

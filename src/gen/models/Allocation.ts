@@ -16,56 +16,61 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface PaymentAllocations
+ * @interface Allocation
  */
-export interface PaymentAllocations {
+export interface Allocation {
   /**
    * Unique identifier of entity this payment should be attributed to.
    * @type {string}
-   * @memberof PaymentAllocations
+   * @memberof Allocation
    */
   id?: string
   /**
    * Type of entity this payment should be attributed to.
    * @type {string}
-   * @memberof PaymentAllocations
+   * @memberof Allocation
    */
-  type?: PaymentAllocationsType
+  type?: AllocationType
   /**
    *
    * @type {string}
-   * @memberof PaymentAllocations
+   * @memberof Allocation
    */
   readonly code?: string
   /**
    * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
    * @type {number}
-   * @memberof PaymentAllocations
+   * @memberof Allocation
    */
   amount?: number | null
+  /**
+   * Unique identifier of the allocation
+   * @type {string}
+   * @memberof Allocation
+   */
+  allocation_id?: string
 }
 
 /**
  * @export
  * @enum {string}
  */
-export enum PaymentAllocationsType {
+export enum AllocationType {
   invoice = 'invoice',
   order = 'order',
   expense = 'expense',
   credit_memo = 'credit_memo',
   over_payment = 'over_payment',
-  pre_payment = 'pre_payment'
+  pre_payment = 'pre_payment',
+  journal_entry = 'journal_entry',
+  other = 'other'
 }
 
-export function PaymentAllocationsFromJSON(json: any): PaymentAllocations {
-  return PaymentAllocationsFromJSONTyped(json, false)
+export function AllocationFromJSON(json: any): Allocation {
+  return AllocationFromJSONTyped(json, false)
 }
 
-export function PaymentAllocationsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PaymentAllocations {
+export function AllocationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Allocation {
   if (json === undefined || json === null) {
     return json
   }
@@ -73,11 +78,12 @@ export function PaymentAllocationsFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     type: !exists(json, 'type') ? undefined : json['type'],
     code: !exists(json, 'code') ? undefined : json['code'],
-    amount: !exists(json, 'amount') ? undefined : json['amount']
+    amount: !exists(json, 'amount') ? undefined : json['amount'],
+    allocation_id: !exists(json, 'allocation_id') ? undefined : json['allocation_id']
   }
 }
 
-export function PaymentAllocationsToJSON(value?: PaymentAllocations | null): any {
+export function AllocationToJSON(value?: Allocation | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -87,6 +93,7 @@ export function PaymentAllocationsToJSON(value?: PaymentAllocations | null): any
   return {
     id: value.id,
     type: value.type,
-    amount: value.amount
+    amount: value.amount,
+    allocation_id: value.allocation_id
   }
 }

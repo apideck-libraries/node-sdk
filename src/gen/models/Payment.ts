@@ -13,6 +13,7 @@
  */
 
 import { exists } from '../runtime'
+import { Allocation, AllocationFromJSON, AllocationToJSON } from './Allocation'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
@@ -22,11 +23,6 @@ import {
   LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedSupplier, LinkedSupplierFromJSON, LinkedSupplierToJSON } from './LinkedSupplier'
-import {
-  PaymentAllocations,
-  PaymentAllocationsFromJSON,
-  PaymentAllocationsToJSON
-} from './PaymentAllocations'
 
 /**
  *
@@ -150,10 +146,10 @@ export interface Payment {
   type?: PaymentType
   /**
    *
-   * @type {Array<PaymentAllocations>}
+   * @type {Array<Allocation>}
    * @memberof Payment
    */
-  allocations?: Array<PaymentAllocations>
+  allocations?: Array<Allocation>
   /**
    * Optional note to be associated with the payment.
    * @type {string}
@@ -277,7 +273,7 @@ export function PaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     type: !exists(json, 'type') ? undefined : json['type'],
     allocations: !exists(json, 'allocations')
       ? undefined
-      : (json['allocations'] as Array<any>).map(PaymentAllocationsFromJSON),
+      : (json['allocations'] as Array<any>).map(AllocationFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
     number: !exists(json, 'number') ? undefined : json['number'],
     custom_fields: !exists(json, 'custom_fields')
@@ -329,7 +325,7 @@ export function PaymentToJSON(value?: Payment | null): any {
     allocations:
       value.allocations === undefined
         ? undefined
-        : (value.allocations as Array<any>).map(PaymentAllocationsToJSON),
+        : (value.allocations as Array<any>).map(AllocationToJSON),
     note: value.note,
     number: value.number,
     custom_fields:

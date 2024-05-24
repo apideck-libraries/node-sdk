@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 `type` | **string** | Type of payment | [optional] 
 `account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
-`allocations` | **Array&lt;object&gt;** |  | [optional] 
+`allocations` | [**Array&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the credit note. | [optional] 
 `terms` | **string** | Optional terms to be associated with the credit note. | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
@@ -91,7 +91,7 @@ Name | Type | Description | Notes
 
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`InvoiceLineItem`](InvoiceLineItem.md)
-
+* [`Allocation`](Allocation.md)
 
 
 * [`Address`](Address.md)

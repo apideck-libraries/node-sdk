@@ -1196,7 +1196,8 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               type: 'invoice',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this credit note',
@@ -1372,7 +1373,8 @@ describe('AccountingApi', () => {
                 id: '123456',
                 type: 'invoice',
                 code: 'N091',
-                amount: 49.99
+                amount: 49.99,
+                allocation_id: '123456'
               }
             ],
             note: 'Some notes about this credit note',
@@ -1620,7 +1622,8 @@ describe('AccountingApi', () => {
               id: '123456',
               type: 'invoice',
               code: 'N091',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this credit note',
@@ -1815,7 +1818,8 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               type: 'invoice',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this credit note',
@@ -5723,7 +5727,8 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               type: 'invoice',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this payment',
@@ -5836,7 +5841,8 @@ describe('AccountingApi', () => {
                 id: '123456',
                 type: 'invoice',
                 code: 'N091',
-                amount: 49.99
+                amount: 49.99,
+                allocation_id: '123456'
               }
             ],
             note: 'Some notes about this payment',
@@ -6014,7 +6020,8 @@ describe('AccountingApi', () => {
               id: '123456',
               type: 'invoice',
               code: 'N091',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this payment',
@@ -6144,7 +6151,8 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               type: 'invoice',
-              amount: 49.99
+              amount: 49.99,
+              allocation_id: '123456'
             }
           ],
           note: 'Some notes about this payment',
