@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 `unit_price` | **string** | The unit price of the product or variant associated with the line item. | [optional] 
 `tax_rate` | **string** | The tax rate applied to the product or variant associated with the line item. | [optional] 
 `tax_amount` | **string** | The total tax amount applied to the product or variant associated with the line item. | [optional] 
+`is_refunded` | **boolean** | Whether the line item has been refunded. | [optional] 
+`refunded_amount` | **string** | The amount of the line item that has been refunded. | [optional] 
+`refunded_quantity` | **string** | The quantity of the line item that has been refunded. | [optional] 
+`sub_total` | **string** | The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts. | [optional] 
 `discounts` | [**Array&lt;EcommerceDiscount&gt;**](EcommerceDiscount.md) |  | [optional] 
 
 
@@ -26,6 +30,10 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
+
+
+
 
 
 

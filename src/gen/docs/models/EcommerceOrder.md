@@ -11,9 +11,11 @@ Name | Type | Description | Notes
 `discounts` | [**Array&lt;EcommerceDiscount&gt;**](EcommerceDiscount.md) |  | [optional] 
 `sub_total` | **string** | Sub-total amount, normally before tax. | [optional] 
 `shipping_cost` | **string** | Shipping cost, if any. | [optional] 
+`coupon_discount` | **string** | Coupon discount, if any. | [optional] 
 `total_discount` | **string** | Total discount, if any. | [optional] 
 `total_tax` | **string** | Total tax, if any. | [optional] 
 `total_amount` | **string** | Total amount due. | [optional] 
+`refunded_amount` | **string** | Refunded amount, if any. | [optional] 
 `status` | [**EcommerceOrderStatus**](EcommerceOrderStatus.md) |  | [optional] 
 `payment_status` | **string** | Current payment status of the order. | [optional] 
 `fulfillment_status` | **string** | Current fulfillment status of the order. | [optional] 
@@ -79,6 +81,8 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`EcommerceDiscount`](EcommerceDiscount.md)
+
+
 
 
 

@@ -84,6 +84,12 @@ export interface EcommerceOrder {
    */
   shipping_cost?: string | null
   /**
+   * Coupon discount, if any.
+   * @type {string}
+   * @memberof EcommerceOrder
+   */
+  coupon_discount?: string | null
+  /**
    * Total discount, if any.
    * @type {string}
    * @memberof EcommerceOrder
@@ -101,6 +107,12 @@ export interface EcommerceOrder {
    * @memberof EcommerceOrder
    */
   total_amount?: string | null
+  /**
+   * Refunded amount, if any.
+   * @type {string}
+   * @memberof EcommerceOrder
+   */
+  refunded_amount?: string | null
   /**
    *
    * @type {EcommerceOrderStatus}
@@ -228,9 +240,11 @@ export function EcommerceOrderFromJSONTyped(
       : (json['discounts'] as Array<any>).map(EcommerceDiscountFromJSON),
     sub_total: !exists(json, 'sub_total') ? undefined : json['sub_total'],
     shipping_cost: !exists(json, 'shipping_cost') ? undefined : json['shipping_cost'],
+    coupon_discount: !exists(json, 'coupon_discount') ? undefined : json['coupon_discount'],
     total_discount: !exists(json, 'total_discount') ? undefined : json['total_discount'],
     total_tax: !exists(json, 'total_tax') ? undefined : json['total_tax'],
     total_amount: !exists(json, 'total_amount') ? undefined : json['total_amount'],
+    refunded_amount: !exists(json, 'refunded_amount') ? undefined : json['refunded_amount'],
     status: !exists(json, 'status') ? undefined : EcommerceOrderStatusFromJSON(json['status']),
     payment_status: !exists(json, 'payment_status') ? undefined : json['payment_status'],
     fulfillment_status: !exists(json, 'fulfillment_status')
@@ -283,9 +297,11 @@ export function EcommerceOrderToJSON(value?: EcommerceOrder | null): any {
         : (value.discounts as Array<any>).map(EcommerceDiscountToJSON),
     sub_total: value.sub_total,
     shipping_cost: value.shipping_cost,
+    coupon_discount: value.coupon_discount,
     total_discount: value.total_discount,
     total_tax: value.total_tax,
     total_amount: value.total_amount,
+    refunded_amount: value.refunded_amount,
     status: EcommerceOrderStatusToJSON(value.status),
     payment_status: value.payment_status,
     fulfillment_status: value.fulfillment_status,
