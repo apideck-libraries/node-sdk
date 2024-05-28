@@ -18,6 +18,7 @@ import {
   BalanceSheetAccountFromJSON,
   BalanceSheetAccountToJSON
 } from './BalanceSheetAccount'
+
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 
 /**
@@ -110,6 +111,12 @@ export interface BalanceSheetReports {
    * @memberof BalanceSheetReports
    */
   readonly created_at?: Date | null
+  /**
+   * Items that are not categorized in the balance sheet
+   * @type {Array<BalanceSheetAccount | BalanceSheetAccountRecord>}
+   * @memberof BalanceSheetReports
+   */
+  uncategorized_items?: Array<BalanceSheetAccount | BalanceSheetAccountRecord>
 }
 
 export function BalanceSheetReportsFromJSON(json: any): BalanceSheetReports {
@@ -145,7 +152,12 @@ export function BalanceSheetReportsFromJSONTyped(
       ? undefined
       : json['created_at'] === null
       ? null
-      : new Date(json['created_at'])
+      : new Date(json['created_at']),
+    uncategorized_items: !exists(json, 'uncategorized_items')
+      ? undefined
+      : (json['uncategorized_items'] as Array<any>).map(
+          BalanceSheetAccount | BalanceSheetAccountRecordFromJSON
+        )
   }
 }
 
@@ -164,6 +176,12 @@ export function BalanceSheetReportsToJSON(value?: BalanceSheetReports | null): a
     report_name: value.report_name,
     start_date: value.start_date,
     currency: CurrencyToJSON(value.currency),
-    net_assets: value.net_assets
+    net_assets: value.net_assets,
+    uncategorized_items:
+      value.uncategorized_items === undefined
+        ? undefined
+        : (value.uncategorized_items as Array<any>).map(
+            BalanceSheetAccount | BalanceSheetAccountRecordToJSON
+          )
   }
 }
