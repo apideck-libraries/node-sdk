@@ -26,6 +26,12 @@ export interface BalanceSheetAccountRecord {
    */
   readonly account_id?: string
   /**
+   * The code of the account.
+   * @type {string}
+   * @memberof BalanceSheetAccountRecord
+   */
+  code?: string
+  /**
    * Name of the report item
    * @type {string}
    * @memberof BalanceSheetAccountRecord
@@ -52,6 +58,7 @@ export function BalanceSheetAccountRecordFromJSONTyped(
   }
   return {
     account_id: !exists(json, 'account_id') ? undefined : json['account_id'],
+    code: !exists(json, 'code') ? undefined : json['code'],
     name: !exists(json, 'name') ? undefined : json['name'],
     value: !exists(json, 'value') ? undefined : json['value']
   }
@@ -65,6 +72,7 @@ export function BalanceSheetAccountRecordToJSON(value?: BalanceSheetAccountRecor
     return null
   }
   return {
+    code: value.code,
     name: value.name,
     value: value.value
   }
