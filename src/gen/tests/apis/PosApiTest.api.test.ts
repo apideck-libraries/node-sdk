@@ -101,7 +101,20 @@ describe('PosApi', () => {
           ],
           available: true,
           hidden: true,
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.itemsAdd(params)
@@ -192,7 +205,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -343,7 +364,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -448,7 +482,20 @@ describe('PosApi', () => {
           ],
           available: true,
           hidden: true,
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.itemsUpdate(params)
@@ -520,7 +567,20 @@ describe('PosApi', () => {
           },
           status: 'active',
           merchant_id: '12345',
-          currency: 'USD'
+          currency: 'USD',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.locationsAdd(params)
@@ -588,7 +648,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -716,7 +784,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -798,7 +879,20 @@ describe('PosApi', () => {
           },
           status: 'active',
           merchant_id: '12345',
-          currency: 'USD'
+          currency: 'USD',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.locationsUpdate(params)
@@ -881,7 +975,20 @@ describe('PosApi', () => {
             }
           ],
           language: 'EN',
-          currency: 'USD'
+          currency: 'USD',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.merchantsAdd(params)
@@ -961,7 +1068,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1101,7 +1216,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1194,7 +1322,20 @@ describe('PosApi', () => {
             }
           ],
           language: 'EN',
-          currency: 'USD'
+          currency: 'USD',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.merchantsUpdate(params)
@@ -1253,7 +1394,20 @@ describe('PosApi', () => {
             }
           ],
           deleted: true,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.modifierGroupsAdd(params)
@@ -1308,7 +1462,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1423,7 +1585,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1492,7 +1667,20 @@ describe('PosApi', () => {
             }
           ],
           deleted: true,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.modifierGroupsUpdate(params)
@@ -1540,7 +1728,20 @@ describe('PosApi', () => {
           price_amount: 10,
           currency: 'USD',
           modifier_group_id: '123',
-          available: true
+          available: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.modifiersAdd(params)
@@ -1584,7 +1785,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1688,7 +1897,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1746,7 +1968,20 @@ describe('PosApi', () => {
           price_amount: 10,
           currency: 'USD',
           modifier_group_id: '123',
-          available: true
+          available: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.modifiersUpdate(params)
@@ -1789,7 +2024,20 @@ describe('PosApi', () => {
       const params = {
         orderType: {
           name: 'Default order type',
-          default: true
+          default: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.orderTypesAdd(params)
@@ -1827,7 +2075,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1925,7 +2181,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1978,7 +2247,20 @@ describe('PosApi', () => {
         id: 'id_example',
         orderType: {
           name: 'Default order type',
-          default: true
+          default: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.orderTypesUpdate(params)
@@ -2250,7 +2532,20 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
-          version: '230320320320'
+          version: '230320320320',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.ordersAdd(params)
@@ -2467,7 +2762,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2816,7 +3119,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -3098,7 +3414,20 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
-          version: '230320320320'
+          version: '230320320320',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.ordersPay(params)
@@ -3371,7 +3700,20 @@ describe('PosApi', () => {
             }
           ],
           voided: false,
-          version: '230320320320'
+          version: '230320320320',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.ordersUpdate(params)
@@ -3521,6 +3863,19 @@ describe('PosApi', () => {
               active: true,
               type: 'auto_gratuity'
             }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
           ]
         }
       } as any
@@ -3669,7 +4024,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -3877,7 +4240,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -4037,6 +4413,19 @@ describe('PosApi', () => {
               active: true,
               type: 'auto_gratuity'
             }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
           ]
         }
       } as any
@@ -4085,7 +4474,20 @@ describe('PosApi', () => {
           hidden: true,
           editable: true,
           opens_cash_drawer: true,
-          allows_tipping: true
+          allows_tipping: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.tendersAdd(params)
@@ -4129,7 +4531,15 @@ describe('PosApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -4233,7 +4643,20 @@ describe('PosApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -4291,7 +4714,20 @@ describe('PosApi', () => {
           hidden: true,
           editable: true,
           opens_cash_drawer: true,
-          allows_tipping: true
+          allows_tipping: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await pos.tendersUpdate(params)

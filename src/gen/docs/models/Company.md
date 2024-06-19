@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | Created by user ID | [optional] 
 `updated_at` | **Date** | Last updated date | [optional] 
 `created_at` | **Date** | Creation date | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -93,6 +94,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

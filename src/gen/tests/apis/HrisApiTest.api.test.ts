@@ -106,7 +106,20 @@ describe('HrisApi', () => {
               type: 'primary'
             }
           ],
-          debtor_id: '12345'
+          debtor_id: '12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.companiesAdd(params)
@@ -203,7 +216,15 @@ describe('HrisApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -360,7 +381,20 @@ describe('HrisApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -470,7 +504,20 @@ describe('HrisApi', () => {
               type: 'primary'
             }
           ],
-          debtor_id: '12345'
+          debtor_id: '12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.companiesUpdate(params)
@@ -514,7 +561,20 @@ describe('HrisApi', () => {
         department: {
           name: 'R&amp;D',
           code: '2',
-          description: 'R&amp;D'
+          description: 'R&amp;D',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.departmentsAdd(params)
@@ -555,7 +615,15 @@ describe('HrisApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -656,7 +724,20 @@ describe('HrisApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -710,7 +791,20 @@ describe('HrisApi', () => {
         department: {
           name: 'R&amp;D',
           code: '2',
-          description: 'R&amp;D'
+          description: 'R&amp;D',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.departmentsUpdate(params)
@@ -1110,7 +1204,15 @@ describe('HrisApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           },
           schedules: [
             {
@@ -1391,7 +1493,20 @@ describe('HrisApi', () => {
           },
           tags: ['New'],
           row_version: '1-12345',
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.employeesAdd(params)
@@ -1635,7 +1750,15 @@ describe('HrisApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1939,7 +2062,20 @@ describe('HrisApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2193,7 +2329,20 @@ describe('HrisApi', () => {
           },
           tags: ['New'],
           row_version: '1-12345',
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.employeesUpdate(params)
@@ -2402,7 +2551,20 @@ describe('HrisApi', () => {
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
-          }
+          },
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.timeOffRequestsAdd(params)
@@ -2454,7 +2616,15 @@ describe('HrisApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2566,7 +2736,20 @@ describe('HrisApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2632,7 +2815,20 @@ describe('HrisApi', () => {
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
-          }
+          },
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await hris.timeOffRequestsUpdate(params)

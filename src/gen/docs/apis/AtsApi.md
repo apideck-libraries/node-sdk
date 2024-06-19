@@ -174,7 +174,20 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -560,7 +573,20 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -637,7 +663,20 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -923,7 +962,20 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 

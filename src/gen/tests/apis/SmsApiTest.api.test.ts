@@ -56,7 +56,20 @@ describe('SmsApi', () => {
           scheduled_at: '2020-09-30T07:43:32.000Z',
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
-          messaging_service_id: '123456'
+          messaging_service_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await sms.messagesAdd(params)
@@ -116,7 +129,15 @@ describe('SmsApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -236,7 +257,20 @@ describe('SmsApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -296,7 +330,20 @@ describe('SmsApi', () => {
           scheduled_at: '2020-09-30T07:43:32.000Z',
           webhook_url: 'https://unify.apideck.com/webhook/webhooks/eyz329dkffdl4949/x/sms',
           reference: 'CUST001',
-          messaging_service_id: '123456'
+          messaging_service_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await sms.messagesUpdate(params)

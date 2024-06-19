@@ -10,10 +10,19 @@ Name | Type | Description | Notes
 `id` | **string** | A unique identifier for an object. | [optional] 
 `description` | **string** | Optional description of the folder. | [optional] 
 `drive_id` | **string** | ID of the drive to create the folder in. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
 
+
+## Referenced Types:
+
+
+
+
+
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

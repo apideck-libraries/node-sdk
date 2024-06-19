@@ -51,7 +51,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -194,7 +202,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -435,7 +456,20 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.billsAdd(params)
@@ -591,7 +625,15 @@ describe('AccountingApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
             row_version: '1-12345',
-            custom_mappings: {}
+            custom_mappings: {},
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -807,7 +849,20 @@ describe('AccountingApi', () => {
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           row_version: '1-12345',
-          custom_mappings: {}
+          custom_mappings: {},
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -965,7 +1020,20 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.billsUpdate(params)
@@ -1030,7 +1098,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           },
           currency: 'USD',
           language: 'EN',
@@ -1274,7 +1350,20 @@ describe('AccountingApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.creditNotesAdd(params)
@@ -1456,7 +1545,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1705,7 +1802,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1896,7 +2006,20 @@ describe('AccountingApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.creditNotesUpdate(params)
@@ -2035,7 +2158,20 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.customersAdd(params)
@@ -2174,7 +2310,15 @@ describe('AccountingApi', () => {
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
-            row_version: '1-12345'
+            row_version: '1-12345',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2373,7 +2517,20 @@ describe('AccountingApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2522,7 +2679,20 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.customersUpdate(params)
@@ -2572,7 +2742,20 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.departmentsAdd(params)
@@ -2619,7 +2802,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2726,7 +2917,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2786,7 +2990,20 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.departmentsUpdate(params)
@@ -2878,7 +3095,20 @@ describe('AccountingApi', () => {
             name: 'New York'
           },
           active: true,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.invoiceItemsAdd(params)
@@ -2973,7 +3203,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -3128,7 +3366,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -3230,7 +3481,20 @@ describe('AccountingApi', () => {
             name: 'New York'
           },
           active: true,
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.invoiceItemsUpdate(params)
@@ -3431,7 +3695,20 @@ describe('AccountingApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.invoicesAdd(params)
@@ -3632,7 +3909,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -3901,7 +4186,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -4112,7 +4410,20 @@ describe('AccountingApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.invoicesUpdate(params)
@@ -4280,7 +4591,20 @@ describe('AccountingApi', () => {
           tax_type: 'sales',
           tax_code: '1234',
           number: 'OIT00546',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.journalEntriesAdd(params)
@@ -4414,7 +4738,15 @@ describe('AccountingApi', () => {
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
-            row_version: '1-12345'
+            row_version: '1-12345',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -4658,7 +4990,20 @@ describe('AccountingApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -4836,7 +5181,20 @@ describe('AccountingApi', () => {
           tax_type: 'sales',
           tax_code: '1234',
           number: 'OIT00546',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.journalEntriesUpdate(params)
@@ -4919,7 +5277,20 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.ledgerAccountsAdd(params)
@@ -5012,7 +5383,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -5165,7 +5544,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -5258,7 +5650,20 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.ledgerAccountsUpdate(params)
@@ -5337,7 +5742,20 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.locationsAdd(params)
@@ -5413,7 +5831,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -5549,7 +5975,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -5638,7 +6077,20 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.locationsUpdate(params)
@@ -5754,7 +6206,20 @@ describe('AccountingApi', () => {
             }
           ],
           row_version: '1-12345',
-          display_id: '123456'
+          display_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.paymentsAdd(params)
@@ -5873,7 +6338,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             created_at: '2020-09-30T07:43:32.000Z',
-            updated_at: '2020-09-30T07:43:32.000Z'
+            updated_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -6052,7 +6525,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           created_at: '2020-09-30T07:43:32.000Z',
-          updated_at: '2020-09-30T07:43:32.000Z'
+          updated_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -6178,7 +6664,20 @@ describe('AccountingApi', () => {
             }
           ],
           row_version: '1-12345',
-          display_id: '123456'
+          display_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.paymentsUpdate(params)
@@ -6440,7 +6939,20 @@ describe('AccountingApi', () => {
           tax_code: '1234',
           channel: 'email',
           memo: 'Thank you for the partnership and have a great day!',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.purchaseOrdersAdd(params)
@@ -6620,7 +7132,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -6867,7 +7387,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -7056,7 +7589,20 @@ describe('AccountingApi', () => {
           tax_code: '1234',
           channel: 'email',
           memo: 'Thank you for the partnership and have a great day!',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.purchaseOrdersUpdate(params)
@@ -7101,7 +7647,20 @@ describe('AccountingApi', () => {
           parent_id: '12345',
           name: 'SpaceX',
           status: 'active',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.subsidiariesAdd(params)
@@ -7142,7 +7701,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -7243,7 +7810,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -7298,7 +7878,20 @@ describe('AccountingApi', () => {
           parent_id: '12345',
           name: 'SpaceX',
           status: 'active',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.subsidiariesUpdate(params)
@@ -7432,7 +8025,20 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.suppliersAdd(params)
@@ -7566,7 +8172,15 @@ describe('AccountingApi', () => {
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
-            row_version: '1-12345'
+            row_version: '1-12345',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -7760,7 +8374,20 @@ describe('AccountingApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -7904,7 +8531,20 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.suppliersUpdate(params)
@@ -7966,7 +8606,20 @@ describe('AccountingApi', () => {
           report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.taxRatesAdd(params)
@@ -8023,7 +8676,15 @@ describe('AccountingApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -8140,7 +8801,20 @@ describe('AccountingApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -8212,7 +8886,20 @@ describe('AccountingApi', () => {
           report_tax_type: 'NONE',
           original_tax_rate_id: '12345',
           status: 'active',
-          row_version: '1-12345'
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await accounting.taxRatesUpdate(params)

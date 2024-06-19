@@ -185,6 +185,19 @@ const params = {
         is_organizer: true,
         status: 'accepted'
       }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -555,6 +568,19 @@ const params = {
         is_organizer: true,
         status: 'accepted'
       }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -736,7 +762,20 @@ const params = {
     ],
     read_only: false,
     salutation: 'Mr',
-    birthday: '2000-08-12'
+    birthday: '2000-08-12',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1130,7 +1169,20 @@ const params = {
     ],
     read_only: false,
     salutation: 'Mr',
-    birthday: '2000-08-12'
+    birthday: '2000-08-12',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1298,6 +1350,19 @@ const params = {
     ],
     opportunity_ids: [
       'string'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -1679,6 +1744,19 @@ const params = {
     ],
     opportunity_ids: [
       'string'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -1835,6 +1913,19 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -2204,6 +2295,19 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -2282,7 +2386,20 @@ const params = {
     company_id: '12345',
     opportunity_id: '12345',
     lead_id: '12345',
-    active: true
+    active: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2571,7 +2688,20 @@ const params = {
     company_id: '12345',
     opportunity_id: '12345',
     lead_id: '12345',
-    active: true
+    active: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2680,7 +2810,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3002,7 +3145,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+    stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3086,6 +3242,19 @@ const params = {
         value: 'CONTRACT_SENT',
         win_probability: 50,
         display_order: 1
+      }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
       }
     ]
   }
@@ -3383,6 +3552,19 @@ const params = {
         win_probability: 50,
         display_order: 1
       }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -3511,6 +3693,19 @@ const params = {
         id: '123',
         email: 'elon@musk.com',
         type: 'primary'
+      }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
       }
     ]
   }
@@ -3851,6 +4046,19 @@ const params = {
         id: '123',
         email: 'elon@musk.com',
         type: 'primary'
+      }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
       }
     ]
   }

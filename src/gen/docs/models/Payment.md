@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the object. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -109,6 +110,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

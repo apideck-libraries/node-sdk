@@ -142,7 +142,20 @@ const params = {
         type: 'primary'
       }
     ],
-    debtor_id: '12345'
+    debtor_id: '12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -482,7 +495,20 @@ const params = {
         type: 'primary'
       }
     ],
-    debtor_id: '12345'
+    debtor_id: '12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -555,7 +581,20 @@ const params = {
   department: {
     name: 'R&amp;D',
     code: '2',
-    description: 'R&amp;D'
+    description: 'R&amp;D',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -839,7 +878,20 @@ const params = {
   department: {
     name: 'R&amp;D',
     code: '2',
-    description: 'R&amp;D'
+    description: 'R&amp;D',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1335,7 +1387,20 @@ const params = {
       'New'
     ],
     row_version: '1-12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1830,7 +1895,20 @@ const params = {
       'New'
     ],
     row_version: '1-12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2054,7 +2132,20 @@ const params = {
     notes: {
       employee: 'Relaxing on the beach for a few hours.',
       manager: 'Enjoy!'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2351,7 +2442,20 @@ const params = {
     notes: {
       employee: 'Relaxing on the beach for a few hours.',
       manager: 'Enjoy!'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 

@@ -515,6 +515,7 @@ OrderType.md
 OrdersSort.md
 Owner.md
 PaginationCoverage.md
+PassThroughBody.md
 PassThroughQuery.md
 Payment.md
 PaymentCard.md
@@ -1182,6 +1183,7 @@ models/OrderType.ts
 models/OrdersSort.ts
 models/Owner.ts
 models/PaginationCoverage.ts
+models/PassThroughBody.ts
 models/PassThroughQuery.ts
 models/Payment.ts
 models/PaymentCard.ts

@@ -603,7 +603,20 @@ const params = {
       currency: 'USD'
     },
     discount_percentage: 5.5,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -992,7 +1005,20 @@ const params = {
       currency: 'USD'
     },
     discount_percentage: 5.5,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1268,7 +1294,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1690,7 +1729,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1858,7 +1910,20 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2239,7 +2304,20 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2318,7 +2396,20 @@ const params = {
         name: 'SpaceX'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2608,7 +2699,20 @@ const params = {
         name: 'SpaceX'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2728,7 +2832,20 @@ const params = {
       name: 'New York'
     },
     active: true,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3060,7 +3177,20 @@ const params = {
       name: 'New York'
     },
     active: true,
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3288,7 +3418,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3729,7 +3872,20 @@ const params = {
         value: 'Uses Salesforce and Marketo'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -3924,7 +4080,20 @@ const params = {
     tax_type: 'sales',
     tax_code: '1234',
     number: 'OIT00546',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -4332,7 +4501,20 @@ const params = {
     tax_type: 'sales',
     tax_code: '1234',
     number: 'OIT00546',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -4444,7 +4626,20 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -4769,7 +4964,20 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -4877,7 +5085,20 @@ const params = {
         name: 'SpaceX'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -5196,7 +5417,20 @@ const params = {
         name: 'SpaceX'
       }
     ],
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -5341,7 +5575,20 @@ const params = {
       }
     ],
     row_version: '1-12345',
-    display_id: '123456'
+    display_id: '123456',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -5699,7 +5946,20 @@ const params = {
       }
     ],
     row_version: '1-12345',
-    display_id: '123456'
+    display_id: '123456',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -5975,7 +6235,20 @@ const params = {
     tax_code: '1234',
     channel: 'email',
     memo: 'Thank you for the partnership and have a great day!',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -6393,7 +6666,20 @@ const params = {
     tax_code: '1234',
     channel: 'email',
     memo: 'Thank you for the partnership and have a great day!',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -6467,7 +6753,20 @@ const params = {
     parent_id: '12345',
     name: 'SpaceX',
     status: 'active',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -6751,7 +7050,20 @@ const params = {
     parent_id: '12345',
     name: 'SpaceX',
     status: 'active',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -6914,7 +7226,20 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -7290,7 +7615,20 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -7381,7 +7719,20 @@ const params = {
     report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -7684,7 +8035,20 @@ const params = {
     report_tax_type: 'NONE',
     original_tax_rate_id: '12345',
     status: 'active',
-    row_version: '1-12345'
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 

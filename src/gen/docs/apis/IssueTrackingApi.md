@@ -151,7 +151,20 @@ const params = {
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
   ticketComment: {
-    body: 'What internet provider do you use?'
+    body: 'What internet provider do you use?',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -453,7 +466,20 @@ const params = {
   collectionId: 'collection_id_example',
   ticketId: 'ticket_id_example',
   ticketComment: {
-    body: 'What internet provider do you use?'
+    body: 'What internet provider do you use?',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -541,6 +567,19 @@ const params = {
     tags: [
       {
         id: '12345'
+      }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
       }
     ]
   }
@@ -850,6 +889,19 @@ const params = {
     tags: [
       {
         id: '12345'
+      }
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
       }
     ]
   }

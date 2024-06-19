@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_at` | **string** | The date and time when the user was last updated. | [optional] 
 `created_at` | **string** | The date and time when the user was created. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -53,6 +54,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

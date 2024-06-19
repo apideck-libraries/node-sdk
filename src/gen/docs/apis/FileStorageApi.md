@@ -92,7 +92,20 @@ const params = {
   driveGroup: {
     name: 'accounting',
     display_name: 'accounting',
-    description: 'A description'
+    description: 'A description',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -377,7 +390,20 @@ const params = {
   driveGroup: {
     name: 'accounting',
     display_name: 'accounting',
-    description: 'A description'
+    description: 'A description',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -449,7 +475,20 @@ const apideck = new Apideck({
 const params = {
   drive: {
     name: 'Project Resources',
-    description: 'A description'
+    description: 'A description',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -732,7 +771,20 @@ const params = {
   id: 'id_example',
   drive: {
     name: 'Project Resources',
-    description: 'A description'
+    description: 'A description',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1233,7 +1285,20 @@ const params = {
   file: {
     name: 'New Name.pdf',
     description: 'Renamed PDF Document',
-    parent_folder_id: '1234'
+    parent_folder_id: '1234',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1308,7 +1373,20 @@ const params = {
     name: 'Documents',
     description: 'My Personal Documents',
     parent_folder_id: '1234',
-    drive_id: '1234'
+    drive_id: '1234',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1383,7 +1461,20 @@ const params = {
   id: 'id_example',
   folder: {
     name: 'Documents',
-    parent_folder_id: '1234'
+    parent_folder_id: '1234',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1597,7 +1688,20 @@ const params = {
   folder: {
     name: 'Documents',
     description: 'My Personal Documents',
-    parent_folder_id: '1234'
+    parent_folder_id: '1234',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1671,7 +1775,20 @@ const params = {
     download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
     target_id: 'string',
     scope: 'company',
-    password: 'string'
+    password: 'string',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -1956,7 +2073,20 @@ const params = {
     download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
     target_id: 'string',
     scope: 'company',
-    password: 'string'
+    password: 'string',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -2030,7 +2160,20 @@ const params = {
     name: 'Documents',
     parent_folder_id: '1234',
     drive_id: '1234',
-    size: 1810673
+    size: 1810673,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 

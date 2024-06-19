@@ -149,6 +149,19 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
@@ -517,6 +530,19 @@ const params = {
     ],
     tags: [
       'New'
+    ],
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
     ]
   }
 }
