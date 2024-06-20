@@ -1185,6 +1185,7 @@ const params = {
     },
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -1620,6 +1621,7 @@ const params = {
     },
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -3295,6 +3297,7 @@ const params = {
     },
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -3749,6 +3752,7 @@ const params = {
     },
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -6144,6 +6148,7 @@ const params = {
     tax_inclusive: true,
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,
@@ -6575,6 +6580,7 @@ const params = {
     tax_inclusive: true,
     line_items: [
       {
+        id: '12345',
         row_id: '12345',
         code: '120-C',
         line_number: 1,

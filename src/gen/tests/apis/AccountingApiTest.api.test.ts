@@ -1240,6 +1240,7 @@ describe('AccountingApi', () => {
           },
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -1896,6 +1897,7 @@ describe('AccountingApi', () => {
           },
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -3571,6 +3573,7 @@ describe('AccountingApi', () => {
           },
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -4286,6 +4289,7 @@ describe('AccountingApi', () => {
           },
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -6847,6 +6851,7 @@ describe('AccountingApi', () => {
           tax_inclusive: true,
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
@@ -7497,6 +7502,7 @@ describe('AccountingApi', () => {
           tax_inclusive: true,
           line_items: [
             {
+              id: '12345',
               row_id: '12345',
               code: '120-C',
               line_number: 1,
