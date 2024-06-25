@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -90,6 +91,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

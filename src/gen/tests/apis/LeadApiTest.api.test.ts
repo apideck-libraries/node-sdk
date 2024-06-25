@@ -131,7 +131,20 @@ describe('LeadApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await lead.leadsAdd(params)
@@ -250,7 +263,15 @@ describe('LeadApi', () => {
             tags: ['New'],
             custom_mappings: {},
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -429,7 +450,20 @@ describe('LeadApi', () => {
           tags: ['New'],
           custom_mappings: {},
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -564,7 +598,20 @@ describe('LeadApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await lead.leadsUpdate(params)

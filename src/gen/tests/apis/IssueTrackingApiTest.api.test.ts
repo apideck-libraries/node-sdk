@@ -107,7 +107,20 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
         ticketComment: {
-          body: 'What internet provider do you use?'
+          body: 'What internet provider do you use?',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await issueTracking.ticketCommentsAdd(params)
@@ -144,7 +157,15 @@ describe('IssueTrackingApi', () => {
             custom_mappings: {},
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -246,7 +267,20 @@ describe('IssueTrackingApi', () => {
           custom_mappings: {},
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -302,7 +336,20 @@ describe('IssueTrackingApi', () => {
         collectionId: 'collection_id_example',
         ticketId: 'ticket_id_example',
         ticketComment: {
-          body: 'What internet provider do you use?'
+          body: 'What internet provider do you use?',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await issueTracking.ticketCommentsUpdate(params)
@@ -360,6 +407,19 @@ describe('IssueTrackingApi', () => {
           tags: [
             {
               id: '12345'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
             }
           ]
         }
@@ -419,7 +479,15 @@ describe('IssueTrackingApi', () => {
                 custom_mappings: {}
               }
             ],
-            custom_mappings: {}
+            custom_mappings: {},
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -540,7 +608,20 @@ describe('IssueTrackingApi', () => {
               custom_mappings: {}
             }
           ],
-          custom_mappings: {}
+          custom_mappings: {},
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -609,6 +690,19 @@ describe('IssueTrackingApi', () => {
           tags: [
             {
               id: '12345'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
             }
           ]
         }

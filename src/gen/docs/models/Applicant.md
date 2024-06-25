@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | [optional] 
-`position_id` | **string** | The PositionId the applicant applied for. | [optional] 
 `name` | **string** | The name of an applicant. | [optional] 
 `first_name` | **string** | The first name of the person. | [optional] 
 `last_name` | **string** | The last name of the person. | [optional] 
@@ -50,13 +49,13 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
 
 
 ## Referenced Types:
-
 
 
 
@@ -101,6 +100,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

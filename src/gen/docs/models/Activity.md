@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the activity | [optional] 
 `updated_at` | **string** | The date and time when the activity was last updated | [optional] 
 `created_at` | **string** | The date and time when the activity was created | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -149,6 +150,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

@@ -1,4 +1,4 @@
-# Apideck.PaymentAllocations
+# Apideck.Allocation
 
 ### Description
 
@@ -9,13 +9,14 @@ Name | Type | Description | Notes
 `type` | **string** | Type of entity this payment should be attributed to. | [optional] 
 `code` | **string** |  | [optional] 
 `amount` | **number** | Amount of payment that should be attributed to this allocation. If null, the total_amount will be used. | [optional] 
+`allocation_id` | **string** | Unique identifier of the allocation | [optional] 
 
 
 
 
 
-<a name="PaymentAllocationsType"></a>
-## Enum: PaymentAllocations.type
+<a name="AllocationType"></a>
+## Enum: Allocation.type
 
 
 * `invoice` (value: `'invoice'`)
@@ -29,6 +30,10 @@ Name | Type | Description | Notes
 * `over_payment` (value: `'over_payment'`)
 
 * `pre_payment` (value: `'pre_payment'`)
+
+* `journal_entry` (value: `'journal_entry'`)
+
+* `other` (value: `'other'`)
 
 
 

@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The unique identifier of the user who created the opportunity. | [optional] 
 `updated_at` | **Date** | The date and time when the opportunity was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the opportunity was created. | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
@@ -93,6 +94,7 @@ Name | Type | Description | Notes
 
 
 
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

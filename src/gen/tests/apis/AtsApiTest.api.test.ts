@@ -48,7 +48,6 @@ describe('AtsApi', () => {
       const { ats } = apideck
       const params = {
         applicant: {
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -149,7 +148,20 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await ats.applicantsAdd(params)
@@ -182,7 +194,6 @@ describe('AtsApi', () => {
         data: [
           {
             id: '12345',
-            position_id: '123',
             name: 'Elon Musk',
             first_name: 'Elon',
             last_name: 'Musk',
@@ -297,7 +308,15 @@ describe('AtsApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -390,7 +409,6 @@ describe('AtsApi', () => {
         operation: 'one',
         data: {
           id: '12345',
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -505,7 +523,20 @@ describe('AtsApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -557,7 +588,6 @@ describe('AtsApi', () => {
       const params = {
         id: 'id_example',
         applicant: {
-          position_id: '123',
           name: 'Elon Musk',
           first_name: 'Elon',
           last_name: 'Musk',
@@ -658,7 +688,20 @@ describe('AtsApi', () => {
           archived: false,
           owner_id: '54321',
           record_url: 'https://app.intercom.io/contacts/12345',
-          deleted: true
+          deleted: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await ats.applicantsUpdate(params)
@@ -706,7 +749,20 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          }
+          },
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await ats.applicationsAdd(params)
@@ -750,7 +806,15 @@ describe('AtsApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -854,7 +918,20 @@ describe('AtsApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -912,7 +989,20 @@ describe('AtsApi', () => {
           stage: {
             id: '12345',
             name: '12345'
-          }
+          },
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await ats.applicationsUpdate(params)
@@ -967,7 +1057,15 @@ describe('AtsApi', () => {
               updated_by: '12345',
               created_by: '12345',
               updated_at: '2020-09-30T07:43:32.000Z',
-              created_at: '2020-09-30T07:43:32.000Z'
+              created_at: '2020-09-30T07:43:32.000Z',
+              pass_through: [
+                {
+                  service_id: 'string',
+                  operation_id: 'string',
+                  extend_object: {},
+                  extend_paths: [Array]
+                }
+              ]
             },
             branch: {
               id: '123',
@@ -1126,7 +1224,15 @@ describe('AtsApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           },
           branch: {
             id: '123',

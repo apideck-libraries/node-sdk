@@ -19,10 +19,28 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user that created the note. | [optional] 
 `updated_at` | **string** | The timestamp when the note was last updated | [optional] 
 `created_at` | **string** | The timestamp when the note was created | [optional] 
+`pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
 
 
+
+## Referenced Types:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* [`PassThroughBody`](PassThroughBody.md)
 
 ---
 

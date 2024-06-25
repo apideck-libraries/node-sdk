@@ -50,7 +50,20 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description'
+          description: 'A description',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.driveGroupsAdd(params)
@@ -90,7 +103,15 @@ describe('FileStorageApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -190,7 +211,20 @@ describe('FileStorageApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -244,7 +278,20 @@ describe('FileStorageApi', () => {
         driveGroup: {
           name: 'accounting',
           display_name: 'accounting',
-          description: 'A description'
+          description: 'A description',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.driveGroupsUpdate(params)
@@ -287,7 +334,20 @@ describe('FileStorageApi', () => {
       const params = {
         drive: {
           name: 'Project Resources',
-          description: 'A description'
+          description: 'A description',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.drivesAdd(params)
@@ -326,7 +386,15 @@ describe('FileStorageApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -425,7 +493,20 @@ describe('FileStorageApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -478,7 +559,20 @@ describe('FileStorageApi', () => {
         id: 'id_example',
         drive: {
           name: 'Project Resources',
-          description: 'A description'
+          description: 'A description',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.drivesUpdate(params)
@@ -878,7 +972,20 @@ describe('FileStorageApi', () => {
         file: {
           name: 'New Name.pdf',
           description: 'Renamed PDF Document',
-          parent_folder_id: '1234'
+          parent_folder_id: '1234',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.filesUpdate(params)
@@ -923,7 +1030,20 @@ describe('FileStorageApi', () => {
           name: 'Documents',
           description: 'My Personal Documents',
           parent_folder_id: '1234',
-          drive_id: '1234'
+          drive_id: '1234',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.foldersAdd(params)
@@ -967,7 +1087,20 @@ describe('FileStorageApi', () => {
         id: 'id_example',
         folder: {
           name: 'Documents',
-          parent_folder_id: '1234'
+          parent_folder_id: '1234',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.foldersCopy(params)
@@ -1113,7 +1246,20 @@ describe('FileStorageApi', () => {
         folder: {
           name: 'Documents',
           description: 'My Personal Documents',
-          parent_folder_id: '1234'
+          parent_folder_id: '1234',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.foldersUpdate(params)
@@ -1158,7 +1304,20 @@ describe('FileStorageApi', () => {
           download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
           target_id: 'string',
           scope: 'company',
-          password: 'string'
+          password: 'string',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.sharedLinksAdd(params)
@@ -1203,7 +1362,15 @@ describe('FileStorageApi', () => {
             password: 'string',
             expires_at: '2022-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1308,7 +1475,20 @@ describe('FileStorageApi', () => {
           password: 'string',
           expires_at: '2022-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1363,7 +1543,20 @@ describe('FileStorageApi', () => {
           download_url: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
           target_id: 'string',
           scope: 'company',
-          password: 'string'
+          password: 'string',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.sharedLinksUpdate(params)
@@ -1408,7 +1601,20 @@ describe('FileStorageApi', () => {
           name: 'Documents',
           parent_folder_id: '1234',
           drive_id: '1234',
-          size: 1810673
+          size: 1810673,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await fileStorage.uploadSessionsAdd(params)

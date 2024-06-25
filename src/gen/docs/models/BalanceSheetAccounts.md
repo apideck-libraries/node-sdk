@@ -1,13 +1,12 @@
-# Apideck.BalanceSheetAssetsFixedAssetsAccounts
+# Apideck.BalanceSheetAccounts
 
 ### Description
+
+A list of balance sheet accounts
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** | A unique identifier for an object. | [optional] 
-`name` | **string** | The name of the fixed asset account | [optional] 
-`value` | **number** | The value of the fixed asset | [optional] 
 
 
 

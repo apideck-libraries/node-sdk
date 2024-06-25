@@ -71,7 +71,6 @@ const apideck = new Apideck({
 
 const params = {
   applicant: {
-    position_id: '123',
     name: 'Elon Musk',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -175,7 +174,20 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -458,7 +470,6 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   applicant: {
-    position_id: '123',
     name: 'Elon Musk',
     first_name: 'Elon',
     last_name: 'Musk',
@@ -562,7 +573,20 @@ const params = {
     archived: false,
     owner_id: '54321',
     record_url: 'https://app.intercom.io/contacts/12345',
-    deleted: true
+    deleted: true,
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -639,7 +663,20 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -925,7 +962,20 @@ const params = {
     stage: {
       id: '12345',
       name: '12345'
-    }
+    },
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
   }
 }
 

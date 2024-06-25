@@ -1,13 +1,12 @@
-# Apideck.BalanceSheetAssetsCurrentAssetsAccounts
+# Apideck.PassThroughBody
 
 ### Description
+
+The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`id` | **string** | A unique identifier for an object. | [optional] 
-`name` | **string** | The name of the current asset account | [optional] 
-`value` | **number** | The value of the current asset | [optional] 
 
 
 

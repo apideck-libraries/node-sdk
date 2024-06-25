@@ -134,6 +134,19 @@ describe('CrmApi', () => {
               is_organizer: true,
               status: 'accepted'
             }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
           ]
         }
       } as any
@@ -265,7 +278,15 @@ describe('CrmApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -456,7 +477,20 @@ describe('CrmApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -593,6 +627,19 @@ describe('CrmApi', () => {
               email_address: 'elon@musk.com',
               is_organizer: true,
               status: 'accepted'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
             }
           ]
         }
@@ -745,7 +792,20 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12'
+          birthday: '2000-08-12',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.companiesAdd(params)
@@ -896,7 +956,15 @@ describe('CrmApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1107,7 +1175,20 @@ describe('CrmApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1268,7 +1349,20 @@ describe('CrmApi', () => {
           tags: ['New'],
           read_only: false,
           salutation: 'Mr',
-          birthday: '2000-08-12'
+          birthday: '2000-08-12',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.companiesUpdate(params)
@@ -1402,7 +1496,21 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          opportunity_ids: ['string'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.contactsAdd(params)
@@ -1533,7 +1641,16 @@ describe('CrmApi', () => {
             last_activity_at: '2020-09-30T07:43:32.000Z',
             custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
-            created_at: '2017-08-12T20:43:21.291Z'
+            created_at: '2017-08-12T20:43:21.291Z',
+            opportunity_ids: ['string'],
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -1724,7 +1841,21 @@ describe('CrmApi', () => {
           last_activity_at: '2020-09-30T07:43:32.000Z',
           custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
-          created_at: '2017-08-12T20:43:21.291Z'
+          created_at: '2017-08-12T20:43:21.291Z',
+          opportunity_ids: ['string'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -1868,7 +1999,21 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          opportunity_ids: ['string'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.contactsUpdate(params)
@@ -1993,7 +2138,20 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.leadsAdd(params)
@@ -2112,7 +2270,15 @@ describe('CrmApi', () => {
             tags: ['New'],
             custom_mappings: {},
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2291,7 +2457,20 @@ describe('CrmApi', () => {
           tags: ['New'],
           custom_mappings: {},
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2426,7 +2605,20 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          tags: ['New']
+          tags: ['New'],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.leadsUpdate(params)
@@ -2475,7 +2667,20 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true
+          active: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.notesAdd(params)
@@ -2520,7 +2725,15 @@ describe('CrmApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2625,7 +2838,20 @@ describe('CrmApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -2684,7 +2910,20 @@ describe('CrmApi', () => {
           company_id: '12345',
           opportunity_id: '12345',
           lead_id: '12345',
-          active: true
+          active: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.notesUpdate(params)
@@ -2761,7 +3000,20 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.opportunitiesAdd(params)
@@ -2841,7 +3093,15 @@ describe('CrmApi', () => {
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -2981,7 +3241,20 @@ describe('CrmApi', () => {
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -3068,7 +3341,20 @@ describe('CrmApi', () => {
               value: 'Uses Salesforce and Marketo'
             }
           ],
-          stage_last_changed_at: '2020-09-30T07:43:32.000Z'
+          stage_last_changed_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
       const current = await crm.opportunitiesUpdate(params)
@@ -3124,6 +3410,19 @@ describe('CrmApi', () => {
               win_probability: 50,
               display_order: 1
             }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
           ]
         }
       } as any
@@ -3173,7 +3472,15 @@ describe('CrmApi', () => {
               }
             ],
             updated_at: '2020-09-30T07:43:32.000Z',
-            created_at: '2020-09-30T07:43:32.000Z'
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -3282,7 +3589,20 @@ describe('CrmApi', () => {
             }
           ],
           updated_at: '2020-09-30T07:43:32.000Z',
-          created_at: '2020-09-30T07:43:32.000Z'
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -3347,6 +3667,19 @@ describe('CrmApi', () => {
               value: 'CONTRACT_SENT',
               win_probability: 50,
               display_order: 1
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
             }
           ]
         }
@@ -3448,6 +3781,19 @@ describe('CrmApi', () => {
               email: 'elon@musk.com',
               type: 'primary'
             }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
           ]
         }
       } as any
@@ -3542,7 +3888,15 @@ describe('CrmApi', () => {
             ],
             custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
-            created_at: '2017-08-12T20:43:21.291Z'
+            created_at: '2017-08-12T20:43:21.291Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
           }
         ],
         meta: {
@@ -3696,7 +4050,20 @@ describe('CrmApi', () => {
           ],
           custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
-          created_at: '2017-08-12T20:43:21.291Z'
+          created_at: '2017-08-12T20:43:21.291Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
         }
       } as any
 
@@ -3805,6 +4172,19 @@ describe('CrmApi', () => {
               id: '123',
               email: 'elon@musk.com',
               type: 'primary'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
             }
           ]
         }
