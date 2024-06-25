@@ -52,6 +52,7 @@ BadRequestResponse.md
 BalanceSheet.md
 BalanceSheetAccount.md
 BalanceSheetAccountRecord.md
+BalanceSheetAccounts.md
 BalanceSheetFilter.md
 BalanceSheetReports.md
 BankAccount.md
@@ -734,6 +735,7 @@ models/BadRequestResponse.ts
 models/BalanceSheet.ts
 models/BalanceSheetAccount.ts
 models/BalanceSheetAccountRecord.ts
+models/BalanceSheetAccounts.ts
 models/BalanceSheetFilter.ts
 models/BalanceSheetReports.ts
 models/BankAccount.ts

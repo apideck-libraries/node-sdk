@@ -266,23 +266,23 @@ describe('AccountingApi', () => {
               currency: 'USD',
               assets: {
                 account_id: '123456',
-                code: '1000',
+                code: '1100',
                 name: 'Current assets',
-                value: 0,
+                value: 1000,
                 items: [{}]
               },
               liabilities: {
                 account_id: '123456',
-                code: '1000',
+                code: '1100',
                 name: 'Current assets',
-                value: 0,
+                value: 1000,
                 items: [{}]
               },
               equity: {
                 account_id: '123456',
-                code: '1000',
+                code: '1100',
                 name: 'Current assets',
-                value: 0,
+                value: 1000,
                 items: [{}]
               },
               net_assets: 1000,
@@ -294,10 +294,10 @@ describe('AccountingApi', () => {
               uncategorized_items: [
                 {
                   account_id: '123456',
-                  code: '1000',
+                  code: '1100',
                   name: 'Current assets',
-                  value: 0,
-                  items: [Array]
+                  value: 1000,
+                  items: []
                 }
               ]
             }

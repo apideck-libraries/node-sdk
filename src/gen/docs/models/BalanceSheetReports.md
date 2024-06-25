@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
-`uncategorized_items` | **Array&lt;BalanceSheetAccount \| BalanceSheetAccountRecord&gt;** | Items that are not categorized in the balance sheet | [optional] 
+`uncategorized_items` | [**BalanceSheetAccounts**](BalanceSheetAccounts.md) |  | [optional] 
 
 
 
@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 
 
 
+
+* [`BalanceSheetAccounts`](BalanceSheetAccounts.md)
 
 ---
 
