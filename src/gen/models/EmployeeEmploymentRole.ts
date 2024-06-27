@@ -53,7 +53,8 @@ export enum EmployeeEmploymentRoleSubType {
   full_time = 'full_time',
   part_time = 'part_time',
   hourly = 'hourly',
-  other = 'other'
+  other = 'other',
+  not_specified = 'not_specified'
 }
 
 export function EmployeeEmploymentRoleFromJSON(json: any): EmployeeEmploymentRole {
