@@ -2145,7 +2145,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    policy_type: 'sick'
   }
 }
 
@@ -2249,6 +2250,7 @@ hrisApi.timeOffRequestsDelete(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**] | ID of the record you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2286,7 +2288,8 @@ const apideck = new Apideck({
 });
 
 const params = {
-  id: 'id_example'
+  id: 'id_example',
+  employeeId: 'employee_id_example'
 }
 
 try {
@@ -2318,6 +2321,7 @@ hrisApi.timeOffRequestsOne(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**] | ID of the record you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2356,7 +2360,8 @@ const apideck = new Apideck({
 });
 
 const params = {
-  id: 'id_example'
+  id: 'id_example',
+  employeeId: 'employee_id_example'
 }
 
 try {
@@ -2389,6 +2394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeOffRequest** | [TimeOffRequest](../models/TimeOffRequest.md)|  |
  **id** | [**string**] | ID of the record you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
  **appId** | [**string**] | The ID of your Unify application | (optional) 
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
@@ -2427,6 +2433,7 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
+  employeeId: 'employee_id_example',
   timeOffRequest: {
     employee_id: '12345',
     policy_id: '12345',
@@ -2455,7 +2462,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    policy_type: 'sick'
   }
 }
 

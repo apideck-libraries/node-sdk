@@ -140,6 +140,12 @@ export interface TimeOffRequest {
    * @memberof TimeOffRequest
    */
   pass_through?: PassThroughBody
+  /**
+   * The policy type of the time off request
+   * @type {string}
+   * @memberof TimeOffRequest
+   */
+  policy_type?: string
 }
 
 /**
@@ -217,7 +223,8 @@ export function TimeOffRequestFromJSONTyped(
       : new Date(json['created_at']),
     pass_through: !exists(json, 'pass_through')
       ? undefined
-      : PassThroughBodyFromJSON(json['pass_through'])
+      : PassThroughBodyFromJSON(json['pass_through']),
+    policy_type: !exists(json, 'policy_type') ? undefined : json['policy_type']
   }
 }
 
@@ -241,6 +248,7 @@ export function TimeOffRequestToJSON(value?: TimeOffRequest | null): any {
     units: value.units,
     amount: value.amount,
     notes: TimeOffRequestNotesToJSON(value.notes),
-    pass_through: PassThroughBodyToJSON(value.pass_through)
+    pass_through: PassThroughBodyToJSON(value.pass_through),
+    policy_type: value.policy_type
   }
 }

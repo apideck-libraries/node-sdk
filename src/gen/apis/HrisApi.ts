@@ -290,6 +290,7 @@ export interface HrisApiTimeOffRequestsAllRequest {
 
 export interface HrisApiTimeOffRequestsDeleteRequest {
   id: string
+  employeeId: string
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -298,6 +299,7 @@ export interface HrisApiTimeOffRequestsDeleteRequest {
 
 export interface HrisApiTimeOffRequestsOneRequest {
   id: string
+  employeeId: string
   consumerId?: string
   appId?: string
   serviceId?: string
@@ -307,6 +309,7 @@ export interface HrisApiTimeOffRequestsOneRequest {
 
 export interface HrisApiTimeOffRequestsUpdateRequest {
   id: string
+  employeeId: string
   timeOffRequest: TimeOffRequest
   consumerId?: string
   appId?: string
@@ -1970,6 +1973,13 @@ export class HrisApi extends runtime.BaseAPI {
       )
     }
 
+    if (requestParameters.employeeId === null || requestParameters.employeeId === undefined) {
+      throw new runtime.RequiredError(
+        'employeeId',
+        'Required parameter requestParameters.employeeId was null or undefined when calling timeOffRequestsDelete.'
+      )
+    }
+
     const queryParameters: any = {}
 
     if (requestParameters.raw !== undefined) {
@@ -1996,10 +2006,9 @@ export class HrisApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/hris/time-off-requests/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
+        path: `/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}`
+          .replace(`{${'id'}}`, encodeURIComponent(String(requestParameters.id)))
+          .replace(`{${'employee_id'}}`, encodeURIComponent(String(requestParameters.employeeId))),
         method: 'DELETE',
         headers: headerParameters,
         query: queryParameters
@@ -2039,6 +2048,13 @@ export class HrisApi extends runtime.BaseAPI {
       )
     }
 
+    if (requestParameters.employeeId === null || requestParameters.employeeId === undefined) {
+      throw new runtime.RequiredError(
+        'employeeId',
+        'Required parameter requestParameters.employeeId was null or undefined when calling timeOffRequestsOne.'
+      )
+    }
+
     const queryParameters: any = {}
 
     if (requestParameters.raw !== undefined) {
@@ -2069,10 +2085,9 @@ export class HrisApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/hris/time-off-requests/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
+        path: `/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}`
+          .replace(`{${'id'}}`, encodeURIComponent(String(requestParameters.id)))
+          .replace(`{${'employee_id'}}`, encodeURIComponent(String(requestParameters.employeeId))),
         method: 'GET',
         headers: headerParameters,
         query: queryParameters
@@ -2109,6 +2124,13 @@ export class HrisApi extends runtime.BaseAPI {
       throw new runtime.RequiredError(
         'id',
         'Required parameter requestParameters.id was null or undefined when calling timeOffRequestsUpdate.'
+      )
+    }
+
+    if (requestParameters.employeeId === null || requestParameters.employeeId === undefined) {
+      throw new runtime.RequiredError(
+        'employeeId',
+        'Required parameter requestParameters.employeeId was null or undefined when calling timeOffRequestsUpdate.'
       )
     }
 
@@ -2150,10 +2172,9 @@ export class HrisApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/hris/time-off-requests/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
+        path: `/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}`
+          .replace(`{${'id'}}`, encodeURIComponent(String(requestParameters.id)))
+          .replace(`{${'employee_id'}}`, encodeURIComponent(String(requestParameters.employeeId))),
         method: 'PATCH',
         headers: headerParameters,
         query: queryParameters,
