@@ -32,6 +32,12 @@ export interface TimeOffRequestsFilter {
    */
   end_date?: string
   /**
+   * Minimum date the time off request was last created or modified
+   * @type {string}
+   * @memberof TimeOffRequestsFilter
+   */
+  updated_since?: string
+  /**
    * Employee ID
    * @type {string}
    * @memberof TimeOffRequestsFilter
@@ -72,6 +78,7 @@ export function TimeOffRequestsFilterFromJSONTyped(
   return {
     start_date: !exists(json, 'start_date') ? undefined : json['start_date'],
     end_date: !exists(json, 'end_date') ? undefined : json['end_date'],
+    updated_since: !exists(json, 'updated_since') ? undefined : json['updated_since'],
     employee_id: !exists(json, 'employee_id') ? undefined : json['employee_id'],
     time_off_request_status: !exists(json, 'time_off_request_status')
       ? undefined
@@ -89,6 +96,7 @@ export function TimeOffRequestsFilterToJSON(value?: TimeOffRequestsFilter | null
   return {
     start_date: value.start_date,
     end_date: value.end_date,
+    updated_since: value.updated_since,
     employee_id: value.employee_id,
     time_off_request_status: value.time_off_request_status
   }

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `start_date` | **string** | Start date | [optional] 
 `end_date` | **string** | End date | [optional] 
+`updated_since` | **string** | Minimum date the time off request was last created or modified | [optional] 
 `employee_id` | **string** | Employee ID | [optional] 
 `time_off_request_status` | **string** | Time off request status to filter on | [optional] 
 
