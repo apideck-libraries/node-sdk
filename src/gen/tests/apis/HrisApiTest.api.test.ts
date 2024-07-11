@@ -2564,7 +2564,8 @@ describe('HrisApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          policy_type: 'sick'
         }
       } as any
       const current = await hris.timeOffRequestsAdd(params)
@@ -2624,7 +2625,8 @@ describe('HrisApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
-            ]
+            ],
+            policy_type: 'sick'
           }
         ],
         meta: {
@@ -2655,7 +2657,7 @@ describe('HrisApi', () => {
   })
 
   describe('#timeOffRequestsDelete', () => {
-    const endpoint = '/hris/time-off-requests/{id}'
+    const endpoint = '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -2686,7 +2688,8 @@ describe('HrisApi', () => {
 
       const { hris } = apideck
       const params = {
-        id: 'id_example'
+        id: 'id_example',
+        employeeId: 'employee_id_example'
       } as any
       const current = await hris.timeOffRequestsDelete(params)
 
@@ -2695,7 +2698,7 @@ describe('HrisApi', () => {
   })
 
   describe('#timeOffRequestsOne', () => {
-    const endpoint = '/hris/time-off-requests/{id}'
+    const endpoint = '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -2749,7 +2752,8 @@ describe('HrisApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          policy_type: 'sick'
         }
       } as any
 
@@ -2759,7 +2763,8 @@ describe('HrisApi', () => {
 
       const { hris } = apideck
       const params = {
-        id: 'id_example'
+        id: 'id_example',
+        employeeId: 'employee_id_example'
       } as any
       const current = await hris.timeOffRequestsOne(params)
 
@@ -2768,7 +2773,7 @@ describe('HrisApi', () => {
   })
 
   describe('#timeOffRequestsUpdate', () => {
-    const endpoint = '/hris/time-off-requests/{id}'
+    const endpoint = '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}'
 
     const config = {
       apiKey: 'REPLACE_WITH_API_KEY',
@@ -2800,6 +2805,7 @@ describe('HrisApi', () => {
       const { hris } = apideck
       const params = {
         id: 'id_example',
+        employeeId: 'employee_id_example',
         timeOffRequest: {
           employee_id: '12345',
           policy_id: '12345',
@@ -2828,7 +2834,8 @@ describe('HrisApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          policy_type: 'sick'
         }
       } as any
       const current = await hris.timeOffRequestsUpdate(params)

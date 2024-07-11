@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 
 * `other` (value: `'other'`)
 
+* `not_specified` (value: `'not_specified'`)
+
 
 
 

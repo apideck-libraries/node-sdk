@@ -47,9 +47,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | [HrisCompany](../models/HrisCompany.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
 
 
 
@@ -62,13 +62,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**201** | Companies | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**201** | Companies |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -188,13 +188,13 @@ hrisApi.companiesAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional)
  **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -207,13 +207,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Companies | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Companies |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -257,10 +257,10 @@ hrisApi.companiesDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -274,13 +274,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Companies | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Companies |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -326,12 +326,12 @@ hrisApi.companiesOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -344,13 +344,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Company | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Company |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -397,10 +397,10 @@ hrisApi.companiesUpdate(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | [HrisCompany](../models/HrisCompany.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -414,13 +414,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Companies | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Companies |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -542,9 +542,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **department** | [Department](../models/Department.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
 
 
 
@@ -557,13 +557,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**201** | Departments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**201** | Departments |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -627,13 +627,13 @@ hrisApi.departmentsAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional)
  **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -646,13 +646,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Departments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Departments |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -696,10 +696,10 @@ hrisApi.departmentsDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -713,13 +713,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Departments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Departments |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -765,12 +765,12 @@ hrisApi.departmentsOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -783,13 +783,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Departments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Departments |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -836,10 +836,10 @@ hrisApi.departmentsUpdate(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **department** | [Department](../models/Department.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -853,13 +853,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Departments | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Departments |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -923,14 +923,14 @@ hrisApi.employeePayrollsAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **filter** | **PayrollsFilter** | Apply filters | (optional) 
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **filter** | **PayrollsFilter** | Apply filters | (optional)
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -943,13 +943,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | EmployeePayrolls | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | EmployeePayrolls |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -995,13 +995,13 @@ hrisApi.employeePayrollsOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payrollId** | [**string**] | ID of the payroll you are acting upon. | 
- **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **payrollId** | [**string**] | ID of the payroll you are acting upon. |
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -1014,13 +1014,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Payrolls | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Payrolls |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1067,13 +1067,13 @@ hrisApi.employeeSchedulesAll(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employeeId** | [**string**] | ID of the employee you are acting upon. | 
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -1086,13 +1086,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | EmployeeSchedules | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | EmployeeSchedules |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1140,9 +1140,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee** | [Employee](../models/Employee.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
 
 
 
@@ -1155,13 +1155,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**201** | Employees | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**201** | Employees |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1433,15 +1433,15 @@ hrisApi.employeesAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional)
  **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
- **filter** | **EmployeesFilter** | Apply filters | (optional) 
- **sort** | **EmployeesSort** | Apply sorting | (optional) 
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **filter** | **EmployeesFilter** | Apply filters | (optional)
+ **sort** | **EmployeesSort** | Apply sorting | (optional)
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -1454,13 +1454,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Employees | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Employees |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1504,10 +1504,10 @@ hrisApi.employeesDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -1521,13 +1521,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Employees | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Employees |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1573,13 +1573,13 @@ hrisApi.employeesOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
- **filter** | **EmployeesOneFilter** | Apply filters | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
+ **filter** | **EmployeesOneFilter** | Apply filters | (optional)
 
 
 
@@ -1592,13 +1592,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Employees | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Employees |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1645,10 +1645,10 @@ hrisApi.employeesUpdate(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee** | [Employee](../models/Employee.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -1662,13 +1662,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Employees | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Employees |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -1941,12 +1941,12 @@ hrisApi.payrollsAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **filter** | **PayrollsFilter** | Apply filters | (optional) 
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **filter** | **PayrollsFilter** | Apply filters | (optional)
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -1959,13 +1959,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Payrolls | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Payrolls |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2009,12 +2009,12 @@ hrisApi.payrollsOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payrollId** | [**string**] | ID of the payroll you are acting upon. | 
+ **payrollId** | [**string**] | ID of the payroll you are acting upon. |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -2027,13 +2027,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | Payrolls | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | Payrolls |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2081,9 +2081,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeOffRequest** | [TimeOffRequest](../models/TimeOffRequest.md)|  |
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
 
 
 
@@ -2096,13 +2096,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**201** | TimeOffRequests | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**201** | TimeOffRequests |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2145,7 +2145,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    policy_type: 'sick'
   }
 }
 
@@ -2178,14 +2179,14 @@ hrisApi.timeOffRequestsAll(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
- **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional)
  **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
- **filter** | **TimeOffRequestsFilter** | Apply filters | (optional) 
- **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **filter** | **TimeOffRequestsFilter** | Apply filters | (optional)
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional)
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -2198,13 +2199,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | TimeOffRequests | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | TimeOffRequests |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2248,10 +2249,11 @@ hrisApi.timeOffRequestsDelete(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -2265,13 +2267,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | TimeOffRequests | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | TimeOffRequests |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2286,7 +2288,8 @@ const apideck = new Apideck({
 });
 
 const params = {
-  id: 'id_example'
+  id: 'id_example',
+  employeeId: 'employee_id_example'
 }
 
 try {
@@ -2317,12 +2320,13 @@ hrisApi.timeOffRequestsOne(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
- **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional)
 
 
 
@@ -2335,13 +2339,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | TimeOffRequests | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | TimeOffRequests |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2356,7 +2360,8 @@ const apideck = new Apideck({
 });
 
 const params = {
-  id: 'id_example'
+  id: 'id_example',
+  employeeId: 'employee_id_example'
 }
 
 try {
@@ -2388,10 +2393,11 @@ hrisApi.timeOffRequestsUpdate(body)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeOffRequest** | [TimeOffRequest](../models/TimeOffRequest.md)|  |
- **id** | [**string**] | ID of the record you are acting upon. | 
- **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
- **appId** | [**string**] | The ID of your Unify application | (optional) 
- **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **id** | [**string**] | ID of the record you are acting upon. |
+ **employeeId** | [**string**] | ID of the employee you are acting upon. |
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional)
+ **appId** | [**string**] | The ID of your Unify application | (optional)
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional)
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
 
 
@@ -2405,13 +2411,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description |
 |-------------|-------------|
-**200** | TimeOffRequests | 
-**400** | Bad Request | 
-**401** | Unauthorized | 
-**402** | Payment Required | 
-**404** | The specified resource was not found | 
-**422** | Unprocessable | 
-4/5xx | Unexpected error | 
+**200** | TimeOffRequests |
+**400** | Bad Request |
+**401** | Unauthorized |
+**402** | Payment Required |
+**404** | The specified resource was not found |
+**422** | Unprocessable |
+4/5xx | Unexpected error |
 
 
 ## Example Usage
@@ -2427,6 +2433,7 @@ const apideck = new Apideck({
 
 const params = {
   id: 'id_example',
+  employeeId: 'employee_id_example',
   timeOffRequest: {
     employee_id: '12345',
     policy_id: '12345',
@@ -2455,7 +2462,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    policy_type: 'sick'
   }
 }
 

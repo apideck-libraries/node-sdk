@@ -666,6 +666,8 @@ UpdateWebhookRequest.md
 UpdateWebhookResponse.md
 UploadSession.md
 User.md
+ValidateConnectionStateResponse.md
+ValidateConnectionStateResponseData.md
 VaultApi.md
 VaultApiTest.api.test.ts
 VaultEventType.md
@@ -1331,6 +1333,8 @@ models/UpdateWebhookRequest.ts
 models/UpdateWebhookResponse.ts
 models/UploadSession.ts
 models/User.ts
+models/ValidateConnectionStateResponse.ts
+models/ValidateConnectionStateResponseData.ts
 models/VaultEventType.ts
 models/VirtualWebhooks.ts
 models/WalletDetails.ts
