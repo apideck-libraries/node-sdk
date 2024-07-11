@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  CollectionTicketComment,
-  CollectionTicketCommentFromJSON,
-  CollectionTicketCommentToJSON
+    CollectionTicketComment,
+    CollectionTicketCommentFromJSON,
+    CollectionTicketCommentToJSON
 } from './CollectionTicketComment'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

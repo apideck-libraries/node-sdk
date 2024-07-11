@@ -15,9 +15,9 @@
 import { exists } from '../runtime'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 import {
-  SharedLinkTarget,
-  SharedLinkTargetFromJSON,
-  SharedLinkTargetToJSON
+    SharedLinkTarget,
+    SharedLinkTargetFromJSON,
+    SharedLinkTargetToJSON
 } from './SharedLinkTarget'
 
 /**

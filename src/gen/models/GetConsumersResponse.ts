@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  GetConsumersResponseData,
-  GetConsumersResponseDataFromJSON,
-  GetConsumersResponseDataToJSON
+    GetConsumersResponseData,
+    GetConsumersResponseDataFromJSON,
+    GetConsumersResponseDataToJSON
 } from './GetConsumersResponseData'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

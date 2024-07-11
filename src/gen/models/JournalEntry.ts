@@ -15,9 +15,9 @@
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import {
-  JournalEntryLineItem,
-  JournalEntryLineItemFromJSON,
-  JournalEntryLineItemToJSON
+    JournalEntryLineItem,
+    JournalEntryLineItemFromJSON,
+    JournalEntryLineItemToJSON
 } from './JournalEntryLineItem'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 

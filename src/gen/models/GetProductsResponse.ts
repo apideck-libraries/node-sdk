@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  EcommerceProduct,
-  EcommerceProductFromJSON,
-  EcommerceProductToJSON
+    EcommerceProduct,
+    EcommerceProductFromJSON,
+    EcommerceProductToJSON
 } from './EcommerceProduct'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

@@ -13,9 +13,9 @@
  */
 
 import {
-  AccountingDepartment,
-  AccountingDepartmentFromJSON,
-  AccountingDepartmentToJSON
+    AccountingDepartment,
+    AccountingDepartmentFromJSON,
+    AccountingDepartmentToJSON
 } from './AccountingDepartment'
 
 /**

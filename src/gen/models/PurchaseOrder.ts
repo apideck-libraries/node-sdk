@@ -18,9 +18,9 @@ import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccou
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import {
-  LinkedLedgerAccount,
-  LinkedLedgerAccountFromJSON,
-  LinkedLedgerAccountToJSON
+    LinkedLedgerAccount,
+    LinkedLedgerAccountFromJSON,
+    LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedSupplier, LinkedSupplierFromJSON, LinkedSupplierToJSON } from './LinkedSupplier'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'

@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  EmploymentStatus,
-  EmploymentStatusFromJSON,
-  EmploymentStatusToJSON
+    EmploymentStatus,
+    EmploymentStatusFromJSON,
+    EmploymentStatusToJSON
 } from './EmploymentStatus'
 
 /**

@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  AccountingLocation,
-  AccountingLocationFromJSON,
-  AccountingLocationToJSON
+    AccountingLocation,
+    AccountingLocationFromJSON,
+    AccountingLocationToJSON
 } from './AccountingLocation'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

@@ -16,30 +16,30 @@ import { exists } from '../runtime'
 import { ConnectorDoc, ConnectorDocFromJSON, ConnectorDocToJSON } from './ConnectorDoc'
 import { ConnectorEvent, ConnectorEventFromJSON, ConnectorEventToJSON } from './ConnectorEvent'
 import {
-  ConnectorOauthScopes,
-  ConnectorOauthScopesFromJSON,
-  ConnectorOauthScopesToJSON
+    ConnectorOauthScopes,
+    ConnectorOauthScopesFromJSON,
+    ConnectorOauthScopesToJSON
 } from './ConnectorOauthScopes'
 import {
-  ConnectorSetting,
-  ConnectorSettingFromJSON,
-  ConnectorSettingToJSON
+    ConnectorSetting,
+    ConnectorSettingFromJSON,
+    ConnectorSettingToJSON
 } from './ConnectorSetting'
 import { ConnectorStatus, ConnectorStatusFromJSON, ConnectorStatusToJSON } from './ConnectorStatus'
 import {
-  ConnectorTlsSupport,
-  ConnectorTlsSupportFromJSON,
-  ConnectorTlsSupportToJSON
+    ConnectorTlsSupport,
+    ConnectorTlsSupportFromJSON,
+    ConnectorTlsSupportToJSON
 } from './ConnectorTlsSupport'
 import {
-  ConnectorUnifiedApis,
-  ConnectorUnifiedApisFromJSON,
-  ConnectorUnifiedApisToJSON
+    ConnectorUnifiedApis,
+    ConnectorUnifiedApisFromJSON,
+    ConnectorUnifiedApisToJSON
 } from './ConnectorUnifiedApis'
 import {
-  LinkedConnectorResource,
-  LinkedConnectorResourceFromJSON,
-  LinkedConnectorResourceToJSON
+    LinkedConnectorResource,
+    LinkedConnectorResourceFromJSON,
+    LinkedConnectorResourceToJSON
 } from './LinkedConnectorResource'
 import { SchemaSupport, SchemaSupportFromJSON, SchemaSupportToJSON } from './SchemaSupport'
 import { WebhookSupport, WebhookSupportFromJSON, WebhookSupportToJSON } from './WebhookSupport'

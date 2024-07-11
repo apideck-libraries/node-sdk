@@ -13,9 +13,9 @@
  */
 
 import {
-  EcommerceCustomer,
-  EcommerceCustomerFromJSON,
-  EcommerceCustomerToJSON
+    EcommerceCustomer,
+    EcommerceCustomerFromJSON,
+    EcommerceCustomerToJSON
 } from './EcommerceCustomer'
 
 /**

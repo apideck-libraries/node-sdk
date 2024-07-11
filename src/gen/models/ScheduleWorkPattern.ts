@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  ScheduleWorkPatternOddWeeks,
-  ScheduleWorkPatternOddWeeksFromJSON,
-  ScheduleWorkPatternOddWeeksToJSON
+    ScheduleWorkPatternOddWeeks,
+    ScheduleWorkPatternOddWeeksFromJSON,
+    ScheduleWorkPatternOddWeeksToJSON
 } from './ScheduleWorkPatternOddWeeks'
 
 /**

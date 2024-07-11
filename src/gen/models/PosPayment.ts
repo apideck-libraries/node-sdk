@@ -18,14 +18,14 @@ import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 import { PosBankAccount, PosBankAccountFromJSON, PosBankAccountToJSON } from './PosBankAccount'
 import {
-  PosPaymentCardDetails,
-  PosPaymentCardDetailsFromJSON,
-  PosPaymentCardDetailsToJSON
+    PosPaymentCardDetails,
+    PosPaymentCardDetailsFromJSON,
+    PosPaymentCardDetailsToJSON
 } from './PosPaymentCardDetails'
 import {
-  PosPaymentExternalDetails,
-  PosPaymentExternalDetailsFromJSON,
-  PosPaymentExternalDetailsToJSON
+    PosPaymentExternalDetails,
+    PosPaymentExternalDetailsFromJSON,
+    PosPaymentExternalDetailsToJSON
 } from './PosPaymentExternalDetails'
 import { ServiceCharges, ServiceChargesFromJSON, ServiceChargesToJSON } from './ServiceCharges'
 import { WalletDetails, WalletDetailsFromJSON, WalletDetailsToJSON } from './WalletDetails'

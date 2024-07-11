@@ -13,24 +13,24 @@
  */
 
 import {
-  EcommerceCustomersFilter,
-  EcommerceOrdersFilter,
-  GetEcommerceCustomerResponse,
-  GetEcommerceCustomerResponseFromJSON,
-  GetEcommerceCustomersResponse,
-  GetEcommerceCustomersResponseFromJSON,
-  GetEcommerceOrderResponse,
-  GetEcommerceOrderResponseFromJSON,
-  GetEcommerceOrdersResponse,
-  GetEcommerceOrdersResponseFromJSON,
-  GetProductResponse,
-  GetProductResponseFromJSON,
-  GetProductsResponse,
-  GetProductsResponseFromJSON,
-  GetStoreResponse,
-  GetStoreResponseFromJSON,
-  OrdersSort,
-  PassThroughQuery
+    EcommerceCustomersFilter,
+    EcommerceOrdersFilter,
+    GetEcommerceCustomerResponse,
+    GetEcommerceCustomerResponseFromJSON,
+    GetEcommerceCustomersResponse,
+    GetEcommerceCustomersResponseFromJSON,
+    GetEcommerceOrderResponse,
+    GetEcommerceOrderResponseFromJSON,
+    GetEcommerceOrdersResponse,
+    GetEcommerceOrdersResponseFromJSON,
+    GetProductResponse,
+    GetProductResponseFromJSON,
+    GetProductsResponse,
+    GetProductsResponseFromJSON,
+    GetStoreResponse,
+    GetStoreResponseFromJSON,
+    OrdersSort,
+    PassThroughQuery
 } from '../models'
 import * as runtime from '../runtime'
 

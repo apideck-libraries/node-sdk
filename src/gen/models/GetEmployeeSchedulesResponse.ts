@@ -13,9 +13,9 @@
  */
 
 import {
-  EmployeeSchedules,
-  EmployeeSchedulesFromJSON,
-  EmployeeSchedulesToJSON
+    EmployeeSchedules,
+    EmployeeSchedulesFromJSON,
+    EmployeeSchedulesToJSON
 } from './EmployeeSchedules'
 
 /**

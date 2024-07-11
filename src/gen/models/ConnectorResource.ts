@@ -14,15 +14,15 @@
 
 import { exists } from '../runtime'
 import {
-  PaginationCoverage,
-  PaginationCoverageFromJSON,
-  PaginationCoverageToJSON
+    PaginationCoverage,
+    PaginationCoverageFromJSON,
+    PaginationCoverageToJSON
 } from './PaginationCoverage'
 import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
 import {
-  SupportedProperty,
-  SupportedPropertyFromJSON,
-  SupportedPropertyToJSON
+    SupportedProperty,
+    SupportedPropertyFromJSON,
+    SupportedPropertyToJSON
 } from './SupportedProperty'
 
 /**

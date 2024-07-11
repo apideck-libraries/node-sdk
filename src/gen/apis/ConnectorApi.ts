@@ -13,23 +13,23 @@
  */
 
 import {
-  ApisFilter,
-  ConnectorsFilter,
-  GetApiResourceCoverageResponse,
-  GetApiResourceCoverageResponseFromJSON,
-  GetApiResourceResponse,
-  GetApiResourceResponseFromJSON,
-  GetApiResponse,
-  GetApiResponseFromJSON,
-  GetApisResponse,
-  GetApisResponseFromJSON,
-  GetConnectorResourceResponse,
-  GetConnectorResourceResponseFromJSON,
-  GetConnectorResponse,
-  GetConnectorResponseFromJSON,
-  GetConnectorsResponse,
-  GetConnectorsResponseFromJSON,
-  UnifiedApiId
+    ApisFilter,
+    ConnectorsFilter,
+    GetApiResourceCoverageResponse,
+    GetApiResourceCoverageResponseFromJSON,
+    GetApiResourceResponse,
+    GetApiResourceResponseFromJSON,
+    GetApiResponse,
+    GetApiResponseFromJSON,
+    GetApisResponse,
+    GetApisResponseFromJSON,
+    GetConnectorResourceResponse,
+    GetConnectorResourceResponseFromJSON,
+    GetConnectorResponse,
+    GetConnectorResponseFromJSON,
+    GetConnectorsResponse,
+    GetConnectorsResponseFromJSON,
+    UnifiedApiId
 } from '../models'
 import * as runtime from '../runtime'
 

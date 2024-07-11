@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  TooManyRequestsResponseDetail,
-  TooManyRequestsResponseDetailFromJSON,
-  TooManyRequestsResponseDetailToJSON
+    TooManyRequestsResponseDetail,
+    TooManyRequestsResponseDetailFromJSON,
+    TooManyRequestsResponseDetailToJSON
 } from './TooManyRequestsResponseDetail'
 
 /**

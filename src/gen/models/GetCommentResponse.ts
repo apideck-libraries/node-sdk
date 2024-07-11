@@ -13,9 +13,9 @@
  */
 
 import {
-  CollectionTicketComment,
-  CollectionTicketCommentFromJSON,
-  CollectionTicketCommentToJSON
+    CollectionTicketComment,
+    CollectionTicketCommentFromJSON,
+    CollectionTicketCommentToJSON
 } from './CollectionTicketComment'
 
 /**

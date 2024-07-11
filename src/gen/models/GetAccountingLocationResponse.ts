@@ -13,9 +13,9 @@
  */
 
 import {
-  AccountingLocation,
-  AccountingLocationFromJSON,
-  AccountingLocationToJSON
+    AccountingLocation,
+    AccountingLocationFromJSON,
+    AccountingLocationToJSON
 } from './AccountingLocation'
 
 /**

@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  ApplicationStage,
-  ApplicationStageFromJSON,
-  ApplicationStageToJSON
+    ApplicationStage,
+    ApplicationStageFromJSON,
+    ApplicationStageToJSON
 } from './ApplicationStage'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 

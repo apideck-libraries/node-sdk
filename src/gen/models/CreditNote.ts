@@ -20,9 +20,9 @@ import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomFie
 import { InvoiceLineItem, InvoiceLineItemFromJSON, InvoiceLineItemToJSON } from './InvoiceLineItem'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
-  LinkedLedgerAccount,
-  LinkedLedgerAccountFromJSON,
-  LinkedLedgerAccountToJSON
+    LinkedLedgerAccount,
+    LinkedLedgerAccountFromJSON,
+    LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 

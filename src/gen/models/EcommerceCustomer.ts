@@ -15,15 +15,15 @@
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import {
-  EcommerceCustomerAddresses,
-  EcommerceCustomerAddressesFromJSON,
-  EcommerceCustomerAddressesToJSON
+    EcommerceCustomerAddresses,
+    EcommerceCustomerAddressesFromJSON,
+    EcommerceCustomerAddressesToJSON
 } from './EcommerceCustomerAddresses'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
-  LinkedEcommerceOrder,
-  LinkedEcommerceOrderFromJSON,
-  LinkedEcommerceOrderToJSON
+    LinkedEcommerceOrder,
+    LinkedEcommerceOrderFromJSON,
+    LinkedEcommerceOrderToJSON
 } from './LinkedEcommerceOrder'
 import { PhoneNumber, PhoneNumberFromJSON, PhoneNumberToJSON } from './PhoneNumber'
 

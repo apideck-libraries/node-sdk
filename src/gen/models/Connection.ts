@@ -15,17 +15,17 @@
 import { exists } from '../runtime'
 import { AuthType, AuthTypeFromJSON, AuthTypeToJSON } from './AuthType'
 import {
-  ConnectionConfiguration,
-  ConnectionConfigurationFromJSON,
-  ConnectionConfigurationToJSON
+    ConnectionConfiguration,
+    ConnectionConfigurationFromJSON,
+    ConnectionConfigurationToJSON
 } from './ConnectionConfiguration'
 import { ConnectionState, ConnectionStateFromJSON, ConnectionStateToJSON } from './ConnectionState'
 import { CustomMapping, CustomMappingFromJSON, CustomMappingToJSON } from './CustomMapping'
 import { FormField, FormFieldFromJSON } from './FormField'
 import {
-  IntegrationState,
-  IntegrationStateFromJSON,
-  IntegrationStateToJSON
+    IntegrationState,
+    IntegrationStateFromJSON,
+    IntegrationStateToJSON
 } from './IntegrationState'
 import { OAuthGrantType, OAuthGrantTypeFromJSON, OAuthGrantTypeToJSON } from './OAuthGrantType'
 import { WebhookSubscription, WebhookSubscriptionFromJSON } from './WebhookSubscription'

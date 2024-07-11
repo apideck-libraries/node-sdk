@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  ApiResourceCoverage,
-  ApiResourceCoverageFromJSON,
-  ApiResourceCoverageToJSON
+    ApiResourceCoverage,
+    ApiResourceCoverageFromJSON,
+    ApiResourceCoverageToJSON
 } from './ApiResourceCoverage'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

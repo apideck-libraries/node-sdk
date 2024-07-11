@@ -15,9 +15,9 @@
 import { exists } from '../runtime'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 import {
-  SubsidiaryReference,
-  SubsidiaryReferenceFromJSON,
-  SubsidiaryReferenceToJSON
+    SubsidiaryReference,
+    SubsidiaryReferenceFromJSON,
+    SubsidiaryReferenceToJSON
 } from './SubsidiaryReference'
 
 /**

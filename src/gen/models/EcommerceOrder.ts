@@ -15,29 +15,29 @@
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import {
-  EcommerceAddress,
-  EcommerceAddressFromJSON,
-  EcommerceAddressToJSON
+    EcommerceAddress,
+    EcommerceAddressFromJSON,
+    EcommerceAddressToJSON
 } from './EcommerceAddress'
 import {
-  EcommerceDiscount,
-  EcommerceDiscountFromJSON,
-  EcommerceDiscountToJSON
+    EcommerceDiscount,
+    EcommerceDiscountFromJSON,
+    EcommerceDiscountToJSON
 } from './EcommerceDiscount'
 import {
-  EcommerceOrderLineItem,
-  EcommerceOrderLineItemFromJSON,
-  EcommerceOrderLineItemToJSON
+    EcommerceOrderLineItem,
+    EcommerceOrderLineItemFromJSON,
+    EcommerceOrderLineItemToJSON
 } from './EcommerceOrderLineItem'
 import {
-  EcommerceOrderStatus,
-  EcommerceOrderStatusFromJSON,
-  EcommerceOrderStatusToJSON
+    EcommerceOrderStatus,
+    EcommerceOrderStatusFromJSON,
+    EcommerceOrderStatusToJSON
 } from './EcommerceOrderStatus'
 import {
-  LinkedEcommerceCustomer,
-  LinkedEcommerceCustomerFromJSON,
-  LinkedEcommerceCustomerToJSON
+    LinkedEcommerceCustomer,
+    LinkedEcommerceCustomerFromJSON,
+    LinkedEcommerceCustomerToJSON
 } from './LinkedEcommerceCustomer'
 import { TrackingItem, TrackingItemFromJSON, TrackingItemToJSON } from './TrackingItem'
 

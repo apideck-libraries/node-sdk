@@ -13,9 +13,9 @@
  */
 
 import {
-  ScheduleWorkPattern,
-  ScheduleWorkPatternFromJSON,
-  ScheduleWorkPatternToJSON
+    ScheduleWorkPattern,
+    ScheduleWorkPatternFromJSON,
+    ScheduleWorkPatternToJSON
 } from './ScheduleWorkPattern'
 
 /**

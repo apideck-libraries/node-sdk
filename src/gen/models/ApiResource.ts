@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  ApiResourceLinkedResources,
-  ApiResourceLinkedResourcesFromJSON,
-  ApiResourceLinkedResourcesToJSON
+    ApiResourceLinkedResources,
+    ApiResourceLinkedResourcesFromJSON,
+    ApiResourceLinkedResourcesToJSON
 } from './ApiResourceLinkedResources'
 import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
 

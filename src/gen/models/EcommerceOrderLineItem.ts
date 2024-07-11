@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  EcommerceDiscount,
-  EcommerceDiscountFromJSON,
-  EcommerceDiscountToJSON
+    EcommerceDiscount,
+    EcommerceDiscountFromJSON,
+    EcommerceDiscountToJSON
 } from './EcommerceDiscount'
 
 /**

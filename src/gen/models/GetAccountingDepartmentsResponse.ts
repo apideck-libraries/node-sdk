@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-  AccountingDepartment,
-  AccountingDepartmentFromJSON,
-  AccountingDepartmentToJSON
+    AccountingDepartment,
+    AccountingDepartmentFromJSON,
+    AccountingDepartmentToJSON
 } from './AccountingDepartment'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

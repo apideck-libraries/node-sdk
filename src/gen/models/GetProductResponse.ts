@@ -13,9 +13,9 @@
  */
 
 import {
-  EcommerceProduct,
-  EcommerceProductFromJSON,
-  EcommerceProductToJSON
+    EcommerceProduct,
+    EcommerceProductFromJSON,
+    EcommerceProductToJSON
 } from './EcommerceProduct'
 
 /**

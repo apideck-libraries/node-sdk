@@ -14,14 +14,14 @@
 
 import { exists } from '../runtime'
 import {
-  OrderPickupDetailsCurbsidePickupDetails,
-  OrderPickupDetailsCurbsidePickupDetailsFromJSON,
-  OrderPickupDetailsCurbsidePickupDetailsToJSON
+    OrderPickupDetailsCurbsidePickupDetails,
+    OrderPickupDetailsCurbsidePickupDetailsFromJSON,
+    OrderPickupDetailsCurbsidePickupDetailsToJSON
 } from './OrderPickupDetailsCurbsidePickupDetails'
 import {
-  OrderPickupDetailsRecipient,
-  OrderPickupDetailsRecipientFromJSON,
-  OrderPickupDetailsRecipientToJSON
+    OrderPickupDetailsRecipient,
+    OrderPickupDetailsRecipientFromJSON,
+    OrderPickupDetailsRecipientToJSON
 } from './OrderPickupDetailsRecipient'
 
 /**

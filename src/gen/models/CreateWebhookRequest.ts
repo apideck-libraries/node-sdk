@@ -16,9 +16,9 @@ import { exists } from '../runtime'
 import { Status, StatusFromJSON, StatusToJSON } from './Status'
 import { UnifiedApiId, UnifiedApiIdFromJSON, UnifiedApiIdToJSON } from './UnifiedApiId'
 import {
-  WebhookEventType,
-  WebhookEventTypeFromJSON,
-  WebhookEventTypeToJSON
+    WebhookEventType,
+    WebhookEventTypeFromJSON,
+    WebhookEventTypeToJSON
 } from './WebhookEventType'
 
 /**

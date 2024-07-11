@@ -13,9 +13,9 @@
  */
 
 import {
-  ProfitAndLossRecords,
-  ProfitAndLossRecordsFromJSON,
-  ProfitAndLossRecordsToJSON
+    ProfitAndLossRecords,
+    ProfitAndLossRecordsFromJSON,
+    ProfitAndLossRecordsToJSON
 } from './ProfitAndLossRecords'
 
 /**
