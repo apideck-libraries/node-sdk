@@ -1696,4 +1696,44 @@ describe('VaultApi', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })
+
+  describe('#validateConnectionState', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/validate'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          id: 'crm+salesforce',
+          state: 'authorized'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        serviceId: 'pipedrive',
+        unifiedApi: 'crm',
+        validateConnectionState: {}
+      } as any
+      const current = await vault.validateConnectionState(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
 })
