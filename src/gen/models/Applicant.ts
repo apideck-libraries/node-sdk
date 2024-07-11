@@ -15,14 +15,14 @@
 import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import {
-    ApplicantSocialLinks,
-    ApplicantSocialLinksFromJSON,
-    ApplicantSocialLinksToJSON
+  ApplicantSocialLinks,
+  ApplicantSocialLinksFromJSON,
+  ApplicantSocialLinksToJSON
 } from './ApplicantSocialLinks'
 import {
-    ApplicantWebsites,
-    ApplicantWebsitesFromJSON,
-    ApplicantWebsitesToJSON
+  ApplicantWebsites,
+  ApplicantWebsitesFromJSON,
+  ApplicantWebsitesToJSON
 } from './ApplicantWebsites'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'

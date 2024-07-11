@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ConsumerMetadata,
-    ConsumerMetadataFromJSON,
-    ConsumerMetadataToJSON
+  ConsumerMetadata,
+  ConsumerMetadataFromJSON,
+  ConsumerMetadataToJSON
 } from './ConsumerMetadata'
 
 /**

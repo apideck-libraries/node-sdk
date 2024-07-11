@@ -13,9 +13,9 @@
  */
 
 import {
-    BalanceSheetReports,
-    BalanceSheetReportsFromJSON,
-    BalanceSheetReportsToJSON
+  BalanceSheetReports,
+  BalanceSheetReportsFromJSON,
+  BalanceSheetReportsToJSON
 } from './BalanceSheetReports'
 
 /**

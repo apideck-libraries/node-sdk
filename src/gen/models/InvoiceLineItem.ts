@@ -15,14 +15,14 @@
 import { exists } from '../runtime'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import {
-    LinkedInvoiceItem,
-    LinkedInvoiceItemFromJSON,
-    LinkedInvoiceItemToJSON
+  LinkedInvoiceItem,
+  LinkedInvoiceItemFromJSON,
+  LinkedInvoiceItemToJSON
 } from './LinkedInvoiceItem'
 import {
-    LinkedLedgerAccount,
-    LinkedLedgerAccountFromJSON,
-    LinkedLedgerAccountToJSON
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
 

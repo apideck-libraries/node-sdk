@@ -15,9 +15,9 @@
 import { exists } from '../runtime'
 import { Status, StatusFromJSON, StatusToJSON } from './Status'
 import {
-    WebhookEventType,
-    WebhookEventTypeFromJSON,
-    WebhookEventTypeToJSON
+  WebhookEventType,
+  WebhookEventTypeFromJSON,
+  WebhookEventTypeToJSON
 } from './WebhookEventType'
 
 /**

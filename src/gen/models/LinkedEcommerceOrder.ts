@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    EcommerceOrderStatus,
-    EcommerceOrderStatusFromJSON,
-    EcommerceOrderStatusToJSON
+  EcommerceOrderStatus,
+  EcommerceOrderStatusFromJSON,
+  EcommerceOrderStatusToJSON
 } from './EcommerceOrderStatus'
 
 /**

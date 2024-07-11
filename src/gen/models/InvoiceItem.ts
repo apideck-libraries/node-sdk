@@ -14,19 +14,19 @@
 
 import { exists } from '../runtime'
 import {
-    InvoiceItemSalesDetails,
-    InvoiceItemSalesDetailsFromJSON,
-    InvoiceItemSalesDetailsToJSON
+  InvoiceItemSalesDetails,
+  InvoiceItemSalesDetailsFromJSON,
+  InvoiceItemSalesDetailsToJSON
 } from './InvoiceItemSalesDetails'
 import {
-    LinkedLedgerAccount,
-    LinkedLedgerAccountFromJSON,
-    LinkedLedgerAccountToJSON
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import {
-    LinkedTrackingCategory,
-    LinkedTrackingCategoryFromJSON,
-    LinkedTrackingCategoryToJSON
+  LinkedTrackingCategory,
+  LinkedTrackingCategoryFromJSON,
+  LinkedTrackingCategoryToJSON
 } from './LinkedTrackingCategory'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 

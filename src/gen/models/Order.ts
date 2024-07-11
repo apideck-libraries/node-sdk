@@ -17,9 +17,9 @@ import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { OrderCustomers, OrderCustomersFromJSON, OrderCustomersToJSON } from './OrderCustomers'
 import { OrderDiscounts, OrderDiscountsFromJSON, OrderDiscountsToJSON } from './OrderDiscounts'
 import {
-    OrderFulfillments,
-    OrderFulfillmentsFromJSON,
-    OrderFulfillmentsToJSON
+  OrderFulfillments,
+  OrderFulfillmentsFromJSON,
+  OrderFulfillmentsToJSON
 } from './OrderFulfillments'
 import { OrderLineItems, OrderLineItemsFromJSON, OrderLineItemsToJSON } from './OrderLineItems'
 import { OrderPayments, OrderPaymentsFromJSON, OrderPaymentsToJSON } from './OrderPayments'

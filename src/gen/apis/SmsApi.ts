@@ -13,18 +13,18 @@
  */
 
 import {
-    CreateMessageResponse,
-    CreateMessageResponseFromJSON,
-    DeleteMessageResponse,
-    DeleteMessageResponseFromJSON,
-    GetMessageResponse,
-    GetMessageResponseFromJSON,
-    GetMessagesResponse,
-    GetMessagesResponseFromJSON,
-    Message,
-    MessageToJSON,
-    UpdateMessageResponse,
-    UpdateMessageResponseFromJSON
+  CreateMessageResponse,
+  CreateMessageResponseFromJSON,
+  DeleteMessageResponse,
+  DeleteMessageResponseFromJSON,
+  GetMessageResponse,
+  GetMessageResponseFromJSON,
+  GetMessagesResponse,
+  GetMessagesResponseFromJSON,
+  Message,
+  MessageToJSON,
+  UpdateMessageResponse,
+  UpdateMessageResponseFromJSON
 } from '../models'
 import * as runtime from '../runtime'
 

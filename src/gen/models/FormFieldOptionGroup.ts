@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    SimpleFormFieldOption,
-    SimpleFormFieldOptionFromJSON,
-    SimpleFormFieldOptionToJSON
+  SimpleFormFieldOption,
+  SimpleFormFieldOptionFromJSON,
+  SimpleFormFieldOptionToJSON
 } from './SimpleFormFieldOption'
 
 /**

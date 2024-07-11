@@ -15,14 +15,14 @@
 import { exists } from '../runtime'
 import { ConnectorEvent, ConnectorEventFromJSON, ConnectorEventToJSON } from './ConnectorEvent'
 import {
-    ConnectorOauthScopes1,
-    ConnectorOauthScopes1FromJSON,
-    ConnectorOauthScopes1ToJSON
+  ConnectorOauthScopes1,
+  ConnectorOauthScopes1FromJSON,
+  ConnectorOauthScopes1ToJSON
 } from './ConnectorOauthScopes1'
 import {
-    LinkedConnectorResource,
-    LinkedConnectorResourceFromJSON,
-    LinkedConnectorResourceToJSON
+  LinkedConnectorResource,
+  LinkedConnectorResourceFromJSON,
+  LinkedConnectorResourceToJSON
 } from './LinkedConnectorResource'
 import { UnifiedApiId, UnifiedApiIdFromJSON, UnifiedApiIdToJSON } from './UnifiedApiId'
 

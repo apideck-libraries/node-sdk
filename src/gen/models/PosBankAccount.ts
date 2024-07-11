@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    PosBankAccountAchDetails,
-    PosBankAccountAchDetailsFromJSON,
-    PosBankAccountAchDetailsToJSON
+  PosBankAccountAchDetails,
+  PosBankAccountAchDetailsFromJSON,
+  PosBankAccountAchDetailsToJSON
 } from './PosBankAccountAchDetails'
 
 /**

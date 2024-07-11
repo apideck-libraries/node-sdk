@@ -13,9 +13,9 @@
  */
 
 import {
-    ConsumerRequestCountsInDateRangeResponseData,
-    ConsumerRequestCountsInDateRangeResponseDataFromJSON,
-    ConsumerRequestCountsInDateRangeResponseDataToJSON
+  ConsumerRequestCountsInDateRangeResponseData,
+  ConsumerRequestCountsInDateRangeResponseDataFromJSON,
+  ConsumerRequestCountsInDateRangeResponseDataToJSON
 } from './ConsumerRequestCountsInDateRangeResponseData'
 
 /**

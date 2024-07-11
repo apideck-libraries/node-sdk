@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    AttachmentReference,
-    AttachmentReferenceFromJSON,
-    AttachmentReferenceToJSON
+  AttachmentReference,
+  AttachmentReferenceFromJSON,
+  AttachmentReferenceToJSON
 } from './AttachmentReference'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 

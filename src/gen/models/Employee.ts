@@ -18,21 +18,21 @@ import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccou
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
-    EmployeeCompensation,
-    EmployeeCompensationFromJSON,
-    EmployeeCompensationToJSON
+  EmployeeCompensation,
+  EmployeeCompensationFromJSON,
+  EmployeeCompensationToJSON
 } from './EmployeeCompensation'
 import {
-    EmployeeEmploymentRole,
-    EmployeeEmploymentRoleFromJSON,
-    EmployeeEmploymentRoleToJSON
+  EmployeeEmploymentRole,
+  EmployeeEmploymentRoleFromJSON,
+  EmployeeEmploymentRoleToJSON
 } from './EmployeeEmploymentRole'
 import { EmployeeJob, EmployeeJobFromJSON, EmployeeJobToJSON } from './EmployeeJob'
 import { EmployeeManager, EmployeeManagerFromJSON, EmployeeManagerToJSON } from './EmployeeManager'
 import {
-    EmploymentStatus,
-    EmploymentStatusFromJSON,
-    EmploymentStatusToJSON
+  EmploymentStatus,
+  EmploymentStatusFromJSON,
+  EmploymentStatusToJSON
 } from './EmploymentStatus'
 import { Gender, GenderFromJSON, GenderToJSON } from './Gender'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'

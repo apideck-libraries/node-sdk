@@ -13,20 +13,20 @@
  */
 
 import {
-    CreateLeadResponse,
-    CreateLeadResponseFromJSON,
-    DeleteLeadResponse,
-    DeleteLeadResponseFromJSON,
-    GetLeadResponse,
-    GetLeadResponseFromJSON,
-    GetLeadsResponse,
-    GetLeadsResponseFromJSON,
-    Lead,
-    LeadsFilter,
-    LeadsSort,
-    LeadToJSON,
-    UpdateLeadResponse,
-    UpdateLeadResponseFromJSON
+  CreateLeadResponse,
+  CreateLeadResponseFromJSON,
+  DeleteLeadResponse,
+  DeleteLeadResponseFromJSON,
+  GetLeadResponse,
+  GetLeadResponseFromJSON,
+  GetLeadsResponse,
+  GetLeadsResponseFromJSON,
+  Lead,
+  LeadsFilter,
+  LeadsSort,
+  LeadToJSON,
+  UpdateLeadResponse,
+  UpdateLeadResponseFromJSON
 } from '../models'
 import * as runtime from '../runtime'
 

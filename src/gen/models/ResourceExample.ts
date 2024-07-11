@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    LinkedConnectorResource,
-    LinkedConnectorResourceFromJSON,
-    LinkedConnectorResourceToJSON
+  LinkedConnectorResource,
+  LinkedConnectorResourceFromJSON,
+  LinkedConnectorResourceToJSON
 } from './LinkedConnectorResource'
 import { UnifiedApiId, UnifiedApiIdFromJSON, UnifiedApiIdToJSON } from './UnifiedApiId'
 

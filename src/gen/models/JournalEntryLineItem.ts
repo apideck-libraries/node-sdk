@@ -15,16 +15,16 @@
 import { exists } from '../runtime'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
-    LinkedLedgerAccount,
-    LinkedLedgerAccountFromJSON,
-    LinkedLedgerAccountToJSON
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedSupplier, LinkedSupplierFromJSON, LinkedSupplierToJSON } from './LinkedSupplier'
 import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
 import {
-    LinkedTrackingCategory,
-    LinkedTrackingCategoryFromJSON,
-    LinkedTrackingCategoryToJSON
+  LinkedTrackingCategory,
+  LinkedTrackingCategoryFromJSON,
+  LinkedTrackingCategoryToJSON
 } from './LinkedTrackingCategory'
 
 /**

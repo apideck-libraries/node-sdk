@@ -14,14 +14,14 @@
 
 import { exists } from '../runtime'
 import {
-    ConsumerMetadata,
-    ConsumerMetadataFromJSON,
-    ConsumerMetadataToJSON
+  ConsumerMetadata,
+  ConsumerMetadataFromJSON,
+  ConsumerMetadataToJSON
 } from './ConsumerMetadata'
 import {
-    RequestCountAllocation,
-    RequestCountAllocationFromJSON,
-    RequestCountAllocationToJSON
+  RequestCountAllocation,
+  RequestCountAllocationFromJSON,
+  RequestCountAllocationToJSON
 } from './RequestCountAllocation'
 
 /**

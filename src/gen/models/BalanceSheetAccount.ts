@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    BalanceSheetAccounts,
-    BalanceSheetAccountsFromJSON,
-    BalanceSheetAccountsToJSON
+  BalanceSheetAccounts,
+  BalanceSheetAccountsFromJSON,
+  BalanceSheetAccountsToJSON
 } from './BalanceSheetAccounts'
 
 /**

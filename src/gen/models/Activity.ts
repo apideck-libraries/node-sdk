@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ActivityAttendee,
-    ActivityAttendeeFromJSON,
-    ActivityAttendeeToJSON
+  ActivityAttendee,
+  ActivityAttendeeFromJSON,
+  ActivityAttendeeToJSON
 } from './ActivityAttendee'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'

@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ConnectionImportDataCredentials,
-    ConnectionImportDataCredentialsFromJSON,
-    ConnectionImportDataCredentialsToJSON
+  ConnectionImportDataCredentials,
+  ConnectionImportDataCredentialsFromJSON,
+  ConnectionImportDataCredentialsToJSON
 } from './ConnectionImportDataCredentials'
 
 /**

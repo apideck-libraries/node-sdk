@@ -18,9 +18,9 @@ import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { LinkedCustomer, LinkedCustomerFromJSON, LinkedCustomerToJSON } from './LinkedCustomer'
 import {
-    LinkedLedgerAccount,
-    LinkedLedgerAccountFromJSON,
-    LinkedLedgerAccountToJSON
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedSupplier, LinkedSupplierFromJSON, LinkedSupplierToJSON } from './LinkedSupplier'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'

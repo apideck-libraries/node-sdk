@@ -14,24 +14,24 @@
 
 import { exists } from '../runtime'
 import {
-    EcommerceProductCategories,
-    EcommerceProductCategoriesFromJSON,
-    EcommerceProductCategoriesToJSON
+  EcommerceProductCategories,
+  EcommerceProductCategoriesFromJSON,
+  EcommerceProductCategoriesToJSON
 } from './EcommerceProductCategories'
 import {
-    EcommerceProductImages,
-    EcommerceProductImagesFromJSON,
-    EcommerceProductImagesToJSON
+  EcommerceProductImages,
+  EcommerceProductImagesFromJSON,
+  EcommerceProductImagesToJSON
 } from './EcommerceProductImages'
 import {
-    EcommerceProductOptions,
-    EcommerceProductOptionsFromJSON,
-    EcommerceProductOptionsToJSON
+  EcommerceProductOptions,
+  EcommerceProductOptionsFromJSON,
+  EcommerceProductOptionsToJSON
 } from './EcommerceProductOptions'
 import {
-    EcommerceProductVariants,
-    EcommerceProductVariantsFromJSON,
-    EcommerceProductVariantsToJSON
+  EcommerceProductVariants,
+  EcommerceProductVariantsFromJSON,
+  EcommerceProductVariantsToJSON
 } from './EcommerceProductVariants'
 
 /**

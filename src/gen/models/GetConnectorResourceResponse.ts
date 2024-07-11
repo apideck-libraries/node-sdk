@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ConnectorResource,
-    ConnectorResourceFromJSON,
-    ConnectorResourceToJSON
+  ConnectorResource,
+  ConnectorResourceFromJSON,
+  ConnectorResourceToJSON
 } from './ConnectorResource'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'

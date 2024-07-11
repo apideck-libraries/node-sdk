@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    AttachmentReferenceType,
-    AttachmentReferenceTypeFromJSON,
-    AttachmentReferenceTypeToJSON
+  AttachmentReferenceType,
+  AttachmentReferenceTypeFromJSON,
+  AttachmentReferenceTypeToJSON
 } from './AttachmentReferenceType'
 
 /**

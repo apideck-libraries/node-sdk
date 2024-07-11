@@ -15,9 +15,9 @@
 import { exists } from '../runtime'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import {
-    PaymentFrequency,
-    PaymentFrequencyFromJSON,
-    PaymentFrequencyToJSON
+  PaymentFrequency,
+  PaymentFrequencyFromJSON,
+  PaymentFrequencyToJSON
 } from './PaymentFrequency'
 import { PaymentUnit, PaymentUnitFromJSON, PaymentUnitToJSON } from './PaymentUnit'
 

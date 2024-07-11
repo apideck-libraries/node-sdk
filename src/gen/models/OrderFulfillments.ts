@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    OrderPickupDetails,
-    OrderPickupDetailsFromJSON,
-    OrderPickupDetailsToJSON
+  OrderPickupDetails,
+  OrderPickupDetailsFromJSON,
+  OrderPickupDetailsToJSON
 } from './OrderPickupDetails'
 
 /**

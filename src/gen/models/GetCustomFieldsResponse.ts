@@ -13,9 +13,9 @@
  */
 
 import {
-    CustomFieldFinder,
-    CustomFieldFinderFromJSON,
-    CustomFieldFinderToJSON
+  CustomFieldFinder,
+  CustomFieldFinderFromJSON,
+  CustomFieldFinderToJSON
 } from './CustomFieldFinder'
 
 /**

@@ -17,9 +17,9 @@ import { FileType, FileTypeFromJSON, FileTypeToJSON } from './FileType'
 import { LinkedFolder, LinkedFolderFromJSON, LinkedFolderToJSON } from './LinkedFolder'
 import { Owner, OwnerFromJSON, OwnerToJSON } from './Owner'
 import {
-    UnifiedFilePermissions,
-    UnifiedFilePermissionsFromJSON,
-    UnifiedFilePermissionsToJSON
+  UnifiedFilePermissions,
+  UnifiedFilePermissionsFromJSON,
+  UnifiedFilePermissionsToJSON
 } from './UnifiedFilePermissions'
 
 /**

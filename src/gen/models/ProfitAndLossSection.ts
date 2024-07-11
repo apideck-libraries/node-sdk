@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ProfitAndLossRecords,
-    ProfitAndLossRecordsFromJSON,
-    ProfitAndLossRecordsToJSON
+  ProfitAndLossRecords,
+  ProfitAndLossRecordsFromJSON,
+  ProfitAndLossRecordsToJSON
 } from './ProfitAndLossRecords'
 
 /**

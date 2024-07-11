@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ApiResourceCoverageCoverage,
-    ApiResourceCoverageCoverageFromJSON,
-    ApiResourceCoverageCoverageToJSON
+  ApiResourceCoverageCoverage,
+  ApiResourceCoverageCoverageFromJSON,
+  ApiResourceCoverageCoverageToJSON
 } from './ApiResourceCoverageCoverage'
 import { ResourceStatus, ResourceStatusFromJSON, ResourceStatusToJSON } from './ResourceStatus'
 

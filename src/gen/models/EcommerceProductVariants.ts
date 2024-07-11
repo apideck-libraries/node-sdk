@@ -14,14 +14,14 @@
 
 import { exists } from '../runtime'
 import {
-    EcommerceProductImages1,
-    EcommerceProductImages1FromJSON,
-    EcommerceProductImages1ToJSON
+  EcommerceProductImages1,
+  EcommerceProductImages1FromJSON,
+  EcommerceProductImages1ToJSON
 } from './EcommerceProductImages1'
 import {
-    EcommerceProductOptions1,
-    EcommerceProductOptions1FromJSON,
-    EcommerceProductOptions1ToJSON
+  EcommerceProductOptions1,
+  EcommerceProductOptions1FromJSON,
+  EcommerceProductOptions1ToJSON
 } from './EcommerceProductOptions1'
 
 /**

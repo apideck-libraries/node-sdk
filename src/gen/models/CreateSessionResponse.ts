@@ -13,9 +13,9 @@
  */
 
 import {
-    CreateSessionResponseData,
-    CreateSessionResponseDataFromJSON,
-    CreateSessionResponseDataToJSON
+  CreateSessionResponseData,
+  CreateSessionResponseDataFromJSON,
+  CreateSessionResponseDataToJSON
 } from './CreateSessionResponseData'
 
 /**

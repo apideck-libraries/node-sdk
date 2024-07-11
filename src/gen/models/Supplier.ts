@@ -18,9 +18,9 @@ import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccou
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
-    LinkedLedgerAccount,
-    LinkedLedgerAccountFromJSON,
-    LinkedLedgerAccountToJSON
+  LinkedLedgerAccount,
+  LinkedLedgerAccountFromJSON,
+  LinkedLedgerAccountToJSON
 } from './LinkedLedgerAccount'
 import { LinkedTaxRate, LinkedTaxRateFromJSON, LinkedTaxRateToJSON } from './LinkedTaxRate'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'

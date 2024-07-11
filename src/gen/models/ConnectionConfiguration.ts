@@ -14,9 +14,9 @@
 
 import { exists } from '../runtime'
 import {
-    ConnectionDefaults,
-    ConnectionDefaultsFromJSON,
-    ConnectionDefaultsToJSON
+  ConnectionDefaults,
+  ConnectionDefaultsFromJSON,
+  ConnectionDefaultsToJSON
 } from './ConnectionDefaults'
 
 /**
