@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 `sub_total` | **number** | Sub-total amount, normally before tax. | [optional] 
 `total_amount` | **number** | Debit entries are considered positive, and credit entries are considered negative. | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
-`tracking_category` | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
+`tracking_category` | [**DeprecatedLinkedTrackingCategory**](DeprecatedLinkedTrackingCategory.md) |  | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `customer` | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 `department_id` | **string** | A unique identifier for an object. | [optional] 
@@ -43,7 +44,8 @@ Name | Type | Description | Notes
 
 
 * [`LinkedTaxRate`](LinkedTaxRate.md)
-* [`LinkedTrackingCategory`](LinkedTrackingCategory.md)
+* [`DeprecatedLinkedTrackingCategory`](DeprecatedLinkedTrackingCategory.md)
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 * [`LinkedCustomer`](LinkedCustomer.md)
 * [`LinkedSupplier`](LinkedSupplier.md)
 

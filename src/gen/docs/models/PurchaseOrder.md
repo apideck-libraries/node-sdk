@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 `tax_code` | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `memo` | **string** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -93,6 +94,7 @@ Name | Type | Description | Notes
 
 
 
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
 
 

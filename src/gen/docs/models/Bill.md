@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 `accounting_by_row` | **boolean** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `discount_percentage` | **number** | Discount percentage applied to this transaction. | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -101,6 +102,7 @@ Name | Type | Description | Notes
 
 * [`BankAccount`](BankAccount.md)
 
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
 
 
