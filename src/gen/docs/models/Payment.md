@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 `allocations` | [**Array&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
 `note` | **string** | Optional note to be associated with the payment. | [optional] 
 `number` | **string** | Payment number. | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `display_id` | **string** | Payment id to be displayed. | [optional] 
@@ -102,6 +103,7 @@ Name | Type | Description | Notes
 * [`Allocation`](Allocation.md)
 
 
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 * [`CustomField`](CustomField.md)
 
 

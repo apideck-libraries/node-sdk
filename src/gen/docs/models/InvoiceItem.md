@@ -22,7 +22,8 @@ Name | Type | Description | Notes
 `asset_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `income_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 `expense_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
-`tracking_category` | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
+`tracking_category` | [**DeprecatedLinkedTrackingCategory**](DeprecatedLinkedTrackingCategory.md) |  | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `active` | **boolean** |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
@@ -67,7 +68,8 @@ Name | Type | Description | Notes
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
-* [`LinkedTrackingCategory`](LinkedTrackingCategory.md)
+* [`DeprecatedLinkedTrackingCategory`](DeprecatedLinkedTrackingCategory.md)
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
 
 

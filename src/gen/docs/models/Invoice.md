@@ -30,7 +30,8 @@ Name | Type | Description | Notes
 `balance` | **number** | Balance of invoice due. | [optional] 
 `deposit` | **number** | Amount of deposit made to this invoice. | [optional] 
 `customer_memo` | **string** | Customer memo | [optional] 
-`tracking_category` | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
+`tracking_category` | [**DeprecatedLinkedTrackingCategory**](DeprecatedLinkedTrackingCategory.md) |  | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `line_items` | [**Array&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
@@ -123,7 +124,8 @@ Name | Type | Description | Notes
 
 
 
-* [`LinkedTrackingCategory`](LinkedTrackingCategory.md)
+* [`DeprecatedLinkedTrackingCategory`](DeprecatedLinkedTrackingCategory.md)
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 * [`InvoiceLineItem`](InvoiceLineItem.md)
 * [`Address`](Address.md)
 * [`Address`](Address.md)

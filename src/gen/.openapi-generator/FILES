@@ -163,6 +163,7 @@ CreateTaxRateResponse.md
 CreateTenderResponse.md
 CreateTicketResponse.md
 CreateTimeOffRequestResponse.md
+CreateTrackingCategoryResponse.md
 CreateUploadSessionRequest.md
 CreateUploadSessionResponse.md
 CreateUserResponse.md
@@ -231,10 +232,12 @@ DeleteTaxRateResponse.md
 DeleteTenderResponse.md
 DeleteTicketResponse.md
 DeleteTimeOffRequestResponse.md
+DeleteTrackingCategoryResponse.md
 DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Department.md
+DeprecatedLinkedTrackingCategory.md
 Drive.md
 DriveGroup.md
 DriveGroupsFilter.md
@@ -422,6 +425,8 @@ GetTicketResponse.md
 GetTicketsResponse.md
 GetTimeOffRequestResponse.md
 GetTimeOffRequestsResponse.md
+GetTrackingCategoriesResponse.md
+GetTrackingCategoryResponse.md
 GetUploadSessionResponse.md
 GetUserResponse.md
 GetUsersResponse.md
@@ -479,6 +484,7 @@ LinkedLedgerAccount.md
 LinkedParentCustomer.md
 LinkedSupplier.md
 LinkedTaxRate.md
+LinkedTrackingCategories.md
 LinkedTrackingCategory.md
 Links.md
 Location.md
@@ -597,6 +603,7 @@ TimeOffRequestNotes.md
 TimeOffRequestsFilter.md
 TooManyRequestsResponse.md
 TooManyRequestsResponseDetail.md
+TrackingCategory.md
 TrackingItem.md
 UnauthorizedResponse.md
 UnexpectedErrorResponse.md
@@ -660,6 +667,7 @@ UpdateTaxRateResponse.md
 UpdateTenderResponse.md
 UpdateTicketResponse.md
 UpdateTimeOffRequestResponse.md
+UpdateTrackingCategoryResponse.md
 UpdateUploadSessionResponse.md
 UpdateUserResponse.md
 UpdateWebhookRequest.md
@@ -846,6 +854,7 @@ models/CreateTaxRateResponse.ts
 models/CreateTenderResponse.ts
 models/CreateTicketResponse.ts
 models/CreateTimeOffRequestResponse.ts
+models/CreateTrackingCategoryResponse.ts
 models/CreateUploadSessionRequest.ts
 models/CreateUploadSessionResponse.ts
 models/CreateUserResponse.ts
@@ -912,10 +921,12 @@ models/DeleteTaxRateResponse.ts
 models/DeleteTenderResponse.ts
 models/DeleteTicketResponse.ts
 models/DeleteTimeOffRequestResponse.ts
+models/DeleteTrackingCategoryResponse.ts
 models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Department.ts
+models/DeprecatedLinkedTrackingCategory.ts
 models/Drive.ts
 models/DriveGroup.ts
 models/DriveGroupsFilter.ts
@@ -1098,6 +1109,8 @@ models/GetTicketResponse.ts
 models/GetTicketsResponse.ts
 models/GetTimeOffRequestResponse.ts
 models/GetTimeOffRequestsResponse.ts
+models/GetTrackingCategoriesResponse.ts
+models/GetTrackingCategoryResponse.ts
 models/GetUploadSessionResponse.ts
 models/GetUserResponse.ts
 models/GetUsersResponse.ts
@@ -1149,6 +1162,7 @@ models/LinkedLedgerAccount.ts
 models/LinkedParentCustomer.ts
 models/LinkedSupplier.ts
 models/LinkedTaxRate.ts
+models/LinkedTrackingCategories.ts
 models/LinkedTrackingCategory.ts
 models/Links.ts
 models/Location.ts
@@ -1264,6 +1278,7 @@ models/TimeOffRequestNotes.ts
 models/TimeOffRequestsFilter.ts
 models/TooManyRequestsResponse.ts
 models/TooManyRequestsResponseDetail.ts
+models/TrackingCategory.ts
 models/TrackingItem.ts
 models/UnauthorizedResponse.ts
 models/UnexpectedErrorResponse.ts
@@ -1327,6 +1342,7 @@ models/UpdateTaxRateResponse.ts
 models/UpdateTenderResponse.ts
 models/UpdateTicketResponse.ts
 models/UpdateTimeOffRequestResponse.ts
+models/UpdateTrackingCategoryResponse.ts
 models/UpdateUploadSessionResponse.ts
 models/UpdateUserResponse.ts
 models/UpdateWebhookRequest.ts

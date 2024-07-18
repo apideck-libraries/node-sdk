@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 `terms` | **string** | Optional terms to be associated with the credit note. | [optional] 
 `billing_address` | [**Address**](Address.md) |  | [optional] 
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
+`tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
@@ -97,6 +98,7 @@ Name | Type | Description | Notes
 
 * [`Address`](Address.md)
 * [`Address`](Address.md)
+* [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
 * [`CustomField`](CustomField.md)
 
