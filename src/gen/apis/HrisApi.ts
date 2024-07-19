@@ -238,6 +238,7 @@ export interface HrisApiEmployeesOneRequest {
   raw?: boolean
   fields?: string | null
   filter?: EmployeesOneFilter
+  passThrough?: PassThroughQuery
 }
 
 export interface HrisApiEmployeesUpdateRequest {
@@ -1536,6 +1537,10 @@ export class HrisApi extends runtime.BaseAPI {
 
     if (requestParameters.filter !== undefined) {
       queryParameters['filter'] = requestParameters.filter
+    }
+
+    if (requestParameters.passThrough !== undefined) {
+      queryParameters['pass_through'] = requestParameters.passThrough
     }
 
     const headerParameters: runtime.HTTPHeaders = {}
