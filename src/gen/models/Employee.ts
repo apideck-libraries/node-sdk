@@ -54,7 +54,7 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
-  readonly id: string
+  id: string | null
   /**
    * The first name of the person.
    * @type {string}
@@ -596,6 +596,7 @@ export function EmployeeToJSON(value?: Employee | null): any {
     return null
   }
   return {
+    id: value.id,
     first_name: value.first_name,
     last_name: value.last_name,
     middle_name: value.middle_name,

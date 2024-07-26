@@ -1177,6 +1177,7 @@ const apideck = new Apideck({
 
 const params = {
   employee: {
+    id: '12345',
     first_name: 'Elon',
     last_name: 'Musk',
     middle_name: 'D.',
@@ -1686,6 +1687,7 @@ const apideck = new Apideck({
 const params = {
   id: 'id_example',
   employee: {
+    id: '12345',
     first_name: 'Elon',
     last_name: 'Musk',
     middle_name: 'D.',
