@@ -54,7 +54,7 @@ export interface Employee {
    * @type {string}
    * @memberof Employee
    */
-  id: string | null
+  id?: string | null
   /**
    * The first name of the person.
    * @type {string}
@@ -467,7 +467,7 @@ export function EmployeeFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     return json
   }
   return {
-    id: json['id'],
+    id: !exists(json, 'id') ? undefined : json['id'],
     first_name: !exists(json, 'first_name') ? undefined : json['first_name'],
     last_name: !exists(json, 'last_name') ? undefined : json['last_name'],
     middle_name: !exists(json, 'middle_name') ? undefined : json['middle_name'],
