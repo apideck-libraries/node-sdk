@@ -9231,6 +9231,7 @@ describe('AccountingApi', () => {
         trackingCategory: {
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           row_version: '1-12345',
           pass_through: [
@@ -9280,6 +9281,7 @@ describe('AccountingApi', () => {
             id: '12345',
             parent_id: '12345',
             name: 'Department',
+            code: '100',
             status: 'active',
             custom_mappings: {},
             row_version: '1-12345',
@@ -9389,6 +9391,7 @@ describe('AccountingApi', () => {
           id: '12345',
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           custom_mappings: {},
           row_version: '1-12345',
@@ -9462,6 +9465,7 @@ describe('AccountingApi', () => {
         trackingCategory: {
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           row_version: '1-12345',
           pass_through: [
