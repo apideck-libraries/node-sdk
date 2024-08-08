@@ -1291,6 +1291,7 @@ describe('HrisApi', () => {
       const { hris } = apideck
       const params = {
         employee: {
+          id: '12345',
           first_name: 'Elon',
           last_name: 'Musk',
           middle_name: 'D.',
@@ -2127,6 +2128,7 @@ describe('HrisApi', () => {
       const params = {
         id: 'id_example',
         employee: {
+          id: '12345',
           first_name: 'Elon',
           last_name: 'Musk',
           middle_name: 'D.',

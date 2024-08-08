@@ -8288,6 +8288,7 @@ const params = {
   trackingCategory: {
     parent_id: '12345',
     name: 'Department',
+    code: '100',
     status: 'active',
     row_version: '1-12345',
     pass_through: [
@@ -8586,6 +8587,7 @@ const params = {
   trackingCategory: {
     parent_id: '12345',
     name: 'Department',
+    code: '100',
     status: 'active',
     row_version: '1-12345',
     pass_through: [

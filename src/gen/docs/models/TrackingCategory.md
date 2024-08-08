@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | A unique identifier for an object. | [optional] 
 `parent_id` | **string** | A unique identifier for an object. | [optional] 
 `name` | **string** | The name of the tracking category. | [optional] 
+`code` | **string** | The code of the tracking category. | [optional] 
 `status` | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

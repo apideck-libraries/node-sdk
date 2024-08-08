@@ -40,6 +40,12 @@ export interface TrackingCategory {
    */
   name?: string
   /**
+   * The code of the tracking category.
+   * @type {string}
+   * @memberof TrackingCategory
+   */
+  code?: string | null
+  /**
    * Based on the status some functionality is enabled or disabled.
    * @type {string}
    * @memberof TrackingCategory
@@ -113,6 +119,7 @@ export function TrackingCategoryFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     parent_id: !exists(json, 'parent_id') ? undefined : json['parent_id'],
     name: !exists(json, 'name') ? undefined : json['name'],
+    code: !exists(json, 'code') ? undefined : json['code'],
     status: !exists(json, 'status') ? undefined : json['status'],
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
@@ -144,6 +151,7 @@ export function TrackingCategoryToJSON(value?: TrackingCategory | null): any {
   return {
     parent_id: value.parent_id,
     name: value.name,
+    code: value.code,
     status: value.status,
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through)
