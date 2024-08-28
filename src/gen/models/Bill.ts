@@ -263,6 +263,12 @@ export interface Bill {
    * @memberof Bill
    */
   pass_through?: PassThroughBody
+  /**
+   * Accounting period
+   * @type {string}
+   * @memberof Bill
+   */
+  accounting_period?: string | null
 }
 
 /**
@@ -350,7 +356,8 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     pass_through: !exists(json, 'pass_through')
       ? undefined
-      : PassThroughBodyFromJSON(json['pass_through'])
+      : PassThroughBodyFromJSON(json['pass_through']),
+    accounting_period: !exists(json, 'accounting_period') ? undefined : json['accounting_period']
   }
 }
 
@@ -406,6 +413,7 @@ export function BillToJSON(value?: Bill | null): any {
     discount_percentage: value.discount_percentage,
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
     row_version: value.row_version,
-    pass_through: PassThroughBodyToJSON(value.pass_through)
+    pass_through: PassThroughBodyToJSON(value.pass_through),
+    accounting_period: value.accounting_period
   }
 }

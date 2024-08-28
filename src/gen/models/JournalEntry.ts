@@ -111,6 +111,12 @@ export interface JournalEntry {
    */
   tracking_categories?: LinkedTrackingCategories | null
   /**
+   * Accounting period
+   * @type {string}
+   * @memberof JournalEntry
+   */
+  accounting_period?: string | null
+  /**
    * When custom mappings are configured on the resource, the result is included here.
    * @type {object}
    * @memberof JournalEntry
@@ -180,6 +186,7 @@ export function JournalEntryFromJSONTyped(json: any, ignoreDiscriminator: boolea
     tracking_categories: !exists(json, 'tracking_categories')
       ? undefined
       : LinkedTrackingCategoriesFromJSON(json['tracking_categories']),
+    accounting_period: !exists(json, 'accounting_period') ? undefined : json['accounting_period'],
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -223,6 +230,7 @@ export function JournalEntryToJSON(value?: JournalEntry | null): any {
     tax_code: value.tax_code,
     number: value.number,
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
+    accounting_period: value.accounting_period,
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through)
   }

@@ -56,7 +56,7 @@ export interface InvoiceLineItem {
    */
   code?: string | null
   /**
-   * Line number in the invoice
+   * Line number of the resource
    * @type {number}
    * @memberof InvoiceLineItem
    */

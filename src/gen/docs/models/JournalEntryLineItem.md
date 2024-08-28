@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 `department_id` | **string** | A unique identifier for an object. | [optional] 
 `location_id` | **string** | A unique identifier for an object. | [optional] 
+`line_number` | **number** | Line number of the resource | [optional] 
 
 
 
@@ -48,6 +49,7 @@ Name | Type | Description | Notes
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 * [`LinkedCustomer`](LinkedCustomer.md)
 * [`LinkedSupplier`](LinkedSupplier.md)
+
 
 
 

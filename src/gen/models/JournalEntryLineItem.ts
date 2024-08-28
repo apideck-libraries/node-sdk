@@ -122,6 +122,12 @@ export interface JournalEntryLineItem {
    * @memberof JournalEntryLineItem
    */
   readonly location_id?: string
+  /**
+   * Line number of the resource
+   * @type {number}
+   * @memberof JournalEntryLineItem
+   */
+  line_number?: number | null
 }
 
 /**
@@ -162,7 +168,8 @@ export function JournalEntryLineItemFromJSONTyped(
     customer: !exists(json, 'customer') ? undefined : LinkedCustomerFromJSON(json['customer']),
     supplier: !exists(json, 'supplier') ? undefined : LinkedSupplierFromJSON(json['supplier']),
     department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
-    location_id: !exists(json, 'location_id') ? undefined : json['location_id']
+    location_id: !exists(json, 'location_id') ? undefined : json['location_id'],
+    line_number: !exists(json, 'line_number') ? undefined : json['line_number']
   }
 }
 
@@ -184,6 +191,7 @@ export function JournalEntryLineItemToJSON(value?: JournalEntryLineItem | null):
     tracking_category: DeprecatedLinkedTrackingCategoryToJSON(value.tracking_category),
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
     customer: LinkedCustomerToJSON(value.customer),
-    supplier: LinkedSupplierToJSON(value.supplier)
+    supplier: LinkedSupplierToJSON(value.supplier),
+    line_number: value.line_number
   }
 }

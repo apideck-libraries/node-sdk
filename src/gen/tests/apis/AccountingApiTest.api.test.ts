@@ -481,7 +481,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
       const current = await accounting.billsAdd(params)
@@ -652,7 +653,8 @@ describe('AccountingApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
-            ]
+            ],
+            accounting_period: '01-24'
           }
         ],
         meta: {
@@ -893,7 +895,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
 
@@ -1076,7 +1079,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
       const current = await accounting.billsUpdate(params)
@@ -4688,7 +4692,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             },
             {
               description:
@@ -4751,7 +4756,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -4766,6 +4772,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4858,7 +4865,8 @@ describe('AccountingApi', () => {
                   address: [Object]
                 },
                 department_id: '12345',
-                location_id: '12345'
+                location_id: '12345',
+                line_number: 1
               },
               {
                 id: '12345',
@@ -4901,7 +4909,8 @@ describe('AccountingApi', () => {
                   address: [Object]
                 },
                 department_id: '12345',
-                location_id: '12345'
+                location_id: '12345',
+                line_number: 1
               }
             ],
             memo: 'Thank you for your business and have a great day!',
@@ -4916,6 +4925,7 @@ describe('AccountingApi', () => {
                 name: 'New York'
               }
             ],
+            accounting_period: '01-24',
             custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
@@ -5098,7 +5108,8 @@ describe('AccountingApi', () => {
                 }
               },
               department_id: '12345',
-              location_id: '12345'
+              location_id: '12345',
+              line_number: 1
             },
             {
               id: '12345',
@@ -5171,7 +5182,8 @@ describe('AccountingApi', () => {
                 }
               },
               department_id: '12345',
-              location_id: '12345'
+              location_id: '12345',
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -5186,6 +5198,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
@@ -5322,7 +5335,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             },
             {
               description:
@@ -5385,7 +5399,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -5400,6 +5415,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           row_version: '1-12345',
           pass_through: [
             {

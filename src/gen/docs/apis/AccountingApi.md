@@ -633,7 +633,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    accounting_period: '01-24'
   }
 }
 
@@ -1047,7 +1048,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    accounting_period: '01-24'
   }
 }
 
@@ -4114,7 +4116,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       },
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
@@ -4176,7 +4179,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       }
     ],
     memo: 'Thank you for your business and have a great day!',
@@ -4191,6 +4195,7 @@ const params = {
         name: 'New York'
       }
     ],
+    accounting_period: '01-24',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4553,7 +4558,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       },
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
@@ -4615,7 +4621,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       }
     ],
     memo: 'Thank you for your business and have a great day!',
@@ -4630,6 +4637,7 @@ const params = {
         name: 'New York'
       }
     ],
+    accounting_period: '01-24',
     row_version: '1-12345',
     pass_through: [
       {

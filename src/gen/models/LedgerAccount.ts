@@ -237,7 +237,8 @@ export enum LedgerAccountClassification {
   income = 'income',
   other_income = 'other_income',
   other_expense = 'other_expense',
-  costs_of_sales = 'costs_of_sales'
+  costs_of_sales = 'costs_of_sales',
+  other = 'other'
 }
 /**
  * @export

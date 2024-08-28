@@ -64,6 +64,8 @@ Name | Type | Description | Notes
 
 * `costs_of_sales` (value: `'costs_of_sales'`)
 
+* `other` (value: `'other'`)
+
 
 
 

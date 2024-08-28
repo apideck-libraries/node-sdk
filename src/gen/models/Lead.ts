@@ -54,6 +54,12 @@ export interface Lead {
    */
   owner_id?: string | null
   /**
+   * The name of the owner of the lead.
+   * @type {string}
+   * @memberof Lead
+   */
+  owner_name?: string | null
+  /**
    * The company the lead is associated with.
    * @type {string}
    * @memberof Lead
@@ -212,6 +218,7 @@ export function LeadFromJSONTyped(json: any, ignoreDiscriminator: boolean): Lead
     company_name: json['company_name'],
     id: !exists(json, 'id') ? undefined : json['id'],
     owner_id: !exists(json, 'owner_id') ? undefined : json['owner_id'],
+    owner_name: !exists(json, 'owner_name') ? undefined : json['owner_name'],
     company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     lead_id: !exists(json, 'lead_id') ? undefined : json['lead_id'],
     lead_source: !exists(json, 'lead_source') ? undefined : json['lead_source'],
@@ -262,6 +269,7 @@ export function LeadToJSON(value?: Lead | null): any {
     name: value.name,
     company_name: value.company_name,
     owner_id: value.owner_id,
+    owner_name: value.owner_name,
     company_id: value.company_id,
     lead_id: value.lead_id,
     lead_source: value.lead_source,
