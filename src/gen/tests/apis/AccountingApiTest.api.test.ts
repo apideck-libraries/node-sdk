@@ -48,6 +48,7 @@ describe('AccountingApi', () => {
               id: '12345'
             },
             description: 'A sample image',
+            parent_folder_id: '123',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -199,6 +200,7 @@ describe('AccountingApi', () => {
             id: '12345'
           },
           description: 'A sample image',
+          parent_folder_id: '123',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',

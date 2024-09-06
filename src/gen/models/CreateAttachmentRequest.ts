@@ -34,6 +34,12 @@ export interface CreateAttachmentRequest {
    */
   description?: string
   /**
+   * The folder id where this attachment belong to
+   * @type {string}
+   * @memberof CreateAttachmentRequest
+   */
+  parent_folder_id?: string
+  /**
    *
    * @type {PassThroughBody}
    * @memberof CreateAttachmentRequest
@@ -55,6 +61,7 @@ export function CreateAttachmentRequestFromJSONTyped(
   return {
     name: json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    parent_folder_id: !exists(json, 'parent_folder_id') ? undefined : json['parent_folder_id'],
     pass_through: !exists(json, 'pass_through')
       ? undefined
       : PassThroughBodyFromJSON(json['pass_through'])
@@ -71,6 +78,7 @@ export function CreateAttachmentRequestToJSON(value?: CreateAttachmentRequest | 
   return {
     name: value.name,
     description: value.description,
+    parent_folder_id: value.parent_folder_id,
     pass_through: PassThroughBodyToJSON(value.pass_through)
   }
 }
