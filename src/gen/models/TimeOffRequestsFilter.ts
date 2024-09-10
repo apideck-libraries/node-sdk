@@ -49,6 +49,12 @@ export interface TimeOffRequestsFilter {
    * @memberof TimeOffRequestsFilter
    */
   time_off_request_status?: TimeOffRequestsFilterTimeOffRequestStatus
+  /**
+   * Company ID
+   * @type {string}
+   * @memberof TimeOffRequestsFilter
+   */
+  company_id?: string
 }
 
 /**
@@ -82,7 +88,8 @@ export function TimeOffRequestsFilterFromJSONTyped(
     employee_id: !exists(json, 'employee_id') ? undefined : json['employee_id'],
     time_off_request_status: !exists(json, 'time_off_request_status')
       ? undefined
-      : json['time_off_request_status']
+      : json['time_off_request_status'],
+    company_id: !exists(json, 'company_id') ? undefined : json['company_id']
   }
 }
 
@@ -98,6 +105,7 @@ export function TimeOffRequestsFilterToJSON(value?: TimeOffRequestsFilter | null
     end_date: value.end_date,
     updated_since: value.updated_since,
     employee_id: value.employee_id,
-    time_off_request_status: value.time_off_request_status
+    time_off_request_status: value.time_off_request_status,
+    company_id: value.company_id
   }
 }

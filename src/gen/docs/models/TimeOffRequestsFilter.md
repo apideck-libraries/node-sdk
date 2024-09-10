@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `updated_since` | **string** | Minimum date the time off request was last created or modified | [optional] 
 `employee_id` | **string** | Employee ID | [optional] 
 `time_off_request_status` | **string** | Time off request status to filter on | [optional] 
+`company_id` | **string** | Company ID | [optional] 
 
 
 
