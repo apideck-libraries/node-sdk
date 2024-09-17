@@ -130,6 +130,7 @@ CreateDriveResponse.md
 CreateEcommerceCustomerResponse.md
 CreateEcommerceOrderResponse.md
 CreateEmployeeResponse.md
+CreateExpenseResponse.md
 CreateFileRequest.md
 CreateFileResponse.md
 CreateFolderRequest.md
@@ -205,6 +206,7 @@ DeleteDriveResponse.md
 DeleteEcommerceCustomerResponse.md
 DeleteEcommerceOrderResponse.md
 DeleteEmployeeResponse.md
+DeleteExpenseResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
 DeleteHrisCompanyResponse.md
@@ -282,6 +284,8 @@ Error.md
 ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
+Expense.md
+ExpenseLineItem.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FileStorageEventType.md
@@ -359,6 +363,8 @@ GetEmployeePayrollsResponse.md
 GetEmployeeResponse.md
 GetEmployeeSchedulesResponse.md
 GetEmployeesResponse.md
+GetExpenseResponse.md
+GetExpensesResponse.md
 GetFileResponse.md
 GetFilesResponse.md
 GetFolderResponse.md
@@ -643,6 +649,7 @@ UpdateDriveResponse.md
 UpdateEcommerceCustomerResponse.md
 UpdateEcommerceOrderResponse.md
 UpdateEmployeeResponse.md
+UpdateExpenseResponse.md
 UpdateFileRequest.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
@@ -830,6 +837,7 @@ models/CreateDriveResponse.ts
 models/CreateEcommerceCustomerResponse.ts
 models/CreateEcommerceOrderResponse.ts
 models/CreateEmployeeResponse.ts
+models/CreateExpenseResponse.ts
 models/CreateFileRequest.ts
 models/CreateFileResponse.ts
 models/CreateFolderRequest.ts
@@ -903,6 +911,7 @@ models/DeleteDriveResponse.ts
 models/DeleteEcommerceCustomerResponse.ts
 models/DeleteEcommerceOrderResponse.ts
 models/DeleteEmployeeResponse.ts
+models/DeleteExpenseResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
 models/DeleteHrisCompanyResponse.ts
@@ -977,6 +986,8 @@ models/EmploymentStatus.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
+models/Expense.ts
+models/ExpenseLineItem.ts
 models/FileStorageEventType.ts
 models/FileType.ts
 models/FilesFilter.ts
@@ -1052,6 +1063,8 @@ models/GetEmployeePayrollsResponse.ts
 models/GetEmployeeResponse.ts
 models/GetEmployeeSchedulesResponse.ts
 models/GetEmployeesResponse.ts
+models/GetExpenseResponse.ts
+models/GetExpensesResponse.ts
 models/GetFileResponse.ts
 models/GetFilesResponse.ts
 models/GetFolderResponse.ts
@@ -1327,6 +1340,7 @@ models/UpdateDriveResponse.ts
 models/UpdateEcommerceCustomerResponse.ts
 models/UpdateEcommerceOrderResponse.ts
 models/UpdateEmployeeResponse.ts
+models/UpdateExpenseResponse.ts
 models/UpdateFileRequest.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts

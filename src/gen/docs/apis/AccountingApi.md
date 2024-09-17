@@ -36,6 +36,11 @@
 * [Delete Department](#departmentsDelete)
 * [Get Department](#departmentsOne)
 * [Update Department](#departmentsUpdate)
+* [Create Expense](#expensesAdd)
+* [List Expenses](#expensesAll)
+* [Delete Expense](#expensesDelete)
+* [Get Expense](#expensesOne)
+* [Update Expense](#expensesUpdate)
 * [Create Invoice Item](#invoiceItemsAdd)
 * [List Invoice Items](#invoiceItemsAll)
 * [Delete Invoice Item](#invoiceItemsDelete)
@@ -3305,6 +3310,472 @@ const params = {
 
 try {
   const { data } = await apideck.accounting.departmentsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesAdd"></a>
+# Create Expense
+
+
+Method: **expensesAdd**
+
+```typescript
+accountingApi.expensesAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense** | [Expense](../models/Expense.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateExpenseResponse`](../models/CreateExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  expense: {
+    number: 'OIT00546',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    account_id: '123456',
+    customer_id: '12345',
+    supplier_id: '12345',
+    company_id: '12345',
+    department_id: '12345',
+    currency: 'USD',
+    currency_rate: 0.69,
+    type: 'expense',
+    memo: 'For travel expenses incurred on 2024-05-15',
+    tax_rate: {
+      id: '123456',
+      rate: 10
+    },
+    total_amount: 275,
+    line_items: [
+      {
+        tracking_categories: [
+          {
+            id: '123456',
+            name: 'New York'
+          }
+        ],
+        account_id: '123456',
+        customer_id: '12345',
+        department_id: '12345',
+        location_id: '12345',
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        description: 'Travel US.',
+        total_amount: 275,
+        billable: true
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.expensesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesAll"></a>
+# List Expenses
+
+
+Method: **expensesAll**
+
+```typescript
+accountingApi.expensesAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetExpensesResponse`](../models/GetExpensesResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.expensesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesDelete"></a>
+# Delete Expense
+
+
+Method: **expensesDelete**
+
+```typescript
+accountingApi.expensesDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteExpenseResponse`](../models/DeleteExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.expensesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesOne"></a>
+# Get Expense
+
+
+Method: **expensesOne**
+
+```typescript
+accountingApi.expensesOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetExpenseResponse`](../models/GetExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.expensesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesUpdate"></a>
+# Update Expense
+
+
+Method: **expensesUpdate**
+
+```typescript
+accountingApi.expensesUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense** | [Expense](../models/Expense.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateExpenseResponse`](../models/UpdateExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  expense: {
+    number: 'OIT00546',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    account_id: '123456',
+    customer_id: '12345',
+    supplier_id: '12345',
+    company_id: '12345',
+    department_id: '12345',
+    currency: 'USD',
+    currency_rate: 0.69,
+    type: 'expense',
+    memo: 'For travel expenses incurred on 2024-05-15',
+    tax_rate: {
+      id: '123456',
+      rate: 10
+    },
+    total_amount: 275,
+    line_items: [
+      {
+        tracking_categories: [
+          {
+            id: '123456',
+            name: 'New York'
+          }
+        ],
+        account_id: '123456',
+        customer_id: '12345',
+        department_id: '12345',
+        location_id: '12345',
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        description: 'Travel US.',
+        total_amount: 275,
+        billable: true
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.expensesUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

@@ -3681,6 +3681,464 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#expensesAdd', () => {
+    const endpoint = '/accounting/expenses'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        expense: {
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.expensesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesAll', () => {
+    const endpoint = '/accounting/expenses'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            number: 'OIT00546',
+            transaction_date: '2021-05-01T12:00:00.000Z',
+            account_id: '123456',
+            customer_id: '12345',
+            supplier_id: '12345',
+            company_id: '12345',
+            department_id: '12345',
+            currency: 'USD',
+            currency_rate: 0.69,
+            type: 'expense',
+            memo: 'For travel expenses incurred on 2024-05-15',
+            tax_rate: {
+              id: '123456',
+              code: 'N-T',
+              name: 'GST on Purchases',
+              rate: 10
+            },
+            total_amount: 275,
+            line_items: [
+              {
+                id: '12345',
+                tracking_categories: [[Object]],
+                account_id: '123456',
+                customer_id: '12345',
+                department_id: '12345',
+                location_id: '12345',
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases',
+                  rate: 10
+                },
+                description: 'Travel US.',
+                total_amount: 275,
+                billable: true
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            custom_mappings: {},
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.expensesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesDelete', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.expensesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesOne', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'one',
+        data: {
+          id: '12345',
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            code: 'N-T',
+            name: 'GST on Purchases',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              id: '12345',
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          custom_mappings: {},
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.expensesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesUpdate', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        expense: {
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.expensesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#invoiceItemsAdd', () => {
     const endpoint = '/accounting/invoice-items'
 
