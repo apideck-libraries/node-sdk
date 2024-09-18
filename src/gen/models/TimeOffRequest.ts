@@ -99,6 +99,12 @@ export interface TimeOffRequest {
    */
   amount?: number | null
   /**
+   * The day part of the time off request.
+   * @type {string}
+   * @memberof TimeOffRequest
+   */
+  day_part?: string | null
+  /**
    *
    * @type {TimeOffRequestNotes}
    * @memberof TimeOffRequest
@@ -207,6 +213,7 @@ export function TimeOffRequestFromJSONTyped(
     approval_date: !exists(json, 'approval_date') ? undefined : json['approval_date'],
     units: !exists(json, 'units') ? undefined : json['units'],
     amount: !exists(json, 'amount') ? undefined : json['amount'],
+    day_part: !exists(json, 'day_part') ? undefined : json['day_part'],
     notes: !exists(json, 'notes') ? undefined : TimeOffRequestNotesFromJSON(json['notes']),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
@@ -247,6 +254,7 @@ export function TimeOffRequestToJSON(value?: TimeOffRequest | null): any {
     approval_date: value.approval_date,
     units: value.units,
     amount: value.amount,
+    day_part: value.day_part,
     notes: TimeOffRequestNotesToJSON(value.notes),
     pass_through: PassThroughBodyToJSON(value.pass_through),
     policy_type: value.policy_type
