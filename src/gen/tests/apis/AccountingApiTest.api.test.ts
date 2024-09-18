@@ -48,6 +48,7 @@ describe('AccountingApi', () => {
               id: '12345'
             },
             description: 'A sample image',
+            parent_folder_id: '123',
             updated_by: '12345',
             created_by: '12345',
             updated_at: '2020-09-30T07:43:32.000Z',
@@ -199,6 +200,7 @@ describe('AccountingApi', () => {
             id: '12345'
           },
           description: 'A sample image',
+          parent_folder_id: '123',
           updated_by: '12345',
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
@@ -312,6 +314,581 @@ describe('AccountingApi', () => {
       const { accounting } = apideck
       const params = {} as any
       const current = await accounting.balanceSheetOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billPaymentsAdd', () => {
+    const endpoint = '/accounting/bill-payments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        billPayment: {
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 1000,
+          reference: '123456',
+          payment_method: 'cash',
+          payment_method_reference: '123456',
+          payment_method_id: '12345',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          company_id: '12345',
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99,
+              allocation_id: '123456'
+            }
+          ],
+          note: 'Some notes about this transaction',
+          number: '123456',
+          tracking_categories: [
+            {
+              id: '123456',
+              name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          display_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.billPaymentsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billPaymentsAll', () => {
+    const endpoint = '/accounting/bill-payments'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            downstream_id: '12345',
+            currency: 'USD',
+            currency_rate: 0.69,
+            total_amount: 1000,
+            reference: '123456',
+            payment_method: 'cash',
+            payment_method_reference: '123456',
+            payment_method_id: '12345',
+            account: {
+              id: '123456',
+              name: 'Bank account',
+              nominal_code: 'N091',
+              code: '453'
+            },
+            transaction_date: '2021-05-01T12:00:00.000Z',
+            supplier: {
+              id: '12345',
+              display_id: 'SUPP00101',
+              display_name: 'Windsurf Shop',
+              company_name: 'The boring company',
+              address: {
+                id: '123',
+                type: 'primary',
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                street_number: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postal_code: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contact_name: 'Elon Musk',
+                salutation: 'Mr',
+                phone_number: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                row_version: '1-12345'
+              }
+            },
+            company_id: '12345',
+            reconciled: true,
+            status: 'authorised',
+            type: 'accounts_receivable',
+            allocations: [
+              {
+                id: '123456',
+                type: 'invoice',
+                code: 'N091',
+                amount: 49.99,
+                allocation_id: '123456'
+              }
+            ],
+            note: 'Some notes about this transaction',
+            number: '123456',
+            tracking_categories: [
+              {
+                id: '123456',
+                name: 'New York'
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            row_version: '1-12345',
+            display_id: '123456',
+            custom_mappings: {},
+            updated_by: '12345',
+            created_by: '12345',
+            created_at: '2020-09-30T07:43:32.000Z',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.billPaymentsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billPaymentsDelete', () => {
+    const endpoint = '/accounting/bill-payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.billPaymentsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billPaymentsOne', () => {
+    const endpoint = '/accounting/bill-payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'one',
+        data: {
+          id: '12345',
+          downstream_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 1000,
+          reference: '123456',
+          payment_method: 'cash',
+          payment_method_reference: '123456',
+          payment_method_id: '12345',
+          account: {
+            id: '123456',
+            name: 'Bank account',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          supplier: {
+            id: '12345',
+            display_id: 'SUPP00101',
+            display_name: 'Windsurf Shop',
+            company_name: 'The boring company',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          company_id: '12345',
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              code: 'N091',
+              amount: 49.99,
+              allocation_id: '123456'
+            }
+          ],
+          note: 'Some notes about this transaction',
+          number: '123456',
+          tracking_categories: [
+            {
+              id: '123456',
+              name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          display_id: '123456',
+          custom_mappings: {},
+          updated_by: '12345',
+          created_by: '12345',
+          created_at: '2020-09-30T07:43:32.000Z',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.billPaymentsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#billPaymentsUpdate', () => {
+    const endpoint = '/accounting/bill-payments/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'payments',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        billPayment: {
+          currency: 'USD',
+          currency_rate: 0.69,
+          total_amount: 1000,
+          reference: '123456',
+          payment_method: 'cash',
+          payment_method_reference: '123456',
+          payment_method_id: '12345',
+          account: {
+            id: '123456',
+            nominal_code: 'N091',
+            code: '453'
+          },
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          supplier: {
+            id: '12345',
+            display_name: 'Windsurf Shop',
+            address: {
+              id: '123',
+              type: 'primary',
+              string: '25 Spring Street, Blackburn, VIC 3130',
+              name: 'HQ US',
+              line1: 'Main street',
+              line2: 'apt #',
+              line3: 'Suite #',
+              line4: 'delivery instructions',
+              street_number: '25',
+              city: 'San Francisco',
+              state: 'CA',
+              postal_code: '94104',
+              country: 'US',
+              latitude: '40.759211',
+              longitude: '-73.984638',
+              county: 'Santa Clara',
+              contact_name: 'Elon Musk',
+              salutation: 'Mr',
+              phone_number: '111-111-1111',
+              fax: '122-111-1111',
+              email: 'elon@musk.com',
+              website: 'https://elonmusk.com',
+              notes: 'Address notes or delivery instructions.',
+              row_version: '1-12345'
+            }
+          },
+          company_id: '12345',
+          reconciled: true,
+          status: 'authorised',
+          type: 'accounts_receivable',
+          allocations: [
+            {
+              id: '123456',
+              type: 'invoice',
+              amount: 49.99,
+              allocation_id: '123456'
+            }
+          ],
+          note: 'Some notes about this transaction',
+          number: '123456',
+          tracking_categories: [
+            {
+              id: '123456',
+              name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          display_id: '123456',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.billPaymentsUpdate(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })
@@ -481,7 +1058,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
       const current = await accounting.billsAdd(params)
@@ -652,7 +1230,8 @@ describe('AccountingApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
-            ]
+            ],
+            accounting_period: '01-24'
           }
         ],
         meta: {
@@ -893,7 +1472,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
 
@@ -1076,7 +1656,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          accounting_period: '01-24'
         }
       } as any
       const current = await accounting.billsUpdate(params)
@@ -3100,6 +3681,464 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#expensesAdd', () => {
+    const endpoint = '/accounting/expenses'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'add',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        expense: {
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.expensesAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesAll', () => {
+    const endpoint = '/accounting/expenses'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            number: 'OIT00546',
+            transaction_date: '2021-05-01T12:00:00.000Z',
+            account_id: '123456',
+            customer_id: '12345',
+            supplier_id: '12345',
+            company_id: '12345',
+            department_id: '12345',
+            currency: 'USD',
+            currency_rate: 0.69,
+            type: 'expense',
+            memo: 'For travel expenses incurred on 2024-05-15',
+            tax_rate: {
+              id: '123456',
+              code: 'N-T',
+              name: 'GST on Purchases',
+              rate: 10
+            },
+            total_amount: 275,
+            line_items: [
+              {
+                id: '12345',
+                tracking_categories: [[Object]],
+                account_id: '123456',
+                customer_id: '12345',
+                department_id: '12345',
+                location_id: '12345',
+                tax_rate: {
+                  id: '123456',
+                  code: 'N-T',
+                  name: 'GST on Purchases',
+                  rate: 10
+                },
+                description: 'Travel US.',
+                total_amount: 275,
+                billable: true
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            custom_mappings: {},
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            row_version: '1-12345',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.expensesAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesDelete', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.expensesDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesOne', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'one',
+        data: {
+          id: '12345',
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            code: 'N-T',
+            name: 'GST on Purchases',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              id: '12345',
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                code: 'N-T',
+                name: 'GST on Purchases',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          custom_mappings: {},
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.expensesOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#expensesUpdate', () => {
+    const endpoint = '/accounting/expenses/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'Expenses',
+        operation: 'update',
+        data: {
+          id: '12345'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        expense: {
+          number: 'OIT00546',
+          transaction_date: '2021-05-01T12:00:00.000Z',
+          account_id: '123456',
+          customer_id: '12345',
+          supplier_id: '12345',
+          company_id: '12345',
+          department_id: '12345',
+          currency: 'USD',
+          currency_rate: 0.69,
+          type: 'expense',
+          memo: 'For travel expenses incurred on 2024-05-15',
+          tax_rate: {
+            id: '123456',
+            rate: 10
+          },
+          total_amount: 275,
+          line_items: [
+            {
+              tracking_categories: [
+                {
+                  id: '123456',
+                  name: 'New York'
+                }
+              ],
+              account_id: '123456',
+              customer_id: '12345',
+              department_id: '12345',
+              location_id: '12345',
+              tax_rate: {
+                id: '123456',
+                rate: 10
+              },
+              description: 'Travel US.',
+              total_amount: 275,
+              billable: true
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          row_version: '1-12345',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.expensesUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#invoiceItemsAdd', () => {
     const endpoint = '/accounting/invoice-items'
 
@@ -4688,7 +5727,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             },
             {
               description:
@@ -4751,7 +5791,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -4766,6 +5807,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4858,7 +5900,8 @@ describe('AccountingApi', () => {
                   address: [Object]
                 },
                 department_id: '12345',
-                location_id: '12345'
+                location_id: '12345',
+                line_number: 1
               },
               {
                 id: '12345',
@@ -4901,7 +5944,8 @@ describe('AccountingApi', () => {
                   address: [Object]
                 },
                 department_id: '12345',
-                location_id: '12345'
+                location_id: '12345',
+                line_number: 1
               }
             ],
             memo: 'Thank you for your business and have a great day!',
@@ -4916,6 +5960,7 @@ describe('AccountingApi', () => {
                 name: 'New York'
               }
             ],
+            accounting_period: '01-24',
             custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
@@ -5098,7 +6143,8 @@ describe('AccountingApi', () => {
                 }
               },
               department_id: '12345',
-              location_id: '12345'
+              location_id: '12345',
+              line_number: 1
             },
             {
               id: '12345',
@@ -5171,7 +6217,8 @@ describe('AccountingApi', () => {
                 }
               },
               department_id: '12345',
-              location_id: '12345'
+              location_id: '12345',
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -5186,6 +6233,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
@@ -5322,7 +6370,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             },
             {
               description:
@@ -5385,7 +6434,8 @@ describe('AccountingApi', () => {
                   notes: 'Address notes or delivery instructions.',
                   row_version: '1-12345'
                 }
-              }
+              },
+              line_number: 1
             }
           ],
           memo: 'Thank you for your business and have a great day!',
@@ -5400,6 +6450,7 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          accounting_period: '01-24',
           row_version: '1-12345',
           pass_through: [
             {
@@ -6353,11 +7404,11 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 49.99,
+          total_amount: 1000,
           reference: '123456',
-          payment_method: 'Credit Card',
+          payment_method: 'cash',
           payment_method_reference: '123456',
-          payment_method_id: '123456',
+          payment_method_id: '12345',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -6373,7 +7424,6 @@ describe('AccountingApi', () => {
             email: 'boring@boring.com'
           },
           supplier: {
-            id: '12345',
             display_name: 'Windsurf Shop',
             address: {
               id: '123',
@@ -6414,8 +7464,8 @@ describe('AccountingApi', () => {
               allocation_id: '123456'
             }
           ],
-          note: 'Some notes about this payment',
-          number: 'Some notes about this payment',
+          note: 'Some notes about this transaction',
+          number: '123456',
           tracking_categories: [
             {
               id: '123456',
@@ -6476,15 +7526,15 @@ describe('AccountingApi', () => {
         operation: 'all',
         data: [
           {
-            id: '123456',
+            id: '12345',
             downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
-            total_amount: 49.99,
+            total_amount: 1000,
             reference: '123456',
-            payment_method: 'Credit Card',
+            payment_method: 'cash',
             payment_method_reference: '123456',
-            payment_method_id: '123456',
+            payment_method_id: '12345',
             accounts_receivable_account_type: 'Account',
             accounts_receivable_account_id: '123456',
             account: {
@@ -6547,8 +7597,8 @@ describe('AccountingApi', () => {
                 allocation_id: '123456'
               }
             ],
-            note: 'Some notes about this payment',
-            number: 'Some notes about this payment',
+            note: 'Some notes about this transaction',
+            number: '123456',
             tracking_categories: [
               {
                 id: '123456',
@@ -6669,15 +7719,15 @@ describe('AccountingApi', () => {
         resource: 'payments',
         operation: 'one',
         data: {
-          id: '123456',
+          id: '12345',
           downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 49.99,
+          total_amount: 1000,
           reference: '123456',
-          payment_method: 'Credit Card',
+          payment_method: 'cash',
           payment_method_reference: '123456',
-          payment_method_id: '123456',
+          payment_method_id: '12345',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -6740,8 +7790,8 @@ describe('AccountingApi', () => {
               allocation_id: '123456'
             }
           ],
-          note: 'Some notes about this payment',
-          number: 'Some notes about this payment',
+          note: 'Some notes about this transaction',
+          number: '123456',
           tracking_categories: [
             {
               id: '123456',
@@ -6829,11 +7879,11 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 49.99,
+          total_amount: 1000,
           reference: '123456',
-          payment_method: 'Credit Card',
+          payment_method: 'cash',
           payment_method_reference: '123456',
-          payment_method_id: '123456',
+          payment_method_id: '12345',
           accounts_receivable_account_type: 'Account',
           accounts_receivable_account_id: '123456',
           account: {
@@ -6849,7 +7899,6 @@ describe('AccountingApi', () => {
             email: 'boring@boring.com'
           },
           supplier: {
-            id: '12345',
             display_name: 'Windsurf Shop',
             address: {
               id: '123',
@@ -6890,8 +7939,8 @@ describe('AccountingApi', () => {
               allocation_id: '123456'
             }
           ],
-          note: 'Some notes about this payment',
-          number: 'Some notes about this payment',
+          note: 'Some notes about this transaction',
+          number: '123456',
           tracking_categories: [
             {
               id: '123456',
@@ -9231,6 +10280,7 @@ describe('AccountingApi', () => {
         trackingCategory: {
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           row_version: '1-12345',
           pass_through: [
@@ -9280,6 +10330,7 @@ describe('AccountingApi', () => {
             id: '12345',
             parent_id: '12345',
             name: 'Department',
+            code: '100',
             status: 'active',
             custom_mappings: {},
             row_version: '1-12345',
@@ -9389,6 +10440,7 @@ describe('AccountingApi', () => {
           id: '12345',
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           custom_mappings: {},
           row_version: '1-12345',
@@ -9462,6 +10514,7 @@ describe('AccountingApi', () => {
         trackingCategory: {
           parent_id: '12345',
           name: 'Department',
+          code: '100',
           status: 'active',
           row_version: '1-12345',
           pass_through: [

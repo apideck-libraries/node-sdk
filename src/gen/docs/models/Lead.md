@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `company_name` | **string** | The name of the company the lead is associated with. | 
 `id` | **string** | Unique identifier for the contact. | [optional] 
 `owner_id` | **string** | The owner of the lead. | [optional] 
+`owner_name` | **string** | The name of the owner of the lead. | [optional] 
 `company_id` | **string** | The company the lead is associated with. | [optional] 
 `lead_id` | **string** | The identifier of the lead. | [optional] 
 `lead_source` | **string** | The source of the lead. | [optional] 
@@ -39,6 +40,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

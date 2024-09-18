@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `name` | **string** | The name of the file | 
 `description` | **string** | Optional description of the file. | [optional] 
+`parent_folder_id` | **string** | The folder id where this attachment belong to | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 * [`PassThroughBody`](PassThroughBody.md)

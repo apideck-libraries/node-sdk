@@ -7,6 +7,8 @@
 
 * `bill` (value: `'bill'`)
 
+* `expense` (value: `'expense'`)
+
 
 ---
 

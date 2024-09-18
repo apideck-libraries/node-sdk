@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `owner_id` | **string** | Owner ID to filter on | [optional] 
 `contact_id` | **string** | Primary contact ID to filter on | [optional] 
 `updated_since` | **Date** |  | [optional] 
+`type` | **string** | Type to filter on | [optional] 
 
 
 

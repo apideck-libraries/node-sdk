@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 `first_name` | **string** | First name of the lead to filter on | [optional] 
 `last_name` | **string** | Last name of the lead to filter on | [optional] 
 `email` | **string** | E-mail of the lead to filter on | [optional] 
+`phone_number` | **string** | Phone number of the lead to filter on | [optional] 
 
 
 

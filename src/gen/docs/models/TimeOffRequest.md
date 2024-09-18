@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 `approval_date` | **string** | The date the request was approved | [optional] 
 `units` | **string** | The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;. | [optional] 
 `amount` | **number** | The amount of time off requested. | [optional] 
+`day_part` | **string** | The day part of the time off request. | [optional] 
 `notes` | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -84,6 +85,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

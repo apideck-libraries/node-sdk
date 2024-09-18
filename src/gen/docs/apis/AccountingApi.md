@@ -10,6 +10,11 @@
 * [Download Attachment](#attachmentsDownload)
 * [Get Attachment](#attachmentsOne)
 * [Get BalanceSheet](#balanceSheetOne)
+* [Create Bill Payment](#billPaymentsAdd)
+* [List Bill Payments](#billPaymentsAll)
+* [Delete Bill Payment](#billPaymentsDelete)
+* [Get Bill Payment](#billPaymentsOne)
+* [Update Bill Payment](#billPaymentsUpdate)
 * [Create Bill](#billsAdd)
 * [List Bills](#billsAll)
 * [Delete Bill](#billsDelete)
@@ -31,6 +36,11 @@
 * [Delete Department](#departmentsDelete)
 * [Get Department](#departmentsOne)
 * [Update Department](#departmentsUpdate)
+* [Create Expense](#expensesAdd)
+* [List Expenses](#expensesAll)
+* [Delete Expense](#expensesDelete)
+* [Get Expense](#expensesOne)
+* [Update Expense](#expensesUpdate)
 * [Create Invoice Item](#invoiceItemsAdd)
 * [List Invoice Items](#invoiceItemsAll)
 * [Delete Invoice Item](#invoiceItemsDelete)
@@ -450,6 +460,531 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="billPaymentsAdd"></a>
+# Create Bill Payment
+
+
+Method: **billPaymentsAdd**
+
+```typescript
+accountingApi.billPaymentsAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billPayment** | [BillPayment](../models/BillPayment.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateBillPaymentResponse`](../models/CreateBillPaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Bill Payment created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  billPayment: {
+    currency: 'USD',
+    currency_rate: 0.69,
+    total_amount: 1000,
+    reference: '123456',
+    payment_method: 'cash',
+    payment_method_reference: '123456',
+    payment_method_id: '12345',
+    account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
+        row_version: '1-12345'
+      }
+    },
+    company_id: '12345',
+    reconciled: true,
+    status: 'authorised',
+    type: 'accounts_receivable',
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99,
+        allocation_id: '123456'
+      }
+    ],
+    note: 'Some notes about this transaction',
+    number: '123456',
+    tracking_categories: [
+      {
+        id: '123456',
+        name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    display_id: '123456',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.billPaymentsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billPaymentsAll"></a>
+# List Bill Payments
+
+
+Method: **billPaymentsAll**
+
+```typescript
+accountingApi.billPaymentsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **filter** | **PaymentsFilter** | Apply filters | (optional) 
+ **sort** | **PaymentsSort** | Apply sorting | (optional) 
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBillPaymentsResponse`](../models/GetBillPaymentsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill Payments | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.billPaymentsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billPaymentsDelete"></a>
+# Delete Bill Payment
+
+
+Method: **billPaymentsDelete**
+
+```typescript
+accountingApi.billPaymentsDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteBillPaymentResponse`](../models/DeleteBillPaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill Payment deleted | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.billPaymentsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billPaymentsOne"></a>
+# Get Bill Payment
+
+
+Method: **billPaymentsOne**
+
+```typescript
+accountingApi.billPaymentsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBillPaymentResponse`](../models/GetBillPaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill Payment | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.billPaymentsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="billPaymentsUpdate"></a>
+# Update Bill Payment
+
+
+Method: **billPaymentsUpdate**
+
+```typescript
+accountingApi.billPaymentsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billPayment** | [BillPayment](../models/BillPayment.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateBillPaymentResponse`](../models/UpdateBillPaymentResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bill Payment updated | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  billPayment: {
+    currency: 'USD',
+    currency_rate: 0.69,
+    total_amount: 1000,
+    reference: '123456',
+    payment_method: 'cash',
+    payment_method_reference: '123456',
+    payment_method_id: '12345',
+    account: {
+      id: '123456',
+      nominal_code: 'N091',
+      code: '453'
+    },
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    supplier: {
+      id: '12345',
+      display_name: 'Windsurf Shop',
+      address: {
+        id: '123',
+        type: 'primary',
+        string: '25 Spring Street, Blackburn, VIC 3130',
+        name: 'HQ US',
+        line1: 'Main street',
+        line2: 'apt #',
+        line3: 'Suite #',
+        line4: 'delivery instructions',
+        street_number: '25',
+        city: 'San Francisco',
+        state: 'CA',
+        postal_code: '94104',
+        country: 'US',
+        latitude: '40.759211',
+        longitude: '-73.984638',
+        county: 'Santa Clara',
+        contact_name: 'Elon Musk',
+        salutation: 'Mr',
+        phone_number: '111-111-1111',
+        fax: '122-111-1111',
+        email: 'elon@musk.com',
+        website: 'https://elonmusk.com',
+        notes: 'Address notes or delivery instructions.',
+        row_version: '1-12345'
+      }
+    },
+    company_id: '12345',
+    reconciled: true,
+    status: 'authorised',
+    type: 'accounts_receivable',
+    allocations: [
+      {
+        id: '123456',
+        type: 'invoice',
+        amount: 49.99,
+        allocation_id: '123456'
+      }
+    ],
+    note: 'Some notes about this transaction',
+    number: '123456',
+    tracking_categories: [
+      {
+        id: '123456',
+        name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    display_id: '123456',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.billPaymentsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="billsAdd"></a>
 # Create Bill
 
@@ -633,7 +1168,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    accounting_period: '01-24'
   }
 }
 
@@ -1047,7 +1583,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    accounting_period: '01-24'
   }
 }
 
@@ -2785,6 +3322,472 @@ try {
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
+<a name="expensesAdd"></a>
+# Create Expense
+
+
+Method: **expensesAdd**
+
+```typescript
+accountingApi.expensesAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense** | [Expense](../models/Expense.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateExpenseResponse`](../models/CreateExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  expense: {
+    number: 'OIT00546',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    account_id: '123456',
+    customer_id: '12345',
+    supplier_id: '12345',
+    company_id: '12345',
+    department_id: '12345',
+    currency: 'USD',
+    currency_rate: 0.69,
+    type: 'expense',
+    memo: 'For travel expenses incurred on 2024-05-15',
+    tax_rate: {
+      id: '123456',
+      rate: 10
+    },
+    total_amount: 275,
+    line_items: [
+      {
+        tracking_categories: [
+          {
+            id: '123456',
+            name: 'New York'
+          }
+        ],
+        account_id: '123456',
+        customer_id: '12345',
+        department_id: '12345',
+        location_id: '12345',
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        description: 'Travel US.',
+        total_amount: 275,
+        billable: true
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.expensesAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesAll"></a>
+# List Expenses
+
+
+Method: **expensesAll**
+
+```typescript
+accountingApi.expensesAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+
+
+
+### Response Type
+
+[`GetExpensesResponse`](../models/GetExpensesResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.expensesAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesDelete"></a>
+# Delete Expense
+
+
+Method: **expensesDelete**
+
+```typescript
+accountingApi.expensesDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteExpenseResponse`](../models/DeleteExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.expensesDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesOne"></a>
+# Get Expense
+
+
+Method: **expensesOne**
+
+```typescript
+accountingApi.expensesOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`GetExpenseResponse`](../models/GetExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.expensesOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="expensesUpdate"></a>
+# Update Expense
+
+
+Method: **expensesUpdate**
+
+```typescript
+accountingApi.expensesUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense** | [Expense](../models/Expense.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateExpenseResponse`](../models/UpdateExpenseResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Expenses | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  expense: {
+    number: 'OIT00546',
+    transaction_date: '2021-05-01T12:00:00.000Z',
+    account_id: '123456',
+    customer_id: '12345',
+    supplier_id: '12345',
+    company_id: '12345',
+    department_id: '12345',
+    currency: 'USD',
+    currency_rate: 0.69,
+    type: 'expense',
+    memo: 'For travel expenses incurred on 2024-05-15',
+    tax_rate: {
+      id: '123456',
+      rate: 10
+    },
+    total_amount: 275,
+    line_items: [
+      {
+        tracking_categories: [
+          {
+            id: '123456',
+            name: 'New York'
+          }
+        ],
+        account_id: '123456',
+        customer_id: '12345',
+        department_id: '12345',
+        location_id: '12345',
+        tax_rate: {
+          id: '123456',
+          rate: 10
+        },
+        description: 'Travel US.',
+        total_amount: 275,
+        billable: true
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
+    row_version: '1-12345',
+    pass_through: [
+      {
+        service_id: 'string',
+        operation_id: 'string',
+        extend_object: {},
+        extend_paths: [
+          {
+            path: '$.nested.property',
+            value: [Object]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.expensesUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
 <a name="invoiceItemsAdd"></a>
 # Create Invoice Item
 
@@ -4114,7 +5117,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       },
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
@@ -4176,7 +5180,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       }
     ],
     memo: 'Thank you for your business and have a great day!',
@@ -4191,6 +5196,7 @@ const params = {
         name: 'New York'
       }
     ],
+    accounting_period: '01-24',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4553,7 +5559,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       },
       {
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
@@ -4615,7 +5622,8 @@ const params = {
             notes: 'Address notes or delivery instructions.',
             row_version: '1-12345'
           }
-        }
+        },
+        line_number: 1
       }
     ],
     memo: 'Thank you for your business and have a great day!',
@@ -4630,6 +5638,7 @@ const params = {
         name: 'New York'
       }
     ],
+    accounting_period: '01-24',
     row_version: '1-12345',
     pass_through: [
       {
@@ -5632,11 +6641,11 @@ const params = {
   payment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 49.99,
+    total_amount: 1000,
     reference: '123456',
-    payment_method: 'Credit Card',
+    payment_method: 'cash',
     payment_method_reference: '123456',
-    payment_method_id: '123456',
+    payment_method_id: '12345',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
     account: {
@@ -5652,7 +6661,6 @@ const params = {
       email: 'boring@boring.com'
     },
     supplier: {
-      id: '12345',
       display_name: 'Windsurf Shop',
       address: {
         id: '123',
@@ -5693,8 +6701,8 @@ const params = {
         allocation_id: '123456'
       }
     ],
-    note: 'Some notes about this payment',
-    number: 'Some notes about this payment',
+    note: 'Some notes about this transaction',
+    number: '123456',
     tracking_categories: [
       {
         id: '123456',
@@ -6009,11 +7017,11 @@ const params = {
   payment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 49.99,
+    total_amount: 1000,
     reference: '123456',
-    payment_method: 'Credit Card',
+    payment_method: 'cash',
     payment_method_reference: '123456',
-    payment_method_id: '123456',
+    payment_method_id: '12345',
     accounts_receivable_account_type: 'Account',
     accounts_receivable_account_id: '123456',
     account: {
@@ -6029,7 +7037,6 @@ const params = {
       email: 'boring@boring.com'
     },
     supplier: {
-      id: '12345',
       display_name: 'Windsurf Shop',
       address: {
         id: '123',
@@ -6070,8 +7077,8 @@ const params = {
         allocation_id: '123456'
       }
     ],
-    note: 'Some notes about this payment',
-    number: 'Some notes about this payment',
+    note: 'Some notes about this transaction',
+    number: '123456',
     tracking_categories: [
       {
         id: '123456',
@@ -8288,6 +9295,7 @@ const params = {
   trackingCategory: {
     parent_id: '12345',
     name: 'Department',
+    code: '100',
     status: 'active',
     row_version: '1-12345',
     pass_through: [
@@ -8586,6 +9594,7 @@ const params = {
   trackingCategory: {
     parent_id: '12345',
     name: 'Department',
+    code: '100',
     status: 'active',
     row_version: '1-12345',
     pass_through: [

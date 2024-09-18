@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 `id` | **string** | A unique identifier for an object. | [optional] 
 `row_id` | **string** | Row ID | [optional] 
 `code` | **string** | User defined item code | [optional] 
-`line_number` | **number** | Line number in the invoice | [optional] 
+`line_number` | **number** | Line number of the resource | [optional] 
 `description` | **string** | User defined description | [optional] 
 `type` | **string** | Item type | [optional] 
 `tax_amount` | **number** | Tax amount | [optional] 

@@ -1291,6 +1291,7 @@ describe('HrisApi', () => {
       const { hris } = apideck
       const params = {
         employee: {
+          id: '12345',
           first_name: 'Elon',
           last_name: 'Musk',
           middle_name: 'D.',
@@ -2127,6 +2128,7 @@ describe('HrisApi', () => {
       const params = {
         id: 'id_example',
         employee: {
+          id: '12345',
           first_name: 'Elon',
           last_name: 'Musk',
           middle_name: 'D.',
@@ -2548,6 +2550,7 @@ describe('HrisApi', () => {
           approval_date: '2022-03-21',
           units: 'hours',
           amount: 3.5,
+          day_part: 'morning',
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
@@ -2609,6 +2612,7 @@ describe('HrisApi', () => {
             approval_date: '2022-03-21',
             units: 'hours',
             amount: 3.5,
+            day_part: 'morning',
             notes: {
               employee: 'Relaxing on the beach for a few hours.',
               manager: 'Enjoy!'
@@ -2731,6 +2735,7 @@ describe('HrisApi', () => {
           approval_date: '2022-03-21',
           units: 'hours',
           amount: 3.5,
+          day_part: 'morning',
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'
@@ -2818,6 +2823,7 @@ describe('HrisApi', () => {
           approval_date: '2022-03-21',
           units: 'hours',
           amount: 3.5,
+          day_part: 'morning',
           notes: {
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!'

@@ -59,6 +59,7 @@ BankAccount.md
 Benefit.md
 Bill.md
 BillLineItem.md
+BillPayment.md
 BillsFilter.md
 BillsSort.md
 Branch.md
@@ -112,6 +113,7 @@ CreateApplicantResponse.md
 CreateApplicationResponse.md
 CreateAttachmentRequest.md
 CreateAttachmentResponse.md
+CreateBillPaymentResponse.md
 CreateBillResponse.md
 CreateCommentResponse.md
 CreateCompanyResponse.md
@@ -128,6 +130,7 @@ CreateDriveResponse.md
 CreateEcommerceCustomerResponse.md
 CreateEcommerceOrderResponse.md
 CreateEmployeeResponse.md
+CreateExpenseResponse.md
 CreateFileRequest.md
 CreateFileResponse.md
 CreateFolderRequest.md
@@ -189,6 +192,7 @@ DeleteActivityResponse.md
 DeleteApplicantResponse.md
 DeleteApplicationResponse.md
 DeleteAttachmentResponse.md
+DeleteBillPaymentResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
 DeleteCompanyResponse.md
@@ -202,6 +206,7 @@ DeleteDriveResponse.md
 DeleteEcommerceCustomerResponse.md
 DeleteEcommerceOrderResponse.md
 DeleteEmployeeResponse.md
+DeleteExpenseResponse.md
 DeleteFileResponse.md
 DeleteFolderResponse.md
 DeleteHrisCompanyResponse.md
@@ -237,6 +242,7 @@ DeleteUploadSessionResponse.md
 DeleteUserResponse.md
 DeleteWebhookResponse.md
 Department.md
+DeprecatedLinkedSupplier.md
 DeprecatedLinkedTrackingCategory.md
 Drive.md
 DriveGroup.md
@@ -278,6 +284,8 @@ Error.md
 ExecuteWebhookEventRequest.md
 ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
+Expense.md
+ExpenseLineItem.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FileStorageEventType.md
@@ -307,6 +315,8 @@ GetApplicationsResponse.md
 GetAttachmentResponse.md
 GetAttachmentsResponse.md
 GetBalanceSheetResponse.md
+GetBillPaymentResponse.md
+GetBillPaymentsResponse.md
 GetBillResponse.md
 GetBillsResponse.md
 GetCollectionResponse.md
@@ -353,6 +363,8 @@ GetEmployeePayrollsResponse.md
 GetEmployeeResponse.md
 GetEmployeeSchedulesResponse.md
 GetEmployeesResponse.md
+GetExpenseResponse.md
+GetExpensesResponse.md
 GetFileResponse.md
 GetFilesResponse.md
 GetFolderResponse.md
@@ -528,6 +540,8 @@ Payment.md
 PaymentCard.md
 PaymentFrequency.md
 PaymentRequiredResponse.md
+PaymentStatus.md
+PaymentType.md
 PaymentUnit.md
 PaymentsFilter.md
 PaymentsSort.md
@@ -617,6 +631,7 @@ UpdateAccountingLocationResponse.md
 UpdateActivityResponse.md
 UpdateApplicantResponse.md
 UpdateApplicationResponse.md
+UpdateBillPaymentResponse.md
 UpdateBillResponse.md
 UpdateCommentResponse.md
 UpdateCompanyResponse.md
@@ -634,6 +649,7 @@ UpdateDriveResponse.md
 UpdateEcommerceCustomerResponse.md
 UpdateEcommerceOrderResponse.md
 UpdateEmployeeResponse.md
+UpdateExpenseResponse.md
 UpdateFileRequest.md
 UpdateFileResponse.md
 UpdateFolderRequest.md
@@ -752,6 +768,7 @@ models/BankAccount.ts
 models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
+models/BillPayment.ts
 models/BillsFilter.ts
 models/BillsSort.ts
 models/Branch.ts
@@ -803,6 +820,7 @@ models/CreateApplicantResponse.ts
 models/CreateApplicationResponse.ts
 models/CreateAttachmentRequest.ts
 models/CreateAttachmentResponse.ts
+models/CreateBillPaymentResponse.ts
 models/CreateBillResponse.ts
 models/CreateCommentResponse.ts
 models/CreateCompanyResponse.ts
@@ -819,6 +837,7 @@ models/CreateDriveResponse.ts
 models/CreateEcommerceCustomerResponse.ts
 models/CreateEcommerceOrderResponse.ts
 models/CreateEmployeeResponse.ts
+models/CreateExpenseResponse.ts
 models/CreateFileRequest.ts
 models/CreateFileResponse.ts
 models/CreateFolderRequest.ts
@@ -878,6 +897,7 @@ models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
 models/DeleteApplicationResponse.ts
 models/DeleteAttachmentResponse.ts
+models/DeleteBillPaymentResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
 models/DeleteCompanyResponse.ts
@@ -891,6 +911,7 @@ models/DeleteDriveResponse.ts
 models/DeleteEcommerceCustomerResponse.ts
 models/DeleteEcommerceOrderResponse.ts
 models/DeleteEmployeeResponse.ts
+models/DeleteExpenseResponse.ts
 models/DeleteFileResponse.ts
 models/DeleteFolderResponse.ts
 models/DeleteHrisCompanyResponse.ts
@@ -926,6 +947,7 @@ models/DeleteUploadSessionResponse.ts
 models/DeleteUserResponse.ts
 models/DeleteWebhookResponse.ts
 models/Department.ts
+models/DeprecatedLinkedSupplier.ts
 models/DeprecatedLinkedTrackingCategory.ts
 models/Drive.ts
 models/DriveGroup.ts
@@ -964,6 +986,8 @@ models/EmploymentStatus.ts
 models/ExecuteWebhookEventRequest.ts
 models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
+models/Expense.ts
+models/ExpenseLineItem.ts
 models/FileStorageEventType.ts
 models/FileType.ts
 models/FilesFilter.ts
@@ -991,6 +1015,8 @@ models/GetApplicationsResponse.ts
 models/GetAttachmentResponse.ts
 models/GetAttachmentsResponse.ts
 models/GetBalanceSheetResponse.ts
+models/GetBillPaymentResponse.ts
+models/GetBillPaymentsResponse.ts
 models/GetBillResponse.ts
 models/GetBillsResponse.ts
 models/GetCollectionResponse.ts
@@ -1037,6 +1063,8 @@ models/GetEmployeePayrollsResponse.ts
 models/GetEmployeeResponse.ts
 models/GetEmployeeSchedulesResponse.ts
 models/GetEmployeesResponse.ts
+models/GetExpenseResponse.ts
+models/GetExpensesResponse.ts
 models/GetFileResponse.ts
 models/GetFilesResponse.ts
 models/GetFolderResponse.ts
@@ -1207,6 +1235,8 @@ models/Payment.ts
 models/PaymentCard.ts
 models/PaymentFrequency.ts
 models/PaymentRequiredResponse.ts
+models/PaymentStatus.ts
+models/PaymentType.ts
 models/PaymentUnit.ts
 models/PaymentsFilter.ts
 models/PaymentsSort.ts
@@ -1292,6 +1322,7 @@ models/UpdateAccountingLocationResponse.ts
 models/UpdateActivityResponse.ts
 models/UpdateApplicantResponse.ts
 models/UpdateApplicationResponse.ts
+models/UpdateBillPaymentResponse.ts
 models/UpdateBillResponse.ts
 models/UpdateCommentResponse.ts
 models/UpdateCompanyResponse.ts
@@ -1309,6 +1340,7 @@ models/UpdateDriveResponse.ts
 models/UpdateEcommerceCustomerResponse.ts
 models/UpdateEcommerceOrderResponse.ts
 models/UpdateEmployeeResponse.ts
+models/UpdateExpenseResponse.ts
 models/UpdateFileRequest.ts
 models/UpdateFileResponse.ts
 models/UpdateFolderRequest.ts

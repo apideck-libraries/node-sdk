@@ -59,6 +59,12 @@
 
 * `accounting_purchase_order_deleted` (value: `'accounting.purchase-order.deleted'`)
 
+* `accounting_expense_created` (value: `'accounting.expense.created'`)
+
+* `accounting_expense_updated` (value: `'accounting.expense.updated'`)
+
+* `accounting_expense_deleted` (value: `'accounting.expense.deleted'`)
+
 
 ---
 

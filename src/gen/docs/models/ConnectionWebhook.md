@@ -239,6 +239,12 @@ Name | Type | Description | Notes
 
 * `ats_application_deleted` (value: `'ats.application.deleted'`)
 
+* `accounting_expense_created` (value: `'accounting.expense.created'`)
+
+* `accounting_expense_updated` (value: `'accounting.expense.updated'`)
+
+* `accounting_expense_deleted` (value: `'accounting.expense.deleted'`)
+
 
 
 
