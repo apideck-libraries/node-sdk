@@ -346,6 +346,7 @@ GetCreditNoteResponse.md
 GetCreditNotesResponse.md
 GetCustomFieldsResponse.md
 GetCustomMappingResponse.md
+GetCustomMappingsResponse.md
 GetCustomerResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
@@ -1046,6 +1047,7 @@ models/GetCreditNoteResponse.ts
 models/GetCreditNotesResponse.ts
 models/GetCustomFieldsResponse.ts
 models/GetCustomMappingResponse.ts
+models/GetCustomMappingsResponse.ts
 models/GetCustomerResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
