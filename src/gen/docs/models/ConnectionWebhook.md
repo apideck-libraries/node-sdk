@@ -153,11 +153,11 @@ Name | Type | Description | Notes
 
 * `accounting_supplier_deleted` (value: `'accounting.supplier.deleted'`)
 
-* `accounting_purchase_order_created` (value: `'accounting.purchase-order.created'`)
+* `accounting_purchase_order_created` (value: `'accounting.purchase_order.created'`)
 
-* `accounting_purchase_order_updated` (value: `'accounting.purchase-order.updated'`)
+* `accounting_purchase_order_updated` (value: `'accounting.purchase_order.updated'`)
 
-* `accounting_purchase_order_deleted` (value: `'accounting.purchase-order.deleted'`)
+* `accounting_purchase_order_deleted` (value: `'accounting.purchase_order.deleted'`)
 
 * `pos_order_created` (value: `'pos.order.created'`)
 
