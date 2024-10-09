@@ -293,15 +293,13 @@ describe('AccountingApi', () => {
               created_by: '12345',
               updated_at: '2020-09-30T07:43:32.000Z',
               created_at: '2020-09-30T07:43:32.000Z',
-              uncategorized_items: [
-                {
-                  account_id: '123456',
-                  code: '1100',
-                  name: 'Current assets',
-                  value: 1000,
-                  items: []
-                }
-              ]
+              uncategorized_items: {
+                account_id: '123456',
+                code: '1100',
+                name: 'Current assets',
+                value: 1000,
+                items: [{}]
+              }
             }
           ]
         }

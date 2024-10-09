@@ -18,11 +18,6 @@ import {
   BalanceSheetAccountFromJSON,
   BalanceSheetAccountToJSON
 } from './BalanceSheetAccount'
-import {
-  BalanceSheetAccounts,
-  BalanceSheetAccountsFromJSON,
-  BalanceSheetAccountsToJSON
-} from './BalanceSheetAccounts'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 
 /**
@@ -117,10 +112,10 @@ export interface BalanceSheetReports {
   readonly created_at?: Date | null
   /**
    *
-   * @type {BalanceSheetAccounts}
+   * @type {BalanceSheetAccount}
    * @memberof BalanceSheetReports
    */
-  uncategorized_items?: BalanceSheetAccounts | null
+  uncategorized_items?: BalanceSheetAccount
 }
 
 export function BalanceSheetReportsFromJSON(json: any): BalanceSheetReports {
@@ -159,7 +154,7 @@ export function BalanceSheetReportsFromJSONTyped(
       : new Date(json['created_at']),
     uncategorized_items: !exists(json, 'uncategorized_items')
       ? undefined
-      : BalanceSheetAccountsFromJSON(json['uncategorized_items'])
+      : BalanceSheetAccountFromJSON(json['uncategorized_items'])
   }
 }
 
@@ -179,6 +174,6 @@ export function BalanceSheetReportsToJSON(value?: BalanceSheetReports | null): a
     start_date: value.start_date,
     currency: CurrencyToJSON(value.currency),
     net_assets: value.net_assets,
-    uncategorized_items: BalanceSheetAccountsToJSON(value.uncategorized_items)
+    uncategorized_items: BalanceSheetAccountToJSON(value.uncategorized_items)
   }
 }

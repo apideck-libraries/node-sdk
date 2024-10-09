@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
-`uncategorized_items` | [**BalanceSheetAccounts**](BalanceSheetAccounts.md) |  | [optional] 
+`uncategorized_items` | [**BalanceSheetAccount**](BalanceSheetAccount.md) |  | [optional] 
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 
 
-* [`BalanceSheetAccounts`](BalanceSheetAccounts.md)
+* [`BalanceSheetAccount`](BalanceSheetAccount.md)
 
 ---
 
