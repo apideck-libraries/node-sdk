@@ -253,6 +253,7 @@ export interface CrmApiContactsOneRequest {
   serviceId?: string
   raw?: boolean
   fields?: string | null
+  filter?: ContactsFilter
 }
 
 export interface CrmApiContactsUpdateRequest {
@@ -1485,6 +1486,10 @@ export class CrmApi extends runtime.BaseAPI {
 
     if (requestParameters.fields !== undefined) {
       queryParameters['fields'] = requestParameters.fields
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     const headerParameters: runtime.HTTPHeaders = {}
