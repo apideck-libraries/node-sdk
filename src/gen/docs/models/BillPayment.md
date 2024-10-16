@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `reconciled` | **boolean** | Indicates if the transaction has been reconciled. | [optional] 
 `status` | [**PaymentStatus**](PaymentStatus.md) |  | [optional] 
-`type` | [**PaymentType**](PaymentType.md) |  | [optional] 
-`allocations` | [**Array&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
+`type` | **string** | Type of payment | [optional] 
+`allocations` | [**Array&lt;BillPaymentAllocations&gt;**](BillPaymentAllocations.md) |  | [optional] 
 `note` | **string** | Note associated with the transaction | [optional] 
 `number` | **string** | Number associated with the transaction | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
@@ -35,6 +35,21 @@ Name | Type | Description | Notes
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
+
+
+
+
+<a name="BillPaymentType"></a>
+## Enum: BillPayment.type
+
+
+* `payable_credit` (value: `'accounts_payable_credit'`)
+
+* `payable_overpayment` (value: `'accounts_payable_overpayment'`)
+
+* `payable_prepayment` (value: `'accounts_payable_prepayment'`)
+
+* `payable` (value: `'accounts_payable'`)
 
 
 
@@ -55,8 +70,8 @@ Name | Type | Description | Notes
 
 
 * [`PaymentStatus`](PaymentStatus.md)
-* [`PaymentType`](PaymentType.md)
-* [`Allocation`](Allocation.md)
+
+* [`BillPaymentAllocations`](BillPaymentAllocations.md)
 
 
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)

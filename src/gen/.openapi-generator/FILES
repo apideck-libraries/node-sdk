@@ -60,6 +60,7 @@ Benefit.md
 Bill.md
 BillLineItem.md
 BillPayment.md
+BillPaymentAllocations.md
 BillsFilter.md
 BillsSort.md
 Branch.md
@@ -770,6 +771,7 @@ models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
 models/BillPayment.ts
+models/BillPaymentAllocations.ts
 models/BillsFilter.ts
 models/BillsSort.ts
 models/Branch.ts

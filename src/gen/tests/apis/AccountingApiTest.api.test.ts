@@ -352,7 +352,7 @@ describe('AccountingApi', () => {
         billPayment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -396,11 +396,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               amount: 49.99,
               allocation_id: '123456'
             }
@@ -471,7 +471,7 @@ describe('AccountingApi', () => {
             downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
-            total_amount: 1000,
+            total_amount: 49.99,
             reference: '123456',
             payment_method: 'cash',
             payment_method_reference: '123456',
@@ -518,11 +518,11 @@ describe('AccountingApi', () => {
             company_id: '12345',
             reconciled: true,
             status: 'authorised',
-            type: 'accounts_receivable',
+            type: 'accounts_payable',
             allocations: [
               {
-                id: '123456',
-                type: 'invoice',
+                id: '12345',
+                type: 'bill',
                 code: 'N091',
                 amount: 49.99,
                 allocation_id: '123456'
@@ -654,7 +654,7 @@ describe('AccountingApi', () => {
           downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -701,11 +701,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               code: 'N091',
               amount: 49.99,
               allocation_id: '123456'
@@ -800,7 +800,7 @@ describe('AccountingApi', () => {
         billPayment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -844,11 +844,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               amount: 49.99,
               allocation_id: '123456'
             }
@@ -7402,7 +7402,7 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -7528,7 +7528,7 @@ describe('AccountingApi', () => {
             downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
-            total_amount: 1000,
+            total_amount: 49.99,
             reference: '123456',
             payment_method: 'cash',
             payment_method_reference: '123456',
@@ -7721,7 +7721,7 @@ describe('AccountingApi', () => {
           downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -7877,7 +7877,7 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',

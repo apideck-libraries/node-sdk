@@ -13,7 +13,11 @@
  */
 
 import { exists } from '../runtime'
-import { Allocation, AllocationFromJSON, AllocationToJSON } from './Allocation'
+import {
+  BillPaymentAllocations,
+  BillPaymentAllocationsFromJSON,
+  BillPaymentAllocationsToJSON
+} from './BillPaymentAllocations'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import {
@@ -29,7 +33,6 @@ import {
 } from './LinkedTrackingCategories'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 import { PaymentStatus, PaymentStatusFromJSON, PaymentStatusToJSON } from './PaymentStatus'
-import { PaymentType, PaymentTypeFromJSON, PaymentTypeToJSON } from './PaymentType'
 
 /**
  *
@@ -128,17 +131,17 @@ export interface BillPayment {
    */
   status?: PaymentStatus
   /**
-   *
-   * @type {PaymentType}
+   * Type of payment
+   * @type {string}
    * @memberof BillPayment
    */
-  type?: PaymentType
+  type?: BillPaymentType
   /**
    *
-   * @type {Array<Allocation>}
+   * @type {Array<BillPaymentAllocations>}
    * @memberof BillPayment
    */
-  allocations?: Array<Allocation>
+  allocations?: Array<BillPaymentAllocations>
   /**
    * Note associated with the transaction
    * @type {string}
@@ -213,6 +216,17 @@ export interface BillPayment {
   pass_through?: PassThroughBody
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum BillPaymentType {
+  payable_credit = 'accounts_payable_credit',
+  payable_overpayment = 'accounts_payable_overpayment',
+  payable_prepayment = 'accounts_payable_prepayment',
+  payable = 'accounts_payable'
+}
+
 export function BillPaymentFromJSON(json: any): BillPayment {
   return BillPaymentFromJSONTyped(json, false)
 }
@@ -239,10 +253,10 @@ export function BillPaymentFromJSONTyped(json: any, ignoreDiscriminator: boolean
     company_id: !exists(json, 'company_id') ? undefined : json['company_id'],
     reconciled: !exists(json, 'reconciled') ? undefined : json['reconciled'],
     status: !exists(json, 'status') ? undefined : PaymentStatusFromJSON(json['status']),
-    type: !exists(json, 'type') ? undefined : PaymentTypeFromJSON(json['type']),
+    type: !exists(json, 'type') ? undefined : json['type'],
     allocations: !exists(json, 'allocations')
       ? undefined
-      : (json['allocations'] as Array<any>).map(AllocationFromJSON),
+      : (json['allocations'] as Array<any>).map(BillPaymentAllocationsFromJSON),
     note: !exists(json, 'note') ? undefined : json['note'],
     number: !exists(json, 'number') ? undefined : json['number'],
     tracking_categories: !exists(json, 'tracking_categories')
@@ -294,11 +308,11 @@ export function BillPaymentToJSON(value?: BillPayment | null): any {
     company_id: value.company_id,
     reconciled: value.reconciled,
     status: PaymentStatusToJSON(value.status),
-    type: PaymentTypeToJSON(value.type),
+    type: value.type,
     allocations:
       value.allocations === undefined
         ? undefined
-        : (value.allocations as Array<any>).map(AllocationToJSON),
+        : (value.allocations as Array<any>).map(BillPaymentAllocationsToJSON),
     note: value.note,
     number: value.number,
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
