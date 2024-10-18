@@ -1497,7 +1497,7 @@ describe('CrmApi', () => {
             }
           ],
           tags: ['New'],
-          opportunity_ids: ['string'],
+          opportunity_ids: ['12345'],
           pass_through: [
             {
               service_id: 'string',
@@ -1642,7 +1642,7 @@ describe('CrmApi', () => {
             custom_mappings: {},
             updated_at: '2017-08-12T20:43:21.291Z',
             created_at: '2017-08-12T20:43:21.291Z',
-            opportunity_ids: ['string'],
+            opportunity_ids: ['12345'],
             pass_through: [
               {
                 service_id: 'string',
@@ -1842,7 +1842,7 @@ describe('CrmApi', () => {
           custom_mappings: {},
           updated_at: '2017-08-12T20:43:21.291Z',
           created_at: '2017-08-12T20:43:21.291Z',
-          opportunity_ids: ['string'],
+          opportunity_ids: ['12345'],
           pass_through: [
             {
               service_id: 'string',
@@ -2000,7 +2000,7 @@ describe('CrmApi', () => {
             }
           ],
           tags: ['New'],
-          opportunity_ids: ['string'],
+          opportunity_ids: ['12345'],
           pass_through: [
             {
               service_id: 'string',

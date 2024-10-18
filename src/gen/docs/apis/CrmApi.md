@@ -1349,7 +1349,7 @@ const params = {
       'New'
     ],
     opportunity_ids: [
-      'string'
+      '12345'
     ],
     pass_through: [
       {
@@ -1744,7 +1744,7 @@ const params = {
       'New'
     ],
     opportunity_ids: [
-      'string'
+      '12345'
     ],
     pass_through: [
       {
