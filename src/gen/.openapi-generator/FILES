@@ -698,6 +698,7 @@ VaultApi.md
 VaultApiTest.api.test.ts
 VaultEventType.md
 VirtualWebhooks.md
+VirtualWebhooksResources.md
 WalletDetails.md
 Webhook.md
 WebhookApi.md
@@ -1389,6 +1390,7 @@ models/ValidateConnectionStateResponse.ts
 models/ValidateConnectionStateResponseData.ts
 models/VaultEventType.ts
 models/VirtualWebhooks.ts
+models/VirtualWebhooksResources.ts
 models/WalletDetails.ts
 models/Webhook.ts
 models/WebhookEvent.ts

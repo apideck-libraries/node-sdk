@@ -8,7 +8,7 @@ Virtual webhook config for the connector.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `request_rate` | [**RequestRate**](RequestRate.md) |  | 
-`resources` | **object** | The resources that will be requested from downstream. | [optional] 
+`resources` | [**{ [key: string]: VirtualWebhooksResources; }**](VirtualWebhooksResources.md) | The resources that will be requested from downstream. | [optional] 
 
 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 * [`RequestRate`](RequestRate.md)
-
+* [`VirtualWebhooksResources`](VirtualWebhooksResources.md)
 
 ---
 
