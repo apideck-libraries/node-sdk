@@ -5764,6 +5764,11 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    subsidiaries: [
+      {
+        id: 'string'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {
@@ -6102,6 +6107,11 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    subsidiaries: [
+      {
+        id: 'string'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {

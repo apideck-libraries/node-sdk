@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 `sub_account` | **boolean** | Whether the account is a sub account or not. | [optional] 
 `sub_accounts` | **Array&lt;object&gt;** | The sub accounts of the account. | [optional] 
 `last_reconciliation_date` | **Date** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
+`subsidiaries` | **Array&lt;object&gt;** | The subsidiaries the account belongs to. | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -152,6 +153,7 @@ Name | Type | Description | Notes
 * [`BankAccount`](BankAccount.md)
 * [`LedgerAccountCategories`](LedgerAccountCategories.md)
 * [`LedgerAccountParentAccount`](LedgerAccountParentAccount.md)
+
 
 
 

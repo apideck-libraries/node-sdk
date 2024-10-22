@@ -6545,6 +6545,11 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -6646,6 +6651,11 @@ describe('AccountingApi', () => {
               }
             ],
             last_reconciliation_date: '2020-09-30',
+            subsidiaries: [
+              {
+                id: 'string'
+              }
+            ],
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -6807,6 +6817,11 @@ describe('AccountingApi', () => {
             }
           ],
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -6918,6 +6933,11 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
