@@ -14,10 +14,25 @@
 
 import { exists } from '../runtime'
 import {
-  BalanceSheetAccount,
-  BalanceSheetAccountFromJSON,
-  BalanceSheetAccountToJSON
-} from './BalanceSheetAccount'
+  BalanceSheetAssetsAccount,
+  BalanceSheetAssetsAccountFromJSON,
+  BalanceSheetAssetsAccountToJSON
+} from './BalanceSheetAssetsAccount'
+import {
+  BalanceSheetEquityAccount,
+  BalanceSheetEquityAccountFromJSON,
+  BalanceSheetEquityAccountToJSON
+} from './BalanceSheetEquityAccount'
+import {
+  BalanceSheetLiabilitiesAccount,
+  BalanceSheetLiabilitiesAccountFromJSON,
+  BalanceSheetLiabilitiesAccountToJSON
+} from './BalanceSheetLiabilitiesAccount'
+import {
+  BalanceSheetUncategorizedItemsAccount,
+  BalanceSheetUncategorizedItemsAccountFromJSON,
+  BalanceSheetUncategorizedItemsAccountToJSON
+} from './BalanceSheetUncategorizedItemsAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
 
 /**
@@ -34,22 +49,22 @@ export interface BalanceSheetReports {
   end_date: string
   /**
    *
-   * @type {BalanceSheetAccount}
+   * @type {BalanceSheetAssetsAccount}
    * @memberof BalanceSheetReports
    */
-  assets: BalanceSheetAccount
+  assets: BalanceSheetAssetsAccount
   /**
    *
-   * @type {BalanceSheetAccount}
+   * @type {BalanceSheetLiabilitiesAccount}
    * @memberof BalanceSheetReports
    */
-  liabilities: BalanceSheetAccount
+  liabilities: BalanceSheetLiabilitiesAccount
   /**
    *
-   * @type {BalanceSheetAccount}
+   * @type {BalanceSheetEquityAccount}
    * @memberof BalanceSheetReports
    */
-  equity: BalanceSheetAccount
+  equity: BalanceSheetEquityAccount
   /**
    * A unique identifier for an object.
    * @type {string}
@@ -112,10 +127,10 @@ export interface BalanceSheetReports {
   readonly created_at?: Date | null
   /**
    *
-   * @type {BalanceSheetAccount}
+   * @type {BalanceSheetUncategorizedItemsAccount}
    * @memberof BalanceSheetReports
    */
-  uncategorized_items?: BalanceSheetAccount
+  uncategorized_items?: BalanceSheetUncategorizedItemsAccount
 }
 
 export function BalanceSheetReportsFromJSON(json: any): BalanceSheetReports {
@@ -131,9 +146,9 @@ export function BalanceSheetReportsFromJSONTyped(
   }
   return {
     end_date: json['end_date'],
-    assets: BalanceSheetAccountFromJSON(json['assets']),
-    liabilities: BalanceSheetAccountFromJSON(json['liabilities']),
-    equity: BalanceSheetAccountFromJSON(json['equity']),
+    assets: BalanceSheetAssetsAccountFromJSON(json['assets']),
+    liabilities: BalanceSheetLiabilitiesAccountFromJSON(json['liabilities']),
+    equity: BalanceSheetEquityAccountFromJSON(json['equity']),
     id: !exists(json, 'id') ? undefined : json['id'],
     report_name: !exists(json, 'report_name') ? undefined : json['report_name'],
     start_date: !exists(json, 'start_date') ? undefined : json['start_date'],
@@ -154,7 +169,7 @@ export function BalanceSheetReportsFromJSONTyped(
       : new Date(json['created_at']),
     uncategorized_items: !exists(json, 'uncategorized_items')
       ? undefined
-      : BalanceSheetAccountFromJSON(json['uncategorized_items'])
+      : BalanceSheetUncategorizedItemsAccountFromJSON(json['uncategorized_items'])
   }
 }
 
@@ -167,13 +182,13 @@ export function BalanceSheetReportsToJSON(value?: BalanceSheetReports | null): a
   }
   return {
     end_date: value.end_date,
-    assets: BalanceSheetAccountToJSON(value.assets),
-    liabilities: BalanceSheetAccountToJSON(value.liabilities),
-    equity: BalanceSheetAccountToJSON(value.equity),
+    assets: BalanceSheetAssetsAccountToJSON(value.assets),
+    liabilities: BalanceSheetLiabilitiesAccountToJSON(value.liabilities),
+    equity: BalanceSheetEquityAccountToJSON(value.equity),
     report_name: value.report_name,
     start_date: value.start_date,
     currency: CurrencyToJSON(value.currency),
     net_assets: value.net_assets,
-    uncategorized_items: BalanceSheetAccountToJSON(value.uncategorized_items)
+    uncategorized_items: BalanceSheetUncategorizedItemsAccountToJSON(value.uncategorized_items)
   }
 }

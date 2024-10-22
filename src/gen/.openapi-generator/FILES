@@ -53,8 +53,12 @@ BalanceSheet.md
 BalanceSheetAccount.md
 BalanceSheetAccountRecord.md
 BalanceSheetAccounts.md
+BalanceSheetAssetsAccount.md
+BalanceSheetEquityAccount.md
 BalanceSheetFilter.md
+BalanceSheetLiabilitiesAccount.md
 BalanceSheetReports.md
+BalanceSheetUncategorizedItemsAccount.md
 BankAccount.md
 Benefit.md
 Bill.md
@@ -765,8 +769,12 @@ models/BalanceSheet.ts
 models/BalanceSheetAccount.ts
 models/BalanceSheetAccountRecord.ts
 models/BalanceSheetAccounts.ts
+models/BalanceSheetAssetsAccount.ts
+models/BalanceSheetEquityAccount.ts
 models/BalanceSheetFilter.ts
+models/BalanceSheetLiabilitiesAccount.ts
 models/BalanceSheetReports.ts
+models/BalanceSheetUncategorizedItemsAccount.ts
 models/BankAccount.ts
 models/Benefit.ts
 models/Bill.ts

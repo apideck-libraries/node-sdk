@@ -264,28 +264,28 @@ describe('AccountingApi', () => {
               id: '12345',
               report_name: 'BalanceSheet',
               start_date: '2017-01-01',
-              end_date: '2017-01-01',
+              end_date: '2017-01-31',
               currency: 'USD',
               assets: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '1',
+                code: '1000',
+                name: 'Assets',
+                amount: 50000,
+                items: [[Object], [Object]]
               },
               liabilities: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '2',
+                code: '2000',
+                name: 'Liabilities',
+                amount: 30000,
+                items: [[Object], [Object]]
               },
               equity: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '3',
+                code: '3000',
+                name: 'Equity',
+                amount: 20000,
+                items: [[Object], [Object], [Object], [Object], [Object]]
               },
               net_assets: 1000,
               custom_mappings: {},
@@ -294,11 +294,11 @@ describe('AccountingApi', () => {
               updated_at: '2020-09-30T07:43:32.000Z',
               created_at: '2020-09-30T07:43:32.000Z',
               uncategorized_items: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '3',
+                code: '3000',
+                name: 'Uncategorized Items',
+                amount: 1000,
+                items: [[Object]]
               }
             }
           ]
