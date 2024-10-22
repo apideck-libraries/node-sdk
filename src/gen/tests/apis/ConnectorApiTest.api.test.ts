@@ -512,7 +512,10 @@ describe('ConnectorApi', () => {
                   size: 0,
                   unit: 'second'
                 },
-                resources: {}
+                resources: {
+                  property1: [Object],
+                  property2: [Object]
+                }
               }
             },
             schema_support: {
@@ -673,7 +676,14 @@ describe('ConnectorApi', () => {
                 size: 0,
                 unit: 'second'
               },
-              resources: {}
+              resources: {
+                property1: {
+                  events: [Array]
+                },
+                property2: {
+                  events: [Array]
+                }
+              }
             }
           },
           schema_support: {

@@ -264,28 +264,28 @@ describe('AccountingApi', () => {
               id: '12345',
               report_name: 'BalanceSheet',
               start_date: '2017-01-01',
-              end_date: '2017-01-01',
+              end_date: '2017-01-31',
               currency: 'USD',
               assets: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '1',
+                code: '1000',
+                name: 'Assets',
+                amount: 50000,
+                items: [[Object], [Object]]
               },
               liabilities: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '2',
+                code: '2000',
+                name: 'Liabilities',
+                amount: 30000,
+                items: [[Object], [Object]]
               },
               equity: {
-                account_id: '123456',
-                code: '1100',
-                name: 'Current assets',
-                value: 1000,
-                items: [{}]
+                account_id: '3',
+                code: '3000',
+                name: 'Equity',
+                amount: 20000,
+                items: [[Object], [Object], [Object], [Object], [Object]]
               },
               net_assets: 1000,
               custom_mappings: {},
@@ -293,15 +293,13 @@ describe('AccountingApi', () => {
               created_by: '12345',
               updated_at: '2020-09-30T07:43:32.000Z',
               created_at: '2020-09-30T07:43:32.000Z',
-              uncategorized_items: [
-                {
-                  account_id: '123456',
-                  code: '1100',
-                  name: 'Current assets',
-                  value: 1000,
-                  items: []
-                }
-              ]
+              uncategorized_items: {
+                account_id: '3',
+                code: '3000',
+                name: 'Uncategorized Items',
+                amount: 1000,
+                items: [[Object]]
+              }
             }
           ]
         }
@@ -354,7 +352,7 @@ describe('AccountingApi', () => {
         billPayment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -398,11 +396,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               amount: 49.99,
               allocation_id: '123456'
             }
@@ -473,7 +471,7 @@ describe('AccountingApi', () => {
             downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
-            total_amount: 1000,
+            total_amount: 49.99,
             reference: '123456',
             payment_method: 'cash',
             payment_method_reference: '123456',
@@ -520,11 +518,11 @@ describe('AccountingApi', () => {
             company_id: '12345',
             reconciled: true,
             status: 'authorised',
-            type: 'accounts_receivable',
+            type: 'accounts_payable',
             allocations: [
               {
-                id: '123456',
-                type: 'invoice',
+                id: '12345',
+                type: 'bill',
                 code: 'N091',
                 amount: 49.99,
                 allocation_id: '123456'
@@ -656,7 +654,7 @@ describe('AccountingApi', () => {
           downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -703,11 +701,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               code: 'N091',
               amount: 49.99,
               allocation_id: '123456'
@@ -802,7 +800,7 @@ describe('AccountingApi', () => {
         billPayment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -846,11 +844,11 @@ describe('AccountingApi', () => {
           company_id: '12345',
           reconciled: true,
           status: 'authorised',
-          type: 'accounts_receivable',
+          type: 'accounts_payable',
           allocations: [
             {
-              id: '123456',
-              type: 'invoice',
+              id: '12345',
+              type: 'bill',
               amount: 49.99,
               allocation_id: '123456'
             }
@@ -6547,6 +6545,11 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -6648,6 +6651,11 @@ describe('AccountingApi', () => {
               }
             ],
             last_reconciliation_date: '2020-09-30',
+            subsidiaries: [
+              {
+                id: 'string'
+              }
+            ],
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -6809,6 +6817,11 @@ describe('AccountingApi', () => {
             }
           ],
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -6920,6 +6933,11 @@ describe('AccountingApi', () => {
           },
           sub_account: false,
           last_reconciliation_date: '2020-09-30',
+          subsidiaries: [
+            {
+              id: 'string'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -7404,7 +7422,7 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -7530,7 +7548,7 @@ describe('AccountingApi', () => {
             downstream_id: '12345',
             currency: 'USD',
             currency_rate: 0.69,
-            total_amount: 1000,
+            total_amount: 49.99,
             reference: '123456',
             payment_method: 'cash',
             payment_method_reference: '123456',
@@ -7723,7 +7741,7 @@ describe('AccountingApi', () => {
           downstream_id: '12345',
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',
@@ -7879,7 +7897,7 @@ describe('AccountingApi', () => {
         payment: {
           currency: 'USD',
           currency_rate: 0.69,
-          total_amount: 1000,
+          total_amount: 49.99,
           reference: '123456',
           payment_method: 'cash',
           payment_method_reference: '123456',

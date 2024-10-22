@@ -15,6 +15,55 @@ const methodResponse = {
 }
 
 describe('VaultApi', () => {
+  describe('#connectionCustomMappingsAll', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: [
+          {
+            id: 'hris+employees+first_aid_training',
+            label: 'First Aid Training',
+            description: 'First Aid Training completed after 2019-01-01',
+            value: '$.root.training.first_aid',
+            key: 'first_aid_training',
+            required: false,
+            custom_field: true,
+            consumer_id: 'test_user_id',
+            example: 'Some value'
+          }
+        ]
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        unifiedApi: 'crm',
+        serviceId: 'pipedrive',
+        resource: 'leads'
+      } as any
+      const current = await vault.connectionCustomMappingsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#connectionSettingsAll', () => {
     const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/config'
 
@@ -130,7 +179,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -268,7 +318,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -431,7 +482,8 @@ describe('VaultApi', () => {
                 key: 'first_aid_training',
                 required: false,
                 custom_field: true,
-                consumer_id: 'test_user_id'
+                consumer_id: 'test_user_id',
+                example: 'Some value'
               }
             ],
             updated_at: 1616662325753
@@ -598,7 +650,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -753,7 +806,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -890,7 +944,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -1028,7 +1083,8 @@ describe('VaultApi', () => {
               key: 'first_aid_training',
               required: false,
               custom_field: true,
-              consumer_id: 'test_user_id'
+              consumer_id: 'test_user_id',
+              example: 'Some value'
             }
           ],
           updated_at: 1616662325753
@@ -1532,6 +1588,54 @@ describe('VaultApi', () => {
         resource: 'leads'
       } as any
       const current = await vault.customFieldsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customMappingsAll', () => {
+    const endpoint = '/vault/custom-mappings/{unified_api}/{service_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: [
+          {
+            id: 'hris+employees+first_aid_training',
+            label: 'First Aid Training',
+            description: 'First Aid Training completed after 2019-01-01',
+            value: '$.root.training.first_aid',
+            key: 'first_aid_training',
+            required: false,
+            custom_field: true,
+            consumer_id: 'test_user_id',
+            example: 'Some value'
+          }
+        ]
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        unifiedApi: 'crm',
+        serviceId: 'pipedrive'
+      } as any
+      const current = await vault.customMappingsAll(params)
 
       expect(fetch).toHaveBeenCalledTimes(1)
     })

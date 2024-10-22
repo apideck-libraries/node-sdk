@@ -515,7 +515,7 @@ const params = {
   billPayment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 1000,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'cash',
     payment_method_reference: '123456',
@@ -559,11 +559,11 @@ const params = {
     company_id: '12345',
     reconciled: true,
     status: 'authorised',
-    type: 'accounts_receivable',
+    type: 'accounts_payable',
     allocations: [
       {
-        id: '123456',
-        type: 'invoice',
+        id: '12345',
+        type: 'bill',
         amount: 49.99,
         allocation_id: '123456'
       }
@@ -884,7 +884,7 @@ const params = {
   billPayment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 1000,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'cash',
     payment_method_reference: '123456',
@@ -928,11 +928,11 @@ const params = {
     company_id: '12345',
     reconciled: true,
     status: 'authorised',
-    type: 'accounts_receivable',
+    type: 'accounts_payable',
     allocations: [
       {
-        id: '123456',
-        type: 'invoice',
+        id: '12345',
+        type: 'bill',
         amount: 49.99,
         allocation_id: '123456'
       }
@@ -5764,6 +5764,11 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    subsidiaries: [
+      {
+        id: 'string'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {
@@ -6102,6 +6107,11 @@ const params = {
     },
     sub_account: false,
     last_reconciliation_date: '2020-09-30',
+    subsidiaries: [
+      {
+        id: 'string'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {
@@ -6641,7 +6651,7 @@ const params = {
   payment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 1000,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'cash',
     payment_method_reference: '123456',
@@ -7017,7 +7027,7 @@ const params = {
   payment: {
     currency: 'USD',
     currency_rate: 0.69,
-    total_amount: 1000,
+    total_amount: 49.99,
     reference: '123456',
     payment_method: 'cash',
     payment_method_reference: '123456',

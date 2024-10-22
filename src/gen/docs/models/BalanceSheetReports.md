@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `end_date` | **string** | The start date of the report | 
-`assets` | [**BalanceSheetAccount**](BalanceSheetAccount.md) |  | 
-`liabilities` | [**BalanceSheetAccount**](BalanceSheetAccount.md) |  | 
-`equity` | [**BalanceSheetAccount**](BalanceSheetAccount.md) |  | 
+`assets` | [**BalanceSheetAssetsAccount**](BalanceSheetAssetsAccount.md) |  | 
+`liabilities` | [**BalanceSheetLiabilitiesAccount**](BalanceSheetLiabilitiesAccount.md) |  | 
+`equity` | [**BalanceSheetEquityAccount**](BalanceSheetEquityAccount.md) |  | 
 `id` | **string** | A unique identifier for an object. | [optional] 
 `report_name` | **string** | The name of the report | [optional] 
 `start_date` | **string** | The start date of the report | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
-`uncategorized_items` | [**BalanceSheetAccounts**](BalanceSheetAccounts.md) |  | [optional] 
+`uncategorized_items` | [**BalanceSheetUncategorizedItemsAccount**](BalanceSheetUncategorizedItemsAccount.md) |  | [optional] 
 
 
 
@@ -27,9 +27,9 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 
-* [`BalanceSheetAccount`](BalanceSheetAccount.md)
-* [`BalanceSheetAccount`](BalanceSheetAccount.md)
-* [`BalanceSheetAccount`](BalanceSheetAccount.md)
+* [`BalanceSheetAssetsAccount`](BalanceSheetAssetsAccount.md)
+* [`BalanceSheetLiabilitiesAccount`](BalanceSheetLiabilitiesAccount.md)
+* [`BalanceSheetEquityAccount`](BalanceSheetEquityAccount.md)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 
 
-* [`BalanceSheetAccounts`](BalanceSheetAccounts.md)
+* [`BalanceSheetUncategorizedItemsAccount`](BalanceSheetUncategorizedItemsAccount.md)
 
 ---
 

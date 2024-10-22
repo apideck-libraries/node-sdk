@@ -5,6 +5,7 @@
 
 ## Methods
 
+* [List Connection Custom Mappings](#connectionCustomMappingsAll)
 * [Get Resource Settings](#connectionSettingsAll)
 * [Update Settings](#connectionSettingsUpdate)
 * [Get All Connections](#connectionsAll)
@@ -20,9 +21,82 @@
 * [Get Consumer](#consumersOne)
 * [Update Consumer](#consumersUpdate)
 * [Get Resource Custom Fields](#customFieldsAll)
+* [List Custom Mappings](#customMappingsAll)
 * [Get All Consumer Request Logs](#logsAll)
 * [Create Session](#sessionsCreate)
 * [Validate Connection State](#validateConnectionState)
+
+<a name="connectionCustomMappingsAll"></a>
+# List Connection Custom Mappings
+
+
+Method: **connectionCustomMappingsAll**
+
+```typescript
+vaultApi.connectionCustomMappingsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | [**string**] | Unified API | 
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **resource** | [**string**] | Name of the resource (plural) | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **resourceId** | [**string**] | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | (optional) 
+
+
+
+### Response Type
+
+[`GetCustomMappingsResponse`](../models/GetCustomMappingsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Custom mapping | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  unifiedApi: 'crm',
+  serviceId: 'pipedrive',
+  resource: 'leads'
+}
+
+try {
+  const { data } = await apideck.vault.connectionCustomMappingsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="connectionSettingsAll"></a>
 # Get Resource Settings
@@ -1130,6 +1204,75 @@ const params = {
 
 try {
   const { data } = await apideck.vault.customFieldsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="customMappingsAll"></a>
+# List Custom Mappings
+
+
+Method: **customMappingsAll**
+
+```typescript
+vaultApi.customMappingsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | [**string**] | Unified API | 
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`GetCustomMappingsResponse`](../models/GetCustomMappingsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Custom mapping | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  unifiedApi: 'crm',
+  serviceId: 'pipedrive'
+}
+
+try {
+  const { data } = await apideck.vault.customMappingsAll(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `required` | **boolean** | Target Field Mapping is required | [optional] 
 `custom_field` | **boolean** | This mapping represents a finder for a custom field | [optional] 
 `consumer_id` | **string** | Consumer ID | [optional] 
+`example` | **string** | Target Field Mapping example value from downstream | [optional] 
 
 
 
