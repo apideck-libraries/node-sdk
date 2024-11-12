@@ -96,11 +96,27 @@ export interface EmployeeJob {
    */
   is_manager?: boolean | null
   /**
+   * Indicates the status of the job.
+   * @type {string}
+   * @memberof EmployeeJob
+   */
+  status?: EmployeeJobStatus
+  /**
    *
    * @type {Address}
    * @memberof EmployeeJob
    */
   location?: Address
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum EmployeeJobStatus {
+  active = 'active',
+  inactive = 'inactive',
+  other = 'other'
 }
 
 export function EmployeeJobFromJSON(json: any): EmployeeJob {
@@ -138,6 +154,7 @@ export function EmployeeJobFromJSONTyped(json: any, ignoreDiscriminator: boolean
       : new Date(json['hired_at']),
     is_primary: !exists(json, 'is_primary') ? undefined : json['is_primary'],
     is_manager: !exists(json, 'is_manager') ? undefined : json['is_manager'],
+    status: !exists(json, 'status') ? undefined : json['status'],
     location: !exists(json, 'location') ? undefined : AddressFromJSON(json['location'])
   }
 }
@@ -175,6 +192,7 @@ export function EmployeeJobToJSON(value?: EmployeeJob | null): any {
         : new Date(value.hired_at).toISOString().substr(0, 10),
     is_primary: value.is_primary,
     is_manager: value.is_manager,
+    status: value.status,
     location: AddressToJSON(value.location)
   }
 }
