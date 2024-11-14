@@ -17,8 +17,22 @@ Name | Type | Description | Notes
 `hired_at` | **Date** | The date on which the employee was hired by the organization | [optional] 
 `is_primary` | **boolean** | Indicates whether this the employee\'s primary job. | [optional] 
 `is_manager` | **boolean** | Indicates whether this the employee has a manager role. | [optional] 
+`status` | **string** | Indicates the status of the job. | [optional] 
 `location` | [**Address**](Address.md) |  | [optional] 
 
+
+
+
+
+<a name="EmployeeJobStatus"></a>
+## Enum: EmployeeJob.status
+
+
+* `active` (value: `'active'`)
+
+* `inactive` (value: `'inactive'`)
+
+* `other` (value: `'other'`)
 
 
 
@@ -33,6 +47,7 @@ Name | Type | Description | Notes
 
 * [`Currency`](Currency.md)
 * [`PaymentUnit`](PaymentUnit.md)
+
 
 
 

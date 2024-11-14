@@ -1260,6 +1260,7 @@ const params = {
         hired_at: '2020-08-12',
         is_primary: true,
         is_manager: true,
+        status: 'active',
         location: {
           id: '123',
           type: 'primary',
@@ -1770,6 +1771,7 @@ const params = {
         hired_at: '2020-08-12',
         is_primary: true,
         is_manager: true,
+        status: 'active',
         location: {
           id: '123',
           type: 'primary',

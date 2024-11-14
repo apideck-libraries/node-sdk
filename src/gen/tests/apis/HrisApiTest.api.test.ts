@@ -1075,6 +1075,7 @@ describe('HrisApi', () => {
                 hired_at: '2020-08-12',
                 is_primary: true,
                 is_manager: true,
+                status: 'active',
                 location: {
                   id: '123',
                   type: 'primary',
@@ -1370,6 +1371,7 @@ describe('HrisApi', () => {
               hired_at: '2020-08-12',
               is_primary: true,
               is_manager: true,
+              status: 'active',
               location: {
                 id: '123',
                 type: 'primary',
@@ -1622,6 +1624,7 @@ describe('HrisApi', () => {
                 hired_at: '2020-08-12',
                 is_primary: true,
                 is_manager: true,
+                status: 'active',
                 location: {
                   id: '123',
                   type: 'primary',
@@ -1934,6 +1937,7 @@ describe('HrisApi', () => {
               hired_at: '2020-08-12',
               is_primary: true,
               is_manager: true,
+              status: 'active',
               location: {
                 id: '123',
                 type: 'primary',
@@ -2207,6 +2211,7 @@ describe('HrisApi', () => {
               hired_at: '2020-08-12',
               is_primary: true,
               is_manager: true,
+              status: 'active',
               location: {
                 id: '123',
                 type: 'primary',

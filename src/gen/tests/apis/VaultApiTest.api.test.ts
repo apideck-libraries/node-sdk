@@ -1548,6 +1548,47 @@ describe('VaultApi', () => {
     })
   })
 
+  describe('#createCallbackState', () => {
+    const endpoint = '/vault/connections/{unified_api}/{service_id}/callback-state'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        data: {
+          state: '123e4567-e89b-12d3-a456-426614174000'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { vault } = apideck
+      const params = {
+        serviceId: 'pipedrive',
+        unifiedApi: 'crm',
+        createCallbackState: {
+          redirect_uri: 'https://example.com/callback'
+        }
+      } as any
+      const current = await vault.createCallbackState(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#customFieldsAll', () => {
     const endpoint = '/vault/connections/{unified_api}/{service_id}/{resource}/custom-fields'
 
