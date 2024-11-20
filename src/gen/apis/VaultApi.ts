@@ -21,10 +21,10 @@ import {
   ConsumerRequestCountsInDateRangeResponse,
   ConsumerRequestCountsInDateRangeResponseFromJSON,
   ConsumerToJSON,
-  CreateCallbackStateData,
-  CreateCallbackStateDataToJSON,
+  CreateCallbackState,
   CreateCallbackStateResponse,
   CreateCallbackStateResponseFromJSON,
+  CreateCallbackStateToJSON,
   CreateConnectionResponse,
   CreateConnectionResponseFromJSON,
   CreateConsumerResponse,
@@ -169,7 +169,7 @@ export interface VaultApiConsumersUpdateRequest {
 export interface VaultApiCreateCallbackStateRequest {
   serviceId: string
   unifiedApi: string
-  createCallbackStateData: CreateCallbackStateData
+  createCallbackState: CreateCallbackState
   consumerId?: string
   appId?: string
 }
@@ -1264,12 +1264,12 @@ export class VaultApi extends runtime.BaseAPI {
     }
 
     if (
-      requestParameters.createCallbackStateData === null ||
-      requestParameters.createCallbackStateData === undefined
+      requestParameters.createCallbackState === null ||
+      requestParameters.createCallbackState === undefined
     ) {
       throw new runtime.RequiredError(
-        'createCallbackStateData',
-        'Required parameter requestParameters.createCallbackStateData was null or undefined when calling createCallbackState.'
+        'createCallbackState',
+        'Required parameter requestParameters.createCallbackState was null or undefined when calling createCallbackState.'
       )
     }
 
@@ -1299,7 +1299,7 @@ export class VaultApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: CreateCallbackStateDataToJSON(requestParameters.createCallbackStateData)
+        body: CreateCallbackStateToJSON(requestParameters.createCallbackState)
       },
       initOverrides
     )

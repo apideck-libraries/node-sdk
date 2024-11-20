@@ -16,25 +16,25 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface CreateCallbackStateData
+ * @interface CreateCallbackState
  */
-export interface CreateCallbackStateData {
+export interface CreateCallbackState {
   /**
    * The redirect URI to be used after the connection is created.
    * @type {string}
-   * @memberof CreateCallbackStateData
+   * @memberof CreateCallbackState
    */
   redirect_uri?: string
 }
 
-export function CreateCallbackStateDataFromJSON(json: any): CreateCallbackStateData {
-  return CreateCallbackStateDataFromJSONTyped(json, false)
+export function CreateCallbackStateFromJSON(json: any): CreateCallbackState {
+  return CreateCallbackStateFromJSONTyped(json, false)
 }
 
-export function CreateCallbackStateDataFromJSONTyped(
+export function CreateCallbackStateFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): CreateCallbackStateData {
+): CreateCallbackState {
   if (json === undefined || json === null) {
     return json
   }
@@ -43,7 +43,7 @@ export function CreateCallbackStateDataFromJSONTyped(
   }
 }
 
-export function CreateCallbackStateDataToJSON(value?: CreateCallbackStateData | null): any {
+export function CreateCallbackStateToJSON(value?: CreateCallbackState | null): any {
   if (value === undefined) {
     return undefined
   }

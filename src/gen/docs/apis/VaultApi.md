@@ -1159,7 +1159,7 @@ vaultApi.createCallbackState(body)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createCallbackStateData** | [CreateCallbackStateData](../models/CreateCallbackStateData.md)| Callback state data |
+ **createCallbackState** | [CreateCallbackState](../models/CreateCallbackState.md)| Callback state data |
  **serviceId** | [**string**] | Service ID of the resource to return | 
  **unifiedApi** | [**string**] | Unified API | 
  **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 

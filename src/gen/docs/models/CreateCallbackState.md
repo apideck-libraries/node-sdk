@@ -1,4 +1,4 @@
-# Apideck.CreateCallbackStateData
+# Apideck.CreateCallbackState
 
 ### Description
 
