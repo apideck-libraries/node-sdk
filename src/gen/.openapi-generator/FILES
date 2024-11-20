@@ -120,6 +120,9 @@ CreateAttachmentRequest.md
 CreateAttachmentResponse.md
 CreateBillPaymentResponse.md
 CreateBillResponse.md
+CreateCallbackState.md
+CreateCallbackStateResponse.md
+CreateCallbackStateResponseData.md
 CreateCommentResponse.md
 CreateCompanyResponse.md
 CreateConnectionResponse.md
@@ -834,6 +837,9 @@ models/CreateAttachmentRequest.ts
 models/CreateAttachmentResponse.ts
 models/CreateBillPaymentResponse.ts
 models/CreateBillResponse.ts
+models/CreateCallbackState.ts
+models/CreateCallbackStateResponse.ts
+models/CreateCallbackStateResponseData.ts
 models/CreateCommentResponse.ts
 models/CreateCompanyResponse.ts
 models/CreateConnectionResponse.ts

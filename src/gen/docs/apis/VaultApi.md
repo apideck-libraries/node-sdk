@@ -20,6 +20,7 @@
 * [Delete Consumer](#consumersDelete)
 * [Get Consumer](#consumersOne)
 * [Update Consumer](#consumersUpdate)
+* [Create Callback State](#createCallbackState)
 * [Get Resource Custom Fields](#customFieldsAll)
 * [List Custom Mappings](#customMappingsAll)
 * [Get All Consumer Request Logs](#logsAll)
@@ -1132,6 +1133,79 @@ const params = {
 
 try {
   const { data } = await apideck.vault.consumersUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="createCallbackState"></a>
+# Create Callback State
+
+
+Method: **createCallbackState**
+
+```typescript
+vaultApi.createCallbackState(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createCallbackState** | [CreateCallbackState](../models/CreateCallbackState.md)| Callback state data |
+ **serviceId** | [**string**] | Service ID of the resource to return | 
+ **unifiedApi** | [**string**] | Unified API | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+
+
+
+### Response Type
+
+[`CreateCallbackStateResponse`](../models/CreateCallbackStateResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Callback state created | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  serviceId: 'pipedrive',
+  unifiedApi: 'crm',
+  createCallbackState: {
+    redirect_uri: 'https://example.com/callback'
+  }
+}
+
+try {
+  const { data } = await apideck.vault.createCallbackState(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
