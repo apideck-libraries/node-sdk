@@ -270,21 +270,21 @@ describe('AccountingApi', () => {
                 account_id: '1',
                 code: '1000',
                 name: 'Assets',
-                amount: 50000,
+                value: 50000,
                 items: [[Object], [Object]]
               },
               liabilities: {
                 account_id: '2',
                 code: '2000',
                 name: 'Liabilities',
-                amount: 30000,
+                value: 30000,
                 items: [[Object], [Object]]
               },
               equity: {
                 account_id: '3',
                 code: '3000',
                 name: 'Equity',
-                amount: 20000,
+                value: 20000,
                 items: [[Object], [Object], [Object], [Object], [Object]]
               },
               net_assets: 1000,
@@ -297,7 +297,7 @@ describe('AccountingApi', () => {
                 account_id: '3',
                 code: '3000',
                 name: 'Uncategorized Items',
-                amount: 1000,
+                value: 1000,
                 items: [[Object]]
               }
             }
