@@ -20,17 +20,39 @@ import { exists } from '../runtime'
  */
 export interface BalanceSheetFilter {
   /**
-   * Filter by start date. If start date is given, end date is required.
+   * The start date of the period to include in the resource.
    * @type {string}
    * @memberof BalanceSheetFilter
    */
   start_date?: string
   /**
-   * Filter by end date. If end date is given, start date is required.
+   * The end date of the period to include in the resource.
    * @type {string}
    * @memberof BalanceSheetFilter
    */
   end_date?: string
+  /**
+   * The number of periods to include in the resource.
+   * @type {number}
+   * @memberof BalanceSheetFilter
+   */
+  period_count?: number
+  /**
+   * The type of period to include in the resource: month, quarter, year.
+   * @type {string}
+   * @memberof BalanceSheetFilter
+   */
+  period_type?: BalanceSheetFilterPeriodType
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum BalanceSheetFilterPeriodType {
+  month = 'month',
+  quarter = 'quarter',
+  year = 'year'
 }
 
 export function BalanceSheetFilterFromJSON(json: any): BalanceSheetFilter {
@@ -46,7 +68,9 @@ export function BalanceSheetFilterFromJSONTyped(
   }
   return {
     start_date: !exists(json, 'start_date') ? undefined : json['start_date'],
-    end_date: !exists(json, 'end_date') ? undefined : json['end_date']
+    end_date: !exists(json, 'end_date') ? undefined : json['end_date'],
+    period_count: !exists(json, 'period_count') ? undefined : json['period_count'],
+    period_type: !exists(json, 'period_type') ? undefined : json['period_type']
   }
 }
 
@@ -59,6 +83,8 @@ export function BalanceSheetFilterToJSON(value?: BalanceSheetFilter | null): any
   }
   return {
     start_date: value.start_date,
-    end_date: value.end_date
+    end_date: value.end_date,
+    period_count: value.period_count,
+    period_type: value.period_type
   }
 }

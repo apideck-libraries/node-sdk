@@ -46,10 +46,10 @@ export interface UnauthorizedResponse {
   message?: string
   /**
    * Contains parameter or domain specific information related to the error and why it occurred.
-   * @type {string | object}
+   * @type {string | any}
    * @memberof UnauthorizedResponse
    */
-  detail?: string | object | null
+  detail?: string | any | null
   /**
    * Link to documentation of error type
    * @type {string}
@@ -74,7 +74,7 @@ export function UnauthorizedResponseFromJSONTyped(
     error: !exists(json, 'error') ? undefined : json['error'],
     type_name: !exists(json, 'type_name') ? undefined : json['type_name'],
     message: !exists(json, 'message') ? undefined : json['message'],
-    detail: !exists(json, 'detail') ? undefined : <string | object>json['detail'],
+    detail: !exists(json, 'detail') ? undefined : string | anyFromJSON(json['detail']),
     ref: !exists(json, 'ref') ? undefined : json['ref']
   }
 }
@@ -91,7 +91,7 @@ export function UnauthorizedResponseToJSON(value?: UnauthorizedResponse | null):
     error: value.error,
     type_name: value.type_name,
     message: value.message,
-    detail: <string | object>value.detail,
+    detail: string | anyToJSON(value.detail),
     ref: value.ref
   }
 }
