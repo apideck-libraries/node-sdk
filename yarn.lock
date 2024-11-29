@@ -5713,9 +5713,9 @@ npm-run-path@^5.1.0:
     path-key "^4.0.0"
 
 nwsapi@^2.2.0:
-  version "2.2.14"
-  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.14.tgz#c7101dbd9d05a88e2eb59d66d3e0a744448802da"
-  integrity sha512-5XcFrl8snuCQTJC2SYIW9yhhMnILdMw9dlGT+At11P7jqDuTafp6/uc3lAXsMOmftER3Ntb+T3cHiupOtj7Lgw==
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.15.tgz#f32d5b3f7d3ecb0c6cbfc1c71ba0160988e00d8a"
+  integrity sha512-NWK6i6f70uRJgsqyNTNMQ/JbCzd8zQoFnOKdZpXqfyq0YFBQgCTFjDIXfAmkEJyV+/GzSrCCrz2iVJmJK9OX8w==
 
 oauth-sign@~0.9.0:
   version "0.9.0"
