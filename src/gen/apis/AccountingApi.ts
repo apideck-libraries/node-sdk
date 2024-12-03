@@ -185,6 +185,7 @@ import {
   GetTrackingCategoryResponseFromJSON,
   Invoice,
   InvoiceItem,
+  InvoiceItemFilter,
   InvoiceItemsFilter,
   InvoiceItemToJSON,
   InvoicesFilter,
@@ -626,6 +627,7 @@ export interface AccountingApiInvoiceItemsOneRequest {
   serviceId?: string
   raw?: boolean
   fields?: string | null
+  filter?: InvoiceItemFilter
 }
 
 export interface AccountingApiInvoiceItemsUpdateRequest {
@@ -4032,6 +4034,10 @@ export class AccountingApi extends runtime.BaseAPI {
 
     if (requestParameters.fields !== undefined) {
       queryParameters['fields'] = requestParameters.fields
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter
     }
 
     const headerParameters: runtime.HTTPHeaders = {}

@@ -1,19 +1,18 @@
-# Apideck.InvoiceItemsFilter
+# Apideck.InvoiceItemFilter
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`name` | **string** | Name of Invoice Items to search for | [optional] 
 `type` | **string** | The type of invoice item, indicating whether it is an inventory item, a service, or another type. | [optional] 
 
 
 
 
 
-<a name="InvoiceItemsFilterType"></a>
-## Enum: InvoiceItemsFilter.type
+<a name="InvoiceItemFilterType"></a>
+## Enum: InvoiceItemFilter.type
 
 
 * `inventory` (value: `'inventory'`)

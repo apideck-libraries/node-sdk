@@ -16,51 +16,44 @@ import { exists } from '../runtime'
 /**
  *
  * @export
- * @interface InvoiceItemsFilter
+ * @interface InvoiceItemFilter
  */
-export interface InvoiceItemsFilter {
-  /**
-   * Name of Invoice Items to search for
-   * @type {string}
-   * @memberof InvoiceItemsFilter
-   */
-  name?: string
+export interface InvoiceItemFilter {
   /**
    * The type of invoice item, indicating whether it is an inventory item, a service, or another type.
    * @type {string}
-   * @memberof InvoiceItemsFilter
+   * @memberof InvoiceItemFilter
    */
-  type?: InvoiceItemsFilterType
+  type?: InvoiceItemFilterType
 }
 
 /**
  * @export
  * @enum {string}
  */
-export enum InvoiceItemsFilterType {
+export enum InvoiceItemFilterType {
   inventory = 'inventory',
   service = 'service',
   other = 'other'
 }
 
-export function InvoiceItemsFilterFromJSON(json: any): InvoiceItemsFilter {
-  return InvoiceItemsFilterFromJSONTyped(json, false)
+export function InvoiceItemFilterFromJSON(json: any): InvoiceItemFilter {
+  return InvoiceItemFilterFromJSONTyped(json, false)
 }
 
-export function InvoiceItemsFilterFromJSONTyped(
+export function InvoiceItemFilterFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): InvoiceItemsFilter {
+): InvoiceItemFilter {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
     type: !exists(json, 'type') ? undefined : json['type']
   }
 }
 
-export function InvoiceItemsFilterToJSON(value?: InvoiceItemsFilter | null): any {
+export function InvoiceItemFilterToJSON(value?: InvoiceItemFilter | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -68,7 +61,6 @@ export function InvoiceItemsFilterToJSON(value?: InvoiceItemsFilter | null): any
     return null
   }
   return {
-    name: value.name,
     type: value.type
   }
 }

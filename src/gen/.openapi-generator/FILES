@@ -464,6 +464,7 @@ HrisJobs.md
 IntegrationState.md
 Invoice.md
 InvoiceItem.md
+InvoiceItemFilter.md
 InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceLineItem.md
@@ -1172,6 +1173,7 @@ models/HrisJobs.ts
 models/IntegrationState.ts
 models/Invoice.ts
 models/InvoiceItem.ts
+models/InvoiceItemFilter.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceLineItem.ts
