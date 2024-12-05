@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 `supplier_id` | **string** | The ID of the supplier this entity is linked to. | [optional] 
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `department_id` | **string** | The ID of the department this expense is linked to. | [optional] 
+`payment_type` | **string** | The type of payment for the expense. | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 `type` | **string** | The type of expense. | [optional] 
@@ -27,6 +28,19 @@ Name | Type | Description | Notes
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
+
+
+
+
+<a name="ExpensePaymentType"></a>
+## Enum: Expense.payment_type
+
+
+* `cash` (value: `'cash'`)
+
+* `check` (value: `'check'`)
+
+* `credit_card` (value: `'credit_card'`)
 
 
 
@@ -46,6 +60,7 @@ Name | Type | Description | Notes
 
 
 * [`ExpenseLineItem`](ExpenseLineItem.md)
+
 
 
 
