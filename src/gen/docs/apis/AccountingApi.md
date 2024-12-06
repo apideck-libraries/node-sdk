@@ -8426,7 +8426,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    subsidiary_id: '12345'
   }
 }
 
@@ -8815,7 +8816,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    subsidiary_id: '12345'
   }
 }
 
@@ -8918,6 +8920,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }
@@ -9235,6 +9242,11 @@ const params = {
           }
         ]
       }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
+      }
     ]
   }
 }
@@ -9322,6 +9334,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }
@@ -9621,6 +9638,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }

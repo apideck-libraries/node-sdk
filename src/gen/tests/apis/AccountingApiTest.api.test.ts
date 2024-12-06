@@ -1728,6 +1728,11 @@ describe('AccountingApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
+              }
             ]
           },
           currency: 'USD',
@@ -9397,7 +9402,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
       const current = await accounting.suppliersAdd(params)
@@ -9539,7 +9545,8 @@ describe('AccountingApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
-            ]
+            ],
+            subsidiary_id: '12345'
           }
         ],
         meta: {
@@ -9746,7 +9753,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
 
@@ -9903,7 +9911,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
       const current = await accounting.suppliersUpdate(params)
@@ -9978,6 +9987,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10042,6 +10056,11 @@ describe('AccountingApi', () => {
                 operation_id: 'string',
                 extend_object: {},
                 extend_paths: [[Object]]
+              }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
               }
             ]
           }
@@ -10173,6 +10192,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10258,6 +10282,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10317,6 +10346,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10366,6 +10400,11 @@ describe('AccountingApi', () => {
                 operation_id: 'string',
                 extend_object: {},
                 extend_paths: [[Object]]
+              }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
               }
             ]
           }
@@ -10482,6 +10521,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10550,6 +10594,11 @@ describe('AccountingApi', () => {
                   value: [Object]
                 }
               ]
+            }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
             }
           ]
         }
