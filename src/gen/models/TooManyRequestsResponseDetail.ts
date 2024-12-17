@@ -27,10 +27,10 @@ export interface TooManyRequestsResponseDetail {
   context?: string
   /**
    *
-   * @type {{ [key: string]: unknown; }}
+   * @type {object}
    * @memberof TooManyRequestsResponseDetail
    */
-  error?: { [key: string]: unknown }
+  error?: object
 }
 
 export function TooManyRequestsResponseDetailFromJSON(json: any): TooManyRequestsResponseDetail {

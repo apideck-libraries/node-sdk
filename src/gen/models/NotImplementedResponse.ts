@@ -46,10 +46,10 @@ export interface NotImplementedResponse {
   message?: string
   /**
    * Contains parameter or domain specific information related to the error and why it occurred.
-   * @type {string | any}
+   * @type {string | object}
    * @memberof NotImplementedResponse
    */
-  detail?: string | any | null
+  detail?: string | object | null
   /**
    * Link to documentation of error type
    * @type {string}
@@ -74,7 +74,7 @@ export function NotImplementedResponseFromJSONTyped(
     error: !exists(json, 'error') ? undefined : json['error'],
     type_name: !exists(json, 'type_name') ? undefined : json['type_name'],
     message: !exists(json, 'message') ? undefined : json['message'],
-    detail: !exists(json, 'detail') ? undefined : string | anyFromJSON(json['detail']),
+    detail: !exists(json, 'detail') ? undefined : <string | object>json['detail'],
     ref: !exists(json, 'ref') ? undefined : json['ref']
   }
 }
@@ -91,7 +91,7 @@ export function NotImplementedResponseToJSON(value?: NotImplementedResponse | nu
     error: value.error,
     type_name: value.type_name,
     message: value.message,
-    detail: string | anyToJSON(value.detail),
+    detail: <string | object>value.detail,
     ref: value.ref
   }
 }
