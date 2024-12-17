@@ -15,6 +15,112 @@ const methodResponse = {
 }
 
 describe('AccountingApi', () => {
+  describe('#agedCreditorsOne', () => {
+    const endpoint = '/accounting/aged-creditors'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'AgedCreditors',
+        operation: 'one',
+        data: {
+          report_generated_at: '2024-11-14T12:00:00.000Z',
+          report_as_of_date: '2024-11-13',
+          period_count: 4,
+          period_length: 30,
+          outstanding_balances: [
+            {
+              customer_id: '123',
+              customer_name: 'Super Store',
+              outstanding_balances_by_currency: [
+                {
+                  currency: 'USD',
+                  balances_by_period: [Array]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.agedCreditorsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#agedDebtorsOne', () => {
+    const endpoint = '/accounting/aged-debtors'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'AgedDebtors',
+        operation: 'one',
+        data: {
+          report_generated_at: '2024-11-14T12:00:00.000Z',
+          report_as_of_date: '2024-11-13',
+          period_count: 4,
+          period_length: 30,
+          outstanding_balances: [
+            {
+              customer_id: '123',
+              customer_name: 'Super Store',
+              outstanding_balances_by_currency: [
+                {
+                  currency: 'USD',
+                  balances_by_period: [Array]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.agedDebtorsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#attachmentsAll', () => {
     const endpoint = '/accounting/attachments/{reference_type}/{reference_id}'
 
@@ -270,21 +376,21 @@ describe('AccountingApi', () => {
                 account_id: '1',
                 code: '1000',
                 name: 'Assets',
-                amount: 50000,
+                value: 50000,
                 items: [[Object], [Object]]
               },
               liabilities: {
                 account_id: '2',
                 code: '2000',
                 name: 'Liabilities',
-                amount: 30000,
+                value: 30000,
                 items: [[Object], [Object]]
               },
               equity: {
                 account_id: '3',
                 code: '3000',
                 name: 'Equity',
-                amount: 20000,
+                value: 20000,
                 items: [[Object], [Object], [Object], [Object], [Object]]
               },
               net_assets: 1000,
@@ -297,7 +403,7 @@ describe('AccountingApi', () => {
                 account_id: '3',
                 code: '3000',
                 name: 'Uncategorized Items',
-                amount: 1000,
+                value: 1000,
                 items: [[Object]]
               }
             }
@@ -1727,6 +1833,11 @@ describe('AccountingApi', () => {
                 operation_id: 'string',
                 extend_object: {},
                 extend_paths: [[Object]]
+              }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
               }
             ]
           },
@@ -3719,6 +3830,7 @@ describe('AccountingApi', () => {
           supplier_id: '12345',
           company_id: '12345',
           department_id: '12345',
+          payment_type: 'cash',
           currency: 'USD',
           currency_rate: 0.69,
           type: 'expense',
@@ -3810,6 +3922,7 @@ describe('AccountingApi', () => {
             supplier_id: '12345',
             company_id: '12345',
             department_id: '12345',
+            payment_type: 'cash',
             currency: 'USD',
             currency_rate: 0.69,
             type: 'expense',
@@ -3959,6 +4072,7 @@ describe('AccountingApi', () => {
           supplier_id: '12345',
           company_id: '12345',
           department_id: '12345',
+          payment_type: 'cash',
           currency: 'USD',
           currency_rate: 0.69,
           type: 'expense',
@@ -4077,6 +4191,7 @@ describe('AccountingApi', () => {
           supplier_id: '12345',
           company_id: '12345',
           department_id: '12345',
+          payment_type: 'cash',
           currency: 'USD',
           currency_rate: 0.69,
           type: 'expense',
@@ -9393,7 +9508,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
       const current = await accounting.suppliersAdd(params)
@@ -9535,7 +9651,8 @@ describe('AccountingApi', () => {
                 extend_object: {},
                 extend_paths: [[Object]]
               }
-            ]
+            ],
+            subsidiary_id: '12345'
           }
         ],
         meta: {
@@ -9742,7 +9859,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
 
@@ -9899,7 +10017,8 @@ describe('AccountingApi', () => {
                 }
               ]
             }
-          ]
+          ],
+          subsidiary_id: '12345'
         }
       } as any
       const current = await accounting.suppliersUpdate(params)
@@ -9974,6 +10093,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10038,6 +10162,11 @@ describe('AccountingApi', () => {
                 operation_id: 'string',
                 extend_object: {},
                 extend_paths: [[Object]]
+              }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
               }
             ]
           }
@@ -10169,6 +10298,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10254,6 +10388,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10313,6 +10452,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10362,6 +10506,11 @@ describe('AccountingApi', () => {
                 operation_id: 'string',
                 extend_object: {},
                 extend_paths: [[Object]]
+              }
+            ],
+            subsidiaries: [
+              {
+                id: 'string'
               }
             ]
           }
@@ -10478,6 +10627,11 @@ describe('AccountingApi', () => {
                 }
               ]
             }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
+            }
           ]
         }
       } as any
@@ -10546,6 +10700,11 @@ describe('AccountingApi', () => {
                   value: [Object]
                 }
               ]
+            }
+          ],
+          subsidiaries: [
+            {
+              id: 'string'
             }
           ]
         }

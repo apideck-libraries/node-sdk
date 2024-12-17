@@ -5,6 +5,8 @@
 
 ## Methods
 
+* [Get Aged Creditors](#agedCreditorsOne)
+* [Get Aged Debtors](#agedDebtorsOne)
 * [List Attachments](#attachmentsAll)
 * [Delete Attachment](#attachmentsDelete)
 * [Download Attachment](#attachmentsDownload)
@@ -97,6 +99,144 @@
 * [Delete Tracking Category](#trackingCategoriesDelete)
 * [Get Tracking Category](#trackingCategoriesOne)
 * [Update Tracking Category](#trackingCategoriesUpdate)
+
+<a name="agedCreditorsOne"></a>
+# Get Aged Creditors
+
+
+Method: **agedCreditorsOne**
+
+```typescript
+accountingApi.agedCreditorsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **filter** | **AgedReportFilter** | Apply filters | (optional) 
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetAgedCreditorsResponse`](../models/GetAgedCreditorsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Aged Creditors | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.agedCreditorsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="agedDebtorsOne"></a>
+# Get Aged Debtors
+
+
+Method: **agedDebtorsOne**
+
+```typescript
+accountingApi.agedDebtorsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **filter** | **AgedReportFilter** | Apply filters | (optional) 
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetAgedDebtorsResponse`](../models/GetAgedDebtorsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Aged Debtors | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.agedDebtorsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
 
 <a name="attachmentsAll"></a>
 # List Attachments
@@ -3382,6 +3522,7 @@ const params = {
     supplier_id: '12345',
     company_id: '12345',
     department_id: '12345',
+    payment_type: 'cash',
     currency: 'USD',
     currency_rate: 0.69,
     type: 'expense',
@@ -3719,6 +3860,7 @@ const params = {
     supplier_id: '12345',
     company_id: '12345',
     department_id: '12345',
+    payment_type: 'cash',
     currency: 'USD',
     currency_rate: 0.69,
     type: 'expense',
@@ -4087,6 +4229,7 @@ Name | Type | Description  | Notes
  **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
  **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
  **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+ **filter** | **InvoiceItemFilter** | Apply filters | (optional) 
 
 
 
@@ -8423,7 +8566,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    subsidiary_id: '12345'
   }
 }
 
@@ -8812,7 +8956,8 @@ const params = {
           }
         ]
       }
-    ]
+    ],
+    subsidiary_id: '12345'
   }
 }
 
@@ -8915,6 +9060,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }
@@ -9232,6 +9382,11 @@ const params = {
           }
         ]
       }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
+      }
     ]
   }
 }
@@ -9319,6 +9474,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }
@@ -9618,6 +9778,11 @@ const params = {
             value: [Object]
           }
         ]
+      }
+    ],
+    subsidiaries: [
+      {
+        id: 'string'
       }
     ]
   }
