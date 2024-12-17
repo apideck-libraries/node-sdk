@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
+`subsidiaries` | **Array&lt;object&gt;** | The subsidiaries this belongs to. | [optional] 
 
 
 
@@ -64,6 +65,7 @@ Name | Type | Description | Notes
 
 
 * [`PassThroughBody`](PassThroughBody.md)
+
 
 ---
 

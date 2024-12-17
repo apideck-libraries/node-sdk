@@ -24,6 +24,9 @@ ActivitiesSort.md
 Activity.md
 ActivityAttendee.md
 Address.md
+AgedCreditors.md
+AgedDebtors.md
+AgedReportFilter.md
 Allocation.md
 Api.md
 ApiResource.md
@@ -49,6 +52,8 @@ AttachmentReference.md
 AttachmentReferenceType.md
 AuthType.md
 BadRequestResponse.md
+BalanceByPeriod.md
+BalanceByTransaction.md
 BalanceSheet.md
 BalanceSheetAccount.md
 BalanceSheetAccountRecord.md
@@ -312,6 +317,8 @@ GetAccountingLocationResponse.md
 GetAccountingLocationsResponse.md
 GetActivitiesResponse.md
 GetActivityResponse.md
+GetAgedCreditorsResponse.md
+GetAgedDebtorsResponse.md
 GetApiResourceCoverageResponse.md
 GetApiResourceResponse.md
 GetApiResponse.md
@@ -464,6 +471,7 @@ HrisJobs.md
 IntegrationState.md
 Invoice.md
 InvoiceItem.md
+InvoiceItemFilter.md
 InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceLineItem.md
@@ -541,6 +549,8 @@ OrderRefunds.md
 OrderTenders.md
 OrderType.md
 OrdersSort.md
+OutstandingBalance.md
+OutstandingBalanceByCurrency.md
 Owner.md
 PaginationCoverage.md
 PassThroughBody.md
@@ -745,6 +755,9 @@ models/ActivitiesSort.ts
 models/Activity.ts
 models/ActivityAttendee.ts
 models/Address.ts
+models/AgedCreditors.ts
+models/AgedDebtors.ts
+models/AgedReportFilter.ts
 models/Allocation.ts
 models/Api.ts
 models/ApiResource.ts
@@ -768,6 +781,8 @@ models/AttachmentReference.ts
 models/AttachmentReferenceType.ts
 models/AuthType.ts
 models/BadRequestResponse.ts
+models/BalanceByPeriod.ts
+models/BalanceByTransaction.ts
 models/BalanceSheet.ts
 models/BalanceSheetAccount.ts
 models/BalanceSheetAccountRecord.ts
@@ -1022,6 +1037,8 @@ models/GetAccountingLocationResponse.ts
 models/GetAccountingLocationsResponse.ts
 models/GetActivitiesResponse.ts
 models/GetActivityResponse.ts
+models/GetAgedCreditorsResponse.ts
+models/GetAgedDebtorsResponse.ts
 models/GetApiResourceCoverageResponse.ts
 models/GetApiResourceResponse.ts
 models/GetApiResponse.ts
@@ -1172,6 +1189,7 @@ models/HrisJobs.ts
 models/IntegrationState.ts
 models/Invoice.ts
 models/InvoiceItem.ts
+models/InvoiceItemFilter.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceLineItem.ts
@@ -1246,6 +1264,8 @@ models/OrderRefunds.ts
 models/OrderTenders.ts
 models/OrderType.ts
 models/OrdersSort.ts
+models/OutstandingBalance.ts
+models/OutstandingBalanceByCurrency.ts
 models/Owner.ts
 models/PaginationCoverage.ts
 models/PassThroughBody.ts
