@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
   LinkedLedgerAccount,
@@ -201,6 +202,12 @@ export interface Customer {
    */
   channel?: string | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Customer
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * When custom mappings are configured on the resource, the result is included here.
    * @type {object}
    * @memberof Customer
@@ -300,6 +307,9 @@ export function CustomerFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     status: !exists(json, 'status') ? undefined : json['status'],
     payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
     channel: !exists(json, 'channel') ? undefined : json['channel'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -363,6 +373,10 @@ export function CustomerToJSON(value?: Customer | null): any {
     status: value.status,
     payment_method: value.payment_method,
     channel: value.channel,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through)
   }

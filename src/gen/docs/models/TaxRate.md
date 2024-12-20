@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 `subsidiaries` | **Array&lt;object&gt;** | The subsidiaries this belongs to. | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 
 
 
@@ -66,6 +67,7 @@ Name | Type | Description | Notes
 
 * [`PassThroughBody`](PassThroughBody.md)
 
+* [`CustomField`](CustomField.md)
 
 ---
 

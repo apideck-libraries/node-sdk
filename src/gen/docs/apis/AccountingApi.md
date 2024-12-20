@@ -2642,6 +2642,14 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {
@@ -3036,6 +3044,14 @@ const params = {
     status: 'active',
     payment_method: 'cash',
     channel: 'email',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
     row_version: '1-12345',
     pass_through: [
       {
@@ -9066,6 +9082,14 @@ const params = {
       {
         id: 'string'
       }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
     ]
   }
 }
@@ -9386,6 +9410,14 @@ const params = {
     subsidiaries: [
       {
         id: 'string'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
       }
     ]
   }

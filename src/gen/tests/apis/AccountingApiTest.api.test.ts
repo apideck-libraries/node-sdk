@@ -1839,6 +1839,14 @@ describe('AccountingApi', () => {
               {
                 id: 'string'
               }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
             ]
           },
           currency: 'USD',
@@ -2936,6 +2944,14 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -3083,6 +3099,14 @@ describe('AccountingApi', () => {
             status: 'active',
             payment_method: 'cash',
             channel: 'email',
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             custom_mappings: {},
             updated_by: '12345',
             created_by: '12345',
@@ -3290,6 +3314,14 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           custom_mappings: {},
           updated_by: '12345',
           created_by: '12345',
@@ -3457,6 +3489,14 @@ describe('AccountingApi', () => {
           status: 'active',
           payment_method: 'cash',
           channel: 'email',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -10098,6 +10138,14 @@ describe('AccountingApi', () => {
             {
               id: 'string'
             }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
           ]
         }
       } as any
@@ -10167,6 +10215,14 @@ describe('AccountingApi', () => {
             subsidiaries: [
               {
                 id: 'string'
+              }
+            ],
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
               }
             ]
           }
@@ -10303,6 +10359,14 @@ describe('AccountingApi', () => {
             {
               id: 'string'
             }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
           ]
         }
       } as any
@@ -10392,6 +10456,14 @@ describe('AccountingApi', () => {
           subsidiaries: [
             {
               id: 'string'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
             }
           ]
         }
