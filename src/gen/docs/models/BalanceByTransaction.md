@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `due_date` | **Date** | Due date of the transaction. | [optional] 
 `original_amount` | **number** | Original amount of the transaction. | [optional] 
 `outstanding_balance` | **number** | Outstanding balance of the transaction. | [optional] 
+`transaction_number` | **string** | Transaction number of the transaction. | [optional] 
 
 
 
@@ -28,7 +29,7 @@ Name | Type | Description | Notes
 
 * `payment` (value: `'payment'`)
 
-* `bill_payment` (value: `'bill-payment'`)
+* `bill_payment` (value: `'bill_payment'`)
 
 
 

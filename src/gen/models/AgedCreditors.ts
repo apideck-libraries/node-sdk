@@ -14,10 +14,10 @@
 
 import { exists } from '../runtime'
 import {
-  OutstandingBalance,
-  OutstandingBalanceFromJSON,
-  OutstandingBalanceToJSON
-} from './OutstandingBalance'
+  OutstandingBalanceBySupplier,
+  OutstandingBalanceBySupplierFromJSON,
+  OutstandingBalanceBySupplierToJSON
+} from './OutstandingBalanceBySupplier'
 
 /**
  *
@@ -51,10 +51,10 @@ export interface AgedCreditors {
   period_length?: number
   /**
    *
-   * @type {Array<OutstandingBalance>}
+   * @type {Array<OutstandingBalanceBySupplier>}
    * @memberof AgedCreditors
    */
-  outstanding_balances?: Array<OutstandingBalance>
+  outstanding_balances?: Array<OutstandingBalanceBySupplier>
 }
 
 export function AgedCreditorsFromJSON(json: any): AgedCreditors {
@@ -76,7 +76,7 @@ export function AgedCreditorsFromJSONTyped(json: any, ignoreDiscriminator: boole
     period_length: !exists(json, 'period_length') ? undefined : json['period_length'],
     outstanding_balances: !exists(json, 'outstanding_balances')
       ? undefined
-      : (json['outstanding_balances'] as Array<any>).map(OutstandingBalanceFromJSON)
+      : (json['outstanding_balances'] as Array<any>).map(OutstandingBalanceBySupplierFromJSON)
   }
 }
 
@@ -101,6 +101,6 @@ export function AgedCreditorsToJSON(value?: AgedCreditors | null): any {
     outstanding_balances:
       value.outstanding_balances === undefined
         ? undefined
-        : (value.outstanding_balances as Array<any>).map(OutstandingBalanceToJSON)
+        : (value.outstanding_balances as Array<any>).map(OutstandingBalanceBySupplierToJSON)
   }
 }

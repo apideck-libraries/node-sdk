@@ -55,6 +55,12 @@ export interface BalanceByTransaction {
    * @memberof BalanceByTransaction
    */
   outstanding_balance?: number
+  /**
+   * Transaction number of the transaction.
+   * @type {string}
+   * @memberof BalanceByTransaction
+   */
+  transaction_number?: string
 }
 
 /**
@@ -66,7 +72,7 @@ export enum BalanceByTransactionTransactionType {
   credit_note = 'credit_note',
   bill = 'bill',
   payment = 'payment',
-  bill_payment = 'bill-payment'
+  bill_payment = 'bill_payment'
 }
 
 export function BalanceByTransactionFromJSON(json: any): BalanceByTransaction {
@@ -90,7 +96,8 @@ export function BalanceByTransactionFromJSONTyped(
     original_amount: !exists(json, 'original_amount') ? undefined : json['original_amount'],
     outstanding_balance: !exists(json, 'outstanding_balance')
       ? undefined
-      : json['outstanding_balance']
+      : json['outstanding_balance'],
+    transaction_number: !exists(json, 'transaction_number') ? undefined : json['transaction_number']
   }
 }
 
@@ -113,6 +120,7 @@ export function BalanceByTransactionToJSON(value?: BalanceByTransaction | null):
         ? undefined
         : new Date(value.due_date).toISOString().substr(0, 10),
     original_amount: value.original_amount,
-    outstanding_balance: value.outstanding_balance
+    outstanding_balance: value.outstanding_balance,
+    transaction_number: value.transaction_number
   }
 }

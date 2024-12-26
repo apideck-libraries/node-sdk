@@ -43,11 +43,12 @@ describe('AccountingApi', () => {
           period_length: 30,
           outstanding_balances: [
             {
-              customer_id: '123',
-              customer_name: 'Super Store',
+              supplier_id: '123',
+              supplier_name: 'Super Store',
               outstanding_balances_by_currency: [
                 {
                   currency: 'USD',
+                  total_amount: 0,
                   balances_by_period: [Array]
                 }
               ]
@@ -101,6 +102,7 @@ describe('AccountingApi', () => {
               outstanding_balances_by_currency: [
                 {
                   currency: 'USD',
+                  total_amount: 0,
                   balances_by_period: [Array]
                 }
               ]
