@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Address, AddressFromJSON, AddressToJSON } from './Address'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { Email, EmailFromJSON, EmailToJSON } from './Email'
 import {
   LinkedLedgerAccount,
@@ -190,6 +191,12 @@ export interface Supplier {
    */
   readonly custom_mappings?: object | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Supplier
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * The user who last updated the object.
    * @type {string}
    * @memberof Supplier
@@ -288,6 +295,9 @@ export function SupplierFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
     channel: !exists(json, 'channel') ? undefined : json['channel'],
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
     updated_at: !exists(json, 'updated_at')
@@ -349,6 +359,10 @@ export function SupplierToJSON(value?: Supplier | null): any {
     status: value.status,
     payment_method: value.payment_method,
     channel: value.channel,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through),
     subsidiary_id: value.subsidiary_id
