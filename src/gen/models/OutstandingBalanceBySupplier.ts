@@ -22,43 +22,43 @@ import {
 /**
  *
  * @export
- * @interface OutstandingBalance
+ * @interface OutstandingBalanceBySupplier
  */
-export interface OutstandingBalance {
+export interface OutstandingBalanceBySupplier {
   /**
-   * Unique identifier for the customer or supplier.
+   * Unique identifier for the supplier.
    * @type {string}
-   * @memberof OutstandingBalance
+   * @memberof OutstandingBalanceBySupplier
    */
-  customer_id?: string
+  supplier_id?: string
   /**
-   * Full name of the customer or supplier.
+   * Full name of the supplier.
    * @type {string}
-   * @memberof OutstandingBalance
+   * @memberof OutstandingBalanceBySupplier
    */
-  customer_name?: string
+  supplier_name?: string
   /**
    *
    * @type {Array<OutstandingBalanceByCurrency>}
-   * @memberof OutstandingBalance
+   * @memberof OutstandingBalanceBySupplier
    */
   outstanding_balances_by_currency?: Array<OutstandingBalanceByCurrency>
 }
 
-export function OutstandingBalanceFromJSON(json: any): OutstandingBalance {
-  return OutstandingBalanceFromJSONTyped(json, false)
+export function OutstandingBalanceBySupplierFromJSON(json: any): OutstandingBalanceBySupplier {
+  return OutstandingBalanceBySupplierFromJSONTyped(json, false)
 }
 
-export function OutstandingBalanceFromJSONTyped(
+export function OutstandingBalanceBySupplierFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): OutstandingBalance {
+): OutstandingBalanceBySupplier {
   if (json === undefined || json === null) {
     return json
   }
   return {
-    customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
-    customer_name: !exists(json, 'customer_name') ? undefined : json['customer_name'],
+    supplier_id: !exists(json, 'supplier_id') ? undefined : json['supplier_id'],
+    supplier_name: !exists(json, 'supplier_name') ? undefined : json['supplier_name'],
     outstanding_balances_by_currency: !exists(json, 'outstanding_balances_by_currency')
       ? undefined
       : (json['outstanding_balances_by_currency'] as Array<any>).map(
@@ -67,7 +67,9 @@ export function OutstandingBalanceFromJSONTyped(
   }
 }
 
-export function OutstandingBalanceToJSON(value?: OutstandingBalance | null): any {
+export function OutstandingBalanceBySupplierToJSON(
+  value?: OutstandingBalanceBySupplier | null
+): any {
   if (value === undefined) {
     return undefined
   }
@@ -75,8 +77,8 @@ export function OutstandingBalanceToJSON(value?: OutstandingBalance | null): any
     return null
   }
   return {
-    customer_id: value.customer_id,
-    customer_name: value.customer_name,
+    supplier_id: value.supplier_id,
+    supplier_name: value.supplier_name,
     outstanding_balances_by_currency:
       value.outstanding_balances_by_currency === undefined
         ? undefined

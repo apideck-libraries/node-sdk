@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { BillLineItem, BillLineItemFromJSON, BillLineItemToJSON } from './BillLineItem'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import {
   LinkedLedgerAccount,
   LinkedLedgerAccountFromJSON,
@@ -252,6 +253,12 @@ export interface Bill {
    */
   row_version?: string | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof Bill
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * When custom mappings are configured on the resource, the result is included here.
    * @type {object}
    * @memberof Bill
@@ -353,6 +360,9 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
       ? null
       : new Date(json['created_at']),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
     pass_through: !exists(json, 'pass_through')
       ? undefined
@@ -413,6 +423,10 @@ export function BillToJSON(value?: Bill | null): any {
     discount_percentage: value.discount_percentage,
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
     row_version: value.row_version,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     pass_through: PassThroughBodyToJSON(value.pass_through),
     accounting_period: value.accounting_period
   }

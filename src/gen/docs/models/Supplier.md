@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 `payment_method` | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -87,6 +88,7 @@ Name | Type | Description | Notes
 
 
 
+* [`CustomField`](CustomField.md)
 
 
 

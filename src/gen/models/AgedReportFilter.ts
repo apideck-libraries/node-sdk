@@ -26,6 +26,12 @@ export interface AgedReportFilter {
    */
   customer_id?: string
   /**
+   * Filter by supplier id
+   * @type {string}
+   * @memberof AgedReportFilter
+   */
+  supplier_id?: string
+  /**
    * The cutoff date for considering transactions
    * @type {string}
    * @memberof AgedReportFilter
@@ -58,6 +64,7 @@ export function AgedReportFilterFromJSONTyped(
   }
   return {
     customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
+    supplier_id: !exists(json, 'supplier_id') ? undefined : json['supplier_id'],
     report_as_of_date: !exists(json, 'report_as_of_date') ? undefined : json['report_as_of_date'],
     period_count: !exists(json, 'period_count') ? undefined : json['period_count'],
     period_length: !exists(json, 'period_length') ? undefined : json['period_length']
@@ -73,6 +80,7 @@ export function AgedReportFilterToJSON(value?: AgedReportFilter | null): any {
   }
   return {
     customer_id: value.customer_id,
+    supplier_id: value.supplier_id,
     report_as_of_date: value.report_as_of_date,
     period_count: value.period_count,
     period_length: value.period_length

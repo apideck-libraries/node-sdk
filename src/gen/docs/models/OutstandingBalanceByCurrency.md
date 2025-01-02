@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `currency` | [**Currency**](Currency.md) |  | [optional] 
+`total_amount` | **number** | Total amount of the outstanding balance. | [optional] 
 `balances_by_period` | [**Array&lt;BalanceByPeriod&gt;**](BalanceByPeriod.md) |  | [optional] 
 
 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 
 ## Referenced Types:
 * [`Currency`](Currency.md)
+
 * [`BalanceByPeriod`](BalanceByPeriod.md)
 
 ---

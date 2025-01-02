@@ -549,8 +549,9 @@ OrderRefunds.md
 OrderTenders.md
 OrderType.md
 OrdersSort.md
-OutstandingBalance.md
 OutstandingBalanceByCurrency.md
+OutstandingBalanceByCustomer.md
+OutstandingBalanceBySupplier.md
 Owner.md
 PaginationCoverage.md
 PassThroughBody.md
@@ -1264,8 +1265,9 @@ models/OrderRefunds.ts
 models/OrderTenders.ts
 models/OrderType.ts
 models/OrdersSort.ts
-models/OutstandingBalance.ts
 models/OutstandingBalanceByCurrency.ts
+models/OutstandingBalanceByCustomer.ts
+models/OutstandingBalanceBySupplier.ts
 models/Owner.ts
 models/PaginationCoverage.ts
 models/PassThroughBody.ts

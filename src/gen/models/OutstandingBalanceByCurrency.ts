@@ -29,6 +29,12 @@ export interface OutstandingBalanceByCurrency {
    */
   currency?: Currency | null
   /**
+   * Total amount of the outstanding balance.
+   * @type {number}
+   * @memberof OutstandingBalanceByCurrency
+   */
+  total_amount?: number
+  /**
    *
    * @type {Array<BalanceByPeriod>}
    * @memberof OutstandingBalanceByCurrency
@@ -49,6 +55,7 @@ export function OutstandingBalanceByCurrencyFromJSONTyped(
   }
   return {
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
+    total_amount: !exists(json, 'total_amount') ? undefined : json['total_amount'],
     balances_by_period: !exists(json, 'balances_by_period')
       ? undefined
       : (json['balances_by_period'] as Array<any>).map(BalanceByPeriodFromJSON)
@@ -66,6 +73,7 @@ export function OutstandingBalanceByCurrencyToJSON(
   }
   return {
     currency: CurrencyToJSON(value.currency),
+    total_amount: value.total_amount,
     balances_by_period:
       value.balances_by_period === undefined
         ? undefined
