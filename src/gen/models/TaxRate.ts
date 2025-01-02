@@ -13,6 +13,7 @@
  */
 
 import { exists } from '../runtime'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { PassThroughBody, PassThroughBodyFromJSON, PassThroughBodyToJSON } from './PassThroughBody'
 
 /**
@@ -147,6 +148,12 @@ export interface TaxRate {
    * @memberof TaxRate
    */
   subsidiaries?: Array<object>
+  /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof TaxRate
+   */
+  custom_fields?: Array<CustomField>
 }
 
 /**
@@ -206,7 +213,10 @@ export function TaxRateFromJSONTyped(json: any, ignoreDiscriminator: boolean): T
     pass_through: !exists(json, 'pass_through')
       ? undefined
       : PassThroughBodyFromJSON(json['pass_through']),
-    subsidiaries: !exists(json, 'subsidiaries') ? undefined : json['subsidiaries']
+    subsidiaries: !exists(json, 'subsidiaries') ? undefined : json['subsidiaries'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON)
   }
 }
 
@@ -233,6 +243,10 @@ export function TaxRateToJSON(value?: TaxRate | null): any {
     status: value.status,
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through),
-    subsidiaries: value.subsidiaries
+    subsidiaries: value.subsidiaries,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON)
   }
 }

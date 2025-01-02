@@ -1,12 +1,12 @@
-# Apideck.OutstandingBalance
+# Apideck.OutstandingBalanceBySupplier
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`customer_id` | **string** | Unique identifier for the customer or supplier. | [optional] 
-`customer_name` | **string** | Full name of the customer or supplier. | [optional] 
+`supplier_id` | **string** | Unique identifier for the supplier. | [optional] 
+`supplier_name` | **string** | Full name of the supplier. | [optional] 
 `outstanding_balances_by_currency` | [**Array&lt;OutstandingBalanceByCurrency&gt;**](OutstandingBalanceByCurrency.md) |  | [optional] 
 
 

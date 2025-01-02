@@ -26,17 +26,17 @@ import {
  */
 export interface BalanceByPeriod {
   /**
-   * Start date of the period.
+   * The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified `end_date` are included.
    * @type {Date}
    * @memberof BalanceByPeriod
    */
-  start_date?: Date
+  start_date?: Date | null
   /**
-   * End date of the period.
+   * The ending date of the period. If not provided, it represents an open-ended period starting from the `start_date`, typically capturing future-dated transactions that are not yet aged.
    * @type {Date}
    * @memberof BalanceByPeriod
    */
-  end_date?: Date
+  end_date?: Date | null
   /**
    * Total amount of the period.
    * @type {number}
@@ -63,8 +63,16 @@ export function BalanceByPeriodFromJSONTyped(
     return json
   }
   return {
-    start_date: !exists(json, 'start_date') ? undefined : new Date(json['start_date']),
-    end_date: !exists(json, 'end_date') ? undefined : new Date(json['end_date']),
+    start_date: !exists(json, 'start_date')
+      ? undefined
+      : json['start_date'] === null
+      ? null
+      : new Date(json['start_date']),
+    end_date: !exists(json, 'end_date')
+      ? undefined
+      : json['end_date'] === null
+      ? null
+      : new Date(json['end_date']),
     total_amount: !exists(json, 'total_amount') ? undefined : json['total_amount'],
     balances_by_transaction: !exists(json, 'balances_by_transaction')
       ? undefined
@@ -83,10 +91,14 @@ export function BalanceByPeriodToJSON(value?: BalanceByPeriod | null): any {
     start_date:
       value.start_date === undefined
         ? undefined
+        : value.start_date === null
+        ? null
         : new Date(value.start_date).toISOString().substr(0, 10),
     end_date:
       value.end_date === undefined
         ? undefined
+        : value.end_date === null
+        ? null
         : new Date(value.end_date).toISOString().substr(0, 10),
     total_amount: value.total_amount,
     balances_by_transaction:

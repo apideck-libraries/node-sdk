@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 `report_as_of_date` | **Date** | The cutoff date for transactions included in the report. | [optional] 
 `period_count` | **number** | Number of aging periods shown in the report. | [optional] 
 `period_length` | **number** | Length of each aging period in days. | [optional] 
-`outstanding_balances` | [**Array&lt;OutstandingBalance&gt;**](OutstandingBalance.md) |  | [optional] 
+`outstanding_balances` | [**Array&lt;OutstandingBalanceByCustomer&gt;**](OutstandingBalanceByCustomer.md) |  | [optional] 
 
 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 
 
-* [`OutstandingBalance`](OutstandingBalance.md)
+* [`OutstandingBalanceByCustomer`](OutstandingBalanceByCustomer.md)
 
 ---
 

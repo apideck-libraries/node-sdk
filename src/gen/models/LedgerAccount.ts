@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { BankAccount, BankAccountFromJSON, BankAccountToJSON } from './BankAccount'
 import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { CustomField, CustomFieldFromJSON, CustomFieldToJSON } from './CustomField'
 import { LedgerAccountCategories, LedgerAccountCategoriesFromJSON } from './LedgerAccountCategories'
 import {
   LedgerAccountParentAccount,
@@ -193,6 +194,12 @@ export interface LedgerAccount {
    */
   readonly custom_mappings?: object | null
   /**
+   *
+   * @type {Array<CustomField>}
+   * @memberof LedgerAccount
+   */
+  custom_fields?: Array<CustomField>
+  /**
    * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
    * @type {string}
    * @memberof LedgerAccount
@@ -330,6 +337,9 @@ export function LedgerAccountFromJSONTyped(json: any, ignoreDiscriminator: boole
       : new Date(json['last_reconciliation_date']),
     subsidiaries: !exists(json, 'subsidiaries') ? undefined : json['subsidiaries'],
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings'],
+    custom_fields: !exists(json, 'custom_fields')
+      ? undefined
+      : (json['custom_fields'] as Array<any>).map(CustomFieldFromJSON),
     row_version: !exists(json, 'row_version') ? undefined : json['row_version'],
     updated_by: !exists(json, 'updated_by') ? undefined : json['updated_by'],
     created_by: !exists(json, 'created_by') ? undefined : json['created_by'],
@@ -385,6 +395,10 @@ export function LedgerAccountToJSON(value?: LedgerAccount | null): any {
         ? null
         : new Date(value.last_reconciliation_date).toISOString().substr(0, 10),
     subsidiaries: value.subsidiaries,
+    custom_fields:
+      value.custom_fields === undefined
+        ? undefined
+        : (value.custom_fields as Array<any>).map(CustomFieldToJSON),
     row_version: value.row_version,
     pass_through: PassThroughBodyToJSON(value.pass_through)
   }
