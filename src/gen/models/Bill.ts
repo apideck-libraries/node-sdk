@@ -89,13 +89,13 @@ export interface Bill {
    * @type {Date}
    * @memberof Bill
    */
-  bill_date?: Date
+  bill_date?: Date | null
   /**
    * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
    * @type {Date}
    * @memberof Bill
    */
-  due_date?: Date
+  due_date?: Date | null
   /**
    * The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
    * @type {Date}
@@ -310,8 +310,16 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
     currency: !exists(json, 'currency') ? undefined : CurrencyFromJSON(json['currency']),
     currency_rate: !exists(json, 'currency_rate') ? undefined : json['currency_rate'],
     tax_inclusive: !exists(json, 'tax_inclusive') ? undefined : json['tax_inclusive'],
-    bill_date: !exists(json, 'bill_date') ? undefined : new Date(json['bill_date']),
-    due_date: !exists(json, 'due_date') ? undefined : new Date(json['due_date']),
+    bill_date: !exists(json, 'bill_date')
+      ? undefined
+      : json['bill_date'] === null
+      ? null
+      : new Date(json['bill_date']),
+    due_date: !exists(json, 'due_date')
+      ? undefined
+      : json['due_date'] === null
+      ? null
+      : new Date(json['due_date']),
     paid_date: !exists(json, 'paid_date')
       ? undefined
       : json['paid_date'] === null
@@ -388,10 +396,14 @@ export function BillToJSON(value?: Bill | null): any {
     bill_date:
       value.bill_date === undefined
         ? undefined
+        : value.bill_date === null
+        ? null
         : new Date(value.bill_date).toISOString().substr(0, 10),
     due_date:
       value.due_date === undefined
         ? undefined
+        : value.due_date === null
+        ? null
         : new Date(value.due_date).toISOString().substr(0, 10),
     paid_date:
       value.paid_date === undefined
