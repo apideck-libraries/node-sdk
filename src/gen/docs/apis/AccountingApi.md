@@ -5373,6 +5373,14 @@ const params = {
     ],
     accounting_period: '01-24',
     row_version: '1-12345',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
     pass_through: [
       {
         service_id: 'string',
@@ -5815,6 +5823,14 @@ const params = {
     ],
     accounting_period: '01-24',
     row_version: '1-12345',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ],
     pass_through: [
       {
         service_id: 'string',
