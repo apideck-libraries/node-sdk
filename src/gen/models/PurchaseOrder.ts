@@ -179,7 +179,7 @@ export interface PurchaseOrder {
    * @type {Date}
    * @memberof PurchaseOrder
    */
-  due_date?: Date
+  due_date?: Date | null
   /**
    * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
    * @type {string}
@@ -321,7 +321,11 @@ export function PurchaseOrderFromJSONTyped(json: any, ignoreDiscriminator: boole
       ? undefined
       : BankAccountFromJSON(json['bank_account']),
     accounting_by_row: !exists(json, 'accounting_by_row') ? undefined : json['accounting_by_row'],
-    due_date: !exists(json, 'due_date') ? undefined : new Date(json['due_date']),
+    due_date: !exists(json, 'due_date')
+      ? undefined
+      : json['due_date'] === null
+      ? null
+      : new Date(json['due_date']),
     payment_method: !exists(json, 'payment_method') ? undefined : json['payment_method'],
     tax_code: !exists(json, 'tax_code') ? undefined : json['tax_code'],
     channel: !exists(json, 'channel') ? undefined : json['channel'],
@@ -399,6 +403,8 @@ export function PurchaseOrderToJSON(value?: PurchaseOrder | null): any {
     due_date:
       value.due_date === undefined
         ? undefined
+        : value.due_date === null
+        ? null
         : new Date(value.due_date).toISOString().substr(0, 10),
     payment_method: value.payment_method,
     tax_code: value.tax_code,

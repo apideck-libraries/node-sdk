@@ -2830,9 +2830,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.80"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.80.tgz#ca7a8361d7305f0ec9e203ce4e633cbb8a8ef1b1"
-  integrity sha512-LTrKpW0AqIuHwmlVNV+cjFYTnXtM9K37OGhpe0ZI10ScPSxqVSryZHIY3WnCS5NSYbBODRTZyhRMS2h5FAEqAw==
+  version "1.5.81"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.81.tgz#04530f04a29af1d6ec3a628840703ce9ac90c8dd"
+  integrity sha512-SFsAz1hoR+u1eAWjofSPQnx0InE1QHGUAQ92pqYJPT8GARzmyP1zcEBDBxFFC6okJk2E94Ryfmib4DB8Sc6LBw==
 
 emittery@^0.13.1:
   version "0.13.1"
