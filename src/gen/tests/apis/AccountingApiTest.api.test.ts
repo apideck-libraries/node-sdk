@@ -5996,6 +5996,14 @@ describe('AccountingApi', () => {
           ],
           accounting_period: '01-24',
           row_version: '1-12345',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           pass_through: [
             {
               service_id: 'string',
@@ -6154,6 +6162,14 @@ describe('AccountingApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
             row_version: '1-12345',
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             pass_through: [
               {
                 service_id: 'string',
@@ -6427,6 +6443,14 @@ describe('AccountingApi', () => {
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           row_version: '1-12345',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           pass_through: [
             {
               service_id: 'string',
@@ -6639,6 +6663,14 @@ describe('AccountingApi', () => {
           ],
           accounting_period: '01-24',
           row_version: '1-12345',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           pass_through: [
             {
               service_id: 'string',
