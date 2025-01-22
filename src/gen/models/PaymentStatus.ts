@@ -18,7 +18,9 @@
  * @enum {string}
  */
 export enum PaymentStatus {
+  draft = 'draft',
   authorised = 'authorised',
+  rejected = 'rejected',
   paid = 'paid',
   voided = 'voided',
   deleted = 'deleted'
