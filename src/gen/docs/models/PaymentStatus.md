@@ -3,7 +3,11 @@
 ## Enum
 
 
+* `draft` (value: `'draft'`)
+
 * `authorised` (value: `'authorised'`)
+
+* `rejected` (value: `'rejected'`)
 
 * `paid` (value: `'paid'`)
 
