@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `title` | **string** | The title or name of the opportunity. | 
-`primary_contact_id` | **string** | The unique identifier of the primary contact associated with the opportunity. | 
 `id` | **string** | A unique identifier for the opportunity. | [optional] 
+`primary_contact_id` | **string** | The unique identifier of the primary contact associated with the opportunity. | [optional] 
 `description` | **string** | A description of the opportunity. | [optional] 
 `type` | **string** | The type of the opportunity | [optional] 
 `monetary_amount` | **number** | The monetary value associated with the opportunity | [optional] 
