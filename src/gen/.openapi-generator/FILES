@@ -268,6 +268,7 @@ EcommerceCustomer.md
 EcommerceCustomerAddresses.md
 EcommerceCustomersFilter.md
 EcommerceDiscount.md
+EcommerceEventType.md
 EcommerceOrder.md
 EcommerceOrderLineItem.md
 EcommerceOrderStatus.md
@@ -474,6 +475,7 @@ InvoiceItem.md
 InvoiceItemFilter.md
 InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
+InvoiceItemsSort.md
 InvoiceLineItem.md
 InvoiceResponse.md
 InvoicesFilter.md
@@ -992,6 +994,7 @@ models/EcommerceCustomer.ts
 models/EcommerceCustomerAddresses.ts
 models/EcommerceCustomersFilter.ts
 models/EcommerceDiscount.ts
+models/EcommerceEventType.ts
 models/EcommerceOrder.ts
 models/EcommerceOrderLineItem.ts
 models/EcommerceOrderStatus.ts
@@ -1193,6 +1196,7 @@ models/InvoiceItem.ts
 models/InvoiceItemFilter.ts
 models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
+models/InvoiceItemsSort.ts
 models/InvoiceLineItem.ts
 models/InvoiceResponse.ts
 models/InvoicesFilter.ts
