@@ -61,7 +61,7 @@ export class Apideck {
         'x-apideck-app-id': config.appId,
         'x-apideck-consumer-id': config.consumerId || '',
         'x-apideck-service-id': config?.serviceId || '',
-        'user-agent': 'Apideck-node-sdk/3.7.2 Unify-spec/10.11.2'
+        'user-agent': 'Apideck-node-sdk/3.7.3 Unify-spec/10.11.3'
       }
     })
 
