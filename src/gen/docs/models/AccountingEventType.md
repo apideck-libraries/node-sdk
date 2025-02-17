@@ -65,6 +65,12 @@
 
 * `accounting_expense_deleted` (value: `'accounting.expense.deleted'`)
 
+* `accounting_credit_note_created` (value: `'accounting.credit_note.created'`)
+
+* `accounting_credit_note_updated` (value: `'accounting.credit_note.updated'`)
+
+* `accounting_credit_note_deleted` (value: `'accounting.credit_note.deleted'`)
+
 
 ---
 
