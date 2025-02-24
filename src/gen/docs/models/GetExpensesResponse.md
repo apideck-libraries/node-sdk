@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `data` | [**Array&lt;Expense&gt;**](Expense.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 * [`Expense`](Expense.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
+* [`Raw`](Raw.md)
 
 ---
 

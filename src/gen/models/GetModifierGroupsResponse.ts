@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 import { ModifierGroup, ModifierGroupFromJSON, ModifierGroupToJSON } from './ModifierGroup'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetModifierGroupsResponse {
    * @memberof GetModifierGroupsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetModifierGroupsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetModifierGroupsResponseFromJSON(json: any): GetModifierGroupsResponse {
@@ -92,7 +99,8 @@ export function GetModifierGroupsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(ModifierGroupFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetModifierGroupsResponseToJSON(value?: GetModifierGroupsRespons
     operation: value.operation,
     data: (value.data as Array<any>).map(ModifierGroupToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

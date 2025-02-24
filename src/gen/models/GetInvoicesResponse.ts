@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Invoice, InvoiceFromJSON, InvoiceToJSON } from './Invoice'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetInvoicesResponse {
    * @memberof GetInvoicesResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetInvoicesResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetInvoicesResponseFromJSON(json: any): GetInvoicesResponse {
@@ -92,7 +99,8 @@ export function GetInvoicesResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(InvoiceFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetInvoicesResponseToJSON(value?: GetInvoicesResponse | null): a
     operation: value.operation,
     data: (value.data as Array<any>).map(InvoiceToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

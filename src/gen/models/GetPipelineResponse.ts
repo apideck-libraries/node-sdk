@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Pipeline, PipelineFromJSON, PipelineToJSON } from './Pipeline'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetPipelineResponse {
    * @memberof GetPipelineResponse
    */
   data: Pipeline
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPipelineResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPipelineResponseFromJSON(json: any): GetPipelineResponse {
@@ -75,7 +83,8 @@ export function GetPipelineResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: PipelineFromJSON(json['data'])
+    data: PipelineFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetPipelineResponseToJSON(value?: GetPipelineResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: PipelineToJSON(value.data)
+    data: PipelineToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

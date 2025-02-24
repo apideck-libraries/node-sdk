@@ -38,7 +38,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -228,7 +229,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -266,7 +268,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -378,7 +381,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -418,7 +422,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -527,7 +532,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -671,7 +677,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -709,7 +716,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -798,7 +806,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -838,7 +847,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -924,7 +934,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1091,7 +1102,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1129,7 +1141,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1230,7 +1243,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1270,7 +1284,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1367,7 +1382,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1485,7 +1501,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1523,7 +1540,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1599,7 +1617,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1639,7 +1658,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1712,7 +1732,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1808,7 +1829,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1846,7 +1868,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1911,7 +1934,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1951,7 +1975,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2013,7 +2038,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2098,7 +2124,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2136,7 +2163,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2195,7 +2223,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2235,7 +2264,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2292,7 +2322,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2785,7 +2816,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2823,7 +2855,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -3133,7 +3166,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -3173,7 +3207,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -3459,7 +3494,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -3745,7 +3781,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4047,7 +4084,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4085,7 +4123,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4254,7 +4293,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4294,7 +4334,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4458,7 +4499,8 @@ describe('PosApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4554,7 +4596,8 @@ describe('PosApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4592,7 +4635,8 @@ describe('PosApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4657,7 +4701,8 @@ describe('PosApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -4697,7 +4742,8 @@ describe('PosApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { TimeOffRequest, TimeOffRequestFromJSON, TimeOffRequestToJSON } from './TimeOffRequest'
 
 /**
@@ -56,6 +58,12 @@ export interface GetTimeOffRequestResponse {
    * @memberof GetTimeOffRequestResponse
    */
   data: TimeOffRequest
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTimeOffRequestResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTimeOffRequestResponseFromJSON(json: any): GetTimeOffRequestResponse {
@@ -75,7 +83,8 @@ export function GetTimeOffRequestResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: TimeOffRequestFromJSON(json['data'])
+    data: TimeOffRequestFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetTimeOffRequestResponseToJSON(value?: GetTimeOffRequestRespons
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: TimeOffRequestToJSON(value.data)
+    data: TimeOffRequestToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

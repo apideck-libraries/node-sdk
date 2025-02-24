@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { CollectionTag, CollectionTagFromJSON, CollectionTagToJSON } from './CollectionTag'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetCollectionTagsResponse {
    * @memberof GetCollectionTagsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCollectionTagsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCollectionTagsResponseFromJSON(json: any): GetCollectionTagsResponse {
@@ -92,7 +99,8 @@ export function GetCollectionTagsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(CollectionTagFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetCollectionTagsResponseToJSON(value?: GetCollectionTagsRespons
     operation: value.operation,
     data: (value.data as Array<any>).map(CollectionTagToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

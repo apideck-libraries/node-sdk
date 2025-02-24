@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Expense, ExpenseFromJSON, ExpenseToJSON } from './Expense'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetExpenseResponse {
    * @memberof GetExpenseResponse
    */
   data: Expense
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetExpenseResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetExpenseResponseFromJSON(json: any): GetExpenseResponse {
@@ -75,7 +83,8 @@ export function GetExpenseResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ExpenseFromJSON(json['data'])
+    data: ExpenseFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetExpenseResponseToJSON(value?: GetExpenseResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ExpenseToJSON(value.data)
+    data: ExpenseToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

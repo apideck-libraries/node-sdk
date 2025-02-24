@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Supplier, SupplierFromJSON, SupplierToJSON } from './Supplier'
 
 /**
@@ -71,6 +72,12 @@ export interface GetSuppliersResponse {
    * @memberof GetSuppliersResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetSuppliersResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetSuppliersResponseFromJSON(json: any): GetSuppliersResponse {
@@ -92,7 +99,8 @@ export function GetSuppliersResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(SupplierFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetSuppliersResponseToJSON(value?: GetSuppliersResponse | null):
     operation: value.operation,
     data: (value.data as Array<any>).map(SupplierToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

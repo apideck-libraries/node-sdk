@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Customer, CustomerFromJSON, CustomerToJSON } from './Customer'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetCustomerResponse {
    * @memberof GetCustomerResponse
    */
   data: Customer
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCustomerResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCustomerResponseFromJSON(json: any): GetCustomerResponse {
@@ -75,7 +83,8 @@ export function GetCustomerResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: CustomerFromJSON(json['data'])
+    data: CustomerFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetCustomerResponseToJSON(value?: GetCustomerResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: CustomerToJSON(value.data)
+    data: CustomerToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

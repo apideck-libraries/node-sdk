@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Merchant, MerchantFromJSON, MerchantToJSON } from './Merchant'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetMerchantsResponse {
    * @memberof GetMerchantsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetMerchantsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetMerchantsResponseFromJSON(json: any): GetMerchantsResponse {
@@ -92,7 +99,8 @@ export function GetMerchantsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(MerchantFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetMerchantsResponseToJSON(value?: GetMerchantsResponse | null):
     operation: value.operation,
     data: (value.data as Array<any>).map(MerchantToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

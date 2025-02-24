@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
 `data` | [**Pipeline**](Pipeline.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 
 
 * [`Pipeline`](Pipeline.md)
+* [`Raw`](Raw.md)
 
 ---
 

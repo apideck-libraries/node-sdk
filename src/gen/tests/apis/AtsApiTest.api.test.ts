@@ -38,7 +38,8 @@ describe('AtsApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -319,6 +320,7 @@ describe('AtsApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -369,7 +371,8 @@ describe('AtsApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -537,7 +540,8 @@ describe('AtsApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -577,7 +581,8 @@ describe('AtsApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -733,7 +738,8 @@ describe('AtsApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -817,6 +823,7 @@ describe('AtsApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -867,7 +874,8 @@ describe('AtsApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -932,7 +940,8 @@ describe('AtsApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -972,7 +981,8 @@ describe('AtsApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1152,6 +1162,7 @@ describe('AtsApi', () => {
             created_at: '2020-09-30T07:43:32.000Z'
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -1317,7 +1328,8 @@ describe('AtsApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

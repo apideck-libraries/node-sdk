@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**CreateCallbackStateResponseData**](CreateCallbackStateResponseData.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 
 
 * [`CreateCallbackStateResponseData`](CreateCallbackStateResponseData.md)
+* [`Raw`](Raw.md)
 
 ---
 

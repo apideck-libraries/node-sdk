@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
 `data` | [**Array&lt;Job&gt;**](Job.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
 
@@ -25,6 +26,7 @@ Name | Type | Description | Notes
 
 
 * [`Job`](Job.md)
+* [`Raw`](Raw.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
 

@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   ConsumerRequestCountsInDateRangeResponseData,
   ConsumerRequestCountsInDateRangeResponseDataFromJSON,
   ConsumerRequestCountsInDateRangeResponseDataToJSON
 } from './ConsumerRequestCountsInDateRangeResponseData'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -42,6 +44,12 @@ export interface ConsumerRequestCountsInDateRangeResponse {
    * @memberof ConsumerRequestCountsInDateRangeResponse
    */
   data: ConsumerRequestCountsInDateRangeResponseData
+  /**
+   *
+   * @type {Raw}
+   * @memberof ConsumerRequestCountsInDateRangeResponse
+   */
+  _raw?: Raw | null
 }
 
 export function ConsumerRequestCountsInDateRangeResponseFromJSON(
@@ -60,7 +68,8 @@ export function ConsumerRequestCountsInDateRangeResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: ConsumerRequestCountsInDateRangeResponseDataFromJSON(json['data'])
+    data: ConsumerRequestCountsInDateRangeResponseDataFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -76,6 +85,7 @@ export function ConsumerRequestCountsInDateRangeResponseToJSON(
   return {
     status_code: value.status_code,
     status: value.status,
-    data: ConsumerRequestCountsInDateRangeResponseDataToJSON(value.data)
+    data: ConsumerRequestCountsInDateRangeResponseDataToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

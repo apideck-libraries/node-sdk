@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Attachment, AttachmentFromJSON, AttachmentToJSON } from './Attachment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetAttachmentResponse {
    * @memberof GetAttachmentResponse
    */
   data: Attachment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetAttachmentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetAttachmentResponseFromJSON(json: any): GetAttachmentResponse {
@@ -75,7 +83,8 @@ export function GetAttachmentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: AttachmentFromJSON(json['data'])
+    data: AttachmentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetAttachmentResponseToJSON(value?: GetAttachmentResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: AttachmentToJSON(value.data)
+    data: AttachmentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

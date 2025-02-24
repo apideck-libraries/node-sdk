@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Invoice, InvoiceFromJSON, InvoiceToJSON } from './Invoice'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetInvoiceResponse {
    * @memberof GetInvoiceResponse
    */
   data: Invoice
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetInvoiceResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetInvoiceResponseFromJSON(json: any): GetInvoiceResponse {
@@ -75,7 +83,8 @@ export function GetInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: InvoiceFromJSON(json['data'])
+    data: InvoiceFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetInvoiceResponseToJSON(value?: GetInvoiceResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: InvoiceToJSON(value.data)
+    data: InvoiceToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

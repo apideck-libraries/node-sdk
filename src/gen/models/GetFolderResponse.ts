@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Folder, FolderFromJSON, FolderToJSON } from './Folder'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetFolderResponse {
    * @memberof GetFolderResponse
    */
   data: Folder
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetFolderResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetFolderResponseFromJSON(json: any): GetFolderResponse {
@@ -75,7 +83,8 @@ export function GetFolderResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: FolderFromJSON(json['data'])
+    data: FolderFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetFolderResponseToJSON(value?: GetFolderResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: FolderToJSON(value.data)
+    data: FolderToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

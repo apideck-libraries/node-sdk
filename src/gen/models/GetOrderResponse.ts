@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Order, OrderFromJSON, OrderToJSON } from './Order'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetOrderResponse {
    * @memberof GetOrderResponse
    */
   data: Order
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetOrderResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetOrderResponseFromJSON(json: any): GetOrderResponse {
@@ -75,7 +83,8 @@ export function GetOrderResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: OrderFromJSON(json['data'])
+    data: OrderFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetOrderResponseToJSON(value?: GetOrderResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: OrderToJSON(value.data)
+    data: OrderToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

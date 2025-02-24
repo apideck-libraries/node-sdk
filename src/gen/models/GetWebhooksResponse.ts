@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Webhook, WebhookFromJSON, WebhookToJSON } from './Webhook'
 
 /**
@@ -53,6 +54,12 @@ export interface GetWebhooksResponse {
    * @memberof GetWebhooksResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetWebhooksResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetWebhooksResponseFromJSON(json: any): GetWebhooksResponse {
@@ -71,7 +78,8 @@ export function GetWebhooksResponseFromJSONTyped(
     status: json['status'],
     data: (json['data'] as Array<any>).map(WebhookFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -87,6 +95,7 @@ export function GetWebhooksResponseToJSON(value?: GetWebhooksResponse | null): a
     status: value.status,
     data: (value.data as Array<any>).map(WebhookToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

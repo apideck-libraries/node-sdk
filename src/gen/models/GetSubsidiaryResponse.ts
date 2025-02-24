@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Subsidiary, SubsidiaryFromJSON, SubsidiaryToJSON } from './Subsidiary'
 
 /**
@@ -56,6 +58,12 @@ export interface GetSubsidiaryResponse {
    * @memberof GetSubsidiaryResponse
    */
   data: Subsidiary
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetSubsidiaryResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetSubsidiaryResponseFromJSON(json: any): GetSubsidiaryResponse {
@@ -75,7 +83,8 @@ export function GetSubsidiaryResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: SubsidiaryFromJSON(json['data'])
+    data: SubsidiaryFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetSubsidiaryResponseToJSON(value?: GetSubsidiaryResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: SubsidiaryToJSON(value.data)
+    data: SubsidiaryToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

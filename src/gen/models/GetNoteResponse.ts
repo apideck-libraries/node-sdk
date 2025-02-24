@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Note, NoteFromJSON, NoteToJSON } from './Note'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetNoteResponse {
    * @memberof GetNoteResponse
    */
   data: Note
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetNoteResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetNoteResponseFromJSON(json: any): GetNoteResponse {
@@ -75,7 +83,8 @@ export function GetNoteResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: NoteFromJSON(json['data'])
+    data: NoteFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetNoteResponseToJSON(value?: GetNoteResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: NoteToJSON(value.data)
+    data: NoteToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

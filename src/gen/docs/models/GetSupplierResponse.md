@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
 `data` | [**Supplier**](Supplier.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 
 
 * [`Supplier`](Supplier.md)
+* [`Raw`](Raw.md)
 
 ---
 

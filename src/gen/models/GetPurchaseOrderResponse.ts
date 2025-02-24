@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { PurchaseOrder, PurchaseOrderFromJSON, PurchaseOrderToJSON } from './PurchaseOrder'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetPurchaseOrderResponse {
    * @memberof GetPurchaseOrderResponse
    */
   data: PurchaseOrder
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPurchaseOrderResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPurchaseOrderResponseFromJSON(json: any): GetPurchaseOrderResponse {
@@ -75,7 +83,8 @@ export function GetPurchaseOrderResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: PurchaseOrderFromJSON(json['data'])
+    data: PurchaseOrderFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetPurchaseOrderResponseToJSON(value?: GetPurchaseOrderResponse 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: PurchaseOrderToJSON(value.data)
+    data: PurchaseOrderToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

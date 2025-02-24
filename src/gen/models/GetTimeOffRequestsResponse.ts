@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { TimeOffRequest, TimeOffRequestFromJSON, TimeOffRequestToJSON } from './TimeOffRequest'
 
 /**
@@ -61,6 +62,12 @@ export interface GetTimeOffRequestsResponse {
   data: Array<TimeOffRequest>
   /**
    *
+   * @type {Raw}
+   * @memberof GetTimeOffRequestsResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetTimeOffRequestsResponse
    */
@@ -91,6 +98,7 @@ export function GetTimeOffRequestsResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(TimeOffRequestFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetTimeOffRequestsResponseToJSON(value?: GetTimeOffRequestsRespo
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(TimeOffRequestToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

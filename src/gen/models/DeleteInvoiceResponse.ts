@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { InvoiceResponse, InvoiceResponseFromJSON, InvoiceResponseToJSON } from './InvoiceResponse'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface DeleteInvoiceResponse {
    * @memberof DeleteInvoiceResponse
    */
   data: InvoiceResponse
+  /**
+   *
+   * @type {Raw}
+   * @memberof DeleteInvoiceResponse
+   */
+  _raw?: Raw | null
 }
 
 export function DeleteInvoiceResponseFromJSON(json: any): DeleteInvoiceResponse {
@@ -75,7 +83,8 @@ export function DeleteInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: InvoiceResponseFromJSON(json['data'])
+    data: InvoiceResponseFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function DeleteInvoiceResponseToJSON(value?: DeleteInvoiceResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: InvoiceResponseToJSON(value.data)
+    data: InvoiceResponseToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**ValidateConnectionStateResponseData**](ValidateConnectionStateResponseData.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 
 
 * [`ValidateConnectionStateResponseData`](ValidateConnectionStateResponseData.md)
+* [`Raw`](Raw.md)
 
 ---
 

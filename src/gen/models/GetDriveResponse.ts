@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Drive, DriveFromJSON, DriveToJSON } from './Drive'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetDriveResponse {
    * @memberof GetDriveResponse
    */
   data: Drive
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetDriveResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetDriveResponseFromJSON(json: any): GetDriveResponse {
@@ -75,7 +83,8 @@ export function GetDriveResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: DriveFromJSON(json['data'])
+    data: DriveFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetDriveResponseToJSON(value?: GetDriveResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: DriveToJSON(value.data)
+    data: DriveToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

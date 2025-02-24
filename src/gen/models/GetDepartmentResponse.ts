@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Department, DepartmentFromJSON, DepartmentToJSON } from './Department'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetDepartmentResponse {
    * @memberof GetDepartmentResponse
    */
   data: Department
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetDepartmentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetDepartmentResponseFromJSON(json: any): GetDepartmentResponse {
@@ -75,7 +83,8 @@ export function GetDepartmentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: DepartmentFromJSON(json['data'])
+    data: DepartmentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetDepartmentResponseToJSON(value?: GetDepartmentResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: DepartmentToJSON(value.data)
+    data: DepartmentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

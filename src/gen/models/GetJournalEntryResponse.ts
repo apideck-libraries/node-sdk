@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { JournalEntry, JournalEntryFromJSON, JournalEntryToJSON } from './JournalEntry'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetJournalEntryResponse {
    * @memberof GetJournalEntryResponse
    */
   data: JournalEntry
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetJournalEntryResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetJournalEntryResponseFromJSON(json: any): GetJournalEntryResponse {
@@ -75,7 +83,8 @@ export function GetJournalEntryResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: JournalEntryFromJSON(json['data'])
+    data: JournalEntryFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetJournalEntryResponseToJSON(value?: GetJournalEntryResponse | 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: JournalEntryToJSON(value.data)
+    data: JournalEntryToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

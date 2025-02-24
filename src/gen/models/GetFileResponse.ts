@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { UnifiedFile, UnifiedFileFromJSON, UnifiedFileToJSON } from './UnifiedFile'
 
 /**
@@ -56,6 +58,12 @@ export interface GetFileResponse {
    * @memberof GetFileResponse
    */
   data: UnifiedFile
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetFileResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetFileResponseFromJSON(json: any): GetFileResponse {
@@ -75,7 +83,8 @@ export function GetFileResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UnifiedFileFromJSON(json['data'])
+    data: UnifiedFileFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetFileResponseToJSON(value?: GetFileResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UnifiedFileToJSON(value.data)
+    data: UnifiedFileToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

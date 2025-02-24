@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { ResourceExample, ResourceExampleFromJSON, ResourceExampleToJSON } from './ResourceExample'
 
 /**
@@ -38,6 +40,12 @@ export interface GetResourceExampleResponse {
    * @memberof GetResourceExampleResponse
    */
   data: ResourceExample
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetResourceExampleResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetResourceExampleResponseFromJSON(json: any): GetResourceExampleResponse {
@@ -54,7 +62,8 @@ export function GetResourceExampleResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: ResourceExampleFromJSON(json['data'])
+    data: ResourceExampleFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -68,6 +77,7 @@ export function GetResourceExampleResponseToJSON(value?: GetResourceExampleRespo
   return {
     status_code: value.status_code,
     status: value.status,
-    data: ResourceExampleToJSON(value.data)
+    data: ResourceExampleToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

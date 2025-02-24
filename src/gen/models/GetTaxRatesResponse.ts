@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { TaxRate, TaxRateFromJSON, TaxRateToJSON } from './TaxRate'
 
 /**
@@ -71,6 +72,12 @@ export interface GetTaxRatesResponse {
    * @memberof GetTaxRatesResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTaxRatesResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTaxRatesResponseFromJSON(json: any): GetTaxRatesResponse {
@@ -92,7 +99,8 @@ export function GetTaxRatesResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(TaxRateFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetTaxRatesResponseToJSON(value?: GetTaxRatesResponse | null): a
     operation: value.operation,
     data: (value.data as Array<any>).map(TaxRateToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

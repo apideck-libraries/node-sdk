@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Supplier, SupplierFromJSON, SupplierToJSON } from './Supplier'
 
 /**
@@ -56,6 +58,12 @@ export interface GetSupplierResponse {
    * @memberof GetSupplierResponse
    */
   data: Supplier
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetSupplierResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetSupplierResponseFromJSON(json: any): GetSupplierResponse {
@@ -75,7 +83,8 @@ export function GetSupplierResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: SupplierFromJSON(json['data'])
+    data: SupplierFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetSupplierResponseToJSON(value?: GetSupplierResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: SupplierToJSON(value.data)
+    data: SupplierToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

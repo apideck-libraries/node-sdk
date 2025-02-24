@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { PosPayment, PosPaymentFromJSON, PosPaymentToJSON } from './PosPayment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetPosPaymentResponse {
    * @memberof GetPosPaymentResponse
    */
   data: PosPayment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPosPaymentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPosPaymentResponseFromJSON(json: any): GetPosPaymentResponse {
@@ -75,7 +83,8 @@ export function GetPosPaymentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: PosPaymentFromJSON(json['data'])
+    data: PosPaymentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetPosPaymentResponseToJSON(value?: GetPosPaymentResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: PosPaymentToJSON(value.data)
+    data: PosPaymentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

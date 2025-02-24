@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Activity, ActivityFromJSON, ActivityToJSON } from './Activity'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -61,6 +62,12 @@ export interface GetActivitiesResponse {
   data: Array<Activity>
   /**
    *
+   * @type {Raw}
+   * @memberof GetActivitiesResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetActivitiesResponse
    */
@@ -91,6 +98,7 @@ export function GetActivitiesResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(ActivityFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetActivitiesResponseToJSON(value?: GetActivitiesResponse | null
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(ActivityToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

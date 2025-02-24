@@ -20,6 +20,7 @@ import {
 } from './EcommerceProduct'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -65,6 +66,12 @@ export interface GetProductsResponse {
   data: Array<EcommerceProduct>
   /**
    *
+   * @type {Raw}
+   * @memberof GetProductsResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetProductsResponse
    */
@@ -95,6 +102,7 @@ export function GetProductsResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(EcommerceProductFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -114,6 +122,7 @@ export function GetProductsResponseToJSON(value?: GetProductsResponse | null): a
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(EcommerceProductToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

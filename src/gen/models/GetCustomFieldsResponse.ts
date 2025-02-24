@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   CustomFieldFinder,
   CustomFieldFinderFromJSON,
   CustomFieldFinderToJSON
 } from './CustomFieldFinder'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -42,6 +44,12 @@ export interface GetCustomFieldsResponse {
    * @memberof GetCustomFieldsResponse
    */
   data: Array<CustomFieldFinder>
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCustomFieldsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCustomFieldsResponseFromJSON(json: any): GetCustomFieldsResponse {
@@ -58,7 +66,8 @@ export function GetCustomFieldsResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: (json['data'] as Array<any>).map(CustomFieldFinderFromJSON)
+    data: (json['data'] as Array<any>).map(CustomFieldFinderFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -72,6 +81,7 @@ export function GetCustomFieldsResponseToJSON(value?: GetCustomFieldsResponse | 
   return {
     status_code: value.status_code,
     status: value.status,
-    data: (value.data as Array<any>).map(CustomFieldFinderToJSON)
+    data: (value.data as Array<any>).map(CustomFieldFinderToJSON),
+    _raw: RawToJSON(value._raw)
   }
 }

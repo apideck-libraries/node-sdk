@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { CustomMapping, CustomMappingFromJSON, CustomMappingToJSON } from './CustomMapping'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -38,6 +40,12 @@ export interface GetCustomMappingsResponse {
    * @memberof GetCustomMappingsResponse
    */
   data: Array<CustomMapping>
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCustomMappingsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCustomMappingsResponseFromJSON(json: any): GetCustomMappingsResponse {
@@ -54,7 +62,8 @@ export function GetCustomMappingsResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: (json['data'] as Array<any>).map(CustomMappingFromJSON)
+    data: (json['data'] as Array<any>).map(CustomMappingFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -68,6 +77,7 @@ export function GetCustomMappingsResponseToJSON(value?: GetCustomMappingsRespons
   return {
     status_code: value.status_code,
     status: value.status,
-    data: (value.data as Array<any>).map(CustomMappingToJSON)
+    data: (value.data as Array<any>).map(CustomMappingToJSON),
+    _raw: RawToJSON(value._raw)
   }
 }

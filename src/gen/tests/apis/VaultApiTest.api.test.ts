@@ -45,7 +45,8 @@ describe('VaultApi', () => {
             consumer_id: 'test_user_id',
             example: 'Some value'
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -184,7 +185,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -323,7 +325,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -488,7 +491,8 @@ describe('VaultApi', () => {
             ],
             updated_at: 1616662325753
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -655,7 +659,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -811,7 +816,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -949,7 +955,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1088,7 +1095,8 @@ describe('VaultApi', () => {
             }
           ],
           updated_at: 1616662325753
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1165,7 +1173,8 @@ describe('VaultApi', () => {
             proxy: 10,
             vault: 21
           }
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1249,7 +1258,8 @@ describe('VaultApi', () => {
           created: '2021-05-07T12:55:42.242Z',
           modified: '2021-05-07T12:55:42.242Z',
           request_count_updated: '2021-05-07T12:55:42.242Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1325,7 +1335,8 @@ describe('VaultApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1359,7 +1370,8 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           consumer_id: 'test_consumer_id'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1441,7 +1453,8 @@ describe('VaultApi', () => {
           created: '2021-05-07T12:55:42.242Z',
           modified: '2021-05-07T12:55:42.242Z',
           request_count_updated: '2021-05-07T12:55:42.242Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1523,7 +1536,8 @@ describe('VaultApi', () => {
           created: '2021-05-07T12:55:42.242Z',
           modified: '2021-05-07T12:55:42.242Z',
           request_count_updated: '2021-05-07T12:55:42.242Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1568,7 +1582,8 @@ describe('VaultApi', () => {
         status: 'OK',
         data: {
           state: '123e4567-e89b-12d3-a456-426614174000'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1615,7 +1630,8 @@ describe('VaultApi', () => {
             value: '495172776',
             finder: 'string'
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1664,7 +1680,8 @@ describe('VaultApi', () => {
             consumer_id: 'test_user_id',
             example: 'Some value'
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1743,7 +1760,8 @@ describe('VaultApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1781,7 +1799,8 @@ describe('VaultApi', () => {
             'http://vault.apideck.com/session/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj',
           session_token:
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsImFwcGxpY2F0aW9uX2lkIj'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1863,7 +1882,8 @@ describe('VaultApi', () => {
         data: {
           id: 'crm+salesforce',
           state: 'authorized'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

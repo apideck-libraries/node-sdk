@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Location, LocationFromJSON, LocationToJSON } from './Location'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetLocationResponse {
    * @memberof GetLocationResponse
    */
   data: Location
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetLocationResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetLocationResponseFromJSON(json: any): GetLocationResponse {
@@ -75,7 +83,8 @@ export function GetLocationResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: LocationFromJSON(json['data'])
+    data: LocationFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetLocationResponseToJSON(value?: GetLocationResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: LocationToJSON(value.data)
+    data: LocationToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

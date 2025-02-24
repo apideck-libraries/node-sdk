@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Job, JobFromJSON, JobToJSON } from './Job'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -61,6 +62,12 @@ export interface GetJobsResponse {
   data: Array<Job>
   /**
    *
+   * @type {Raw}
+   * @memberof GetJobsResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetJobsResponse
    */
@@ -91,6 +98,7 @@ export function GetJobsResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(JobFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetJobsResponseToJSON(value?: GetJobsResponse | null): any {
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(JobToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

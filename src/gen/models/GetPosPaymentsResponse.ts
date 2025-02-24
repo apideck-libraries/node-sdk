@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 import { PosPayment, PosPaymentFromJSON, PosPaymentToJSON } from './PosPayment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetPosPaymentsResponse {
    * @memberof GetPosPaymentsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPosPaymentsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPosPaymentsResponseFromJSON(json: any): GetPosPaymentsResponse {
@@ -92,7 +99,8 @@ export function GetPosPaymentsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(PosPaymentFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetPosPaymentsResponseToJSON(value?: GetPosPaymentsResponse | nu
     operation: value.operation,
     data: (value.data as Array<any>).map(PosPaymentToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { BillPayment, BillPaymentFromJSON, BillPaymentToJSON } from './BillPayment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetBillPaymentResponse {
    * @memberof GetBillPaymentResponse
    */
   data: BillPayment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetBillPaymentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetBillPaymentResponseFromJSON(json: any): GetBillPaymentResponse {
@@ -75,7 +83,8 @@ export function GetBillPaymentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: BillPaymentFromJSON(json['data'])
+    data: BillPaymentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetBillPaymentResponseToJSON(value?: GetBillPaymentResponse | nu
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: BillPaymentToJSON(value.data)
+    data: BillPaymentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

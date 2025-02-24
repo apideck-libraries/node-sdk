@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   EcommerceCustomer,
   EcommerceCustomerFromJSON,
   EcommerceCustomerToJSON
 } from './EcommerceCustomer'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -60,6 +62,12 @@ export interface GetEcommerceCustomerResponse {
    * @memberof GetEcommerceCustomerResponse
    */
   data: EcommerceCustomer
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetEcommerceCustomerResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetEcommerceCustomerResponseFromJSON(json: any): GetEcommerceCustomerResponse {
@@ -79,7 +87,8 @@ export function GetEcommerceCustomerResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: EcommerceCustomerFromJSON(json['data'])
+    data: EcommerceCustomerFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -98,6 +107,7 @@ export function GetEcommerceCustomerResponseToJSON(
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: EcommerceCustomerToJSON(value.data)
+    data: EcommerceCustomerToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Opportunity, OpportunityFromJSON, OpportunityToJSON } from './Opportunity'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetOpportunityResponse {
    * @memberof GetOpportunityResponse
    */
   data: Opportunity
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetOpportunityResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetOpportunityResponseFromJSON(json: any): GetOpportunityResponse {
@@ -75,7 +83,8 @@ export function GetOpportunityResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: OpportunityFromJSON(json['data'])
+    data: OpportunityFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetOpportunityResponseToJSON(value?: GetOpportunityResponse | nu
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: OpportunityToJSON(value.data)
+    data: OpportunityToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

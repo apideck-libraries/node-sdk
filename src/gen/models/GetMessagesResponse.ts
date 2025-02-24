@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Message, MessageFromJSON, MessageToJSON } from './Message'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -61,6 +62,12 @@ export interface GetMessagesResponse {
   data: Array<Message>
   /**
    *
+   * @type {Raw}
+   * @memberof GetMessagesResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetMessagesResponse
    */
@@ -91,6 +98,7 @@ export function GetMessagesResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(MessageFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetMessagesResponseToJSON(value?: GetMessagesResponse | null): a
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(MessageToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

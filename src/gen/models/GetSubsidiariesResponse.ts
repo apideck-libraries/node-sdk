@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Subsidiary, SubsidiaryFromJSON, SubsidiaryToJSON } from './Subsidiary'
 
 /**
@@ -71,6 +72,12 @@ export interface GetSubsidiariesResponse {
    * @memberof GetSubsidiariesResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetSubsidiariesResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetSubsidiariesResponseFromJSON(json: any): GetSubsidiariesResponse {
@@ -92,7 +99,8 @@ export function GetSubsidiariesResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(SubsidiaryFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetSubsidiariesResponseToJSON(value?: GetSubsidiariesResponse | 
     operation: value.operation,
     data: (value.data as Array<any>).map(SubsidiaryToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

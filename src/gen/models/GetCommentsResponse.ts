@@ -20,6 +20,7 @@ import {
 } from './CollectionTicketComment'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -75,6 +76,12 @@ export interface GetCommentsResponse {
    * @memberof GetCommentsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCommentsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCommentsResponseFromJSON(json: any): GetCommentsResponse {
@@ -96,7 +103,8 @@ export function GetCommentsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(CollectionTicketCommentFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -115,6 +123,7 @@ export function GetCommentsResponseToJSON(value?: GetCommentsResponse | null): a
     operation: value.operation,
     data: (value.data as Array<any>).map(CollectionTicketCommentToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

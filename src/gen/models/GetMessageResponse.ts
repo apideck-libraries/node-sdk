@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Message, MessageFromJSON, MessageToJSON } from './Message'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetMessageResponse {
    * @memberof GetMessageResponse
    */
   data: Message
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetMessageResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetMessageResponseFromJSON(json: any): GetMessageResponse {
@@ -75,7 +83,8 @@ export function GetMessageResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: MessageFromJSON(json['data'])
+    data: MessageFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetMessageResponseToJSON(value?: GetMessageResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: MessageToJSON(value.data)
+    data: MessageToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

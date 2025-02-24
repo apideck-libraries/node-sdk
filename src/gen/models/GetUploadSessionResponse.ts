@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { UploadSession, UploadSessionFromJSON, UploadSessionToJSON } from './UploadSession'
 
 /**
@@ -56,6 +58,12 @@ export interface GetUploadSessionResponse {
    * @memberof GetUploadSessionResponse
    */
   data: UploadSession
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetUploadSessionResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetUploadSessionResponseFromJSON(json: any): GetUploadSessionResponse {
@@ -75,7 +83,8 @@ export function GetUploadSessionResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UploadSessionFromJSON(json['data'])
+    data: UploadSessionFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetUploadSessionResponseToJSON(value?: GetUploadSessionResponse 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UploadSessionToJSON(value.data)
+    data: UploadSessionToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

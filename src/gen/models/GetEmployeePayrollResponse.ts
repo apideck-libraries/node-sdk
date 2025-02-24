@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { EmployeePayroll, EmployeePayrollFromJSON, EmployeePayrollToJSON } from './EmployeePayroll'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetEmployeePayrollResponse {
    * @memberof GetEmployeePayrollResponse
    */
   data: EmployeePayroll
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetEmployeePayrollResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetEmployeePayrollResponseFromJSON(json: any): GetEmployeePayrollResponse {
@@ -75,7 +83,8 @@ export function GetEmployeePayrollResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: EmployeePayrollFromJSON(json['data'])
+    data: EmployeePayrollFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetEmployeePayrollResponseToJSON(value?: GetEmployeePayrollRespo
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: EmployeePayrollToJSON(value.data)
+    data: EmployeePayrollToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

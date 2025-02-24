@@ -86,6 +86,7 @@ describe('EcommerceApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -181,7 +182,8 @@ describe('EcommerceApi', () => {
           custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -320,6 +322,7 @@ describe('EcommerceApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -478,7 +481,8 @@ describe('EcommerceApi', () => {
           custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -566,6 +570,7 @@ describe('EcommerceApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z'
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -672,7 +677,8 @@ describe('EcommerceApi', () => {
           custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -718,7 +724,8 @@ describe('EcommerceApi', () => {
           custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

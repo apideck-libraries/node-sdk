@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { CompanyInfo, CompanyInfoFromJSON, CompanyInfoToJSON } from './CompanyInfo'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetCompanyInfoResponse {
    * @memberof GetCompanyInfoResponse
    */
   data: CompanyInfo
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCompanyInfoResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCompanyInfoResponseFromJSON(json: any): GetCompanyInfoResponse {
@@ -75,7 +83,8 @@ export function GetCompanyInfoResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: CompanyInfoFromJSON(json['data'])
+    data: CompanyInfoFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetCompanyInfoResponseToJSON(value?: GetCompanyInfoResponse | nu
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: CompanyInfoToJSON(value.data)
+    data: CompanyInfoToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

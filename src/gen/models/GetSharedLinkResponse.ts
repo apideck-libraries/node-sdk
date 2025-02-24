@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { SharedLink, SharedLinkFromJSON, SharedLinkToJSON } from './SharedLink'
 
 /**
@@ -56,6 +58,12 @@ export interface GetSharedLinkResponse {
    * @memberof GetSharedLinkResponse
    */
   data: SharedLink
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetSharedLinkResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetSharedLinkResponseFromJSON(json: any): GetSharedLinkResponse {
@@ -75,7 +83,8 @@ export function GetSharedLinkResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: SharedLinkFromJSON(json['data'])
+    data: SharedLinkFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetSharedLinkResponseToJSON(value?: GetSharedLinkResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: SharedLinkToJSON(value.data)
+    data: SharedLinkToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

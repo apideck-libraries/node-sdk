@@ -38,7 +38,8 @@ describe('FileStorageApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -114,6 +115,7 @@ describe('FileStorageApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -164,7 +166,8 @@ describe('FileStorageApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -225,7 +228,8 @@ describe('FileStorageApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -265,7 +269,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -323,7 +328,8 @@ describe('FileStorageApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -397,6 +403,7 @@ describe('FileStorageApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -447,7 +454,8 @@ describe('FileStorageApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -507,7 +515,8 @@ describe('FileStorageApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -547,7 +556,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -653,7 +663,8 @@ describe('FileStorageApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -691,7 +702,8 @@ describe('FileStorageApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -828,7 +840,8 @@ describe('FileStorageApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -917,7 +930,8 @@ describe('FileStorageApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -959,7 +973,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1017,7 +1032,8 @@ describe('FileStorageApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1075,7 +1091,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1132,7 +1149,8 @@ describe('FileStorageApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1193,7 +1211,8 @@ describe('FileStorageApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1233,7 +1252,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1291,7 +1311,8 @@ describe('FileStorageApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1373,6 +1394,7 @@ describe('FileStorageApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -1423,7 +1445,8 @@ describe('FileStorageApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1489,7 +1512,8 @@ describe('FileStorageApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1529,7 +1553,8 @@ describe('FileStorageApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1588,7 +1613,8 @@ describe('FileStorageApi', () => {
         operation: 'one',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1646,7 +1672,8 @@ describe('FileStorageApi', () => {
         operation: 'one',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1721,7 +1748,8 @@ describe('FileStorageApi', () => {
           created_by: '12345',
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1767,7 +1795,8 @@ describe('FileStorageApi', () => {
           parallel_upload_supported: true,
           uploaded_byte_range: '0-42',
           expires_at: '2022-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

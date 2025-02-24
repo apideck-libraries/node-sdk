@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   EmployeeSchedules,
   EmployeeSchedulesFromJSON,
   EmployeeSchedulesToJSON
 } from './EmployeeSchedules'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -60,6 +62,12 @@ export interface GetEmployeeSchedulesResponse {
    * @memberof GetEmployeeSchedulesResponse
    */
   data: EmployeeSchedules
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetEmployeeSchedulesResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetEmployeeSchedulesResponseFromJSON(json: any): GetEmployeeSchedulesResponse {
@@ -79,7 +87,8 @@ export function GetEmployeeSchedulesResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: EmployeeSchedulesFromJSON(json['data'])
+    data: EmployeeSchedulesFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -98,6 +107,7 @@ export function GetEmployeeSchedulesResponseToJSON(
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: EmployeeSchedulesToJSON(value.data)
+    data: EmployeeSchedulesToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

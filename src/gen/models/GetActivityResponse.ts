@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Activity, ActivityFromJSON, ActivityToJSON } from './Activity'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetActivityResponse {
    * @memberof GetActivityResponse
    */
   data: Activity
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetActivityResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetActivityResponseFromJSON(json: any): GetActivityResponse {
@@ -75,7 +83,8 @@ export function GetActivityResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ActivityFromJSON(json['data'])
+    data: ActivityFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetActivityResponseToJSON(value?: GetActivityResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ActivityToJSON(value.data)
+    data: ActivityToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

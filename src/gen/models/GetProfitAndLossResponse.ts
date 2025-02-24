@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { ProfitAndLoss, ProfitAndLossFromJSON, ProfitAndLossToJSON } from './ProfitAndLoss'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetProfitAndLossResponse {
    * @memberof GetProfitAndLossResponse
    */
   data: ProfitAndLoss
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetProfitAndLossResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetProfitAndLossResponseFromJSON(json: any): GetProfitAndLossResponse {
@@ -75,7 +83,8 @@ export function GetProfitAndLossResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ProfitAndLossFromJSON(json['data'])
+    data: ProfitAndLossFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetProfitAndLossResponseToJSON(value?: GetProfitAndLossResponse 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ProfitAndLossToJSON(value.data)
+    data: ProfitAndLossToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

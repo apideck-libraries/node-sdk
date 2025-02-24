@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { AgedDebtors, AgedDebtorsFromJSON, AgedDebtorsToJSON } from './AgedDebtors'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetAgedDebtorsResponse {
    * @memberof GetAgedDebtorsResponse
    */
   data: AgedDebtors
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetAgedDebtorsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetAgedDebtorsResponseFromJSON(json: any): GetAgedDebtorsResponse {
@@ -75,7 +83,8 @@ export function GetAgedDebtorsResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: AgedDebtorsFromJSON(json['data'])
+    data: AgedDebtorsFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetAgedDebtorsResponseToJSON(value?: GetAgedDebtorsResponse | nu
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: AgedDebtorsToJSON(value.data)
+    data: AgedDebtorsToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { CollectionUser, CollectionUserFromJSON, CollectionUserToJSON } from './CollectionUser'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetCollectionUserResponse {
    * @memberof GetCollectionUserResponse
    */
   data: CollectionUser
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCollectionUserResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCollectionUserResponseFromJSON(json: any): GetCollectionUserResponse {
@@ -75,7 +83,8 @@ export function GetCollectionUserResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: CollectionUserFromJSON(json['data'])
+    data: CollectionUserFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetCollectionUserResponseToJSON(value?: GetCollectionUserRespons
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: CollectionUserToJSON(value.data)
+    data: CollectionUserToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -596,6 +596,7 @@ ProfitAndLossSection.md
 PurchaseOrder.md
 PurchaseOrdersFilter.md
 PurchaseOrdersSort.md
+Raw.md
 RequestCountAllocation.md
 RequestRate.md
 ResolveWebhookEventRequest.md
@@ -1312,6 +1313,7 @@ models/ProfitAndLossSection.ts
 models/PurchaseOrder.ts
 models/PurchaseOrdersFilter.ts
 models/PurchaseOrdersSort.ts
+models/Raw.ts
 models/RequestCountAllocation.ts
 models/RequestRate.ts
 models/ResolveWebhookEventRequest.ts
