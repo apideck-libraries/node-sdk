@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Merchant, MerchantFromJSON, MerchantToJSON } from './Merchant'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetMerchantResponse {
    * @memberof GetMerchantResponse
    */
   data: Merchant
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetMerchantResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetMerchantResponseFromJSON(json: any): GetMerchantResponse {
@@ -75,7 +83,8 @@ export function GetMerchantResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: MerchantFromJSON(json['data'])
+    data: MerchantFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetMerchantResponseToJSON(value?: GetMerchantResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: MerchantToJSON(value.data)
+    data: MerchantToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

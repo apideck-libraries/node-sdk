@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Application, ApplicationFromJSON, ApplicationToJSON } from './Application'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetApplicationResponse {
    * @memberof GetApplicationResponse
    */
   data: Application
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetApplicationResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetApplicationResponseFromJSON(json: any): GetApplicationResponse {
@@ -75,7 +83,8 @@ export function GetApplicationResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ApplicationFromJSON(json['data'])
+    data: ApplicationFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetApplicationResponseToJSON(value?: GetApplicationResponse | nu
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ApplicationToJSON(value.data)
+    data: ApplicationToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

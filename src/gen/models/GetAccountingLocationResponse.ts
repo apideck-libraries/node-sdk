@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   AccountingLocation,
   AccountingLocationFromJSON,
   AccountingLocationToJSON
 } from './AccountingLocation'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -60,6 +62,12 @@ export interface GetAccountingLocationResponse {
    * @memberof GetAccountingLocationResponse
    */
   data: AccountingLocation
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetAccountingLocationResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetAccountingLocationResponseFromJSON(json: any): GetAccountingLocationResponse {
@@ -79,7 +87,8 @@ export function GetAccountingLocationResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: AccountingLocationFromJSON(json['data'])
+    data: AccountingLocationFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -98,6 +107,7 @@ export function GetAccountingLocationResponseToJSON(
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: AccountingLocationToJSON(value.data)
+    data: AccountingLocationToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

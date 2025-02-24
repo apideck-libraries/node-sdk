@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { CreditNote, CreditNoteFromJSON, CreditNoteToJSON } from './CreditNote'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetCreditNoteResponse {
    * @memberof GetCreditNoteResponse
    */
   data: CreditNote
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCreditNoteResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCreditNoteResponseFromJSON(json: any): GetCreditNoteResponse {
@@ -75,7 +83,8 @@ export function GetCreditNoteResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: CreditNoteFromJSON(json['data'])
+    data: CreditNoteFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetCreditNoteResponseToJSON(value?: GetCreditNoteResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: CreditNoteToJSON(value.data)
+    data: CreditNoteToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import {
   TrackingCategory,
   TrackingCategoryFromJSON,
@@ -60,6 +62,12 @@ export interface GetTrackingCategoryResponse {
    * @memberof GetTrackingCategoryResponse
    */
   data: TrackingCategory
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTrackingCategoryResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTrackingCategoryResponseFromJSON(json: any): GetTrackingCategoryResponse {
@@ -79,7 +87,8 @@ export function GetTrackingCategoryResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: TrackingCategoryFromJSON(json['data'])
+    data: TrackingCategoryFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -96,6 +105,7 @@ export function GetTrackingCategoryResponseToJSON(value?: GetTrackingCategoryRes
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: TrackingCategoryToJSON(value.data)
+    data: TrackingCategoryToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

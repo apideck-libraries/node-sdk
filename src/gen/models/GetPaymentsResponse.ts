@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 import { Payment, PaymentFromJSON, PaymentToJSON } from './Payment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetPaymentsResponse {
    * @memberof GetPaymentsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPaymentsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPaymentsResponseFromJSON(json: any): GetPaymentsResponse {
@@ -92,7 +99,8 @@ export function GetPaymentsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(PaymentFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetPaymentsResponseToJSON(value?: GetPaymentsResponse | null): a
     operation: value.operation,
     data: (value.data as Array<any>).map(PaymentToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -9,10 +9,18 @@ Name | Type | Description | Notes
 `status` | **string** | HTTP Response Status | 
 `request_id` | **string** | UUID of the request received | [optional] 
 `timestamp` | **string** | ISO Datetime webhook event was received | [optional] 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
 
+
+## Referenced Types:
+
+
+
+
+* [`Raw`](Raw.md)
 
 ---
 

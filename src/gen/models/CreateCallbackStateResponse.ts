@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   CreateCallbackStateResponseData,
   CreateCallbackStateResponseDataFromJSON,
   CreateCallbackStateResponseDataToJSON
 } from './CreateCallbackStateResponseData'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -42,6 +44,12 @@ export interface CreateCallbackStateResponse {
    * @memberof CreateCallbackStateResponse
    */
   data: CreateCallbackStateResponseData
+  /**
+   *
+   * @type {Raw}
+   * @memberof CreateCallbackStateResponse
+   */
+  _raw?: Raw | null
 }
 
 export function CreateCallbackStateResponseFromJSON(json: any): CreateCallbackStateResponse {
@@ -58,7 +66,8 @@ export function CreateCallbackStateResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: CreateCallbackStateResponseDataFromJSON(json['data'])
+    data: CreateCallbackStateResponseDataFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -72,6 +81,7 @@ export function CreateCallbackStateResponseToJSON(value?: CreateCallbackStateRes
   return {
     status_code: value.status_code,
     status: value.status,
-    data: CreateCallbackStateResponseDataToJSON(value.data)
+    data: CreateCallbackStateResponseDataToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

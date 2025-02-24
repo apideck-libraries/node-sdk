@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Tender, TenderFromJSON, TenderToJSON } from './Tender'
 
 /**
@@ -56,6 +58,12 @@ export interface GetTenderResponse {
    * @memberof GetTenderResponse
    */
   data: Tender
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTenderResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTenderResponseFromJSON(json: any): GetTenderResponse {
@@ -75,7 +83,8 @@ export function GetTenderResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: TenderFromJSON(json['data'])
+    data: TenderFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetTenderResponseToJSON(value?: GetTenderResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: TenderToJSON(value.data)
+    data: TenderToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

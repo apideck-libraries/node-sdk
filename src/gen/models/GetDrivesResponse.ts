@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Drive, DriveFromJSON, DriveToJSON } from './Drive'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -61,6 +62,12 @@ export interface GetDrivesResponse {
   data: Array<Drive>
   /**
    *
+   * @type {Raw}
+   * @memberof GetDrivesResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetDrivesResponse
    */
@@ -91,6 +98,7 @@ export function GetDrivesResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(DriveFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetDrivesResponseToJSON(value?: GetDrivesResponse | null): any {
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(DriveToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

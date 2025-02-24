@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { User, UserFromJSON, UserToJSON } from './User'
 
 /**
@@ -56,6 +58,12 @@ export interface GetUserResponse {
    * @memberof GetUserResponse
    */
   data: User
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetUserResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetUserResponseFromJSON(json: any): GetUserResponse {
@@ -75,7 +83,8 @@ export function GetUserResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UserFromJSON(json['data'])
+    data: UserFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetUserResponseToJSON(value?: GetUserResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UserToJSON(value.data)
+    data: UserToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

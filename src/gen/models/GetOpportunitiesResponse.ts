@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
 import { Opportunity, OpportunityFromJSON, OpportunityToJSON } from './Opportunity'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -61,6 +62,12 @@ export interface GetOpportunitiesResponse {
   data: Array<Opportunity>
   /**
    *
+   * @type {Raw}
+   * @memberof GetOpportunitiesResponse
+   */
+  _raw?: Raw | null
+  /**
+   *
    * @type {Meta}
    * @memberof GetOpportunitiesResponse
    */
@@ -91,6 +98,7 @@ export function GetOpportunitiesResponseFromJSONTyped(
     resource: json['resource'],
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(OpportunityFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -110,6 +118,7 @@ export function GetOpportunitiesResponseToJSON(value?: GetOpportunitiesResponse 
     resource: value.resource,
     operation: value.operation,
     data: (value.data as Array<any>).map(OpportunityToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

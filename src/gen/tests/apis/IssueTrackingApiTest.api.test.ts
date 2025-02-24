@@ -55,7 +55,8 @@ describe('IssueTrackingApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -95,7 +96,8 @@ describe('IssueTrackingApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -180,7 +182,8 @@ describe('IssueTrackingApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -221,7 +224,8 @@ describe('IssueTrackingApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -281,7 +285,8 @@ describe('IssueTrackingApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -323,7 +328,8 @@ describe('IssueTrackingApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -381,7 +387,8 @@ describe('IssueTrackingApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -502,7 +509,8 @@ describe('IssueTrackingApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -542,7 +550,8 @@ describe('IssueTrackingApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -622,7 +631,8 @@ describe('IssueTrackingApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -663,7 +673,8 @@ describe('IssueTrackingApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -759,7 +770,8 @@ describe('IssueTrackingApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -807,7 +819,8 @@ describe('IssueTrackingApi', () => {
           custom_mappings: {},
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -870,7 +883,8 @@ describe('IssueTrackingApi', () => {
           previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
           current: 'https://unify.apideck.com/crm/companies',
           next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -915,7 +929,8 @@ describe('IssueTrackingApi', () => {
           custom_mappings: {},
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   GetConnectorResourceExampleResponseData,
   GetConnectorResourceExampleResponseDataFromJSON,
   GetConnectorResourceExampleResponseDataToJSON
 } from './GetConnectorResourceExampleResponseData'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -42,6 +44,12 @@ export interface GetConnectorResourceExampleResponse {
    * @memberof GetConnectorResourceExampleResponse
    */
   data: GetConnectorResourceExampleResponseData
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetConnectorResourceExampleResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetConnectorResourceExampleResponseFromJSON(
@@ -60,7 +68,8 @@ export function GetConnectorResourceExampleResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: GetConnectorResourceExampleResponseDataFromJSON(json['data'])
+    data: GetConnectorResourceExampleResponseDataFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -76,6 +85,7 @@ export function GetConnectorResourceExampleResponseToJSON(
   return {
     status_code: value.status_code,
     status: value.status,
-    data: GetConnectorResourceExampleResponseDataToJSON(value.data)
+    data: GetConnectorResourceExampleResponseDataToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

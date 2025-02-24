@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Payment, PaymentFromJSON, PaymentToJSON } from './Payment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetPaymentResponse {
    * @memberof GetPaymentResponse
    */
   data: Payment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetPaymentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetPaymentResponseFromJSON(json: any): GetPaymentResponse {
@@ -75,7 +83,8 @@ export function GetPaymentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: PaymentFromJSON(json['data'])
+    data: PaymentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetPaymentResponseToJSON(value?: GetPaymentResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: PaymentToJSON(value.data)
+    data: PaymentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

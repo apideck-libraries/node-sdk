@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Consumer, ConsumerFromJSON, ConsumerToJSON } from './Consumer'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -38,6 +40,12 @@ export interface CreateConsumerResponse {
    * @memberof CreateConsumerResponse
    */
   data: Consumer
+  /**
+   *
+   * @type {Raw}
+   * @memberof CreateConsumerResponse
+   */
+  _raw?: Raw | null
 }
 
 export function CreateConsumerResponseFromJSON(json: any): CreateConsumerResponse {
@@ -54,7 +62,8 @@ export function CreateConsumerResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: ConsumerFromJSON(json['data'])
+    data: ConsumerFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -68,6 +77,7 @@ export function CreateConsumerResponseToJSON(value?: CreateConsumerResponse | nu
   return {
     status_code: value.status_code,
     status: value.status,
-    data: ConsumerToJSON(value.data)
+    data: ConsumerToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

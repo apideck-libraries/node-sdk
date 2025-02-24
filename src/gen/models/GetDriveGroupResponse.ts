@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { DriveGroup, DriveGroupFromJSON, DriveGroupToJSON } from './DriveGroup'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetDriveGroupResponse {
    * @memberof GetDriveGroupResponse
    */
   data: DriveGroup
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetDriveGroupResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetDriveGroupResponseFromJSON(json: any): GetDriveGroupResponse {
@@ -75,7 +83,8 @@ export function GetDriveGroupResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: DriveGroupFromJSON(json['data'])
+    data: DriveGroupFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetDriveGroupResponseToJSON(value?: GetDriveGroupResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: DriveGroupToJSON(value.data)
+    data: DriveGroupToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

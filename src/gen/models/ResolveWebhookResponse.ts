@@ -13,6 +13,8 @@
  */
 
 import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
+
 /**
  *
  * @export
@@ -43,6 +45,12 @@ export interface ResolveWebhookResponse {
    * @memberof ResolveWebhookResponse
    */
   timestamp?: string
+  /**
+   *
+   * @type {Raw}
+   * @memberof ResolveWebhookResponse
+   */
+  _raw?: Raw | null
 }
 
 export function ResolveWebhookResponseFromJSON(json: any): ResolveWebhookResponse {
@@ -60,7 +68,8 @@ export function ResolveWebhookResponseFromJSONTyped(
     status_code: json['status_code'],
     status: json['status'],
     request_id: !exists(json, 'request_id') ? undefined : json['request_id'],
-    timestamp: !exists(json, 'timestamp') ? undefined : json['timestamp']
+    timestamp: !exists(json, 'timestamp') ? undefined : json['timestamp'],
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -75,6 +84,7 @@ export function ResolveWebhookResponseToJSON(value?: ResolveWebhookResponse | nu
     status_code: value.status_code,
     status: value.status,
     request_id: value.request_id,
-    timestamp: value.timestamp
+    timestamp: value.timestamp,
+    _raw: RawToJSON(value._raw)
   }
 }

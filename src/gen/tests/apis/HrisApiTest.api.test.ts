@@ -38,7 +38,8 @@ describe('HrisApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -227,6 +228,7 @@ describe('HrisApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -277,7 +279,8 @@ describe('HrisApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -395,7 +398,8 @@ describe('HrisApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -435,7 +439,8 @@ describe('HrisApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -549,7 +554,8 @@ describe('HrisApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -626,6 +632,7 @@ describe('HrisApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -676,7 +683,8 @@ describe('HrisApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -738,7 +746,8 @@ describe('HrisApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -778,7 +787,8 @@ describe('HrisApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -866,7 +876,8 @@ describe('HrisApi', () => {
               }
             ]
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -951,7 +962,8 @@ describe('HrisApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1242,7 +1254,8 @@ describe('HrisApi', () => {
               }
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1282,7 +1295,8 @@ describe('HrisApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -1765,6 +1779,7 @@ describe('HrisApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -1815,7 +1830,8 @@ describe('HrisApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2081,7 +2097,8 @@ describe('HrisApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2121,7 +2138,8 @@ describe('HrisApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2411,7 +2429,8 @@ describe('HrisApi', () => {
             ],
             custom_mappings: {}
           }
-        ]
+        ],
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2494,7 +2513,8 @@ describe('HrisApi', () => {
             }
           ],
           custom_mappings: {}
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2534,7 +2554,8 @@ describe('HrisApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2638,6 +2659,7 @@ describe('HrisApi', () => {
             policy_type: 'sick'
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -2688,7 +2710,8 @@ describe('HrisApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2764,7 +2787,8 @@ describe('HrisApi', () => {
             }
           ],
           policy_type: 'sick'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -2805,7 +2829,8 @@ describe('HrisApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

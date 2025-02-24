@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { InvoiceResponse, InvoiceResponseFromJSON, InvoiceResponseToJSON } from './InvoiceResponse'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface UpdateInvoiceResponse {
    * @memberof UpdateInvoiceResponse
    */
   data: InvoiceResponse
+  /**
+   *
+   * @type {Raw}
+   * @memberof UpdateInvoiceResponse
+   */
+  _raw?: Raw | null
 }
 
 export function UpdateInvoiceResponseFromJSON(json: any): UpdateInvoiceResponse {
@@ -75,7 +83,8 @@ export function UpdateInvoiceResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: InvoiceResponseFromJSON(json['data'])
+    data: InvoiceResponseFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function UpdateInvoiceResponseToJSON(value?: UpdateInvoiceResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: InvoiceResponseToJSON(value.data)
+    data: InvoiceResponseToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

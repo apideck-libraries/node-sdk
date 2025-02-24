@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   AccountingDepartment,
   AccountingDepartmentFromJSON,
   AccountingDepartmentToJSON
 } from './AccountingDepartment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -60,6 +62,12 @@ export interface GetAccountingDepartmentResponse {
    * @memberof GetAccountingDepartmentResponse
    */
   data: AccountingDepartment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetAccountingDepartmentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetAccountingDepartmentResponseFromJSON(
@@ -81,7 +89,8 @@ export function GetAccountingDepartmentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: AccountingDepartmentFromJSON(json['data'])
+    data: AccountingDepartmentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -100,6 +109,7 @@ export function GetAccountingDepartmentResponseToJSON(
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: AccountingDepartmentToJSON(value.data)
+    data: AccountingDepartmentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

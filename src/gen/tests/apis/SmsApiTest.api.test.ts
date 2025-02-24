@@ -38,7 +38,8 @@ describe('SmsApi', () => {
         operation: 'add',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -140,6 +141,7 @@ describe('SmsApi', () => {
             ]
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -190,7 +192,8 @@ describe('SmsApi', () => {
         operation: 'delete',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -271,7 +274,8 @@ describe('SmsApi', () => {
               ]
             }
           ]
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
@@ -311,7 +315,8 @@ describe('SmsApi', () => {
         operation: 'update',
         data: {
           id: '12345'
-        }
+        },
+        _raw: {}
       } as any
 
       ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { EcommerceStore, EcommerceStoreFromJSON, EcommerceStoreToJSON } from './EcommerceStore'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetStoreResponse {
    * @memberof GetStoreResponse
    */
   data: EcommerceStore
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetStoreResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetStoreResponseFromJSON(json: any): GetStoreResponse {
@@ -75,7 +83,8 @@ export function GetStoreResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: EcommerceStoreFromJSON(json['data'])
+    data: EcommerceStoreFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetStoreResponseToJSON(value?: GetStoreResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: EcommerceStoreToJSON(value.data)
+    data: EcommerceStoreToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Modifier, ModifierFromJSON, ModifierToJSON } from './Modifier'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetModifierResponse {
    * @memberof GetModifierResponse
    */
   data: Modifier
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetModifierResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetModifierResponseFromJSON(json: any): GetModifierResponse {
@@ -75,7 +83,8 @@ export function GetModifierResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ModifierFromJSON(json['data'])
+    data: ModifierFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetModifierResponseToJSON(value?: GetModifierResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ModifierToJSON(value.data)
+    data: ModifierToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -64,6 +64,7 @@ describe('ConnectorApi', () => {
             }
           ]
         },
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -149,6 +150,7 @@ describe('ConnectorApi', () => {
             }
           }
         },
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -218,6 +220,7 @@ describe('ConnectorApi', () => {
             events: ['crm.contact.updated', 'accounting.invoice.created']
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -282,6 +285,7 @@ describe('ConnectorApi', () => {
           ],
           events: ['crm.contact.updated', 'accounting.invoice.created']
         },
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -389,6 +393,7 @@ describe('ConnectorApi', () => {
             }
           ]
         },
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -536,6 +541,7 @@ describe('ConnectorApi', () => {
             }
           }
         ],
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {
@@ -703,6 +709,7 @@ describe('ConnectorApi', () => {
             description: 'string'
           }
         },
+        _raw: {},
         meta: {
           items_on_page: 50,
           cursors: {

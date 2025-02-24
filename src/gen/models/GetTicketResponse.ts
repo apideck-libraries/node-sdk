@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Ticket, TicketFromJSON, TicketToJSON } from './Ticket'
 
 /**
@@ -56,6 +58,12 @@ export interface GetTicketResponse {
    * @memberof GetTicketResponse
    */
   data: Ticket
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTicketResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTicketResponseFromJSON(json: any): GetTicketResponse {
@@ -75,7 +83,8 @@ export function GetTicketResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: TicketFromJSON(json['data'])
+    data: TicketFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetTicketResponseToJSON(value?: GetTicketResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: TicketToJSON(value.data)
+    data: TicketToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

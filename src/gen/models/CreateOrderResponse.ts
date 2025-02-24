@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { UnifiedId, UnifiedIdFromJSON, UnifiedIdToJSON } from './UnifiedId'
 
 /**
@@ -56,6 +58,12 @@ export interface CreateOrderResponse {
    * @memberof CreateOrderResponse
    */
   data: UnifiedId
+  /**
+   *
+   * @type {Raw}
+   * @memberof CreateOrderResponse
+   */
+  _raw?: Raw | null
 }
 
 export function CreateOrderResponseFromJSON(json: any): CreateOrderResponse {
@@ -75,7 +83,8 @@ export function CreateOrderResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UnifiedIdFromJSON(json['data'])
+    data: UnifiedIdFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function CreateOrderResponseToJSON(value?: CreateOrderResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UnifiedIdToJSON(value.data)
+    data: UnifiedIdToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

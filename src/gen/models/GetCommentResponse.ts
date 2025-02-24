@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   CollectionTicketComment,
   CollectionTicketCommentFromJSON,
   CollectionTicketCommentToJSON
 } from './CollectionTicketComment'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -60,6 +62,12 @@ export interface GetCommentResponse {
    * @memberof GetCommentResponse
    */
   data: CollectionTicketComment
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetCommentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetCommentResponseFromJSON(json: any): GetCommentResponse {
@@ -79,7 +87,8 @@ export function GetCommentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: CollectionTicketCommentFromJSON(json['data'])
+    data: CollectionTicketCommentFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -96,6 +105,7 @@ export function GetCommentResponseToJSON(value?: GetCommentResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: CollectionTicketCommentToJSON(value.data)
+    data: CollectionTicketCommentToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

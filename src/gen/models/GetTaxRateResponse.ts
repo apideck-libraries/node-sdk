@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { TaxRate, TaxRateFromJSON, TaxRateToJSON } from './TaxRate'
 
 /**
@@ -56,6 +58,12 @@ export interface GetTaxRateResponse {
    * @memberof GetTaxRateResponse
    */
   data: TaxRate
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTaxRateResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTaxRateResponseFromJSON(json: any): GetTaxRateResponse {
@@ -75,7 +83,8 @@ export function GetTaxRateResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: TaxRateFromJSON(json['data'])
+    data: TaxRateFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetTaxRateResponseToJSON(value?: GetTaxRateResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: TaxRateToJSON(value.data)
+    data: TaxRateToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

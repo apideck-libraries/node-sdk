@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Item, ItemFromJSON, ItemToJSON } from './Item'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetItemResponse {
    * @memberof GetItemResponse
    */
   data: Item
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetItemResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetItemResponseFromJSON(json: any): GetItemResponse {
@@ -75,7 +83,8 @@ export function GetItemResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ItemFromJSON(json['data'])
+    data: ItemFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetItemResponseToJSON(value?: GetItemResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ItemToJSON(value.data)
+    data: ItemToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

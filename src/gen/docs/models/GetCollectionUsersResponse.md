@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `data` | [**Array&lt;CollectionUser&gt;**](CollectionUser.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 * [`CollectionUser`](CollectionUser.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
+* [`Raw`](Raw.md)
 
 ---
 

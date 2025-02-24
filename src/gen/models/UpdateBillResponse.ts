@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { UnifiedId, UnifiedIdFromJSON, UnifiedIdToJSON } from './UnifiedId'
 
 /**
@@ -56,6 +58,12 @@ export interface UpdateBillResponse {
    * @memberof UpdateBillResponse
    */
   data: UnifiedId
+  /**
+   *
+   * @type {Raw}
+   * @memberof UpdateBillResponse
+   */
+  _raw?: Raw | null
 }
 
 export function UpdateBillResponseFromJSON(json: any): UpdateBillResponse {
@@ -75,7 +83,8 @@ export function UpdateBillResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UnifiedIdFromJSON(json['data'])
+    data: UnifiedIdFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function UpdateBillResponseToJSON(value?: UpdateBillResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UnifiedIdToJSON(value.data)
+    data: UnifiedIdToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

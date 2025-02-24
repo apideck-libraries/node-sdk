@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `resource` | **string** | Unified API resource name | 
 `operation` | **string** | Operation performed | 
 `data` | [**Array&lt;Drive&gt;**](Drive.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
 
@@ -25,6 +26,7 @@ Name | Type | Description | Notes
 
 
 * [`Drive`](Drive.md)
+* [`Raw`](Raw.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
 

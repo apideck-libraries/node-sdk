@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 `data` | [**Array&lt;Ticket&gt;**](Ticket.md) |  | 
 `meta` | [**Meta**](Meta.md) |  | [optional] 
 `links` | [**Links**](Links.md) |  | [optional] 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 * [`Ticket`](Ticket.md)
 * [`Meta`](Meta.md)
 * [`Links`](Links.md)
+* [`Raw`](Raw.md)
 
 ---
 

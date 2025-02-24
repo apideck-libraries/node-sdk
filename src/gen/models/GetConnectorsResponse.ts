@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Connector, ConnectorFromJSON, ConnectorToJSON } from './Connector'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -41,6 +42,12 @@ export interface GetConnectorsResponse {
    * @memberof GetConnectorsResponse
    */
   data: Array<Connector>
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetConnectorsResponse
+   */
+  _raw?: Raw | null
   /**
    *
    * @type {Meta}
@@ -70,6 +77,7 @@ export function GetConnectorsResponseFromJSONTyped(
     status_code: json['status_code'],
     status: json['status'],
     data: (json['data'] as Array<any>).map(ConnectorFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -86,6 +94,7 @@ export function GetConnectorsResponseToJSON(value?: GetConnectorsResponse | null
     status_code: value.status_code,
     status: value.status,
     data: (value.data as Array<any>).map(ConnectorToJSON),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

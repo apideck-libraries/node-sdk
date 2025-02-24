@@ -20,6 +20,7 @@ import {
 } from './GetConsumersResponseData'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -57,6 +58,12 @@ export interface GetConsumersResponse {
    * @memberof GetConsumersResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetConsumersResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetConsumersResponseFromJSON(json: any): GetConsumersResponse {
@@ -75,7 +82,8 @@ export function GetConsumersResponseFromJSONTyped(
     status: json['status'],
     data: (json['data'] as Array<any>).map(GetConsumersResponseDataFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -91,6 +99,7 @@ export function GetConsumersResponseToJSON(value?: GetConsumersResponse | null):
     status: value.status,
     data: (value.data as Array<any>).map(GetConsumersResponseDataToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Connection, ConnectionFromJSON, ConnectionToJSON } from './Connection'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -38,6 +40,12 @@ export interface GetConnectionsResponse {
    * @memberof GetConnectionsResponse
    */
   data: Array<Connection>
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetConnectionsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetConnectionsResponseFromJSON(json: any): GetConnectionsResponse {
@@ -54,7 +62,8 @@ export function GetConnectionsResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: (json['data'] as Array<any>).map(ConnectionFromJSON)
+    data: (json['data'] as Array<any>).map(ConnectionFromJSON),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -68,6 +77,7 @@ export function GetConnectionsResponseToJSON(value?: GetConnectionsResponse | nu
   return {
     status_code: value.status_code,
     status: value.status,
-    data: (value.data as Array<any>).map(ConnectionToJSON)
+    data: (value.data as Array<any>).map(ConnectionToJSON),
+    _raw: RawToJSON(value._raw)
   }
 }

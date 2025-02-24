@@ -20,6 +20,7 @@ import {
 } from './ConnectorResource'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -45,6 +46,12 @@ export interface GetConnectorResourceResponse {
    * @memberof GetConnectorResourceResponse
    */
   data: ConnectorResource
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetConnectorResourceResponse
+   */
+  _raw?: Raw | null
   /**
    *
    * @type {Meta}
@@ -74,6 +81,7 @@ export function GetConnectorResourceResponseFromJSONTyped(
     status_code: json['status_code'],
     status: json['status'],
     data: ConnectorResourceFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -92,6 +100,7 @@ export function GetConnectorResourceResponseToJSON(
     status_code: value.status_code,
     status: value.status,
     data: ConnectorResourceToJSON(value.data),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }

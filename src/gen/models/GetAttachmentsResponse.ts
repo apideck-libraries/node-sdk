@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Attachment, AttachmentFromJSON, AttachmentToJSON } from './Attachment'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -71,6 +72,12 @@ export interface GetAttachmentsResponse {
    * @memberof GetAttachmentsResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetAttachmentsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetAttachmentsResponseFromJSON(json: any): GetAttachmentsResponse {
@@ -92,7 +99,8 @@ export function GetAttachmentsResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(AttachmentFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -111,6 +119,7 @@ export function GetAttachmentsResponseToJSON(value?: GetAttachmentsResponse | nu
     operation: value.operation,
     data: (value.data as Array<any>).map(AttachmentToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { HrisJobs, HrisJobsFromJSON, HrisJobsToJSON } from './HrisJobs'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetHrisJobsResponse {
    * @memberof GetHrisJobsResponse
    */
   data: HrisJobs
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetHrisJobsResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetHrisJobsResponseFromJSON(json: any): GetHrisJobsResponse {
@@ -75,7 +83,8 @@ export function GetHrisJobsResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: HrisJobsFromJSON(json['data'])
+    data: HrisJobsFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetHrisJobsResponseToJSON(value?: GetHrisJobsResponse | null): a
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: HrisJobsToJSON(value.data)
+    data: HrisJobsToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

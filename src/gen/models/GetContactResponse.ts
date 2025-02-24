@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Contact, ContactFromJSON, ContactToJSON } from './Contact'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetContactResponse {
    * @memberof GetContactResponse
    */
   data: Contact
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetContactResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetContactResponseFromJSON(json: any): GetContactResponse {
@@ -75,7 +83,8 @@ export function GetContactResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: ContactFromJSON(json['data'])
+    data: ContactFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetContactResponseToJSON(value?: GetContactResponse | null): any
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: ContactToJSON(value.data)
+    data: ContactToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

@@ -12,11 +12,13 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import {
   CreateSessionResponseData,
   CreateSessionResponseDataFromJSON,
   CreateSessionResponseDataToJSON
 } from './CreateSessionResponseData'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -42,6 +44,12 @@ export interface CreateSessionResponse {
    * @memberof CreateSessionResponse
    */
   data: CreateSessionResponseData
+  /**
+   *
+   * @type {Raw}
+   * @memberof CreateSessionResponse
+   */
+  _raw?: Raw | null
 }
 
 export function CreateSessionResponseFromJSON(json: any): CreateSessionResponse {
@@ -58,7 +66,8 @@ export function CreateSessionResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: CreateSessionResponseDataFromJSON(json['data'])
+    data: CreateSessionResponseDataFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -72,6 +81,7 @@ export function CreateSessionResponseToJSON(value?: CreateSessionResponse | null
   return {
     status_code: value.status_code,
     status: value.status,
-    data: CreateSessionResponseDataToJSON(value.data)
+    data: CreateSessionResponseDataToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

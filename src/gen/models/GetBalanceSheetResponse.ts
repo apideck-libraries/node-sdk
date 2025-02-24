@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { BalanceSheet, BalanceSheetFromJSON, BalanceSheetToJSON } from './BalanceSheet'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetBalanceSheetResponse {
    * @memberof GetBalanceSheetResponse
    */
   data: BalanceSheet
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetBalanceSheetResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetBalanceSheetResponseFromJSON(json: any): GetBalanceSheetResponse {
@@ -75,7 +83,8 @@ export function GetBalanceSheetResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: BalanceSheetFromJSON(json['data'])
+    data: BalanceSheetFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetBalanceSheetResponseToJSON(value?: GetBalanceSheetResponse | 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: BalanceSheetToJSON(value.data)
+    data: BalanceSheetToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

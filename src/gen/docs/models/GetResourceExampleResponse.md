@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 `status_code` | **number** | HTTP Response Status Code | 
 `status` | **string** | HTTP Response Status | 
 `data` | [**ResourceExample**](ResourceExample.md) |  | 
+`_raw` | [**Raw**](Raw.md) |  | [optional] 
 
 
 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 
 
 * [`ResourceExample`](ResourceExample.md)
+* [`Raw`](Raw.md)
 
 ---
 

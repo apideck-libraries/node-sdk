@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { Job, JobFromJSON, JobToJSON } from './Job'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetJobResponse {
    * @memberof GetJobResponse
    */
   data: Job
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetJobResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetJobResponseFromJSON(json: any): GetJobResponse {
@@ -75,7 +83,8 @@ export function GetJobResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: JobFromJSON(json['data'])
+    data: JobFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetJobResponseToJSON(value?: GetJobResponse | null): any {
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: JobToJSON(value.data)
+    data: JobToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

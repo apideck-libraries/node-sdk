@@ -15,6 +15,7 @@
 import { exists } from '../runtime'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import {
   TrackingCategory,
   TrackingCategoryFromJSON,
@@ -75,6 +76,12 @@ export interface GetTrackingCategoriesResponse {
    * @memberof GetTrackingCategoriesResponse
    */
   links?: Links
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetTrackingCategoriesResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetTrackingCategoriesResponseFromJSON(json: any): GetTrackingCategoriesResponse {
@@ -96,7 +103,8 @@ export function GetTrackingCategoriesResponseFromJSONTyped(
     operation: json['operation'],
     data: (json['data'] as Array<any>).map(TrackingCategoryFromJSON),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
-    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
+    links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -117,6 +125,7 @@ export function GetTrackingCategoriesResponseToJSON(
     operation: value.operation,
     data: (value.data as Array<any>).map(TrackingCategoryToJSON),
     meta: MetaToJSON(value.meta),
-    links: LinksToJSON(value.links)
+    links: LinksToJSON(value.links),
+    _raw: RawToJSON(value._raw)
   }
 }

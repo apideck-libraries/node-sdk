@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { UnifiedId, UnifiedIdFromJSON, UnifiedIdToJSON } from './UnifiedId'
 
 /**
@@ -56,6 +58,12 @@ export interface CreateCommentResponse {
    * @memberof CreateCommentResponse
    */
   data: UnifiedId
+  /**
+   *
+   * @type {Raw}
+   * @memberof CreateCommentResponse
+   */
+  _raw?: Raw | null
 }
 
 export function CreateCommentResponseFromJSON(json: any): CreateCommentResponse {
@@ -75,7 +83,8 @@ export function CreateCommentResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: UnifiedIdFromJSON(json['data'])
+    data: UnifiedIdFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function CreateCommentResponseToJSON(value?: CreateCommentResponse | null
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: UnifiedIdToJSON(value.data)
+    data: UnifiedIdToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

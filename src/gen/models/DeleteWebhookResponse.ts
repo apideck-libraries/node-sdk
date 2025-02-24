@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import { Webhook, WebhookFromJSON, WebhookToJSON } from './Webhook'
 
 /**
@@ -38,6 +40,12 @@ export interface DeleteWebhookResponse {
    * @memberof DeleteWebhookResponse
    */
   data: Webhook
+  /**
+   *
+   * @type {Raw}
+   * @memberof DeleteWebhookResponse
+   */
+  _raw?: Raw | null
 }
 
 export function DeleteWebhookResponseFromJSON(json: any): DeleteWebhookResponse {
@@ -54,7 +62,8 @@ export function DeleteWebhookResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: WebhookFromJSON(json['data'])
+    data: WebhookFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -68,6 +77,7 @@ export function DeleteWebhookResponseToJSON(value?: DeleteWebhookResponse | null
   return {
     status_code: value.status_code,
     status: value.status,
-    data: WebhookToJSON(value.data)
+    data: WebhookToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

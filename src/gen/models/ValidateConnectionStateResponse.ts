@@ -12,6 +12,8 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 import {
   ValidateConnectionStateResponseData,
   ValidateConnectionStateResponseDataFromJSON,
@@ -42,6 +44,12 @@ export interface ValidateConnectionStateResponse {
    * @memberof ValidateConnectionStateResponse
    */
   data: ValidateConnectionStateResponseData
+  /**
+   *
+   * @type {Raw}
+   * @memberof ValidateConnectionStateResponse
+   */
+  _raw?: Raw | null
 }
 
 export function ValidateConnectionStateResponseFromJSON(
@@ -60,7 +68,8 @@ export function ValidateConnectionStateResponseFromJSONTyped(
   return {
     status_code: json['status_code'],
     status: json['status'],
-    data: ValidateConnectionStateResponseDataFromJSON(json['data'])
+    data: ValidateConnectionStateResponseDataFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -76,6 +85,7 @@ export function ValidateConnectionStateResponseToJSON(
   return {
     status_code: value.status_code,
     status: value.status,
-    data: ValidateConnectionStateResponseDataToJSON(value.data)
+    data: ValidateConnectionStateResponseDataToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

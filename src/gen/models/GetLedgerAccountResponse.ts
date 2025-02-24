@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+import { exists } from '../runtime'
 import { LedgerAccount, LedgerAccountFromJSON, LedgerAccountToJSON } from './LedgerAccount'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -56,6 +58,12 @@ export interface GetLedgerAccountResponse {
    * @memberof GetLedgerAccountResponse
    */
   data: LedgerAccount
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetLedgerAccountResponse
+   */
+  _raw?: Raw | null
 }
 
 export function GetLedgerAccountResponseFromJSON(json: any): GetLedgerAccountResponse {
@@ -75,7 +83,8 @@ export function GetLedgerAccountResponseFromJSONTyped(
     service: json['service'],
     resource: json['resource'],
     operation: json['operation'],
-    data: LedgerAccountFromJSON(json['data'])
+    data: LedgerAccountFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw'])
   }
 }
 
@@ -92,6 +101,7 @@ export function GetLedgerAccountResponseToJSON(value?: GetLedgerAccountResponse 
     service: value.service,
     resource: value.resource,
     operation: value.operation,
-    data: LedgerAccountToJSON(value.data)
+    data: LedgerAccountToJSON(value.data),
+    _raw: RawToJSON(value._raw)
   }
 }

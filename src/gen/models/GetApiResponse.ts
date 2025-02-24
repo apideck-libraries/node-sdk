@@ -16,6 +16,7 @@ import { exists } from '../runtime'
 import { Api, ApiFromJSON, ApiToJSON } from './Api'
 import { Links, LinksFromJSON, LinksToJSON } from './Links'
 import { Meta, MetaFromJSON, MetaToJSON } from './Meta'
+import { Raw, RawFromJSON, RawToJSON } from './Raw'
 
 /**
  *
@@ -41,6 +42,12 @@ export interface GetApiResponse {
    * @memberof GetApiResponse
    */
   data: Api
+  /**
+   *
+   * @type {Raw}
+   * @memberof GetApiResponse
+   */
+  _raw?: Raw | null
   /**
    *
    * @type {Meta}
@@ -70,6 +77,7 @@ export function GetApiResponseFromJSONTyped(
     status_code: json['status_code'],
     status: json['status'],
     data: ApiFromJSON(json['data']),
+    _raw: !exists(json, '_raw') ? undefined : RawFromJSON(json['_raw']),
     meta: !exists(json, 'meta') ? undefined : MetaFromJSON(json['meta']),
     links: !exists(json, 'links') ? undefined : LinksFromJSON(json['links'])
   }
@@ -86,6 +94,7 @@ export function GetApiResponseToJSON(value?: GetApiResponse | null): any {
     status_code: value.status_code,
     status: value.status,
     data: ApiToJSON(value.data),
+    _raw: RawToJSON(value._raw),
     meta: MetaToJSON(value.meta),
     links: LinksToJSON(value.links)
   }
