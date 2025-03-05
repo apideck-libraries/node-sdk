@@ -5,13 +5,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`type` | **string** |  | 
-`id` | **string** |  | [optional] 
-`title` | **string** |  | [optional] 
+`total` | **number** | The total amount of the transaction | 
+`id` | **string** | A unique identifier for an object. | [optional] 
+`code` | **string** | The account code of the account | [optional] 
+`title` | **string** | The name of the account. | [optional] 
+`type` | [**ProfitAndLossType**](ProfitAndLossType.md) |  | [optional] 
 `value` | **number** |  | [optional] 
 
 
 
+
+
+## Referenced Types:
+
+
+
+
+* [`ProfitAndLossType`](ProfitAndLossType.md)
 
 
 ---

@@ -1,20 +1,15 @@
-# Apideck.ProfitAndLossExpenses
+# Apideck.ProfitAndLossIndicator
 
 ### Description
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`total` | **number** | Total expense | 
-`records` | [**ProfitAndLossRecords**](ProfitAndLossRecords.md) |  | 
+`total` | **number** | The total amount of the transaction | 
 
 
 
 
-
-## Referenced Types:
-
-* [`ProfitAndLossRecords`](ProfitAndLossRecords.md)
 
 ---
 

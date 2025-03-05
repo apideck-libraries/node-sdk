@@ -18,6 +18,11 @@ import {
   ProfitAndLossRecordsFromJSON,
   ProfitAndLossRecordsToJSON
 } from './ProfitAndLossRecords'
+import {
+  ProfitAndLossType,
+  ProfitAndLossTypeFromJSON,
+  ProfitAndLossTypeToJSON
+} from './ProfitAndLossType'
 
 /**
  *
@@ -26,29 +31,35 @@ import {
  */
 export interface ProfitAndLossSection {
   /**
-   *
-   * @type {string}
-   * @memberof ProfitAndLossSection
-   */
-  type: string
-  /**
-   *
-   * @type {string}
-   * @memberof ProfitAndLossSection
-   */
-  id?: string | null
-  /**
-   *
-   * @type {string}
-   * @memberof ProfitAndLossSection
-   */
-  title?: string | null
-  /**
-   *
+   * The total amount of the transaction
    * @type {number}
    * @memberof ProfitAndLossSection
    */
-  total?: number | null
+  total: number | null
+  /**
+   * A unique identifier for an object.
+   * @type {string}
+   * @memberof ProfitAndLossSection
+   */
+  readonly id?: string
+  /**
+   * The account code of the account
+   * @type {string}
+   * @memberof ProfitAndLossSection
+   */
+  readonly code?: string
+  /**
+   * The name of the account.
+   * @type {string}
+   * @memberof ProfitAndLossSection
+   */
+  readonly title?: string
+  /**
+   *
+   * @type {ProfitAndLossType}
+   * @memberof ProfitAndLossSection
+   */
+  type?: ProfitAndLossType | null
   /**
    *
    * @type {ProfitAndLossRecords}
@@ -69,10 +80,11 @@ export function ProfitAndLossSectionFromJSONTyped(
     return json
   }
   return {
-    type: json['type'],
+    total: json['total'],
     id: !exists(json, 'id') ? undefined : json['id'],
+    code: !exists(json, 'code') ? undefined : json['code'],
     title: !exists(json, 'title') ? undefined : json['title'],
-    total: !exists(json, 'total') ? undefined : json['total'],
+    type: !exists(json, 'type') ? undefined : ProfitAndLossTypeFromJSON(json['type']),
     records: !exists(json, 'records') ? undefined : ProfitAndLossRecordsFromJSON(json['records'])
   }
 }
@@ -85,10 +97,8 @@ export function ProfitAndLossSectionToJSON(value?: ProfitAndLossSection | null):
     return null
   }
   return {
-    type: value.type,
-    id: value.id,
-    title: value.title,
     total: value.total,
+    type: ProfitAndLossTypeToJSON(value.type),
     records: ProfitAndLossRecordsToJSON(value.records)
   }
 }
