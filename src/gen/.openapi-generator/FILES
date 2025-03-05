@@ -116,6 +116,7 @@ Contact.md
 ContactsFilter.md
 ContactsSort.md
 CopyFolderRequest.md
+CostOfGoodsSold.md
 CreateAccountingDepartmentResponse.md
 CreateAccountingLocationResponse.md
 CreateActivityResponse.md
@@ -300,6 +301,7 @@ ExecuteWebhookEventsRequest.md
 ExecuteWebhookResponse.md
 Expense.md
 ExpenseLineItem.md
+Expenses.md
 FileStorageApi.md
 FileStorageApiTest.api.test.ts
 FileStorageEventType.md
@@ -469,6 +471,7 @@ HrisEventType.md
 HrisJob.md
 HrisJobLocation.md
 HrisJobs.md
+Income.md
 IntegrationState.md
 Invoice.md
 InvoiceItem.md
@@ -551,6 +554,8 @@ OrderRefunds.md
 OrderTenders.md
 OrderType.md
 OrdersSort.md
+OtherExpenses.md
+OtherIncome.md
 OutstandingBalanceByCurrency.md
 OutstandingBalanceByCustomer.md
 OutstandingBalanceBySupplier.md
@@ -584,15 +589,12 @@ PosPaymentExternalDetails.md
 Price.md
 ProbationPeriod.md
 ProfitAndLoss.md
-ProfitAndLossExpenses.md
 ProfitAndLossFilter.md
-ProfitAndLossGrossProfit.md
-ProfitAndLossIncome.md
-ProfitAndLossNetIncome.md
-ProfitAndLossNetOperatingIncome.md
+ProfitAndLossIndicator.md
 ProfitAndLossRecord.md
 ProfitAndLossRecords.md
 ProfitAndLossSection.md
+ProfitAndLossType.md
 PurchaseOrder.md
 PurchaseOrdersFilter.md
 PurchaseOrdersSort.md
@@ -643,6 +645,7 @@ TooManyRequestsResponseDetail.md
 TrackingCategory.md
 TrackingItem.md
 UnauthorizedResponse.md
+UncategorizedAccounts.md
 UnexpectedErrorResponse.md
 UnifiedApiId.md
 UnifiedFile.md
@@ -847,6 +850,7 @@ models/Contact.ts
 models/ContactsFilter.ts
 models/ContactsSort.ts
 models/CopyFolderRequest.ts
+models/CostOfGoodsSold.ts
 models/CreateAccountingDepartmentResponse.ts
 models/CreateAccountingLocationResponse.ts
 models/CreateActivityResponse.ts
@@ -1026,6 +1030,7 @@ models/ExecuteWebhookEventsRequest.ts
 models/ExecuteWebhookResponse.ts
 models/Expense.ts
 models/ExpenseLineItem.ts
+models/Expenses.ts
 models/FileStorageEventType.ts
 models/FileType.ts
 models/FilesFilter.ts
@@ -1191,6 +1196,7 @@ models/HrisEventType.ts
 models/HrisJob.ts
 models/HrisJobLocation.ts
 models/HrisJobs.ts
+models/Income.ts
 models/IntegrationState.ts
 models/Invoice.ts
 models/InvoiceItem.ts
@@ -1270,6 +1276,8 @@ models/OrderRefunds.ts
 models/OrderTenders.ts
 models/OrderType.ts
 models/OrdersSort.ts
+models/OtherExpenses.ts
+models/OtherIncome.ts
 models/OutstandingBalanceByCurrency.ts
 models/OutstandingBalanceByCustomer.ts
 models/OutstandingBalanceBySupplier.ts
@@ -1301,15 +1309,12 @@ models/PosPaymentExternalDetails.ts
 models/Price.ts
 models/ProbationPeriod.ts
 models/ProfitAndLoss.ts
-models/ProfitAndLossExpenses.ts
 models/ProfitAndLossFilter.ts
-models/ProfitAndLossGrossProfit.ts
-models/ProfitAndLossIncome.ts
-models/ProfitAndLossNetIncome.ts
-models/ProfitAndLossNetOperatingIncome.ts
+models/ProfitAndLossIndicator.ts
 models/ProfitAndLossRecord.ts
 models/ProfitAndLossRecords.ts
 models/ProfitAndLossSection.ts
+models/ProfitAndLossType.ts
 models/PurchaseOrder.ts
 models/PurchaseOrdersFilter.ts
 models/PurchaseOrdersSort.ts
@@ -1358,6 +1363,7 @@ models/TooManyRequestsResponseDetail.ts
 models/TrackingCategory.ts
 models/TrackingItem.ts
 models/UnauthorizedResponse.ts
+models/UncategorizedAccounts.ts
 models/UnexpectedErrorResponse.ts
 models/UnifiedApiId.ts
 models/UnifiedFile.ts

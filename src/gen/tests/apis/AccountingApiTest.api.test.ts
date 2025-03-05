@@ -8341,47 +8341,143 @@ describe('AccountingApi', () => {
           id: '12345',
           report_name: 'ProfitAndLoss',
           start_date: '2017-01-01',
-          end_date: '2017-01-01',
+          end_date: '2017-01-31',
           currency: 'USD',
-          customer_id: '123',
           income: {
-            total: 200000,
+            id: '123',
+            code: '123',
+            title: 'Operating Income',
+            type: 'Section',
+            total: 60000,
+            records: [
+              {
+                id: '137',
+                title: 'Sales of products',
+                code: '137',
+                type: 'Section',
+                total: 20000,
+                records: [[Object]]
+              },
+              {
+                id: '138',
+                title: 'Sales of services',
+                code: '138',
+                type: 'Section',
+                total: 40000,
+                records: [[Object], [Object]]
+              }
+            ]
+          },
+          cost_of_goods_sold: {
+            id: '123',
+            code: '123',
+            title: 'Cost of Goods Sold',
+            type: 'Section',
+            total: 12000,
             records: [
               {
                 id: '123',
-                name: 'Income 1',
-                amount: 10000
-              },
-              {
-                id: '456',
-                name: 'Income 2',
-                amount: 20000
+                code: '123',
+                title: 'COGS Sales',
+                type: 'Record',
+                total: 12000
               }
             ]
           },
           expenses: {
-            total: 200000,
+            id: '123',
+            code: '123',
+            title: 'Operating Expenses',
+            type: 'Section',
+            total: 14000,
             records: [
               {
-                id: '123',
-                name: 'Expense 1',
-                amount: 10000
+                id: '137',
+                title: 'Maintenance',
+                code: '137',
+                type: 'Record',
+                total: 1000
               },
               {
-                id: '456',
-                name: 'Expense 2',
-                amount: 20000
+                id: '138',
+                title: 'Rent',
+                code: '138',
+                type: 'Record',
+                total: 10000
+              },
+              {
+                id: '789',
+                code: '789',
+                title: 'Utilities',
+                type: 'Section',
+                total: 3000,
+                records: [[Object], [Object]]
               }
             ]
           },
-          net_income: {
-            total: 200000
+          other_income: {
+            id: '123',
+            code: '123',
+            title: 'Other Income',
+            type: 'Section',
+            total: 3000,
+            records: [
+              {
+                id: '123',
+                code: '123',
+                title: 'Interest Income',
+                type: 'Record',
+                total: 2000
+              },
+              {
+                id: '123',
+                code: '123',
+                title: 'Foreign Exchange Gain',
+                type: 'Record',
+                total: 1000
+              }
+            ]
           },
-          net_operating_income: {
-            total: 200000
+          other_expenses: {
+            id: '123',
+            code: '123',
+            title: 'Other Expenses',
+            type: 'Section',
+            total: 1000,
+            records: [
+              {
+                id: '123',
+                code: '123',
+                title: 'Unrealized Gain/Loss',
+                type: 'Record',
+                total: 1000
+              }
+            ]
+          },
+          uncategorized_accounts: {
+            id: '123',
+            code: '123',
+            title: 'Uncategorized Accounts',
+            type: 'Section',
+            total: 0,
+            records: [
+              {
+                id: '123',
+                code: '123',
+                title: 'Elimination Adjustments',
+                type: 'Record',
+                total: 0
+              }
+            ]
           },
           gross_profit: {
-            total: 200000
+            total: 10000
+          },
+          net_operating_income: {
+            total: 10000
+          },
+          net_income: {
+            total: 10000
           },
           custom_mappings: {}
         },

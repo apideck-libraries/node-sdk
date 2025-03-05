@@ -14,77 +14,82 @@
 
 import { exists } from '../runtime'
 import {
+  ProfitAndLossRecords,
+  ProfitAndLossRecordsFromJSON,
+  ProfitAndLossRecordsToJSON
+} from './ProfitAndLossRecords'
+import {
   ProfitAndLossType,
   ProfitAndLossTypeFromJSON,
   ProfitAndLossTypeToJSON
 } from './ProfitAndLossType'
 
 /**
- *
+ * The cost of goods sold accounts
  * @export
- * @interface ProfitAndLossRecord
+ * @interface CostOfGoodsSold
  */
-export interface ProfitAndLossRecord {
+export interface CostOfGoodsSold {
   /**
    * The total amount of the transaction
    * @type {number}
-   * @memberof ProfitAndLossRecord
+   * @memberof CostOfGoodsSold
    */
   total: number | null
   /**
+   *
+   * @type {ProfitAndLossRecords}
+   * @memberof CostOfGoodsSold
+   */
+  records: ProfitAndLossRecords | null
+  /**
    * A unique identifier for an object.
    * @type {string}
-   * @memberof ProfitAndLossRecord
+   * @memberof CostOfGoodsSold
    */
   readonly id?: string
   /**
    * The account code of the account
    * @type {string}
-   * @memberof ProfitAndLossRecord
+   * @memberof CostOfGoodsSold
    */
   readonly code?: string
   /**
    * The name of the account.
    * @type {string}
-   * @memberof ProfitAndLossRecord
+   * @memberof CostOfGoodsSold
    */
   readonly title?: string
   /**
    *
    * @type {ProfitAndLossType}
-   * @memberof ProfitAndLossRecord
+   * @memberof CostOfGoodsSold
    */
   type?: ProfitAndLossType | null
-  /**
-   *
-   * @type {number}
-   * @memberof ProfitAndLossRecord
-   */
-  value?: number
 }
 
-export function ProfitAndLossRecordFromJSON(json: any): ProfitAndLossRecord {
-  return ProfitAndLossRecordFromJSONTyped(json, false)
+export function CostOfGoodsSoldFromJSON(json: any): CostOfGoodsSold {
+  return CostOfGoodsSoldFromJSONTyped(json, false)
 }
 
-export function ProfitAndLossRecordFromJSONTyped(
+export function CostOfGoodsSoldFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): ProfitAndLossRecord {
+): CostOfGoodsSold {
   if (json === undefined || json === null) {
     return json
   }
   return {
     total: json['total'],
+    records: ProfitAndLossRecordsFromJSON(json['records']),
     id: !exists(json, 'id') ? undefined : json['id'],
     code: !exists(json, 'code') ? undefined : json['code'],
     title: !exists(json, 'title') ? undefined : json['title'],
-    type: !exists(json, 'type') ? undefined : ProfitAndLossTypeFromJSON(json['type']),
-    value: !exists(json, 'value') ? undefined : json['value']
+    type: !exists(json, 'type') ? undefined : ProfitAndLossTypeFromJSON(json['type'])
   }
 }
 
-export function ProfitAndLossRecordToJSON(value?: ProfitAndLossRecord | null): any {
+export function CostOfGoodsSoldToJSON(value?: CostOfGoodsSold | null): any {
   if (value === undefined) {
     return undefined
   }
@@ -93,7 +98,7 @@ export function ProfitAndLossRecordToJSON(value?: ProfitAndLossRecord | null): a
   }
   return {
     total: value.total,
-    type: ProfitAndLossTypeToJSON(value.type),
-    value: value.value
+    records: ProfitAndLossRecordsToJSON(value.records),
+    type: ProfitAndLossTypeToJSON(value.type)
   }
 }

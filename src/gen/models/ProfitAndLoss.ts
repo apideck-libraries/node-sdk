@@ -13,31 +13,22 @@
  */
 
 import { exists } from '../runtime'
+import { CostOfGoodsSold, CostOfGoodsSoldFromJSON, CostOfGoodsSoldToJSON } from './CostOfGoodsSold'
+import { Currency, CurrencyFromJSON, CurrencyToJSON } from './Currency'
+import { Expenses, ExpensesFromJSON, ExpensesToJSON } from './Expenses'
+import { Income, IncomeFromJSON, IncomeToJSON } from './Income'
+import { OtherExpenses, OtherExpensesFromJSON, OtherExpensesToJSON } from './OtherExpenses'
+import { OtherIncome, OtherIncomeFromJSON, OtherIncomeToJSON } from './OtherIncome'
 import {
-  ProfitAndLossExpenses,
-  ProfitAndLossExpensesFromJSON,
-  ProfitAndLossExpensesToJSON
-} from './ProfitAndLossExpenses'
+  ProfitAndLossIndicator,
+  ProfitAndLossIndicatorFromJSON,
+  ProfitAndLossIndicatorToJSON
+} from './ProfitAndLossIndicator'
 import {
-  ProfitAndLossGrossProfit,
-  ProfitAndLossGrossProfitFromJSON,
-  ProfitAndLossGrossProfitToJSON
-} from './ProfitAndLossGrossProfit'
-import {
-  ProfitAndLossIncome,
-  ProfitAndLossIncomeFromJSON,
-  ProfitAndLossIncomeToJSON
-} from './ProfitAndLossIncome'
-import {
-  ProfitAndLossNetIncome,
-  ProfitAndLossNetIncomeFromJSON,
-  ProfitAndLossNetIncomeToJSON
-} from './ProfitAndLossNetIncome'
-import {
-  ProfitAndLossNetOperatingIncome,
-  ProfitAndLossNetOperatingIncomeFromJSON,
-  ProfitAndLossNetOperatingIncomeToJSON
-} from './ProfitAndLossNetOperatingIncome'
+  UncategorizedAccounts,
+  UncategorizedAccountsFromJSON,
+  UncategorizedAccountsToJSON
+} from './UncategorizedAccounts'
 
 /**
  *
@@ -53,22 +44,22 @@ export interface ProfitAndLoss {
   report_name: string
   /**
    *
-   * @type {string}
+   * @type {Currency}
    * @memberof ProfitAndLoss
    */
-  currency: string
+  currency: Currency | null
   /**
    *
-   * @type {ProfitAndLossIncome}
+   * @type {Income}
    * @memberof ProfitAndLoss
    */
-  income: ProfitAndLossIncome
+  income: Income
   /**
    *
-   * @type {ProfitAndLossExpenses}
+   * @type {Expenses}
    * @memberof ProfitAndLoss
    */
-  expenses: ProfitAndLossExpenses
+  expenses: Expenses
   /**
    * A unique identifier for an object.
    * @type {string}
@@ -82,35 +73,53 @@ export interface ProfitAndLoss {
    */
   start_date?: string
   /**
-   * The start date of the report
+   * The end date of the report
    * @type {string}
    * @memberof ProfitAndLoss
    */
   end_date?: string
   /**
-   * Customer id
-   * @type {string}
+   *
+   * @type {CostOfGoodsSold}
    * @memberof ProfitAndLoss
    */
-  customer_id?: string
+  cost_of_goods_sold?: CostOfGoodsSold
   /**
    *
-   * @type {ProfitAndLossNetIncome}
+   * @type {OtherIncome}
    * @memberof ProfitAndLoss
    */
-  net_income?: ProfitAndLossNetIncome | null
+  other_income?: OtherIncome
   /**
    *
-   * @type {ProfitAndLossNetOperatingIncome}
+   * @type {OtherExpenses}
    * @memberof ProfitAndLoss
    */
-  net_operating_income?: ProfitAndLossNetOperatingIncome | null
+  other_expenses?: OtherExpenses
   /**
    *
-   * @type {ProfitAndLossGrossProfit}
+   * @type {UncategorizedAccounts}
    * @memberof ProfitAndLoss
    */
-  gross_profit?: ProfitAndLossGrossProfit | null
+  uncategorized_accounts?: UncategorizedAccounts
+  /**
+   *
+   * @type {ProfitAndLossIndicator}
+   * @memberof ProfitAndLoss
+   */
+  gross_profit?: ProfitAndLossIndicator
+  /**
+   *
+   * @type {ProfitAndLossIndicator}
+   * @memberof ProfitAndLoss
+   */
+  net_operating_income?: ProfitAndLossIndicator
+  /**
+   *
+   * @type {ProfitAndLossIndicator}
+   * @memberof ProfitAndLoss
+   */
+  net_income?: ProfitAndLossIndicator
   /**
    * When custom mappings are configured on the resource, the result is included here.
    * @type {object}
@@ -129,22 +138,33 @@ export function ProfitAndLossFromJSONTyped(json: any, ignoreDiscriminator: boole
   }
   return {
     report_name: json['report_name'],
-    currency: json['currency'],
-    income: ProfitAndLossIncomeFromJSON(json['income']),
-    expenses: ProfitAndLossExpensesFromJSON(json['expenses']),
+    currency: CurrencyFromJSON(json['currency']),
+    income: IncomeFromJSON(json['income']),
+    expenses: ExpensesFromJSON(json['expenses']),
     id: !exists(json, 'id') ? undefined : json['id'],
     start_date: !exists(json, 'start_date') ? undefined : json['start_date'],
     end_date: !exists(json, 'end_date') ? undefined : json['end_date'],
-    customer_id: !exists(json, 'customer_id') ? undefined : json['customer_id'],
-    net_income: !exists(json, 'net_income')
+    cost_of_goods_sold: !exists(json, 'cost_of_goods_sold')
       ? undefined
-      : ProfitAndLossNetIncomeFromJSON(json['net_income']),
-    net_operating_income: !exists(json, 'net_operating_income')
+      : CostOfGoodsSoldFromJSON(json['cost_of_goods_sold']),
+    other_income: !exists(json, 'other_income')
       ? undefined
-      : ProfitAndLossNetOperatingIncomeFromJSON(json['net_operating_income']),
+      : OtherIncomeFromJSON(json['other_income']),
+    other_expenses: !exists(json, 'other_expenses')
+      ? undefined
+      : OtherExpensesFromJSON(json['other_expenses']),
+    uncategorized_accounts: !exists(json, 'uncategorized_accounts')
+      ? undefined
+      : UncategorizedAccountsFromJSON(json['uncategorized_accounts']),
     gross_profit: !exists(json, 'gross_profit')
       ? undefined
-      : ProfitAndLossGrossProfitFromJSON(json['gross_profit']),
+      : ProfitAndLossIndicatorFromJSON(json['gross_profit']),
+    net_operating_income: !exists(json, 'net_operating_income')
+      ? undefined
+      : ProfitAndLossIndicatorFromJSON(json['net_operating_income']),
+    net_income: !exists(json, 'net_income')
+      ? undefined
+      : ProfitAndLossIndicatorFromJSON(json['net_income']),
     custom_mappings: !exists(json, 'custom_mappings') ? undefined : json['custom_mappings']
   }
 }
@@ -158,14 +178,17 @@ export function ProfitAndLossToJSON(value?: ProfitAndLoss | null): any {
   }
   return {
     report_name: value.report_name,
-    currency: value.currency,
-    income: ProfitAndLossIncomeToJSON(value.income),
-    expenses: ProfitAndLossExpensesToJSON(value.expenses),
+    currency: CurrencyToJSON(value.currency),
+    income: IncomeToJSON(value.income),
+    expenses: ExpensesToJSON(value.expenses),
     start_date: value.start_date,
     end_date: value.end_date,
-    customer_id: value.customer_id,
-    net_income: ProfitAndLossNetIncomeToJSON(value.net_income),
-    net_operating_income: ProfitAndLossNetOperatingIncomeToJSON(value.net_operating_income),
-    gross_profit: ProfitAndLossGrossProfitToJSON(value.gross_profit)
+    cost_of_goods_sold: CostOfGoodsSoldToJSON(value.cost_of_goods_sold),
+    other_income: OtherIncomeToJSON(value.other_income),
+    other_expenses: OtherExpensesToJSON(value.other_expenses),
+    uncategorized_accounts: UncategorizedAccountsToJSON(value.uncategorized_accounts),
+    gross_profit: ProfitAndLossIndicatorToJSON(value.gross_profit),
+    net_operating_income: ProfitAndLossIndicatorToJSON(value.net_operating_income),
+    net_income: ProfitAndLossIndicatorToJSON(value.net_income)
   }
 }
