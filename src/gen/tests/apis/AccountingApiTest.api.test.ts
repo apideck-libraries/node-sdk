@@ -8483,7 +8483,8 @@ describe('AccountingApi', () => {
           net_income: {
             total: 10000
           },
-          custom_mappings: {}
+          custom_mappings: {},
+          customer: '123'
         },
         _raw: {}
       } as any

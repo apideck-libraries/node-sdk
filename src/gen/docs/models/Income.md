@@ -7,7 +7,7 @@ The operating income accounts
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`total` | **number** | The total amount of the transaction | 
+`total` | **number** | The aggregated total of all accounts within this category. | 
 `records` | [**ProfitAndLossRecords**](ProfitAndLossRecords.md) |  | 
 `id` | **string** | A unique identifier for an object. | [optional] 
 `code` | **string** | The account code of the account | [optional] 

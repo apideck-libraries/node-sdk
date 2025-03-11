@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`total` | **number** | The total amount of the transaction | 
+`total` | **number** | The aggregated total of all accounts within this category. | 
 `id` | **string** | A unique identifier for an object. | [optional] 
 `code` | **string** | The account code of the account | [optional] 
 `title` | **string** | The name of the account. | [optional] 

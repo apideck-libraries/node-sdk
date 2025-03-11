@@ -6,7 +6,7 @@
  */
 export interface ProfitAndLossIndicator {
   /**
-   * The total amount of the transaction
+   * The total amount of the transaction or record
    * @type {number}
    * @memberof ProfitAndLossIndicator
    */
