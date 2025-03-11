@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | 
-`total_amount` | **number** | The total amount of the transaction | 
+`total_amount` | **number** | The total amount of the transaction or record | 
 `transaction_date` | **Date** | The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD | 
 `downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 

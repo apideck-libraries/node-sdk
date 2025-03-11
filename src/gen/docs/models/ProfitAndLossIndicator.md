@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`total` | **number** | The total amount of the transaction | 
+`total` | **number** | The total amount of the transaction or record | 
 
 
 
