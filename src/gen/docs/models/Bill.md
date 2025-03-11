@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 `accounting_by_row` | **boolean** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `discount_percentage` | **number** | Discount percentage applied to this transaction. | [optional] 
+`source_document_url` | **string** | URL link to a source document - shown as \'Go to [appName]\' in the downstream app. Currently only supported for Xero. | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -103,6 +104,7 @@ Name | Type | Description | Notes
 
 
 * [`BankAccount`](BankAccount.md)
+
 
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
