@@ -1157,6 +1157,7 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
+          source_document_url: 'https://www.invoicesolution.com/bill/123456',
           tracking_categories: [
             {
               id: '123456',
@@ -1337,6 +1338,7 @@ describe('AccountingApi', () => {
               currency: 'USD'
             },
             discount_percentage: 5.5,
+            source_document_url: 'https://www.invoicesolution.com/bill/123456',
             tracking_categories: [
               {
                 id: '123456',
@@ -1584,6 +1586,7 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
+          source_document_url: 'https://www.invoicesolution.com/bill/123456',
           tracking_categories: [
             {
               id: '123456',
@@ -1783,6 +1786,7 @@ describe('AccountingApi', () => {
             currency: 'USD'
           },
           discount_percentage: 5.5,
+          source_document_url: 'https://www.invoicesolution.com/bill/123456',
           tracking_categories: [
             {
               id: '123456',

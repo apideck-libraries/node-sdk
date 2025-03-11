@@ -217,6 +217,12 @@ export interface Bill {
    */
   discount_percentage?: number | null
   /**
+   * URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
+   * @type {string}
+   * @memberof Bill
+   */
+  source_document_url?: string | null
+  /**
    *
    * @type {LinkedTrackingCategories}
    * @memberof Bill
@@ -352,6 +358,9 @@ export function BillFromJSONTyped(json: any, ignoreDiscriminator: boolean): Bill
     discount_percentage: !exists(json, 'discount_percentage')
       ? undefined
       : json['discount_percentage'],
+    source_document_url: !exists(json, 'source_document_url')
+      ? undefined
+      : json['source_document_url'],
     tracking_categories: !exists(json, 'tracking_categories')
       ? undefined
       : LinkedTrackingCategoriesFromJSON(json['tracking_categories']),
@@ -433,6 +442,7 @@ export function BillToJSON(value?: Bill | null): any {
     accounting_by_row: value.accounting_by_row,
     bank_account: BankAccountToJSON(value.bank_account),
     discount_percentage: value.discount_percentage,
+    source_document_url: value.source_document_url,
     tracking_categories: LinkedTrackingCategoriesToJSON(value.tracking_categories),
     row_version: value.row_version,
     custom_fields:
