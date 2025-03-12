@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `email` | **string** | Email of customer to search for | [optional] 
 `status` | **string** | Status of customer to filter on | [optional] 
 `updated_since` | **Date** |  | [optional] 
+`supplier_id` | **string** | Supplier ID of customer to search for | [optional] 
 
 
 
