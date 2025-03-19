@@ -90,10 +90,10 @@ export interface ConsumerConnection {
   enabled?: boolean
   /**
    * Connection settings. Values will persist to `form_fields` with corresponding id
-   * @type {object}
+   * @type {{ [key: string]: unknown; }}
    * @memberof ConsumerConnection
    */
-  settings?: object | null
+  settings?: { [key: string]: unknown } | null
   /**
    * Attach your own consumer specific metadata
    * @type {{ [key: string]: unknown; }}

@@ -73,6 +73,12 @@ export interface EmployeesFilter {
    * @memberof EmployeesFilter
    */
   department_id?: string
+  /**
+   * City to filter on
+   * @type {string}
+   * @memberof EmployeesFilter
+   */
+  city?: string
 }
 
 /**
@@ -106,7 +112,8 @@ export function EmployeesFilterFromJSONTyped(
     manager_id: !exists(json, 'manager_id') ? undefined : json['manager_id'],
     employment_status: !exists(json, 'employment_status') ? undefined : json['employment_status'],
     employee_number: !exists(json, 'employee_number') ? undefined : json['employee_number'],
-    department_id: !exists(json, 'department_id') ? undefined : json['department_id']
+    department_id: !exists(json, 'department_id') ? undefined : json['department_id'],
+    city: !exists(json, 'city') ? undefined : json['city']
   }
 }
 
@@ -126,6 +133,7 @@ export function EmployeesFilterToJSON(value?: EmployeesFilter | null): any {
     manager_id: value.manager_id,
     employment_status: value.employment_status,
     employee_number: value.employee_number,
-    department_id: value.department_id
+    department_id: value.department_id,
+    city: value.city
   }
 }

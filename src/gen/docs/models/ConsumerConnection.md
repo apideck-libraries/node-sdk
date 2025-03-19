@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 `consumer_id` | **string** |  | [optional] 
 `auth_type` | [**AuthType**](AuthType.md) |  | [optional] 
 `enabled` | **boolean** |  | [optional] 
-`settings` | **object** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
+`settings` | **{ [key: string]: object; }** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
 `metadata` | **{ [key: string]: object; }** | Attach your own consumer specific metadata | [optional] 
 `created_at` | **string** |  | [optional] 
 `updated_at` | **string** |  | [optional] 
