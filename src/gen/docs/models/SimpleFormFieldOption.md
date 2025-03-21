@@ -5,9 +5,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`label` | **string** |  | [optional] 
+`label` | **string** |  | 
+`option_type` | **string** |  | 
 `value` | **string \| number \| boolean \| Array&lt;string \| number&gt;** |  | [optional] 
 
+
+
+
+
+<a name="SimpleFormFieldOptionOptionType"></a>
+## Enum: SimpleFormFieldOption.option_type
+
+
+* `simple` (value: `'simple'`)
 
 
 
