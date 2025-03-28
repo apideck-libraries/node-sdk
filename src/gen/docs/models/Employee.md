@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `first_name` | **string** | The first name of the person. | [optional] 
 `last_name` | **string** | The last name of the person. | [optional] 
 `middle_name` | **string** | Middle name of the person. | [optional] 
@@ -92,6 +93,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

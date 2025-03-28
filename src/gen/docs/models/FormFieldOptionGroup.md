@@ -5,18 +5,29 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+`label` | **string** |  | 
+`options` | [**Array&lt;SimpleFormFieldOption&gt;**](SimpleFormFieldOption.md) |  | 
+`option_type` | **string** |  | 
 `id` | **string** |  | [optional] 
-`label` | **string** |  | [optional] 
-`options` | [**Array&lt;SimpleFormFieldOption&gt;**](SimpleFormFieldOption.md) |  | [optional] 
 
+
+
+
+
+<a name="FormFieldOptionGroupOptionType"></a>
+## Enum: FormFieldOptionGroup.option_type
+
+
+* `group` (value: `'group'`)
 
 
 
 
 ## Referenced Types:
 
-
 * [`SimpleFormFieldOption`](SimpleFormFieldOption.md)
+
+
 
 ---
 
