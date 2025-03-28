@@ -1005,6 +1005,7 @@ describe('HrisApi', () => {
         data: {
           employee: {
             id: '12345',
+            downstream_id: '12345',
             first_name: 'Elon',
             last_name: 'Musk',
             middle_name: 'D.',
@@ -1556,6 +1557,7 @@ describe('HrisApi', () => {
         data: [
           {
             id: '12345',
+            downstream_id: '12345',
             first_name: 'Elon',
             last_name: 'Musk',
             middle_name: 'D.',
@@ -1871,6 +1873,7 @@ describe('HrisApi', () => {
         operation: 'one',
         data: {
           id: '12345',
+          downstream_id: '12345',
           first_name: 'Elon',
           last_name: 'Musk',
           middle_name: 'D.',
