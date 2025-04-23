@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `customer_id` | **string** | The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers. | [optional] 
 `supplier_id` | **string** | The ID of the supplier this entity is linked to. | [optional] 
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
-`department_id` | **string** | The ID of the department this expense is linked to. | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
 `payment_type` | **string** | The type of payment for the expense. | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 

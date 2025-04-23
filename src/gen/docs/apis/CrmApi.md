@@ -2388,6 +2388,7 @@ const params = {
     contact_id: '12345',
     company_id: '12345',
     opportunity_id: '12345',
+    activity_id: '12345',
     lead_id: '12345',
     active: true,
     pass_through: [
@@ -2690,6 +2691,7 @@ const params = {
     contact_id: '12345',
     company_id: '12345',
     opportunity_id: '12345',
+    activity_id: '12345',
     lead_id: '12345',
     active: true,
     pass_through: [

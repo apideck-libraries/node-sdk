@@ -480,6 +480,7 @@ InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceItemsSort.md
 InvoiceLineItem.md
+InvoicePaymentAllocations.md
 InvoiceResponse.md
 InvoicesFilter.md
 InvoicesSort.md
@@ -1205,6 +1206,7 @@ models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceItemsSort.ts
 models/InvoiceLineItem.ts
+models/InvoicePaymentAllocations.ts
 models/InvoiceResponse.ts
 models/InvoicesFilter.ts
 models/InvoicesSort.ts

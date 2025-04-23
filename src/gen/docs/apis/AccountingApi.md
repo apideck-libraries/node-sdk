@@ -1232,8 +1232,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -1656,8 +1656,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -1922,8 +1922,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -2370,8 +2370,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -3162,6 +3162,7 @@ const params = {
         name: 'SpaceX'
       }
     ],
+    code: '123',
     row_version: '1-12345',
     pass_through: [
       {
@@ -3465,6 +3466,7 @@ const params = {
         name: 'SpaceX'
       }
     ],
+    code: '123',
     row_version: '1-12345',
     pass_through: [
       {
@@ -3578,6 +3580,7 @@ const params = {
         customer_id: '12345',
         department_id: '12345',
         location_id: '12345',
+        subsidiary_id: '12345',
         tax_rate: {
           id: '123456',
           rate: 10
@@ -3916,6 +3919,7 @@ const params = {
         customer_id: '12345',
         department_id: '12345',
         location_id: '12345',
+        subsidiary_id: '12345',
         tax_rate: {
           id: '123456',
           rate: 10
@@ -4072,6 +4076,10 @@ const params = {
       }
     ],
     active: true,
+    department_id: '12345',
+    location_id: '12345',
+    subsidiary_id: '12345',
+    tax_schedule_id: '123456',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4425,6 +4433,10 @@ const params = {
       }
     ],
     active: true,
+    department_id: '12345',
+    location_id: '12345',
+    subsidiary_id: '12345',
+    tax_schedule_id: '123456',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4562,8 +4574,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -4649,6 +4661,13 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_allocations: [
+      {
+        id: '123456',
+        allocated_amount: 1000,
+        date: '2020-09-30T07:43:32.000Z'
+      }
+    ],
     payment_method: 'cash',
     channel: 'email',
     language: 'EN',
@@ -5029,8 +5048,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -5116,6 +5135,13 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_allocations: [
+      {
+        id: '123456',
+        allocated_amount: 1000,
+        date: '2020-09-30T07:43:32.000Z'
+      }
+    ],
     payment_method: 'cash',
     channel: 'email',
     language: 'EN',
@@ -5296,6 +5322,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       },
       {
@@ -5359,6 +5387,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       }
     ],
@@ -5746,6 +5776,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       },
       {
@@ -5809,6 +5841,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       }
     ],
@@ -7525,8 +7559,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -7614,6 +7648,14 @@ const params = {
       {
         id: '123456',
         name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
       }
     ],
     row_version: '1-12345',
@@ -7969,8 +8011,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -8058,6 +8100,14 @@ const params = {
       {
         id: '123456',
         name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
       }
     ],
     row_version: '1-12345',

@@ -1100,8 +1100,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1278,8 +1278,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -1521,8 +1521,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1729,8 +1729,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2051,8 +2051,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2252,8 +2252,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -2511,8 +2511,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2743,8 +2743,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -3626,6 +3626,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           row_version: '1-12345',
           pass_through: [
             {
@@ -3681,6 +3682,7 @@ describe('AccountingApi', () => {
                 name: 'SpaceX'
               }
             ],
+            code: '123',
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -3798,6 +3800,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -3878,6 +3881,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           row_version: '1-12345',
           pass_through: [
             {
@@ -3963,6 +3967,7 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 rate: 10
@@ -4053,6 +4058,7 @@ describe('AccountingApi', () => {
                 customer_id: '12345',
                 department_id: '12345',
                 location_id: '12345',
+                subsidiary_id: '12345',
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
@@ -4210,6 +4216,7 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
@@ -4328,6 +4335,7 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 rate: 10
@@ -4457,6 +4465,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4566,6 +4578,10 @@ describe('AccountingApi', () => {
               }
             ],
             active: true,
+            department_id: '12345',
+            location_id: '12345',
+            subsidiary_id: '12345',
+            tax_schedule_id: '123456',
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -4737,6 +4753,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -4865,6 +4885,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4976,8 +5000,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5063,6 +5087,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5196,8 +5227,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -5278,6 +5309,13 @@ describe('AccountingApi', () => {
             },
             template_id: '123456',
             source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+            payment_allocations: [
+              {
+                id: '123456',
+                allocated_amount: 1000,
+                date: '2020-09-30T07:43:32.000Z'
+              }
+            ],
             payment_method: 'cash',
             channel: 'email',
             language: 'EN',
@@ -5475,8 +5513,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5569,6 +5607,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5727,8 +5772,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5814,6 +5859,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5967,6 +6019,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             },
             {
@@ -6031,6 +6085,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             }
           ],
@@ -6638,6 +6694,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             },
             {
@@ -6702,6 +6760,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             }
           ],
@@ -8594,8 +8654,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -8683,6 +8743,14 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
             }
           ],
           row_version: '1-12345',
@@ -8793,8 +8861,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -8881,6 +8949,14 @@ describe('AccountingApi', () => {
               }
             ],
             custom_mappings: {},
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -9050,8 +9126,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -9150,6 +9226,14 @@ describe('AccountingApi', () => {
             }
           ],
           custom_mappings: {},
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -9280,8 +9364,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -9369,6 +9453,14 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
             }
           ],
           row_version: '1-12345',

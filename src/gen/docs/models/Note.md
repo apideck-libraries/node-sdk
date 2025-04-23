@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 `contact_id` | **string** | The contact that is related to the note. | [optional] 
 `company_id` | **string** | The company that is related to the note. | [optional] 
 `opportunity_id` | **string** | The opportunity that is related to the note. | [optional] 
+`activity_id` | **string** | The activity that is related to the note. | [optional] 
 `lead_id` | **string** | The lead that is related to the note. | [optional] 
 `active` | **boolean** | Whether the Note is active or not. | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 

@@ -2691,6 +2691,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           pass_through: [
@@ -2744,6 +2745,7 @@ describe('CrmApi', () => {
             contact_id: '12345',
             company_id: '12345',
             opportunity_id: '12345',
+            activity_id: '12345',
             lead_id: '12345',
             active: true,
             custom_mappings: {},
@@ -2859,6 +2861,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           custom_mappings: {},
@@ -2938,6 +2941,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           pass_through: [

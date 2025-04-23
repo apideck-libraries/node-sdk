@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 `memo` | **string** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -96,6 +97,7 @@ Name | Type | Description | Notes
 
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
+* [`CustomField`](CustomField.md)
 
 
 

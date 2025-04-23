@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
 `template_id` | **string** | Optional invoice template | [optional] 
 `source_document_url` | **string** | URL link to a source document - shown as \'Go to [appName]\' in the downstream app. Currently only supported for Xero. | [optional] 
+`payment_allocations` | [**Array&lt;InvoicePaymentAllocations&gt;**](InvoicePaymentAllocations.md) | IDs of payments made on the invoice | [optional] 
 `payment_method` | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
@@ -131,6 +132,7 @@ Name | Type | Description | Notes
 * [`Address`](Address.md)
 
 
+* [`InvoicePaymentAllocations`](InvoicePaymentAllocations.md)
 
 
 
