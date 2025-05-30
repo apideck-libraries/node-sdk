@@ -2037,6 +2037,706 @@ describe('CrmApi', () => {
     })
   })
 
+  describe('#customObjectSchemasAdd', () => {
+    const endpoint = '/crm/custom-object-schemas'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 201,
+        status: 'Created',
+        service: 'zoho-crm',
+        resource: 'custom-object-schemas',
+        operation: 'add',
+        data: {
+          id: 'cos_12345',
+          name: 'project',
+          description: 'This schema defines a project custom object',
+          fields: [
+            {
+              id: 'field_123',
+              name: 'project_name',
+              description: 'Name of the project',
+              type: 'string',
+              required: true,
+              options: [
+                {
+                  value: 'option1',
+                  label: 'Option 1'
+                }
+              ],
+              default_value: 'New Project'
+            }
+          ],
+          visible: true,
+          active: true,
+          created_by: '12345',
+          updated_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        customObjectSchema: {
+          name: 'project',
+          description: 'This schema defines a project custom object',
+          fields: [
+            {
+              id: 'field_123',
+              name: 'project_name',
+              description: 'Name of the project',
+              type: 'string',
+              required: true,
+              options: [
+                {
+                  value: 'option1',
+                  label: 'Option 1'
+                }
+              ],
+              default_value: 'New Project'
+            }
+          ],
+          visible: true,
+          active: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await crm.customObjectSchemasAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectSchemasAll', () => {
+    const endpoint = '/crm/custom-object-schemas'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-object-schemas',
+        operation: 'all',
+        data: [
+          {
+            id: 'cos_12345',
+            name: 'project',
+            description: 'This schema defines a project custom object',
+            fields: [
+              {
+                id: 'field_123',
+                name: 'project_name',
+                description: 'Name of the project',
+                type: 'string',
+                required: true,
+                options: [[Object]],
+                default_value: 'New Project'
+              }
+            ],
+            visible: true,
+            active: true,
+            created_by: '12345',
+            updated_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
+          }
+        ],
+        _raw: {},
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {} as any
+      const current = await crm.customObjectSchemasAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectSchemasDelete', () => {
+    const endpoint = '/crm/custom-object-schemas/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-object-schemas',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await crm.customObjectSchemasDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectSchemasOne', () => {
+    const endpoint = '/crm/custom-object-schemas/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-object-schemas',
+        operation: 'one',
+        data: {
+          id: 'cos_12345',
+          name: 'project',
+          description: 'This schema defines a project custom object',
+          fields: [
+            {
+              id: 'field_123',
+              name: 'project_name',
+              description: 'Name of the project',
+              type: 'string',
+              required: true,
+              options: [
+                {
+                  value: 'option1',
+                  label: 'Option 1'
+                }
+              ],
+              default_value: 'New Project'
+            }
+          ],
+          visible: true,
+          active: true,
+          created_by: '12345',
+          updated_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await crm.customObjectSchemasOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectSchemasUpdate', () => {
+    const endpoint = '/crm/custom-object-schemas/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-object-schemas',
+        operation: 'update',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example',
+        customObjectSchema: {
+          name: 'project',
+          description: 'This schema defines a project custom object',
+          fields: [
+            {
+              id: 'field_123',
+              name: 'project_name',
+              description: 'Name of the project',
+              type: 'string',
+              required: true,
+              options: [
+                {
+                  value: 'option1',
+                  label: 'Option 1'
+                }
+              ],
+              default_value: 'New Project'
+            }
+          ],
+          visible: true,
+          active: true,
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await crm.customObjectSchemasUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectsAdd', () => {
+    const endpoint = '/crm/custom-objects/{object_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-objects',
+        operation: 'add',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        objectId: 'object_id_example',
+        customObject: {
+          name: 'project',
+          fields: [
+            {
+              name: 'name',
+              value: 'string'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await crm.customObjectsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectsAll', () => {
+    const endpoint = '/crm/custom-objects/{object_id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-objects',
+        operation: 'all',
+        data: [
+          {
+            id: 'co_12345',
+            owner_id: 'user_12345',
+            name: 'project',
+            fields: [
+              {
+                name: 'name',
+                value: 'string'
+              }
+            ],
+            updated_by: 'user_12345',
+            created_by: 'user_12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            created_at: '2020-09-30T07:43:32.000Z',
+            pass_through: [
+              {
+                service_id: 'string',
+                operation_id: 'string',
+                extend_object: {},
+                extend_paths: [[Object]]
+              }
+            ]
+          }
+        ],
+        _raw: {},
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        }
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        objectId: 'object_id_example'
+      } as any
+      const current = await crm.customObjectsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectsDelete', () => {
+    const endpoint = '/crm/custom-objects/{object_id}/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-objects',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example',
+        objectId: 'object_id_example'
+      } as any
+      const current = await crm.customObjectsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectsOne', () => {
+    const endpoint = '/crm/custom-objects/{object_id}/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-objects',
+        operation: 'one',
+        data: {
+          id: 'co_12345',
+          owner_id: 'user_12345',
+          name: 'project',
+          fields: [
+            {
+              name: 'name',
+              value: 'string'
+            }
+          ],
+          updated_by: 'user_12345',
+          created_by: 'user_12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          created_at: '2020-09-30T07:43:32.000Z',
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example',
+        objectId: 'object_id_example'
+      } as any
+      const current = await crm.customObjectsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#customObjectsUpdate', () => {
+    const endpoint = '/crm/custom-objects/{object_id}/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'zoho-crm',
+        resource: 'custom-objects',
+        operation: 'update',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { crm } = apideck
+      const params = {
+        id: 'id_example',
+        objectId: 'object_id_example',
+        customObject: {
+          name: 'project',
+          fields: [
+            {
+              name: 'name',
+              value: 'string'
+            }
+          ],
+          pass_through: [
+            {
+              service_id: 'string',
+              operation_id: 'string',
+              extend_object: {},
+              extend_paths: [
+                {
+                  path: '$.nested.property',
+                  value: [Object]
+                }
+              ]
+            }
+          ]
+        }
+      } as any
+      const current = await crm.customObjectsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#leadsAdd', () => {
     const endpoint = '/crm/leads'
 
@@ -2691,6 +3391,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           pass_through: [
@@ -2744,6 +3445,7 @@ describe('CrmApi', () => {
             contact_id: '12345',
             company_id: '12345',
             opportunity_id: '12345',
+            activity_id: '12345',
             lead_id: '12345',
             active: true,
             custom_mappings: {},
@@ -2859,6 +3561,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           custom_mappings: {},
@@ -2938,6 +3641,7 @@ describe('CrmApi', () => {
           contact_id: '12345',
           company_id: '12345',
           opportunity_id: '12345',
+          activity_id: '12345',
           lead_id: '12345',
           active: true,
           pass_through: [

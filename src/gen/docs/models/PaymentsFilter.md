@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `updated_since` | **Date** |  | [optional] 
+`invoice_id` | **string** |  | [optional] 
 
 
 

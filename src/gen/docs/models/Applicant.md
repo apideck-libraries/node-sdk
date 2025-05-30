@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 `cv_url` | **string** |  | [optional] 
 `record_url` | **string** |  | [optional] 
 `rejected_at` | **Date** |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `deleted` | **boolean** | Flag to indicate if the object is deleted. | [optional] 
 `deleted_by` | **string** | The user who deleted the object. | [optional] 
 `deleted_at` | **Date** | The time at which the object was deleted. | [optional] 
@@ -92,7 +92,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

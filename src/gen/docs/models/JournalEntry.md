@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `line_items` | [**Array&lt;JournalEntryLineItem&gt;**](JournalEntryLineItem.md) | Requires a minimum of 2 line items that sum to 0 | [optional] 
+`status` | **string** | Journal entry status | [optional] 
 `memo` | **string** | Reference for the journal entry. | [optional] 
 `posted_at` | **Date** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 
 `journal_symbol` | **string** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 `number` | **string** | Journal entry number. | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `accounting_period` | **string** | Accounting period | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -28,6 +29,27 @@ Name | Type | Description | Notes
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
+
+
+
+
+<a name="JournalEntryStatus"></a>
+## Enum: JournalEntry.status
+
+
+* `draft` (value: `'draft'`)
+
+* `pending_approval` (value: `'pending_approval'`)
+
+* `approved` (value: `'approved'`)
+
+* `posted` (value: `'posted'`)
+
+* `voided` (value: `'voided'`)
+
+* `rejected` (value: `'rejected'`)
+
+* `deleted` (value: `'deleted'`)
 
 
 
@@ -45,9 +67,10 @@ Name | Type | Description | Notes
 
 
 
+
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

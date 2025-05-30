@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 `name` | **string** | The name of the tracking category. | [optional] 
 `code` | **string** | The code of the tracking category. | [optional] 
 `status` | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

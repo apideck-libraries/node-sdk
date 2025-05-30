@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 `source` | **string** | Source of order. Indicates the way that the order was placed. | [optional] 
 `voided` | **boolean** |  | [optional] 
 `voided_at` | **Date** |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `version` | **string** |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -157,7 +157,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

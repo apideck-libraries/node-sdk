@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 `unit_of_measure` | **string** | Description of the unit type the item is sold as, ie: kg, hour. | [optional] 
 `discount_percentage` | **number** | Discount percentage applied to the line item when supported downstream. | [optional] 
 `discount_amount` | **number** | Discount amount applied to the line item when supported downstream. | [optional] 
-`location_id` | **string** | Location id | [optional] 
-`department_id` | **string** | Department id | [optional] 
+`location_id` | **string** | The ID of the location | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
 `item` | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
@@ -46,6 +46,8 @@ Name | Type | Description | Notes
 * `info` (value: `'info'`)
 
 * `sub_total` (value: `'sub_total'`)
+
+* `service` (value: `'service'`)
 
 * `other` (value: `'other'`)
 

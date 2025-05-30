@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `initials` | **string** | Initials of the person | [optional] 
 `birthday` | **Date** | Date of birth | [optional] 
 `deceased_on` | **Date** | Date of death | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 
 
 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 ---
 

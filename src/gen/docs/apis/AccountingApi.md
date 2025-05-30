@@ -12,6 +12,16 @@
 * [Download Attachment](#attachmentsDownload)
 * [Get Attachment](#attachmentsOne)
 * [Get BalanceSheet](#balanceSheetOne)
+* [Create Bank Feed Account](#bankFeedAccountsAdd)
+* [List Bank Feed Accounts](#bankFeedAccountsAll)
+* [Delete Bank Feed Account](#bankFeedAccountsDelete)
+* [Get Bank Feed Account](#bankFeedAccountsOne)
+* [Update Bank Feed Account](#bankFeedAccountsUpdate)
+* [Create Bank Feed Statement](#bankFeedStatementsAdd)
+* [List Bank Feed Statements](#bankFeedStatementsAll)
+* [Delete Bank Feed Statement](#bankFeedStatementsDelete)
+* [Get Bank Feed Statement](#bankFeedStatementsOne)
+* [Update Bank Feed Statement](#bankFeedStatementsUpdate)
 * [Create Bill Payment](#billPaymentsAdd)
 * [List Bill Payments](#billPaymentsAll)
 * [Delete Bill Payment](#billPaymentsDelete)
@@ -588,6 +598,780 @@ const params = {}
 
 try {
   const { data } = await apideck.accounting.balanceSheetOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedAccountsAdd"></a>
+# Create Bank Feed Account
+
+
+Method: **bankFeedAccountsAdd**
+
+```typescript
+accountingApi.bankFeedAccountsAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedAccount** | [BankFeedAccount](../models/BankFeedAccount.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateBankFeedAccountResponse`](../models/CreateBankFeedAccountResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Bank Feed Accounts | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  bankFeedAccount: {
+    bank_account_type: 'bank',
+    source_account_id: 'src_456',
+    target_account_id: 'tgt_789',
+    target_account_name: 'Main Company Checking',
+    target_account_number: 'NL91ABNA0417164300',
+    currency: 'USD',
+    feed_status: 'pending',
+    country: 'US',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedAccountsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedAccountsAll"></a>
+# List Bank Feed Accounts
+
+
+Method: **bankFeedAccountsAll**
+
+```typescript
+accountingApi.bankFeedAccountsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBankFeedAccountsResponse`](../models/GetBankFeedAccountsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Accounts | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.bankFeedAccountsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedAccountsDelete"></a>
+# Delete Bank Feed Account
+
+
+Method: **bankFeedAccountsDelete**
+
+```typescript
+accountingApi.bankFeedAccountsDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteBankFeedAccountResponse`](../models/DeleteBankFeedAccountResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Accounts | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedAccountsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedAccountsOne"></a>
+# Get Bank Feed Account
+
+
+Method: **bankFeedAccountsOne**
+
+```typescript
+accountingApi.bankFeedAccountsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBankFeedAccountResponse`](../models/GetBankFeedAccountResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Accounts | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedAccountsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedAccountsUpdate"></a>
+# Update Bank Feed Account
+
+
+Method: **bankFeedAccountsUpdate**
+
+```typescript
+accountingApi.bankFeedAccountsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedAccount** | [BankFeedAccount](../models/BankFeedAccount.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateBankFeedAccountResponse`](../models/UpdateBankFeedAccountResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Accounts | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  bankFeedAccount: {
+    bank_account_type: 'bank',
+    source_account_id: 'src_456',
+    target_account_id: 'tgt_789',
+    target_account_name: 'Main Company Checking',
+    target_account_number: 'NL91ABNA0417164300',
+    currency: 'USD',
+    feed_status: 'pending',
+    country: 'US',
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedAccountsUpdate(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedStatementsAdd"></a>
+# Create Bank Feed Statement
+
+
+Method: **bankFeedStatementsAdd**
+
+```typescript
+accountingApi.bankFeedStatementsAdd(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedStatement** | [BankFeedStatement](../models/BankFeedStatement.md)|  |
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+
+
+
+### Response Type
+
+[`CreateBankFeedStatementResponse`](../models/CreateBankFeedStatementResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**201** | Bank Feed Statements | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  bankFeedStatement: {
+    bank_feed_account_id: 'acc_456',
+    status: 'pending',
+    start_date: '2021-05-01T12:00:00.000Z',
+    end_date: '2025-01-31T12:00:00.000Z',
+    start_balance: 10500.25,
+    start_balance_credit_or_debit: 'debit',
+    end_balance: 9800.5,
+    end_balance_credit_or_debit: 'debit',
+    transactions: [
+      {
+        posted_date: '2025-01-15T12:00:00.000Z',
+        description: 'Payment received from ACME Corp',
+        amount: 250,
+        credit_or_debit: 'debit',
+        source_transaction_id: 'txn_987',
+        counterparty: 'ACME Corp',
+        reference: 'INV-2025-01',
+        transaction_type: 'payment'
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedStatementsAdd(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedStatementsAll"></a>
+# List Bank Feed Statements
+
+
+Method: **bankFeedStatementsAll**
+
+```typescript
+accountingApi.bankFeedStatementsAll(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **cursor** | [**string**] | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | (optional) 
+ **limit** | [**number**] | Number of results to return. Minimum 1, Maximum 200, Default 20 | (optional) defaults to 20
+ **passThrough** | **PassThroughQuery** | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads | (optional) 
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBankFeedStatementsResponse`](../models/GetBankFeedStatementsResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Statements | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {}
+
+try {
+  const { data } = await apideck.accounting.bankFeedStatementsAll(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedStatementsDelete"></a>
+# Delete Bank Feed Statement
+
+
+Method: **bankFeedStatementsDelete**
+
+```typescript
+accountingApi.bankFeedStatementsDelete(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`DeleteBankFeedStatementResponse`](../models/DeleteBankFeedStatementResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Statements | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedStatementsDelete(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedStatementsOne"></a>
+# Get Bank Feed Statement
+
+
+Method: **bankFeedStatementsOne**
+
+```typescript
+accountingApi.bankFeedStatementsOne(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+ **fields** | [**string**] | The \'fields\' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: &#x60;fields=name,email,addresses.city&#x60;<br /><br />In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | (optional) 
+
+
+
+### Response Type
+
+[`GetBankFeedStatementResponse`](../models/GetBankFeedStatementResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Statements | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example'
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedStatementsOne(params)
+  console.log('API called successfully', data)
+} catch (error) {
+  console.error(error)
+  return error.json()
+}
+
+
+```
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../../README.md)
+
+<a name="bankFeedStatementsUpdate"></a>
+# Update Bank Feed Statement
+
+
+Method: **bankFeedStatementsUpdate**
+
+```typescript
+accountingApi.bankFeedStatementsUpdate(body)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedStatement** | [BankFeedStatement](../models/BankFeedStatement.md)|  |
+ **id** | [**string**] | ID of the record you are acting upon. | 
+ **consumerId** | [**string**] | ID of the consumer which you want to get or push data from | (optional) 
+ **appId** | [**string**] | The ID of your Unify application | (optional) 
+ **serviceId** | [**string**] | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | (optional) 
+ **raw** | [**boolean**] | Include raw response. Mostly used for debugging purposes | (optional) defaults to false
+
+
+
+### Response Type
+
+[`UpdateBankFeedStatementResponse`](../models/UpdateBankFeedStatementResponse.md)
+
+
+
+### HTTP response details
+| Status code | Description |
+|-------------|-------------|
+**200** | Bank Feed Statements | 
+**400** | Bad Request | 
+**401** | Unauthorized | 
+**402** | Payment Required | 
+**404** | The specified resource was not found | 
+**422** | Unprocessable | 
+4/5xx | Unexpected error | 
+
+
+## Example Usage
+
+```typescript
+import { Apideck } from '@apideck/node';
+
+const apideck = new Apideck({
+  apiKey: 'REPLACE_WITH_API_KEY',
+  appId: 'REPLACE_WITH_APP_ID',
+  consumerId: 'REPLACE_WITH_CONSUMER_ID'
+});
+
+const params = {
+  id: 'id_example',
+  bankFeedStatement: {
+    bank_feed_account_id: 'acc_456',
+    status: 'pending',
+    start_date: '2021-05-01T12:00:00.000Z',
+    end_date: '2025-01-31T12:00:00.000Z',
+    start_balance: 10500.25,
+    start_balance_credit_or_debit: 'debit',
+    end_balance: 9800.5,
+    end_balance_credit_or_debit: 'debit',
+    transactions: [
+      {
+        posted_date: '2025-01-15T12:00:00.000Z',
+        description: 'Payment received from ACME Corp',
+        amount: 250,
+        credit_or_debit: 'debit',
+        source_transaction_id: 'txn_987',
+        counterparty: 'ACME Corp',
+        reference: 'INV-2025-01',
+        transaction_type: 'payment'
+      }
+    ]
+  }
+}
+
+try {
+  const { data } = await apideck.accounting.bankFeedStatementsUpdate(params)
   console.log('API called successfully', data)
 } catch (error) {
   console.error(error)
@@ -1232,8 +2016,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -1656,8 +2440,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -1922,8 +2706,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -2370,8 +3154,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -3162,6 +3946,7 @@ const params = {
         name: 'SpaceX'
       }
     ],
+    code: '123',
     row_version: '1-12345',
     pass_through: [
       {
@@ -3465,6 +4250,7 @@ const params = {
         name: 'SpaceX'
       }
     ],
+    code: '123',
     row_version: '1-12345',
     pass_through: [
       {
@@ -3578,13 +4364,15 @@ const params = {
         customer_id: '12345',
         department_id: '12345',
         location_id: '12345',
+        subsidiary_id: '12345',
         tax_rate: {
           id: '123456',
           rate: 10
         },
         description: 'Travel US.',
         total_amount: 275,
-        billable: true
+        billable: true,
+        line_number: 1
       }
     ],
     custom_fields: [
@@ -3916,13 +4704,15 @@ const params = {
         customer_id: '12345',
         department_id: '12345',
         location_id: '12345',
+        subsidiary_id: '12345',
         tax_rate: {
           id: '123456',
           rate: 10
         },
         description: 'Travel US.',
         total_amount: 275,
-        billable: true
+        billable: true,
+        line_number: 1
       }
     ],
     custom_fields: [
@@ -4072,6 +4862,10 @@ const params = {
       }
     ],
     active: true,
+    department_id: '12345',
+    location_id: '12345',
+    subsidiary_id: '12345',
+    tax_schedule_id: '123456',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4425,6 +5219,10 @@ const params = {
       }
     ],
     active: true,
+    department_id: '12345',
+    location_id: '12345',
+    subsidiary_id: '12345',
+    tax_schedule_id: '123456',
     row_version: '1-12345',
     pass_through: [
       {
@@ -4562,8 +5360,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -4649,6 +5447,13 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_allocations: [
+      {
+        id: '123456',
+        allocated_amount: 1000,
+        date: '2020-09-30T07:43:32.000Z'
+      }
+    ],
     payment_method: 'cash',
     channel: 'email',
     language: 'EN',
@@ -5029,8 +5834,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -5116,6 +5921,13 @@ const params = {
     },
     template_id: '123456',
     source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+    payment_allocations: [
+      {
+        id: '123456',
+        allocated_amount: 1000,
+        date: '2020-09-30T07:43:32.000Z'
+      }
+    ],
     payment_method: 'cash',
     channel: 'email',
     language: 'EN',
@@ -5296,6 +6108,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       },
       {
@@ -5359,9 +6173,12 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       }
     ],
+    status: 'draft',
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
@@ -5746,6 +6563,8 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       },
       {
@@ -5809,9 +6628,12 @@ const params = {
             row_version: '1-12345'
           }
         },
+        department_id: '12345',
+        location_id: '12345',
         line_number: 1
       }
     ],
+    status: 'draft',
     memo: 'Thank you for your business and have a great day!',
     posted_at: '2020-09-30T07:43:32.000Z',
     journal_symbol: 'IND',
@@ -7499,6 +8321,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    subsidiary_id: '12345',
     company_id: '12345',
     status: 'open',
     issued_date: '2020-09-30',
@@ -7525,8 +8348,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -7614,6 +8437,14 @@ const params = {
       {
         id: '123456',
         name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
       }
     ],
     row_version: '1-12345',
@@ -7943,6 +8774,7 @@ const params = {
         row_version: '1-12345'
       }
     },
+    subsidiary_id: '12345',
     company_id: '12345',
     status: 'open',
     issued_date: '2020-09-30',
@@ -7969,8 +8801,8 @@ const params = {
         unit_of_measure: 'pc.',
         discount_percentage: 0.01,
         discount_amount: 19.99,
-        location_id: '1234',
-        department_id: '1234',
+        location_id: '12345',
+        department_id: '12345',
         item: {
           id: '12344',
           code: '120-C',
@@ -8058,6 +8890,14 @@ const params = {
       {
         id: '123456',
         name: 'New York'
+      }
+    ],
+    custom_fields: [
+      {
+        id: '2389328923893298',
+        name: 'employee_level',
+        description: 'Employee Level',
+        value: 'Uses Salesforce and Marketo'
       }
     ],
     row_version: '1-12345',

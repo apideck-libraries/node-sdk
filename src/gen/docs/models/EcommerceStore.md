@@ -9,11 +9,20 @@ Name | Type | Description | Notes
 `name` | **string** | The store\'s name | [optional] 
 `store_url` | **string** | The store\'s website URL | [optional] 
 `admin_url` | **string** | The store\'s admin login URL | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
 
+
+
+
+## Referenced Types:
+
+
+
+
+* [`CustomMappings`](CustomMappings.md)
 
 
 

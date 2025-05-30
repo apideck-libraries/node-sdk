@@ -7,24 +7,24 @@ The other expenses accounts
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-`total` | **number** | The aggregated total of all accounts within this category. | 
 `records` | [**ProfitAndLossRecords**](ProfitAndLossRecords.md) |  | 
 `id` | **string** | A unique identifier for an object. | [optional] 
 `code` | **string** | The account code of the account | [optional] 
 `title` | **string** | The name of the account. | [optional] 
 `type` | [**ProfitAndLossType**](ProfitAndLossType.md) |  | [optional] 
+`total` | **number** | The aggregated total of all accounts within this category. | [optional] 
 
 
 
 
 
 ## Referenced Types:
-
 * [`ProfitAndLossRecords`](ProfitAndLossRecords.md)
 
 
 
 * [`ProfitAndLossType`](ProfitAndLossType.md)
+
 
 ---
 

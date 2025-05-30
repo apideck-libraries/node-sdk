@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `gross_profit` | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 `net_operating_income` | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 `net_income` | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `customer` | **string** | The customer id | [optional] 
 
 
@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 * [`ProfitAndLossIndicator`](ProfitAndLossIndicator.md)
 * [`ProfitAndLossIndicator`](ProfitAndLossIndicator.md)
 * [`ProfitAndLossIndicator`](ProfitAndLossIndicator.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 ---

@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 `wallet` | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 `external_details` | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
 `service_charges` | [**ServiceCharges**](ServiceCharges.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -115,7 +115,7 @@ Name | Type | Description | Notes
 * [`WalletDetails`](WalletDetails.md)
 * [`PosPaymentExternalDetails`](PosPaymentExternalDetails.md)
 * [`ServiceCharges`](ServiceCharges.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 
