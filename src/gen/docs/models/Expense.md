@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 `customer_id` | **string** | The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers. | [optional] 
 `supplier_id` | **string** | The ID of the supplier this entity is linked to. | [optional] 
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
-`department_id` | **string** | The ID of the department this expense is linked to. | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
 `payment_type` | **string** | The type of payment for the expense. | [optional] 
 `currency` | [**Currency**](Currency.md) |  | [optional] 
 `currency_rate` | **number** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
@@ -22,10 +22,12 @@ Name | Type | Description | Notes
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `total_amount` | **number** | The total amount of the expense line item. | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+`updated_by` | **string** | The user who last updated the object. | [optional] 
+`created_by` | **string** | The user who created the object. | [optional] 
 `pass_through` | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 
@@ -74,6 +76,8 @@ Name | Type | Description | Notes
 * [`LinkedTaxRate`](LinkedTaxRate.md)
 
 * [`CustomField`](CustomField.md)
+* [`CustomMappings`](CustomMappings.md)
+
 
 
 

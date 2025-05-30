@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `customer` | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
-`department_id` | **string** | A unique identifier for an object. | [optional] 
-`location_id` | **string** | A unique identifier for an object. | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
+`location_id` | **string** | The ID of the location | [optional] 
 `line_number` | **number** | Line number of the resource | [optional] 
 
 

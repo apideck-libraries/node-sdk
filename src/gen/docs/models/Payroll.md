@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 `processed_date` | **string** | The date the payroll was processed. | [optional] 
 `totals` | [**PayrollTotals**](PayrollTotals.md) |  | [optional] 
 `compensations` | [**Array&lt;Compensation&gt;**](Compensation.md) | An array of compensations for the payroll. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 
 
 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 * [`PayrollTotals`](PayrollTotals.md)
 * [`Compensation`](Compensation.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 ---
 

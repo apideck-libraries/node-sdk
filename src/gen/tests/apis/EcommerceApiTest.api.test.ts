@@ -317,6 +317,15 @@ describe('EcommerceApi', () => {
               }
             ],
             note: 'Special instructions for delivery',
+            refunds: [
+              {
+                id: '12345',
+                amount: '100',
+                currency: 'USD',
+                reason: 'Customer requested a refund',
+                created_at: '2020-09-30T07:43:32.000Z'
+              }
+            ],
             custom_mappings: {},
             created_at: '2020-09-30T07:43:32.000Z',
             updated_at: '2020-09-30T07:43:32.000Z'
@@ -478,6 +487,15 @@ describe('EcommerceApi', () => {
             }
           ],
           note: 'Special instructions for delivery',
+          refunds: [
+            {
+              id: '12345',
+              amount: '100',
+              currency: 'USD',
+              reason: 'Customer requested a refund',
+              created_at: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           custom_mappings: {},
           created_at: '2020-09-30T07:43:32.000Z',
           updated_at: '2020-09-30T07:43:32.000Z'

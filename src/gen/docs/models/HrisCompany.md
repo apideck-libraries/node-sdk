@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 `emails` | [**Array&lt;Email&gt;**](Email.md) |  | [optional] 
 `websites` | [**Array&lt;Website&gt;**](Website.md) |  | [optional] 
 `debtor_id` | **string** |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `deleted` | **boolean** |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 * [`Email`](Email.md)
 * [`Website`](Website.md)
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

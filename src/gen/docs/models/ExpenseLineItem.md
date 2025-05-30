@@ -10,11 +10,13 @@ Name | Type | Description | Notes
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `account_id` | **string** | The unique identifier for the ledger account. | [optional] 
 `customer_id` | **string** | The ID of the customer this expense item is linked to. | [optional] 
-`department_id` | **string** | The ID of the department this expense item is linked to. | [optional] 
-`location_id` | **string** | The ID of the location this expense item is linked to. | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
+`location_id` | **string** | The ID of the location | [optional] 
+`subsidiary_id` | **string** | The ID of the subsidiary | [optional] 
 `tax_rate` | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 `description` | **string** | The expense line item description | [optional] 
 `billable` | **boolean** | Boolean that indicates if the line item is billable or not. | [optional] 
+`line_number` | **number** | Line number of the resource | [optional] 
 
 
 
@@ -28,7 +30,9 @@ Name | Type | Description | Notes
 
 
 
+
 * [`LinkedTaxRate`](LinkedTaxRate.md)
+
 
 
 

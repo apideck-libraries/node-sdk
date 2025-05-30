@@ -26,7 +26,8 @@ Name | Type | Description | Notes
 `tracking` | [**Array&lt;TrackingItem&gt;**](TrackingItem.md) |  | [optional] 
 `line_items` | [**Array&lt;EcommerceOrderLineItem&gt;**](EcommerceOrderLineItem.md) |  | [optional] 
 `note` | **string** | Note for the order. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`refunds` | [**Array&lt;EcommerceOrderRefund&gt;**](EcommerceOrderRefund.md) |  | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
@@ -98,7 +99,8 @@ Name | Type | Description | Notes
 * [`TrackingItem`](TrackingItem.md)
 * [`EcommerceOrderLineItem`](EcommerceOrderLineItem.md)
 
-
+* [`EcommerceOrderRefund`](EcommerceOrderRefund.md)
+* [`CustomMappings`](CustomMappings.md)
 
 
 

@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 `date_stage_changed` | **Date** | The date and time when the stage of the opportunity was last changed. | [optional] 
 `date_last_contacted` | **Date** | The date and time when the opportunity was last contacted. | [optional] 
 `date_lead_created` | **Date** | The date and time when the lead associated with the opportunity was created. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The unique identifier of the user who last updated the opportunity. | [optional] 
 `created_by` | **string** | The unique identifier of the user who created the opportunity. | [optional] 
 `updated_at` | **Date** | The date and time when the opportunity was last updated. | [optional] 
@@ -89,7 +89,7 @@ Name | Type | Description | Notes
 
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

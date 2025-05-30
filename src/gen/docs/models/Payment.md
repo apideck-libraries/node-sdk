@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `display_id` | **string** | Id to be displayed. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
@@ -69,7 +69,7 @@ Name | Type | Description | Notes
 * [`CustomField`](CustomField.md)
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

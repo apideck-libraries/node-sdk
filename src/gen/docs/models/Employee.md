@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 `id` | **string** | A unique identifier for an object. | [optional] 
+`downstream_id` | **string** | The third-party API ID of original entity | [optional] 
 `first_name` | **string** | The first name of the person. | [optional] 
 `last_name` | **string** | The last name of the person. | [optional] 
 `middle_name` | **string** | Middle name of the person. | [optional] 
@@ -63,7 +64,7 @@ Name | Type | Description | Notes
 `food_allergies` | **Array&lt;string&gt;** | Indicate the employee\'s food allergies. | [optional] 
 `probation_period` | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
 `tags` | [**Tags**](Tags.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `deleted` | **boolean** | Flag to indicate if the object is deleted. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -92,6 +93,7 @@ Name | Type | Description | Notes
 
 
 ## Referenced Types:
+
 
 
 
@@ -150,7 +152,7 @@ Name | Type | Description | Notes
 
 * [`ProbationPeriod`](ProbationPeriod.md)
 * [`Tags`](Tags.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

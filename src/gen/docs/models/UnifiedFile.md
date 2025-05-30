@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 `permissions` | [**UnifiedFilePermissions**](UnifiedFilePermissions.md) |  | [optional] 
 `exportable` | **boolean** | Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper. | [optional] 
 `export_formats` | **Array&lt;string&gt;** | The available file formats when exporting this file. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 * [`UnifiedFilePermissions`](UnifiedFilePermissions.md)
 
 
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

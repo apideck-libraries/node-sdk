@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 `po_number` | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. | [optional] 
 `reference` | **string** | Optional purchase order reference. | [optional] 
 `supplier` | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+`subsidiary_id` | **string** | The ID of the subsidiary | [optional] 
 `company_id` | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 `status` | **string** |  | [optional] 
 `issued_date` | **Date** | Date purchase order was issued - YYYY-MM-DD. | [optional] 
@@ -34,7 +35,8 @@ Name | Type | Description | Notes
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `memo` | **string** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
+`custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -76,6 +78,7 @@ Name | Type | Description | Notes
 
 
 
+
 * [`Currency`](Currency.md)
 
 
@@ -95,7 +98,8 @@ Name | Type | Description | Notes
 
 
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
-
+* [`CustomMappings`](CustomMappings.md)
+* [`CustomField`](CustomField.md)
 
 
 

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 `employee_number` | **string** | Employee number to filter on | [optional] 
 `department_id` | **string** | ID of the department to filter on | [optional] 
 `city` | **string** | City to filter on | [optional] 
+`country` | **string** | Country to filter on | [optional] 
 
 
 

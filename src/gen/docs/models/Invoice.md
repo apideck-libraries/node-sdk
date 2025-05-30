@@ -37,13 +37,14 @@ Name | Type | Description | Notes
 `shipping_address` | [**Address**](Address.md) |  | [optional] 
 `template_id` | **string** | Optional invoice template | [optional] 
 `source_document_url` | **string** | URL link to a source document - shown as \'Go to [appName]\' in the downstream app. Currently only supported for Xero. | [optional] 
+`payment_allocations` | [**Array&lt;InvoicePaymentAllocations&gt;**](InvoicePaymentAllocations.md) | IDs of payments made on the invoice | [optional] 
 `payment_method` | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 `channel` | **string** | The channel through which the transaction is processed. | [optional] 
 `language` | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 `accounting_by_row` | **boolean** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 `bank_account` | [**BankAccount**](BankAccount.md) |  | [optional] 
 `ledger_account` | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `custom_fields` | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
@@ -131,13 +132,14 @@ Name | Type | Description | Notes
 * [`Address`](Address.md)
 
 
+* [`InvoicePaymentAllocations`](InvoicePaymentAllocations.md)
 
 
 
 
 * [`BankAccount`](BankAccount.md)
 * [`LinkedLedgerAccount`](LinkedLedgerAccount.md)
-
+* [`CustomMappings`](CustomMappings.md)
 * [`CustomField`](CustomField.md)
 
 

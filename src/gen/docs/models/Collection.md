@@ -10,11 +10,21 @@ Name | Type | Description | Notes
 `type` | **string** | The collections\'s type | [optional] 
 `name` | **string** | Name of the collection | [optional] 
 `description` | **string** | Description of the collection | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 
 
+
+
+
+## Referenced Types:
+
+
+
+
+
+* [`CustomMappings`](CustomMappings.md)
 
 
 

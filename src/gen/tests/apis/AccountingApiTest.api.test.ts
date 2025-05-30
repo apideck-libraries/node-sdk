@@ -431,6 +431,610 @@ describe('AccountingApi', () => {
     })
   })
 
+  describe('#bankFeedAccountsAdd', () => {
+    const endpoint = '/accounting/bank-feed-accounts'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'add',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        bankFeedAccount: {
+          bank_account_type: 'bank',
+          source_account_id: 'src_456',
+          target_account_id: 'tgt_789',
+          target_account_name: 'Main Company Checking',
+          target_account_number: 'NL91ABNA0417164300',
+          currency: 'USD',
+          feed_status: 'pending',
+          country: 'US',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.bankFeedAccountsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedAccountsAll', () => {
+    const endpoint = '/accounting/bank-feed-accounts'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-accounts',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            bank_account_type: 'bank',
+            source_account_id: 'src_456',
+            target_account_id: 'tgt_789',
+            target_account_name: 'Main Company Checking',
+            target_account_number: 'NL91ABNA0417164300',
+            currency: 'USD',
+            feed_status: 'pending',
+            country: 'US',
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
+            custom_mappings: {},
+            created_at: '2020-09-30T07:43:32.000Z',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            updated_by: '12345',
+            created_by: '12345'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.bankFeedAccountsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedAccountsDelete', () => {
+    const endpoint = '/accounting/bank-feed-accounts/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-accounts',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.bankFeedAccountsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedAccountsOne', () => {
+    const endpoint = '/accounting/bank-feed-accounts/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-accounts',
+        operation: 'one',
+        data: {
+          id: '12345',
+          bank_account_type: 'bank',
+          source_account_id: 'src_456',
+          target_account_id: 'tgt_789',
+          target_account_name: 'Main Company Checking',
+          target_account_number: 'NL91ABNA0417164300',
+          currency: 'USD',
+          feed_status: 'pending',
+          country: 'US',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
+          custom_mappings: {},
+          created_at: '2020-09-30T07:43:32.000Z',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          updated_by: '12345',
+          created_by: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.bankFeedAccountsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedAccountsUpdate', () => {
+    const endpoint = '/accounting/bank-feed-accounts/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-accounts',
+        operation: 'update',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        bankFeedAccount: {
+          bank_account_type: 'bank',
+          source_account_id: 'src_456',
+          target_account_id: 'tgt_789',
+          target_account_name: 'Main Company Checking',
+          target_account_number: 'NL91ABNA0417164300',
+          currency: 'USD',
+          feed_status: 'pending',
+          country: 'US',
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.bankFeedAccountsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedStatementsAdd', () => {
+    const endpoint = '/accounting/bank-feed-statements'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'xero',
+        resource: 'bills',
+        operation: 'add',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        bankFeedStatement: {
+          bank_feed_account_id: 'acc_456',
+          status: 'pending',
+          start_date: '2021-05-01T12:00:00.000Z',
+          end_date: '2025-01-31T12:00:00.000Z',
+          start_balance: 10500.25,
+          start_balance_credit_or_debit: 'debit',
+          end_balance: 9800.5,
+          end_balance_credit_or_debit: 'debit',
+          transactions: [
+            {
+              posted_date: '2025-01-15T12:00:00.000Z',
+              description: 'Payment received from ACME Corp',
+              amount: 250,
+              credit_or_debit: 'debit',
+              source_transaction_id: 'txn_987',
+              counterparty: 'ACME Corp',
+              reference: 'INV-2025-01',
+              transaction_type: 'payment'
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.bankFeedStatementsAdd(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedStatementsAll', () => {
+    const endpoint = '/accounting/bank-feed-statements'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-statements',
+        operation: 'all',
+        data: [
+          {
+            id: '12345',
+            bank_feed_account_id: 'acc_456',
+            status: 'pending',
+            start_date: '2021-05-01T12:00:00.000Z',
+            end_date: '2025-01-31T12:00:00.000Z',
+            start_balance: 10500.25,
+            start_balance_credit_or_debit: 'debit',
+            end_balance: 9800.5,
+            end_balance_credit_or_debit: 'debit',
+            transactions: [
+              {
+                posted_date: '2025-01-15T12:00:00.000Z',
+                description: 'Payment received from ACME Corp',
+                amount: 250,
+                credit_or_debit: 'debit',
+                source_transaction_id: 'txn_987',
+                counterparty: 'ACME Corp',
+                reference: 'INV-2025-01',
+                transaction_type: 'payment'
+              }
+            ],
+            created_at: '2020-09-30T07:43:32.000Z',
+            created_by: '12345',
+            updated_at: '2020-09-30T07:43:32.000Z',
+            updated_by: '12345'
+          }
+        ],
+        meta: {
+          items_on_page: 50,
+          cursors: {
+            previous: 'em9oby1jcm06OnBhZ2U6OjE=',
+            current: 'em9oby1jcm06OnBhZ2U6OjI=',
+            next: 'em9oby1jcm06OnBhZ2U6OjM='
+          }
+        },
+        links: {
+          previous: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D',
+          current: 'https://unify.apideck.com/crm/companies',
+          next: 'https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {} as any
+      const current = await accounting.bankFeedStatementsAll(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedStatementsDelete', () => {
+    const endpoint = '/accounting/bank-feed-statements/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-statements',
+        operation: 'delete',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.bankFeedStatementsDelete(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedStatementsOne', () => {
+    const endpoint = '/accounting/bank-feed-statements/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-statements',
+        operation: 'one',
+        data: {
+          id: '12345',
+          bank_feed_account_id: 'acc_456',
+          status: 'pending',
+          start_date: '2021-05-01T12:00:00.000Z',
+          end_date: '2025-01-31T12:00:00.000Z',
+          start_balance: 10500.25,
+          start_balance_credit_or_debit: 'debit',
+          end_balance: 9800.5,
+          end_balance_credit_or_debit: 'debit',
+          transactions: [
+            {
+              posted_date: '2025-01-15T12:00:00.000Z',
+              description: 'Payment received from ACME Corp',
+              amount: 250,
+              credit_or_debit: 'debit',
+              source_transaction_id: 'txn_987',
+              counterparty: 'ACME Corp',
+              reference: 'INV-2025-01',
+              transaction_type: 'payment'
+            }
+          ],
+          created_at: '2020-09-30T07:43:32.000Z',
+          created_by: '12345',
+          updated_at: '2020-09-30T07:43:32.000Z',
+          updated_by: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example'
+      } as any
+      const current = await accounting.bankFeedStatementsOne(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('#bankFeedStatementsUpdate', () => {
+    const endpoint = '/accounting/bank-feed-statements/{id}'
+
+    const config = {
+      apiKey: 'REPLACE_WITH_API_KEY',
+      appId: 'REPLACE_WITH_APP_ID',
+      consumerId: 'REPLACE_WITH_CONSUMER_ID'
+    }
+    const apideck = new Apideck({ ...config, basePath: basePath })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    it('should call Apideck with expected params', async () => {
+      const mockedResponse: Record<string, unknown> = {
+        status_code: 200,
+        status: 'OK',
+        service: 'quickbooks',
+        resource: 'bank-feed-statements',
+        operation: 'update',
+        data: {
+          id: '12345'
+        },
+        _raw: {}
+      } as any
+
+      ;(fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce(
+        Promise.resolve(new Response(JSON.stringify(mockedResponse)))
+      )
+
+      const { accounting } = apideck
+      const params = {
+        id: 'id_example',
+        bankFeedStatement: {
+          bank_feed_account_id: 'acc_456',
+          status: 'pending',
+          start_date: '2021-05-01T12:00:00.000Z',
+          end_date: '2025-01-31T12:00:00.000Z',
+          start_balance: 10500.25,
+          start_balance_credit_or_debit: 'debit',
+          end_balance: 9800.5,
+          end_balance_credit_or_debit: 'debit',
+          transactions: [
+            {
+              posted_date: '2025-01-15T12:00:00.000Z',
+              description: 'Payment received from ACME Corp',
+              amount: 250,
+              credit_or_debit: 'debit',
+              source_transaction_id: 'txn_987',
+              counterparty: 'ACME Corp',
+              reference: 'INV-2025-01',
+              transaction_type: 'payment'
+            }
+          ]
+        }
+      } as any
+      const current = await accounting.bankFeedStatementsUpdate(params)
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('#billPaymentsAdd', () => {
     const endpoint = '/accounting/bill-payments'
 
@@ -1100,8 +1704,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1278,8 +1882,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -1521,8 +2125,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -1729,8 +2333,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2051,8 +2655,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2252,8 +2856,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -2511,8 +3115,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -2743,8 +3347,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -3626,6 +4230,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           row_version: '1-12345',
           pass_through: [
             {
@@ -3681,6 +4286,7 @@ describe('AccountingApi', () => {
                 name: 'SpaceX'
               }
             ],
+            code: '123',
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -3798,6 +4404,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -3878,6 +4485,7 @@ describe('AccountingApi', () => {
               name: 'SpaceX'
             }
           ],
+          code: '123',
           row_version: '1-12345',
           pass_through: [
             {
@@ -3963,13 +4571,15 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 rate: 10
               },
               description: 'Travel US.',
               total_amount: 275,
-              billable: true
+              billable: true,
+              line_number: 1
             }
           ],
           custom_fields: [
@@ -4053,6 +4663,7 @@ describe('AccountingApi', () => {
                 customer_id: '12345',
                 department_id: '12345',
                 location_id: '12345',
+                subsidiary_id: '12345',
                 tax_rate: {
                   id: '123456',
                   code: 'N-T',
@@ -4061,7 +4672,8 @@ describe('AccountingApi', () => {
                 },
                 description: 'Travel US.',
                 total_amount: 275,
-                billable: true
+                billable: true,
+                line_number: 1
               }
             ],
             custom_fields: [
@@ -4076,6 +4688,8 @@ describe('AccountingApi', () => {
             updated_at: '2020-09-30T07:43:32.000Z',
             created_at: '2020-09-30T07:43:32.000Z',
             row_version: '1-12345',
+            updated_by: '12345',
+            created_by: '12345',
             pass_through: [
               {
                 service_id: 'string',
@@ -4210,6 +4824,7 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 code: 'N-T',
@@ -4218,7 +4833,8 @@ describe('AccountingApi', () => {
               },
               description: 'Travel US.',
               total_amount: 275,
-              billable: true
+              billable: true,
+              line_number: 1
             }
           ],
           custom_fields: [
@@ -4233,6 +4849,8 @@ describe('AccountingApi', () => {
           updated_at: '2020-09-30T07:43:32.000Z',
           created_at: '2020-09-30T07:43:32.000Z',
           row_version: '1-12345',
+          updated_by: '12345',
+          created_by: '12345',
           pass_through: [
             {
               service_id: 'string',
@@ -4328,13 +4946,15 @@ describe('AccountingApi', () => {
               customer_id: '12345',
               department_id: '12345',
               location_id: '12345',
+              subsidiary_id: '12345',
               tax_rate: {
                 id: '123456',
                 rate: 10
               },
               description: 'Travel US.',
               total_amount: 275,
-              billable: true
+              billable: true,
+              line_number: 1
             }
           ],
           custom_fields: [
@@ -4457,6 +5077,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4566,6 +5190,10 @@ describe('AccountingApi', () => {
               }
             ],
             active: true,
+            department_id: '12345',
+            location_id: '12345',
+            subsidiary_id: '12345',
+            tax_schedule_id: '123456',
             custom_mappings: {},
             row_version: '1-12345',
             updated_by: '12345',
@@ -4737,6 +5365,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           custom_mappings: {},
           row_version: '1-12345',
           updated_by: '12345',
@@ -4865,6 +5497,10 @@ describe('AccountingApi', () => {
             }
           ],
           active: true,
+          department_id: '12345',
+          location_id: '12345',
+          subsidiary_id: '12345',
+          tax_schedule_id: '123456',
           row_version: '1-12345',
           pass_through: [
             {
@@ -4976,8 +5612,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5063,6 +5699,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5196,8 +5839,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -5278,6 +5921,13 @@ describe('AccountingApi', () => {
             },
             template_id: '123456',
             source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+            payment_allocations: [
+              {
+                id: '123456',
+                allocated_amount: 1000,
+                date: '2020-09-30T07:43:32.000Z'
+              }
+            ],
             payment_method: 'cash',
             channel: 'email',
             language: 'EN',
@@ -5475,8 +6125,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5569,6 +6219,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5727,8 +6384,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -5814,6 +6471,13 @@ describe('AccountingApi', () => {
           },
           template_id: '123456',
           source_document_url: 'https://www.invoicesolution.com/invoice/123456',
+          payment_allocations: [
+            {
+              id: '123456',
+              allocated_amount: 1000,
+              date: '2020-09-30T07:43:32.000Z'
+            }
+          ],
           payment_method: 'cash',
           channel: 'email',
           language: 'EN',
@@ -5967,6 +6631,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             },
             {
@@ -6031,9 +6697,12 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             }
           ],
+          status: 'draft',
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
@@ -6195,6 +6864,7 @@ describe('AccountingApi', () => {
                 line_number: 1
               }
             ],
+            status: 'draft',
             memo: 'Thank you for your business and have a great day!',
             posted_at: '2020-09-30T07:43:32.000Z',
             journal_symbol: 'IND',
@@ -6478,6 +7148,7 @@ describe('AccountingApi', () => {
               line_number: 1
             }
           ],
+          status: 'draft',
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
@@ -6638,6 +7309,8 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             },
             {
@@ -6702,9 +7375,12 @@ describe('AccountingApi', () => {
                   row_version: '1-12345'
                 }
               },
+              department_id: '12345',
+              location_id: '12345',
               line_number: 1
             }
           ],
+          status: 'draft',
           memo: 'Thank you for your business and have a great day!',
           posted_at: '2020-09-30T07:43:32.000Z',
           journal_symbol: 'IND',
@@ -8567,6 +9243,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          subsidiary_id: '12345',
           company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
@@ -8594,8 +9271,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -8685,6 +9362,14 @@ describe('AccountingApi', () => {
               name: 'New York'
             }
           ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           pass_through: [
             {
@@ -8766,6 +9451,7 @@ describe('AccountingApi', () => {
                 row_version: '1-12345'
               }
             },
+            subsidiary_id: '12345',
             company_id: '12345',
             status: 'open',
             issued_date: '2020-09-30',
@@ -8793,8 +9479,8 @@ describe('AccountingApi', () => {
                 unit_of_measure: 'pc.',
                 discount_percentage: 0.01,
                 discount_amount: 19.99,
-                location_id: '1234',
-                department_id: '1234',
+                location_id: '12345',
+                department_id: '12345',
                 item: {
                   id: '12344',
                   code: '120-C',
@@ -8881,6 +9567,14 @@ describe('AccountingApi', () => {
               }
             ],
             custom_mappings: {},
+            custom_fields: [
+              {
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo'
+              }
+            ],
             row_version: '1-12345',
             updated_by: '12345',
             created_by: '12345',
@@ -9023,6 +9717,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          subsidiary_id: '12345',
           company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
@@ -9050,8 +9745,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -9150,6 +9845,14 @@ describe('AccountingApi', () => {
             }
           ],
           custom_mappings: {},
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
+            }
+          ],
           row_version: '1-12345',
           updated_by: '12345',
           created_by: '12345',
@@ -9253,6 +9956,7 @@ describe('AccountingApi', () => {
               row_version: '1-12345'
             }
           },
+          subsidiary_id: '12345',
           company_id: '12345',
           status: 'open',
           issued_date: '2020-09-30',
@@ -9280,8 +9984,8 @@ describe('AccountingApi', () => {
               unit_of_measure: 'pc.',
               discount_percentage: 0.01,
               discount_amount: 19.99,
-              location_id: '1234',
-              department_id: '1234',
+              location_id: '12345',
+              department_id: '12345',
               item: {
                 id: '12344',
                 code: '120-C',
@@ -9369,6 +10073,14 @@ describe('AccountingApi', () => {
             {
               id: '123456',
               name: 'New York'
+            }
+          ],
+          custom_fields: [
+            {
+              id: '2389328923893298',
+              name: 'employee_level',
+              description: 'Employee Level',
+              value: 'Uses Salesforce and Marketo'
             }
           ],
           row_version: '1-12345',

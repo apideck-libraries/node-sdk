@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `variants` | [**Array&lt;EcommerceProductVariants&gt;**](EcommerceProductVariants.md) |  | [optional] 
 `tags` | **Array&lt;string&gt;** | An array of tags for the product, used for organization and searching. | [optional] 
 `categories` | [**Array&lt;EcommerceProductCategories&gt;**](EcommerceProductCategories.md) | An array of categories for the product, used for organization and searching. | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `created_at` | **Date** | The date and time when the object was created. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
 
@@ -53,7 +53,7 @@ Name | Type | Description | Notes
 * [`EcommerceProductVariants`](EcommerceProductVariants.md)
 
 * [`EcommerceProductCategories`](EcommerceProductCategories.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

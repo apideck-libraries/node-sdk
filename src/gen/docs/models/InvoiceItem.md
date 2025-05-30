@@ -25,7 +25,11 @@ Name | Type | Description | Notes
 `tracking_category` | [**DeprecatedLinkedTrackingCategory**](DeprecatedLinkedTrackingCategory.md) |  | [optional] 
 `tracking_categories` | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 `active` | **boolean** |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`department_id` | **string** | The ID of the department | [optional] 
+`location_id` | **string** | The ID of the location | [optional] 
+`subsidiary_id` | **string** | The ID of the subsidiary | [optional] 
+`tax_schedule_id` | **string** | The ID of the tax schedule | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `row_version` | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
@@ -43,7 +47,11 @@ Name | Type | Description | Notes
 
 * `inventory` (value: `'inventory'`)
 
+* `non_inventory` (value: `'non_inventory'`)
+
 * `service` (value: `'service'`)
+
+* `description` (value: `'description'`)
 
 * `other` (value: `'other'`)
 
@@ -72,6 +80,10 @@ Name | Type | Description | Notes
 * [`LinkedTrackingCategories`](LinkedTrackingCategories.md)
 
 
+
+
+
+* [`CustomMappings`](CustomMappings.md)
 
 
 

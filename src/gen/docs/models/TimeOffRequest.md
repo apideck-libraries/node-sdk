@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 `amount` | **number** | The amount of time off requested. | [optional] 
 `day_part` | **string** | The day part of the time off request. | [optional] 
 `notes` | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
-`custom_mappings` | **object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+`custom_mappings` | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 `updated_by` | **string** | The user who last updated the object. | [optional] 
 `created_by` | **string** | The user who created the object. | [optional] 
 `updated_at` | **Date** | The date and time when the object was last updated. | [optional] 
@@ -99,7 +99,7 @@ Name | Type | Description | Notes
 
 
 * [`TimeOffRequestNotes`](TimeOffRequestNotes.md)
-
+* [`CustomMappings`](CustomMappings.md)
 
 
 

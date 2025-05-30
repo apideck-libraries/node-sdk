@@ -65,6 +65,9 @@ BalanceSheetLiabilitiesAccount.md
 BalanceSheetReports.md
 BalanceSheetUncategorizedItemsAccount.md
 BankAccount.md
+BankFeedAccount.md
+BankFeedStatement.md
+BankFeedStatementTransactions.md
 Benefit.md
 Bill.md
 BillLineItem.md
@@ -124,6 +127,8 @@ CreateApplicantResponse.md
 CreateApplicationResponse.md
 CreateAttachmentRequest.md
 CreateAttachmentResponse.md
+CreateBankFeedAccountResponse.md
+CreateBankFeedStatementResponse.md
 CreateBillPaymentResponse.md
 CreateBillResponse.md
 CreateCallbackState.md
@@ -137,6 +142,8 @@ CreateContactResponse.md
 CreateCreditNoteResponse.md
 CreateCustomMappingRequest.md
 CreateCustomMappingResponse.md
+CreateCustomObjectResponse.md
+CreateCustomObjectSchemaResponse.md
 CreateCustomerResponse.md
 CreateDepartmentResponse.md
 CreateDriveGroupResponse.md
@@ -189,6 +196,7 @@ CreateWebhookResponse.md
 CreditNote.md
 CreditNotesFilter.md
 CreditNotesSort.md
+CreditOrDebit.md
 CrmApi.md
 CrmApiTest.api.test.ts
 CrmEventType.md
@@ -196,6 +204,14 @@ Currency.md
 CustomField.md
 CustomFieldFinder.md
 CustomMapping.md
+CustomMappings.md
+CustomObject.md
+CustomObjectFields.md
+CustomObjectSchema.md
+CustomObjectSchemaFields.md
+CustomObjectSchemaOptions.md
+CustomObjectSchemasSort.md
+CustomObjectsSort.md
 Customer.md
 CustomersFilter.md
 CustomersSort.md
@@ -206,6 +222,8 @@ DeleteActivityResponse.md
 DeleteApplicantResponse.md
 DeleteApplicationResponse.md
 DeleteAttachmentResponse.md
+DeleteBankFeedAccountResponse.md
+DeleteBankFeedStatementResponse.md
 DeleteBillPaymentResponse.md
 DeleteBillResponse.md
 DeleteCommentResponse.md
@@ -213,6 +231,8 @@ DeleteCompanyResponse.md
 DeleteConsumerResponse.md
 DeleteContactResponse.md
 DeleteCreditNoteResponse.md
+DeleteCustomObjectResponse.md
+DeleteCustomObjectSchemaResponse.md
 DeleteCustomerResponse.md
 DeleteDepartmentResponse.md
 DeleteDriveGroupResponse.md
@@ -272,6 +292,7 @@ EcommerceDiscount.md
 EcommerceEventType.md
 EcommerceOrder.md
 EcommerceOrderLineItem.md
+EcommerceOrderRefund.md
 EcommerceOrderStatus.md
 EcommerceOrdersFilter.md
 EcommerceProduct.md
@@ -333,6 +354,10 @@ GetApplicationsResponse.md
 GetAttachmentResponse.md
 GetAttachmentsResponse.md
 GetBalanceSheetResponse.md
+GetBankFeedAccountResponse.md
+GetBankFeedAccountsResponse.md
+GetBankFeedStatementResponse.md
+GetBankFeedStatementsResponse.md
 GetBillPaymentResponse.md
 GetBillPaymentsResponse.md
 GetBillResponse.md
@@ -365,6 +390,10 @@ GetCreditNotesResponse.md
 GetCustomFieldsResponse.md
 GetCustomMappingResponse.md
 GetCustomMappingsResponse.md
+GetCustomObjectResponse.md
+GetCustomObjectSchemaResponse.md
+GetCustomObjectSchemasResponse.md
+GetCustomObjectsResponse.md
 GetCustomerResponse.md
 GetCustomersResponse.md
 GetDepartmentResponse.md
@@ -480,6 +509,7 @@ InvoiceItemSalesDetails.md
 InvoiceItemsFilter.md
 InvoiceItemsSort.md
 InvoiceLineItem.md
+InvoicePaymentAllocations.md
 InvoiceResponse.md
 InvoicesFilter.md
 InvoicesSort.md
@@ -657,6 +687,8 @@ UpdateAccountingLocationResponse.md
 UpdateActivityResponse.md
 UpdateApplicantResponse.md
 UpdateApplicationResponse.md
+UpdateBankFeedAccountResponse.md
+UpdateBankFeedStatementResponse.md
 UpdateBillPaymentResponse.md
 UpdateBillResponse.md
 UpdateCommentResponse.md
@@ -668,6 +700,8 @@ UpdateContactResponse.md
 UpdateCreditNoteResponse.md
 UpdateCustomMappingRequest.md
 UpdateCustomMappingResponse.md
+UpdateCustomObjectResponse.md
+UpdateCustomObjectSchemaResponse.md
 UpdateCustomerResponse.md
 UpdateDepartmentResponse.md
 UpdateDriveGroupResponse.md
@@ -801,6 +835,9 @@ models/BalanceSheetLiabilitiesAccount.ts
 models/BalanceSheetReports.ts
 models/BalanceSheetUncategorizedItemsAccount.ts
 models/BankAccount.ts
+models/BankFeedAccount.ts
+models/BankFeedStatement.ts
+models/BankFeedStatementTransactions.ts
 models/Benefit.ts
 models/Bill.ts
 models/BillLineItem.ts
@@ -858,6 +895,8 @@ models/CreateApplicantResponse.ts
 models/CreateApplicationResponse.ts
 models/CreateAttachmentRequest.ts
 models/CreateAttachmentResponse.ts
+models/CreateBankFeedAccountResponse.ts
+models/CreateBankFeedStatementResponse.ts
 models/CreateBillPaymentResponse.ts
 models/CreateBillResponse.ts
 models/CreateCallbackState.ts
@@ -871,6 +910,8 @@ models/CreateContactResponse.ts
 models/CreateCreditNoteResponse.ts
 models/CreateCustomMappingRequest.ts
 models/CreateCustomMappingResponse.ts
+models/CreateCustomObjectResponse.ts
+models/CreateCustomObjectSchemaResponse.ts
 models/CreateCustomerResponse.ts
 models/CreateDepartmentResponse.ts
 models/CreateDriveGroupResponse.ts
@@ -923,11 +964,20 @@ models/CreateWebhookResponse.ts
 models/CreditNote.ts
 models/CreditNotesFilter.ts
 models/CreditNotesSort.ts
+models/CreditOrDebit.ts
 models/CrmEventType.ts
 models/Currency.ts
 models/CustomField.ts
 models/CustomFieldFinder.ts
 models/CustomMapping.ts
+models/CustomMappings.ts
+models/CustomObject.ts
+models/CustomObjectFields.ts
+models/CustomObjectSchema.ts
+models/CustomObjectSchemaFields.ts
+models/CustomObjectSchemaOptions.ts
+models/CustomObjectSchemasSort.ts
+models/CustomObjectsSort.ts
 models/Customer.ts
 models/CustomersFilter.ts
 models/CustomersSort.ts
@@ -938,6 +988,8 @@ models/DeleteActivityResponse.ts
 models/DeleteApplicantResponse.ts
 models/DeleteApplicationResponse.ts
 models/DeleteAttachmentResponse.ts
+models/DeleteBankFeedAccountResponse.ts
+models/DeleteBankFeedStatementResponse.ts
 models/DeleteBillPaymentResponse.ts
 models/DeleteBillResponse.ts
 models/DeleteCommentResponse.ts
@@ -945,6 +997,8 @@ models/DeleteCompanyResponse.ts
 models/DeleteConsumerResponse.ts
 models/DeleteContactResponse.ts
 models/DeleteCreditNoteResponse.ts
+models/DeleteCustomObjectResponse.ts
+models/DeleteCustomObjectSchemaResponse.ts
 models/DeleteCustomerResponse.ts
 models/DeleteDepartmentResponse.ts
 models/DeleteDriveGroupResponse.ts
@@ -1002,6 +1056,7 @@ models/EcommerceDiscount.ts
 models/EcommerceEventType.ts
 models/EcommerceOrder.ts
 models/EcommerceOrderLineItem.ts
+models/EcommerceOrderRefund.ts
 models/EcommerceOrderStatus.ts
 models/EcommerceOrdersFilter.ts
 models/EcommerceProduct.ts
@@ -1060,6 +1115,10 @@ models/GetApplicationsResponse.ts
 models/GetAttachmentResponse.ts
 models/GetAttachmentsResponse.ts
 models/GetBalanceSheetResponse.ts
+models/GetBankFeedAccountResponse.ts
+models/GetBankFeedAccountsResponse.ts
+models/GetBankFeedStatementResponse.ts
+models/GetBankFeedStatementsResponse.ts
 models/GetBillPaymentResponse.ts
 models/GetBillPaymentsResponse.ts
 models/GetBillResponse.ts
@@ -1092,6 +1151,10 @@ models/GetCreditNotesResponse.ts
 models/GetCustomFieldsResponse.ts
 models/GetCustomMappingResponse.ts
 models/GetCustomMappingsResponse.ts
+models/GetCustomObjectResponse.ts
+models/GetCustomObjectSchemaResponse.ts
+models/GetCustomObjectSchemasResponse.ts
+models/GetCustomObjectsResponse.ts
 models/GetCustomerResponse.ts
 models/GetCustomersResponse.ts
 models/GetDepartmentResponse.ts
@@ -1205,6 +1268,7 @@ models/InvoiceItemSalesDetails.ts
 models/InvoiceItemsFilter.ts
 models/InvoiceItemsSort.ts
 models/InvoiceLineItem.ts
+models/InvoicePaymentAllocations.ts
 models/InvoiceResponse.ts
 models/InvoicesFilter.ts
 models/InvoicesSort.ts
@@ -1375,6 +1439,8 @@ models/UpdateAccountingLocationResponse.ts
 models/UpdateActivityResponse.ts
 models/UpdateApplicantResponse.ts
 models/UpdateApplicationResponse.ts
+models/UpdateBankFeedAccountResponse.ts
+models/UpdateBankFeedStatementResponse.ts
 models/UpdateBillPaymentResponse.ts
 models/UpdateBillResponse.ts
 models/UpdateCommentResponse.ts
@@ -1386,6 +1452,8 @@ models/UpdateContactResponse.ts
 models/UpdateCreditNoteResponse.ts
 models/UpdateCustomMappingRequest.ts
 models/UpdateCustomMappingResponse.ts
+models/UpdateCustomObjectResponse.ts
+models/UpdateCustomObjectSchemaResponse.ts
 models/UpdateCustomerResponse.ts
 models/UpdateDepartmentResponse.ts
 models/UpdateDriveGroupResponse.ts
